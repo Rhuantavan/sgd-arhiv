@@ -1,0 +1,904 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html dir="ltr">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta http-equiv="Content-Style-Type" content="text/css">
+<style type="text/css">
+<!--
+.style1 {color: #FFFFFF}
+-->
+</style>
+
+
+
+<title>SloGameDev.net :: SloGameDev.net game database</title>
+<!-- link rel="stylesheet" href="templates/SGD/SGD2.css" type="text/css" -->
+<style type="text/css">
+<!--
+/*
+  The SGD Theme for phpBB version 2+
+  Created by Rhuantavan
+  http://www.rhuantavan.org
+
+  NOTE: These CSS definitions are stored within the main page body so that you can use the phpBB2
+  theme administration centre. When you have finalised your style you could cut the final CSS code
+  and place it in an external file, deleting this section to save bandwidth.
+*/
+
+/* General page style. The scroll bar colours only visible in IE5.5+ */
+body {
+	background-color: #DDDDDD;
+	scrollbar-face-color: #000000;
+	scrollbar-highlight-color: #000000;
+	scrollbar-3dlight-color: #EEEEEE;
+	scrollbar-darkshadow-color: #EEEEEE;
+	scrollbar-shadow-color: #000000;
+	scrollbar-arrow-color: #55FF00;
+	scrollbar-track-color: #EEEEEE;
+}
+
+/* General font families for common tags */
+font,th,td,p { font-family: Verdana, Arial, Helvetica, sans-serif }
+a:link,a:active,a:visited { color : #338800; }
+a:hover		{ text-decoration: underline; color : #338800; }
+hr	{ height: 0px; border: solid #E9E9E9 0px; border-top-width: 1px;}
+
+/* This is the border line & background colour round the entire page */
+.bodyline	{ background-color: #EEEEEE; border-left: 1px #000000 solid; border-right: 1px #000000 solid; }
+
+/* This is the outline round the main forum tables */
+.forumline	{ background-color: #EEEEEE; border: 0px #DDDDDD solid; }
+
+/* Main table cell colours and backgrounds */
+td.row1	{ background-color: #F8F8F8; }
+td.row2	{ background-color: #F0F0F0; }
+td.row3	{ background-color: #E9E9E9; }
+
+/*
+  This is for the table cell above the Topics, Post & Last posts on the index.php page
+  By default this is the fading out gradiated silver background.
+  However, you could replace this with a bitmap specific for each forum
+*/
+td.rowpic {
+		background-color: #EEEEEE;
+		background-image: url(templates/SGD/images/cellpic3.gif);
+		background-repeat: repeat-y;
+}
+
+/* Header cells - the blue and silver gradient backgrounds */
+th	{
+	color: #66CC33; font-size: 11px; font-weight : bold;
+	background-color: #338800; height: 25px;
+	background-image: url(templates/SGD/images/cellpic2.gif);
+}
+
+td.cat,td.catHead,td.catSides,td.catLeft,td.catRight,td.catBottom {
+			background-image: url(templates/SGD/images/cellpic1.gif);
+			background-color:#E9E9E9; border: #999999; border-style: solid; height: 28px;
+}
+
+/*
+  Setting additional nice inner borders for the main table cells.
+  The names indicate which sides the border will be on.
+  Don't worry if you don't understand this, just ignore it :-)
+*/
+td.cat,td.catHead,td.catBottom {
+	height: 29px;
+	border-width: 0px 0px 0px 0px;
+}
+th.thHead,th.thSides,th.thTop,th.thLeft,th.thRight,th.thBottom,th.thCornerL,th.thCornerR {
+	font-weight: bold; border: #EEEEEE; border-style: solid; height: 28px;
+}
+td.row3Right,td.spaceRow {
+	background-color: #E9E9E9; border: #999999; border-style: solid;
+}
+
+th.thHead,td.catHead { font-size: 12px; border-width: 0px 0px 0px 0px; }
+th.thSides,td.catSides,td.spaceRow	 { border-width: 0px 0px 0px 0px; }
+th.thRight,td.catRight,td.row3Right	 { border-width: 0px 0px 0px 0px; }
+th.thLeft,td.catLeft	  { border-width: 0px 0px 0px 0px; }
+th.thBottom,td.catBottom  { border-width: 0px 0px 0px 1px; }
+th.thTop	 { border-width: 0px 0px 0px 0px; }
+th.thCornerL { border-width: 0px 0px 0px 1px; }
+th.thCornerR { border-width: 0px 0px 0px 0px; }
+
+/* The largest text used in the index page title and toptic title etc. */
+.maintitle	{
+	font-weight: bold; font-size: 18px; font-family: "Trebuchet MS",Verdana, Arial, Helvetica, sans-serif;
+	text-decoration: none; line-height : 120%; color : #666666;
+}
+
+/* General text */
+.gen { font-size : 12px; }
+.genmed { font-size : 11px; }
+.gensmall { font-size : 10px; }
+.gen,.genmed,.gensmall { color : #666666; }
+a.gen,a.genmed,a.gensmall { color: #338800; text-decoration: none; }
+a.gen:hover,a.genmed:hover,a.gensmall:hover	{ color: #338800; text-decoration: underline; }
+
+/* The register, login, search etc links at the top of the page */
+.mainmenu		{ font-size : 11px; color : #666666 }
+a.mainmenu		{ text-decoration: none; color : #338800;  }
+a.mainmenu:hover{ text-decoration: underline; color : #338800; }
+
+/* SGD main menu */
+.sgdmainmenu			{ font-size : 10px; color : #99FF33 }
+a.sgdmainmenu:link		{ text-decoration: none; color : #99FF33;  }
+a.sgdmainmenu:active	{ text-decoration: none; color : #99FF33;  }
+a.sgdmainmenu:visited	{ text-decoration: none; color : #99FF33;  }
+a.sgdmainmenu:hover		{ text-decoration: underline; color : #99FF33; }
+
+/* Forum category titles */
+.cattitle		{ font-weight: bold; font-size: 12px ; letter-spacing: 1px; color : #338800}
+a.cattitle		{ text-decoration: none; color : #338800; }
+a.cattitle:hover{ text-decoration: underline; }
+
+/* Forum title: Text and link to the forums used in: index.php */
+.forumlink		{ font-weight: bold; font-size: 12px; color : #338800; }
+a.forumlink 	{ text-decoration: none; color : #338800; }
+a.forumlink:hover{ text-decoration: underline; color : #338800; }
+
+/* Used for the navigation text, (Page 1,2,3 etc) and the navigation bar when in a forum */
+.nav			{ font-weight: bold; font-size: 11px; color : #666666;}
+a.nav			{ text-decoration: none; color : #338800; }
+a.nav:hover		{ text-decoration: underline; }
+
+/* titles for the topics: could specify viewed link colour too */
+.topictitle,h1,h2	{ font-weight: bold; font-size: 11px; color : #666666; }
+a.topictitle:link   { text-decoration: none; color : #338800; }
+a.topictitle:visited { text-decoration: none; color : #338800; }
+a.topictitle:hover	{ text-decoration: underline; color : #338800; }
+
+/* Name of poster in viewmsg.php and viewtopic.php and other places */
+.name			{ font-size : 11px; color : #000000;}
+
+/* Location, number of posts, post date etc */
+.postdetails		{ font-size : 10px; color : #666666; }
+
+/* The content of the posts (body of text) */
+.postbody { font-size : 12px; line-height: 18px; color : #000000;}
+a.postlink:link	{ text-decoration: none; color : #338800 }
+a.postlink:visited { text-decoration: none; color : #338800; }
+a.postlink:hover { text-decoration: underline; color : #338800}
+
+/* Quote & Code blocks */
+.code {
+	font-family: Courier, 'Courier New', sans-serif; font-size: 11px; color: #006600;
+	background-color: #D6D6D6; border: #E9E9E9; border-style: solid;
+	border-left-width: 1px; border-top-width: 1px; border-right-width: 1px; border-bottom-width: 1px
+}
+
+.quote {
+	font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 11px; color: #444444; line-height: 125%;
+	background-color: #BBBBBB; border: #E9E9E9; border-style: solid;
+	border-left-width: 1px; border-top-width: 1px; border-right-width: 1px; border-bottom-width: 1px
+}
+
+/* Copyright and bottom info */
+.copyright		{ font-size: 10px; font-family: Verdana, Arial, Helvetica, sans-serif; color: #444444; letter-spacing: -1px;}
+a.copyright		{ color: #444444; text-decoration: none;}
+a.copyright:hover { color: #666666; text-decoration: underline;}
+
+/* Form elements */
+input,textarea, select {
+	color : #666666;
+	font: normal 11px Verdana, Arial, Helvetica, sans-serif;
+	border-color : #666666;
+}
+
+/* The text input fields background colour */
+input.post, textarea.post, select {
+	background-color : #EEEEEE;
+}
+
+input { text-indent : 2px; }
+
+/* The buttons used for bbCode styling in message post */
+input.button {
+	background-color : #F8F8F8;
+	color : #666666;
+	font-size: 11px; font-family: Verdana, Arial, Helvetica, sans-serif;
+}
+
+/* The main submit button option */
+input.mainoption {
+	background-color : #BBBBBB;
+	font-weight : bold;
+}
+
+/* None-bold submit button */
+input.liteoption {
+	background-color : #BBBBBB;
+	font-weight : normal;
+}
+
+/* This is the line in the posting page which shows the rollover
+  help line. This is actually a text box, but if set to be the same
+  colour as the background no one will know ;)
+*/
+.helpline { background-color: #F0F0F0; border-style: none; }
+
+/* Import the fancy styles for IE only (NS4.x doesn't use the @import function) */
+@import url("templates/SGD/formIE.css");
+-->
+</style>
+</head>
+<body bgcolor="#DDDDDD" text="#666666" link="#338800" vlink="#338800" topmargin="0" />
+<a name="top"></a>
+<table width="100%" cellspacing="0" cellpadding="0" border="0" align="center" nowrap>
+	<tr>
+		<td class="bodyline">
+			<table width="100%" border="0" cellpadding="0" cellspacing="0">
+				<tr>
+					<td bgcolor="#FFFFFF">
+						<img src="images/spacer.gif" width="760" height="20" alt=""></td>
+				</tr>
+			</table>
+			<table width="100%" border="0" cellpadding="0" cellspacing="0">
+				<tr>
+					<td bgcolor="#000000">
+						<a href="../index.html"><img src="images/home.gif" width="10" height="10" alt="" border="0"></a><img src="images/spacer.gif" width="5" height="5" alt=""><a href="../index.html" class="sgdmainmenu">Nazaj na domačo stran</a> <img src="images/defaulticon_green.gif" alt="" width="7" height="7" border="0"> <a href="../clanki.html" class="sgdmainmenu">Clanki</a> <img src="images/defaulticon_green.gif" alt="" width="7" height="7" border="0"> <a href="../koda.html" class="sgdmainmenu">Koda</a> <img src="images/defaulticon_green.gif" alt="" width="7" height="7" border="0"> <a href="../clani.html" class="sgdmainmenu">Clani</a> <img src="images/defaulticon_green.gif" alt="" width="7" height="7" border="0"> <a href="../skupine.html" class="sgdmainmenu">Skupine</a> <img src="images/defaulticon_green.gif" alt="" width="7" height="7" border="0"> <a href="../projekti.html" class="sgdmainmenu">Projekti</a> <img src="images/defaulticon_green.gif" alt="" width="7" height="7" border="0"> <a href="../povezave.html" class="sgdmainmenu">Povezave</a></td>
+				</tr>
+			</table>
+			<table width="100%" border="0" cellpadding="0" cellspacing="0">
+				<tr>
+					<td colspan="3" bgcolor="#000000">
+						<img src="images/spacer.gif" width="760" height="10" alt=""></td>
+				</tr>
+				<tr>
+					<td>
+						<a href="index.html"><img src="images/logo.gif" width="351" height="62" alt="" border="0"></a></td>
+					<td>
+						<img src="images/forum_03.gif" width="408" height="62" alt=""></td>
+					<td width="100%" bgcolor="#000000">
+						<img src="images/spacer.gif" width="1" height="1" alt=""></td>
+				</tr>
+				<tr>
+					<td colspan="3" bgcolor="#000000" align="center">
+						<a href="memberlist.html" class="sgdmainmenu"><img src="images/defaulticon_green.gif" alt="" width="7" height="7" border="0">&nbsp;Seznam članov</a>
+						<a href="index.html" class="sgdmainmenu"><img src="images/defaulticon_green.gif" alt="" width="7" height="7" border="0">&nbsp;Seznam</a></td>
+				</tr>
+				<tr>
+					<td colspan="3" bgcolor="#000000">
+						<img src="images/spacer.gif" width="760" height="5" alt=""></td>
+				</tr>
+			</table>
+
+<table width="100%" cellspacing="2" cellpadding="2" border="0">
+  <tr>
+	<td align="left" valign="bottom" colspan="2"><a class="maintitle" href="topic-2368.html">SloGameDev.net game database</a><br />
+	  <span class="gensmall"><b></b><br />
+	  &nbsp; </span></td>
+  </tr>
+</table>
+
+<table width="100%" cellspacing="2" cellpadding="2" border="0">
+  <tr>
+	<td align="left" valign="bottom" nowrap="nowrap">&nbsp;</td>
+	<td align="left" valign="middle" width="100%"><span class="nav">&nbsp;&nbsp;&nbsp;<a href="index.html" class="nav">SloGameDev.net seznam forumov</a>
+	  -> <a href="forum-48.html" class="nav">Forum, novice in skupnost</a></span></td>
+  </tr>
+</table>
+
+<table class="forumline" width="100%" cellspacing="1" cellpadding="3" border="0">
+	<tr align="right">
+		<td class="catHead" colspan="2" height="28"><span class="nav"><a href="topic-2370.html" class="nav">Prejšnja tema</a> :: <a href="topic-2377.html" class="nav">Naslednja tema</a> &nbsp;</span></td>
+	</tr>
+	
+	<tr>
+		<th class="thLeft" width="150" height="26" nowrap="nowrap">avtor</th>
+		<th class="thRight" nowrap="nowrap">Sporočilo</th>
+	</tr>
+	
+	<tr>
+		<td width="150" align="left" valign="top" class="row1"><span class="name"><a name="21241"></a><b>florenzano</b></span><br /><span class="postdetails">wannabe<br /><img src="images/ranks/sgd-2.gif" alt="wannabe" title="wannabe" border="0" /><br /><br /><br />Pridružen: 23. apr 2009 ob 15:00<br />objav: 86<br /></span><br /></td>
+		<td class="row1" width="100%" height="28" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+			<tr>
+				<td colspan="2" width="100%">
+					<table width="100%" cellpadding="0" cellspacing="0" border="0">
+						<tr>
+							<td valign="middle" align="left">
+								<a href="topic-2368.html#21241"><img src="templates/SGD2/images/icon_minipost.gif" width="12" height="9" alt="objava" title="objava" border="0" /></a>
+								<span class="postdetails">Objavljeno: čet jul 21, 2011 11:06 am<span class="gen">&nbsp;</span>&nbsp; &nbsp;Pošlji temo: SloGameDev.net game database</span>
+							</td>
+							<td valign="middle" align="right" nowrap="nowrap">
+							</td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+			<tr>
+				<td colspan="2"><hr /></td>
+			</tr>
+			<tr>
+				<td colspan="2"><span class="postbody">Evo jest sm prpravljen stvar skodirat, mogoče lahko tudi hostam (recimo na sinsys.com), ne bi pa se ukvarjal z dizajnom, ker temu nisem ravno vešč oz mi gre blazno počasi.
+<br />
+
+<br />
+Moj predlog: php/mysql/css (s tem da nekdo, ki se voluntersko javi, naredi cssje in prototip html z idji, tako da potem lahko jaz iz tega scopram koncno kodo).
+<br />
+Vsak špil bi mel:
+<br />
+- Flags: katere sisteme podpira, žanr, podobno (bi bil hvaležen, če bi kdo lahko stuhtal dober seznam), alternativno so to lahko tudi tagi.
+<br />
+- 1 ali več dljev (za razne platforme) oz link na websajt
+<br />
+- Če gre za web gejm, se pove ali je pure browser (html/javaskript vs flash, java) pa če je potrebna registracija ali ne
+<br />
+- Ocena igre s strani igralcev (zvezdice al neki)
+<br />
+- Dl count (če je izvedljivo)
+<br />
+- Skrinshoti in thumbnail (kar damo v svojo bazo ne kot link)
+<br />
+- Komentarji (tle se je za odlocit, a lahko komentarje pišejo sam registrirani uporabniki oz ali bi to registracijo sploh imeli)
+<br />
+- Reviews(?)
+<br />
+- Link na haj skor listo, kjer je (kasneje bi se lahko zmenili za kak izi protokol, da bi že na tem sajtu videl top 5, recimo)
+<br />
+- Opis, seveda
+<br />
+- Datum izdaje, cena (kadar ni friver) v tem primeru namesto dl linka link na prodajno mesto
+<br />
+- Razvijalec, založnik
+<br />
+
+<br />
+Pol se pa je za odločit, al dajemo not samo igre, ki pridejo not čez ta forum oz to skupnost, al poskušamo dat not tudi igre od ostalih slovenskih razvijalcev, vključno z magari komercialnimi in morda zgodovinskimi (potem bi not prišel tudi Turk s svojim kontrabantom).
+<br />
+
+<br />
+Ideje, predlogi... če se kdo spomni še kak field naj kar napiše v tem threadu, pa ga bom mel potem za referenco (thread) za bazo zmodelirat.
+<br />
+
+<br />
+p.s. A bi blo dobr narest tut kako fejsbuk integracijo za to reč?</span><span class="gensmall"></span></td>
+			</tr>
+		</table></td>
+	</tr>
+	<tr>
+		<td class="row1" width="150" align="left" valign="middle"><span class="nav"><a href="#top" class="nav">Nazaj na vrh</a></span></td>
+		<td class="row1" width="100%" height="28" valign="bottom" nowrap="nowrap"><table cellspacing="0" cellpadding="0" border="0" height="18" width="18">
+			<tr>
+				<td valign="middle" nowrap="nowrap"><a href="profile-2172.html"><img src="templates/SGD2/images/lang_slovenian/icon_profile.gif" alt="Poglej uporabnikov profil" title="Poglej uporabnikov profil" border="0" /></a> </td>
+			</tr>
+		</table></td>
+	</tr>
+	<tr>
+		<td class="spaceRow" colspan="2" height="1"><img src="templates/SGD/images/spacer.gif" alt="" width="1" height="1" /></td>
+	</tr>
+	
+	<tr>
+		<td width="150" align="left" valign="top" class="row2"><span class="name"><a name="21245"></a><b>Tom4z</b></span><br /><span class="postdetails">wannabe<br /><img src="images/ranks/sgd-2.gif" alt="wannabe" title="wannabe" border="0" /><br /><br /><br />Pridružen: 04. jan 2008 ob 20:22<br />objav: 118<br />Kraj: Črešnjevci</span><br /></td>
+		<td class="row2" width="100%" height="28" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+			<tr>
+				<td colspan="2" width="100%">
+					<table width="100%" cellpadding="0" cellspacing="0" border="0">
+						<tr>
+							<td valign="middle" align="left">
+								<a href="topic-2368.html#21245"><img src="templates/SGD2/images/icon_minipost.gif" width="12" height="9" alt="objava" title="objava" border="0" /></a>
+								<span class="postdetails">Objavljeno: čet jul 21, 2011 6:27 pm<span class="gen">&nbsp;</span>&nbsp; &nbsp;Pošlji temo: Re: SloGameDev.net game database</span>
+							</td>
+							<td valign="middle" align="right" nowrap="nowrap">
+							</td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+			<tr>
+				<td colspan="2"><hr /></td>
+			</tr>
+			<tr>
+				<td colspan="2"><span class="postbody">Jaz bi tukaj samo dodal recimo še videje (gameplay, predstavitev igre itd), komentarje bi pa odstrano ker se bo našo folk ki jih to sploh ne zanima pa bodo pospamali/očrnili igro. Meni vsaj se zdi da so nepotrebni
+<br />
+
+<br />
+Drugače pa zakon ideja <img src="images/smiles/icon_biggrin.gif" alt=":D" border="0" /><br />_________________<br /><span style="font-weight: bold"><span style="font-size: 150%; line-height: normal">Exitonly</span></span> - Revolution of the Evolution</span><span class="gensmall"></span></td>
+			</tr>
+		</table></td>
+	</tr>
+	<tr>
+		<td class="row2" width="150" align="left" valign="middle"><span class="nav"><a href="#top" class="nav">Nazaj na vrh</a></span></td>
+		<td class="row2" width="100%" height="28" valign="bottom" nowrap="nowrap"><table cellspacing="0" cellpadding="0" border="0" height="18" width="18">
+			<tr>
+				<td valign="middle" nowrap="nowrap"><a href="profile-842.html"><img src="templates/SGD2/images/lang_slovenian/icon_profile.gif" alt="Poglej uporabnikov profil" title="Poglej uporabnikov profil" border="0" /></a> </td>
+			</tr>
+		</table></td>
+	</tr>
+	<tr>
+		<td class="spaceRow" colspan="2" height="1"><img src="templates/SGD/images/spacer.gif" alt="" width="1" height="1" /></td>
+	</tr>
+	
+	<tr>
+		<td width="150" align="left" valign="top" class="row1"><span class="name"><a name="21248"></a><b>Retro</b></span><br /><span class="postdetails">SGD Admin<br /><img src="images/ranks/sgd-admin.gif" alt="SGD Admin" title="SGD Admin" border="0" /><br /><br /><br />Pridružen: 04. sep 2003 ob 22:14<br />objav: 1008<br />Kraj: ZX Spectrum 48k+</span><br /></td>
+		<td class="row1" width="100%" height="28" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+			<tr>
+				<td colspan="2" width="100%">
+					<table width="100%" cellpadding="0" cellspacing="0" border="0">
+						<tr>
+							<td valign="middle" align="left">
+								<a href="topic-2368.html#21248"><img src="templates/SGD2/images/icon_minipost.gif" width="12" height="9" alt="objava" title="objava" border="0" /></a>
+								<span class="postdetails">Objavljeno: čet jul 21, 2011 6:36 pm<span class="gen">&nbsp;</span>&nbsp; &nbsp;Pošlji temo: Re: SloGameDev.net game database</span>
+							</td>
+							<td valign="middle" align="right" nowrap="nowrap">
+							</td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+			<tr>
+				<td colspan="2"><hr /></td>
+			</tr>
+			<tr>
+				<td colspan="2"><span class="postbody">Šele zdaj videl forkan thread. Skratka, kot sem v rantu napisal: jaz sem za to, da se vzame TIGDB kodo (prvo je treba vprašat, če se lahko, vendar načeloma je opensource na GIThubu), najde nekoga od nas, ki ima izkušnje z ruby on rails in voljo to postavit. Vsaj jaz bi se raje ukvarjal z vnašanjem contenta kot pisanjem content management sistemov. Vsaj če se ni treba (bog ve zakaj pišem XNI) in imaš enega, ki točno do pike odgovarja temu, kar rabimo. Pa se magari forka tistega, če je treba kaj popravit (vem da je trenutno na njihovem todoju da ima špil lahko več developerjev).
+<br />
+
+<br />
+Aja, pa če kdo ne pozna tigdb:
+<br />
+<a class="postlink" >http://tigdb.com</a><br />_________________<br /><a  target="_blank" class="postlink"><span style="font-weight: bold">Dawn of Play</span></a> // <a  target="_blank" class="postlink"><span style="font-weight: bold">Retronator</span></a></span><span class="gensmall"></span></td>
+			</tr>
+		</table></td>
+	</tr>
+	<tr>
+		<td class="row1" width="150" align="left" valign="middle"><span class="nav"><a href="#top" class="nav">Nazaj na vrh</a></span></td>
+		<td class="row1" width="100%" height="28" valign="bottom" nowrap="nowrap"><table cellspacing="0" cellpadding="0" border="0" height="18" width="18">
+			<tr>
+				<td valign="middle" nowrap="nowrap"><a href="profile-100.html"><img src="templates/SGD2/images/lang_slovenian/icon_profile.gif" alt="Poglej uporabnikov profil" title="Poglej uporabnikov profil" border="0" /></a> <a  target="_userwww"><img src="templates/SGD2/images/lang_slovenian/icon_www.gif" alt="Obišči avtorjevo spletno stran" title="Obišči avtorjevo spletno stran" border="0" /></a></td>
+			</tr>
+		</table></td>
+	</tr>
+	<tr>
+		<td class="spaceRow" colspan="2" height="1"><img src="templates/SGD/images/spacer.gif" alt="" width="1" height="1" /></td>
+	</tr>
+	
+	<tr>
+		<td width="150" align="left" valign="top" class="row2"><span class="name"><a name="21254"></a><b>florenzano</b></span><br /><span class="postdetails">wannabe<br /><img src="images/ranks/sgd-2.gif" alt="wannabe" title="wannabe" border="0" /><br /><br /><br />Pridružen: 23. apr 2009 ob 15:00<br />objav: 86<br /></span><br /></td>
+		<td class="row2" width="100%" height="28" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+			<tr>
+				<td colspan="2" width="100%">
+					<table width="100%" cellpadding="0" cellspacing="0" border="0">
+						<tr>
+							<td valign="middle" align="left">
+								<a href="topic-2368.html#21254"><img src="templates/SGD2/images/icon_minipost.gif" width="12" height="9" alt="objava" title="objava" border="0" /></a>
+								<span class="postdetails">Objavljeno: čet jul 21, 2011 7:13 pm<span class="gen">&nbsp;</span>&nbsp; &nbsp;Pošlji temo: Re: SloGameDev.net game database</span>
+							</td>
+							<td valign="middle" align="right" nowrap="nowrap">
+							</td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+			<tr>
+				<td colspan="2"><hr /></td>
+			</tr>
+			<tr>
+				<td colspan="2"><span class="postbody">Tole se mi sliš kul ideja, edin men se tut sanja ne od ruby on rails.  <img src="images/smiles/icon_eek.gif" alt=":shock:" border="0" />  <img src="images/smiles/icon_cry.gif" alt=":cry:" border="0" />  <img src="images/smiles/icon_lol.gif" alt=":lol:" border="0" />
+<br />
+
+<br />
+Drugače pa ja, kar se tega tiče sem pozabu bit bl jasen, jest sm vsekakor mislu, da bi bla baza v angleščini, sicer z marketinškega stališča ne bi bla bohve kako efektivna heh.</span><span class="gensmall"></span></td>
+			</tr>
+		</table></td>
+	</tr>
+	<tr>
+		<td class="row2" width="150" align="left" valign="middle"><span class="nav"><a href="#top" class="nav">Nazaj na vrh</a></span></td>
+		<td class="row2" width="100%" height="28" valign="bottom" nowrap="nowrap"><table cellspacing="0" cellpadding="0" border="0" height="18" width="18">
+			<tr>
+				<td valign="middle" nowrap="nowrap"><a href="profile-2172.html"><img src="templates/SGD2/images/lang_slovenian/icon_profile.gif" alt="Poglej uporabnikov profil" title="Poglej uporabnikov profil" border="0" /></a> </td>
+			</tr>
+		</table></td>
+	</tr>
+	<tr>
+		<td class="spaceRow" colspan="2" height="1"><img src="templates/SGD/images/spacer.gif" alt="" width="1" height="1" /></td>
+	</tr>
+	
+	<tr>
+		<td width="150" align="left" valign="top" class="row1"><span class="name"><a name="21256"></a><b>florenzano</b></span><br /><span class="postdetails">wannabe<br /><img src="images/ranks/sgd-2.gif" alt="wannabe" title="wannabe" border="0" /><br /><br /><br />Pridružen: 23. apr 2009 ob 15:00<br />objav: 86<br /></span><br /></td>
+		<td class="row1" width="100%" height="28" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+			<tr>
+				<td colspan="2" width="100%">
+					<table width="100%" cellpadding="0" cellspacing="0" border="0">
+						<tr>
+							<td valign="middle" align="left">
+								<a href="topic-2368.html#21256"><img src="templates/SGD2/images/icon_minipost.gif" width="12" height="9" alt="objava" title="objava" border="0" /></a>
+								<span class="postdetails">Objavljeno: čet jul 21, 2011 8:21 pm<span class="gen">&nbsp;</span>&nbsp; &nbsp;Pošlji temo: Re: SloGameDev.net game database</span>
+							</td>
+							<td valign="middle" align="right" nowrap="nowrap">
+							</td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+			<tr>
+				<td colspan="2"><hr /></td>
+			</tr>
+			<tr>
+				<td colspan="2"><span class="postbody">Ja in še neki sm pozabu, vprašanje a bo to samo baza končanih špilov, al bo tut odsek za WIP.</span><span class="gensmall"></span></td>
+			</tr>
+		</table></td>
+	</tr>
+	<tr>
+		<td class="row1" width="150" align="left" valign="middle"><span class="nav"><a href="#top" class="nav">Nazaj na vrh</a></span></td>
+		<td class="row1" width="100%" height="28" valign="bottom" nowrap="nowrap"><table cellspacing="0" cellpadding="0" border="0" height="18" width="18">
+			<tr>
+				<td valign="middle" nowrap="nowrap"><a href="profile-2172.html"><img src="templates/SGD2/images/lang_slovenian/icon_profile.gif" alt="Poglej uporabnikov profil" title="Poglej uporabnikov profil" border="0" /></a> </td>
+			</tr>
+		</table></td>
+	</tr>
+	<tr>
+		<td class="spaceRow" colspan="2" height="1"><img src="templates/SGD/images/spacer.gif" alt="" width="1" height="1" /></td>
+	</tr>
+	
+	<tr>
+		<td width="150" align="left" valign="top" class="row2"><span class="name"><a name="21257"></a><b>Blodyavenger</b></span><br /><span class="postdetails">expert<br /><img src="images/ranks/sgd-6.gif" alt="expert" title="expert" border="0" /><br /><br /><br />Pridružen: 12. sep 2008 ob 15:31<br />objav: 716<br />Kraj: Land of the Ten Hares</span><br /></td>
+		<td class="row2" width="100%" height="28" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+			<tr>
+				<td colspan="2" width="100%">
+					<table width="100%" cellpadding="0" cellspacing="0" border="0">
+						<tr>
+							<td valign="middle" align="left">
+								<a href="topic-2368.html#21257"><img src="templates/SGD2/images/icon_minipost.gif" width="12" height="9" alt="objava" title="objava" border="0" /></a>
+								<span class="postdetails">Objavljeno: čet jul 21, 2011 8:28 pm<span class="gen">&nbsp;</span>&nbsp; &nbsp;Pošlji temo: Re: SloGameDev.net game database</span>
+							</td>
+							<td valign="middle" align="right" nowrap="nowrap">
+							</td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+			<tr>
+				<td colspan="2"><hr /></td>
+			</tr>
+			<tr>
+				<td colspan="2"><span class="postbody">Jst predlagam da samo za tiste ZARES končane igre, mogoče bo to še dodatna spodbuda da dokončamo stvari in objavimo nekje <img src="images/smiles/icon_smile.gif" alt=":)" border="0" /><br />_________________<br />................ <a  target="_blank" class="postlink"><span style="font-weight: bold">My personal GameDev Blog</span></a> ...................
+<br />
+<span style="font-style: italic">&quot;Don't you dare using uninitialized variables, not in C++&quot;</span></span><span class="gensmall"></span></td>
+			</tr>
+		</table></td>
+	</tr>
+	<tr>
+		<td class="row2" width="150" align="left" valign="middle"><span class="nav"><a href="#top" class="nav">Nazaj na vrh</a></span></td>
+		<td class="row2" width="100%" height="28" valign="bottom" nowrap="nowrap"><table cellspacing="0" cellpadding="0" border="0" height="18" width="18">
+			<tr>
+				<td valign="middle" nowrap="nowrap"><a href="profile-971.html"><img src="templates/SGD2/images/lang_slovenian/icon_profile.gif" alt="Poglej uporabnikov profil" title="Poglej uporabnikov profil" border="0" /></a> <a  target="_userwww"><img src="templates/SGD2/images/lang_slovenian/icon_www.gif" alt="Obišči avtorjevo spletno stran" title="Obišči avtorjevo spletno stran" border="0" /></a></td>
+			</tr>
+		</table></td>
+	</tr>
+	<tr>
+		<td class="spaceRow" colspan="2" height="1"><img src="templates/SGD/images/spacer.gif" alt="" width="1" height="1" /></td>
+	</tr>
+	
+	<tr>
+		<td width="150" align="left" valign="top" class="row1"><span class="name"><a name="21258"></a><b>Retro</b></span><br /><span class="postdetails">SGD Admin<br /><img src="images/ranks/sgd-admin.gif" alt="SGD Admin" title="SGD Admin" border="0" /><br /><br /><br />Pridružen: 04. sep 2003 ob 22:14<br />objav: 1008<br />Kraj: ZX Spectrum 48k+</span><br /></td>
+		<td class="row1" width="100%" height="28" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+			<tr>
+				<td colspan="2" width="100%">
+					<table width="100%" cellpadding="0" cellspacing="0" border="0">
+						<tr>
+							<td valign="middle" align="left">
+								<a href="topic-2368.html#21258"><img src="templates/SGD2/images/icon_minipost.gif" width="12" height="9" alt="objava" title="objava" border="0" /></a>
+								<span class="postdetails">Objavljeno: čet jul 21, 2011 9:43 pm<span class="gen">&nbsp;</span>&nbsp; &nbsp;Pošlji temo: Re: SloGameDev.net game database</span>
+							</td>
+							<td valign="middle" align="right" nowrap="nowrap">
+							</td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+			<tr>
+				<td colspan="2"><hr /></td>
+			</tr>
+			<tr>
+				<td colspan="2"><span class="postbody">Samo za koncane, izdane stvari po mojem. Vse kar se da igrat, ce ne nima smisla po moje. Wip je takisto skoda zgubljat cas, ker vemo, da statistika ni ravno na njihovi strani. Ko nekdo nekaj konca, pa je super nagrada, da se znajde noter.<br />_________________<br /><a  target="_blank" class="postlink"><span style="font-weight: bold">Dawn of Play</span></a> // <a  target="_blank" class="postlink"><span style="font-weight: bold">Retronator</span></a></span><span class="gensmall"></span></td>
+			</tr>
+		</table></td>
+	</tr>
+	<tr>
+		<td class="row1" width="150" align="left" valign="middle"><span class="nav"><a href="#top" class="nav">Nazaj na vrh</a></span></td>
+		<td class="row1" width="100%" height="28" valign="bottom" nowrap="nowrap"><table cellspacing="0" cellpadding="0" border="0" height="18" width="18">
+			<tr>
+				<td valign="middle" nowrap="nowrap"><a href="profile-100.html"><img src="templates/SGD2/images/lang_slovenian/icon_profile.gif" alt="Poglej uporabnikov profil" title="Poglej uporabnikov profil" border="0" /></a> <a  target="_userwww"><img src="templates/SGD2/images/lang_slovenian/icon_www.gif" alt="Obišči avtorjevo spletno stran" title="Obišči avtorjevo spletno stran" border="0" /></a></td>
+			</tr>
+		</table></td>
+	</tr>
+	<tr>
+		<td class="spaceRow" colspan="2" height="1"><img src="templates/SGD/images/spacer.gif" alt="" width="1" height="1" /></td>
+	</tr>
+	
+	<tr>
+		<td width="150" align="left" valign="top" class="row2"><span class="name"><a name="21262"></a><b>Lamoot</b></span><br /><span class="postdetails">inštruktor<br /><img src="images/ranks/sgd-4.gif" alt="inštruktor" title="inštruktor" border="0" /><br /><br /><br />Pridružen: 10. avg 2009 ob 18:34<br />objav: 363<br /></span><br /></td>
+		<td class="row2" width="100%" height="28" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+			<tr>
+				<td colspan="2" width="100%">
+					<table width="100%" cellpadding="0" cellspacing="0" border="0">
+						<tr>
+							<td valign="middle" align="left">
+								<a href="topic-2368.html#21262"><img src="templates/SGD2/images/icon_minipost.gif" width="12" height="9" alt="objava" title="objava" border="0" /></a>
+								<span class="postdetails">Objavljeno: ned jul 24, 2011 8:15 pm<span class="gen">&nbsp;</span>&nbsp; &nbsp;Pošlji temo: Re: SloGameDev.net game database</span>
+							</td>
+							<td valign="middle" align="right" nowrap="nowrap">
+							</td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+			<tr>
+				<td colspan="2"><hr /></td>
+			</tr>
+			<tr>
+				<td colspan="2"><span class="postbody">Kul slišat da se nekaj načrtuje <img src="images/smiles/icon_smile.gif" alt=":)" border="0" /> Tako kot Retro bi jaz raje pisal o špilih kot pa pisal nevemkako kodo (tudi zato ker o slednjem nimam pojma <img src="images/smiles/icon_razz.gif" alt=":P" border="0" /> ) Pa mogoče bi kdaj pa kdaj dokončal kakšen špil da bi bil pehar iger bolj poln.</span><span class="gensmall"></span></td>
+			</tr>
+		</table></td>
+	</tr>
+	<tr>
+		<td class="row2" width="150" align="left" valign="middle"><span class="nav"><a href="#top" class="nav">Nazaj na vrh</a></span></td>
+		<td class="row2" width="100%" height="28" valign="bottom" nowrap="nowrap"><table cellspacing="0" cellpadding="0" border="0" height="18" width="18">
+			<tr>
+				<td valign="middle" nowrap="nowrap"><a href="profile-3215.html"><img src="templates/SGD2/images/lang_slovenian/icon_profile.gif" alt="Poglej uporabnikov profil" title="Poglej uporabnikov profil" border="0" /></a> </td>
+			</tr>
+		</table></td>
+	</tr>
+	<tr>
+		<td class="spaceRow" colspan="2" height="1"><img src="templates/SGD/images/spacer.gif" alt="" width="1" height="1" /></td>
+	</tr>
+	
+	<tr>
+		<td width="150" align="left" valign="top" class="row1"><span class="name"><a name="21268"></a><b>florenzano</b></span><br /><span class="postdetails">wannabe<br /><img src="images/ranks/sgd-2.gif" alt="wannabe" title="wannabe" border="0" /><br /><br /><br />Pridružen: 23. apr 2009 ob 15:00<br />objav: 86<br /></span><br /></td>
+		<td class="row1" width="100%" height="28" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+			<tr>
+				<td colspan="2" width="100%">
+					<table width="100%" cellpadding="0" cellspacing="0" border="0">
+						<tr>
+							<td valign="middle" align="left">
+								<a href="topic-2368.html#21268"><img src="templates/SGD2/images/icon_minipost.gif" width="12" height="9" alt="objava" title="objava" border="0" /></a>
+								<span class="postdetails">Objavljeno: pon jul 25, 2011 8:20 am<span class="gen">&nbsp;</span>&nbsp; &nbsp;Pošlji temo: Re: SloGameDev.net game database</span>
+							</td>
+							<td valign="middle" align="right" nowrap="nowrap">
+							</td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+			<tr>
+				<td colspan="2"><hr /></td>
+			</tr>
+			<tr>
+				<td colspan="2"><span class="postbody">No sej, če se da stvar izpelat brez kodiranja sm jest čisto za, samo nekdo bo moral povprašat te tipe, če si lahko stvar sposodmo. Če bodo rekl da ne my offer stands, ker itak nimam kej dost počet s svojim možganom atm.</span><span class="gensmall"></span></td>
+			</tr>
+		</table></td>
+	</tr>
+	<tr>
+		<td class="row1" width="150" align="left" valign="middle"><span class="nav"><a href="#top" class="nav">Nazaj na vrh</a></span></td>
+		<td class="row1" width="100%" height="28" valign="bottom" nowrap="nowrap"><table cellspacing="0" cellpadding="0" border="0" height="18" width="18">
+			<tr>
+				<td valign="middle" nowrap="nowrap"><a href="profile-2172.html"><img src="templates/SGD2/images/lang_slovenian/icon_profile.gif" alt="Poglej uporabnikov profil" title="Poglej uporabnikov profil" border="0" /></a> </td>
+			</tr>
+		</table></td>
+	</tr>
+	<tr>
+		<td class="spaceRow" colspan="2" height="1"><img src="templates/SGD/images/spacer.gif" alt="" width="1" height="1" /></td>
+	</tr>
+	
+	<tr>
+		<td width="150" align="left" valign="top" class="row2"><span class="name"><a name="21279"></a><b>Buba</b></span><br /><span class="postdetails">poizvedovalec<br /><img src="images/ranks/sgd-1.gif" alt="poizvedovalec" title="poizvedovalec" border="0" /><br /><br /><br />Pridružen: 14. apr 2011 ob 07:42<br />objav: 32<br /></span><br /></td>
+		<td class="row2" width="100%" height="28" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+			<tr>
+				<td colspan="2" width="100%">
+					<table width="100%" cellpadding="0" cellspacing="0" border="0">
+						<tr>
+							<td valign="middle" align="left">
+								<a href="topic-2368.html#21279"><img src="templates/SGD2/images/icon_minipost.gif" width="12" height="9" alt="objava" title="objava" border="0" /></a>
+								<span class="postdetails">Objavljeno: pon avg 01, 2011 8:44 am<span class="gen">&nbsp;</span>&nbsp; &nbsp;Pošlji temo: Re: SloGameDev.net game database</span>
+							</td>
+							<td valign="middle" align="right" nowrap="nowrap">
+							</td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+			<tr>
+				<td colspan="2"><hr /></td>
+			</tr>
+			<tr>
+				<td colspan="2"><span class="postbody">Če si kdo želi izmenjevat linke naj kar pove, mu hostam posebaj page samo za njegovo igro. Itak sem pristaš indie developerjev poleg tega pa podpiram vse kar se dogaja tukaj <img src="images/smiles/icon_smile.gif" alt=":)" border="0" /> Sam pošljite mi povezave, video posnetke itn, da lahko spacam kaj na svoji strani. Ni veliko ampak je nekaj.</span><span class="gensmall"></span></td>
+			</tr>
+		</table></td>
+	</tr>
+	<tr>
+		<td class="row2" width="150" align="left" valign="middle"><span class="nav"><a href="#top" class="nav">Nazaj na vrh</a></span></td>
+		<td class="row2" width="100%" height="28" valign="bottom" nowrap="nowrap"><table cellspacing="0" cellpadding="0" border="0" height="18" width="18">
+			<tr>
+				<td valign="middle" nowrap="nowrap"><a href="profile-3680.html"><img src="templates/SGD2/images/lang_slovenian/icon_profile.gif" alt="Poglej uporabnikov profil" title="Poglej uporabnikov profil" border="0" /></a> </td>
+			</tr>
+		</table></td>
+	</tr>
+	<tr>
+		<td class="spaceRow" colspan="2" height="1"><img src="templates/SGD/images/spacer.gif" alt="" width="1" height="1" /></td>
+	</tr>
+	
+	<tr>
+		<td width="150" align="left" valign="top" class="row1"><span class="name"><a name="21291"></a><b>Retro</b></span><br /><span class="postdetails">SGD Admin<br /><img src="images/ranks/sgd-admin.gif" alt="SGD Admin" title="SGD Admin" border="0" /><br /><br /><br />Pridružen: 04. sep 2003 ob 22:14<br />objav: 1008<br />Kraj: ZX Spectrum 48k+</span><br /></td>
+		<td class="row1" width="100%" height="28" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+			<tr>
+				<td colspan="2" width="100%">
+					<table width="100%" cellpadding="0" cellspacing="0" border="0">
+						<tr>
+							<td valign="middle" align="left">
+								<a href="topic-2368.html#21291"><img src="templates/SGD2/images/icon_minipost.gif" width="12" height="9" alt="objava" title="objava" border="0" /></a>
+								<span class="postdetails">Objavljeno: tor avg 02, 2011 10:03 pm<span class="gen">&nbsp;</span>&nbsp; &nbsp;Pošlji temo: Re: SloGameDev.net game database</span>
+							</td>
+							<td valign="middle" align="right" nowrap="nowrap">
+							</td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+			<tr>
+				<td colspan="2"><hr /></td>
+			</tr>
+			<tr>
+				<td colspan="2"><span class="postbody">Jeff Lindseya sem vprasal, kako je z TIGDB ampak ni nic odgovoril. Ne na Facebooku ne na Google+. Tako da ne vem ... Stvar je na Githubu public, tako da je verjetno po defaultu free to use? 
+<br />
+<a class="postlink" >https://github.com/progrium/tigdb</a>
+<br />
+
+<br />
+Ce je komu kaj jasno glede rails in lahko pogleda v kaksnem stanju je zadeva, naj se javi. Ce pa ne pa prepuscam nazaj iniciativo komu drugemu.<br />_________________<br /><a  target="_blank" class="postlink"><span style="font-weight: bold">Dawn of Play</span></a> // <a  target="_blank" class="postlink"><span style="font-weight: bold">Retronator</span></a></span><span class="gensmall"></span></td>
+			</tr>
+		</table></td>
+	</tr>
+	<tr>
+		<td class="row1" width="150" align="left" valign="middle"><span class="nav"><a href="#top" class="nav">Nazaj na vrh</a></span></td>
+		<td class="row1" width="100%" height="28" valign="bottom" nowrap="nowrap"><table cellspacing="0" cellpadding="0" border="0" height="18" width="18">
+			<tr>
+				<td valign="middle" nowrap="nowrap"><a href="profile-100.html"><img src="templates/SGD2/images/lang_slovenian/icon_profile.gif" alt="Poglej uporabnikov profil" title="Poglej uporabnikov profil" border="0" /></a> <a  target="_userwww"><img src="templates/SGD2/images/lang_slovenian/icon_www.gif" alt="Obišči avtorjevo spletno stran" title="Obišči avtorjevo spletno stran" border="0" /></a></td>
+			</tr>
+		</table></td>
+	</tr>
+	<tr>
+		<td class="spaceRow" colspan="2" height="1"><img src="templates/SGD/images/spacer.gif" alt="" width="1" height="1" /></td>
+	</tr>
+	
+	<tr>
+		<td width="150" align="left" valign="top" class="row2"><span class="name"><a name="21294"></a><b>florenzano</b></span><br /><span class="postdetails">wannabe<br /><img src="images/ranks/sgd-2.gif" alt="wannabe" title="wannabe" border="0" /><br /><br /><br />Pridružen: 23. apr 2009 ob 15:00<br />objav: 86<br /></span><br /></td>
+		<td class="row2" width="100%" height="28" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+			<tr>
+				<td colspan="2" width="100%">
+					<table width="100%" cellpadding="0" cellspacing="0" border="0">
+						<tr>
+							<td valign="middle" align="left">
+								<a href="topic-2368.html#21294"><img src="templates/SGD2/images/icon_minipost.gif" width="12" height="9" alt="objava" title="objava" border="0" /></a>
+								<span class="postdetails">Objavljeno: sre avg 03, 2011 12:33 pm<span class="gen">&nbsp;</span>&nbsp; &nbsp;Pošlji temo: Re: SloGameDev.net game database</span>
+							</td>
+							<td valign="middle" align="right" nowrap="nowrap">
+							</td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+			<tr>
+				<td colspan="2"><hr /></td>
+			</tr>
+			<tr>
+				<td colspan="2"><span class="postbody">Bom malo nacekiral ASAP, trenutno sem dokaj bizi... Sicer pa ce mi ne bo nic jasno, imam ze nek svoj konstrukt ki bi znal posluzit svrhi (ce se zatecem v alanfordovski vokabular). <a  target="_blank" class="postlink">http&#58;//www&#46;ratemoviescenes&#46;com/</a>, projekt ki je biu kar kul po zamisli ampak nam je zmankal motivacije za generirat vsebino.</span><span class="gensmall"></span></td>
+			</tr>
+		</table></td>
+	</tr>
+	<tr>
+		<td class="row2" width="150" align="left" valign="middle"><span class="nav"><a href="#top" class="nav">Nazaj na vrh</a></span></td>
+		<td class="row2" width="100%" height="28" valign="bottom" nowrap="nowrap"><table cellspacing="0" cellpadding="0" border="0" height="18" width="18">
+			<tr>
+				<td valign="middle" nowrap="nowrap"><a href="profile-2172.html"><img src="templates/SGD2/images/lang_slovenian/icon_profile.gif" alt="Poglej uporabnikov profil" title="Poglej uporabnikov profil" border="0" /></a> </td>
+			</tr>
+		</table></td>
+	</tr>
+	<tr>
+		<td class="spaceRow" colspan="2" height="1"><img src="templates/SGD/images/spacer.gif" alt="" width="1" height="1" /></td>
+	</tr>
+	
+	<tr>
+		<td width="150" align="left" valign="top" class="row1"><span class="name"><a name="21332"></a><b>Retro</b></span><br /><span class="postdetails">SGD Admin<br /><img src="images/ranks/sgd-admin.gif" alt="SGD Admin" title="SGD Admin" border="0" /><br /><br /><br />Pridružen: 04. sep 2003 ob 22:14<br />objav: 1008<br />Kraj: ZX Spectrum 48k+</span><br /></td>
+		<td class="row1" width="100%" height="28" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+			<tr>
+				<td colspan="2" width="100%">
+					<table width="100%" cellpadding="0" cellspacing="0" border="0">
+						<tr>
+							<td valign="middle" align="left">
+								<a href="topic-2368.html#21332"><img src="templates/SGD2/images/icon_minipost.gif" width="12" height="9" alt="objava" title="objava" border="0" /></a>
+								<span class="postdetails">Objavljeno: tor avg 09, 2011 9:15 pm<span class="gen">&nbsp;</span>&nbsp; &nbsp;Pošlji temo: Re: SloGameDev.net game database</span>
+							</td>
+							<td valign="middle" align="right" nowrap="nowrap">
+							</td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+			<tr>
+				<td colspan="2"><hr /></td>
+			</tr>
+			<tr>
+				<td colspan="2"><span class="postbody">Jeff je koncno le odpisal:
+<br />
+</span>
+<br />
+<table width="90%" cellspacing="1" cellpadding="3" border="0" align="center">
+<br />
+<tr> 
+<br />
+	  <td><span class="genmed"><b>Citiram:</b></span></td>
+<br />
+	</tr>
+<br />
+	<tr>
+<br />
+	  <td class="quote">I should say that it's based on an old version of Rails and would probably need to be updated to be deployed with recent versions. I don't have a problem with it, especially if you're able to help update the code to get that to work. <img src="images/smiles/icon_smile.gif" alt=":)" border="0" /></td>
+<br />
+	</tr>
+<br />
+</table>
+<br />
+<span class="postbody">
+<br />
+
+<br />
+Tako da zdaj rabimo samo se nekoga, ki dela z Railsi. <img src="images/smiles/icon_smile.gif" alt=":)" border="0" /><br />_________________<br /><a  target="_blank" class="postlink"><span style="font-weight: bold">Dawn of Play</span></a> // <a  target="_blank" class="postlink"><span style="font-weight: bold">Retronator</span></a></span><span class="gensmall"></span></td>
+			</tr>
+		</table></td>
+	</tr>
+	<tr>
+		<td class="row1" width="150" align="left" valign="middle"><span class="nav"><a href="#top" class="nav">Nazaj na vrh</a></span></td>
+		<td class="row1" width="100%" height="28" valign="bottom" nowrap="nowrap"><table cellspacing="0" cellpadding="0" border="0" height="18" width="18">
+			<tr>
+				<td valign="middle" nowrap="nowrap"><a href="profile-100.html"><img src="templates/SGD2/images/lang_slovenian/icon_profile.gif" alt="Poglej uporabnikov profil" title="Poglej uporabnikov profil" border="0" /></a> <a  target="_userwww"><img src="templates/SGD2/images/lang_slovenian/icon_www.gif" alt="Obišči avtorjevo spletno stran" title="Obišči avtorjevo spletno stran" border="0" /></a></td>
+			</tr>
+		</table></td>
+	</tr>
+	<tr>
+		<td class="spaceRow" colspan="2" height="1"><img src="templates/SGD/images/spacer.gif" alt="" width="1" height="1" /></td>
+	</tr>
+	
+	<tr align="center">
+		<td class="catBottom" colspan="2" height="28">&nbsp;</td>
+	</tr>
+</table>
+
+<table width="100%" cellspacing="2" cellpadding="2" border="0" align="center">
+  <tr>
+	<td align="left" valign="middle" nowrap="nowrap">&nbsp;</td>
+	<td align="left" valign="middle" width="100%"><span class="nav">&nbsp;&nbsp;&nbsp;<a href="index.html" class="nav">SloGameDev.net seznam forumov</a>
+	  -> <a href="forum-48.html" class="nav">Forum, novice in skupnost</a></span></td>
+	<td align="right" valign="top" nowrap="nowrap"><span class="gensmall">Časovni pas (GMT +2:00 uri) Slovenija, poletni čas</span><br /><span class="nav"></span>
+	  </td>
+  </tr>
+  <tr>
+	<td align="left" colspan="3"><span class="nav">Stran <b>1</b> od <b>1</b></span></td>
+  </tr>
+</table>
+
+<table width="100%" cellspacing="2" border="0" align="center">
+  <tr>
+	<td width="40%" valign="top" nowrap="nowrap" align="left">&nbsp;</td>
+	<td align="right" valign="top" nowrap="nowrap">&nbsp;</td>
+  </tr>
+</table>
+
+<div align="center"><span class="copyright"><br />Arhiv &mdash; samo za branje.<br />
+<!--
+	We request you retain the full copyright notice below including the link to www.phpbb.com.
+	This not only gives respect to the large amount of time given freely by the developers
+	but also helps build interest, traffic and use of phpBB 2.0. If you cannot (for good
+	reason) retain the full copyright we request you at least leave in place the 
+	Powered by phpBB 2.0.4 line, with phpBB linked to www.phpbb.com. If you refuse
+	to include even this then support on our forums may be affected. 
+
+	The phpBB Group : 2002
+// -->
+Powered by <a  target="_phpbb" class="copyright">phpBB</a> 2.0.4 &copy; 2001, 2002 phpBB Group<br /></span></div>
+		</td>
+	</tr>
+</table>
+
+</body>
+</html>

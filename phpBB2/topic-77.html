@@ -276,7 +276,7 @@ input.liteoption {
   <tr>
 	<td align="left" valign="bottom" nowrap="nowrap">&nbsp;</td>
 	<td align="left" valign="middle" width="100%"><span class="nav">&nbsp;&nbsp;&nbsp;<a href="index.html" class="nav">SloGameDev.net seznam forumov</a>
-	  -> <a href="forum-1.html" class="nav">Splošno Programiranje</a></span></td>
+	  -> <a href="forum-52.html" class="nav">Izdelovanje iger</a></span></td>
   </tr>
 </table>
 
@@ -291,7 +291,7 @@ input.liteoption {
 	</tr>
 	
 	<tr>
-		<td width="150" align="left" valign="top" class="row1"><span class="name"><a name="582"></a><b>snake</b></span><br /><span class="postdetails">expert<br /><img src="images/ranks/sgd-6.gif" alt="expert" title="expert" border="0" /><br /><img src="images/avatars/c14dbb55415c469152089.gif" alt="" border="0" /><br /><br />Pridružen: 10. jan 2003 ob 08:28<br />objav: 795<br />Kraj: NULL</span><br /></td>
+		<td width="150" align="left" valign="top" class="row1"><span class="name"><a name="582"></a><b>snake</b></span><br /><span class="postdetails">expert<br /><img src="images/ranks/sgd-6.gif" alt="expert" title="expert" border="0" /><br /><img src="images/avatars/c14dbb55415c469152089.gif" alt="" border="0" /><br /><br />Pridružen: 10. jan 2003 ob 08:28<br />objav: 782<br />Kraj: NULL</span><br /></td>
 		<td class="row1" width="100%" height="28" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
 			<tr>
 				<td colspan="2" width="100%">
@@ -336,1053 +336,703 @@ input.liteoption {
 	<tr>
 <br />
 	  <td class="code">#include &lt;cstdio&gt;
-
 <br />
 #include &lt;cstring&gt;
-
 <br />
 #include &lt;string&gt;
-
 <br />
 #include &lt;cmath&gt;
-
 <br />
 using namespace std;
-
 <br />
-
 
 <br />
 struct Bone
-
 <br />
 &#123;
-
 <br />
-&nbsp;  char name&#91;64&#93;;
-
+   char name&#91;64&#93;;
 <br />
-&nbsp;  float pos&#91;3&#93;;
-
+   float pos&#91;3&#93;;
 <br />
-&nbsp;  float rot&#91;9&#93;;
-
+   float rot&#91;9&#93;;
 <br />
-&nbsp;  int parent;
-
+   int parent;
 <br />
 &#125;;
-
 <br />
-
 
 <br />
 struct Vertex
-
 <br />
 &#123;
-
 <br />
-&nbsp;  float u, v;
-
+   float u, v;
 <br />
-&nbsp;  int weight_index;
-
+   int weight_index;
 <br />
-&nbsp;  int weight_count;
-
+   int weight_count;
 <br />
-&nbsp;  float x, y, z;
-
+   float x, y, z;
 <br />
-&nbsp;  float nx, ny, nz;
-
+   float nx, ny, nz;
 <br />
 &#125;;
-
 <br />
-
 
 <br />
 struct Triangle
-
 <br />
 &#123;
-
 <br />
-&nbsp;  int a, b, c;
-
+   int a, b, c;
 <br />
 &#125;;
-
 <br />
-
 
 <br />
 struct Weight
-
 <br />
 &#123;
-
 <br />
-&nbsp;  int bone;
-
+   int bone;
 <br />
-&nbsp;  float t;
-
+   float t;
 <br />
-&nbsp;  float x, y, z;
-
+   float x, y, z;
 <br />
 &#125;;
-
 <br />
-
 
 <br />
 struct Mesh
-
 <br />
 &#123;
-
 <br />
-&nbsp;  char texture&#91;512&#93;;
-
+   char texture&#91;512&#93;;
 <br />
-&nbsp;  int&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; nb_vertices;
-
+   int          nb_vertices;
 <br />
-&nbsp;  Vertex*&nbsp; &nbsp; &nbsp; vertices;
-
+   Vertex*      vertices;
 <br />
-&nbsp;  int&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; nb_triangles;
-
+   int          nb_triangles;
 <br />
-&nbsp;  Triangle*&nbsp; &nbsp; triangles;
-
+   Triangle*    triangles;
 <br />
-&nbsp;  int&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; nb_weights;
-
+   int          nb_weights;
 <br />
-&nbsp;  Weight*&nbsp; &nbsp; &nbsp; weights;
-
+   Weight*      weights;
 <br />
 &#125;;
-
 <br />
-
 
 <br />
 char g_CurrentLine&#91;1024&#93;;
-
 <br />
 int g_NbMeshes = 0;
-
 <br />
 Mesh* g_Meshes = 0;
-
 <br />
 int g_NbBones = 0;
-
 <br />
 Bone* g_Bones;
-
 <br />
-
 
 <br />
 bool ReadLine&#40;FILE* fp&#41;
-
 <br />
 &#123;
-
 <br />
-&nbsp;  int pos = 0;
-
+   int pos = 0;
 <br />
 
-
 <br />
-&nbsp;  while &#40;1&#41;
-
+   while &#40;1&#41;
 <br />
-&nbsp;  &#123;
-
+   &#123;
 <br />
-&nbsp; &nbsp; &nbsp; int inchar = fgetc&#40;fp&#41;;
-
+      int inchar = fgetc&#40;fp&#41;;
 <br />
 
-
 <br />
-&nbsp; &nbsp; &nbsp; if &#40;inchar == EOF&#41;
-
+      if &#40;inchar == EOF&#41;
 <br />
-&nbsp; &nbsp; &nbsp; &#123;
-
+      &#123;
 <br />
-&nbsp; &nbsp; &nbsp; &nbsp;  g_CurrentLine&#91;pos&#93; = 0;
-
+         g_CurrentLine&#91;pos&#93; = 0;
 <br />
-&nbsp; &nbsp; &nbsp; &nbsp;  return &#40;false&#41;;
-
+         return &#40;false&#41;;
 <br />
-&nbsp; &nbsp; &nbsp; &#125;
-
+      &#125;
 <br />
 
-
 <br />
-&nbsp; &nbsp; &nbsp; if &#40;inchar == 13&#41;
-
+      if &#40;inchar == 13&#41;
 <br />
-&nbsp; &nbsp; &nbsp; &#123;
-
+      &#123;
 <br />
-&nbsp; &nbsp; &nbsp; &nbsp;  fgetc&#40;fp&#41;;
-
+         fgetc&#40;fp&#41;;
 <br />
-&nbsp; &nbsp; &nbsp; &nbsp;  break;
-
+         break;
 <br />
-&nbsp; &nbsp; &nbsp; &#125;
-
+      &#125;
 <br />
 
-
 <br />
-&nbsp; &nbsp; &nbsp; g_CurrentLine&#91;pos++&#93; = inchar;
-
+      g_CurrentLine&#91;pos++&#93; = inchar;
 <br />
-&nbsp;  &#125;
-
+   &#125;
 <br />
 
-
 <br />
-&nbsp;  g_CurrentLine&#91;pos&#93; = 0;
-
+   g_CurrentLine&#91;pos&#93; = 0;
 <br />
 
-
 <br />
-&nbsp;  return &#40;true&#41;;
-
+   return &#40;true&#41;;
 <br />
 &#125;
-
 <br />
-
 
 <br />
 bool ReadDOOMFile&#40;const char* filename&#41;
-
 <br />
 &#123;
-
 <br />
-&nbsp;  FILE* fp = fopen&#40;filename, &quot;rb&quot;&#41;;
-
+   FILE* fp = fopen&#40;filename, &quot;rb&quot;&#41;;
 <br />
-&nbsp;  if &#40;fp == 0&#41;
-
+   if &#40;fp == 0&#41;
 <br />
-&nbsp; &nbsp; &nbsp; return &#40;false&#41;;
-
+      return &#40;false&#41;;
 <br />
-
 
 <br />
-&nbsp;  // Skip header
-
+   // Skip header
 <br />
-&nbsp;  ReadLine&#40;fp&#41;;
-
+   ReadLine&#40;fp&#41;;
 <br />
-&nbsp;  ReadLine&#40;fp&#41;;
-
+   ReadLine&#40;fp&#41;;
 <br />
 
-
 <br />
-&nbsp;  // ========== BONES ==========
-
+   // ========== BONES ==========
 <br />
-&nbsp;  ReadLine&#40;fp&#41;;
-
+   ReadLine&#40;fp&#41;;
 <br />
-&nbsp;  if &#40;!memcmp&#40;g_CurrentLine, &quot;numbones&quot;, 8&#41;&#41;
-
+   if &#40;!memcmp&#40;g_CurrentLine, &quot;numbones&quot;, 8&#41;&#41;
 <br />
-&nbsp;  &#123;
-
+   &#123;
 <br />
-&nbsp; &nbsp; &nbsp; sscanf&#40;g_CurrentLine, &quot;numbones %d&quot;, &amp;g_NbBones&#41;;
-
+      sscanf&#40;g_CurrentLine, &quot;numbones %d&quot;, &amp;g_NbBones&#41;;
 <br />
-&nbsp; &nbsp; &nbsp; g_Bones = new Bone&#91;g_NbBones&#93;;
-
+      g_Bones = new Bone&#91;g_NbBones&#93;;
 <br />
 
-
 <br />
-&nbsp; &nbsp; &nbsp; printf&#40;&quot;Number of bones&#58; %d\n&quot;, g_NbBones&#41;;
-
+      printf&#40;&quot;Number of bones&#58; %d\n&quot;, g_NbBones&#41;;
 <br />
 
-
 <br />
-&nbsp; &nbsp; &nbsp; for &#40;int i = 0; i &lt; g_NbBones; i++&#41;
-
+      for &#40;int i = 0; i &lt; g_NbBones; i++&#41;
 <br />
-&nbsp; &nbsp; &nbsp; &#123;
-
+      &#123;
 <br />
-&nbsp; &nbsp; &nbsp; &nbsp;  Bone&amp; bone = g_Bones&#91;i&#93;;
-
+         Bone&amp; bone = g_Bones&#91;i&#93;;
 <br />
-
 
 <br />
-&nbsp; &nbsp; &nbsp; &nbsp;  // Start of the bone
-
+         // Start of the bone
 <br />
-&nbsp; &nbsp; &nbsp; &nbsp;  ReadLine&#40;fp&#41;;
-
+         ReadLine&#40;fp&#41;;
 <br />
-
 
 <br />
-&nbsp; &nbsp; &nbsp; &nbsp;  // ========== NAME ==========
-
+         // ========== NAME ==========
 <br />
-&nbsp; &nbsp; &nbsp; &nbsp;  ReadLine&#40;fp&#41;;
-
+         ReadLine&#40;fp&#41;;
 <br />
-&nbsp; &nbsp; &nbsp; &nbsp;  sscanf&#40;g_CurrentLine, &quot;\tname \&quot;%s&quot;, bone.name&#41;;
-
+         sscanf&#40;g_CurrentLine, &quot;\tname \&quot;%s&quot;, bone&#46;name&#41;;
 <br />
-&nbsp; &nbsp; &nbsp; &nbsp;  bone.name&#91;strlen&#40;bone.name&#41; - 1&#93; = 0;
-
+         bone&#46;name&#91;strlen&#40;bone&#46;name&#41; - 1&#93; = 0;
 <br />
-
 
 <br />
-&nbsp; &nbsp; &nbsp; &nbsp;  // ========== POSITION ==========
-
+         // ========== POSITION ==========
 <br />
-&nbsp; &nbsp; &nbsp; &nbsp;  ReadLine&#40;fp&#41;;
-
+         ReadLine&#40;fp&#41;;
 <br />
-&nbsp; &nbsp; &nbsp; &nbsp;  sscanf&#40;g_CurrentLine, &quot;\tbindpos %f %f %f&quot;, &amp;bone.pos&#91;0&#93;, &amp;bone.pos&#91;1&#93;, &amp;bone.pos&#91;2&#93;&#41;;
-
+         sscanf&#40;g_CurrentLine, &quot;\tbindpos %f %f %f&quot;, &amp;bone&#46;pos&#91;0&#93;, &amp;bone&#46;pos&#91;1&#93;, &amp;bone&#46;pos&#91;2&#93;&#41;;
 <br />
 
-
 <br />
-&nbsp; &nbsp; &nbsp; &nbsp;  // ========== ROTATION ==========
-
+         // ========== ROTATION ==========
 <br />
-&nbsp; &nbsp; &nbsp; &nbsp;  ReadLine&#40;fp&#41;;
-
+         ReadLine&#40;fp&#41;;
 <br />
-&nbsp; &nbsp; &nbsp; &nbsp;  sscanf&#40;g_CurrentLine, &quot;\tbindmat %f %f %f %f %f %f %f %f %f&quot;,
-
+         sscanf&#40;g_CurrentLine, &quot;\tbindmat %f %f %f %f %f %f %f %f %f&quot;,
 <br />
-&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &amp;bone.rot&#91;0&#93;,
-
+            &amp;bone&#46;rot&#91;0&#93;,
 <br />
-&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &amp;bone.rot&#91;1&#93;,
-
+            &amp;bone&#46;rot&#91;1&#93;,
 <br />
-&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &amp;bone.rot&#91;2&#93;,
-
+            &amp;bone&#46;rot&#91;2&#93;,
 <br />
-&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &amp;bone.rot&#91;3&#93;,
-
+            &amp;bone&#46;rot&#91;3&#93;,
 <br />
-&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &amp;bone.rot&#91;4&#93;,
-
+            &amp;bone&#46;rot&#91;4&#93;,
 <br />
-&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &amp;bone.rot&#91;5&#93;,
-
+            &amp;bone&#46;rot&#91;5&#93;,
 <br />
-&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &amp;bone.rot&#91;6&#93;,
-
+            &amp;bone&#46;rot&#91;6&#93;,
 <br />
-&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &amp;bone.rot&#91;7&#93;,
-
+            &amp;bone&#46;rot&#91;7&#93;,
 <br />
-&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &amp;bone.rot&#91;8&#93;&#41;;
-
+            &amp;bone&#46;rot&#91;8&#93;&#41;;
 <br />
 
-
 <br />
-&nbsp; &nbsp; &nbsp; &nbsp;  // ========== PARENT ==========
-
+         // ========== PARENT ==========
 <br />
-&nbsp; &nbsp; &nbsp; &nbsp;  ReadLine&#40;fp&#41;;
-
+         ReadLine&#40;fp&#41;;
 <br />
-&nbsp; &nbsp; &nbsp; &nbsp;  bone.parent = -1;
-
+         bone&#46;parent = -1;
 <br />
-&nbsp; &nbsp; &nbsp; &nbsp;  if &#40;g_CurrentLine&#91;0&#93; != '&#125;'&#41;
-
+         if &#40;g_CurrentLine&#91;0&#93; != '&#125;'&#41;
 <br />
-&nbsp; &nbsp; &nbsp; &nbsp;  &#123;
-
+         &#123;
 <br />
-&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; char parent&#91;64&#93;;
-
+            char parent&#91;64&#93;;
 <br />
-&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; sscanf&#40;g_CurrentLine, &quot;\tparent \&quot;%s&quot;, parent&#41;;
-
+            sscanf&#40;g_CurrentLine, &quot;\tparent \&quot;%s&quot;, parent&#41;;
 <br />
-&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; parent&#91;strlen&#40;parent&#41; - 1&#93; = 0;
-
+            parent&#91;strlen&#40;parent&#41; - 1&#93; = 0;
 <br />
-&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; for &#40;int j = 0; j &lt; i; j++&#41;
-
+            for &#40;int j = 0; j &lt; i; j++&#41;
 <br />
-&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &#123;
-
+            &#123;
 <br />
-&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  if &#40;!strcmp&#40;parent, g_Bones&#91;j&#93;.name&#41;&#41;
-
+               if &#40;!strcmp&#40;parent, g_Bones&#91;j&#93;&#46;name&#41;&#41;
 <br />
-&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  &#123;
-
+               &#123;
 <br />
-&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; bone.parent = j;
-
+                  bone&#46;parent = j;
 <br />
-&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; break;
-
+                  break;
 <br />
-&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  &#125;
-
+               &#125;
 <br />
-&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &#125;
-
+            &#125;
 <br />
-&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; ReadLine&#40;fp&#41;;
-
+            ReadLine&#40;fp&#41;;
 <br />
-&nbsp; &nbsp; &nbsp; &nbsp;  &#125;
-
+         &#125;
 <br />
 
-
 <br />
-&nbsp; &nbsp; &nbsp; &nbsp;  // Separating line
-
+         // Separating line
 <br />
-&nbsp; &nbsp; &nbsp; &nbsp;  ReadLine&#40;fp&#41;;
-
+         ReadLine&#40;fp&#41;;
 <br />
-&nbsp; &nbsp; &nbsp; &#125;
-
+      &#125;
 <br />
-&nbsp;  &#125;
-
+   &#125;
 <br />
 
-
 <br />
-&nbsp;  // ========== MESHES ==========
-
+   // ========== MESHES ==========
 <br />
-&nbsp;  ReadLine&#40;fp&#41;;
-
+   ReadLine&#40;fp&#41;;
 <br />
-&nbsp;  if &#40;!memcmp&#40;g_CurrentLine, &quot;nummeshes&quot;, 9&#41;&#41;
-
+   if &#40;!memcmp&#40;g_CurrentLine, &quot;nummeshes&quot;, 9&#41;&#41;
 <br />
-&nbsp;  &#123;
-
+   &#123;
 <br />
-&nbsp; &nbsp; &nbsp; sscanf&#40;g_CurrentLine, &quot;nummeshes %d&quot;, &amp;g_NbMeshes&#41;;
-
+      sscanf&#40;g_CurrentLine, &quot;nummeshes %d&quot;, &amp;g_NbMeshes&#41;;
 <br />
-&nbsp; &nbsp; &nbsp; g_Meshes = new Mesh&#91;g_NbMeshes&#93;;
-
+      g_Meshes = new Mesh&#91;g_NbMeshes&#93;;
 <br />
 
-
 <br />
-&nbsp; &nbsp; &nbsp; printf&#40;&quot;Number of meshes&#58; %d\n&quot;, g_NbMeshes&#41;;
-
+      printf&#40;&quot;Number of meshes&#58; %d\n&quot;, g_NbMeshes&#41;;
 <br />
-
 
 <br />
-&nbsp; &nbsp; &nbsp; ReadLine&#40;fp&#41;;
-
+      ReadLine&#40;fp&#41;;
 <br />
 
-
 <br />
-&nbsp; &nbsp; &nbsp; for &#40;int i = 0; i &lt; g_NbMeshes; i++&#41;
-
+      for &#40;int i = 0; i &lt; g_NbMeshes; i++&#41;
 <br />
-&nbsp; &nbsp; &nbsp; &#123;
-
+      &#123;
 <br />
-&nbsp; &nbsp; &nbsp; &nbsp;  printf&#40;&quot;Mesh %d\n&quot;, i&#41;;
-
+         printf&#40;&quot;Mesh %d\n&quot;, i&#41;;
 <br />
 
-
 <br />
-&nbsp; &nbsp; &nbsp; &nbsp;  Mesh&amp; mesh = g_Meshes&#91;i&#93;;
-
+         Mesh&amp; mesh = g_Meshes&#91;i&#93;;
 <br />
-
 
 <br />
-&nbsp; &nbsp; &nbsp; &nbsp;  // Start of mesh
-
+         // Start of mesh
 <br />
-&nbsp; &nbsp; &nbsp; &nbsp;  ReadLine&#40;fp&#41;;
-
+         ReadLine&#40;fp&#41;;
 <br />
 
-
 <br />
-&nbsp; &nbsp; &nbsp; &nbsp;  // ========== SHADER ==========
-
+         // ========== SHADER ==========
 <br />
-&nbsp; &nbsp; &nbsp; &nbsp;  ReadLine&#40;fp&#41;;
-
+         ReadLine&#40;fp&#41;;
 <br />
-&nbsp; &nbsp; &nbsp; &nbsp;  char* ptr = g_CurrentLine;
-
+         char* ptr = g_CurrentLine;
 <br />
-&nbsp; &nbsp; &nbsp; &nbsp;  while &#40;*ptr != '\&quot;'&#41;
-
+         while &#40;*ptr != '\&quot;'&#41;
 <br />
-&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; ptr++;
-
+            ptr++;
 <br />
-&nbsp; &nbsp; &nbsp; &nbsp;  strcpy&#40;mesh.texture, ptr + 1&#41;;
-
+         strcpy&#40;mesh&#46;texture, ptr + 1&#41;;
 <br />
-&nbsp; &nbsp; &nbsp; &nbsp;  mesh.texture&#91;strlen&#40;mesh.texture&#41; - 1&#93; = 0;
-
+         mesh&#46;texture&#91;strlen&#40;mesh&#46;texture&#41; - 1&#93; = 0;
 <br />
-&nbsp; &nbsp; &nbsp; &nbsp;  ReadLine&#40;fp&#41;;
-
+         ReadLine&#40;fp&#41;;
 <br />
-&nbsp; &nbsp; &nbsp; &nbsp;  printf&#40;&quot;&nbsp;  Shader&#58; %s\n&quot;, mesh.texture&#41;;
-
+         printf&#40;&quot;   Shader&#58; %s\n&quot;, mesh&#46;texture&#41;;
 <br />
 
-
 <br />
-&nbsp; &nbsp; &nbsp; &nbsp;  // ========== VERTICES ==========
-
+         // ========== VERTICES ==========
 <br />
-&nbsp; &nbsp; &nbsp; &nbsp;  ReadLine&#40;fp&#41;;
-
+         ReadLine&#40;fp&#41;;
 <br />
-&nbsp; &nbsp; &nbsp; &nbsp;  sscanf&#40;g_CurrentLine, &quot;\tnumverts %d&quot;, &amp;mesh.nb_vertices&#41;;
-
+         sscanf&#40;g_CurrentLine, &quot;\tnumverts %d&quot;, &amp;mesh&#46;nb_vertices&#41;;
 <br />
-&nbsp; &nbsp; &nbsp; &nbsp;  printf&#40;&quot;&nbsp;  Number of vertices&#58; %d\n&quot;, mesh.nb_vertices&#41;;
-
+         printf&#40;&quot;   Number of vertices&#58; %d\n&quot;, mesh&#46;nb_vertices&#41;;
 <br />
-&nbsp; &nbsp; &nbsp; &nbsp;  mesh.vertices = new Vertex&#91;mesh.nb_vertices&#93;;
-
+         mesh&#46;vertices = new Vertex&#91;mesh&#46;nb_vertices&#93;;
 <br />
-&nbsp; &nbsp; &nbsp; &nbsp;  for &#40;int j = 0; j &lt; mesh.nb_vertices; j++&#41;
-
+         for &#40;int j = 0; j &lt; mesh&#46;nb_vertices; j++&#41;
 <br />
-&nbsp; &nbsp; &nbsp; &nbsp;  &#123;
-
+         &#123;
 <br />
-&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; int index;
-
+            int index;
 <br />
-&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Vertex&amp; vertex = mesh.vertices&#91;j&#93;;
-
+            Vertex&amp; vertex = mesh&#46;vertices&#91;j&#93;;
 <br />
-&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; ReadLine&#40;fp&#41;;
-
+            ReadLine&#40;fp&#41;;
 <br />
-&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; sscanf&#40;g_CurrentLine, &quot;\tvert %d %f %f %d %d&quot;,
-
+            sscanf&#40;g_CurrentLine, &quot;\tvert %d %f %f %d %d&quot;,
 <br />
-&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  &amp;index,
-
+               &amp;index,
 <br />
-&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  &amp;vertex.u,
-
+               &amp;vertex&#46;u,
 <br />
-&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  &amp;vertex.v,
-
+               &amp;vertex&#46;v,
 <br />
-&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  &amp;vertex.weight_index,
-
+               &amp;vertex&#46;weight_index,
 <br />
-&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  &amp;vertex.weight_count&#41;;
-
+               &amp;vertex&#46;weight_count&#41;;
 <br />
-&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; vertex.v = 1 - vertex.v;
-
+            vertex&#46;v = 1 - vertex&#46;v;
 <br />
-&nbsp; &nbsp; &nbsp; &nbsp;  &#125;
-
+         &#125;
 <br />
-&nbsp; &nbsp; &nbsp; &nbsp;  ReadLine&#40;fp&#41;;
-
+         ReadLine&#40;fp&#41;;
 <br />
-
 
 <br />
-&nbsp; &nbsp; &nbsp; &nbsp;  // ========== TRIANGLES ==========
-
+         // ========== TRIANGLES ==========
 <br />
-&nbsp; &nbsp; &nbsp; &nbsp;  ReadLine&#40;fp&#41;;
-
+         ReadLine&#40;fp&#41;;
 <br />
-&nbsp; &nbsp; &nbsp; &nbsp;  sscanf&#40;g_CurrentLine, &quot;\tnumtris %d&quot;, &amp;mesh.nb_triangles&#41;;
-
+         sscanf&#40;g_CurrentLine, &quot;\tnumtris %d&quot;, &amp;mesh&#46;nb_triangles&#41;;
 <br />
-&nbsp; &nbsp; &nbsp; &nbsp;  printf&#40;&quot;&nbsp;  Number of triangles&#58; %d\n&quot;, mesh.nb_triangles&#41;;
-
+         printf&#40;&quot;   Number of triangles&#58; %d\n&quot;, mesh&#46;nb_triangles&#41;;
 <br />
-&nbsp; &nbsp; &nbsp; &nbsp;  mesh.triangles = new Triangle&#91;mesh.nb_triangles&#93;;
-
+         mesh&#46;triangles = new Triangle&#91;mesh&#46;nb_triangles&#93;;
 <br />
-&nbsp; &nbsp; &nbsp; &nbsp;  for &#40;int j = 0; j &lt; mesh.nb_triangles; j++&#41;
-
+         for &#40;int j = 0; j &lt; mesh&#46;nb_triangles; j++&#41;
 <br />
-&nbsp; &nbsp; &nbsp; &nbsp;  &#123;
-
+         &#123;
 <br />
-&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; int index;
-
+            int index;
 <br />
-&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Triangle&amp; triangle = mesh.triangles&#91;j&#93;;
-
+            Triangle&amp; triangle = mesh&#46;triangles&#91;j&#93;;
 <br />
-&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; ReadLine&#40;fp&#41;;
-
+            ReadLine&#40;fp&#41;;
 <br />
-&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; sscanf&#40;g_CurrentLine, &quot;\ttri %d %d %d %d&quot;,
-
+            sscanf&#40;g_CurrentLine, &quot;\ttri %d %d %d %d&quot;,
 <br />
-&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  &amp;index,
-
+               &amp;index,
 <br />
-&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  &amp;triangle.a,
-
+               &amp;triangle&#46;a,
 <br />
-&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  &amp;triangle.b,
-
+               &amp;triangle&#46;b,
 <br />
-&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  &amp;triangle.c&#41;;
-
+               &amp;triangle&#46;c&#41;;
 <br />
-&nbsp; &nbsp; &nbsp; &nbsp;  &#125;
-
+         &#125;
 <br />
-&nbsp; &nbsp; &nbsp; &nbsp;  ReadLine&#40;fp&#41;;
-
+         ReadLine&#40;fp&#41;;
 <br />
-
 
 <br />
-&nbsp; &nbsp; &nbsp; &nbsp;  // ========== WEIGHTS ==========
-
+         // ========== WEIGHTS ==========
 <br />
-&nbsp; &nbsp; &nbsp; &nbsp;  ReadLine&#40;fp&#41;;
-
+         ReadLine&#40;fp&#41;;
 <br />
-&nbsp; &nbsp; &nbsp; &nbsp;  sscanf&#40;g_CurrentLine, &quot;\tnumweights %d&quot;, &amp;mesh.nb_weights&#41;;
-
+         sscanf&#40;g_CurrentLine, &quot;\tnumweights %d&quot;, &amp;mesh&#46;nb_weights&#41;;
 <br />
-&nbsp; &nbsp; &nbsp; &nbsp;  printf&#40;&quot;&nbsp;  Number of weights&#58; %d\n&quot;, mesh.nb_weights&#41;;
-
+         printf&#40;&quot;   Number of weights&#58; %d\n&quot;, mesh&#46;nb_weights&#41;;
 <br />
-&nbsp; &nbsp; &nbsp; &nbsp;  mesh.weights = new Weight&#91;mesh.nb_weights&#93;;
-
+         mesh&#46;weights = new Weight&#91;mesh&#46;nb_weights&#93;;
 <br />
-&nbsp; &nbsp; &nbsp; &nbsp;  for &#40;int j = 0; j &lt; mesh.nb_weights; j++&#41;
-
+         for &#40;int j = 0; j &lt; mesh&#46;nb_weights; j++&#41;
 <br />
-&nbsp; &nbsp; &nbsp; &nbsp;  &#123;
-
+         &#123;
 <br />
-&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; int index;
-
+            int index;
 <br />
-&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Weight&amp; weight = mesh.weights&#91;j&#93;;
-
+            Weight&amp; weight = mesh&#46;weights&#91;j&#93;;
 <br />
-&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; ReadLine&#40;fp&#41;;
-
+            ReadLine&#40;fp&#41;;
 <br />
-&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; sscanf&#40;g_CurrentLine, &quot;\tweight %d %d %f %f %f %f&quot;,
-
+            sscanf&#40;g_CurrentLine, &quot;\tweight %d %d %f %f %f %f&quot;,
 <br />
-&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  &amp;index,
-
+               &amp;index,
 <br />
-&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  &amp;weight.bone,
-
+               &amp;weight&#46;bone,
 <br />
-&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  &amp;weight.t,
-
+               &amp;weight&#46;t,
 <br />
-&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  &amp;weight.x,
-
+               &amp;weight&#46;x,
 <br />
-&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  &amp;weight.y,
-
+               &amp;weight&#46;y,
 <br />
-&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  &amp;weight.z&#41;;
-
+               &amp;weight&#46;z&#41;;
 <br />
-&nbsp; &nbsp; &nbsp; &nbsp;  &#125;
-
+         &#125;
 <br />
-&nbsp; &nbsp; &nbsp; &nbsp;  ReadLine&#40;fp&#41;;
-
+         ReadLine&#40;fp&#41;;
 <br />
 
-
 <br />
-&nbsp; &nbsp; &nbsp; &nbsp;  ReadLine&#40;fp&#41;;
-
+         ReadLine&#40;fp&#41;;
 <br />
-&nbsp; &nbsp; &nbsp; &#125;
-
+      &#125;
 <br />
-&nbsp;  &#125;
-
+   &#125;
 <br />
-
 
 <br />
-&nbsp;  fclose&#40;fp&#41;;
-
+   fclose&#40;fp&#41;;
 <br />
 
-
 <br />
-&nbsp;  return &#40;true&#41;;
-
+   return &#40;true&#41;;
 <br />
 &#125;
-
 <br />
-
 
 <br />
 void BuildVertices&#40;void&#41;
-
 <br />
 &#123;
-
 <br />
-&nbsp;  for &#40;int i = 0; i &lt; g_NbMeshes; i++&#41;
-
+   for &#40;int i = 0; i &lt; g_NbMeshes; i++&#41;
 <br />
-&nbsp;  &#123;
-
+   &#123;
 <br />
-&nbsp; &nbsp; &nbsp; Mesh&amp; mesh = g_Meshes&#91;i&#93;;
-
+      Mesh&amp; mesh = g_Meshes&#91;i&#93;;
 <br />
 
-
 <br />
-&nbsp; &nbsp; &nbsp; for &#40;int j = 0; j &lt; mesh.nb_vertices; j++&#41;
-
+      for &#40;int j = 0; j &lt; mesh&#46;nb_vertices; j++&#41;
 <br />
-&nbsp; &nbsp; &nbsp; &#123;
-
+      &#123;
 <br />
-&nbsp; &nbsp; &nbsp; &nbsp;  Vertex&amp; v = mesh.vertices&#91;j&#93;;
-
+         Vertex&amp; v = mesh&#46;vertices&#91;j&#93;;
 <br />
 
-
 <br />
-&nbsp; &nbsp; &nbsp; &nbsp;  v.x = 0;
-
+         v&#46;x = 0;
 <br />
-&nbsp; &nbsp; &nbsp; &nbsp;  v.y = 0;
-
+         v&#46;y = 0;
 <br />
-&nbsp; &nbsp; &nbsp; &nbsp;  v.z = 0;
-
+         v&#46;z = 0;
 <br />
 
-
 <br />
-&nbsp; &nbsp; &nbsp; &nbsp;  for &#40;int k = 0; k &lt; v.weight_count; k++&#41;
-
+         for &#40;int k = 0; k &lt; v&#46;weight_count; k++&#41;
 <br />
-&nbsp; &nbsp; &nbsp; &nbsp;  &#123;
-
+         &#123;
 <br />
-&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Weight&amp; w = mesh.weights&#91;v.weight_index + k&#93;;
-
+            Weight&amp; w = mesh&#46;weights&#91;v&#46;weight_index + k&#93;;
 <br />
 
-
 <br />
-&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Bone&amp; b = g_Bones&#91;w.bone&#93;;
-
+            Bone&amp; b = g_Bones&#91;w&#46;bone&#93;;
 <br />
 
-
 <br />
-&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; v.x += &#40;b.rot&#91;0&#93; * w.x + b.rot&#91;3&#93; * w.y + b.rot&#91;6&#93; * w.z + b.pos&#91;0&#93;&#41; * w.t;
-
+            v&#46;x += &#40;b&#46;rot&#91;0&#93; * w&#46;x + b&#46;rot&#91;3&#93; * w&#46;y + b&#46;rot&#91;6&#93; * w&#46;z + b&#46;pos&#91;0&#93;&#41; * w&#46;t;
 <br />
-&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; v.z += &#40;b.rot&#91;1&#93; * w.x + b.rot&#91;4&#93; * w.y + b.rot&#91;7&#93; * w.z + b.pos&#91;1&#93;&#41; * w.t;
-
+            v&#46;z += &#40;b&#46;rot&#91;1&#93; * w&#46;x + b&#46;rot&#91;4&#93; * w&#46;y + b&#46;rot&#91;7&#93; * w&#46;z + b&#46;pos&#91;1&#93;&#41; * w&#46;t;
 <br />
-&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; v.y += &#40;b.rot&#91;2&#93; * w.x + b.rot&#91;5&#93; * w.y + b.rot&#91;8&#93; * w.z + b.pos&#91;2&#93;&#41; * w.t;
-
+            v&#46;y += &#40;b&#46;rot&#91;2&#93; * w&#46;x + b&#46;rot&#91;5&#93; * w&#46;y + b&#46;rot&#91;8&#93; * w&#46;z + b&#46;pos&#91;2&#93;&#41; * w&#46;t;
 <br />
-&nbsp; &nbsp; &nbsp; &nbsp;  &#125;
-
+         &#125;
 <br />
-&nbsp; &nbsp; &nbsp; &#125;
-
+      &#125;
 <br />
-&nbsp;  &#125;
-
+   &#125;
 <br />
 &#125;
-
 <br />
-
 
 <br />
 void BuildNormals&#40;void&#41;
-
 <br />
 &#123;
-
 <br />
-&nbsp;  for &#40;int i = 0; i &lt; g_NbMeshes; i++&#41;
-
+   for &#40;int i = 0; i &lt; g_NbMeshes; i++&#41;
 <br />
-&nbsp;  &#123;
-
+   &#123;
 <br />
-&nbsp; &nbsp; &nbsp; Mesh&amp; mesh = g_Meshes&#91;i&#93;;
-
+      Mesh&amp; mesh = g_Meshes&#91;i&#93;;
 <br />
 
-
 <br />
-&nbsp; &nbsp; &nbsp; for &#40;int j = 0; j &lt; mesh.nb_vertices; j++&#41;
-
+      for &#40;int j = 0; j &lt; mesh&#46;nb_vertices; j++&#41;
 <br />
-&nbsp; &nbsp; &nbsp; &#123;
-
+      &#123;
 <br />
-&nbsp; &nbsp; &nbsp; &nbsp;  mesh.vertices&#91;j&#93;.nx = 0;
-
+         mesh&#46;vertices&#91;j&#93;&#46;nx = 0;
 <br />
-&nbsp; &nbsp; &nbsp; &nbsp;  mesh.vertices&#91;j&#93;.ny = 0;
-
+         mesh&#46;vertices&#91;j&#93;&#46;ny = 0;
 <br />
-&nbsp; &nbsp; &nbsp; &nbsp;  mesh.vertices&#91;j&#93;.nz = 0;
-
+         mesh&#46;vertices&#91;j&#93;&#46;nz = 0;
 <br />
-&nbsp; &nbsp; &nbsp; &#125;
-
+      &#125;
 <br />
 
-
 <br />
-&nbsp; &nbsp; &nbsp; for &#40;int j = 0; j &lt; mesh.nb_triangles; j++&#41;
-
+      for &#40;int j = 0; j &lt; mesh&#46;nb_triangles; j++&#41;
 <br />
-&nbsp; &nbsp; &nbsp; &#123;
-
+      &#123;
 <br />
-&nbsp; &nbsp; &nbsp; &nbsp;  Triangle&amp; tri = mesh.triangles&#91;j&#93;;
-
+         Triangle&amp; tri = mesh&#46;triangles&#91;j&#93;;
 <br />
 
-
 <br />
-&nbsp; &nbsp; &nbsp; &nbsp;  Vertex&amp; v0 = mesh.vertices&#91;tri.a&#93;;
-
+         Vertex&amp; v0 = mesh&#46;vertices&#91;tri&#46;a&#93;;
 <br />
-&nbsp; &nbsp; &nbsp; &nbsp;  Vertex&amp; v1 = mesh.vertices&#91;tri.b&#93;;
-
+         Vertex&amp; v1 = mesh&#46;vertices&#91;tri&#46;b&#93;;
 <br />
-&nbsp; &nbsp; &nbsp; &nbsp;  Vertex&amp; v2 = mesh.vertices&#91;tri.c&#93;;
-
+         Vertex&amp; v2 = mesh&#46;vertices&#91;tri&#46;c&#93;;
 <br />
 
-
 <br />
-&nbsp; &nbsp; &nbsp; &nbsp;  float Ax = v1.x - v0.x;
-
+         float Ax = v1&#46;x - v0&#46;x;
 <br />
-&nbsp; &nbsp; &nbsp; &nbsp;  float Ay = v1.y - v0.y;
-
+         float Ay = v1&#46;y - v0&#46;y;
 <br />
-&nbsp; &nbsp; &nbsp; &nbsp;  float Az = v1.z - v0.z;
-
+         float Az = v1&#46;z - v0&#46;z;
 <br />
 
-
 <br />
-&nbsp; &nbsp; &nbsp; &nbsp;  float Bx = v2.x - v0.x;
-
+         float Bx = v2&#46;x - v0&#46;x;
 <br />
-&nbsp; &nbsp; &nbsp; &nbsp;  float By = v2.y - v0.y;
-
+         float By = v2&#46;y - v0&#46;y;
 <br />
-&nbsp; &nbsp; &nbsp; &nbsp;  float Bz = v2.z - v0.z;
-
+         float Bz = v2&#46;z - v0&#46;z;
 <br />
 
-
 <br />
-&nbsp; &nbsp; &nbsp; &nbsp;  float nx = Ay * Bz - By * Az;
-
+         float nx = Ay * Bz - By * Az;
 <br />
-&nbsp; &nbsp; &nbsp; &nbsp;  float ny = -&#40;Ax * Bz - Bx * Az&#41;;
-
+         float ny = -&#40;Ax * Bz - Bx * Az&#41;;
 <br />
-&nbsp; &nbsp; &nbsp; &nbsp;  float nz = Ax * By - Bx * Ay;
-
+         float nz = Ax * By - Bx * Ay;
 <br />
 
-
 <br />
-&nbsp; &nbsp; &nbsp; &nbsp;  v0.nx += nx;
-
+         v0&#46;nx += nx;
 <br />
-&nbsp; &nbsp; &nbsp; &nbsp;  v0.ny += ny;
-
+         v0&#46;ny += ny;
 <br />
-&nbsp; &nbsp; &nbsp; &nbsp;  v0.nz += nz;
-
+         v0&#46;nz += nz;
 <br />
-&nbsp; &nbsp; &nbsp; &nbsp;  v1.nx += nx;
-
+         v1&#46;nx += nx;
 <br />
-&nbsp; &nbsp; &nbsp; &nbsp;  v1.ny += ny;
-
+         v1&#46;ny += ny;
 <br />
-&nbsp; &nbsp; &nbsp; &nbsp;  v1.nz += nz;
-
+         v1&#46;nz += nz;
 <br />
-&nbsp; &nbsp; &nbsp; &nbsp;  v2.nx += nx;
-
+         v2&#46;nx += nx;
 <br />
-&nbsp; &nbsp; &nbsp; &nbsp;  v2.ny += ny;
-
+         v2&#46;ny += ny;
 <br />
-&nbsp; &nbsp; &nbsp; &nbsp;  v2.nz += nz;
-
+         v2&#46;nz += nz;
 <br />
-&nbsp; &nbsp; &nbsp; &#125;
-
+      &#125;
 <br />
 
-
 <br />
-&nbsp; &nbsp; &nbsp; for &#40;int j = 0; j &lt; mesh.nb_vertices; j++&#41;
-
+      for &#40;int j = 0; j &lt; mesh&#46;nb_vertices; j++&#41;
 <br />
-&nbsp; &nbsp; &nbsp; &#123;
-
+      &#123;
 <br />
-&nbsp; &nbsp; &nbsp; &nbsp;  Vertex&amp; v = mesh.vertices&#91;j&#93;;
-
+         Vertex&amp; v = mesh&#46;vertices&#91;j&#93;;
 <br />
 
-
 <br />
-&nbsp; &nbsp; &nbsp; &nbsp;  float len = sqrt&#40;v.nx * v.nx + v.ny * v.ny + v.nz * v.nz&#41;;
-
+         float len = sqrt&#40;v&#46;nx * v&#46;nx + v&#46;ny * v&#46;ny + v&#46;nz * v&#46;nz&#41;;
 <br />
 
-
 <br />
-&nbsp; &nbsp; &nbsp; &nbsp;  if &#40;len&#41;
-
+         if &#40;len&#41;
 <br />
-&nbsp; &nbsp; &nbsp; &nbsp;  &#123;
-
+         &#123;
 <br />
-&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; v.nx /= len;
-
+            v&#46;nx /= len;
 <br />
-&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; v.ny /= len;
-
+            v&#46;ny /= len;
 <br />
-&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; v.nz /= len;
-
+            v&#46;nz /= len;
 <br />
-&nbsp; &nbsp; &nbsp; &nbsp;  &#125;
-
+         &#125;
 <br />
-&nbsp; &nbsp; &nbsp; &#125;
-
+      &#125;
 <br />
-&nbsp;  &#125;
-
+   &#125;
 <br />
 &#125;
-
 <br />
-
 
 <br />
 int main&#40;int argc, const char* argv&#91;&#93;&#41;
-
 <br />
 &#123;
-
 <br />
-&nbsp;  if &#40;ReadDOOMFile&#40;argv&#91;1&#93;&#41;&#41;
-
+   if &#40;ReadDOOMFile&#40;argv&#91;1&#93;&#41;&#41;
 <br />
-&nbsp;  &#123;
-
+   &#123;
 <br />
-&nbsp; &nbsp; &nbsp; BuildVertices&#40;&#41;;
-
+      BuildVertices&#40;&#41;;
 <br />
-&nbsp; &nbsp; &nbsp; BuildNormals&#40;&#41;;
-
+      BuildNormals&#40;&#41;;
 <br />
 
-
 <br />
-&nbsp; &nbsp; &nbsp; // Insert your engine exporter here
-
+      // Insert your engine exporter here
 <br />
-&nbsp;  &#125;
-
+   &#125;
 <br />
 
-
 <br />
-&nbsp;  return &#40;0&#41;;
-
+   return &#40;0&#41;;
 <br />
 &#125;
-
 <br />
-
 
 <br />
 </td>
@@ -1405,7 +1055,7 @@ Help yourself.</span><span class="gensmall"></span></td>
 		<td class="row1" width="150" align="left" valign="middle"><span class="nav"><a href="#top" class="nav">Nazaj na vrh</a></span></td>
 		<td class="row1" width="100%" height="28" valign="bottom" nowrap="nowrap"><table cellspacing="0" cellpadding="0" border="0" height="18" width="18">
 			<tr>
-				<td valign="middle" nowrap="nowrap"><a href="profile-10.html"><img src="templates/SGD2/images/lang_slovenian/icon_profile.gif" alt="Poglej uporabnikov profil" title="Poglej uporabnikov profil" border="0" /></a> <a  target="_userwww"><img src="templates/SGD2/images/lang_slovenian/icon_www.gif" alt="Obišči avtorjevo spletno stran" title="Obišči avtorjevo spletno stran" border="0" /></a></td>
+				<td valign="middle" nowrap="nowrap"><a href="profile-10.html"><img src="templates/SGD2/images/lang_slovenian/icon_profile.gif" alt="Poglej uporabnikov profil" title="Poglej uporabnikov profil" border="0" /></a> </td>
 			</tr>
 		</table></td>
 	</tr>
@@ -1414,7 +1064,7 @@ Help yourself.</span><span class="gensmall"></span></td>
 	</tr>
 	
 	<tr>
-		<td width="150" align="left" valign="top" class="row2"><span class="name"><a name="583"></a><b>Firestar</b></span><br /><span class="postdetails">poznavalec<br /><img src="images/ranks/sgd-3.gif" alt="poznavalec" title="poznavalec" border="0" /><br /><img src="images/avatars/c2f929273ec2afe163bdf.gif" alt="" border="0" /><br /><br />Pridružen: 17. jan 2003 ob 11:24<br />objav: 181<br />Kraj: Maribor</span><br /></td>
+		<td width="150" align="left" valign="top" class="row2"><span class="name"><a name="583"></a><b>Firestar</b></span><br /><span class="postdetails">poznavalec<br /><img src="images/ranks/sgd-3.gif" alt="poznavalec" title="poznavalec" border="0" /><br /><img src="images/avatars/c2f929273ec2afe163bdf.gif" alt="" border="0" /><br /><br />Pridružen: 17. jan 2003 ob 11:24<br />objav: 173<br />Kraj: Maribor</span><br /></td>
 		<td class="row2" width="100%" height="28" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
 			<tr>
 				<td colspan="2" width="100%">
@@ -1434,10 +1084,10 @@ Help yourself.</span><span class="gensmall"></span></td>
 				<td colspan="2"><hr /></td>
 			</tr>
 			<tr>
-				<td colspan="2"><span class="postbody">ql...so le presli na bone modele <img src="images/smiles/icon_wink.gif" alt="icon_wink.gif" border="0" />
+				<td colspan="2"><span class="postbody">ql...so le presli na bone modele <img src="images/smiles/icon_wink.gif" alt=";-)" border="0" />
 
 <br />
-hvala za kodo, zdaj moram najti se samo kak d3 model <img src="images/smiles/icon_wink.gif" alt="icon_wink.gif" border="0" /></span><span class="gensmall"></span></td>
+hvala za kodo, zdaj moram najti se samo kak d3 model <img src="images/smiles/icon_wink.gif" alt=";-)" border="0" /></span><span class="gensmall"></span></td>
 			</tr>
 		</table></td>
 	</tr>
@@ -1454,7 +1104,7 @@ hvala za kodo, zdaj moram najti se samo kak d3 model <img src="images/smiles/ico
 	</tr>
 	
 	<tr>
-		<td width="150" align="left" valign="top" class="row1"><span class="name"><a name="584"></a><b>snake</b></span><br /><span class="postdetails">expert<br /><img src="images/ranks/sgd-6.gif" alt="expert" title="expert" border="0" /><br /><img src="images/avatars/c14dbb55415c469152089.gif" alt="" border="0" /><br /><br />Pridružen: 10. jan 2003 ob 08:28<br />objav: 795<br />Kraj: NULL</span><br /></td>
+		<td width="150" align="left" valign="top" class="row1"><span class="name"><a name="584"></a><b>snake</b></span><br /><span class="postdetails">expert<br /><img src="images/ranks/sgd-6.gif" alt="expert" title="expert" border="0" /><br /><img src="images/avatars/c14dbb55415c469152089.gif" alt="" border="0" /><br /><br />Pridružen: 10. jan 2003 ob 08:28<br />objav: 782<br />Kraj: NULL</span><br /></td>
 		<td class="row1" width="100%" height="28" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
 			<tr>
 				<td colspan="2" width="100%">
@@ -1474,13 +1124,13 @@ hvala za kodo, zdaj moram najti se samo kak d3 model <img src="images/smiles/ico
 				<td colspan="2"><hr /></td>
 			</tr>
 			<tr>
-				<td colspan="2"><span class="postbody">Hehe. Ja. Je bil že cajt. Čeprav... sej tut prejšni modeli niso povzročali prevelikih težav --&gt; so delali <img src="images/smiles/icon_smile.gif" alt="icon_smile.gif" border="0" />
+				<td colspan="2"><span class="postbody">Hehe. Ja. Je bil že cajt. Čeprav... sej tut prejšni modeli niso povzročali prevelikih težav --&gt; so delali <img src="images/smiles/icon_smile.gif" alt=":)" border="0" />
 
 <br />
 
 
 <br />
-Drgač pa upam, da bom do izida dobil mal boljši računalnik <img src="images/smiles/icon_smile.gif" alt="icon_smile.gif" border="0" /> Če ne za voljo dooma, pa zaradi lažje (naprednejše/hitrejše) uporabe DX9...
+Drgač pa upam, da bom do izida dobil mal boljši računalnik <img src="images/smiles/icon_smile.gif" alt=":)" border="0" /> Če ne za voljo dooma, pa zaradi lažje (naprednejše/hitrejše) uporabe DX9...
 
 <br />
 
@@ -1497,7 +1147,7 @@ PS. V izdelavi je že map loader za doom3 (ne vem kdo to dela, vem pa, da je na 
 		<td class="row1" width="150" align="left" valign="middle"><span class="nav"><a href="#top" class="nav">Nazaj na vrh</a></span></td>
 		<td class="row1" width="100%" height="28" valign="bottom" nowrap="nowrap"><table cellspacing="0" cellpadding="0" border="0" height="18" width="18">
 			<tr>
-				<td valign="middle" nowrap="nowrap"><a href="profile-10.html"><img src="templates/SGD2/images/lang_slovenian/icon_profile.gif" alt="Poglej uporabnikov profil" title="Poglej uporabnikov profil" border="0" /></a> <a  target="_userwww"><img src="templates/SGD2/images/lang_slovenian/icon_www.gif" alt="Obišči avtorjevo spletno stran" title="Obišči avtorjevo spletno stran" border="0" /></a></td>
+				<td valign="middle" nowrap="nowrap"><a href="profile-10.html"><img src="templates/SGD2/images/lang_slovenian/icon_profile.gif" alt="Poglej uporabnikov profil" title="Poglej uporabnikov profil" border="0" /></a> </td>
 			</tr>
 		</table></td>
 	</tr>
@@ -1506,7 +1156,7 @@ PS. V izdelavi je že map loader za doom3 (ne vem kdo to dela, vem pa, da je na 
 	</tr>
 	
 	<tr>
-		<td width="150" align="left" valign="top" class="row2"><span class="name"><a name="585"></a><b>Firestar</b></span><br /><span class="postdetails">poznavalec<br /><img src="images/ranks/sgd-3.gif" alt="poznavalec" title="poznavalec" border="0" /><br /><img src="images/avatars/c2f929273ec2afe163bdf.gif" alt="" border="0" /><br /><br />Pridružen: 17. jan 2003 ob 11:24<br />objav: 181<br />Kraj: Maribor</span><br /></td>
+		<td width="150" align="left" valign="top" class="row2"><span class="name"><a name="585"></a><b>Firestar</b></span><br /><span class="postdetails">poznavalec<br /><img src="images/ranks/sgd-3.gif" alt="poznavalec" title="poznavalec" border="0" /><br /><img src="images/avatars/c2f929273ec2afe163bdf.gif" alt="" border="0" /><br /><br />Pridružen: 17. jan 2003 ob 11:24<br />objav: 173<br />Kraj: Maribor</span><br /></td>
 		<td class="row2" width="100%" height="28" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
 			<tr>
 				<td colspan="2" width="100%">
@@ -1526,13 +1176,13 @@ PS. V izdelavi je že map loader za doom3 (ne vem kdo to dela, vem pa, da je na 
 				<td colspan="2"><hr /></td>
 			</tr>
 			<tr>
-				<td colspan="2"><span class="postbody">hja...a bos radeona 9700 nabavil za dx9 <img src="images/smiles/icon_wink.gif" alt="icon_wink.gif" border="0" />
+				<td colspan="2"><span class="postbody">hja...a bos radeona 9700 nabavil za dx9 <img src="images/smiles/icon_wink.gif" alt=";-)" border="0" />
 
 <br />
-dx mi sicer nikoli ni bil pretirano vsec (morda zaradi dejstva, da sem ga prejsnjikrat v verziji 3.0 preizkusal <img src="images/smiles/icon_biggrin.gif" alt="icon_biggrin.gif" border="0" />), zato sem vecino delal z opengl-om, oz. softversko rasterizacijo.
+dx mi sicer nikoli ni bil pretirano vsec (morda zaradi dejstva, da sem ga prejsnjikrat v verziji 3.0 preizkusal <img src="images/smiles/icon_biggrin.gif" alt=":-D" border="0" />), zato sem vecino delal z opengl-om, oz. softversko rasterizacijo.
 
 <br />
-Glede shaderjev pa me prav zanima, kako so implementirani. V q3 so imeli kar dobre finte za tisti cas. Bo treba najt kak opis formata map in shaderjev <img src="images/smiles/icon_smile.gif" alt="icon_smile.gif" border="0" /></span><span class="gensmall"></span></td>
+Glede shaderjev pa me prav zanima, kako so implementirani. V q3 so imeli kar dobre finte za tisti cas. Bo treba najt kak opis formata map in shaderjev <img src="images/smiles/icon_smile.gif" alt=":-)" border="0" /></span><span class="gensmall"></span></td>
 			</tr>
 		</table></td>
 	</tr>
@@ -1549,7 +1199,7 @@ Glede shaderjev pa me prav zanima, kako so implementirani. V q3 so imeli kar dob
 	</tr>
 	
 	<tr>
-		<td width="150" align="left" valign="top" class="row1"><span class="name"><a name="586"></a><b>Rhuantavan</b></span><br /><span class="postdetails">SGD Admin<br /><img src="images/ranks/sgd-admin.gif" alt="SGD Admin" title="SGD Admin" border="0" /><br /><img src="images/avatars/c14db2394124b99a07556.gif" alt="" border="0" /><br /><br />Pridružen: 26. okt 2002 ob 14:16<br />objav: 644<br />Kraj: Renče (NG), Slovenia</span><br /></td>
+		<td width="150" align="left" valign="top" class="row1"><span class="name"><a name="586"></a><b>Rhuantavan</b></span><br /><span class="postdetails">SGD Admin<br /><img src="images/ranks/sgd-admin.gif" alt="SGD Admin" title="SGD Admin" border="0" /><br /><img src="images/avatars/c14db2394124b99a07556.gif" alt="" border="0" /><br /><br />Pridružen: 26. okt 2002 ob 14:16<br />objav: 632<br />Kraj: Renče, Slovenia</span><br /></td>
 		<td class="row1" width="100%" height="28" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
 			<tr>
 				<td colspan="2" width="100%">
@@ -1569,10 +1219,7 @@ Glede shaderjev pa me prav zanima, kako so implementirani. V q3 so imeli kar dob
 				<td colspan="2"><hr /></td>
 			</tr>
 			<tr>
-				<td colspan="2"><span class="postbody">Snake, tole tvojo kodo bi lahko prenesel v rubriko koda, se ti ne zdi? <img src="images/smiles/icon_smile.gif" alt="icon_smile.gif" border="0" /> Saj veš, tretji link zgoraj v meniju... <img src="images/smiles/icon_wink.gif" alt="icon_wink.gif" border="0" /><br />_________________<br /><span style="font-size: 10px; line-height: normal">Where's the fun?</span>
-
-<br />
-<span style="font-size: 10px; line-height: normal"><a  target="_blank" class="postlink">http://dw.slogamedev.net</a></span></span><span class="gensmall"></span></td>
+				<td colspan="2"><span class="postbody">Snake, tole tvojo kodo bi lahko prenesel v rubriko koda, se ti ne zdi? <img src="images/smiles/icon_smile.gif" alt=":)" border="0" /> Saj veš, tretji link zgoraj v meniju... <img src="images/smiles/icon_wink.gif" alt=";)" border="0" /><br />_________________<br /><a class="postlink" >http://www.damjanmozetic.si</a></span><span class="gensmall"></span></td>
 			</tr>
 		</table></td>
 	</tr>
@@ -1589,7 +1236,7 @@ Glede shaderjev pa me prav zanima, kako so implementirani. V q3 so imeli kar dob
 	</tr>
 	
 	<tr>
-		<td width="150" align="left" valign="top" class="row2"><span class="name"><a name="590"></a><b>snake</b></span><br /><span class="postdetails">expert<br /><img src="images/ranks/sgd-6.gif" alt="expert" title="expert" border="0" /><br /><img src="images/avatars/c14dbb55415c469152089.gif" alt="" border="0" /><br /><br />Pridružen: 10. jan 2003 ob 08:28<br />objav: 795<br />Kraj: NULL</span><br /></td>
+		<td width="150" align="left" valign="top" class="row2"><span class="name"><a name="590"></a><b>snake</b></span><br /><span class="postdetails">expert<br /><img src="images/ranks/sgd-6.gif" alt="expert" title="expert" border="0" /><br /><img src="images/avatars/c14dbb55415c469152089.gif" alt="" border="0" /><br /><br />Pridružen: 10. jan 2003 ob 08:28<br />objav: 782<br />Kraj: NULL</span><br /></td>
 		<td class="row2" width="100%" height="28" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
 			<tr>
 				<td colspan="2" width="100%">
@@ -1609,7 +1256,7 @@ Glede shaderjev pa me prav zanima, kako so implementirani. V q3 so imeli kar dob
 				<td colspan="2"><hr /></td>
 			</tr>
 			<tr>
-				<td colspan="2"><span class="postbody">rhuantavan... hmnja. Bom <img src="images/smiles/icon_smile.gif" alt="icon_smile.gif" border="0" />
+				<td colspan="2"><span class="postbody">rhuantavan... hmnja. Bom <img src="images/smiles/icon_smile.gif" alt=":)" border="0" />
 
 <br />
 Firestar: verjetno radeona 9500. Drugače pa tudi sam uporabljam OGL. Ampak me tole čakanje na OGL2 in njegov glslang že počasi ubija!! Drugače pa mislim, da je edina stvar, ki bi govorila proti uporabi DXa njegova neprenosljivost..
@@ -1626,7 +1273,7 @@ Kako so pa shaderji implementirani, pa tudi sam ne vem. Še posebej me zanima, k
 		<td class="row2" width="150" align="left" valign="middle"><span class="nav"><a href="#top" class="nav">Nazaj na vrh</a></span></td>
 		<td class="row2" width="100%" height="28" valign="bottom" nowrap="nowrap"><table cellspacing="0" cellpadding="0" border="0" height="18" width="18">
 			<tr>
-				<td valign="middle" nowrap="nowrap"><a href="profile-10.html"><img src="templates/SGD2/images/lang_slovenian/icon_profile.gif" alt="Poglej uporabnikov profil" title="Poglej uporabnikov profil" border="0" /></a> <a  target="_userwww"><img src="templates/SGD2/images/lang_slovenian/icon_www.gif" alt="Obišči avtorjevo spletno stran" title="Obišči avtorjevo spletno stran" border="0" /></a></td>
+				<td valign="middle" nowrap="nowrap"><a href="profile-10.html"><img src="templates/SGD2/images/lang_slovenian/icon_profile.gif" alt="Poglej uporabnikov profil" title="Poglej uporabnikov profil" border="0" /></a> </td>
 			</tr>
 		</table></td>
 	</tr>
@@ -1635,7 +1282,7 @@ Kako so pa shaderji implementirani, pa tudi sam ne vem. Še posebej me zanima, k
 	</tr>
 	
 	<tr>
-		<td width="150" align="left" valign="top" class="row1"><span class="name"><a name="593"></a><b>Firestar</b></span><br /><span class="postdetails">poznavalec<br /><img src="images/ranks/sgd-3.gif" alt="poznavalec" title="poznavalec" border="0" /><br /><img src="images/avatars/c2f929273ec2afe163bdf.gif" alt="" border="0" /><br /><br />Pridružen: 17. jan 2003 ob 11:24<br />objav: 181<br />Kraj: Maribor</span><br /></td>
+		<td width="150" align="left" valign="top" class="row1"><span class="name"><a name="593"></a><b>Firestar</b></span><br /><span class="postdetails">poznavalec<br /><img src="images/ranks/sgd-3.gif" alt="poznavalec" title="poznavalec" border="0" /><br /><img src="images/avatars/c2f929273ec2afe163bdf.gif" alt="" border="0" /><br /><br />Pridružen: 17. jan 2003 ob 11:24<br />objav: 173<br />Kraj: Maribor</span><br /></td>
 		<td class="row1" width="100%" height="28" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
 			<tr>
 				<td colspan="2" width="100%">
@@ -1658,7 +1305,7 @@ Kako so pa shaderji implementirani, pa tudi sam ne vem. Še posebej me zanima, k
 				<td colspan="2"><span class="postbody">snake: nekje imam se implementacijo q3 shaderjev, tako da ce zelis ti jih posljem.
 
 <br />
-Drugace pa si resnicno moram malo pogledati te vertex/pixel shaderje, da me ne bo popolnoma cas povozil <img src="images/smiles/icon_wink.gif" alt="icon_wink.gif" border="0" /></span><span class="gensmall"></span></td>
+Drugace pa si resnicno moram malo pogledati te vertex/pixel shaderje, da me ne bo popolnoma cas povozil <img src="images/smiles/icon_wink.gif" alt=";-)" border="0" /></span><span class="gensmall"></span></td>
 			</tr>
 		</table></td>
 	</tr>
@@ -1675,7 +1322,7 @@ Drugace pa si resnicno moram malo pogledati te vertex/pixel shaderje, da me ne b
 	</tr>
 	
 	<tr>
-		<td width="150" align="left" valign="top" class="row2"><span class="name"><a name="596"></a><b>snake</b></span><br /><span class="postdetails">expert<br /><img src="images/ranks/sgd-6.gif" alt="expert" title="expert" border="0" /><br /><img src="images/avatars/c14dbb55415c469152089.gif" alt="" border="0" /><br /><br />Pridružen: 10. jan 2003 ob 08:28<br />objav: 795<br />Kraj: NULL</span><br /></td>
+		<td width="150" align="left" valign="top" class="row2"><span class="name"><a name="596"></a><b>snake</b></span><br /><span class="postdetails">expert<br /><img src="images/ranks/sgd-6.gif" alt="expert" title="expert" border="0" /><br /><img src="images/avatars/c14dbb55415c469152089.gif" alt="" border="0" /><br /><br />Pridružen: 10. jan 2003 ob 08:28<br />objav: 782<br />Kraj: NULL</span><br /></td>
 		<td class="row2" width="100%" height="28" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
 			<tr>
 				<td colspan="2" width="100%">
@@ -1701,7 +1348,7 @@ Drugace pa si resnicno moram malo pogledati te vertex/pixel shaderje, da me ne b
 
 
 <br />
-kar pošlji na snake@… nagrada ti ne uide! <img src="images/smiles/icon_smile.gif" alt="icon_smile.gif" border="0" /></span><span class="gensmall"></span></td>
+kar pošlji na <a >snake@…</a> nagrada ti ne uide! <img src="images/smiles/icon_smile.gif" alt=":)" border="0" /></span><span class="gensmall"></span></td>
 			</tr>
 		</table></td>
 	</tr>
@@ -1709,7 +1356,7 @@ kar pošlji na snake@… nagrada ti ne uide! <img src="images/smiles/icon_smile.
 		<td class="row2" width="150" align="left" valign="middle"><span class="nav"><a href="#top" class="nav">Nazaj na vrh</a></span></td>
 		<td class="row2" width="100%" height="28" valign="bottom" nowrap="nowrap"><table cellspacing="0" cellpadding="0" border="0" height="18" width="18">
 			<tr>
-				<td valign="middle" nowrap="nowrap"><a href="profile-10.html"><img src="templates/SGD2/images/lang_slovenian/icon_profile.gif" alt="Poglej uporabnikov profil" title="Poglej uporabnikov profil" border="0" /></a> <a  target="_userwww"><img src="templates/SGD2/images/lang_slovenian/icon_www.gif" alt="Obišči avtorjevo spletno stran" title="Obišči avtorjevo spletno stran" border="0" /></a></td>
+				<td valign="middle" nowrap="nowrap"><a href="profile-10.html"><img src="templates/SGD2/images/lang_slovenian/icon_profile.gif" alt="Poglej uporabnikov profil" title="Poglej uporabnikov profil" border="0" /></a> </td>
 			</tr>
 		</table></td>
 	</tr>
@@ -1718,7 +1365,7 @@ kar pošlji na snake@… nagrada ti ne uide! <img src="images/smiles/icon_smile.
 	</tr>
 	
 	<tr>
-		<td width="150" align="left" valign="top" class="row1"><span class="name"><a name="604"></a><b>AxelluS</b></span><br /><span class="postdetails">SGD Moderator<br /><img src="images/ranks/sgd-mod.gif" alt="SGD Moderator" title="SGD Moderator" border="0" /><br /><br /><br />Pridružen: 08. jan 2003 ob 14:18<br />objav: 49<br /></span><br /></td>
+		<td width="150" align="left" valign="top" class="row1"><span class="name"><a name="604"></a><b>AxelluS</b></span><br /><span class="postdetails">SGD Moderator<br /><img src="images/ranks/sgd-mod.gif" alt="SGD Moderator" title="SGD Moderator" border="0" /><br /><br /><br />Pridružen: 08. jan 2003 ob 14:18<br />objav: 48<br /></span><br /></td>
 		<td class="row1" width="100%" height="28" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
 			<tr>
 				<td colspan="2" width="100%">
@@ -1738,7 +1385,7 @@ kar pošlji na snake@… nagrada ti ne uide! <img src="images/smiles/icon_smile.
 				<td colspan="2"><hr /></td>
 			</tr>
 			<tr>
-				<td colspan="2"><span class="postbody">snake: thnx za tole <img src="images/smiles/icon_biggrin.gif" alt="icon_biggrin.gif" border="0" /></span><span class="gensmall"></span></td>
+				<td colspan="2"><span class="postbody">snake: thnx za tole <img src="images/smiles/icon_biggrin.gif" alt=":D" border="0" /></span><span class="gensmall"></span></td>
 			</tr>
 		</table></td>
 	</tr>
@@ -1763,7 +1410,7 @@ kar pošlji na snake@… nagrada ti ne uide! <img src="images/smiles/icon_smile.
   <tr>
 	<td align="left" valign="middle" nowrap="nowrap">&nbsp;</td>
 	<td align="left" valign="middle" width="100%"><span class="nav">&nbsp;&nbsp;&nbsp;<a href="index.html" class="nav">SloGameDev.net seznam forumov</a>
-	  -> <a href="forum-1.html" class="nav">Splošno Programiranje</a></span></td>
+	  -> <a href="forum-52.html" class="nav">Izdelovanje iger</a></span></td>
 	<td align="right" valign="top" nowrap="nowrap"><span class="gensmall">Časovni pas (GMT +2:00 uri) Slovenija, poletni čas</span><br /><span class="nav"></span>
 	  </td>
   </tr>
@@ -1779,7 +1426,7 @@ kar pošlji na snake@… nagrada ti ne uide! <img src="images/smiles/icon_smile.
   </tr>
 </table>
 
-<div align="center"><span class="copyright"><br />Arhiv stanja na dan 13. 2. 2006 &mdash; samo za branje.<br />
+<div align="center"><span class="copyright"><br />Arhiv &mdash; samo za branje.<br />
 <!--
 	We request you retain the full copyright notice below including the link to www.phpbb.com.
 	This not only gives respect to the large amount of time given freely by the developers

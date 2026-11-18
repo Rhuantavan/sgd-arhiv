@@ -276,13 +276,13 @@ input.liteoption {
   <tr>
 	<td align="left" valign="bottom" nowrap="nowrap">&nbsp;</td>
 	<td align="left" valign="middle" width="100%"><span class="nav">&nbsp;&nbsp;&nbsp;<a href="index.html" class="nav">SloGameDev.net seznam forumov</a>
-	  -> <a href="forum-15.html" class="nav">Grafično Programiranje</a></span></td>
+	  -> <a href="forum-52.html" class="nav">Izdelovanje iger</a></span></td>
   </tr>
 </table>
 
 <table class="forumline" width="100%" cellspacing="1" cellpadding="3" border="0">
 	<tr align="right">
-		<td class="catHead" colspan="2" height="28"><span class="nav"><a href="topic-1056.html" class="nav">Prejšnja tema</a> :: <a href="topic-1071.html" class="nav">Naslednja tema</a> &nbsp;</span></td>
+		<td class="catHead" colspan="2" height="28"><span class="nav"><a href="topic-1068.html" class="nav">Prejšnja tema</a> :: <a href="topic-1071.html" class="nav">Naslednja tema</a> &nbsp;</span></td>
 	</tr>
 	
 	<tr>
@@ -291,7 +291,7 @@ input.liteoption {
 	</tr>
 	
 	<tr>
-		<td width="150" align="left" valign="top" class="row1"><span class="name"><a name="12285"></a><b>[Beer]</b></span><br /><span class="postdetails">novinec<br /><img src="images/ranks/sgd-0.gif" alt="novinec" title="novinec" border="0" /><br /><br /><br />Pridružen: 29. nov 2003 ob 21:36<br />objav: 23<br /></span><br /></td>
+		<td width="150" align="left" valign="top" class="row1"><span class="name"><a name="12285"></a><b>[Beer]</b></span><br /><span class="postdetails">poizvedovalec<br /><img src="images/ranks/sgd-1.gif" alt="poizvedovalec" title="poizvedovalec" border="0" /><br /><br /><br />Pridružen: 29. nov 2003 ob 21:36<br />objav: 35<br /></span><br /></td>
 		<td class="row1" width="100%" height="28" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
 			<tr>
 				<td colspan="2" width="100%">
@@ -362,82 +362,56 @@ glRenderMode (GL_SELECT) in gluPickMatrix
 <br />
 	<tr>
 <br />
-	  <td class="code">&nbsp; &nbsp;glRenderMode&#40;GL_SELECT&#41;;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;// Enter the SELECT render mode
-
+	  <td class="code">	glRenderMode&#40;GL_SELECT&#41;;				// Enter the SELECT render mode
 <br />
-...
-
+&#46;&#46;&#46;
 <br />
-&nbsp; &nbsp; &nbsp; &nbsp; gluPickMatrix&#40;&#40;GLdouble&#41; point.x, &#40;GLdouble&#41; &#40;viewport&#91;3&#93; - point.y&#41;, 5.0, 5.0, viewport&#41;;
-
+        gluPickMatrix&#40;&#40;GLdouble&#41; point&#46;x, &#40;GLdouble&#41; &#40;viewport&#91;3&#93; - point&#46;y&#41;, 5&#46;0, 5&#46;0, viewport&#41;;
 <br />
-...
-
+&#46;&#46;&#46;
 <br />
-&nbsp; &nbsp; hits = glRenderMode &#40;GL_RENDER&#41;;
-
+    hits = glRenderMode &#40;GL_RENDER&#41;;
 <br />
-
 
 <br />
 // OK ZDEJ IMAMO info o zadetku
-
 <br />
-&#40;GL_SELECT &nbsp; &nbsp;The number of hit records transferred to the select buffer.&#41;
-
+&#40;GL_SELECT 	The number of hit records transferred to the select buffer&#46;&#41;
 <br />
-
 
 <br />
 // Kaj se pa tule naredi mi pa ni čist jasno !!!! 
-
 <br />
 Kaj to neki preračunava 3+i*4 ????
-
 <br />
 
-
 <br />
-&nbsp; &nbsp;/*for&#40;int i=0;i&lt;hits;i++&#41;
-
+	/*for&#40;int i=0;i&lt;hits;i++&#41;
 <br />
-&nbsp; &nbsp;&#123;
-
+	&#123;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;cube&#91;selectBuf&#91;3+i*4&#93;&#93;.selected=!cube&#91;selectBuf&#91;3+i*4&#93;&#93;.selected;
-
+		cube&#91;selectBuf&#91;3+i*4&#93;&#93;&#46;selected=!cube&#91;selectBuf&#91;3+i*4&#93;&#93;&#46;selected;
 <br />
-&nbsp; &nbsp;&#125;*/
-
+	&#125;*/
 <br />
-&nbsp; &nbsp;if &#40;hits&#41;
-
+	if &#40;hits&#41;
 <br />
-&nbsp; &nbsp;&#123;
-
+	&#123;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;int n=0;double minz=selectBuf&#91;1&#93;;
-
+		int n=0;double minz=selectBuf&#91;1&#93;;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;for&#40;int i=1;i&lt;hits;i++&#41;
-
+		for&#40;int i=1;i&lt;hits;i++&#41;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&#123;
-
+		&#123;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;if &#40;selectBuf&#91;1+i*4&#93;&lt;minz&#41; &#123;n=i;minz=selectBuf&#91;1+i*4&#93;;&#125;
-
+			if &#40;selectBuf&#91;1+i*4&#93;&lt;minz&#41; &#123;n=i;minz=selectBuf&#91;1+i*4&#93;;&#125;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&#125;
-
+		&#125;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;cube&#91;selectBuf&#91;3+n*4&#93;&#93;.selected=!cube&#91;selectBuf&#91;3+n*4&#93;&#93;.selected;
-
+		cube&#91;selectBuf&#91;3+n*4&#93;&#93;&#46;selected=!cube&#91;selectBuf&#91;3+n*4&#93;&#93;&#46;selected;
 <br />
-&nbsp; &nbsp;&#125;
-
+	&#125;
 <br />
-
 
 <br />
 </td>
@@ -484,7 +458,7 @@ LP, [Beer]</span><span class="gensmall"></span></td>
 	</tr>
 	
 	<tr>
-		<td width="150" align="left" valign="top" class="row2"><span class="name"><a name="12286"></a><b>Shinobi</b></span><br /><span class="postdetails">inštruktor<br /><img src="images/ranks/sgd-4.gif" alt="inštruktor" title="inštruktor" border="0" /><br /><img src="images/avatars/d5fd66913fcf278e24a0c.gif" alt="" border="0" /><br /><br />Pridružen: 15. maj 2003 ob 18:04<br />objav: 257<br />Kraj: Maribor</span><br /></td>
+		<td width="150" align="left" valign="top" class="row2"><span class="name"><a name="12286"></a><b>Shinobi</b></span><br /><span class="postdetails">mojster<br /><img src="images/ranks/sgd-5.gif" alt="mojster" title="mojster" border="0" /><br /><img src="images/avatars/d5fd66913fcf278e24a0c.gif" alt="" border="0" /><br /><br />Pridružen: 15. maj 2003 ob 18:04<br />objav: 491<br />Kraj: Maribor</span><br /></td>
 		<td class="row2" width="100%" height="28" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
 			<tr>
 				<td colspan="2" width="100%">
@@ -527,7 +501,7 @@ Potem pa imas npr. za 10 modelov na zaslonu 10x glListo. In insto ko render prev
 	</tr>
 	
 	<tr>
-		<td width="150" align="left" valign="top" class="row1"><span class="name"><a name="12287"></a><b>[Beer]</b></span><br /><span class="postdetails">novinec<br /><img src="images/ranks/sgd-0.gif" alt="novinec" title="novinec" border="0" /><br /><br /><br />Pridružen: 29. nov 2003 ob 21:36<br />objav: 23<br /></span><br /></td>
+		<td width="150" align="left" valign="top" class="row1"><span class="name"><a name="12287"></a><b>[Beer]</b></span><br /><span class="postdetails">poizvedovalec<br /><img src="images/ranks/sgd-1.gif" alt="poizvedovalec" title="poizvedovalec" border="0" /><br /><br /><br />Pridružen: 29. nov 2003 ob 21:36<br />objav: 35<br /></span><br /></td>
 		<td class="row1" width="100%" height="28" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
 			<tr>
 				<td colspan="2" width="100%">
@@ -566,15 +540,11 @@ Potem pa imas npr. za 10 modelov na zaslonu 10x glListo. In insto ko render prev
 </table>
 <br />
 <span class="postbody">
-
 <br />
 Kaj si mislil s tem?
-
 <br />
 Google namreč o glPick ne najde dosti
-
 <br />
-
 
 <br />
 </span>
@@ -596,12 +566,9 @@ Google namreč o glPick ne najde dosti
 </table>
 <br />
 <span class="postbody">
-
 <br />
 Smart. Bom upošteval. Mislim, da se bo splačalo.
-
 <br />
-
 
 <br />
 </span>
@@ -654,7 +621,7 @@ dej malo bolj konkretno razloži, prosim.</span><span class="gensmall"></span></
 	</tr>
 	
 	<tr>
-		<td width="150" align="left" valign="top" class="row2"><span class="name"><a name="12288"></a><b>Shinobi</b></span><br /><span class="postdetails">inštruktor<br /><img src="images/ranks/sgd-4.gif" alt="inštruktor" title="inštruktor" border="0" /><br /><img src="images/avatars/d5fd66913fcf278e24a0c.gif" alt="" border="0" /><br /><br />Pridružen: 15. maj 2003 ob 18:04<br />objav: 257<br />Kraj: Maribor</span><br /></td>
+		<td width="150" align="left" valign="top" class="row2"><span class="name"><a name="12288"></a><b>Shinobi</b></span><br /><span class="postdetails">mojster<br /><img src="images/ranks/sgd-5.gif" alt="mojster" title="mojster" border="0" /><br /><img src="images/avatars/d5fd66913fcf278e24a0c.gif" alt="" border="0" /><br /><br />Pridružen: 15. maj 2003 ob 18:04<br />objav: 491<br />Kraj: Maribor</span><br /></td>
 		<td class="row2" width="100%" height="28" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
 			<tr>
 				<td colspan="2" width="100%">
@@ -680,7 +647,7 @@ dej malo bolj konkretno razloži, prosim.</span><span class="gensmall"></span></
 
 
 <br />
-Evo ti: <a  target="_blank">http://nehe.gamedev.net/data/lessons/lesson.asp?lesson=32</a>
+Evo ti: <a class="postlink" >http://nehe.gamedev.net/data/lessons/le ... ?lesson=32</a>
 
 <br />
 
@@ -757,7 +724,7 @@ if (picked) MessageBox("Objekt je zadet");
 	</tr>
 	
 	<tr>
-		<td width="150" align="left" valign="top" class="row1"><span class="name"><a name="12289"></a><b>[Beer]</b></span><br /><span class="postdetails">novinec<br /><img src="images/ranks/sgd-0.gif" alt="novinec" title="novinec" border="0" /><br /><br /><br />Pridružen: 29. nov 2003 ob 21:36<br />objav: 23<br /></span><br /></td>
+		<td width="150" align="left" valign="top" class="row1"><span class="name"><a name="12289"></a><b>[Beer]</b></span><br /><span class="postdetails">poizvedovalec<br /><img src="images/ranks/sgd-1.gif" alt="poizvedovalec" title="poizvedovalec" border="0" /><br /><br /><br />Pridružen: 29. nov 2003 ob 21:36<br />objav: 35<br /></span><br /></td>
 		<td class="row1" width="100%" height="28" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
 			<tr>
 				<td colspan="2" width="100%">
@@ -790,7 +757,6 @@ if (picked) MessageBox("Objekt je zadet");
 	<tr>
 <br />
 	  <td class="quote">Mater si vljuden p***a.
-
 <br />
 </td>
 <br />
@@ -799,42 +765,29 @@ if (picked) MessageBox("Objekt je zadet");
 </table>
 <br />
 <span class="postbody">
-
 <br />
 <span style="font-weight: bold">A je bilo tole res potrebno ?</span>
-
 <br />
-
 
 <br />
 Glede na tvoje glPick in GLU_PICK Google in MSDN odgovarjata takole:
-
 <br />
 1. <a  target="_blank" class="postlink">MSDN - glBegin</a>. Med parametri za glBegin ne najdem GLU_PICK.
-
 <br />
 2. <a  target="_blank" class="postlink">Google o GLU_PICK</a>
-
 <br />
 3. <a  target="_blank" class="postlink">Google o glPick</a> 
-
 <br />
-
 
 <br />
 Tko, da je bla tvoja pomoč bolj jalova. Žal.
-
 <br />
 Zato sem prosil za dodatno razlago.
-
 <br />
-
 
 <br />
 <span style="font-weight: bold">Za vse ostalo se ti zahvaljujem in bom poskusil uštimat.</span>
-
 <br />
-
 
 <br />
 </span>
@@ -850,10 +803,8 @@ Zato sem prosil za dodatno razlago.
 	<tr>
 <br />
 	  <td class="quote">
-
 <br />
-Evo ti: <a  target="_blank">http://nehe.gamedev.net/data/lessons/lesson.asp?lesson=32</a>
-
+Evo ti: <a class="postlink" >http://nehe.gamedev.net/data/lessons/le ... ?lesson=32</a>
 <br />
 </td>
 <br />
@@ -862,12 +813,9 @@ Evo ti: <a  target="_blank">http://nehe.gamedev.net/data/lessons/lesson.asp?less
 </table>
 <br />
 <span class="postbody">
-
 <br />
 Sem že v 1. postu napisal nekaj glede tega tutoriala --&gt; uporablja gluPickMatrix o kakem glBegin(GLU_PICK) ali kaj podobnega pa ni sledi)
-
 <br />
-
 
 <br />
 </span>
@@ -883,61 +831,42 @@ Sem že v 1. postu napisal nekaj glede tega tutoriala --&gt; uporablja gluPickMa
 	<tr>
 <br />
 	  <td class="quote">
-
 <br />
 Deluje pa takole:
-
 <br />
 Tisto kar bi rad da je pickano, moras pac se enkrat rendrat le s to razliko, da imas tokrat izbran picking in se nebo dejansko rendralo temvec samo gledalo ce je bil pick.
-
 <br />
-
 
 <br />
 za vsak objekt ki naj se testira
-
 <br />
 glBegin(GLU_PICK stuf...)
-
 <br />
 Rendras trentutni objekt
-
 <br />
 glEnd();
-
 <br />
 ce je bil pick potem naredi nekaj
-
 <br />
 nadaljuj...
-
 <br />
-
 
 <br />
 ali v pseudo cju:
-
 <br />
 for (int i=0; i &lt; numObjects; i++)
-
 <br />
 {
-
 <br />
 glBegin(gl...pick stuf)
-
 <br />
 render(i);
-
 <br />
 glEnd();
-
 <br />
 if (picked) MessageBox("Objekt je zadet");
-
 <br />
 //kateri objekt? I
-
 <br />
 }</td>
 <br />
@@ -977,7 +906,7 @@ Hvala še enkrat.</span><span class="gensmall"></span></td>
 	</tr>
 	
 	<tr>
-		<td width="150" align="left" valign="top" class="row2"><span class="name"><a name="12290"></a><b>Shinobi</b></span><br /><span class="postdetails">inštruktor<br /><img src="images/ranks/sgd-4.gif" alt="inštruktor" title="inštruktor" border="0" /><br /><img src="images/avatars/d5fd66913fcf278e24a0c.gif" alt="" border="0" /><br /><br />Pridružen: 15. maj 2003 ob 18:04<br />objav: 257<br />Kraj: Maribor</span><br /></td>
+		<td width="150" align="left" valign="top" class="row2"><span class="name"><a name="12290"></a><b>Shinobi</b></span><br /><span class="postdetails">mojster<br /><img src="images/ranks/sgd-5.gif" alt="mojster" title="mojster" border="0" /><br /><img src="images/avatars/d5fd66913fcf278e24a0c.gif" alt="" border="0" /><br /><br />Pridružen: 15. maj 2003 ob 18:04<br />objav: 491<br />Kraj: Maribor</span><br /></td>
 		<td class="row2" width="100%" height="28" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
 			<tr>
 				<td colspan="2" width="100%">
@@ -1032,7 +961,7 @@ Ce imas moznost, idi po to knjigo. Ne recem pa, da jo moras kupiti, ker ko jo bo
 	</tr>
 	
 	<tr>
-		<td width="150" align="left" valign="top" class="row1"><span class="name"><a name="12291"></a><b>Wingman</b></span><br /><span class="postdetails">SGD Moderator<br /><img src="images/ranks/sgd-mod.gif" alt="SGD Moderator" title="SGD Moderator" border="0" /><br /><img src="images/avatars/c14d9fca410a4a42927d3.jpg" alt="" border="0" /><br /><br />Pridružen: 08. jan 2003 ob 21:33<br />objav: 293<br />Kraj: Kranj</span><br /></td>
+		<td width="150" align="left" valign="top" class="row1"><span class="name"><a name="12291"></a><b>Wing</b></span><br /><span class="postdetails">SGD Admin<br /><img src="images/ranks/sgd-admin.gif" alt="SGD Admin" title="SGD Admin" border="0" /><br /><br /><br />Pridružen: 08. jan 2003 ob 21:33<br />objav: 481<br />Kraj: Kranj</span><br /></td>
 		<td class="row1" width="100%" height="28" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
 			<tr>
 				<td colspan="2" width="100%">
@@ -1052,7 +981,7 @@ Ce imas moznost, idi po to knjigo. Ne recem pa, da jo moras kupiti, ker ko jo bo
 				<td colspan="2"><hr /></td>
 			</tr>
 			<tr>
-				<td colspan="2"><span class="postbody">Če se prav spomnem, boš tule našel kar želiš: <a  target="_blank" class="postlink">http://www.lighthouse3d.com/opengl/picking/</a><br />_________________<br />In Soviet Russia, if your program doesn't execute, they execute YOU!</span><span class="gensmall"></span></td>
+				<td colspan="2"><span class="postbody">Če se prav spomnem, boš tule našel kar želiš: <a  target="_blank" class="postlink">http&#58;//www&#46;lighthouse3d&#46;com/opengl/picking/</a></span><span class="gensmall"></span></td>
 			</tr>
 		</table></td>
 	</tr>
@@ -1069,7 +998,7 @@ Ce imas moznost, idi po to knjigo. Ne recem pa, da jo moras kupiti, ker ko jo bo
 	</tr>
 	
 	<tr>
-		<td width="150" align="left" valign="top" class="row2"><span class="name"><a name="12292"></a><b>[Beer]</b></span><br /><span class="postdetails">novinec<br /><img src="images/ranks/sgd-0.gif" alt="novinec" title="novinec" border="0" /><br /><br /><br />Pridružen: 29. nov 2003 ob 21:36<br />objav: 23<br /></span><br /></td>
+		<td width="150" align="left" valign="top" class="row2"><span class="name"><a name="12292"></a><b>[Beer]</b></span><br /><span class="postdetails">poizvedovalec<br /><img src="images/ranks/sgd-1.gif" alt="poizvedovalec" title="poizvedovalec" border="0" /><br /><br /><br />Pridružen: 29. nov 2003 ob 21:36<br />objav: 35<br /></span><br /></td>
 		<td class="row2" width="100%" height="28" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
 			<tr>
 				<td colspan="2" width="100%">
@@ -1123,7 +1052,7 @@ LP</span><span class="gensmall"></span></td>
   <tr>
 	<td align="left" valign="middle" nowrap="nowrap">&nbsp;</td>
 	<td align="left" valign="middle" width="100%"><span class="nav">&nbsp;&nbsp;&nbsp;<a href="index.html" class="nav">SloGameDev.net seznam forumov</a>
-	  -> <a href="forum-15.html" class="nav">Grafično Programiranje</a></span></td>
+	  -> <a href="forum-52.html" class="nav">Izdelovanje iger</a></span></td>
 	<td align="right" valign="top" nowrap="nowrap"><span class="gensmall">Časovni pas (GMT +2:00 uri) Slovenija, poletni čas</span><br /><span class="nav"></span>
 	  </td>
   </tr>
@@ -1139,7 +1068,7 @@ LP</span><span class="gensmall"></span></td>
   </tr>
 </table>
 
-<div align="center"><span class="copyright"><br />Arhiv stanja na dan 13. 2. 2006 &mdash; samo za branje.<br />
+<div align="center"><span class="copyright"><br />Arhiv &mdash; samo za branje.<br />
 <!--
 	We request you retain the full copyright notice below including the link to www.phpbb.com.
 	This not only gives respect to the large amount of time given freely by the developers

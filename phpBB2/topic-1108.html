@@ -276,13 +276,13 @@ input.liteoption {
   <tr>
 	<td align="left" valign="bottom" nowrap="nowrap">&nbsp;</td>
 	<td align="left" valign="middle" width="100%"><span class="nav">&nbsp;&nbsp;&nbsp;<a href="index.html" class="nav">SloGameDev.net seznam forumov</a>
-	  -> <a href="forum-1.html" class="nav">Splošno Programiranje</a></span></td>
+	  -> <a href="forum-52.html" class="nav">Izdelovanje iger</a></span></td>
   </tr>
 </table>
 
 <table class="forumline" width="100%" cellspacing="1" cellpadding="3" border="0">
 	<tr align="right">
-		<td class="catHead" colspan="2" height="28"><span class="nav"><a href="topic-1089.html" class="nav">Prejšnja tema</a> :: <a href="topic-1111.html" class="nav">Naslednja tema</a> &nbsp;</span></td>
+		<td class="catHead" colspan="2" height="28"><span class="nav"><a href="topic-1100.html" class="nav">Prejšnja tema</a> :: <a href="topic-1103.html" class="nav">Naslednja tema</a> &nbsp;</span></td>
 	</tr>
 	
 	<tr>
@@ -291,7 +291,7 @@ input.liteoption {
 	</tr>
 	
 	<tr>
-		<td width="150" align="left" valign="top" class="row1"><span class="name"><a name="12616"></a><b>Shinobi</b></span><br /><span class="postdetails">inštruktor<br /><img src="images/ranks/sgd-4.gif" alt="inštruktor" title="inštruktor" border="0" /><br /><img src="images/avatars/d5fd66913fcf278e24a0c.gif" alt="" border="0" /><br /><br />Pridružen: 15. maj 2003 ob 18:04<br />objav: 257<br />Kraj: Maribor</span><br /></td>
+		<td width="150" align="left" valign="top" class="row1"><span class="name"><a name="12616"></a><b>Shinobi</b></span><br /><span class="postdetails">mojster<br /><img src="images/ranks/sgd-5.gif" alt="mojster" title="mojster" border="0" /><br /><img src="images/avatars/d5fd66913fcf278e24a0c.gif" alt="" border="0" /><br /><br />Pridružen: 15. maj 2003 ob 18:04<br />objav: 491<br />Kraj: Maribor</span><br /></td>
 		<td class="row1" width="100%" height="28" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
 			<tr>
 				<td colspan="2" width="100%">
@@ -385,7 +385,7 @@ To bi bilo izvedljivo samo je dumb. Load pa tudi ne mora klicati new this. Ima k
 	</tr>
 	
 	<tr>
-		<td width="150" align="left" valign="top" class="row2"><span class="name"><a name="12628"></a><b>BAADC0DE</b></span><br /><span class="postdetails">poizvedovalec<br /><img src="images/ranks/sgd-1.gif" alt="poizvedovalec" title="poizvedovalec" border="0" /><br /><img src="images/avatars/c15fc9eb41f7a06b1fbe1.png" alt="" border="0" /><br /><br />Pridružen: 11. jan 2003 ob 17:17<br />objav: 65<br /></span><br /></td>
+		<td width="150" align="left" valign="top" class="row2"><span class="name"><a name="12628"></a><b>BAADC0DE</b></span><br /><span class="postdetails">wannabe<br /><img src="images/ranks/sgd-2.gif" alt="wannabe" title="wannabe" border="0" /><br /><img src="images/avatars/c15fc9eb41f7a06b1fbe1.png" alt="" border="0" /><br /><br />Pridružen: 11. jan 2003 ob 17:17<br />objav: 81<br /></span><br /></td>
 		<td class="row2" width="100%" height="28" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
 			<tr>
 				<td colspan="2" width="100%">
@@ -421,166 +421,112 @@ To bi bilo izvedljivo samo je dumb. Load pa tudi ne mora klicati new this. Ima k
 	<tr>
 <br />
 	  <td class="code">
-
 <br />
 class NamedObject &#123;
-
 <br />
 public&#58;
-
 <br />
-&nbsp;  string name;
-
+   string name;
 <br />
 &#125;;
-
 <br />
-
 
 <br />
 template &lt;typename T, typename Result, typename Loader&gt;
-
 <br />
 class myResource &#58; public NamedObject &#123;
-
 <br />
-&nbsp; struct myPair &#123;
-
+  struct myPair &#123;
 <br />
-&nbsp; &nbsp; T* resource;
-
+    T* resource;
 <br />
-&nbsp; &nbsp; Result* result;
-
+    Result* result;
 <br />
 
-
 <br />
-&nbsp; &nbsp; myPair&#40;const string name = &quot;&quot;&#41; &#123;
-
+    myPair&#40;const string name = &quot;&quot;&#41; &#123;
 <br />
-&nbsp; &nbsp; &nbsp; resource = NULL;
-
+      resource = NULL;
 <br />
-&nbsp; &nbsp; &nbsp; result&nbsp; &nbsp;  =&nbsp; new Result&#40;name&#41;;
-
+      result     =  new Result&#40;name&#41;;
 <br />
-&nbsp; &nbsp; &#125;
-
+    &#125;
 <br />
-&nbsp; &#125;;
-
+  &#125;;
 <br />
-&nbsp; static myList&lt;myPair&gt; loadedResources;
-
+  static myList&lt;myPair&gt; loadedResources;
 <br />
 public&#58;
-
 <br />
-&nbsp; static Result* Load&#40;const string name = &quot;&quot;&#41; &#123; 
-
+  static Result* Load&#40;const string name = &quot;&quot;&#41; &#123; 
 <br />
-&nbsp; &nbsp; for&#40;/* iterate through loadedResources */&#41; &#123;
-
+    for&#40;/* iterate through loadedResources */&#41; &#123;
 <br />
-&nbsp; &nbsp; &nbsp; if&#40;name == resource-&gt;result-&gt;name&#41; return resource-&gt;result;
-
+      if&#40;name == resource-&gt;result-&gt;name&#41; return resource-&gt;result;
 <br />
-&nbsp; &nbsp; &#125;
-
+    &#125;
 <br />
-&nbsp; &nbsp; myPair pair&#40;name&#41;;
-
+    myPair pair&#40;name&#41;;
 <br />
-&nbsp; &nbsp; if&#40;Loader&#58;&#58;Load&#40;pair.resource, pair.result&#41;&#41; &#123;
-
+    if&#40;Loader&#58;&#58;Load&#40;pair&#46;resource, pair&#46;result&#41;&#41; &#123;
 <br />
-&nbsp; &nbsp; &nbsp; loadedResources.append&#40;pair&#41;;
-
+      loadedResources&#46;append&#40;pair&#41;;
 <br />
-&nbsp; &nbsp; &nbsp; return pair.result;
-
+      return pair&#46;result;
 <br />
-&nbsp; &nbsp; &#125;
-
+    &#125;
 <br />
-&nbsp; &nbsp; return NULL;
-
+    return NULL;
 <br />
-&nbsp; &#125;
-
+  &#125;
 <br />
 &#125;;
-
 <br />
-
 
 <br />
 class TextureLoader &#123;
-
 <br />
 public&#58;
-
 <br />
-&nbsp; static bool Load&#40;IDirect3DTexture9*&amp; res, myTexture*&amp; tex&#41; &#123;
-
+  static bool Load&#40;IDirect3DTexture9*&amp; res, myTexture*&amp; tex&#41; &#123;
 <br />
-&nbsp; &nbsp; /* perform load, this also connects res to tex via a setter */
-
+    /* perform load, this also connects res to tex via a setter */
 <br />
-&nbsp; &nbsp; return true;
-
+    return true;
 <br />
-&nbsp; &#125;
-
+  &#125;
 <br />
 &#125;;
-
 <br />
 class myTexture &#58; public myResource&lt;IDirect3DTexture9, myTexture, TextureLoader&gt; &#123;
-
 <br />
 myPixelFormat pixelFormat;
-
 <br />
 int numDimensions;
-
 <br />
 IDirect3DTexture9* texture;
-
 <br />
-/* ... */
-
+/* &#46;&#46;&#46; */
 <br />
 public&#58;
-
 <br />
 /* getters / setters */
-
 <br />
 
-
 <br />
-&nbsp; myTexture&#40;const string n&#41; &#123;
-
+  myTexture&#40;const string n&#41; &#123;
 <br />
-&nbsp; &nbsp; /* ... */
-
+    /* &#46;&#46;&#46; */
 <br />
-&nbsp; &#125;
-
+  &#125;
 <br />
 &#125;;
+<br />
 
 <br />
 
-
 <br />
-
-
-<br />
-myTexture* tex = myTexture&#58;&#58;Load&#40;&quot;something.dds&quot;&#41;;
-
+myTexture* tex = myTexture&#58;&#58;Load&#40;&quot;something&#46;dds&quot;&#41;;
 <br />
 </td>
 <br />
@@ -600,7 +546,7 @@ Tako bi jaz naredil, ne vem pa v kaksnem okolju si. Priznam da sem deviiral od r
 
 
 <br />
-Btw, I have deep feelings about ms-only renderers, though those are quite inappropriate for these forums (ambiguity intended).<br />_________________<br /><a  target="_blank">http://baadengine.sourceforge.net</a></span><span class="gensmall"></span></td>
+Btw, I have deep feelings about ms-only renderers, though those are quite inappropriate for these forums (ambiguity intended).<br />_________________<br /><a class="postlink" >http://www.baadengine.org</a></span><span class="gensmall"></span></td>
 			</tr>
 		</table></td>
 	</tr>
@@ -625,7 +571,7 @@ Btw, I have deep feelings about ms-only renderers, though those are quite inappr
   <tr>
 	<td align="left" valign="middle" nowrap="nowrap">&nbsp;</td>
 	<td align="left" valign="middle" width="100%"><span class="nav">&nbsp;&nbsp;&nbsp;<a href="index.html" class="nav">SloGameDev.net seznam forumov</a>
-	  -> <a href="forum-1.html" class="nav">Splošno Programiranje</a></span></td>
+	  -> <a href="forum-52.html" class="nav">Izdelovanje iger</a></span></td>
 	<td align="right" valign="top" nowrap="nowrap"><span class="gensmall">Časovni pas (GMT +2:00 uri) Slovenija, poletni čas</span><br /><span class="nav"></span>
 	  </td>
   </tr>
@@ -641,7 +587,7 @@ Btw, I have deep feelings about ms-only renderers, though those are quite inappr
   </tr>
 </table>
 
-<div align="center"><span class="copyright"><br />Arhiv stanja na dan 13. 2. 2006 &mdash; samo za branje.<br />
+<div align="center"><span class="copyright"><br />Arhiv &mdash; samo za branje.<br />
 <!--
 	We request you retain the full copyright notice below including the link to www.phpbb.com.
 	This not only gives respect to the large amount of time given freely by the developers

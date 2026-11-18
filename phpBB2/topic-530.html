@@ -276,7 +276,7 @@ input.liteoption {
   <tr>
 	<td align="left" valign="bottom" nowrap="nowrap">&nbsp;</td>
 	<td align="left" valign="middle" width="100%"><span class="nav">&nbsp;&nbsp;&nbsp;<a href="index.html" class="nav">SloGameDev.net seznam forumov</a>
-	  -> <a href="forum-10.html" class="nav">Za Začetnike</a></span></td>
+	  -> <a href="forum-49.html" class="nav">Začetniki</a></span></td>
   </tr>
 </table>
 
@@ -291,7 +291,7 @@ input.liteoption {
 	</tr>
 	
 	<tr>
-		<td width="150" align="left" valign="top" class="row1"><span class="name"><a name="6005"></a><b>_t3ch_</b></span><br /><span class="postdetails">wannabe<br /><img src="images/ranks/sgd-2.gif" alt="wannabe" title="wannabe" border="0" /><br /><img src="images/avatars/c2f922b13f93ced57f936.gif" alt="" border="0" /><br /><br />Pridružen: 09. okt 2003 ob 16:04<br />objav: 75<br />Kraj: Mafia SoftWare IT</span><br /></td>
+		<td width="150" align="left" valign="top" class="row1"><span class="name"><a name="6005"></a><b>_t3ch_</b></span><br /><span class="postdetails">wannabe<br /><img src="images/ranks/sgd-2.gif" alt="wannabe" title="wannabe" border="0" /><br /><img src="images/avatars/c2f922b13f93ced57f936.gif" alt="" border="0" /><br /><br />Pridružen: 09. okt 2003 ob 16:04<br />objav: 77<br />Kraj: Mafia SoftWare IT</span><br /></td>
 		<td class="row1" width="100%" height="28" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
 			<tr>
 				<td colspan="2" width="100%">
@@ -324,193 +324,130 @@ input.liteoption {
 	<tr>
 <br />
 	  <td class="code">
-
 <br />
-#include &lt;stdio.h&gt;
-
+#include &lt;stdio&#46;h&gt;
 <br />
-#include &lt;stdlib.h&gt;
-
+#include &lt;stdlib&#46;h&gt;
 <br />
-#include &lt;unistd.h&gt;
-
+#include &lt;unistd&#46;h&gt;
 <br />
-#include &lt;errno.h&gt;
-
+#include &lt;errno&#46;h&gt;
 <br />
-#include &lt;string.h&gt;
-
+#include &lt;string&#46;h&gt;
 <br />
-#include &lt;netdb.h&gt;
-
+#include &lt;netdb&#46;h&gt;
 <br />
-#include &lt;sys/types.h&gt;
-
+#include &lt;sys/types&#46;h&gt;
 <br />
-#include &lt;netinet/in.h&gt;
-
+#include &lt;netinet/in&#46;h&gt;
 <br />
-#include &lt;sys/socket.h&gt;
-
+#include &lt;sys/socket&#46;h&gt;
 <br />
-
 
 <br />
 #define PORT 6666 // na ker port se bomo konektali
-
 <br />
 #define MAXDATASIZE 100 // maximalno stevilo bajtov ki jih lahko dobimo naenkrat
-
 <br />
-
 
 <br />
 int main&#40;int argc, char *argv&#91;&#93;&#41;
-
 <br />
 &#123;
-
 <br />
-&nbsp; &nbsp; &nbsp; &nbsp; int sockfd, numbytes;
-
+        int sockfd, numbytes;
 <br />
-&nbsp; &nbsp; &nbsp; &nbsp; char buf&#91;MAXDATASIZE&#93;;
-
+        char buf&#91;MAXDATASIZE&#93;;
 <br />
-&nbsp; &nbsp; &nbsp; &nbsp; struct hostent *he;
-
+        struct hostent *he;
 <br />
-&nbsp; &nbsp; &nbsp; &nbsp; struct sockaddr_in their_addr;&nbsp; // od servera ip
-
+        struct sockaddr_in their_addr;  // od servera ip
 <br />
-&nbsp; if &#40;argc != 2&#41;
-
+  if &#40;argc != 2&#41;
 <br />
-&nbsp; &nbsp; &nbsp; &nbsp; &#123;
-
+        &#123;
 <br />
-&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; fprintf&#40;stderr, &quot;usage&#58; 127.0.0.1 \n &quot;&#41;;
-
+                fprintf&#40;stderr, &quot;usage&#58; 127&#46;0&#46;0&#46;1 \n &quot;&#41;;
 <br />
-&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; exit&#40;1&#41;;
-
+                exit&#40;1&#41;;
 <br />
-&nbsp; &nbsp; &nbsp; &nbsp; &#125;
-
+        &#125;
 <br />
 
-
 <br />
-&nbsp; &nbsp; &nbsp; &nbsp; if &#40;&#40;he=gethostbyname&#40;argv&#91;1&#93;&#41;&#41; == NULL&#41; // dobim host informacije
-
+        if &#40;&#40;he=gethostbyname&#40;argv&#91;1&#93;&#41;&#41; == NULL&#41; // dobim host informacije
 <br />
-&nbsp; &nbsp; &nbsp; &nbsp; &#123;
-
+        &#123;
 <br />
-&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; perror&#40;&quot;gethostbyname&quot;&#41;;
-
+                perror&#40;&quot;gethostbyname&quot;&#41;;
 <br />
-&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; exit&#40;1&#41;;
-
+                exit&#40;1&#41;;
 <br />
-&nbsp; &nbsp; &nbsp; &nbsp; &#125;
-
+        &#125;
 <br />
 
-
 <br />
-&nbsp; &nbsp; &nbsp; &nbsp; if &#40;&#40;sockfd = socket&#40;AF_INET, SOCK_STREAM, 0&#41;&#41; == -1&#41;
-
+        if &#40;&#40;sockfd = socket&#40;AF_INET, SOCK_STREAM, 0&#41;&#41; == -1&#41;
 <br />
-&nbsp; &nbsp; &nbsp; &nbsp; &#123;
-
+        &#123;
 <br />
-&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; perror&#40;&quot;socket&quot;&#41;;
-
+                perror&#40;&quot;socket&quot;&#41;;
 <br />
-&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; exit&#40;1&#41;;
-
+                exit&#40;1&#41;;
 <br />
-&nbsp; &nbsp; &nbsp; &nbsp; &#125;
-
+        &#125;
 <br />
 
-
 <br />
-&nbsp; &nbsp; &nbsp; &nbsp; their_addr.sin_family = AF_INET; // protokol
-
+        their_addr&#46;sin_family = AF_INET; // protokol
 <br />
-&nbsp; &nbsp; &nbsp; &nbsp; their_addr.sin_port = htons&#40;PORT&#41;; //na kater port se konektamo
-
+        their_addr&#46;sin_port = htons&#40;PORT&#41;; //na kater port se konektamo
 <br />
-&nbsp; &nbsp; &nbsp; &nbsp; their_addr.sin_addr = *&#40;&#40;struct in_addr *&#41;he-&gt;h_addr&#41;;&nbsp; &lt;-- tu bi po moje moral bit ip oz. host od servera
-
+        their_addr&#46;sin_addr = *&#40;&#40;struct in_addr *&#41;he-&gt;h_addr&#41;;  &lt;-- tu bi po moje moral bit ip oz&#46; host od servera
 <br />
-&nbsp; &nbsp; &nbsp; &nbsp; memset&#40;&amp;&#40;their_addr.sin_zero&#41;, '\0', 8&#41;;
-
+        memset&#40;&amp;&#40;their_addr&#46;sin_zero&#41;, '\0', 8&#41;;
 <br />
-
 
 <br />
  if &#40;connect&#40;sockfd, &#40;struct sockaddr *&#41;&amp;their_addr, sizeof&#40; struct sockaddr&#41;&#41; == -1&#41;;
-
 <br />
-&nbsp; &nbsp; &nbsp; &nbsp; &#123;
-
+        &#123;
 <br />
-&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; perror&#40;&quot;connect&quot;&#41;;
-
+                perror&#40;&quot;connect&quot;&#41;;
 <br />
-&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; exit&#40;1&#41;;
-
+                exit&#40;1&#41;;
 <br />
-&nbsp; &nbsp; &nbsp; &nbsp; &#125;
-
+        &#125;
 <br />
 
-
 <br />
-&nbsp; &nbsp; &nbsp; &nbsp; if &#40;&#40;numbytes=recv&#40;sockfd, buf, MAXDATASIZE -1, 0&#41;&#41; == -1&#41;;
-
+        if &#40;&#40;numbytes=recv&#40;sockfd, buf, MAXDATASIZE -1, 0&#41;&#41; == -1&#41;;
 <br />
-&nbsp; &nbsp; &nbsp; &nbsp; &#123;
-
+        &#123;
 <br />
-&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; perror&#40;&quot;recv&quot;&#41;;
-
+                perror&#40;&quot;recv&quot;&#41;;
 <br />
-&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; exit&#40;1&#41;;
-
+                exit&#40;1&#41;;
 <br />
-&nbsp; &nbsp; &nbsp; &nbsp; &#125;
-
+        &#125;
 <br />
 
-
 <br />
-&nbsp; &nbsp; &nbsp; &nbsp; buf&#91;numbytes&#93; = '\0';
-
+        buf&#91;numbytes&#93; = '\0';
 <br />
 
-
 <br />
-&nbsp; &nbsp; &nbsp; &nbsp; printf&#40;&quot; Sprejem Bajtov&#58; %s, buf&quot;&#41;;
-
+        printf&#40;&quot; Sprejem Bajtov&#58; %s, buf&quot;&#41;;
 <br />
 
-
 <br />
-&nbsp; &nbsp; &nbsp; &nbsp; close&#40;sockfd&#41;;
-
+        close&#40;sockfd&#41;;
 <br />
 
-
 <br />
-&nbsp; &nbsp; &nbsp; &nbsp; return 0;
-
+        return 0;
 <br />
 &#125;
-
 <br />
 </td>
 <br />
@@ -524,22 +461,22 @@ int main&#40;int argc, char *argv&#91;&#93;&#41;
 
 
 <br />
-Pozdravljeni jas ne vem ta client dela samo niikamor se ne konekta server mi dela klient pa s enikamor ne konekta in tu tud nikjer nisem vpisal kam se naj konekta ceprav sem to prepisal  sem veckrat prebrral osnove in tega klienta pa nece pa nece <img src="images/smiles/icon_smile.gif" alt="icon_smile.gif" border="0" /> brez zamere...
+Pozdravljeni jas ne vem ta client dela samo niikamor se ne konekta server mi dela klient pa s enikamor ne konekta in tu tud nikjer nisem vpisal kam se naj konekta ceprav sem to prepisal  sem veckrat prebrral osnove in tega klienta pa nece pa nece <img src="images/smiles/icon_smile.gif" alt=":)" border="0" /> brez zamere...
 
 <br />
 
 
 <br />
-Tu je naslov strani: <a  target="_blank" class="postlink">http://www.ecst.csuchico.edu/~beej/guide/net/html/clientserver.html</a>
+Tu je naslov strani: <a  target="_blank" class="postlink">http&#58;//www&#46;ecst&#46;csuchico&#46;edu/~beej/guide/net/html/clientserver&#46;html</a>
 
 <br />
-to stran kar vam bo odprlo sta clienta za posiljanje crk in datotek predvidevam za onega drugega nisem se prisel do njega kr je tak na isti nacin napisan ... da se nikamor ne konekta <img src="images/smiles/icon_razz.gif" alt="icon_razz.gif" border="0" />
+to stran kar vam bo odprlo sta clienta za posiljanje crk in datotek predvidevam za onega drugega nisem se prisel do njega kr je tak na isti nacin napisan ... da se nikamor ne konekta <img src="images/smiles/icon_razz.gif" alt=":P" border="0" />
 
 <br />
 
 
 <br />
-tnx za pomoc :*[/b]<span style="font-weight: bold"></span></span><span class="gensmall"></span></td>
+tnx za pomoc :*[/b]</span><span class="gensmall"></span></td>
 			</tr>
 		</table></td>
 	</tr>
@@ -556,7 +493,7 @@ tnx za pomoc :*[/b]<span style="font-weight: bold"></span></span><span class="ge
 	</tr>
 	
 	<tr>
-		<td width="150" align="left" valign="top" class="row2"><span class="name"><a name="6007"></a><b>vesoljc</b></span><br /><span class="postdetails">inštruktor<br /><img src="images/ranks/sgd-4.gif" alt="inštruktor" title="inštruktor" border="0" /><br /><img src="images/avatars/c1bdb98c3fb49342927df.jpg" alt="" border="0" /><br /><br />Pridružen: 18. feb 2003 ob 22:16<br />objav: 297<br />Kraj: Brezovica, homeland of the mighty Beawer Blasters</span><br /></td>
+		<td width="150" align="left" valign="top" class="row2"><span class="name"><a name="6007"></a><b>vesoljc</b></span><br /><span class="postdetails">inštruktor<br /><img src="images/ranks/sgd-4.gif" alt="inštruktor" title="inštruktor" border="0" /><br /><img src="images/avatars/c1bdb98c3fb49342927df.jpg" alt="" border="0" /><br /><br />Pridružen: 18. feb 2003 ob 22:16<br />objav: 291<br />Kraj: Brezovica, homeland of the mighty Beawer Blasters</span><br /></td>
 		<td class="row2" width="100%" height="28" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
 			<tr>
 				<td colspan="2" width="100%">
@@ -576,13 +513,13 @@ tnx za pomoc :*[/b]<span style="font-weight: bold"></span></span><span class="ge
 				<td colspan="2"><hr /></td>
 			</tr>
 			<tr>
-				<td colspan="2"><span class="postbody"><a  target="_blank" class="postlink">http://www.ultimategameprogramming.com/Tutorial.php?category=Cpp&amp;page=4</a>
+				<td colspan="2"><span class="postbody"><a  target="_blank" class="postlink">http&#58;//www&#46;ultimategameprogramming&#46;com/Tutorial&#46;php?category=Cpp&amp;page=4</a>
 
 <br />
 
 
 <br />
-to bo jurja  <img src="images/smiles/icon_wink.gif" alt="icon_wink.gif" border="0" /><br />_________________<br /><span style="font-style: italic">Abnormal behaviour of abnormal brain makes me normal...</span></span><span class="gensmall"></span></td>
+to bo jurja  <img src="images/smiles/icon_wink.gif" alt=":wink:" border="0" /><br />_________________<br /><span style="font-style: italic">Abnormal behaviour of abnormal brain makes me normal...</span></span><span class="gensmall"></span></td>
 			</tr>
 		</table></td>
 	</tr>
@@ -599,7 +536,7 @@ to bo jurja  <img src="images/smiles/icon_wink.gif" alt="icon_wink.gif" border="
 	</tr>
 	
 	<tr>
-		<td width="150" align="left" valign="top" class="row1"><span class="name"><a name="6056"></a><b>_t3ch_</b></span><br /><span class="postdetails">wannabe<br /><img src="images/ranks/sgd-2.gif" alt="wannabe" title="wannabe" border="0" /><br /><img src="images/avatars/c2f922b13f93ced57f936.gif" alt="" border="0" /><br /><br />Pridružen: 09. okt 2003 ob 16:04<br />objav: 75<br />Kraj: Mafia SoftWare IT</span><br /></td>
+		<td width="150" align="left" valign="top" class="row1"><span class="name"><a name="6056"></a><b>_t3ch_</b></span><br /><span class="postdetails">wannabe<br /><img src="images/ranks/sgd-2.gif" alt="wannabe" title="wannabe" border="0" /><br /><img src="images/avatars/c2f922b13f93ced57f936.gif" alt="" border="0" /><br /><br />Pridružen: 09. okt 2003 ob 16:04<br />objav: 77<br />Kraj: Mafia SoftWare IT</span><br /></td>
 		<td class="row1" width="100%" height="28" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
 			<tr>
 				<td colspan="2" width="100%">
@@ -619,7 +556,7 @@ to bo jurja  <img src="images/smiles/icon_wink.gif" alt="icon_wink.gif" border="
 				<td colspan="2"><hr /></td>
 			</tr>
 			<tr>
-				<td colspan="2"><span class="postbody">ce stran s edelajo pa jenareto samo za winse rabim pa za linux <img src="images/smiles/icon_razz.gif" alt="icon_razz.gif" border="0" />
+				<td colspan="2"><span class="postbody">ce stran s edelajo pa jenareto samo za winse rabim pa za linux <img src="images/smiles/icon_razz.gif" alt=":P" border="0" />
 
 <br />
 smao bo pa vrei stran
@@ -634,7 +571,7 @@ tnx
 
 
 <br />
-em se ma gdo kako resitev bite <img src="images/smiles/icon_razz.gif" alt="icon_razz.gif" border="0" /> tnx</span><span class="gensmall"></span></td>
+em se ma gdo kako resitev bite <img src="images/smiles/icon_razz.gif" alt=":P" border="0" /> tnx</span><span class="gensmall"></span></td>
 			</tr>
 		</table></td>
 	</tr>
@@ -651,7 +588,7 @@ em se ma gdo kako resitev bite <img src="images/smiles/icon_razz.gif" alt="icon_
 	</tr>
 	
 	<tr>
-		<td width="150" align="left" valign="top" class="row2"><span class="name"><a name="6062"></a><b>hugoboss</b></span><br /><span class="postdetails">poznavalec<br /><img src="images/ranks/sgd-3.gif" alt="poznavalec" title="poznavalec" border="0" /><br /><img src="images/avatars/c2f900cf3e245e2ad2ecf.gif" alt="" border="0" /><br /><br />Pridružen: 11. jan 2003 ob 21:57<br />objav: 193<br /></span><br /></td>
+		<td width="150" align="left" valign="top" class="row2"><span class="name"><a name="6062"></a><b>hugoboss</b></span><br /><span class="postdetails">poznavalec<br /><img src="images/ranks/sgd-3.gif" alt="poznavalec" title="poznavalec" border="0" /><br /><img src="images/avatars/c2f900cf3e245e2ad2ecf.gif" alt="" border="0" /><br /><br />Pridružen: 11. jan 2003 ob 21:57<br />objav: 189<br /></span><br /></td>
 		<td class="row2" width="100%" height="28" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
 			<tr>
 				<td colspan="2" width="100%">
@@ -683,7 +620,7 @@ em se ma gdo kako resitev bite <img src="images/smiles/icon_razz.gif" alt="icon_
 
 
 <br />
-Popolni guide do client/server udp(ip) &amp; ipx network-a <img src="images/smiles/icon_smile.gif" alt="icon_smile.gif" border="0" /> !
+Popolni guide do client/server udp(ip) &amp; ipx network-a <img src="images/smiles/icon_smile.gif" alt=":)" border="0" /> !
 
 <br />
 
@@ -698,7 +635,7 @@ Popolni guide do client/server udp(ip) &amp; ipx network-a <img src="images/smil
 V tvojem programu ne razumem kam oz. na kaj bi se rad v osnovi povezal ?! Ce se povezes na localhost:6666 nima smisla ce predhodno tam ne tece server (ker imas tukaj napisan samo client) in dokler ni serverja se tudi client NE bo povezal ker je port zaprt! Ce se nameravas povezati na kaksno std stvar (http, ftp,...) moras na client implementirati celotni protokol drugace ne bo nic; ce pa se zelis povezati na svoj server pa moras si sam izmisliti kako, kdaj in zakaj bos prenasal podatke.
 
 <br />
-Za kaj natancnejsega pa me podrobneje vprasaj (ker sem ze kar nekaj delal z mrezo na ravni udp)...<br />_________________<br />hugo2me@…
+Za kaj natancnejsega pa me podrobneje vprasaj (ker sem ze kar nekaj delal z mrezo na ravni udp)...<br />_________________<br /><a >hugo2me@…</a>
 
 <br />
 
@@ -732,7 +669,7 @@ School SUX!</span><span class="gensmall"></span></td>
   <tr>
 	<td align="left" valign="middle" nowrap="nowrap">&nbsp;</td>
 	<td align="left" valign="middle" width="100%"><span class="nav">&nbsp;&nbsp;&nbsp;<a href="index.html" class="nav">SloGameDev.net seznam forumov</a>
-	  -> <a href="forum-10.html" class="nav">Za Začetnike</a></span></td>
+	  -> <a href="forum-49.html" class="nav">Začetniki</a></span></td>
 	<td align="right" valign="top" nowrap="nowrap"><span class="gensmall">Časovni pas (GMT +2:00 uri) Slovenija, poletni čas</span><br /><span class="nav"></span>
 	  </td>
   </tr>
@@ -748,7 +685,7 @@ School SUX!</span><span class="gensmall"></span></td>
   </tr>
 </table>
 
-<div align="center"><span class="copyright"><br />Arhiv stanja na dan 13. 2. 2006 &mdash; samo za branje.<br />
+<div align="center"><span class="copyright"><br />Arhiv &mdash; samo za branje.<br />
 <!--
 	We request you retain the full copyright notice below including the link to www.phpbb.com.
 	This not only gives respect to the large amount of time given freely by the developers

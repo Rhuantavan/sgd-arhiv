@@ -276,7 +276,7 @@ input.liteoption {
   <tr>
 	<td align="left" valign="bottom" nowrap="nowrap">&nbsp;</td>
 	<td align="left" valign="middle" width="100%"><span class="nav">&nbsp;&nbsp;&nbsp;<a href="index.html" class="nav">SloGameDev.net seznam forumov</a>
-	  -> <a href="forum-1.html" class="nav">Splošno Programiranje</a></span></td>
+	  -> <a href="forum-52.html" class="nav">Izdelovanje iger</a></span></td>
   </tr>
 </table>
 
@@ -291,7 +291,7 @@ input.liteoption {
 	</tr>
 	
 	<tr>
-		<td width="150" align="left" valign="top" class="row1"><span class="name"><a name="11970"></a><b>ALTF4</b></span><br /><span class="postdetails">inštruktor<br /><img src="images/ranks/sgd-4.gif" alt="inštruktor" title="inštruktor" border="0" /><br /><img src="images/avatars/563d301443ad69c6388ac.gif" alt="" border="0" /><br /><br />Pridružen: 10. jul 2003 ob 15:23<br />objav: 345<br />Kraj: Slovenska Bistrica</span><br /></td>
+		<td width="150" align="left" valign="top" class="row1"><span class="name"><a name="11970"></a><b>ALTF4</b></span><br /><span class="postdetails">guru<br /><img src="images/ranks/sgd-8.gif" alt="guru" title="guru" border="0" /><br /><img src="images/avatars/563d301443ad69c6388ac.gif" alt="" border="0" /><br /><br />Pridružen: 10. jul 2003 ob 15:23<br />objav: 1175<br />Kraj: Slovenska Bistrica</span><br /></td>
 		<td class="row1" width="100%" height="28" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
 			<tr>
 				<td colspan="2" width="100%">
@@ -355,7 +355,7 @@ pognal pa bi ga iz 2 parametrama: IP in port drugega računalnika<br />_________
 	</tr>
 	
 	<tr>
-		<td width="150" align="left" valign="top" class="row2"><span class="name"><a name="11971"></a><b>Senitel</b></span><br /><span class="postdetails">wannabe<br /><img src="images/ranks/sgd-2.gif" alt="wannabe" title="wannabe" border="0" /><br /><br /><br />Pridružen: 02. jul 2003 ob 17:01<br />objav: 97<br /></span><br /></td>
+		<td width="150" align="left" valign="top" class="row2"><span class="name"><a name="11971"></a><b>Senitel</b></span><br /><span class="postdetails">wannabe<br /><img src="images/ranks/sgd-2.gif" alt="wannabe" title="wannabe" border="0" /><br /><br /><br />Pridružen: 02. jul 2003 ob 17:01<br />objav: 127<br /></span><br /></td>
 		<td class="row2" width="100%" height="28" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
 			<tr>
 				<td colspan="2" width="100%">
@@ -438,7 +438,7 @@ torej mores na zacetku narediti samo en vtic/socket pa s tistim operiras ?<br />
 	</tr>
 	
 	<tr>
-		<td width="150" align="left" valign="top" class="row2"><span class="name"><a name="11973"></a><b>Senitel</b></span><br /><span class="postdetails">wannabe<br /><img src="images/ranks/sgd-2.gif" alt="wannabe" title="wannabe" border="0" /><br /><br /><br />Pridružen: 02. jul 2003 ob 17:01<br />objav: 97<br /></span><br /></td>
+		<td width="150" align="left" valign="top" class="row2"><span class="name"><a name="11973"></a><b>Senitel</b></span><br /><span class="postdetails">wannabe<br /><img src="images/ranks/sgd-2.gif" alt="wannabe" title="wannabe" border="0" /><br /><br /><br />Pridružen: 02. jul 2003 ob 17:01<br />objav: 127<br /></span><br /></td>
 		<td class="row2" width="100%" height="28" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
 			<tr>
 				<td colspan="2" width="100%">
@@ -474,22 +474,16 @@ torej mores na zacetku narediti samo en vtic/socket pa s tistim operiras ?<br />
 	<tr>
 <br />
 	  <td class="code">SOCKET s = socket&#40;AF_INET,SOCK_DGRAM,0&#41;;
-
 <br />
 sockaddr_in addr;
-
 <br />
 ZeroMemory&#40;&amp;addr,sizeof&#40;sockaddr_in&#41;&#41;;
-
 <br />
-addr.sin_family = AF_INET;
-
+addr&#46;sin_family = AF_INET;
 <br />
-addr.sin_port = htons&#40;port&#41;;
-
+addr&#46;sin_port = htons&#40;port&#41;;
 <br />
 bind&#40;s,&#40;sockaddr*&#41;&amp;addr,sizeof&#40;sockaddr_in&#41;&#41;;
-
 <br />
 </td>
 <br />
@@ -498,10 +492,8 @@ bind&#40;s,&#40;sockaddr*&#41;&amp;addr,sizeof&#40;sockaddr_in&#41;&#41;;
 </table>
 <br />
 <span class="postbody">
-
 <br />
 Potem imaš pa za pošiljanje:
-
 <br />
 </span>
 <br />
@@ -516,19 +508,14 @@ Potem imaš pa za pošiljanje:
 	<tr>
 <br />
 	  <td class="code">socaddr_in addr;
-
 <br />
-addr.sin_family = AF_INET;
-
+addr&#46;sin_family = AF_INET;
 <br />
-addr.sin_port = htons&#40;port&#41;;
-
+addr&#46;sin_port = htons&#40;port&#41;;
 <br />
-addr.sin_addr = inet_addr&#40;string z IP-jem&#41;;
-
+addr&#46;sin_addr = inet_addr&#40;string z IP-jem&#41;;
 <br />
 sendto&#40;s,buffer,dolžinabufferja,0,&amp;addr,sizeof&#40;sockaddr_in&#41;&#41;;
-
 <br />
 </td>
 <br />
@@ -537,10 +524,8 @@ sendto&#40;s,buffer,dolžinabufferja,0,&amp;addr,sizeof&#40;sockaddr_in&#41;&#41
 </table>
 <br />
 <span class="postbody">
-
 <br />
 In sprejemanje:
-
 <br />
 </span>
 <br />
@@ -555,13 +540,10 @@ In sprejemanje:
 	<tr>
 <br />
 	  <td class="code">sockaddr* addr;
-
 <br />
 int dolžinaddr;
-
 <br />
 recvfrom&#40;s,buffer,dolžinabufferja,0,addr,&amp;dolžinaaddr&#41;;
-
 <br />
 </td>
 <br />
@@ -628,241 +610,162 @@ P.S.: Malo popravljena verzija, ki zna celo delat...</span><span class="gensmall
 	<tr>
 <br />
 	  <td class="code">
-
 <br />
-#include &lt;sys/types.h&gt;
-
+#include &lt;sys/types&#46;h&gt;
 <br />
-#include &lt;sys/socket.h&gt;
-
+#include &lt;sys/socket&#46;h&gt;
 <br />
-#include &lt;stdlib.h&gt;
-
+#include &lt;stdlib&#46;h&gt;
 <br />
-#include &lt;netdb.h&gt;
-
+#include &lt;netdb&#46;h&gt;
 <br />
-#include &lt;stdio.h&gt;
-
+#include &lt;stdio&#46;h&gt;
 <br />
-#include &lt;netinet/in.h&gt;
-
+#include &lt;netinet/in&#46;h&gt;
 <br />
  
-
 <br />
-
 
 <br />
 int main&#40;int argc, char** argv&#41; &#123;
+<br />
 
 <br />
 
-
 <br />
-
-
-<br />
-
 
 <br />
 if&#40;argc !=4&#41;
-
 <br />
 &#123;
-
 <br />
-&nbsp; &nbsp;printf&#40;&quot;vpisal si premalo/prevec parametrov\n&quot;&#41;;
-
+	printf&#40;&quot;vpisal si premalo/prevec parametrov\n&quot;&#41;;
 <br />
-&nbsp; &nbsp;printf&#40;&quot; vpisati moras&#58; argv&#91;1&#93;==IP \n&quot;&#41;;
-
+	printf&#40;&quot; vpisati moras&#58; argv&#91;1&#93;==IP \n&quot;&#41;;
 <br />
-&nbsp; &nbsp;printf&#40;&quot; argv&#91;2&#93; port na katerem naj poslusa \n&quot;&#41;; 
-
+	printf&#40;&quot; argv&#91;2&#93; port na katerem naj poslusa \n&quot;&#41;; 
 <br />
-&nbsp; &nbsp;printf&#40;&quot;in argv&#91;3&#93;= port kamor naj pise \n&quot;&#41;;
-
+	printf&#40;&quot;in argv&#91;3&#93;= port kamor naj pise \n&quot;&#41;;
 <br />
-&nbsp; &nbsp;return -1;
-
+	return -1;
 <br />
-&nbsp; &nbsp;&#125;
-
+	&#125;
 <br />
 //ustvarimo vticnico
-
 <br />
 struct sockaddr_in my_addr;
-
 <br />
-&nbsp; &nbsp; 
-
+    
 <br />
-&nbsp; &nbsp; int serversocket = socket&#40;AF_INET, SOCK_STREAM, 0&#41;; 
-
+    int serversocket = socket&#40;AF_INET, SOCK_STREAM, 0&#41;; 
 <br />
-&nbsp; &nbsp; 
-
+    
 <br />
-&nbsp; &nbsp; my_addr.sin_family = AF_INET;&nbsp; &nbsp;  
-
+    my_addr&#46;sin_family = AF_INET;     
 <br />
-&nbsp; &nbsp; my_addr.sin_port = htons&#40;atoi&#40;argv&#91;2&#93;&#41;&#41;; 
-
+    my_addr&#46;sin_port = htons&#40;atoi&#40;argv&#91;2&#93;&#41;&#41;; 
 <br />
-&nbsp; &nbsp; my_addr.sin_addr.s_addr = inet_addr&#40;&quot;0.0.0.0&quot;&#41;;
-
+    my_addr&#46;sin_addr&#46;s_addr = inet_addr&#40;&quot;0&#46;0&#46;0&#46;0&quot;&#41;;
 <br />
-&nbsp; &nbsp; bzero&#40;&amp;&#40;my_addr.sin_zero&#41;, 8&#41;;&nbsp; &nbsp; 
-
+    bzero&#40;&amp;&#40;my_addr&#46;sin_zero&#41;, 8&#41;;    
 <br />
-&nbsp; &nbsp; 
-
+    
 <br />
-&nbsp; &nbsp; if &#40;bind&#40;serversocket, &#40;struct sockaddr *&#41;&amp;my_addr, sizeof&#40;struct sockaddr&#41;&#41;==-1&#41; &#123;
-
+    if &#40;bind&#40;serversocket, &#40;struct sockaddr *&#41;&amp;my_addr, sizeof&#40;struct sockaddr&#41;&#41;==-1&#41; &#123;
 <br />
-&nbsp; &nbsp; &nbsp; perror&#40;&quot;Cannot bind&quot;&#41;;
-
+      perror&#40;&quot;Cannot bind&quot;&#41;;
 <br />
-&nbsp; &nbsp; &#125;
-
+    &#125;
 <br />
-&nbsp; &nbsp; listen&#40;serversocket, 10&#41;;
-
+    listen&#40;serversocket, 10&#41;;
 <br />
 
-
 <br />
-&nbsp; &nbsp; 
-
+    
 <br />
-&nbsp; &nbsp; //ustvarimo vtic za klienta 
-
+    //ustvarimo vtic za klienta 
 <br />
-&nbsp; &nbsp;  int socketfd = socket&#40;PF_INET, SOCK_STREAM, 0&#41;;
-
+     int socketfd = socket&#40;PF_INET, SOCK_STREAM, 0&#41;;
 <br />
-&nbsp; if &#40;socketfd&lt;0&#41; &#123;
-
+  if &#40;socketfd&lt;0&#41; &#123;
 <br />
-&nbsp; &nbsp; perror&#40;&quot;Error opening socket&quot;&#41;;
-
+    perror&#40;&quot;Error opening socket&quot;&#41;;
 <br />
-&nbsp; &nbsp; return -1;
-
+    return -1;
 <br />
-&nbsp; &#125;
-
+  &#125;
 <br />
-&nbsp;  struct sockaddr_in server;
-
+   struct sockaddr_in server;
 <br />
-&nbsp;  struct hostent *host;
-
+   struct hostent *host;
 <br />
-&nbsp;  server.sin_family= AF_INET;
-
+   server&#46;sin_family= AF_INET;
 <br />
-&nbsp;  server.sin_port = htons&#40;atoi&#40;argv&#91;3&#93;&#41;&#41;;
-
+   server&#46;sin_port = htons&#40;atoi&#40;argv&#91;3&#93;&#41;&#41;;
 <br />
-&nbsp;  host = gethostbyname&#40;argv&#91;1&#93;&#41;;
-
+   host = gethostbyname&#40;argv&#91;1&#93;&#41;;
 <br />
-&nbsp;  if &#40;host==NULL&#41; &#123;
-
+   if &#40;host==NULL&#41; &#123;
 <br />
-&nbsp; &nbsp;  perror&#40;&quot;Unknown host&quot;&#41;;
-
+     perror&#40;&quot;Unknown host&quot;&#41;;
 <br />
-&nbsp; &nbsp;  return -1;
-
+     return -1;
 <br />
-&nbsp;  &#125;
-
+   &#125;
 <br />
-&nbsp;  server.sin_addr = *&#40;&#40;struct in_addr*&#41;host-&gt;h_addr&#41;;
-
+   server&#46;sin_addr = *&#40;&#40;struct in_addr*&#41;host-&gt;h_addr&#41;;
 <br />
-&nbsp; &nbsp; 
-
+    
 <br />
-&nbsp; &nbsp; struct sockaddr client_addr;
-
+    struct sockaddr client_addr;
 <br />
-&nbsp; &nbsp;socklen_t size = sizeof&#40;client_addr&#41;;
-
+	socklen_t size = sizeof&#40;client_addr&#41;;
 <br />
-&nbsp; &nbsp; 
-
+    
 <br />
-&nbsp; &nbsp;  while &#40;1&#41; &#123;
-
+     while &#40;1&#41; &#123;
 <br />
-&nbsp; &nbsp;  
-
+     
 <br />
-&nbsp; &nbsp;  
-
+     
 <br />
-&nbsp;  //&nbsp; &nbsp;  int clientfd = accept&#40;serversocket, &amp;client_addr, &amp;size&#41;;
-
+   //     int clientfd = accept&#40;serversocket, &amp;client_addr, &amp;size&#41;;
 <br />
-&nbsp; &nbsp;  
-
+     
 <br />
-&nbsp; &nbsp;  
-
+     
 <br />
  
-
 <br />
-&nbsp; &nbsp; &nbsp; &nbsp; if &#40;connect&#40;socketfd, &#40;struct sockaddr*&#41;&amp;server,&nbsp;  sizeof&#40;struct sockaddr&#41;&#41;==&nbsp; -1&#41; &#123;
-
+        if &#40;connect&#40;socketfd, &#40;struct sockaddr*&#41;&amp;server,   sizeof&#40;struct sockaddr&#41;&#41;==  -1&#41; &#123;
 <br />
-&nbsp; &nbsp;  //&nbsp; perror&#40;&quot;Connect&quot;&#41;;
-
+     //  perror&#40;&quot;Connect&quot;&#41;;
 <br />
-&nbsp; &nbsp; &nbsp; // return -1;
-
+      // return -1;
 <br />
-&nbsp; &nbsp;  &#125;else
-
+     &#125;else
 <br />
-&nbsp; &nbsp; &nbsp; &#123;
-
+      &#123;
 <br />
-&nbsp; &nbsp; &nbsp;  printf&#40;&quot;uspelo je \n&quot;&#41;;break;
-
+       printf&#40;&quot;uspelo je \n&quot;&#41;;break;
 <br />
-&nbsp; &nbsp; &nbsp; &#125;
-
+      &#125;
 <br />
-&nbsp; &nbsp; &nbsp;  // int clientfd = accept&#40;serversocket, &amp;client_addr, &amp;size&#41;;
-
+       // int clientfd = accept&#40;serversocket, &amp;client_addr, &amp;size&#41;;
 <br />
-&nbsp; &nbsp; 
-
+    
 <br />
-&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &#125;
-
+          &#125;
 <br />
-&nbsp; &nbsp; 
-
+    
 <br />
 printf&#40;&quot;konec&quot;&#41;;
-
 <br />
 close&#40;socketfd&#41;;
-
 <br />
 close&#40;serversocket&#41;;
-
 <br />
 return 0;
-
 <br />
 &#125;</td>
 <br />
@@ -896,7 +799,7 @@ Problem imam pa v tem da se prvi klient ko se zazene nikoli ne konca splih se ne
 	</tr>
 	
 	<tr>
-		<td width="150" align="left" valign="top" class="row2"><span class="name"><a name="11975"></a><b>Senitel</b></span><br /><span class="postdetails">wannabe<br /><img src="images/ranks/sgd-2.gif" alt="wannabe" title="wannabe" border="0" /><br /><br /><br />Pridružen: 02. jul 2003 ob 17:01<br />objav: 97<br /></span><br /></td>
+		<td width="150" align="left" valign="top" class="row2"><span class="name"><a name="11975"></a><b>Senitel</b></span><br /><span class="postdetails">wannabe<br /><img src="images/ranks/sgd-2.gif" alt="wannabe" title="wannabe" border="0" /><br /><br /><br />Pridružen: 02. jul 2003 ob 17:01<br />objav: 127<br /></span><br /></td>
 		<td class="row2" width="100%" height="28" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
 			<tr>
 				<td colspan="2" width="100%">
@@ -976,7 +879,7 @@ Vrstni red je seveda odvisen od tega kateri accept odkomentiraš.</span><span cl
 	</tr>
 	
 	<tr>
-		<td width="150" align="left" valign="top" class="row2"><span class="name"><a name="11978"></a><b>Senitel</b></span><br /><span class="postdetails">wannabe<br /><img src="images/ranks/sgd-2.gif" alt="wannabe" title="wannabe" border="0" /><br /><br /><br />Pridružen: 02. jul 2003 ob 17:01<br />objav: 97<br /></span><br /></td>
+		<td width="150" align="left" valign="top" class="row2"><span class="name"><a name="11978"></a><b>Senitel</b></span><br /><span class="postdetails">wannabe<br /><img src="images/ranks/sgd-2.gif" alt="wannabe" title="wannabe" border="0" /><br /><br /><br />Pridružen: 02. jul 2003 ob 17:01<br />objav: 127<br /></span><br /></td>
 		<td class="row2" width="100%" height="28" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
 			<tr>
 				<td colspan="2" width="100%">
@@ -1099,263 +1002,177 @@ Daj uporabi malo printf debuginga pa boš videl kako se ti tistale while (1) zan
 <br />
 	<tr>
 <br />
-	  <td class="code">#include &lt;sys/types.h&gt;
-
+	  <td class="code">#include &lt;sys/types&#46;h&gt;
 <br />
-#include &lt;sys/socket.h&gt;
-
+#include &lt;sys/socket&#46;h&gt;
 <br />
-#include &lt;stdlib.h&gt;
-
+#include &lt;stdlib&#46;h&gt;
 <br />
-#include &lt;netdb.h&gt;
-
+#include &lt;netdb&#46;h&gt;
 <br />
-#include &lt;stdio.h&gt;
-
+#include &lt;stdio&#46;h&gt;
 <br />
-#include &lt;netinet/in.h&gt;
-
+#include &lt;netinet/in&#46;h&gt;
 <br />
  
-
 <br />
-
 
 <br />
 int main&#40;int argc, char** argv&#41; &#123;
-
 <br />
-
 
 <br />
 int x;
-
 <br />
-&nbsp; &nbsp;int clientfd;
-
+	int clientfd;
 <br />
 if&#40;argc !=4&#41;
-
 <br />
 &#123;
-
 <br />
-&nbsp; &nbsp;printf&#40;&quot;vpisal si premalo/prevec parametrov\n&quot;&#41;;
-
+	printf&#40;&quot;vpisal si premalo/prevec parametrov\n&quot;&#41;;
 <br />
-&nbsp; &nbsp;printf&#40;&quot; vpisati moras&#58; argv&#91;1&#93;==IP \n&quot;&#41;;
-
+	printf&#40;&quot; vpisati moras&#58; argv&#91;1&#93;==IP \n&quot;&#41;;
 <br />
-&nbsp; &nbsp;printf&#40;&quot; argv&#91;2&#93; port na katerem naj poslusa \n&quot;&#41;; 
-
+	printf&#40;&quot; argv&#91;2&#93; port na katerem naj poslusa \n&quot;&#41;; 
 <br />
-&nbsp; &nbsp;printf&#40;&quot;in argv&#91;3&#93;= port kamor naj pise \n&quot;&#41;;
-
+	printf&#40;&quot;in argv&#91;3&#93;= port kamor naj pise \n&quot;&#41;;
 <br />
-&nbsp; &nbsp;return -1;
-
+	return -1;
 <br />
-&nbsp; &nbsp;&#125;
-
+	&#125;
 <br />
 //ustvarimo vticnico
-
 <br />
 struct sockaddr_in my_addr;
-
 <br />
-&nbsp; &nbsp; 
-
+    
 <br />
-&nbsp; &nbsp; int serversocket = socket&#40;AF_INET, SOCK_STREAM, 0&#41;; 
-
+    int serversocket = socket&#40;AF_INET, SOCK_STREAM, 0&#41;; 
 <br />
-&nbsp; &nbsp; 
-
+    
 <br />
-&nbsp; &nbsp; my_addr.sin_family = AF_INET;&nbsp; &nbsp;  
-
+    my_addr&#46;sin_family = AF_INET;     
 <br />
-&nbsp; &nbsp; my_addr.sin_port = htons&#40;atoi&#40;argv&#91;2&#93;&#41;&#41;; 
-
+    my_addr&#46;sin_port = htons&#40;atoi&#40;argv&#91;2&#93;&#41;&#41;; 
 <br />
-&nbsp; &nbsp; my_addr.sin_addr.s_addr = inet_addr&#40;&quot;0.0.0.0&quot;&#41;;
-
+    my_addr&#46;sin_addr&#46;s_addr = inet_addr&#40;&quot;0&#46;0&#46;0&#46;0&quot;&#41;;
 <br />
-&nbsp; &nbsp; bzero&#40;&amp;&#40;my_addr.sin_zero&#41;, 8&#41;;&nbsp; &nbsp; 
-
+    bzero&#40;&amp;&#40;my_addr&#46;sin_zero&#41;, 8&#41;;    
 <br />
-&nbsp; &nbsp; 
-
+    
 <br />
-&nbsp; &nbsp; if &#40;bind&#40;serversocket, &#40;struct sockaddr *&#41;&amp;my_addr, sizeof&#40;struct sockaddr&#41;&#41;==-1&#41; &#123;
-
+    if &#40;bind&#40;serversocket, &#40;struct sockaddr *&#41;&amp;my_addr, sizeof&#40;struct sockaddr&#41;&#41;==-1&#41; &#123;
 <br />
-&nbsp; &nbsp; &nbsp; perror&#40;&quot;Cannot bind&quot;&#41;;
-
+      perror&#40;&quot;Cannot bind&quot;&#41;;
 <br />
-&nbsp; &nbsp; &#125;
-
+    &#125;
 <br />
-&nbsp; &nbsp; listen&#40;serversocket, 10&#41;;
-
+    listen&#40;serversocket, 10&#41;;
 <br />
 
-
 <br />
-&nbsp; &nbsp; 
-
+    
 <br />
-&nbsp; &nbsp; //ustvarimo vtic za klienta 
-
+    //ustvarimo vtic za klienta 
 <br />
-&nbsp; &nbsp;  int socketfd = socket&#40;PF_INET, SOCK_STREAM, 0&#41;;
-
+     int socketfd = socket&#40;PF_INET, SOCK_STREAM, 0&#41;;
 <br />
-&nbsp; if &#40;socketfd&lt;0&#41; &#123;
-
+  if &#40;socketfd&lt;0&#41; &#123;
 <br />
-&nbsp; &nbsp; perror&#40;&quot;Error opening socket&quot;&#41;;
-
+    perror&#40;&quot;Error opening socket&quot;&#41;;
 <br />
-&nbsp; &nbsp; return -1;
-
+    return -1;
 <br />
-&nbsp; &#125;
-
+  &#125;
 <br />
-&nbsp;  struct sockaddr_in server;
-
+   struct sockaddr_in server;
 <br />
-&nbsp;  struct hostent *host;
-
+   struct hostent *host;
 <br />
-&nbsp;  server.sin_family= AF_INET;
-
+   server&#46;sin_family= AF_INET;
 <br />
-&nbsp;  server.sin_port = htons&#40;atoi&#40;argv&#91;3&#93;&#41;&#41;;
-
+   server&#46;sin_port = htons&#40;atoi&#40;argv&#91;3&#93;&#41;&#41;;
 <br />
-&nbsp;  host = gethostbyname&#40;argv&#91;1&#93;&#41;;
-
+   host = gethostbyname&#40;argv&#91;1&#93;&#41;;
 <br />
-&nbsp;  if &#40;host==NULL&#41; &#123;
-
+   if &#40;host==NULL&#41; &#123;
 <br />
-&nbsp; &nbsp;  perror&#40;&quot;Unknown host&quot;&#41;;
-
+     perror&#40;&quot;Unknown host&quot;&#41;;
 <br />
-&nbsp; &nbsp;  return -1;
-
+     return -1;
 <br />
-&nbsp;  &#125;
-
+   &#125;
 <br />
-&nbsp;  server.sin_addr = *&#40;&#40;struct in_addr*&#41;host-&gt;h_addr&#41;;
-
+   server&#46;sin_addr = *&#40;&#40;struct in_addr*&#41;host-&gt;h_addr&#41;;
 <br />
-&nbsp; &nbsp; 
-
+    
 <br />
-&nbsp; &nbsp; struct sockaddr client_addr;
-
+    struct sockaddr client_addr;
 <br />
-&nbsp; &nbsp;socklen_t size = sizeof&#40;client_addr&#41;;
-
+	socklen_t size = sizeof&#40;client_addr&#41;;
 <br />
-&nbsp; &nbsp; 
-
+    
 <br />
-&nbsp; &nbsp; if &#40;connect&#40;socketfd, &#40;struct sockaddr*&#41;&amp;server,&nbsp;  sizeof&#40;struct sockaddr&#41;&#41;==&nbsp; -1&#41; &#123;
-
+	 if &#40;connect&#40;socketfd, &#40;struct sockaddr*&#41;&amp;server,   sizeof&#40;struct sockaddr&#41;&#41;==  -1&#41; &#123;
 <br />
-&nbsp; &nbsp; &nbsp; &nbsp; printf&#40;&quot;poskusal sem se povezati pa ni slo \n&quot;&#41;;
-
+        printf&#40;&quot;poskusal sem se povezati pa ni slo \n&quot;&#41;;
 <br />
-&nbsp; &nbsp;
-
+	
 <br />
-&nbsp; &nbsp;x=1;
-
+	x=1;
 <br />
-&nbsp; &nbsp;  &#125;else
-
+     &#125;else
 <br />
-&nbsp; &nbsp; &nbsp; &#123;
-
+      &#123;
 <br />
-&nbsp; &nbsp; &nbsp;  printf&#40;&quot;uspelo je \n&quot;&#41;;
-
+       printf&#40;&quot;uspelo je \n&quot;&#41;;
 <br />
-&nbsp; &nbsp; &nbsp; &#125;
-
+      &#125;
 <br />
-&nbsp; &nbsp; &nbsp; if&#40;x==1&#41;&#123;
-
+      if&#40;x==1&#41;&#123;
 <br />
 
-
 <br />
-&nbsp; &nbsp;  
-
+     
 <br />
-&nbsp; &nbsp;  
-
+     
 <br />
-&nbsp; &nbsp; &nbsp; &nbsp;  clientfd = accept&#40;serversocket, &amp;client_addr, &amp;size&#41;;
-
+         clientfd = accept&#40;serversocket, &amp;client_addr, &amp;size&#41;;
 <br />
-&nbsp; &nbsp; if&#40;clientfd==-1&#41;
-
+	 if&#40;clientfd==-1&#41;
 <br />
-&nbsp; &nbsp; &#123;
-
+	 &#123;
 <br />
-&nbsp; &nbsp;&nbsp;  printf&#40;&quot;nobeden se noce povezat&#58;&#40;\n&quot;&#41;;
-
+	   printf&#40;&quot;nobeden se noce povezat&#58;&#40;\n&quot;&#41;;
 <br />
-&nbsp; &nbsp; &#125;else&#123;printf&#40;&quot;povezal se je 1\n&quot;&#41;;&#125;
-
+	 &#125;else&#123;printf&#40;&quot;povezal se je 1\n&quot;&#41;;&#125;
 <br />
-&nbsp; &nbsp;  &#125;
-
+     &#125;
 <br />
-&nbsp; &nbsp;  
-
+     
 <br />
  
-
 <br />
-&nbsp; &nbsp; &nbsp;  
-
+       
 <br />
-&nbsp; &nbsp; &nbsp; 
-
+      
 <br />
-&nbsp; &nbsp;&nbsp; 
-
+	  
 <br />
-&nbsp; &nbsp;&nbsp; 
-
+	  
 <br />
-&nbsp; &nbsp;&nbsp;  
-
+	   
 <br />
 printf&#40;&quot;konec&quot;&#41;;
-
 <br />
 close&#40;socketfd&#41;;
-
 <br />
 close&#40;clientfd&#41;;
-
 <br />
 return 0;
-
 <br />
 &#125;
-
 <br />
 </td>
 <br />
@@ -1392,7 +1209,7 @@ samo a nebo sedaj problem tole ce eden se konektal drugi pa sprejel povezavo kak
 	</tr>
 	
 	<tr>
-		<td width="150" align="left" valign="top" class="row2"><span class="name"><a name="11980"></a><b>Senitel</b></span><br /><span class="postdetails">wannabe<br /><img src="images/ranks/sgd-2.gif" alt="wannabe" title="wannabe" border="0" /><br /><br /><br />Pridružen: 02. jul 2003 ob 17:01<br />objav: 97<br /></span><br /></td>
+		<td width="150" align="left" valign="top" class="row2"><span class="name"><a name="11980"></a><b>Senitel</b></span><br /><span class="postdetails">wannabe<br /><img src="images/ranks/sgd-2.gif" alt="wannabe" title="wannabe" border="0" /><br /><br /><br />Pridružen: 02. jul 2003 ob 17:01<br />objav: 127<br /></span><br /></td>
 		<td class="row2" width="100%" height="28" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
 			<tr>
 				<td colspan="2" width="100%">
@@ -1470,433 +1287,290 @@ Z socketfd lahko počneš kar koli. V bistvu bi morala socketfd in clientfd biti
 <br />
 	<tr>
 <br />
-	  <td class="code">#include &lt;unistd.h&gt;
-
+	  <td class="code">#include &lt;unistd&#46;h&gt;
 <br />
-#include &lt;pthread.h&gt;
-
+#include &lt;pthread&#46;h&gt;
 <br />
-#include &lt;errno.h&gt;
-
+#include &lt;errno&#46;h&gt;
 <br />
-#include &lt;sys/types.h&gt;
-
+#include &lt;sys/types&#46;h&gt;
 <br />
-#include &lt;sys/socket.h&gt;
-
+#include &lt;sys/socket&#46;h&gt;
 <br />
-#include &lt;stdlib.h&gt;
-
+#include &lt;stdlib&#46;h&gt;
 <br />
-#include &lt;netdb.h&gt;
-
+#include &lt;netdb&#46;h&gt;
 <br />
-#include &lt;stdio.h&gt;
-
+#include &lt;stdio&#46;h&gt;
 <br />
-#include &lt;netinet/in.h&gt;
-
+#include &lt;netinet/in&#46;h&gt;
 <br />
 
-
 <br />
-&nbsp; int socketfd;//klient
-
+  int socketfd;//klient
 <br />
  int clientfd;
-
 <br />
  char*ena;
-
 <br />
  char*dva;
-
 <br />
  char*tri;
-
 <br />
  int serversocket;
-
 <br />
  struct sockaddr_in my_addr;
-
 <br />
  struct sockaddr_in server;
-
 <br />
  struct hostent *host;
-
 <br />
  int j=0;
-
 <br />
  int streznik1=0;
-
 <br />
  int klient1=0;
-
 <br />
  
-
 <br />
  
-
 <br />
  void*streznik&#40;void*args&#41;
-
 <br />
  &#123;
-
 <br />
-&nbsp; serversocket = socket&#40;AF_INET, SOCK_STREAM, 0&#41;; 
-
+  serversocket = socket&#40;AF_INET, SOCK_STREAM, 0&#41;; 
 <br />
-&nbsp; &nbsp; 
-
+    
 <br />
-&nbsp; &nbsp; my_addr.sin_family = AF_INET;&nbsp; &nbsp;  
-
+    my_addr&#46;sin_family = AF_INET;     
 <br />
-&nbsp; &nbsp; my_addr.sin_port = htons&#40;atoi&#40;dva&#41;&#41;; 
-
+    my_addr&#46;sin_port = htons&#40;atoi&#40;dva&#41;&#41;; 
 <br />
-&nbsp; &nbsp; my_addr.sin_addr.s_addr = inet_addr&#40;&quot;0.0.0.0&quot;&#41;;
-
+    my_addr&#46;sin_addr&#46;s_addr = inet_addr&#40;&quot;0&#46;0&#46;0&#46;0&quot;&#41;;
 <br />
-&nbsp; &nbsp; bzero&#40;&amp;&#40;my_addr.sin_zero&#41;, 8&#41;;&nbsp; &nbsp; 
-
+    bzero&#40;&amp;&#40;my_addr&#46;sin_zero&#41;, 8&#41;;    
 <br />
-&nbsp; &nbsp; 
-
+    
 <br />
-&nbsp; &nbsp; if &#40;bind&#40;serversocket, &#40;struct sockaddr *&#41;&amp;my_addr, sizeof&#40;struct sockaddr&#41;&#41;
-
+    if &#40;bind&#40;serversocket, &#40;struct sockaddr *&#41;&amp;my_addr, sizeof&#40;struct sockaddr&#41;&#41;
 <br />
 ==-1&#41; &#123;
-
 <br />
-&nbsp; &nbsp; &nbsp; perror&#40;&quot;Cannot bind&quot;&#41;;
-
+      perror&#40;&quot;Cannot bind&quot;&#41;;
 <br />
-&nbsp; &nbsp; &#125;
-
+    &#125;
 <br />
-&nbsp; &nbsp; listen&#40;serversocket, 10&#41;;
-
+    listen&#40;serversocket, 10&#41;;
 <br />
-&nbsp; &nbsp; 
-
+    
 <br />
-&nbsp; &nbsp;  while &#40;1&#41; &#123;
-
+     while &#40;1&#41; &#123;
 <br />
- //&nbsp; &nbsp;.....
-
+ //	&#46;&#46;&#46;&#46;&#46;
 <br />
-&nbsp; &nbsp;struct sockaddr client_addr;
-
+	struct sockaddr client_addr;
 <br />
-&nbsp; &nbsp;socklen_t size = sizeof&#40;client_addr&#41;;
-
+	socklen_t size = sizeof&#40;client_addr&#41;;
 <br />
-&nbsp; &nbsp; &nbsp; &nbsp;  clientfd = accept&#40;serversocket, &amp;client_addr, &amp;size&#41;;
-
+         clientfd = accept&#40;serversocket, &amp;client_addr, &amp;size&#41;;
 <br />
-&nbsp; &nbsp; if&#40;clientfd!=-1&#41;break;
-
+	 if&#40;clientfd!=-1&#41;break;
 <br />
-&nbsp; &nbsp; &#125;
-
+    &#125;
 <br />
-&nbsp; &nbsp; printf&#40;&quot;uspel sem dobiti povezavo na strezniku\n&quot;&#41;;
-
+    printf&#40;&quot;uspel sem dobiti povezavo na strezniku\n&quot;&#41;;
 <br />
-&nbsp; &nbsp; j++;
-
+    j++;
 <br />
-&nbsp; &nbsp; streznik1=1;
-
+    streznik1=1;
 <br />
-&nbsp; &nbsp; pthread_exit&#40;0&#41;;
-
+    pthread_exit&#40;0&#41;;
 <br />
  &#125;
-
 <br />
  
-
 <br />
  
-
 <br />
  void*klient&#40;void*args&#41;
-
 <br />
  &#123;
-
 <br />
-&nbsp;  
-
+   
 <br />
-&nbsp; &nbsp; server.sin_family= AF_INET;
-
+    server&#46;sin_family= AF_INET;
 <br />
-&nbsp;  server.sin_port = htons&#40;atoi&#40;tri&#41;&#41;;
-
+   server&#46;sin_port = htons&#40;atoi&#40;tri&#41;&#41;;
 <br />
-&nbsp;  host = gethostbyname&#40;ena&#41;;
-
+   host = gethostbyname&#40;ena&#41;;
 <br />
-&nbsp;  if &#40;host==NULL&#41; &#123;
-
+   if &#40;host==NULL&#41; &#123;
 <br />
-&nbsp; &nbsp;  perror&#40;&quot;Unknown host&quot;&#41;;
-
+     perror&#40;&quot;Unknown host&quot;&#41;;
 <br />
-&nbsp; &nbsp;  return -1;
-
+     return -1;
 <br />
-&nbsp;  &#125;
-
+   &#125;
 <br />
-&nbsp;  server.sin_addr = *&#40;&#40;struct in_addr*&#41;host-&gt;h_addr&#41;;
-
+   server&#46;sin_addr = *&#40;&#40;struct in_addr*&#41;host-&gt;h_addr&#41;;
 <br />
-&nbsp;  if &#40;connect&#40;socketfd, &#40;struct sockaddr*&#41;&amp;server,&nbsp;  sizeof&#40;struct sockaddr&#41;&#41;
-
+   if &#40;connect&#40;socketfd, &#40;struct sockaddr*&#41;&amp;server,   sizeof&#40;struct sockaddr&#41;&#41;
 <br />
-==&nbsp; -1&#41; &#123;
-
+==  -1&#41; &#123;
 <br />
-&nbsp; &nbsp; &nbsp;  perror&#40;&quot;Connect&quot;&#41;;
-
+       perror&#40;&quot;Connect&quot;&#41;;
 <br />
-&nbsp; &nbsp; &nbsp;  //return -1;
-
+       //return -1;
 <br />
-&nbsp; &nbsp;  &#125;else&#123;printf&#40;&quot;uspelo se mi je povezati z klientom\n&quot;&#41;;j++;klient1=1;&#125;
-
+     &#125;else&#123;printf&#40;&quot;uspelo se mi je povezati z klientom\n&quot;&#41;;j++;klient1=1;&#125;
 <br />
-&nbsp; &nbsp;  
-
+     
 <br />
  pthread_exit&#40;0&#41;;
-
 <br />
  &#125;
-
 <br />
  
-
 <br />
  
-
 <br />
  
-
 <br />
  int main&#40;int argc, char**argv&#41;
-
 <br />
  &#123;
-
 <br />
  
-
 <br />
  if&#40;argc!=4&#41;
-
 <br />
  &#123;
-
 <br />
- &nbsp; &nbsp;printf&#40;&quot;premalo argumentov&quot;&#41;;
-
+ 	printf&#40;&quot;premalo argumentov&quot;&#41;;
 <br />
-&nbsp; &nbsp;return -1;
-
+	return -1;
 <br />
  &#125;
-
 <br />
 socketfd = socket&#40;PF_INET, SOCK_STREAM, 0&#41;;
-
 <br />
-&nbsp; if &#40;socketfd&lt;0&#41; &#123;
-
+  if &#40;socketfd&lt;0&#41; &#123;
 <br />
-&nbsp; &nbsp; perror&#40;&quot;Error opening socket&quot;&#41;;
-
+    perror&#40;&quot;Error opening socket&quot;&#41;;
 <br />
-&nbsp; &nbsp; return -1;
-
+    return -1;
 <br />
-&nbsp; &#125;
-
+  &#125;
 <br />
-&nbsp; pthread_t tid&#91;2&#93;; //polje niti
-
+  pthread_t tid&#91;2&#93;; //polje niti
 <br />
  ena=argv&#91;1&#93;;
-
 <br />
  dva=argv&#91;2&#93;;
-
 <br />
  tri=argv&#91;3&#93;;
-
 <br />
  
-
 <br />
  while&#40;j!=2&#41;&#123;
-
 <br />
  
-
 <br />
  if&#40;klient1!=1&#41;
-
 <br />
  pthread_create&#40;&amp;tid&#91;1&#93;,NULL,klient,0&#41;;
-
 <br />
  if&#40;streznik1!=1&#41;
-
 <br />
  pthread_create&#40;&amp;tid&#91;2&#93;,NULL,streznik,0&#41;;
-
 <br />
  &#125;
-
 <br />
 // wait&#40;5&#41;;
-
 <br />
  
-
 <br />
  int i=0;
-
 <br />
  char buffer&#91;19&#93;;
-
 <br />
  char buffer1&#91;19&#93;;
-
 <br />
  read&#40;0,buffer,strlen&#40;buffer&#41;&#41;;
-
 <br />
  
-
 <br />
  write&#40;clientfd,buffer,19&#41;;
-
 <br />
  
-
 <br />
  while&#40;i!=1&#41;
-
 <br />
  &#123;
-
 <br />
-&nbsp;  int z= read&#40; socketfd,buffer1,19&#41;;
-
+   int z= read&#40; socketfd,buffer1,19&#41;;
 <br />
-&nbsp;  if&#40;z&gt;0&#41;
-
+   if&#40;z&gt;0&#41;
 <br />
-&nbsp;  i++;
-
+   i++;
 <br />
  &#125;
-
 <br />
  
-
 <br />
  write&#40;1,buffer1,strlen&#40;buffer&#41;&#41;;
-
 <br />
  //zdruzimo niti
-
 <br />
-&nbsp; &nbsp; for&#40;i=2;i&gt;=0;i--&#41;&#123;pthread_join&#40;tid&#91;i&#93;,NULL&#41;;&#125;
-
+    for&#40;i=2;i&gt;=0;i--&#41;&#123;pthread_join&#40;tid&#91;i&#93;,NULL&#41;;&#125;
 <br />
  
-
 <br />
-&nbsp; close&#40;socketfd&#41;;
-
+  close&#40;socketfd&#41;;
 <br />
-&nbsp; close&#40; clientfd&#41;; 
-
+  close&#40; clientfd&#41;; 
 <br />
  return 0;
-
 <br />
  &#125;
+<br />
 
 <br />
 
-
+<br />
+mislim da bi v teoriji tole moramlo delati vendar imam 1 problem ko se 1 zazene je jasno da ce ni drugi zagnan se ne more  povezati ko  zazenes se drugega mi 2 program javi lepo da se je lepo povezal na server nato pa mi 1 program zacne metati ven cannot bind BAD FILE DESCRIPTOR drugi program pa javla CANNOT BIND ADDRESS ALREDY IN USE 
 <br />
 
-
 <br />
-mislim da bi v teoriji tole moramlo delati vendar imam 1 problem ko se 1 zazene je jasno da ce ni drugi zagnan se ne more&nbsp; povezati ko&nbsp; zazenes se drugega mi 2 program javi lepo da se je lepo povezal na server nato pa mi 1 program zacne metati ven cannot bind BAD FILE DESCRIPTOR drugi program pa javla CANNOT BIND ADDRESS ALREDY IN USE 
-
-<br />
-
-
-<br />
-
 
 <br />
 a je slucajno problem tole ker programa testiram tako 
-
 <br />
 imam 2 primerka tega programa v razlicnih datotekah 
-
 <br />
-
 
 <br />
 in testiram v 2 konzolnih oknih takole
-
 <br />
 
-
 <br />
-./a.out 127.0.0.1 5000 5001
-
+&#46;/a&#46;out 127&#46;0&#46;0&#46;1 5000 5001
 <br />
 
-
 <br />
-./a.out 127.0.0.1 5001 5000
-
+&#46;/a&#46;out 127&#46;0&#46;0&#46;1 5001 5000
 <br />
 
-
 <br />
-
 
 <br />
 A mi zna kdo pomagati ?
+<br />
 
 <br />
 
-
 <br />
-
-
-<br />
-
 
 <br />
 </td>
@@ -1922,7 +1596,7 @@ A mi zna kdo pomagati ?
 	</tr>
 	
 	<tr>
-		<td width="150" align="left" valign="top" class="row2"><span class="name"><a name="12019"></a><b>Senitel</b></span><br /><span class="postdetails">wannabe<br /><img src="images/ranks/sgd-2.gif" alt="wannabe" title="wannabe" border="0" /><br /><br /><br />Pridružen: 02. jul 2003 ob 17:01<br />objav: 97<br /></span><br /></td>
+		<td width="150" align="left" valign="top" class="row2"><span class="name"><a name="12019"></a><b>Senitel</b></span><br /><span class="postdetails">wannabe<br /><img src="images/ranks/sgd-2.gif" alt="wannabe" title="wannabe" border="0" /><br /><br /><br />Pridružen: 02. jul 2003 ob 17:01<br />objav: 127<br /></span><br /></td>
 		<td class="row2" width="100%" height="28" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
 			<tr>
 				<td colspan="2" width="100%">
@@ -1960,218 +1634,147 @@ A mi zna kdo pomagati ?
 <br />
 	<tr>
 <br />
-	  <td class="code">#include &lt;winsock2.h&gt;
-
+	  <td class="code">#include &lt;winsock2&#46;h&gt;
 <br />
 #include &lt;iostream&gt;
-
 <br />
-
 
 <br />
 DWORD WINAPI inputThread&#40;LPVOID param&#41;
-
 <br />
 &#123;
-
 <br />
-&nbsp; &nbsp;SOCKET comm = *&#40;&#40;SOCKET*&#41;param&#41;;
-
+	SOCKET comm = *&#40;&#40;SOCKET*&#41;param&#41;;
 <br />
-&nbsp; &nbsp;char buffer&#91;512&#93;;
-
+	char buffer&#91;512&#93;;
 <br />
-&nbsp; &nbsp;while &#40;1&#41;
-
+	while &#40;1&#41;
 <br />
-&nbsp; &nbsp;&#123;
-
+	&#123;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;ZeroMemory&#40;buffer,512&#41;;
-
+		ZeroMemory&#40;buffer,512&#41;;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;std&#58;&#58;cin.getline&#40;buffer,512&#41;;
-
+		std&#58;&#58;cin&#46;getline&#40;buffer,512&#41;;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;send&#40;comm,buffer,&#40;int&#41;strlen&#40;buffer&#41;,0&#41;;
-
+		send&#40;comm,buffer,&#40;int&#41;strlen&#40;buffer&#41;,0&#41;;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;if &#40;strcmp&#40;buffer,&quot;bye&quot;&#41; == 0&#41; break;
-
+		if &#40;strcmp&#40;buffer,&quot;bye&quot;&#41; == 0&#41; break;
 <br />
-&nbsp; &nbsp;&#125;
-
+	&#125;
 <br />
 
-
 <br />
-&nbsp; &nbsp;return 1;
-
+	return 1;
 <br />
 &#125;
-
 <br />
-
 
 <br />
 int main&#40;int argc,char** argv&#41;
-
 <br />
 &#123;
-
 <br />
-&nbsp; &nbsp;if &#40;argc != 3&#41; return 0;
-
+	if &#40;argc != 3&#41; return 0;
 <br />
 
-
 <br />
-&nbsp; &nbsp;WSAData data;
-
+	WSAData data;
 <br />
-&nbsp; &nbsp;WSAStartup&#40;MAKEWORD&#40;1,1&#41;,&amp;data&#41;;
-
+	WSAStartup&#40;MAKEWORD&#40;1,1&#41;,&amp;data&#41;;
 <br />
 
-
 <br />
-&nbsp; &nbsp;// Poskusimo se povezati na strežnik
-
+	// Poskusimo se povezati na strežnik
 <br />
-&nbsp; &nbsp;SOCKET server = NULL;
-
+	SOCKET server = NULL;
 <br />
-&nbsp; &nbsp;SOCKET comm = socket&#40;AF_INET,SOCK_STREAM,0&#41;;
-
+	SOCKET comm = socket&#40;AF_INET,SOCK_STREAM,0&#41;;
 <br />
-&nbsp; &nbsp;sockaddr_in addr;
-
+	sockaddr_in addr;
 <br />
-&nbsp; &nbsp;ZeroMemory&#40;&amp;addr,sizeof&#40;sockaddr_in&#41;&#41;;
-
+	ZeroMemory&#40;&amp;addr,sizeof&#40;sockaddr_in&#41;&#41;;
 <br />
-&nbsp; &nbsp;addr.sin_family = AF_INET;
-
+	addr&#46;sin_family = AF_INET;
 <br />
-&nbsp; &nbsp;addr.sin_port = htons&#40;atoi&#40;argv&#91;2&#93;&#41;&#41;;
-
+	addr&#46;sin_port = htons&#40;atoi&#40;argv&#91;2&#93;&#41;&#41;;
 <br />
-&nbsp; &nbsp;addr.sin_addr.S_un.S_addr = inet_addr&#40;argv&#91;1&#93;&#41;;
-
+	addr&#46;sin_addr&#46;S_un&#46;S_addr = inet_addr&#40;argv&#91;1&#93;&#41;;
 <br />
-&nbsp; &nbsp;if &#40;connect&#40;comm,&#40;sockaddr*&#41;&amp;addr,sizeof&#40;sockaddr_in&#41;&#41; != 0&#41;
-
+	if &#40;connect&#40;comm,&#40;sockaddr*&#41;&amp;addr,sizeof&#40;sockaddr_in&#41;&#41; != 0&#41;
 <br />
-&nbsp; &nbsp;&#123;
-
+	&#123;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;std&#58;&#58;cout &lt;&lt; &quot;Povezava s strežnikom ni uspela, postavimo se v strežniški način.&quot; &lt;&lt; std&#58;&#58;endl;
-
+		std&#58;&#58;cout &lt;&lt; &quot;Povezava s strežnikom ni uspela, postavimo se v strežniški način&#46;&quot; &lt;&lt; std&#58;&#58;endl;
 <br />
 
-
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;server = socket&#40;AF_INET,SOCK_STREAM,0&#41;;
-
+		server = socket&#40;AF_INET,SOCK_STREAM,0&#41;;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;sockaddr_in serv;
-
+		sockaddr_in serv;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;ZeroMemory&#40;&amp;serv,sizeof&#40;sockaddr_in&#41;&#41;;
-
+		ZeroMemory&#40;&amp;serv,sizeof&#40;sockaddr_in&#41;&#41;;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;serv.sin_family = AF_INET;
-
+		serv&#46;sin_family = AF_INET;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;serv.sin_port = htons&#40;atoi&#40;argv&#91;2&#93;&#41;&#41;;
-
+		serv&#46;sin_port = htons&#40;atoi&#40;argv&#91;2&#93;&#41;&#41;;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;bind&#40;server,&#40;sockaddr*&#41;&amp;serv,sizeof&#40;sockaddr_in&#41;&#41;;
-
+		bind&#40;server,&#40;sockaddr*&#41;&amp;serv,sizeof&#40;sockaddr_in&#41;&#41;;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;listen&#40;server,10&#41;;
-
+		listen&#40;server,10&#41;;
 <br />
 
-
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;std&#58;&#58;cout &lt;&lt; &quot;Čakamo na povezavo...&quot; &lt;&lt; std&#58;&#58;endl;
-
+		std&#58;&#58;cout &lt;&lt; &quot;Čakamo na povezavo&#46;&#46;&#46;&quot; &lt;&lt; std&#58;&#58;endl;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;comm = accept&#40;server,NULL,NULL&#41;;
-
+		comm = accept&#40;server,NULL,NULL&#41;;
 <br />
-&nbsp; &nbsp;&#125;
-
+	&#125;
 <br />
-&nbsp; &nbsp;printf&#40;&quot;Povezava vzpostavljena\n&quot;&#41;;
-
+	printf&#40;&quot;Povezava vzpostavljena\n&quot;&#41;;
 <br />
 
-
 <br />
-&nbsp; &nbsp;// Kreiramo nit, ki bere in pošilja tekst
-
+	// Kreiramo nit, ki bere in pošilja tekst
 <br />
-&nbsp; &nbsp;HANDLE thread = 0;
-
+	HANDLE thread = 0;
 <br />
-&nbsp; &nbsp;CreateThread&#40;NULL,0,inputThread,&#40;LPVOID&#41;&amp;comm,0,&#40;DWORD*&#41;&amp;thread&#41;;
-
+	CreateThread&#40;NULL,0,inputThread,&#40;LPVOID&#41;&amp;comm,0,&#40;DWORD*&#41;&amp;thread&#41;;
 <br />
 
-
 <br />
-&nbsp; &nbsp;char buffer&#91;512&#93;;
-
+	char buffer&#91;512&#93;;
 <br />
-&nbsp; &nbsp;while &#40;1&#41;
-
+	while &#40;1&#41;
 <br />
-&nbsp; &nbsp;&#123;
-
+	&#123;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;ZeroMemory&#40;buffer,512&#41;;
-
+		ZeroMemory&#40;buffer,512&#41;;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;if &#40;recv&#40;comm,&#40;char*&#41;buffer,512,0&#41; &lt;= 0&#41; break;
-
+		if &#40;recv&#40;comm,&#40;char*&#41;buffer,512,0&#41; &lt;= 0&#41; break;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;std&#58;&#58;cout &lt;&lt; &quot;&gt;&quot; &lt;&lt; buffer &lt;&lt; std&#58;&#58;endl;
-
+		std&#58;&#58;cout &lt;&lt; &quot;&gt;&quot; &lt;&lt; buffer &lt;&lt; std&#58;&#58;endl;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;if &#40;strcmp&#40;buffer,&quot;bye&quot;&#41; == 0&#41; break;
-
+		if &#40;strcmp&#40;buffer,&quot;bye&quot;&#41; == 0&#41; break;
 <br />
-&nbsp; &nbsp;&#125;
-
+	&#125;
 <br />
-&nbsp; &nbsp;CloseHandle&#40;thread&#41;;
-
+	CloseHandle&#40;thread&#41;;
 <br />
 
-
 <br />
-&nbsp; &nbsp;// Zapremo povezave
-
+	// Zapremo povezave
 <br />
-&nbsp; &nbsp;if &#40;server != NULL&#41; closesocket&#40;server&#41;;
-
+	if &#40;server != NULL&#41; closesocket&#40;server&#41;;
 <br />
-&nbsp; &nbsp;closesocket&#40;comm&#41;;
-
+	closesocket&#40;comm&#41;;
 <br />
-&nbsp; &nbsp;std&#58;&#58;cout &lt;&lt; &quot;Povezava zaključena!&quot; &lt;&lt; std&#58;&#58;endl;
-
+	std&#58;&#58;cout &lt;&lt; &quot;Povezava zaključena!&quot; &lt;&lt; std&#58;&#58;endl;
 <br />
 
-
 <br />
-&nbsp; &nbsp;WSACleanup&#40;&#41;;
-
+	WSACleanup&#40;&#41;;
 <br />
-&nbsp; &nbsp;return 0;
-
+	return 0;
 <br />
 &#125;</td>
 <br />
@@ -2210,7 +1813,7 @@ Eko tukaj imaš zadevo narejeno za windowse...</span><span class="gensmall"></sp
   <tr>
 	<td align="left" valign="middle" nowrap="nowrap">&nbsp;</td>
 	<td align="left" valign="middle" width="100%"><span class="nav">&nbsp;&nbsp;&nbsp;<a href="index.html" class="nav">SloGameDev.net seznam forumov</a>
-	  -> <a href="forum-1.html" class="nav">Splošno Programiranje</a></span></td>
+	  -> <a href="forum-52.html" class="nav">Izdelovanje iger</a></span></td>
 	<td align="right" valign="top" nowrap="nowrap"><span class="gensmall">Časovni pas (GMT +2:00 uri) Slovenija, poletni čas</span><br /><span class="nav"></span>
 	  </td>
   </tr>
@@ -2226,7 +1829,7 @@ Eko tukaj imaš zadevo narejeno za windowse...</span><span class="gensmall"></sp
   </tr>
 </table>
 
-<div align="center"><span class="copyright"><br />Arhiv stanja na dan 13. 2. 2006 &mdash; samo za branje.<br />
+<div align="center"><span class="copyright"><br />Arhiv &mdash; samo za branje.<br />
 <!--
 	We request you retain the full copyright notice below including the link to www.phpbb.com.
 	This not only gives respect to the large amount of time given freely by the developers

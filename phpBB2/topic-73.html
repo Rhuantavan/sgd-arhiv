@@ -276,13 +276,13 @@ input.liteoption {
   <tr>
 	<td align="left" valign="bottom" nowrap="nowrap">&nbsp;</td>
 	<td align="left" valign="middle" width="100%"><span class="nav">&nbsp;&nbsp;&nbsp;<a href="index.html" class="nav">SloGameDev.net seznam forumov</a>
-	  -> <a href="forum-1.html" class="nav">Splošno Programiranje</a></span></td>
+	  -> <a href="forum-52.html" class="nav">Izdelovanje iger</a></span></td>
   </tr>
 </table>
 
 <table class="forumline" width="100%" cellspacing="1" cellpadding="3" border="0">
 	<tr align="right">
-		<td class="catHead" colspan="2" height="28"><span class="nav"><a href="topic-62.html" class="nav">Prejšnja tema</a> :: <a href="topic-77.html" class="nav">Naslednja tema</a> &nbsp;</span></td>
+		<td class="catHead" colspan="2" height="28"><span class="nav"><a href="topic-70.html" class="nav">Prejšnja tema</a> :: <a href="topic-77.html" class="nav">Naslednja tema</a> &nbsp;</span></td>
 	</tr>
 	
 	<tr>
@@ -291,7 +291,7 @@ input.liteoption {
 	</tr>
 	
 	<tr>
-		<td width="150" align="left" valign="top" class="row1"><span class="name"><a name="548"></a><b>Napsy</b></span><br /><span class="postdetails">inštruktor<br /><img src="images/ranks/sgd-4.gif" alt="inštruktor" title="inštruktor" border="0" /><br /><br /><br />Pridružen: 09. jan 2003 ob 22:37<br />objav: 306<br />Kraj: Letuš</span><br /></td>
+		<td width="150" align="left" valign="top" class="row1"><span class="name"><a name="548"></a><b>Napsy</b></span><br /><span class="postdetails">inštruktor<br /><img src="images/ranks/sgd-4.gif" alt="inštruktor" title="inštruktor" border="0" /><br /><br /><br />Pridružen: 09. jan 2003 ob 22:37<br />objav: 258<br />Kraj: Letuš</span><br /></td>
 		<td class="row1" width="100%" height="28" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
 			<tr>
 				<td colspan="2" width="100%">
@@ -327,126 +327,85 @@ input.liteoption {
 	<tr>
 <br />
 	  <td class="code">/* Dinamično polje v C-ju */
-
 <br />
-
 
 <br />
 char *buffer = NULL;
-
 <br />
-
 
 <br />
 /* Ker malloc ne prepiše pomnilnika, se bo buffer vedno širil in bo vedno
-
 <br />
-&nbsp;  zasedal i * 10 prostora. Spremenljivka i se pa vedno poviša za 1. To pa
-
+   zasedal i * 10 prostora&#46; Spremenljivka i se pa vedno poviša za 1&#46; To pa
 <br />
-&nbsp;  pomeni, da bo vsak element v polju zasedel 10 bajtov, i se bo pa 10-krat povišala
-
+   pomeni, da bo vsak element v polju zasedel 10 bajtov, i se bo pa 10-krat povišala
 <br />
-&nbsp;  Torej imeli bomo polje, ki bo zasedlo 100 bajtov&#40;10x10&#41;. Lahko se pa tudi naredit
-
+   Torej imeli bomo polje, ki bo zasedlo 100 bajtov&#40;10x10&#41;&#46; Lahko se pa tudi naredit
 <br />
-&nbsp;  element npr. i * sizeof&#40;int&#41;, kjer en element zasede velikost tipa int.
-
+   element npr&#46; i * sizeof&#40;int&#41;, kjer en element zasede velikost tipa int&#46;
 <br />
 
-
 <br />
-&nbsp;  Problem je pa naslednji&#58; Nekako moramo vedeti, kje se zacne element in kje se konca.
-
+   Problem je pa naslednji&#58; Nekako moramo vedeti, kje se zacne element in kje se konca&#46;
 <br />
-&nbsp;  Zaradi tega je še najbolje, da naredimo še eno pomožno polje, ki bo vsebovala
-
+   Zaradi tega je še najbolje, da naredimo še eno pomožno polje, ki bo vsebovala
 <br />
-&nbsp;  kazalce za elemente na prejšnjo polje.
-
+   kazalce za elemente na prejšnjo polje&#46;
 <br />
-&nbsp;  Ali pa druga metoda&#58; Ce želimo brati oz. pisati v polje, po njem vedno skakamo za
-
+   Ali pa druga metoda&#58; Ce želimo brati oz&#46; pisati v polje, po njem vedno skakamo za
 <br />
-&nbsp;  i * 10 bajtov nazaj ali naprej. */
-
+   i * 10 bajtov nazaj ali naprej&#46; */
 <br />
-
 
 <br />
 /* Naredimo polje */
-
 <br />
 for &#40;int i = 1; i &lt;= 10; i++&#41; &#123;
-
 <br />
-&nbsp; &nbsp; buffer = &#40;char *&#41;malloc&#40;i*10&#41;;
-
+    buffer = &#40;char *&#41;malloc&#40;i*10&#41;;
 <br />
 &#125;
-
 <br />
-
 
 <br />
 /* Se vrnemo nazaj */
-
 <br />
 //buffer -= 100;
-
 <br />
-
 
 <br />
 /* Pišemo v polje */
-
 <br />
 for &#40;int j = 1; j &lt;= 10; j++&#41; &#123;
-
 <br />
-&nbsp; &nbsp; strcpy&#40;buffer, &quot;Kako kaj&quot;&#41;;
-
+    strcpy&#40;buffer, &quot;Kako kaj&quot;&#41;;
 <br />
-&nbsp; &nbsp; buffer += i * 10;
-
+    buffer += i * 10;
 <br />
 &#125;
-
 <br />
 
-
 <br />
-/* Se vrnemo nazaj. */
-
+/* Se vrnemo nazaj&#46; */
 <br />
 buffer -= 100;
-
 <br />
-
 
 <br />
 /* Preberemo vsak element v polju */
-
 <br />
 for &#40;int k = 1; k &lt;= 10; k++&#41; &#123;
-
 <br />
-&nbsp; &nbsp; for &#40;int l = 0; l &lt; 10; l++&#41;
-
+    for &#40;int l = 0; l &lt; 10; l++&#41;
 <br />
-&nbsp; &nbsp; &nbsp; &nbsp; printf&#40;&quot;%c&quot;, buffer&#91;l&#93;;
-
+        printf&#40;&quot;%c&quot;, buffer&#91;l&#93;;
 <br />
-&nbsp; &nbsp; printf&#40;&quot;\n&quot;&#41;;
-
+    printf&#40;&quot;\n&quot;&#41;;
 <br />
-&nbsp; &nbsp; buffer += k * 10;
-
+    buffer += k * 10;
 <br />
 &#125;
-
 <br />
-
 
 <br />
 free&#40;buffer&#41;;</td>
@@ -461,7 +420,7 @@ free&#40;buffer&#41;;</td>
 
 
 <br />
-Nevem, ampak sumljiv se mi zdi malloc, ker bo ta rezerviral pomnilnik vedno na novem naslovu. Kaj je pa s calloc oz. realloc funkcijo? Predlogi???<br />_________________<br /><a  target="_blank">http://luka-napotnik.net</a></span><span class="gensmall"></span></td>
+Nevem, ampak sumljiv se mi zdi malloc, ker bo ta rezerviral pomnilnik vedno na novem naslovu. Kaj je pa s calloc oz. realloc funkcijo? Predlogi???<br />_________________<br /><a class="postlink" >http://luka-napotnik.net</a></span><span class="gensmall"></span></td>
 			</tr>
 		</table></td>
 	</tr>
@@ -478,7 +437,7 @@ Nevem, ampak sumljiv se mi zdi malloc, ker bo ta rezerviral pomnilnik vedno na n
 	</tr>
 	
 	<tr>
-		<td width="150" align="left" valign="top" class="row2"><span class="name"><a name="550"></a><b>AlienX</b></span><br /><span class="postdetails">wannabe<br /><img src="images/ranks/sgd-2.gif" alt="wannabe" title="wannabe" border="0" /><br /><img src="images/avatars/c14d559340c02ac14bb02.gif" alt="" border="0" /><br /><br />Pridružen: 11. jan 2003 ob 21:35<br />objav: 110<br /></span><br /></td>
+		<td width="150" align="left" valign="top" class="row2"><span class="name"><a name="550"></a><b>AlienX</b></span><br /><span class="postdetails">wannabe<br /><img src="images/ranks/sgd-2.gif" alt="wannabe" title="wannabe" border="0" /><br /><img src="images/avatars/c14d559340c02ac14bb02.gif" alt="" border="0" /><br /><br />Pridružen: 11. jan 2003 ob 21:35<br />objav: 111<br /></span><br /></td>
 		<td class="row2" width="100%" height="28" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
 			<tr>
 				<td colspan="2" width="100%">
@@ -536,7 +495,7 @@ AlienX<br />_________________<br />with dreams to be a king, first one should be
 	</tr>
 	
 	<tr>
-		<td width="150" align="left" valign="top" class="row1"><span class="name"><a name="551"></a><b>Napsy</b></span><br /><span class="postdetails">inštruktor<br /><img src="images/ranks/sgd-4.gif" alt="inštruktor" title="inštruktor" border="0" /><br /><br /><br />Pridružen: 09. jan 2003 ob 22:37<br />objav: 306<br />Kraj: Letuš</span><br /></td>
+		<td width="150" align="left" valign="top" class="row1"><span class="name"><a name="551"></a><b>Napsy</b></span><br /><span class="postdetails">inštruktor<br /><img src="images/ranks/sgd-4.gif" alt="inštruktor" title="inštruktor" border="0" /><br /><br /><br />Pridružen: 09. jan 2003 ob 22:37<br />objav: 258<br />Kraj: Letuš</span><br /></td>
 		<td class="row1" width="100%" height="28" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
 			<tr>
 				<td colspan="2" width="100%">
@@ -562,7 +521,7 @@ AlienX<br />_________________<br />with dreams to be a king, first one should be
 
 
 <br />
-Sj mislim, da sem že poštudiral način. Da se. In sicer z realloc, ker lepo podaljša rezerviran prostor.<br />_________________<br /><a  target="_blank">http://luka-napotnik.net</a></span><span class="gensmall"></span></td>
+Sj mislim, da sem že poštudiral način. Da se. In sicer z realloc, ker lepo podaljša rezerviran prostor.<br />_________________<br /><a class="postlink" >http://luka-napotnik.net</a></span><span class="gensmall"></span></td>
 			</tr>
 		</table></td>
 	</tr>
@@ -579,7 +538,7 @@ Sj mislim, da sem že poštudiral način. Da se. In sicer z realloc, ker lepo po
 	</tr>
 	
 	<tr>
-		<td width="150" align="left" valign="top" class="row2"><span class="name"><a name="554"></a><b>Napsy</b></span><br /><span class="postdetails">inštruktor<br /><img src="images/ranks/sgd-4.gif" alt="inštruktor" title="inštruktor" border="0" /><br /><br /><br />Pridružen: 09. jan 2003 ob 22:37<br />objav: 306<br />Kraj: Letuš</span><br /></td>
+		<td width="150" align="left" valign="top" class="row2"><span class="name"><a name="554"></a><b>Napsy</b></span><br /><span class="postdetails">inštruktor<br /><img src="images/ranks/sgd-4.gif" alt="inštruktor" title="inštruktor" border="0" /><br /><br /><br />Pridružen: 09. jan 2003 ob 22:37<br />objav: 258<br />Kraj: Letuš</span><br /></td>
 		<td class="row2" width="100%" height="28" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
 			<tr>
 				<td colspan="2" width="100%">
@@ -614,25 +573,19 @@ Sj mislim, da sem že poštudiral način. Da se. In sicer z realloc, ker lepo po
 <br />
 	<tr>
 <br />
-	  <td class="code">&nbsp; &nbsp;buffer = &#40;char *&#41;malloc&#40;10&#41;;
-
+	  <td class="code">	buffer = &#40;char *&#41;malloc&#40;10&#41;;
 <br />
-&nbsp; &nbsp; memset&#40;&#40;char *&#41;buffer, 'E', 10&#41;;
-
+    memset&#40;&#40;char *&#41;buffer, 'E', 10&#41;;
 <br />
 
-
 <br />
-&nbsp; &nbsp; for &#40;int i = 1; i &lt;= 10; i++&#41; &#123;
-
+    for &#40;int i = 1; i &lt;= 10; i++&#41; &#123;
 <br />
-&nbsp; &nbsp; &nbsp; &nbsp; if &#40;&#40;buffer = &#40;char *&#41;realloc&#40;buffer, &#40;strlen&#40;buffer&#41;&#41; + 10&#41;&#41; == NULL&#41;
-
+        if &#40;&#40;buffer = &#40;char *&#41;realloc&#40;buffer, &#40;strlen&#40;buffer&#41;&#41; + 10&#41;&#41; == NULL&#41;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;printf&#40;&quot;Napaka pri razširjanju polja!\n&quot;&#41;;
-
+			printf&#40;&quot;Napaka pri razširjanju polja!\n&quot;&#41;;
 <br />
-&nbsp; &nbsp;&#125;</td>
+	&#125;</td>
 <br />
 	</tr>
 <br />
@@ -644,7 +597,7 @@ Sj mislim, da sem že poštudiral način. Da se. In sicer z realloc, ker lepo po
 
 
 <br />
-Upam, da je to nekot prau. Če je, pa moram še nrdit proceduro za branje in pisanje. Predlogi?<br />_________________<br /><a  target="_blank">http://luka-napotnik.net</a></span><span class="gensmall"></span></td>
+Upam, da je to nekot prau. Če je, pa moram še nrdit proceduro za branje in pisanje. Predlogi?<br />_________________<br /><a class="postlink" >http://luka-napotnik.net</a></span><span class="gensmall"></span></td>
 			</tr>
 		</table></td>
 	</tr>
@@ -661,7 +614,7 @@ Upam, da je to nekot prau. Če je, pa moram še nrdit proceduro za branje in pis
 	</tr>
 	
 	<tr>
-		<td width="150" align="left" valign="top" class="row1"><span class="name"><a name="560"></a><b>hugoboss</b></span><br /><span class="postdetails">poznavalec<br /><img src="images/ranks/sgd-3.gif" alt="poznavalec" title="poznavalec" border="0" /><br /><img src="images/avatars/c2f900cf3e245e2ad2ecf.gif" alt="" border="0" /><br /><br />Pridružen: 11. jan 2003 ob 21:57<br />objav: 193<br /></span><br /></td>
+		<td width="150" align="left" valign="top" class="row1"><span class="name"><a name="560"></a><b>hugoboss</b></span><br /><span class="postdetails">poznavalec<br /><img src="images/ranks/sgd-3.gif" alt="poznavalec" title="poznavalec" border="0" /><br /><img src="images/avatars/c2f900cf3e245e2ad2ecf.gif" alt="" border="0" /><br /><br />Pridružen: 11. jan 2003 ob 21:57<br />objav: 189<br /></span><br /></td>
 		<td class="row1" width="100%" height="28" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
 			<tr>
 				<td colspan="2" width="100%">
@@ -687,7 +640,7 @@ Upam, da je to nekot prau. Če je, pa moram še nrdit proceduro za branje in pis
 
 
 <br />
-(popravite, ce se motim!)<br />_________________<br />hugo2me@…
+(popravite, ce se motim!)<br />_________________<br /><a >hugo2me@…</a>
 
 <br />
 
@@ -756,7 +709,7 @@ Starih kazalcev v polje po klicu realloc() ni več varno uporabljati. Željeni u
 	</tr>
 	
 	<tr>
-		<td width="150" align="left" valign="top" class="row1"><span class="name"><a name="564"></a><b>Firestar</b></span><br /><span class="postdetails">poznavalec<br /><img src="images/ranks/sgd-3.gif" alt="poznavalec" title="poznavalec" border="0" /><br /><img src="images/avatars/c2f929273ec2afe163bdf.gif" alt="" border="0" /><br /><br />Pridružen: 17. jan 2003 ob 11:24<br />objav: 181<br />Kraj: Maribor</span><br /></td>
+		<td width="150" align="left" valign="top" class="row1"><span class="name"><a name="564"></a><b>Firestar</b></span><br /><span class="postdetails">poznavalec<br /><img src="images/ranks/sgd-3.gif" alt="poznavalec" title="poznavalec" border="0" /><br /><img src="images/avatars/c2f929273ec2afe163bdf.gif" alt="" border="0" /><br /><br />Pridružen: 17. jan 2003 ob 11:24<br />objav: 173<br />Kraj: Maribor</span><br /></td>
 		<td class="row1" width="100%" height="28" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
 			<tr>
 				<td colspan="2" width="100%">
@@ -801,31 +754,22 @@ nato pa dodas metodo za povecanje bufferja, ki bo videti nekako takole:
 	<tr>
 <br />
 	  <td class="code">
-
 <br />
 private void DynamicArray&#58;&#58;realloc&#40;int pSize&#41; &#123;
-
 <br />
-&nbsp;  char * temp = new char&#91;pSize&#93;;&nbsp; // ustvari novi buffer
-
+   char * temp = new char&#91;pSize&#93;;  // ustvari novi buffer
 <br />
 
-
 <br />
-&nbsp;  memcpy&#40;temp, m_Buffer, m_Size&#41;;&nbsp;  // skopira stari buffer v novega
-
+   memcpy&#40;temp, m_Buffer, m_Size&#41;;   // skopira stari buffer v novega
 <br />
-&nbsp;  delete &#91;&#93; m_Buffer;
-
+   delete &#91;&#93; m_Buffer;
 <br />
-&nbsp;  m_Buffer = temp;
-
+   m_Buffer = temp;
 <br />
-&nbsp;  m_Size = pSize;
-
+   m_Size = pSize;
 <br />
 &#125;
-
 <br />
 </td>
 <br />
@@ -834,7 +778,6 @@ private void DynamicArray&#58;&#58;realloc&#40;int pSize&#41; &#123;
 </table>
 <br />
 <span class="postbody">
-
 <br />
 Za dostopanje do bufferja v DynamicArray objektu pa overloadaj operator []. Na ta nacin ne bos imel tezav z naslovi, ker nikoli ne bos direktno dostopal do m_Buffer-ja. Ce to potrebujes za kaksne druge namene, kjer potrebujes direktni dostop do m_Buffer spremenljivke pa dodaj se metodo </span>
 <br />
@@ -849,16 +792,12 @@ Za dostopanje do bufferja v DynamicArray objektu pa overloadaj operator []. Na t
 	<tr>
 <br />
 	  <td class="code">
-
 <br />
 public const char * getBuffer&#40;&#41; &#123;
-
 <br />
-&nbsp;  return m_Buffer;
-
+   return m_Buffer;
 <br />
 &#125;
-
 <br />
 </td>
 <br />
@@ -892,7 +831,7 @@ Obilo uspeha</span><span class="gensmall"></span></td>
 	</tr>
 	
 	<tr>
-		<td width="150" align="left" valign="top" class="row2"><span class="name"><a name="565"></a><b>hugoboss</b></span><br /><span class="postdetails">poznavalec<br /><img src="images/ranks/sgd-3.gif" alt="poznavalec" title="poznavalec" border="0" /><br /><img src="images/avatars/c2f900cf3e245e2ad2ecf.gif" alt="" border="0" /><br /><br />Pridružen: 11. jan 2003 ob 21:57<br />objav: 193<br /></span><br /></td>
+		<td width="150" align="left" valign="top" class="row2"><span class="name"><a name="565"></a><b>hugoboss</b></span><br /><span class="postdetails">poznavalec<br /><img src="images/ranks/sgd-3.gif" alt="poznavalec" title="poznavalec" border="0" /><br /><img src="images/avatars/c2f900cf3e245e2ad2ecf.gif" alt="" border="0" /><br /><br />Pridružen: 11. jan 2003 ob 21:57<br />objav: 189<br /></span><br /></td>
 		<td class="row2" width="100%" height="28" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
 			<tr>
 				<td colspan="2" width="100%">
@@ -930,13 +869,13 @@ Postopek:
 
 
 <br />
-Da povzamem: zagotovljena je ohranitev podatkov in da bo naslov naslednjega bloka natanko tam, kjer se prejsnji konca <img src="images/smiles/icon_smile.gif" alt="icon_smile.gif" border="0" />
+Da povzamem: zagotovljena je ohranitev podatkov in da bo naslov naslednjega bloka natanko tam, kjer se prejsnji konca <img src="images/smiles/icon_smile.gif" alt=":)" border="0" />
 
 <br />
 
 
 <br />
-(za vec podatkov pa glejte q2src <img src="images/smiles/icon_lol.gif" alt="icon_lol.gif" border="0" /> )<br />_________________<br />hugo2me@…
+(za vec podatkov pa glejte q2src <img src="images/smiles/icon_lol.gif" alt=":lol:" border="0" /> )<br />_________________<br /><a >hugo2me@…</a>
 
 <br />
 
@@ -962,7 +901,7 @@ School SUX!</span><span class="gensmall"></span></td>
 	</tr>
 	
 	<tr>
-		<td width="150" align="left" valign="top" class="row1"><span class="name"><a name="567"></a><b>Napsy</b></span><br /><span class="postdetails">inštruktor<br /><img src="images/ranks/sgd-4.gif" alt="inštruktor" title="inštruktor" border="0" /><br /><br /><br />Pridružen: 09. jan 2003 ob 22:37<br />objav: 306<br />Kraj: Letuš</span><br /></td>
+		<td width="150" align="left" valign="top" class="row1"><span class="name"><a name="567"></a><b>Napsy</b></span><br /><span class="postdetails">inštruktor<br /><img src="images/ranks/sgd-4.gif" alt="inštruktor" title="inštruktor" border="0" /><br /><br /><br />Pridružen: 09. jan 2003 ob 22:37<br />objav: 258<br />Kraj: Letuš</span><br /></td>
 		<td class="row1" width="100%" height="28" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
 			<tr>
 				<td colspan="2" width="100%">
@@ -988,7 +927,7 @@ School SUX!</span><span class="gensmall"></span></td>
 Firestar: pravtako zanimivo. Se bom malo poigračku, ko bo čas
 
 <br />
-Tap: sej, pa ne bom uporablu kazalce.<br />_________________<br /><a  target="_blank">http://luka-napotnik.net</a></span><span class="gensmall"></span></td>
+Tap: sej, pa ne bom uporablu kazalce.<br />_________________<br /><a class="postlink" >http://luka-napotnik.net</a></span><span class="gensmall"></span></td>
 			</tr>
 		</table></td>
 	</tr>
@@ -1005,7 +944,7 @@ Tap: sej, pa ne bom uporablu kazalce.<br />_________________<br /><a  target="_b
 	</tr>
 	
 	<tr>
-		<td width="150" align="left" valign="top" class="row2"><span class="name"><a name="569"></a><b>Rhuantavan</b></span><br /><span class="postdetails">SGD Admin<br /><img src="images/ranks/sgd-admin.gif" alt="SGD Admin" title="SGD Admin" border="0" /><br /><img src="images/avatars/c14db2394124b99a07556.gif" alt="" border="0" /><br /><br />Pridružen: 26. okt 2002 ob 14:16<br />objav: 644<br />Kraj: Renče (NG), Slovenia</span><br /></td>
+		<td width="150" align="left" valign="top" class="row2"><span class="name"><a name="569"></a><b>Rhuantavan</b></span><br /><span class="postdetails">SGD Admin<br /><img src="images/ranks/sgd-admin.gif" alt="SGD Admin" title="SGD Admin" border="0" /><br /><img src="images/avatars/c14db2394124b99a07556.gif" alt="" border="0" /><br /><br />Pridružen: 26. okt 2002 ob 14:16<br />objav: 632<br />Kraj: Renče, Slovenia</span><br /></td>
 		<td class="row2" width="100%" height="28" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
 			<tr>
 				<td colspan="2" width="100%">
@@ -1053,39 +992,27 @@ V C++ je dinamičen array že izdelan in 100% prizkušen - std::vector. Poleg te
 	<tr>
 <br />
 	  <td class="code">
-
 <br />
 #include &lt;vector&gt;
-
 <br />
 using namespace std;
-
 <br />
-
 
 <br />
 vector&lt;int&gt; stevilke; // dinamični array, ki bo vseboval integerje
-
 <br />
 
-
 <br />
-stevilke.push_back&#40;1&#41;; // na konec arraya &quot;pripnemo&quot; številko 1
-
+stevilke&#46;push_back&#40;1&#41;; // na konec arraya &quot;pripnemo&quot; številko 1
 <br />
 int i = stevilke&#91;0&#93;; // i pridobi vrednost 1, kot pri navadnem arrayu
-
 <br />
-int j = stevilke.at&#40;0&#41;; // range-checked verzija prejšnjega klica
-
+int j = stevilke&#46;at&#40;0&#41;; // range-checked verzija prejšnjega klica
 <br />
-int k = stevilke.pop_back&#40;&#41;; // iz arraya &quot;potegnemo&quot; stevilko 1 in jo priredimo spremenljivki k
-
+int k = stevilke&#46;pop_back&#40;&#41;; // iz arraya &quot;potegnemo&quot; stevilko 1 in jo priredimo spremenljivki k
 <br />
-//...
-
+//&#46;&#46;&#46;
 <br />
-
 
 <br />
 </td>
@@ -1094,10 +1021,7 @@ int k = stevilke.pop_back&#40;&#41;; // iz arraya &quot;potegnemo&quot; stevilko
 <br />
 </table>
 <br />
-<span class="postbody"><br />_________________<br /><span style="font-size: 10px; line-height: normal">Where's the fun?</span>
-
-<br />
-<span style="font-size: 10px; line-height: normal"><a  target="_blank" class="postlink">http://dw.slogamedev.net</a></span></span><span class="gensmall"></span></td>
+<span class="postbody"><br />_________________<br /><a class="postlink" >http://www.damjanmozetic.si</a></span><span class="gensmall"></span></td>
 			</tr>
 		</table></td>
 	</tr>
@@ -1114,7 +1038,7 @@ int k = stevilke.pop_back&#40;&#41;; // iz arraya &quot;potegnemo&quot; stevilko
 	</tr>
 	
 	<tr>
-		<td width="150" align="left" valign="top" class="row1"><span class="name"><a name="570"></a><b>Napsy</b></span><br /><span class="postdetails">inštruktor<br /><img src="images/ranks/sgd-4.gif" alt="inštruktor" title="inštruktor" border="0" /><br /><br /><br />Pridružen: 09. jan 2003 ob 22:37<br />objav: 306<br />Kraj: Letuš</span><br /></td>
+		<td width="150" align="left" valign="top" class="row1"><span class="name"><a name="570"></a><b>Napsy</b></span><br /><span class="postdetails">inštruktor<br /><img src="images/ranks/sgd-4.gif" alt="inštruktor" title="inštruktor" border="0" /><br /><br /><br />Pridružen: 09. jan 2003 ob 22:37<br />objav: 258<br />Kraj: Letuš</span><br /></td>
 		<td class="row1" width="100%" height="28" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
 			<tr>
 				<td colspan="2" width="100%">
@@ -1134,7 +1058,7 @@ int k = stevilke.pop_back&#40;&#41;; // iz arraya &quot;potegnemo&quot; stevilko
 				<td colspan="2"><hr /></td>
 			</tr>
 			<tr>
-				<td colspan="2"><span class="postbody"><img src="images/smiles/icon_biggrin.gif" alt="icon_biggrin.gif" border="0" />  <img src="images/smiles/icon_biggrin.gif" alt="icon_biggrin.gif" border="0" />  <img src="images/smiles/icon_biggrin.gif" alt="icon_biggrin.gif" border="0" /> 
+				<td colspan="2"><span class="postbody"><img src="images/smiles/icon_biggrin.gif" alt=":D" border="0" />  <img src="images/smiles/icon_biggrin.gif" alt=":D" border="0" />  <img src="images/smiles/icon_biggrin.gif" alt=":D" border="0" /> 
 
 <br />
 Kulsko. Kapo dol. To me spominja na stack. Zanimivo. Kolk stvari je že nrjenih. Sploh nism vedu.
@@ -1143,7 +1067,7 @@ Kulsko. Kapo dol. To me spominja na stack. Zanimivo. Kolk stvari je že nrjenih.
 
 
 <br />
-Tnx Rhuantavan pa vsem ostalim, ki so mi pomagali!<br />_________________<br /><a  target="_blank">http://luka-napotnik.net</a></span><span class="gensmall"></span></td>
+Tnx Rhuantavan pa vsem ostalim, ki so mi pomagali!<br />_________________<br /><a class="postlink" >http://luka-napotnik.net</a></span><span class="gensmall"></span></td>
 			</tr>
 		</table></td>
 	</tr>
@@ -1160,7 +1084,7 @@ Tnx Rhuantavan pa vsem ostalim, ki so mi pomagali!<br />_________________<br /><
 	</tr>
 	
 	<tr>
-		<td width="150" align="left" valign="top" class="row2"><span class="name"><a name="571"></a><b>Rhuantavan</b></span><br /><span class="postdetails">SGD Admin<br /><img src="images/ranks/sgd-admin.gif" alt="SGD Admin" title="SGD Admin" border="0" /><br /><img src="images/avatars/c14db2394124b99a07556.gif" alt="" border="0" /><br /><br />Pridružen: 26. okt 2002 ob 14:16<br />objav: 644<br />Kraj: Renče (NG), Slovenia</span><br /></td>
+		<td width="150" align="left" valign="top" class="row2"><span class="name"><a name="571"></a><b>Rhuantavan</b></span><br /><span class="postdetails">SGD Admin<br /><img src="images/ranks/sgd-admin.gif" alt="SGD Admin" title="SGD Admin" border="0" /><br /><img src="images/avatars/c14db2394124b99a07556.gif" alt="" border="0" /><br /><br />Pridružen: 26. okt 2002 ob 14:16<br />objav: 632<br />Kraj: Renče, Slovenia</span><br /></td>
 		<td class="row2" width="100%" height="28" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
 			<tr>
 				<td colspan="2" width="100%">
@@ -1180,16 +1104,13 @@ Tnx Rhuantavan pa vsem ostalim, ki so mi pomagali!<br />_________________<br /><
 				<td colspan="2"><hr /></td>
 			</tr>
 			<tr>
-				<td colspan="2"><span class="postbody">Ja prav presenetljivo je, kako neznana je standardna c++ knjižnica. Vsebuje namreč stack, vector, map, hash, list, ... Kogar zanimajo podrobnosti naj si ogleda to stran: <a  target="_blank">http://www.sgi.com/tech/stl/</a>
+				<td colspan="2"><span class="postbody">Ja prav presenetljivo je, kako neznana je standardna c++ knjižnica. Vsebuje namreč stack, vector, map, hash, list, ... Kogar zanimajo podrobnosti naj si ogleda to stran: <a class="postlink" >http://www.sgi.com/tech/stl/</a>
 
 <br />
 
 
 <br />
-Še ena izjemno "močna" knjižnica je <a  target="_blank" class="postlink">BOOST</a>. Baje, da se bo del te knjižnice prenesel v naslednjo osvežitev standardne knjižnice.<br />_________________<br /><span style="font-size: 10px; line-height: normal">Where's the fun?</span>
-
-<br />
-<span style="font-size: 10px; line-height: normal"><a  target="_blank" class="postlink">http://dw.slogamedev.net</a></span></span><span class="gensmall"></span></td>
+Še ena izjemno "močna" knjižnica je <a  target="_blank" class="postlink">BOOST</a>. Baje, da se bo del te knjižnice prenesel v naslednjo osvežitev standardne knjižnice.<br />_________________<br /><a class="postlink" >http://www.damjanmozetic.si</a></span><span class="gensmall"></span></td>
 			</tr>
 		</table></td>
 	</tr>
@@ -1206,7 +1127,7 @@ Tnx Rhuantavan pa vsem ostalim, ki so mi pomagali!<br />_________________<br /><
 	</tr>
 	
 	<tr>
-		<td width="150" align="left" valign="top" class="row1"><span class="name"><a name="573"></a><b>Firestar</b></span><br /><span class="postdetails">poznavalec<br /><img src="images/ranks/sgd-3.gif" alt="poznavalec" title="poznavalec" border="0" /><br /><img src="images/avatars/c2f929273ec2afe163bdf.gif" alt="" border="0" /><br /><br />Pridružen: 17. jan 2003 ob 11:24<br />objav: 181<br />Kraj: Maribor</span><br /></td>
+		<td width="150" align="left" valign="top" class="row1"><span class="name"><a name="573"></a><b>Firestar</b></span><br /><span class="postdetails">poznavalec<br /><img src="images/ranks/sgd-3.gif" alt="poznavalec" title="poznavalec" border="0" /><br /><img src="images/avatars/c2f929273ec2afe163bdf.gif" alt="" border="0" /><br /><br />Pridružen: 17. jan 2003 ob 11:24<br />objav: 173<br />Kraj: Maribor</span><br /></td>
 		<td class="row1" width="100%" height="28" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
 			<tr>
 				<td colspan="2" width="100%">
@@ -1226,7 +1147,7 @@ Tnx Rhuantavan pa vsem ostalim, ki so mi pomagali!<br />_________________<br /><
 				<td colspan="2"><hr /></td>
 			</tr>
 			<tr>
-				<td colspan="2"><span class="postbody">jah...stl je fajn, stestiran in dokaj hiter pa to, pa vendar...ce ti ustreza uporaba template-ov <img src="images/smiles/icon_wink.gif" alt="icon_wink.gif" border="0" />
+				<td colspan="2"><span class="postbody">jah...stl je fajn, stestiran in dokaj hiter pa to, pa vendar...ce ti ustreza uporaba template-ov <img src="images/smiles/icon_wink.gif" alt=";-)" border="0" />
 
 <br />
 meni osebno niso pretirano vsec, zato raje uporabljam svoje implementacije vektorja in hashtabele z pointerji. Je pa res, da je v kaksni resnejsi aplikaciji bolje uporabljati ze preizkusene zadeve (predvsem zaradi memory leakov), stl je v tem primeru najboljsa izbira.</span><span class="gensmall"></span></td>
@@ -1246,7 +1167,7 @@ meni osebno niso pretirano vsec, zato raje uporabljam svoje implementacije vekto
 	</tr>
 	
 	<tr>
-		<td width="150" align="left" valign="top" class="row2"><span class="name"><a name="575"></a><b>Rhuantavan</b></span><br /><span class="postdetails">SGD Admin<br /><img src="images/ranks/sgd-admin.gif" alt="SGD Admin" title="SGD Admin" border="0" /><br /><img src="images/avatars/c14db2394124b99a07556.gif" alt="" border="0" /><br /><br />Pridružen: 26. okt 2002 ob 14:16<br />objav: 644<br />Kraj: Renče (NG), Slovenia</span><br /></td>
+		<td width="150" align="left" valign="top" class="row2"><span class="name"><a name="575"></a><b>Rhuantavan</b></span><br /><span class="postdetails">SGD Admin<br /><img src="images/ranks/sgd-admin.gif" alt="SGD Admin" title="SGD Admin" border="0" /><br /><img src="images/avatars/c14db2394124b99a07556.gif" alt="" border="0" /><br /><br />Pridružen: 26. okt 2002 ob 14:16<br />objav: 632<br />Kraj: Renče, Slovenia</span><br /></td>
 		<td class="row2" width="100%" height="28" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
 			<tr>
 				<td colspan="2" width="100%">
@@ -1266,10 +1187,7 @@ meni osebno niso pretirano vsec, zato raje uporabljam svoje implementacije vekto
 				<td colspan="2"><hr /></td>
 			</tr>
 			<tr>
-				<td colspan="2"><span class="postbody">Umm... meni so templati zelo všeč.  <img src="images/smiles/icon_biggrin.gif" alt="icon_biggrin.gif" border="0" /> Kaj češ več: so prilagodljivi in procesorsko nezahtevni, ker jih že C++ preprocesor obdela.<br />_________________<br /><span style="font-size: 10px; line-height: normal">Where's the fun?</span>
-
-<br />
-<span style="font-size: 10px; line-height: normal"><a  target="_blank" class="postlink">http://dw.slogamedev.net</a></span></span><span class="gensmall"></span></td>
+				<td colspan="2"><span class="postbody">Umm... meni so templati zelo všeč.  <img src="images/smiles/icon_biggrin.gif" alt=":D" border="0" /> Kaj češ več: so prilagodljivi in procesorsko nezahtevni, ker jih že C++ preprocesor obdela.<br />_________________<br /><a class="postlink" >http://www.damjanmozetic.si</a></span><span class="gensmall"></span></td>
 			</tr>
 		</table></td>
 	</tr>
@@ -1286,7 +1204,7 @@ meni osebno niso pretirano vsec, zato raje uporabljam svoje implementacije vekto
 	</tr>
 	
 	<tr>
-		<td width="150" align="left" valign="top" class="row1"><span class="name"><a name="576"></a><b>Firestar</b></span><br /><span class="postdetails">poznavalec<br /><img src="images/ranks/sgd-3.gif" alt="poznavalec" title="poznavalec" border="0" /><br /><img src="images/avatars/c2f929273ec2afe163bdf.gif" alt="" border="0" /><br /><br />Pridružen: 17. jan 2003 ob 11:24<br />objav: 181<br />Kraj: Maribor</span><br /></td>
+		<td width="150" align="left" valign="top" class="row1"><span class="name"><a name="576"></a><b>Firestar</b></span><br /><span class="postdetails">poznavalec<br /><img src="images/ranks/sgd-3.gif" alt="poznavalec" title="poznavalec" border="0" /><br /><img src="images/avatars/c2f929273ec2afe163bdf.gif" alt="" border="0" /><br /><br />Pridružen: 17. jan 2003 ob 11:24<br />objav: 173<br />Kraj: Maribor</span><br /></td>
 		<td class="row1" width="100%" height="28" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
 			<tr>
 				<td colspan="2" width="100%">
@@ -1306,10 +1224,10 @@ meni osebno niso pretirano vsec, zato raje uporabljam svoje implementacije vekto
 				<td colspan="2"><hr /></td>
 			</tr>
 			<tr>
-				<td colspan="2"><span class="postbody">toliko o objektnem programiranju <img src="images/smiles/icon_wink.gif" alt="icon_wink.gif" border="0" />
+				<td colspan="2"><span class="postbody">toliko o objektnem programiranju <img src="images/smiles/icon_wink.gif" alt=";-)" border="0" />
 
 <br />
-Templati obstajajo samo zaradi tega, ker c++ ni "cisti" objektni jezik, kot sta npr. C# in SmallTalk, kjer se dajo stvari resit na precej elegantnejsi nacin, kot pa template hell <img src="images/smiles/icon_wink.gif" alt="icon_wink.gif" border="0" /></span><span class="gensmall"></span></td>
+Templati obstajajo samo zaradi tega, ker c++ ni "cisti" objektni jezik, kot sta npr. C# in SmallTalk, kjer se dajo stvari resit na precej elegantnejsi nacin, kot pa template hell <img src="images/smiles/icon_wink.gif" alt=";-)" border="0" /></span><span class="gensmall"></span></td>
 			</tr>
 		</table></td>
 	</tr>
@@ -1326,7 +1244,7 @@ Templati obstajajo samo zaradi tega, ker c++ ni "cisti" objektni jezik, kot sta 
 	</tr>
 	
 	<tr>
-		<td width="150" align="left" valign="top" class="row2"><span class="name"><a name="577"></a><b>Rhuantavan</b></span><br /><span class="postdetails">SGD Admin<br /><img src="images/ranks/sgd-admin.gif" alt="SGD Admin" title="SGD Admin" border="0" /><br /><img src="images/avatars/c14db2394124b99a07556.gif" alt="" border="0" /><br /><br />Pridružen: 26. okt 2002 ob 14:16<br />objav: 644<br />Kraj: Renče (NG), Slovenia</span><br /></td>
+		<td width="150" align="left" valign="top" class="row2"><span class="name"><a name="577"></a><b>Rhuantavan</b></span><br /><span class="postdetails">SGD Admin<br /><img src="images/ranks/sgd-admin.gif" alt="SGD Admin" title="SGD Admin" border="0" /><br /><img src="images/avatars/c14db2394124b99a07556.gif" alt="" border="0" /><br /><br />Pridružen: 26. okt 2002 ob 14:16<br />objav: 632<br />Kraj: Renče, Slovenia</span><br /></td>
 		<td class="row2" width="100%" height="28" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
 			<tr>
 				<td colspan="2" width="100%">
@@ -1346,10 +1264,7 @@ Templati obstajajo samo zaradi tega, ker c++ ni "cisti" objektni jezik, kot sta 
 				<td colspan="2"><hr /></td>
 			</tr>
 			<tr>
-				<td colspan="2"><span class="postbody">Ah kaj čmo, nobody's perfect <img src="images/smiles/icon_wink.gif" alt="icon_wink.gif" border="0" /> Upajmo, da bo v prihodnjih revisionih C++ standarda bolje.<br />_________________<br /><span style="font-size: 10px; line-height: normal">Where's the fun?</span>
-
-<br />
-<span style="font-size: 10px; line-height: normal"><a  target="_blank" class="postlink">http://dw.slogamedev.net</a></span></span><span class="gensmall"></span></td>
+				<td colspan="2"><span class="postbody">Ah kaj čmo, nobody's perfect <img src="images/smiles/icon_wink.gif" alt=":wink:" border="0" /> Upajmo, da bo v prihodnjih revisionih C++ standarda bolje.<br />_________________<br /><a class="postlink" >http://www.damjanmozetic.si</a></span><span class="gensmall"></span></td>
 			</tr>
 		</table></td>
 	</tr>
@@ -1366,7 +1281,7 @@ Templati obstajajo samo zaradi tega, ker c++ ni "cisti" objektni jezik, kot sta 
 	</tr>
 	
 	<tr>
-		<td width="150" align="left" valign="top" class="row1"><span class="name"><a name="579"></a><b>Napsy</b></span><br /><span class="postdetails">inštruktor<br /><img src="images/ranks/sgd-4.gif" alt="inštruktor" title="inštruktor" border="0" /><br /><br /><br />Pridružen: 09. jan 2003 ob 22:37<br />objav: 306<br />Kraj: Letuš</span><br /></td>
+		<td width="150" align="left" valign="top" class="row1"><span class="name"><a name="579"></a><b>Napsy</b></span><br /><span class="postdetails">inštruktor<br /><img src="images/ranks/sgd-4.gif" alt="inštruktor" title="inštruktor" border="0" /><br /><br /><br />Pridružen: 09. jan 2003 ob 22:37<br />objav: 258<br />Kraj: Letuš</span><br /></td>
 		<td class="row1" width="100%" height="28" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
 			<tr>
 				<td colspan="2" width="100%">
@@ -1405,205 +1320,138 @@ Templati obstajajo samo zaradi tega, ker c++ ni "cisti" objektni jezik, kot sta 
 	<tr>
 <br />
 	  <td class="code">/********************************************************************
-
 <br />
 * Osnovno drevo
-
 <br />
 * Copyright &#40;C&#41; 2003, Luka Napotnik
-
 <br />
 *********************************************************************/
-
 <br />
-
 
 <br />
 #include &lt;cstdio&gt;
-
 <br />
 #include &lt;cstring&gt;
-
 <br />
 #include &lt;cstdlib&gt;
-
 <br />
-
 
 <br />
 #include &lt;vector&gt;
-
 <br />
-
 
 <br />
 using namespace std;
-
 <br />
-
 
 <br />
 class noda
-
 <br />
 &#123;
-
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;noda *parent;
-
+		noda *parent;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;vector&lt;noda *&gt; childs;
-
+		vector&lt;noda *&gt; childs;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;int childs_n;
-
+		int childs_n;
 <br />
 
-
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;int ID;
-
+		int ID;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;char node_name&#91;64&#93;;
-
+		char node_name&#91;64&#93;;
 <br />
 public&#58;
-
 <br />
-&nbsp; &nbsp;noda&#40;&#41; &#123; ID = 0; childs_n = 0; &#125;
-
+	noda&#40;&#41; &#123; ID = 0; childs_n = 0; &#125;
 <br />
-&nbsp; &nbsp;~noda&#40;&#41; &#123; /*node_clean&#40;&#41;;*/ &#125;
-
+	~noda&#40;&#41; &#123; /*node_clean&#40;&#41;;*/ &#125;
 <br />
-&nbsp; &nbsp;noda *dodaj&#40;&#41;
-
+	noda *dodaj&#40;&#41;
 <br />
-&nbsp; &nbsp;&#123;
-
+	&#123;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;noda *nova = new noda;
-
+		noda *nova = new noda;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;nova-&gt;parent = this;
-
+		nova-&gt;parent = this;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;childs_n++;
-
+		childs_n++;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;nova-&gt;ID = childs_n;
-
+		nova-&gt;ID = childs_n;
 <br />
 
-
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;childs.push_back&#40;nova&#41;;
-
+		childs&#46;push_back&#40;nova&#41;;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;return&#40;nova&#41;;
-
+		return&#40;nova&#41;;
 <br />
-&nbsp; &nbsp;&#125;
-
+	&#125;
 <br />
-&nbsp; &nbsp;int GetID&#40;&#41; &#123; return&#40;ID&#41;; &#125;
-
+	int GetID&#40;&#41; &#123; return&#40;ID&#41;; &#125;
 <br />
-&nbsp; &nbsp;noda *SelectNode&#40;int id&#41;
-
+	noda *SelectNode&#40;int id&#41;
 <br />
-&nbsp; &nbsp;&#123; 
-
+	&#123; 
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;if &#40;&#40;id &gt; ID&#41; &amp;&amp; &#40;id &lt;= childs_n&#41;&#41;
-
+		if &#40;&#40;id &gt; ID&#41; &amp;&amp; &#40;id &lt;= childs_n&#41;&#41;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;return&#40;childs&#91;id-1&#93;&#41;;
-
+			return&#40;childs&#91;id-1&#93;&#41;;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;else return&#40;NULL&#41;;
-
+		else return&#40;NULL&#41;;
 <br />
-&nbsp; &nbsp;&#125;
-
+	&#125;
 <br />
 &#125;;
-
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;
-
+		
 <br />
 int main&#40;int argc, char *argv&#91;&#93;, char *env&#91;&#93;&#41;
-
 <br />
 &#123;
-
 <br />
-&nbsp; &nbsp;int curID;
-
+	int curID;
 <br />
-&nbsp; &nbsp;noda *root = new noda;
-
+	noda *root = new noda;
 <br />
-&nbsp; &nbsp;noda *noda1, *noda2, *noda3;
-
+	noda *noda1, *noda2, *noda3;
 <br />
-&nbsp; &nbsp;noda *izbrana;
-
+	noda *izbrana;
 <br />
-&nbsp; &nbsp;noda1 = root-&gt;dodaj&#40;&#41;;
-
+	noda1 = root-&gt;dodaj&#40;&#41;;
 <br />
-&nbsp; &nbsp;noda2 = root-&gt;dodaj&#40;&#41;;
-
+	noda2 = root-&gt;dodaj&#40;&#41;;
 <br />
-&nbsp; &nbsp;noda3 = root-&gt;dodaj&#40;&#41;;
-
+	noda3 = root-&gt;dodaj&#40;&#41;;
 <br />
 
-
 <br />
-&nbsp; &nbsp;curID = noda1-&gt;GetID&#40;&#41;;
-
+	curID = noda1-&gt;GetID&#40;&#41;;
 <br />
-&nbsp; &nbsp;printf&#40;&quot;ID prve node od root&#58; %d\n&quot;, curID&#41;;
-
+	printf&#40;&quot;ID prve node od root&#58; %d\n&quot;, curID&#41;;
 <br />
 
-
 <br />
-&nbsp; &nbsp;curID = noda2-&gt;GetID&#40;&#41;;
-
+	curID = noda2-&gt;GetID&#40;&#41;;
 <br />
-&nbsp; &nbsp;printf&#40;&quot;ID druge node od root&#58; %d\n&quot;, curID&#41;;
-
+	printf&#40;&quot;ID druge node od root&#58; %d\n&quot;, curID&#41;;
 <br />
 
-
 <br />
-&nbsp; &nbsp;curID = noda3-&gt;GetID&#40;&#41;;
-
+	curID = noda3-&gt;GetID&#40;&#41;;
 <br />
-&nbsp; &nbsp;printf&#40;&quot;ID tretje node od root&#58; %d\n&quot;, curID&#41;;
-
+	printf&#40;&quot;ID tretje node od root&#58; %d\n&quot;, curID&#41;;
 <br />
 
-
 <br />
-&nbsp; &nbsp;izbrana = root-&gt;SelectNode&#40;2&#41;;
-
+	izbrana = root-&gt;SelectNode&#40;2&#41;;
 <br />
-&nbsp; &nbsp;printf&#40;&quot;ID izbrane node je %d\n&quot;, izbrana-&gt;GetID&#40;&#41;&#41;;
-
+	printf&#40;&quot;ID izbrane node je %d\n&quot;, izbrana-&gt;GetID&#40;&#41;&#41;;
 <br />
 
-
 <br />
-&nbsp; &nbsp;delete root; /* Treba je pocistit vse otroke in otroke od otrok od root, itd.*/
-
+	delete root; /* Treba je pocistit vse otroke in otroke od otrok od root, itd&#46;*/
 <br />
-&nbsp; &nbsp;return&#40;0&#41;;
-
+	return&#40;0&#41;;
 <br />
 &#125;</td>
 <br />
@@ -1617,7 +1465,7 @@ int main&#40;int argc, char *argv&#91;&#93;, char *env&#91;&#93;&#41;
 
 
 <br />
-Kaj mislite?<br />_________________<br /><a  target="_blank">http://luka-napotnik.net</a></span><span class="gensmall"></span></td>
+Kaj mislite?<br />_________________<br /><a class="postlink" >http://luka-napotnik.net</a></span><span class="gensmall"></span></td>
 			</tr>
 		</table></td>
 	</tr>
@@ -1634,7 +1482,7 @@ Kaj mislite?<br />_________________<br /><a  target="_blank">http://luka-napotni
 	</tr>
 	
 	<tr>
-		<td width="150" align="left" valign="top" class="row2"><span class="name"><a name="580"></a><b>Napsy</b></span><br /><span class="postdetails">inštruktor<br /><img src="images/ranks/sgd-4.gif" alt="inštruktor" title="inštruktor" border="0" /><br /><br /><br />Pridružen: 09. jan 2003 ob 22:37<br />objav: 306<br />Kraj: Letuš</span><br /></td>
+		<td width="150" align="left" valign="top" class="row2"><span class="name"><a name="580"></a><b>Napsy</b></span><br /><span class="postdetails">inštruktor<br /><img src="images/ranks/sgd-4.gif" alt="inštruktor" title="inštruktor" border="0" /><br /><br /><br />Pridružen: 09. jan 2003 ob 22:37<br />objav: 258<br />Kraj: Letuš</span><br /></td>
 		<td class="row2" width="100%" height="28" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
 			<tr>
 				<td colspan="2" width="100%">
@@ -1670,24 +1518,18 @@ Kaj mislite?<br />_________________<br /><a  target="_blank">http://luka-napotni
 	<tr>
 <br />
 	  <td class="code">void node_clean&#40;&#41;
-
 <br />
-&nbsp; &nbsp;&#123;
-
+	&#123;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;if &#40;childs_n &gt; 0&#41; &#123;
-
+		if &#40;childs_n &gt; 0&#41; &#123;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;for &#40;int i = 0; i &lt; childs_n; i++&#41;
-
+			for &#40;int i = 0; i &lt; childs_n; i++&#41;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;delete childs&#91;i&#93;;
-
+				delete childs&#91;i&#93;;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&#125;
-
+		&#125;
 <br />
-&nbsp; &nbsp;&#125;</td>
+	&#125;</td>
 <br />
 	</tr>
 <br />
@@ -1699,7 +1541,7 @@ Kaj mislite?<br />_________________<br /><a  target="_blank">http://luka-napotni
 
 
 <br />
-Funkcija se mora klicati v destruktorju.<br />_________________<br /><a  target="_blank">http://luka-napotnik.net</a></span><span class="gensmall"></span></td>
+Funkcija se mora klicati v destruktorju.<br />_________________<br /><a class="postlink" >http://luka-napotnik.net</a></span><span class="gensmall"></span></td>
 			</tr>
 		</table></td>
 	</tr>
@@ -1716,7 +1558,7 @@ Funkcija se mora klicati v destruktorju.<br />_________________<br /><a  target=
 	</tr>
 	
 	<tr>
-		<td width="150" align="left" valign="top" class="row1"><span class="name"><a name="581"></a><b>Firestar</b></span><br /><span class="postdetails">poznavalec<br /><img src="images/ranks/sgd-3.gif" alt="poznavalec" title="poznavalec" border="0" /><br /><img src="images/avatars/c2f929273ec2afe163bdf.gif" alt="" border="0" /><br /><br />Pridružen: 17. jan 2003 ob 11:24<br />objav: 181<br />Kraj: Maribor</span><br /></td>
+		<td width="150" align="left" valign="top" class="row1"><span class="name"><a name="581"></a><b>Firestar</b></span><br /><span class="postdetails">poznavalec<br /><img src="images/ranks/sgd-3.gif" alt="poznavalec" title="poznavalec" border="0" /><br /><img src="images/avatars/c2f929273ec2afe163bdf.gif" alt="" border="0" /><br /><br />Pridružen: 17. jan 2003 ob 11:24<br />objav: 173<br />Kraj: Maribor</span><br /></td>
 		<td class="row1" width="100%" height="28" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
 			<tr>
 				<td colspan="2" width="100%">
@@ -1745,10 +1587,10 @@ Sicer pa nekaj nasvetov: instancna spremenljivka childs_n je nepotrebna, saj lah
 
 
 <br />
-Pa se nekaj off topic...saj vem, da ponavadi programerji v c++ oznacujete metode in spremenljivke na nek cuden (vsaj programerjem v SmallTalku, Javi in C# <img src="images/smiles/icon_wink.gif" alt="icon_wink.gif" border="0" /> nacin, pa vendar...praksa v objektnem programiranju je, da se razredi in staticne spremenljivke oznacujejo z veliko, imena metod in instancnih spremenljivk pa z malo, se lepse bere koda <img src="images/smiles/icon_wink.gif" alt="icon_wink.gif" border="0" />
+Pa se nekaj off topic...saj vem, da ponavadi programerji v c++ oznacujete metode in spremenljivke na nek cuden (vsaj programerjem v SmallTalku, Javi in C# <img src="images/smiles/icon_wink.gif" alt=";-)" border="0" /> nacin, pa vendar...praksa v objektnem programiranju je, da se razredi in staticne spremenljivke oznacujejo z veliko, imena metod in instancnih spremenljivk pa z malo, se lepse bere koda <img src="images/smiles/icon_wink.gif" alt=";-)" border="0" />
 
 <br />
-sorry, ce sem prevec zatezil...samo nasvet pac <img src="images/smiles/icon_wink.gif" alt="icon_wink.gif" border="0" /></span><span class="gensmall"></span></td>
+sorry, ce sem prevec zatezil...samo nasvet pac <img src="images/smiles/icon_wink.gif" alt=";-)" border="0" /></span><span class="gensmall"></span></td>
 			</tr>
 		</table></td>
 	</tr>
@@ -1765,7 +1607,7 @@ sorry, ce sem prevec zatezil...samo nasvet pac <img src="images/smiles/icon_wink
 	</tr>
 	
 	<tr>
-		<td width="150" align="left" valign="top" class="row2"><span class="name"><a name="587"></a><b>Napsy</b></span><br /><span class="postdetails">inštruktor<br /><img src="images/ranks/sgd-4.gif" alt="inštruktor" title="inštruktor" border="0" /><br /><br /><br />Pridružen: 09. jan 2003 ob 22:37<br />objav: 306<br />Kraj: Letuš</span><br /></td>
+		<td width="150" align="left" valign="top" class="row2"><span class="name"><a name="587"></a><b>Napsy</b></span><br /><span class="postdetails">inštruktor<br /><img src="images/ranks/sgd-4.gif" alt="inštruktor" title="inštruktor" border="0" /><br /><br /><br />Pridružen: 09. jan 2003 ob 22:37<br />objav: 258<br />Kraj: Letuš</span><br /></td>
 		<td class="row2" width="100%" height="28" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
 			<tr>
 				<td colspan="2" width="100%">
@@ -1788,7 +1630,7 @@ sorry, ce sem prevec zatezil...samo nasvet pac <img src="images/smiles/icon_wink
 				<td colspan="2"><span class="postbody">Aha, bom pogledu za to size metodo.
 
 <br />
-<img src="images/smiles/icon_smile.gif" alt="icon_smile.gif" border="0" /> ka pa vem glede označevanje metod. Ponavad Uporablam Velike začetnice pa madžarski stil(npr. CObject). Za te reči se nikol nism sekiru <img src="images/smiles/icon_smile.gif" alt="icon_smile.gif" border="0" /><br />_________________<br /><a  target="_blank">http://luka-napotnik.net</a></span><span class="gensmall"></span></td>
+<img src="images/smiles/icon_smile.gif" alt=":)" border="0" /> ka pa vem glede označevanje metod. Ponavad Uporablam Velike začetnice pa madžarski stil(npr. CObject). Za te reči se nikol nism sekiru <img src="images/smiles/icon_smile.gif" alt=":)" border="0" /><br />_________________<br /><a class="postlink" >http://luka-napotnik.net</a></span><span class="gensmall"></span></td>
 			</tr>
 		</table></td>
 	</tr>
@@ -1805,7 +1647,7 @@ sorry, ce sem prevec zatezil...samo nasvet pac <img src="images/smiles/icon_wink
 	</tr>
 	
 	<tr>
-		<td width="150" align="left" valign="top" class="row1"><span class="name"><a name="588"></a><b>Napsy</b></span><br /><span class="postdetails">inštruktor<br /><img src="images/ranks/sgd-4.gif" alt="inštruktor" title="inštruktor" border="0" /><br /><br /><br />Pridružen: 09. jan 2003 ob 22:37<br />objav: 306<br />Kraj: Letuš</span><br /></td>
+		<td width="150" align="left" valign="top" class="row1"><span class="name"><a name="588"></a><b>Napsy</b></span><br /><span class="postdetails">inštruktor<br /><img src="images/ranks/sgd-4.gif" alt="inštruktor" title="inštruktor" border="0" /><br /><br /><br />Pridružen: 09. jan 2003 ob 22:37<br />objav: 258<br />Kraj: Letuš</span><br /></td>
 		<td class="row1" width="100%" height="28" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
 			<tr>
 				<td colspan="2" width="100%">
@@ -1825,7 +1667,7 @@ sorry, ce sem prevec zatezil...samo nasvet pac <img src="images/smiles/icon_wink
 				<td colspan="2"><hr /></td>
 			</tr>
 			<tr>
-				<td colspan="2"><span class="postbody">aja. tisti node_name[] načrtujem uporablat v prihodnosti. Kok pa pol pobrišem elemente iz polja?<br />_________________<br /><a  target="_blank">http://luka-napotnik.net</a></span><span class="gensmall"></span></td>
+				<td colspan="2"><span class="postbody">aja. tisti node_name[] načrtujem uporablat v prihodnosti. Kok pa pol pobrišem elemente iz polja?<br />_________________<br /><a class="postlink" >http://luka-napotnik.net</a></span><span class="gensmall"></span></td>
 			</tr>
 		</table></td>
 	</tr>
@@ -1842,7 +1684,7 @@ sorry, ce sem prevec zatezil...samo nasvet pac <img src="images/smiles/icon_wink
 	</tr>
 	
 	<tr>
-		<td width="150" align="left" valign="top" class="row2"><span class="name"><a name="589"></a><b>Firestar</b></span><br /><span class="postdetails">poznavalec<br /><img src="images/ranks/sgd-3.gif" alt="poznavalec" title="poznavalec" border="0" /><br /><img src="images/avatars/c2f929273ec2afe163bdf.gif" alt="" border="0" /><br /><br />Pridružen: 17. jan 2003 ob 11:24<br />objav: 181<br />Kraj: Maribor</span><br /></td>
+		<td width="150" align="left" valign="top" class="row2"><span class="name"><a name="589"></a><b>Firestar</b></span><br /><span class="postdetails">poznavalec<br /><img src="images/ranks/sgd-3.gif" alt="poznavalec" title="poznavalec" border="0" /><br /><img src="images/avatars/c2f929273ec2afe163bdf.gif" alt="" border="0" /><br /><br />Pridružen: 17. jan 2003 ob 11:24<br />objav: 173<br />Kraj: Maribor</span><br /></td>
 		<td class="row2" width="100%" height="28" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
 			<tr>
 				<td colspan="2" width="100%">
@@ -1881,25 +1723,18 @@ sorry, ce sem prevec zatezil...samo nasvet pac <img src="images/smiles/icon_wink
 	<tr>
 <br />
 	  <td class="code">
-
 <br />
-&nbsp;  void brisi&#40;int pId&#41; 
-
+   void brisi&#40;int pId&#41; 
 <br />
-&nbsp;  &#123; 
-
+   &#123; 
 <br />
-&nbsp; &nbsp; &nbsp; delete childs&#91;pId-1&#93;;
-
+      delete childs&#91;pId-1&#93;;
 <br />
-&nbsp; &nbsp; &nbsp; childs.erase&#40;pId-1&#41;;
-
+      childs&#46;erase&#40;pId-1&#41;;
 <br />
-&nbsp; &nbsp; &nbsp; childs_n = childs.size&#40;&#41;;
-
+      childs_n = childs&#46;size&#40;&#41;;
 <br />
-&nbsp;  &#125; 
-
+   &#125; 
 <br />
 </td>
 <br />
@@ -1910,7 +1745,7 @@ sorry, ce sem prevec zatezil...samo nasvet pac <img src="images/smiles/icon_wink
 <span class="postbody">
 
 <br />
-...ravno zaradi tega pa imas problem s svojimi ID-ji <img src="images/smiles/icon_eek.gif" alt="icon_eek.gif" border="0" /> 
+...ravno zaradi tega pa imas problem s svojimi ID-ji <img src="images/smiles/icon_eek.gif" alt=":shock:" border="0" /> 
 
 <br />
 znebi se jih, ce pa ze moras dostopati do tocno dolocenega noda preko id-ja, pa se moras na drugacen nacin lotiti (iterirati skozi vse childs in gledati, kateri ima ID, ki se ujema z parametrom v metori), se boljsa resiter pa je uporaba hashtabele (map v stl-u)</span><span class="gensmall"></span></td>
@@ -1938,7 +1773,7 @@ znebi se jih, ce pa ze moras dostopati do tocno dolocenega noda preko id-ja, pa 
   <tr>
 	<td align="left" valign="middle" nowrap="nowrap">&nbsp;</td>
 	<td align="left" valign="middle" width="100%"><span class="nav">&nbsp;&nbsp;&nbsp;<a href="index.html" class="nav">SloGameDev.net seznam forumov</a>
-	  -> <a href="forum-1.html" class="nav">Splošno Programiranje</a></span></td>
+	  -> <a href="forum-52.html" class="nav">Izdelovanje iger</a></span></td>
 	<td align="right" valign="top" nowrap="nowrap"><span class="gensmall">Časovni pas (GMT +2:00 uri) Slovenija, poletni čas</span><br /><span class="nav"></span>
 	  </td>
   </tr>
@@ -1954,7 +1789,7 @@ znebi se jih, ce pa ze moras dostopati do tocno dolocenega noda preko id-ja, pa 
   </tr>
 </table>
 
-<div align="center"><span class="copyright"><br />Arhiv stanja na dan 13. 2. 2006 &mdash; samo za branje.<br />
+<div align="center"><span class="copyright"><br />Arhiv &mdash; samo za branje.<br />
 <!--
 	We request you retain the full copyright notice below including the link to www.phpbb.com.
 	This not only gives respect to the large amount of time given freely by the developers

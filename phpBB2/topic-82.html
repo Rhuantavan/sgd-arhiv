@@ -276,7 +276,7 @@ input.liteoption {
   <tr>
 	<td align="left" valign="bottom" nowrap="nowrap">&nbsp;</td>
 	<td align="left" valign="middle" width="100%"><span class="nav">&nbsp;&nbsp;&nbsp;<a href="index.html" class="nav">SloGameDev.net seznam forumov</a>
-	  -> <a href="forum-1.html" class="nav">Splošno Programiranje</a></span></td>
+	  -> <a href="forum-52.html" class="nav">Izdelovanje iger</a></span></td>
   </tr>
 </table>
 
@@ -291,7 +291,7 @@ input.liteoption {
 	</tr>
 	
 	<tr>
-		<td width="150" align="left" valign="top" class="row1"><span class="name"><a name="597"></a><b>Napsy</b></span><br /><span class="postdetails">inštruktor<br /><img src="images/ranks/sgd-4.gif" alt="inštruktor" title="inštruktor" border="0" /><br /><br /><br />Pridružen: 09. jan 2003 ob 22:37<br />objav: 306<br />Kraj: Letuš</span><br /></td>
+		<td width="150" align="left" valign="top" class="row1"><span class="name"><a name="597"></a><b>Napsy</b></span><br /><span class="postdetails">inštruktor<br /><img src="images/ranks/sgd-4.gif" alt="inštruktor" title="inštruktor" border="0" /><br /><br /><br />Pridružen: 09. jan 2003 ob 22:37<br />objav: 258<br />Kraj: Letuš</span><br /></td>
 		<td class="row1" width="100%" height="28" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
 			<tr>
 				<td colspan="2" width="100%">
@@ -330,397 +330,266 @@ input.liteoption {
 	<tr>
 <br />
 	  <td class="code">/********************************************************************
-
 <br />
 * Osnovno drevo
-
 <br />
 * Copyright &#40;C&#41; 2003, Luka Napotnik
-
 <br />
-* E-posta&#58; nluka@…
-
+* E-posta&#58; nluka@email&#46;si
 <br />
 *********************************************************************/
-
 <br />
-
 
 <br />
 #include &lt;cstdio&gt;
-
 <br />
 #include &lt;cstring&gt;
-
 <br />
 #include &lt;cstdlib&gt;
-
 <br />
 #include &lt;iostream&gt;
-
 <br />
 #include &lt;vector&gt;
-
 <br />
-
 
 <br />
 using namespace std;
-
 <br />
-
 
 <br />
 class noda
-
 <br />
 &#123;
-
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;noda *parent;
-
+		noda *parent;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;vector&lt;noda *&gt; childs;
-
+		vector&lt;noda *&gt; childs;
 <br />
 
-
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;int ID;
-
+		int ID;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;char node_name&#91;64&#93;;
-
+		char node_name&#91;64&#93;;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;char *data;
-
+		char *data;
 <br />
 public&#58;
-
 <br />
-&nbsp; &nbsp;noda&#40;&#41; &#123; ID = 0; data = new char; &#125;
-
+	noda&#40;&#41; &#123; ID = 0; data = new char; &#125;
 <br />
-&nbsp; &nbsp;~noda&#40;&#41; &#123; node_clean&#40;&#41;; &#125;
-
+	~noda&#40;&#41; &#123; node_clean&#40;&#41;; &#125;
 <br />
-&nbsp; &nbsp;noda *dodaj&#40;char *ime, char *node_data&#41;
-
+	noda *dodaj&#40;char *ime, char *node_data&#41;
 <br />
-&nbsp; &nbsp;&#123;
-
+	&#123;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;noda *nova = new noda;
-
+		noda *nova = new noda;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;nova-&gt;parent = this;
-
+		nova-&gt;parent = this;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;if &#40;&#40;strlen&#40;ime&#41;&#41; &lt;= 64&#41;
-
+		if &#40;&#40;strlen&#40;ime&#41;&#41; &lt;= 64&#41;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;strcpy&#40;nova-&gt;node_name, ime&#41;;
-
+			strcpy&#40;nova-&gt;node_name, ime&#41;;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;else
-
+		else
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;ime = NULL;
-
+			ime = NULL;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;strcpy&#40;nova-&gt;data, node_data&#41;;
-
+		strcpy&#40;nova-&gt;data, node_data&#41;;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;childs.push_back&#40;nova&#41;;
-
+		childs&#46;push_back&#40;nova&#41;;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;nova-&gt;ID = childs.size&#40;&#41;;
-
+		nova-&gt;ID = childs&#46;size&#40;&#41;;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;
-
+		
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;return&#40;nova&#41;;
-
+		return&#40;nova&#41;;
 <br />
-&nbsp; &nbsp;&#125;
-
+	&#125;
 <br />
-&nbsp; &nbsp;int GetID&#40;&#41; &#123; return&#40;ID&#41;; &#125;
-
+	int GetID&#40;&#41; &#123; return&#40;ID&#41;; &#125;
 <br />
-&nbsp; &nbsp;char *GetNodeName&#40;&#41; &#123; return &#40;node_name&#41;; &#125;
-
+	char *GetNodeName&#40;&#41; &#123; return &#40;node_name&#41;; &#125;
 <br />
-&nbsp; &nbsp;noda *SelectNode&#40;bool how, int id, char *name&#41;
-
+	noda *SelectNode&#40;bool how, int id, char *name&#41;
 <br />
-&nbsp; &nbsp;&#123; 
-
+	&#123; 
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;if &#40;how == 0&#41; &#123;
-
+		if &#40;how == 0&#41; &#123;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;noda *temp = childs&#91;0&#93;;
-
+			noda *temp = childs&#91;0&#93;;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;for &#40;int i = 1; i &lt; childs.size&#40;&#41;; i++&#41;
-
+			for &#40;int i = 1; i &lt; childs&#46;size&#40;&#41;; i++&#41;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&#123;
-
+			&#123;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;if &#40;&#40;strcmp&#40;&#40;temp-&gt;GetNodeName&#40;&#41;&#41;, name&#41;&#41; !=0&#41;
-
+				if &#40;&#40;strcmp&#40;&#40;temp-&gt;GetNodeName&#40;&#41;&#41;, name&#41;&#41; !=0&#41;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp; temp = childs&#91;i&#93;;
-
+			    temp = childs&#91;i&#93;;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;else
-
+				else
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;break;
-
+					break;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&#125;
-
+			&#125;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;return&#40;childs&#91;i-1&#93;&#41;;
-
+			return&#40;childs&#91;i-1&#93;&#41;;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&#125;
-
+		&#125;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;else &#123;
-
+		else &#123;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp; if &#40;&#40;id &gt; ID&#41; &amp;&amp; &#40;id &lt;= &#40;childs.size&#40;&#41;&#41;&#41;&#41;
-
+		    if &#40;&#40;id &gt; ID&#41; &amp;&amp; &#40;id &lt;= &#40;childs&#46;size&#40;&#41;&#41;&#41;&#41;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp; return&#40;childs&#91;id-1&#93;&#41;;
-
+			    return&#40;childs&#91;id-1&#93;&#41;;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp; else
-
+		    else
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp; return&#40;NULL&#41;;
-
+			    return&#40;NULL&#41;;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&#125;
-
+		&#125;
 <br />
-&nbsp; &nbsp;&#125;
-
+	&#125;
 <br />
 
-
 <br />
-&nbsp; &nbsp;void node_clean&#40;&#41;
-
+	void node_clean&#40;&#41;
 <br />
-&nbsp; &nbsp;&#123;
-
+	&#123;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;noda *temp;
-
+		noda *temp;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;if &#40;&#40;childs.size&#40;&#41;&#41; &gt; 0&#41; &#123;
-
+		if &#40;&#40;childs&#46;size&#40;&#41;&#41; &gt; 0&#41; &#123;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;for &#40;int i = 0; i &lt; &#40;childs.size&#40;&#41;&#41;; i++&#41; &#123;
-
+			for &#40;int i = 0; i &lt; &#40;childs&#46;size&#40;&#41;&#41;; i++&#41; &#123;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;temp = childs&#91;i&#93;;
-
+				temp = childs&#91;i&#93;;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;delete temp-&gt;data;
-
+				delete temp-&gt;data;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;delete temp;
-
+				delete temp;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&#125;
-
+			&#125;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&#125;
-
+		&#125;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;childs.clear&#40;&#41;;
-
+		childs&#46;clear&#40;&#41;;
 <br />
-&nbsp; &nbsp;&#125;
-
+	&#125;
 <br />
-
 
 <br />
 &#125;;
-
 <br />
 
-
 <br />
-int SaveToFile&#40;noda *root&#41;; /* Shrani drevo v datoteko. */
-
+int SaveToFile&#40;noda *root&#41;; /* Shrani drevo v datoteko&#46; */
 <br />
-noda *LoadFromFile&#40;char *ime_datoteke&#41;; /* Nalozi drevo v root nodo. */
-
+noda *LoadFromFile&#40;char *ime_datoteke&#41;; /* Nalozi drevo v root nodo&#46; */
 <br />
-
 
 <br />
 /*class VFS
-
 <br />
 &#123;
-
 <br />
-&nbsp; &nbsp; char *_read&#40;&#41;;
-
+    char *_read&#40;&#41;;
 <br />
-&nbsp; &nbsp; char *_write&#40;&#41;;
-
+    char *_write&#40;&#41;;
 <br />
-&nbsp; &nbsp; char *_getc&#40;&#41;;
-
+    char *_getc&#40;&#41;;
 <br />
-&nbsp; &nbsp; char *_putc&#40;&#41;;
-
+    char *_putc&#40;&#41;;
 <br />
 &#125;;
-
 <br />
-
 
 <br />
 char *parse_path&#40;char *name&#41;;
-
 <br />
 &#123;
-
 <br />
 
-
 <br />
-&nbsp; &nbsp;for&#40;int i = 0; name&#91;i&#93; &lt;&gt; '\0'; i++&#41; &#123;*/
-
+	for&#40;int i = 0; name&#91;i&#93; &lt;&gt; '\0'; i++&#41; &#123;*/
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;// neki ...
-
+		// neki &#46;&#46;&#46;
 <br />
-//&nbsp; &nbsp;&#125;
-
+//	&#125;
 <br />
-&nbsp; &nbsp;/* Kaj spljoh morm vrnat????! */
-
+	/* Kaj spljoh morm vrnat????! */
 <br />
 /*&#125;
-
 <br />
 char *VFS_Read&#40;char *name, bool type&#41;
-
 <br />
 &#123;*/
-
 <br />
-&nbsp; &nbsp;/* Obdela niz. Torej razdeli &quot;pot/datoteka.neki&quot; na nodo pot 
-
+	/* Obdela niz&#46; Torej razdeli &quot;pot/datoteka&#46;neki&quot; na nodo pot 
 <br />
-&nbsp; &nbsp;in na datoteka.neki. */
-
+	in na datoteka&#46;neki&#46; */
 <br />
-//&nbsp; &nbsp;parse_path&#40;name&#41;;
-
+//	parse_path&#40;name&#41;;
 <br />
 //&#125;
-
 <br />
 //int VFS_Write&#40;char *name, bool type, size_t max_lenght&#41;
-
 <br />
 int main&#40;int argc, char *argv&#91;&#93;, char *env&#91;&#93;&#41;
-
 <br />
 &#123;
-
 <br />
-&nbsp; &nbsp;int curID;
-
+	int curID;
 <br />
 
-
 <br />
-&nbsp; &nbsp;cout &lt;&lt; &quot;Ustvarjam root nodo ...&quot; &lt;&lt; endl;
-
+	cout &lt;&lt; &quot;Ustvarjam root nodo &#46;&#46;&#46;&quot; &lt;&lt; endl;
 <br />
-&nbsp; &nbsp;noda *root = new noda;
-
+	noda *root = new noda;
 <br />
-&nbsp; &nbsp;noda *noda1, *noda2, *noda3;
-
+	noda *noda1, *noda2, *noda3;
 <br />
-&nbsp; &nbsp;noda *izbrana;
-
+	noda *izbrana;
 <br />
 
-
 <br />
-&nbsp; &nbsp;cout &lt;&lt; &quot;Dodajam node ...&quot; &lt;&lt; endl;
-
+	cout &lt;&lt; &quot;Dodajam node &#46;&#46;&#46;&quot; &lt;&lt; endl;
 <br />
-&nbsp; &nbsp;noda1 = root-&gt;dodaj&#40;&quot;vaja1&quot;, &quot;To je test&quot;&#41;;
-
+	noda1 = root-&gt;dodaj&#40;&quot;vaja1&quot;, &quot;To je test&quot;&#41;;
 <br />
-&nbsp; &nbsp;noda2 = root-&gt;dodaj&#40;&quot;preizkus2&quot;, &quot;Resnicno zanimiva rec&quot;&#41;;
-
+	noda2 = root-&gt;dodaj&#40;&quot;preizkus2&quot;, &quot;Resnicno zanimiva rec&quot;&#41;;
 <br />
-&nbsp; &nbsp;noda3 = root-&gt;dodaj&#40;&quot;temp3&quot;, &quot;Neneeee, to je kewlsko!!!&quot;&#41;;
-
+	noda3 = root-&gt;dodaj&#40;&quot;temp3&quot;, &quot;Neneeee, to je kewlsko!!!&quot;&#41;;
 <br />
 
-
 <br />
-&nbsp; &nbsp;cout &lt;&lt; endl &lt;&lt; &quot;Informacije&#58;&quot; &lt;&lt; endl;
-
+	cout &lt;&lt; endl &lt;&lt; &quot;Informacije&#58;&quot; &lt;&lt; endl;
 <br />
-&nbsp; &nbsp;cout &lt;&lt; &quot;------------------------&quot; &lt;&lt; endl;
-
+	cout &lt;&lt; &quot;------------------------&quot; &lt;&lt; endl;
 <br />
-&nbsp; &nbsp;cout &lt;&lt; &quot;Ime node &quot; &lt;&lt; &#40;noda1-&gt;GetID&#40;&#41;&#41; &lt;&lt; &quot; je &quot; &lt;&lt; &#40;noda1-&gt;GetNodeName&#40;&#41;&#41; &lt;&lt; endl;
-
+	cout &lt;&lt; &quot;Ime node &quot; &lt;&lt; &#40;noda1-&gt;GetID&#40;&#41;&#41; &lt;&lt; &quot; je &quot; &lt;&lt; &#40;noda1-&gt;GetNodeName&#40;&#41;&#41; &lt;&lt; endl;
 <br />
-&nbsp; &nbsp;cout &lt;&lt; &quot;Ime node &quot; &lt;&lt; &#40;noda2-&gt;GetID&#40;&#41;&#41; &lt;&lt; &quot; je &quot; &lt;&lt; &#40;noda2-&gt;GetNodeName&#40;&#41;&#41; &lt;&lt; endl;
-
+	cout &lt;&lt; &quot;Ime node &quot; &lt;&lt; &#40;noda2-&gt;GetID&#40;&#41;&#41; &lt;&lt; &quot; je &quot; &lt;&lt; &#40;noda2-&gt;GetNodeName&#40;&#41;&#41; &lt;&lt; endl;
 <br />
-&nbsp; &nbsp;cout &lt;&lt; &quot;Ime node &quot; &lt;&lt; &#40;noda3-&gt;GetID&#40;&#41;&#41; &lt;&lt; &quot; je &quot; &lt;&lt; &#40;noda3-&gt;GetNodeName&#40;&#41;&#41; &lt;&lt; endl;
-
+	cout &lt;&lt; &quot;Ime node &quot; &lt;&lt; &#40;noda3-&gt;GetID&#40;&#41;&#41; &lt;&lt; &quot; je &quot; &lt;&lt; &#40;noda3-&gt;GetNodeName&#40;&#41;&#41; &lt;&lt; endl;
 <br />
 
-
 <br />
-&nbsp; &nbsp;cout &lt;&lt; endl &lt;&lt; &quot;Izbiram nodo ...&quot; &lt;&lt; endl;
-
+	cout &lt;&lt; endl &lt;&lt; &quot;Izbiram nodo &#46;&#46;&#46;&quot; &lt;&lt; endl;
 <br />
-&nbsp; &nbsp;izbrana = root-&gt;SelectNode&#40;0, 0, &quot;preizkus2&quot;&#41;;
-
+	izbrana = root-&gt;SelectNode&#40;0, 0, &quot;preizkus2&quot;&#41;;
 <br />
-&nbsp; &nbsp;cout &lt;&lt; &quot;ID izbrane node je &quot; &lt;&lt; &#40;izbrana-&gt;GetID&#40;&#41;&#41; &lt;&lt; endl;
-
+	cout &lt;&lt; &quot;ID izbrane node je &quot; &lt;&lt; &#40;izbrana-&gt;GetID&#40;&#41;&#41; &lt;&lt; endl;
 <br />
-&nbsp; &nbsp;cout &lt;&lt; &quot;Njeno ime je &quot; &lt;&lt; &#40;izbrana-&gt;GetNodeName&#40;&#41;&#41; &lt;&lt; endl;
-
+	cout &lt;&lt; &quot;Njeno ime je &quot; &lt;&lt; &#40;izbrana-&gt;GetNodeName&#40;&#41;&#41; &lt;&lt; endl;
 <br />
 
-
 <br />
-&nbsp; &nbsp;cout &lt;&lt; &quot;Brišem root nodo ...&quot; &lt;&lt; endl;
-
+	cout &lt;&lt; &quot;Brišem root nodo &#46;&#46;&#46;&quot; &lt;&lt; endl;
 <br />
-&nbsp; &nbsp;delete root;
-
+	delete root;
 <br />
-&nbsp; &nbsp;return&#40;0&#41;;
-
+	return&#40;0&#41;;
 <br />
 &#125;</td>
 <br />
@@ -728,7 +597,7 @@ int main&#40;int argc, char *argv&#91;&#93;, char *env&#91;&#93;&#41;
 <br />
 </table>
 <br />
-<span class="postbody"><br />_________________<br /><a  target="_blank">http://luka-napotnik.net</a></span><span class="gensmall"></span></td>
+<span class="postbody"><br />_________________<br /><a class="postlink" >http://luka-napotnik.net</a></span><span class="gensmall"></span></td>
 			</tr>
 		</table></td>
 	</tr>
@@ -745,7 +614,7 @@ int main&#40;int argc, char *argv&#91;&#93;, char *env&#91;&#93;&#41;
 	</tr>
 	
 	<tr>
-		<td width="150" align="left" valign="top" class="row2"><span class="name"><a name="598"></a><b>Napsy</b></span><br /><span class="postdetails">inštruktor<br /><img src="images/ranks/sgd-4.gif" alt="inštruktor" title="inštruktor" border="0" /><br /><br /><br />Pridružen: 09. jan 2003 ob 22:37<br />objav: 306<br />Kraj: Letuš</span><br /></td>
+		<td width="150" align="left" valign="top" class="row2"><span class="name"><a name="598"></a><b>Napsy</b></span><br /><span class="postdetails">inštruktor<br /><img src="images/ranks/sgd-4.gif" alt="inštruktor" title="inštruktor" border="0" /><br /><br /><br />Pridružen: 09. jan 2003 ob 22:37<br />objav: 258<br />Kraj: Letuš</span><br /></td>
 		<td class="row2" width="100%" height="28" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
 			<tr>
 				<td colspan="2" width="100%">
@@ -781,16 +650,12 @@ int main&#40;int argc, char *argv&#91;&#93;, char *env&#91;&#93;&#41;
 	<tr>
 <br />
 	  <td class="quote">[Luka@luka programi]$ g++ main.cpp -o main
-
 <br />
 main.cpp: In member function `noda* noda::SelectNode(bool, int, char*)':
-
 <br />
 main.cpp:57: name lookup of `i' changed for new ISO `for' scoping
-
 <br />
 main.cpp:49:
-
 <br />
    using obsolete binding at `i'</td>
 <br />
@@ -804,7 +669,7 @@ main.cpp:49:
 
 
 <br />
-Ka sploh to pomen. A se je mogoče standard spremenil. Ker v winsih mi pa lepo skompajla.<br />_________________<br /><a  target="_blank">http://luka-napotnik.net</a></span><span class="gensmall"></span></td>
+Ka sploh to pomen. A se je mogoče standard spremenil. Ker v winsih mi pa lepo skompajla.<br />_________________<br /><a class="postlink" >http://luka-napotnik.net</a></span><span class="gensmall"></span></td>
 			</tr>
 		</table></td>
 	</tr>
@@ -821,7 +686,7 @@ Ka sploh to pomen. A se je mogoče standard spremenil. Ker v winsih mi pa lepo s
 	</tr>
 	
 	<tr>
-		<td width="150" align="left" valign="top" class="row1"><span class="name"><a name="599"></a><b>Firestar</b></span><br /><span class="postdetails">poznavalec<br /><img src="images/ranks/sgd-3.gif" alt="poznavalec" title="poznavalec" border="0" /><br /><img src="images/avatars/c2f929273ec2afe163bdf.gif" alt="" border="0" /><br /><br />Pridružen: 17. jan 2003 ob 11:24<br />objav: 181<br />Kraj: Maribor</span><br /></td>
+		<td width="150" align="left" valign="top" class="row1"><span class="name"><a name="599"></a><b>Firestar</b></span><br /><span class="postdetails">poznavalec<br /><img src="images/ranks/sgd-3.gif" alt="poznavalec" title="poznavalec" border="0" /><br /><img src="images/avatars/c2f929273ec2afe163bdf.gif" alt="" border="0" /><br /><br />Pridružen: 17. jan 2003 ob 11:24<br />objav: 173<br />Kraj: Maribor</span><br /></td>
 		<td class="row1" width="100%" height="28" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
 			<tr>
 				<td colspan="2" width="100%">
@@ -860,10 +725,8 @@ spremeni v konstruktorju iz
 	<tr>
 <br />
 	  <td class="code">
-
 <br />
 data = new char;
-
 <br />
 </td>
 <br />
@@ -872,7 +735,6 @@ data = new char;
 </table>
 <br />
 <span class="postbody"> v 
-
 <br />
 </span>
 <br />
@@ -893,10 +755,8 @@ data = new char;
 </table>
 <br />
 <span class="postbody">
-
 <br />
 v metodi dodaj() moras dodati tole vrstico
-
 <br />
 </span>
 <br />
@@ -911,13 +771,10 @@ v metodi dodaj() moras dodati tole vrstico
 	<tr>
 <br />
 	  <td class="code">
-
 <br />
 nova-&gt;data = new char&#91;strlen&#40;node_data&#41;+1&#93;; // dodati moras to vrstico
-
 <br />
 strcpy&#40;nova-&gt;data, node_data&#41;; 
-
 <br />
 </td>
 <br />
@@ -926,10 +783,8 @@ strcpy&#40;nova-&gt;data, node_data&#41;;
 </table>
 <br />
 <span class="postbody">
-
 <br />
 in v metodi node_clean() napisi namesto
-
 <br />
 </span>
 <br />
@@ -944,10 +799,8 @@ in v metodi node_clean() napisi namesto
 	<tr>
 <br />
 	  <td class="code">
-
 <br />
 delete temp-&gt;data;
-
 <br />
 </td>
 <br />
@@ -956,10 +809,8 @@ delete temp-&gt;data;
 </table>
 <br />
 <span class="postbody">
-
 <br />
 tole:
-
 <br />
 </span>
 <br />
@@ -974,10 +825,8 @@ tole:
 	<tr>
 <br />
 	  <td class="code">
-
 <br />
 delete &#91;&#93; temp-&gt;data;
-
 <br />
 </td>
 <br />
@@ -986,12 +835,10 @@ delete &#91;&#93; temp-&gt;data;
 </table>
 <br />
 <span class="postbody">
-
 <br />
 
-
 <br />
-lepo programiraj se naprej <img src="images/smiles/icon_wink.gif" alt="icon_wink.gif" border="0" />[/code]</span><span class="gensmall"></span></td>
+lepo programiraj se naprej <img src="images/smiles/icon_wink.gif" alt=";-)" border="0" />[/code]</span><span class="gensmall"></span></td>
 			</tr>
 		</table></td>
 	</tr>
@@ -1008,7 +855,7 @@ lepo programiraj se naprej <img src="images/smiles/icon_wink.gif" alt="icon_wink
 	</tr>
 	
 	<tr>
-		<td width="150" align="left" valign="top" class="row2"><span class="name"><a name="600"></a><b>Rhuantavan</b></span><br /><span class="postdetails">SGD Admin<br /><img src="images/ranks/sgd-admin.gif" alt="SGD Admin" title="SGD Admin" border="0" /><br /><img src="images/avatars/c14db2394124b99a07556.gif" alt="" border="0" /><br /><br />Pridružen: 26. okt 2002 ob 14:16<br />objav: 644<br />Kraj: Renče (NG), Slovenia</span><br /></td>
+		<td width="150" align="left" valign="top" class="row2"><span class="name"><a name="600"></a><b>Rhuantavan</b></span><br /><span class="postdetails">SGD Admin<br /><img src="images/ranks/sgd-admin.gif" alt="SGD Admin" title="SGD Admin" border="0" /><br /><img src="images/avatars/c14db2394124b99a07556.gif" alt="" border="0" /><br /><br />Pridružen: 26. okt 2002 ob 14:16<br />objav: 632<br />Kraj: Renče, Slovenia</span><br /></td>
 		<td class="row2" width="100%" height="28" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
 			<tr>
 				<td colspan="2" width="100%">
@@ -1028,10 +875,7 @@ lepo programiraj se naprej <img src="images/smiles/icon_wink.gif" alt="icon_wink
 				<td colspan="2"><hr /></td>
 			</tr>
 			<tr>
-				<td colspan="2"><span class="postbody">Pa si me prehitel <img src="images/smiles/icon_smile.gif" alt="icon_smile.gif" border="0" /><br />_________________<br /><span style="font-size: 10px; line-height: normal">Where's the fun?</span>
-
-<br />
-<span style="font-size: 10px; line-height: normal"><a  target="_blank" class="postlink">http://dw.slogamedev.net</a></span></span><span class="gensmall"></span></td>
+				<td colspan="2"><span class="postbody">Pa si me prehitel <img src="images/smiles/icon_smile.gif" alt=":)" border="0" /><br />_________________<br /><a class="postlink" >http://www.damjanmozetic.si</a></span><span class="gensmall"></span></td>
 			</tr>
 		</table></td>
 	</tr>
@@ -1048,7 +892,7 @@ lepo programiraj se naprej <img src="images/smiles/icon_wink.gif" alt="icon_wink
 	</tr>
 	
 	<tr>
-		<td width="150" align="left" valign="top" class="row1"><span class="name"><a name="601"></a><b>Napsy</b></span><br /><span class="postdetails">inštruktor<br /><img src="images/ranks/sgd-4.gif" alt="inštruktor" title="inštruktor" border="0" /><br /><br /><br />Pridružen: 09. jan 2003 ob 22:37<br />objav: 306<br />Kraj: Letuš</span><br /></td>
+		<td width="150" align="left" valign="top" class="row1"><span class="name"><a name="601"></a><b>Napsy</b></span><br /><span class="postdetails">inštruktor<br /><img src="images/ranks/sgd-4.gif" alt="inštruktor" title="inštruktor" border="0" /><br /><br /><br />Pridružen: 09. jan 2003 ob 22:37<br />objav: 258<br />Kraj: Letuš</span><br /></td>
 		<td class="row1" width="100%" height="28" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
 			<tr>
 				<td colspan="2" width="100%">
@@ -1068,10 +912,10 @@ lepo programiraj se naprej <img src="images/smiles/icon_wink.gif" alt="icon_wink
 				<td colspan="2"><hr /></td>
 			</tr>
 			<tr>
-				<td colspan="2"><span class="postbody"><img src="images/smiles/icon_biggrin.gif" alt="icon_biggrin.gif" border="0" /> 
+				<td colspan="2"><span class="postbody"><img src="images/smiles/icon_biggrin.gif" alt=":D" border="0" /> 
 
 <br />
-tnx Firestar!<br />_________________<br /><a  target="_blank">http://luka-napotnik.net</a></span><span class="gensmall"></span></td>
+tnx Firestar!<br />_________________<br /><a class="postlink" >http://luka-napotnik.net</a></span><span class="gensmall"></span></td>
 			</tr>
 		</table></td>
 	</tr>
@@ -1088,7 +932,7 @@ tnx Firestar!<br />_________________<br /><a  target="_blank">http://luka-napotn
 	</tr>
 	
 	<tr>
-		<td width="150" align="left" valign="top" class="row2"><span class="name"><a name="602"></a><b>Napsy</b></span><br /><span class="postdetails">inštruktor<br /><img src="images/ranks/sgd-4.gif" alt="inštruktor" title="inštruktor" border="0" /><br /><br /><br />Pridružen: 09. jan 2003 ob 22:37<br />objav: 306<br />Kraj: Letuš</span><br /></td>
+		<td width="150" align="left" valign="top" class="row2"><span class="name"><a name="602"></a><b>Napsy</b></span><br /><span class="postdetails">inštruktor<br /><img src="images/ranks/sgd-4.gif" alt="inštruktor" title="inštruktor" border="0" /><br /><br /><br />Pridružen: 09. jan 2003 ob 22:37<br />objav: 258<br />Kraj: Letuš</span><br /></td>
 		<td class="row2" width="100%" height="28" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
 			<tr>
 				<td colspan="2" width="100%">
@@ -1108,7 +952,7 @@ tnx Firestar!<br />_________________<br /><a  target="_blank">http://luka-napotn
 				<td colspan="2"><hr /></td>
 			</tr>
 			<tr>
-				<td colspan="2"><span class="postbody">Ka pa za tiste errorje v linuxu. A kdo ve, ka pomenijo pa kok se jih znebiti?<br />_________________<br /><a  target="_blank">http://luka-napotnik.net</a></span><span class="gensmall"></span></td>
+				<td colspan="2"><span class="postbody">Ka pa za tiste errorje v linuxu. A kdo ve, ka pomenijo pa kok se jih znebiti?<br />_________________<br /><a class="postlink" >http://luka-napotnik.net</a></span><span class="gensmall"></span></td>
 			</tr>
 		</table></td>
 	</tr>
@@ -1125,7 +969,7 @@ tnx Firestar!<br />_________________<br /><a  target="_blank">http://luka-napotn
 	</tr>
 	
 	<tr>
-		<td width="150" align="left" valign="top" class="row1"><span class="name"><a name="603"></a><b>Napsy</b></span><br /><span class="postdetails">inštruktor<br /><img src="images/ranks/sgd-4.gif" alt="inštruktor" title="inštruktor" border="0" /><br /><br /><br />Pridružen: 09. jan 2003 ob 22:37<br />objav: 306<br />Kraj: Letuš</span><br /></td>
+		<td width="150" align="left" valign="top" class="row1"><span class="name"><a name="603"></a><b>Napsy</b></span><br /><span class="postdetails">inštruktor<br /><img src="images/ranks/sgd-4.gif" alt="inštruktor" title="inštruktor" border="0" /><br /><br /><br />Pridružen: 09. jan 2003 ob 22:37<br />objav: 258<br />Kraj: Letuš</span><br /></td>
 		<td class="row1" width="100%" height="28" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
 			<tr>
 				<td colspan="2" width="100%">
@@ -1145,7 +989,7 @@ tnx Firestar!<br />_________________<br /><a  target="_blank">http://luka-napotn
 				<td colspan="2"><hr /></td>
 			</tr>
 			<tr>
-				<td colspan="2"><span class="postbody">aha. sm že najdu napako. Ker ko se for zanka zakluči, spremenljivke i ni več  <img src="images/smiles/icon_redface.gif" alt="icon_redface.gif" border="0" /><br />_________________<br /><a  target="_blank">http://luka-napotnik.net</a></span><span class="gensmall"></span></td>
+				<td colspan="2"><span class="postbody">aha. sm že najdu napako. Ker ko se for zanka zakluči, spremenljivke i ni več  <img src="images/smiles/icon_redface.gif" alt=":oops:" border="0" /><br />_________________<br /><a class="postlink" >http://luka-napotnik.net</a></span><span class="gensmall"></span></td>
 			</tr>
 		</table></td>
 	</tr>
@@ -1162,7 +1006,7 @@ tnx Firestar!<br />_________________<br /><a  target="_blank">http://luka-napotn
 	</tr>
 	
 	<tr>
-		<td width="150" align="left" valign="top" class="row2"><span class="name"><a name="605"></a><b>Firestar</b></span><br /><span class="postdetails">poznavalec<br /><img src="images/ranks/sgd-3.gif" alt="poznavalec" title="poznavalec" border="0" /><br /><img src="images/avatars/c2f929273ec2afe163bdf.gif" alt="" border="0" /><br /><br />Pridružen: 17. jan 2003 ob 11:24<br />objav: 181<br />Kraj: Maribor</span><br /></td>
+		<td width="150" align="left" valign="top" class="row2"><span class="name"><a name="605"></a><b>Firestar</b></span><br /><span class="postdetails">poznavalec<br /><img src="images/ranks/sgd-3.gif" alt="poznavalec" title="poznavalec" border="0" /><br /><img src="images/avatars/c2f929273ec2afe163bdf.gif" alt="" border="0" /><br /><br />Pridružen: 17. jan 2003 ob 11:24<br />objav: 173<br />Kraj: Maribor</span><br /></td>
 		<td class="row2" width="100%" height="28" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
 			<tr>
 				<td colspan="2" width="100%">
@@ -1182,7 +1026,7 @@ tnx Firestar!<br />_________________<br /><a  target="_blank">http://luka-napotn
 				<td colspan="2"><hr /></td>
 			</tr>
 			<tr>
-				<td colspan="2"><span class="postbody">Rhuantavan: sorry <img src="images/smiles/icon_wink.gif" alt="icon_wink.gif" border="0" />
+				<td colspan="2"><span class="postbody">Rhuantavan: sorry <img src="images/smiles/icon_wink.gif" alt=";-)" border="0" />
 
 <br />
 Napsy: np</span><span class="gensmall"></span></td>
@@ -1210,7 +1054,7 @@ Napsy: np</span><span class="gensmall"></span></td>
   <tr>
 	<td align="left" valign="middle" nowrap="nowrap">&nbsp;</td>
 	<td align="left" valign="middle" width="100%"><span class="nav">&nbsp;&nbsp;&nbsp;<a href="index.html" class="nav">SloGameDev.net seznam forumov</a>
-	  -> <a href="forum-1.html" class="nav">Splošno Programiranje</a></span></td>
+	  -> <a href="forum-52.html" class="nav">Izdelovanje iger</a></span></td>
 	<td align="right" valign="top" nowrap="nowrap"><span class="gensmall">Časovni pas (GMT +2:00 uri) Slovenija, poletni čas</span><br /><span class="nav"></span>
 	  </td>
   </tr>
@@ -1226,7 +1070,7 @@ Napsy: np</span><span class="gensmall"></span></td>
   </tr>
 </table>
 
-<div align="center"><span class="copyright"><br />Arhiv stanja na dan 13. 2. 2006 &mdash; samo za branje.<br />
+<div align="center"><span class="copyright"><br />Arhiv &mdash; samo za branje.<br />
 <!--
 	We request you retain the full copyright notice below including the link to www.phpbb.com.
 	This not only gives respect to the large amount of time given freely by the developers

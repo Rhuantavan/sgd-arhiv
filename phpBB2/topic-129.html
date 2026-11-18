@@ -276,13 +276,13 @@ input.liteoption {
   <tr>
 	<td align="left" valign="bottom" nowrap="nowrap">&nbsp;</td>
 	<td align="left" valign="middle" width="100%"><span class="nav">&nbsp;&nbsp;&nbsp;<a href="index.html" class="nav">SloGameDev.net seznam forumov</a>
-	  -> <a href="forum-1.html" class="nav">Splošno Programiranje</a></span></td>
+	  -> <a href="forum-52.html" class="nav">Izdelovanje iger</a></span></td>
   </tr>
 </table>
 
 <table class="forumline" width="100%" cellspacing="1" cellpadding="3" border="0">
 	<tr align="right">
-		<td class="catHead" colspan="2" height="28"><span class="nav"><a href="topic-120.html" class="nav">Prejšnja tema</a> :: <a href="topic-122.html" class="nav">Naslednja tema</a> &nbsp;</span></td>
+		<td class="catHead" colspan="2" height="28"><span class="nav"><a href="topic-26.html" class="nav">Prejšnja tema</a> :: <a href="topic-132.html" class="nav">Naslednja tema</a> &nbsp;</span></td>
 	</tr>
 	
 	<tr>
@@ -291,7 +291,7 @@ input.liteoption {
 	</tr>
 	
 	<tr>
-		<td width="150" align="left" valign="top" class="row1"><span class="name"><a name="1088"></a><b>Person</b></span><br /><span class="postdetails">expert<br /><img src="images/ranks/sgd-6.gif" alt="expert" title="expert" border="0" /><br /><img src="images/avatars/d5fa111d422d913c2ca73.gif" alt="" border="0" /><br /><br />Pridružen: 11. jan 2003 ob 21:25<br />objav: 643<br /></span><br /></td>
+		<td width="150" align="left" valign="top" class="row1"><span class="name"><a name="1088"></a><b>Person</b></span><br /><span class="postdetails">igralec<br /><img src="images/ranks/sgd-7.gif" alt="igralec" title="igralec" border="0" /><br /><img src="images/avatars/d5fa111d422d913c2ca73.gif" alt="" border="0" /><br /><br />Pridružen: 11. jan 2003 ob 21:25<br />objav: 810<br /></span><br /></td>
 		<td class="row1" width="100%" height="28" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
 			<tr>
 				<td colspan="2" width="100%">
@@ -330,298 +330,200 @@ input.liteoption {
 	<tr>
 <br />
 	  <td class="code">// Windows Header Files&#58;
-
 <br />
-#include &lt;windows.h&gt;
-
+#include &lt;windows&#46;h&gt;
 <br />
-#include &quot;resource.h&quot;
-
+#include &quot;resource&#46;h&quot;
 <br />
 
-
 <br />
-
 
 <br />
 TCHAR szClassName&#91;&#93; = &quot;WIN32TEST&quot;;
-
 <br />
-
 
 <br />
 HBITMAP hBmp;
-
 <br />
-
 
 <br />
 LRESULT CALLBACK WndProc&#40;HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam&#41;
-
 <br />
 &#123;
-
 <br />
-&nbsp; &nbsp;PAINTSTRUCT ps;
-
+	PAINTSTRUCT ps;
 <br />
-&nbsp; &nbsp;HDC hdc;
-
+	HDC hdc;
 <br />
 
-
 <br />
-&nbsp; &nbsp;switch &#40;message&#41; 
-
+	switch &#40;message&#41; 
 <br />
-&nbsp; &nbsp;&#123;
-
+	&#123;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;case WM_NCHITTEST&#58;
-
+		case WM_NCHITTEST&#58;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;return HTCAPTION;
-
+			return HTCAPTION;
 <br />
 
-
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;case WM_LBUTTONDOWN&#58;
-
+		case WM_LBUTTONDOWN&#58;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;break;
-
+			break;
 <br />
 
-
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;case WM_PAINT&#58;
-
+		case WM_PAINT&#58;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;hdc = BeginPaint &#40;hWnd, &amp;ps&#41;;
-
+				hdc = BeginPaint &#40;hWnd, &amp;ps&#41;;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;if &#40;hBmp&#41;
-
+				if &#40;hBmp&#41;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&#123;
-
+				&#123;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;BITMAP bm;
-
+					BITMAP bm;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;GetObject&#40;hBmp, sizeof&#40;bm&#41;, &amp;bm&#41;;
-
+					GetObject&#40;hBmp, sizeof&#40;bm&#41;, &amp;bm&#41;;
 <br />
 
-
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;HDC memdc = CreateCompatibleDC&#40;NULL&#41;;
-
+					HDC memdc = CreateCompatibleDC&#40;NULL&#41;;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;HBITMAP h = &#40;HBITMAP&#41;SelectObject&#40;memdc, hBmp&#41;;
-
+					HBITMAP h = &#40;HBITMAP&#41;SelectObject&#40;memdc, hBmp&#41;;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;BitBlt&#40;hdc, 0, 0, bm.bmWidth, bm.bmHeight, memdc, 0, 0, SRCCOPY&#41;;
-
+					BitBlt&#40;hdc, 0, 0, bm&#46;bmWidth, bm&#46;bmHeight, memdc, 0, 0, SRCCOPY&#41;;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;SelectObject&#40;memdc, h&#41;;
-
+					SelectObject&#40;memdc, h&#41;;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&#125;
-
+				&#125;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;EndPaint &#40;hWnd, &amp;ps&#41;;
-
+				EndPaint &#40;hWnd, &amp;ps&#41;;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;break;
-
+			break;
 <br />
 
-
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;case WM_KEYDOWN&#58;
-
+		case WM_KEYDOWN&#58;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;if &#40;wParam != VK_ESCAPE&#41;
-
+			if &#40;wParam != VK_ESCAPE&#41;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;break;
-
+				break;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;// Fall thru
-
+			// Fall thru
 <br />
 
-
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;case WM_DESTROY&#58;
-
+		case WM_DESTROY&#58;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;PostQuitMessage&#40;0&#41;;
-
+				PostQuitMessage&#40;0&#41;;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;break;
-
+			break;
 <br />
 
-
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;default&#58;
-
+		default&#58;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;return &#40;DefWindowProc&#40;hWnd, message, wParam, lParam&#41;&#41;;
-
+			return &#40;DefWindowProc&#40;hWnd, message, wParam, lParam&#41;&#41;;
 <br />
-&nbsp; &nbsp;&#125;
-
+	&#125;
 <br />
-&nbsp; &nbsp;
-
+	
 <br />
-&nbsp; &nbsp;return &#40;0&#41;;
-
+	return &#40;0&#41;;
 <br />
 &#125;
+<br />
 
 <br />
 
-
 <br />
-
-
-<br />
-
 
 <br />
 int APIENTRY WinMain&#40;HINSTANCE hInstance,
-
 <br />
-&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  HINSTANCE hPrevInstance,
-
+                     HINSTANCE hPrevInstance,
 <br />
-&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  LPSTR&nbsp; &nbsp;  lpCmdLine,
-
+                     LPSTR     lpCmdLine,
 <br />
-&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  int&nbsp; &nbsp; &nbsp;  nCmdShow&#41;
-
+                     int       nCmdShow&#41;
 <br />
 &#123;
-
 <br />
-&nbsp; &nbsp;WNDCLASS wc;
-
+	WNDCLASS wc;
 <br />
-&nbsp; &nbsp;HWND hWnd;
-
+	HWND hWnd;
 <br />
-&nbsp; &nbsp;MSG msg;
-
+	MSG msg;
 <br />
 
-
 <br />
-&nbsp; &nbsp;hBmp = &#40;HBITMAP&#41;LoadImage&#40;hInstance, MAKEINTRESOURCE&#40;IDB_BITMAP1&#41;, IMAGE_BITMAP, 0, 0, LR_CREATEDIBSECTION&#41;;
-
+	hBmp = &#40;HBITMAP&#41;LoadImage&#40;hInstance, MAKEINTRESOURCE&#40;IDB_BITMAP1&#41;, IMAGE_BITMAP, 0, 0, LR_CREATEDIBSECTION&#41;;
 <br />
-&nbsp; &nbsp;if &#40;hBmp&#41;
-
+	if &#40;hBmp&#41;
 <br />
-&nbsp; &nbsp;&#123;
-
+	&#123;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;ZeroMemory&#40;&amp;wc, sizeof&#40;wc&#41;&#41;;
-
+		ZeroMemory&#40;&amp;wc, sizeof&#40;wc&#41;&#41;;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;wc.style&nbsp; &nbsp; &nbsp; &nbsp;  = CS_HREDRAW | CS_VREDRAW;
-
+		wc&#46;style         = CS_HREDRAW | CS_VREDRAW;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;wc.lpszClassName = szClassName;
-
+		wc&#46;lpszClassName = szClassName;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;wc.lpfnWndProc&nbsp;  = &#40;WNDPROC&#41;WndProc;
-
+		wc&#46;lpfnWndProc   = &#40;WNDPROC&#41;WndProc;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;wc.hInstance&nbsp; &nbsp;  = hInstance;
-
+		wc&#46;hInstance     = hInstance;
 <br />
 
-
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;if &#40;RegisterClass&#40;&amp;wc&#41;&#41;
-
+		if &#40;RegisterClass&#40;&amp;wc&#41;&#41;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&#123;
-
+		&#123;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;BITMAP bm;
-
+			BITMAP bm;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;GetObject&#40;hBmp, sizeof&#40;bm&#41;, &amp;bm&#41;;
-
+			GetObject&#40;hBmp, sizeof&#40;bm&#41;, &amp;bm&#41;;
 <br />
 
-
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;hWnd = CreateWindow&#40;szClassName, &quot;AutoRun 0.01&quot;, WS_POPUP, 0, 0, bm.bmWidth, bm.bmHeight, NULL, NULL, hInstance, NULL&#41;;
-
+			hWnd = CreateWindow&#40;szClassName, &quot;AutoRun 0&#46;01&quot;, WS_POPUP, 0, 0, bm&#46;bmWidth, bm&#46;bmHeight, NULL, NULL, hInstance, NULL&#41;;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;if &#40;hWnd&#41;
-
+			if &#40;hWnd&#41;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&#123;
-
+			&#123;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;
-
+				
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;ShowWindow&#40;hWnd, nCmdShow&#41;;
-
+				ShowWindow&#40;hWnd, nCmdShow&#41;;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;UpdateWindow&#40;hWnd&#41;;
-
+				UpdateWindow&#40;hWnd&#41;;
 <br />
 
-
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;// Main message loop&#58;
-
+				// Main message loop&#58;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;while &#40;GetMessage&#40;&amp;msg, NULL, 0, 0&#41;&#41; 
-
+				while &#40;GetMessage&#40;&amp;msg, NULL, 0, 0&#41;&#41; 
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&#123;
-
+				&#123;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;TranslateMessage&#40;&amp;msg&#41;;
-
+					TranslateMessage&#40;&amp;msg&#41;;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;DispatchMessage&#40;&amp;msg&#41;;
-
+					DispatchMessage&#40;&amp;msg&#41;;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&#125;
-
+				&#125;
 <br />
 
-
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;return &#40;msg.wParam&#41;;
-
+				return &#40;msg&#46;wParam&#41;;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&#125;
-
+			&#125;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&#125;
-
+		&#125;
 <br />
-&nbsp; &nbsp;&#125;
-
+	&#125;
 <br />
 
-
 <br />
-&nbsp; &nbsp;return -1;
-
+	return -1;
 <br />
 &#125;</td>
 <br />
@@ -647,7 +549,7 @@ Na Win98 SE pa dela normalno.
 Jaz nimam idej.
 
 <br />
-Hvala za pomoč!<br />_________________<br /><a  target="_blank" class="postlink">ACenterMedia.unimatrix-one.com</a></span><span class="gensmall"></span></td>
+Hvala za pomoč!</span><span class="gensmall"></span></td>
 			</tr>
 		</table></td>
 	</tr>
@@ -664,7 +566,7 @@ Hvala za pomoč!<br />_________________<br /><a  target="_blank" class="postlink
 	</tr>
 	
 	<tr>
-		<td width="150" align="left" valign="top" class="row2"><span class="name"><a name="1089"></a><b>Person</b></span><br /><span class="postdetails">expert<br /><img src="images/ranks/sgd-6.gif" alt="expert" title="expert" border="0" /><br /><img src="images/avatars/d5fa111d422d913c2ca73.gif" alt="" border="0" /><br /><br />Pridružen: 11. jan 2003 ob 21:25<br />objav: 643<br /></span><br /></td>
+		<td width="150" align="left" valign="top" class="row2"><span class="name"><a name="1089"></a><b>Person</b></span><br /><span class="postdetails">igralec<br /><img src="images/ranks/sgd-7.gif" alt="igralec" title="igralec" border="0" /><br /><img src="images/avatars/d5fa111d422d913c2ca73.gif" alt="" border="0" /><br /><br />Pridružen: 11. jan 2003 ob 21:25<br />objav: 810<br /></span><br /></td>
 		<td class="row2" width="100%" height="28" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
 			<tr>
 				<td colspan="2" width="100%">
@@ -690,7 +592,7 @@ Hvala za pomoč!<br />_________________<br /><a  target="_blank" class="postlink
 <span style="font-weight: bold">RegisterClassEx()</span> moraš uporabljat namesto RegisterClass()
 
 <br />
-To sem samo spremenil in zdaj dela tudi na 1.izdaji Win98.<br />_________________<br /><a  target="_blank" class="postlink">ACenterMedia.unimatrix-one.com</a></span><span class="gensmall"></span></td>
+To sem samo spremenil in zdaj dela tudi na 1.izdaji Win98.</span><span class="gensmall"></span></td>
 			</tr>
 		</table></td>
 	</tr>
@@ -707,7 +609,7 @@ To sem samo spremenil in zdaj dela tudi na 1.izdaji Win98.<br />________________
 	</tr>
 	
 	<tr>
-		<td width="150" align="left" valign="top" class="row1"><span class="name"><a name="1111"></a><b>Person</b></span><br /><span class="postdetails">expert<br /><img src="images/ranks/sgd-6.gif" alt="expert" title="expert" border="0" /><br /><img src="images/avatars/d5fa111d422d913c2ca73.gif" alt="" border="0" /><br /><br />Pridružen: 11. jan 2003 ob 21:25<br />objav: 643<br /></span><br /></td>
+		<td width="150" align="left" valign="top" class="row1"><span class="name"><a name="1111"></a><b>Person</b></span><br /><span class="postdetails">igralec<br /><img src="images/ranks/sgd-7.gif" alt="igralec" title="igralec" border="0" /><br /><img src="images/avatars/d5fa111d422d913c2ca73.gif" alt="" border="0" /><br /><br />Pridružen: 11. jan 2003 ob 21:25<br />objav: 810<br /></span><br /></td>
 		<td class="row1" width="100%" height="28" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
 			<tr>
 				<td colspan="2" width="100%">
@@ -749,48 +651,35 @@ Tu se pojavi problem:
 	<tr>
 <br />
 	  <td class="code">case WM_KEYDOWN&#58;
-
 <br />
-&nbsp; &nbsp;if&#40;wParam!=VK_ESCAPE&#41;break;
-
+	if&#40;wParam!=VK_ESCAPE&#41;break;
 <br />
-
 
 <br />
 case WM_DESTROY&#58;
-
 <br />
-&nbsp; &nbsp;PostQuitMessage&#40;0&#41;;
-
+	PostQuitMessage&#40;0&#41;;
 <br />
-&nbsp; &nbsp;break;</td>
+	break;</td>
 <br />
 	</tr>
 <br />
 </table>
 <br />
 <span class="postbody">
-
 <br />
-
 
 <br />
 Program kliče 2X funkcijo PostQuitMessage(0), ko pritisneš tipko Escape.
-
 <br />
 Zato se pa 1. izdaja Win 98 sesuje. Mogoče še kateri drugi OS.
-
 <br />
 -&gt; Ko pritineš Escape se pokliče funkcija PostQuitMessage() in potem program dobi WM_DESTROY sporočilo. In pod tem pa je zapisano, da se izvede spet PostQuitMessage() funkcija.
-
 <br />
-
 
 <br />
 To je pa popravek:
-
 <br />
-
 
 <br />
 </span>
@@ -806,24 +695,18 @@ To je pa popravek:
 	<tr>
 <br />
 	  <td class="code">case WM_KEYDOWN&#58;
-
 <br />
-&nbsp; &nbsp;if&#40;wParam==VK_ESCAPE&#41;PostMessage&#40; hWnd, WM_CLOSE, 0, 0 &#41;;
-
+	if&#40;wParam==VK_ESCAPE&#41;PostMessage&#40; hWnd, WM_CLOSE, 0, 0 &#41;;
 <br />
-&nbsp; &nbsp;break;
-
+	break;
 <br />
-
 
 <br />
 case WM_DESTROY&#58;
-
 <br />
-&nbsp; &nbsp;PostQuitMessage&#40; 0 &#41;;
-
+	PostQuitMessage&#40; 0 &#41;;
 <br />
-&nbsp; &nbsp;return 0L;</td>
+	return 0L;</td>
 <br />
 	</tr>
 <br />
@@ -838,7 +721,7 @@ case WM_DESTROY&#58;
 Tk, da če bo kdo imel podoben problem, ga lahko na hito odpravi.
 
 <br />
-BTW: I hate blue screen.<br />_________________<br /><a  target="_blank" class="postlink">ACenterMedia.unimatrix-one.com</a></span><span class="gensmall"></span></td>
+BTW: I hate blue screen.</span><span class="gensmall"></span></td>
 			</tr>
 		</table></td>
 	</tr>
@@ -863,7 +746,7 @@ BTW: I hate blue screen.<br />_________________<br /><a  target="_blank" class="
   <tr>
 	<td align="left" valign="middle" nowrap="nowrap">&nbsp;</td>
 	<td align="left" valign="middle" width="100%"><span class="nav">&nbsp;&nbsp;&nbsp;<a href="index.html" class="nav">SloGameDev.net seznam forumov</a>
-	  -> <a href="forum-1.html" class="nav">Splošno Programiranje</a></span></td>
+	  -> <a href="forum-52.html" class="nav">Izdelovanje iger</a></span></td>
 	<td align="right" valign="top" nowrap="nowrap"><span class="gensmall">Časovni pas (GMT +2:00 uri) Slovenija, poletni čas</span><br /><span class="nav"></span>
 	  </td>
   </tr>
@@ -879,7 +762,7 @@ BTW: I hate blue screen.<br />_________________<br /><a  target="_blank" class="
   </tr>
 </table>
 
-<div align="center"><span class="copyright"><br />Arhiv stanja na dan 13. 2. 2006 &mdash; samo za branje.<br />
+<div align="center"><span class="copyright"><br />Arhiv &mdash; samo za branje.<br />
 <!--
 	We request you retain the full copyright notice below including the link to www.phpbb.com.
 	This not only gives respect to the large amount of time given freely by the developers

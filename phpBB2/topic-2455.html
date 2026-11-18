@@ -1,0 +1,3791 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html dir="ltr">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta http-equiv="Content-Style-Type" content="text/css">
+<style type="text/css">
+<!--
+.style1 {color: #FFFFFF}
+-->
+</style>
+
+
+
+<title>SloGameDev.net :: menu</title>
+<!-- link rel="stylesheet" href="templates/SGD/SGD2.css" type="text/css" -->
+<style type="text/css">
+<!--
+/*
+  The SGD Theme for phpBB version 2+
+  Created by Rhuantavan
+  http://www.rhuantavan.org
+
+  NOTE: These CSS definitions are stored within the main page body so that you can use the phpBB2
+  theme administration centre. When you have finalised your style you could cut the final CSS code
+  and place it in an external file, deleting this section to save bandwidth.
+*/
+
+/* General page style. The scroll bar colours only visible in IE5.5+ */
+body {
+	background-color: #DDDDDD;
+	scrollbar-face-color: #000000;
+	scrollbar-highlight-color: #000000;
+	scrollbar-3dlight-color: #EEEEEE;
+	scrollbar-darkshadow-color: #EEEEEE;
+	scrollbar-shadow-color: #000000;
+	scrollbar-arrow-color: #55FF00;
+	scrollbar-track-color: #EEEEEE;
+}
+
+/* General font families for common tags */
+font,th,td,p { font-family: Verdana, Arial, Helvetica, sans-serif }
+a:link,a:active,a:visited { color : #338800; }
+a:hover		{ text-decoration: underline; color : #338800; }
+hr	{ height: 0px; border: solid #E9E9E9 0px; border-top-width: 1px;}
+
+/* This is the border line & background colour round the entire page */
+.bodyline	{ background-color: #EEEEEE; border-left: 1px #000000 solid; border-right: 1px #000000 solid; }
+
+/* This is the outline round the main forum tables */
+.forumline	{ background-color: #EEEEEE; border: 0px #DDDDDD solid; }
+
+/* Main table cell colours and backgrounds */
+td.row1	{ background-color: #F8F8F8; }
+td.row2	{ background-color: #F0F0F0; }
+td.row3	{ background-color: #E9E9E9; }
+
+/*
+  This is for the table cell above the Topics, Post & Last posts on the index.php page
+  By default this is the fading out gradiated silver background.
+  However, you could replace this with a bitmap specific for each forum
+*/
+td.rowpic {
+		background-color: #EEEEEE;
+		background-image: url(templates/SGD/images/cellpic3.gif);
+		background-repeat: repeat-y;
+}
+
+/* Header cells - the blue and silver gradient backgrounds */
+th	{
+	color: #66CC33; font-size: 11px; font-weight : bold;
+	background-color: #338800; height: 25px;
+	background-image: url(templates/SGD/images/cellpic2.gif);
+}
+
+td.cat,td.catHead,td.catSides,td.catLeft,td.catRight,td.catBottom {
+			background-image: url(templates/SGD/images/cellpic1.gif);
+			background-color:#E9E9E9; border: #999999; border-style: solid; height: 28px;
+}
+
+/*
+  Setting additional nice inner borders for the main table cells.
+  The names indicate which sides the border will be on.
+  Don't worry if you don't understand this, just ignore it :-)
+*/
+td.cat,td.catHead,td.catBottom {
+	height: 29px;
+	border-width: 0px 0px 0px 0px;
+}
+th.thHead,th.thSides,th.thTop,th.thLeft,th.thRight,th.thBottom,th.thCornerL,th.thCornerR {
+	font-weight: bold; border: #EEEEEE; border-style: solid; height: 28px;
+}
+td.row3Right,td.spaceRow {
+	background-color: #E9E9E9; border: #999999; border-style: solid;
+}
+
+th.thHead,td.catHead { font-size: 12px; border-width: 0px 0px 0px 0px; }
+th.thSides,td.catSides,td.spaceRow	 { border-width: 0px 0px 0px 0px; }
+th.thRight,td.catRight,td.row3Right	 { border-width: 0px 0px 0px 0px; }
+th.thLeft,td.catLeft	  { border-width: 0px 0px 0px 0px; }
+th.thBottom,td.catBottom  { border-width: 0px 0px 0px 1px; }
+th.thTop	 { border-width: 0px 0px 0px 0px; }
+th.thCornerL { border-width: 0px 0px 0px 1px; }
+th.thCornerR { border-width: 0px 0px 0px 0px; }
+
+/* The largest text used in the index page title and toptic title etc. */
+.maintitle	{
+	font-weight: bold; font-size: 18px; font-family: "Trebuchet MS",Verdana, Arial, Helvetica, sans-serif;
+	text-decoration: none; line-height : 120%; color : #666666;
+}
+
+/* General text */
+.gen { font-size : 12px; }
+.genmed { font-size : 11px; }
+.gensmall { font-size : 10px; }
+.gen,.genmed,.gensmall { color : #666666; }
+a.gen,a.genmed,a.gensmall { color: #338800; text-decoration: none; }
+a.gen:hover,a.genmed:hover,a.gensmall:hover	{ color: #338800; text-decoration: underline; }
+
+/* The register, login, search etc links at the top of the page */
+.mainmenu		{ font-size : 11px; color : #666666 }
+a.mainmenu		{ text-decoration: none; color : #338800;  }
+a.mainmenu:hover{ text-decoration: underline; color : #338800; }
+
+/* SGD main menu */
+.sgdmainmenu			{ font-size : 10px; color : #99FF33 }
+a.sgdmainmenu:link		{ text-decoration: none; color : #99FF33;  }
+a.sgdmainmenu:active	{ text-decoration: none; color : #99FF33;  }
+a.sgdmainmenu:visited	{ text-decoration: none; color : #99FF33;  }
+a.sgdmainmenu:hover		{ text-decoration: underline; color : #99FF33; }
+
+/* Forum category titles */
+.cattitle		{ font-weight: bold; font-size: 12px ; letter-spacing: 1px; color : #338800}
+a.cattitle		{ text-decoration: none; color : #338800; }
+a.cattitle:hover{ text-decoration: underline; }
+
+/* Forum title: Text and link to the forums used in: index.php */
+.forumlink		{ font-weight: bold; font-size: 12px; color : #338800; }
+a.forumlink 	{ text-decoration: none; color : #338800; }
+a.forumlink:hover{ text-decoration: underline; color : #338800; }
+
+/* Used for the navigation text, (Page 1,2,3 etc) and the navigation bar when in a forum */
+.nav			{ font-weight: bold; font-size: 11px; color : #666666;}
+a.nav			{ text-decoration: none; color : #338800; }
+a.nav:hover		{ text-decoration: underline; }
+
+/* titles for the topics: could specify viewed link colour too */
+.topictitle,h1,h2	{ font-weight: bold; font-size: 11px; color : #666666; }
+a.topictitle:link   { text-decoration: none; color : #338800; }
+a.topictitle:visited { text-decoration: none; color : #338800; }
+a.topictitle:hover	{ text-decoration: underline; color : #338800; }
+
+/* Name of poster in viewmsg.php and viewtopic.php and other places */
+.name			{ font-size : 11px; color : #000000;}
+
+/* Location, number of posts, post date etc */
+.postdetails		{ font-size : 10px; color : #666666; }
+
+/* The content of the posts (body of text) */
+.postbody { font-size : 12px; line-height: 18px; color : #000000;}
+a.postlink:link	{ text-decoration: none; color : #338800 }
+a.postlink:visited { text-decoration: none; color : #338800; }
+a.postlink:hover { text-decoration: underline; color : #338800}
+
+/* Quote & Code blocks */
+.code {
+	font-family: Courier, 'Courier New', sans-serif; font-size: 11px; color: #006600;
+	background-color: #D6D6D6; border: #E9E9E9; border-style: solid;
+	border-left-width: 1px; border-top-width: 1px; border-right-width: 1px; border-bottom-width: 1px
+}
+
+.quote {
+	font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 11px; color: #444444; line-height: 125%;
+	background-color: #BBBBBB; border: #E9E9E9; border-style: solid;
+	border-left-width: 1px; border-top-width: 1px; border-right-width: 1px; border-bottom-width: 1px
+}
+
+/* Copyright and bottom info */
+.copyright		{ font-size: 10px; font-family: Verdana, Arial, Helvetica, sans-serif; color: #444444; letter-spacing: -1px;}
+a.copyright		{ color: #444444; text-decoration: none;}
+a.copyright:hover { color: #666666; text-decoration: underline;}
+
+/* Form elements */
+input,textarea, select {
+	color : #666666;
+	font: normal 11px Verdana, Arial, Helvetica, sans-serif;
+	border-color : #666666;
+}
+
+/* The text input fields background colour */
+input.post, textarea.post, select {
+	background-color : #EEEEEE;
+}
+
+input { text-indent : 2px; }
+
+/* The buttons used for bbCode styling in message post */
+input.button {
+	background-color : #F8F8F8;
+	color : #666666;
+	font-size: 11px; font-family: Verdana, Arial, Helvetica, sans-serif;
+}
+
+/* The main submit button option */
+input.mainoption {
+	background-color : #BBBBBB;
+	font-weight : bold;
+}
+
+/* None-bold submit button */
+input.liteoption {
+	background-color : #BBBBBB;
+	font-weight : normal;
+}
+
+/* This is the line in the posting page which shows the rollover
+  help line. This is actually a text box, but if set to be the same
+  colour as the background no one will know ;)
+*/
+.helpline { background-color: #F0F0F0; border-style: none; }
+
+/* Import the fancy styles for IE only (NS4.x doesn't use the @import function) */
+@import url("templates/SGD/formIE.css");
+-->
+</style>
+</head>
+<body bgcolor="#DDDDDD" text="#666666" link="#338800" vlink="#338800" topmargin="0" />
+<a name="top"></a>
+<table width="100%" cellspacing="0" cellpadding="0" border="0" align="center" nowrap>
+	<tr>
+		<td class="bodyline">
+			<table width="100%" border="0" cellpadding="0" cellspacing="0">
+				<tr>
+					<td bgcolor="#FFFFFF">
+						<img src="images/spacer.gif" width="760" height="20" alt=""></td>
+				</tr>
+			</table>
+			<table width="100%" border="0" cellpadding="0" cellspacing="0">
+				<tr>
+					<td bgcolor="#000000">
+						<a href="../index.html"><img src="images/home.gif" width="10" height="10" alt="" border="0"></a><img src="images/spacer.gif" width="5" height="5" alt=""><a href="../index.html" class="sgdmainmenu">Nazaj na domačo stran</a> <img src="images/defaulticon_green.gif" alt="" width="7" height="7" border="0"> <a href="../clanki.html" class="sgdmainmenu">Clanki</a> <img src="images/defaulticon_green.gif" alt="" width="7" height="7" border="0"> <a href="../koda.html" class="sgdmainmenu">Koda</a> <img src="images/defaulticon_green.gif" alt="" width="7" height="7" border="0"> <a href="../clani.html" class="sgdmainmenu">Clani</a> <img src="images/defaulticon_green.gif" alt="" width="7" height="7" border="0"> <a href="../skupine.html" class="sgdmainmenu">Skupine</a> <img src="images/defaulticon_green.gif" alt="" width="7" height="7" border="0"> <a href="../projekti.html" class="sgdmainmenu">Projekti</a> <img src="images/defaulticon_green.gif" alt="" width="7" height="7" border="0"> <a href="../povezave.html" class="sgdmainmenu">Povezave</a></td>
+				</tr>
+			</table>
+			<table width="100%" border="0" cellpadding="0" cellspacing="0">
+				<tr>
+					<td colspan="3" bgcolor="#000000">
+						<img src="images/spacer.gif" width="760" height="10" alt=""></td>
+				</tr>
+				<tr>
+					<td>
+						<a href="index.html"><img src="images/logo.gif" width="351" height="62" alt="" border="0"></a></td>
+					<td>
+						<img src="images/forum_03.gif" width="408" height="62" alt=""></td>
+					<td width="100%" bgcolor="#000000">
+						<img src="images/spacer.gif" width="1" height="1" alt=""></td>
+				</tr>
+				<tr>
+					<td colspan="3" bgcolor="#000000" align="center">
+						<a href="memberlist.html" class="sgdmainmenu"><img src="images/defaulticon_green.gif" alt="" width="7" height="7" border="0">&nbsp;Seznam članov</a>
+						<a href="index.html" class="sgdmainmenu"><img src="images/defaulticon_green.gif" alt="" width="7" height="7" border="0">&nbsp;Seznam</a></td>
+				</tr>
+				<tr>
+					<td colspan="3" bgcolor="#000000">
+						<img src="images/spacer.gif" width="760" height="5" alt=""></td>
+				</tr>
+			</table>
+
+<table width="100%" cellspacing="2" cellpadding="2" border="0">
+  <tr>
+	<td align="left" valign="bottom" colspan="2"><a class="maintitle" href="topic-2455.html">menu</a><br />
+	  <span class="gensmall"><b></b><br />
+	  &nbsp; </span></td>
+  </tr>
+</table>
+
+<table width="100%" cellspacing="2" cellpadding="2" border="0">
+  <tr>
+	<td align="left" valign="bottom" nowrap="nowrap">&nbsp;</td>
+	<td align="left" valign="middle" width="100%"><span class="nav">&nbsp;&nbsp;&nbsp;<a href="index.html" class="nav">SloGameDev.net seznam forumov</a>
+	  -> <a href="forum-49.html" class="nav">Začetniki</a></span></td>
+  </tr>
+</table>
+
+<table class="forumline" width="100%" cellspacing="1" cellpadding="3" border="0">
+	<tr align="right">
+		<td class="catHead" colspan="2" height="28"><span class="nav"><a href="topic-2457.html" class="nav">Prejšnja tema</a> :: <a href="topic-2458.html" class="nav">Naslednja tema</a> &nbsp;</span></td>
+	</tr>
+	
+	<tr>
+		<th class="thLeft" width="150" height="26" nowrap="nowrap">avtor</th>
+		<th class="thRight" nowrap="nowrap">Sporočilo</th>
+	</tr>
+	
+	<tr>
+		<td width="150" align="left" valign="top" class="row1"><span class="name"><a name="22020"></a><b>senad</b></span><br /><span class="postdetails">novinec<br /><img src="images/ranks/sgd-0.gif" alt="novinec" title="novinec" border="0" /><br /><br /><br />Pridružen: 15. jan 2012 ob 14:01<br />objav: 12<br /></span><br /></td>
+		<td class="row1" width="100%" height="28" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+			<tr>
+				<td colspan="2" width="100%">
+					<table width="100%" cellpadding="0" cellspacing="0" border="0">
+						<tr>
+							<td valign="middle" align="left">
+								<a href="topic-2455.html#22020"><img src="templates/SGD2/images/icon_minipost.gif" width="12" height="9" alt="objava" title="objava" border="0" /></a>
+								<span class="postdetails">Objavljeno: ned jan 15, 2012 2:03 pm<span class="gen">&nbsp;</span>&nbsp; &nbsp;Pošlji temo: menu</span>
+							</td>
+							<td valign="middle" align="right" nowrap="nowrap">
+							</td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+			<tr>
+				<td colspan="2"><hr /></td>
+			</tr>
+			<tr>
+				<td colspan="2"><span class="postbody">Pozdravljeni svi, imam jedno pitanje,..
+<br />
+Kako narediti menu v opengl , delam neko igro in po sreči sem našel ta forum. Če ima kdo nasvet proceduro kako delat ali primer se pripročam
+<br />
+PS:Opravičujem se za slabo slovenščino.</span><span class="gensmall"></span></td>
+			</tr>
+		</table></td>
+	</tr>
+	<tr>
+		<td class="row1" width="150" align="left" valign="middle"><span class="nav"><a href="#top" class="nav">Nazaj na vrh</a></span></td>
+		<td class="row1" width="100%" height="28" valign="bottom" nowrap="nowrap"><table cellspacing="0" cellpadding="0" border="0" height="18" width="18">
+			<tr>
+				<td valign="middle" nowrap="nowrap"><a href="profile-4952.html"><img src="templates/SGD2/images/lang_slovenian/icon_profile.gif" alt="Poglej uporabnikov profil" title="Poglej uporabnikov profil" border="0" /></a> </td>
+			</tr>
+		</table></td>
+	</tr>
+	<tr>
+		<td class="spaceRow" colspan="2" height="1"><img src="templates/SGD/images/spacer.gif" alt="" width="1" height="1" /></td>
+	</tr>
+	
+	<tr>
+		<td width="150" align="left" valign="top" class="row2"><span class="name"><a name="22021"></a><b>Blodyavenger</b></span><br /><span class="postdetails">expert<br /><img src="images/ranks/sgd-6.gif" alt="expert" title="expert" border="0" /><br /><br /><br />Pridružen: 12. sep 2008 ob 15:31<br />objav: 716<br />Kraj: Land of the Ten Hares</span><br /></td>
+		<td class="row2" width="100%" height="28" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+			<tr>
+				<td colspan="2" width="100%">
+					<table width="100%" cellpadding="0" cellspacing="0" border="0">
+						<tr>
+							<td valign="middle" align="left">
+								<a href="topic-2455.html#22021"><img src="templates/SGD2/images/icon_minipost.gif" width="12" height="9" alt="objava" title="objava" border="0" /></a>
+								<span class="postdetails">Objavljeno: ned jan 15, 2012 3:08 pm<span class="gen">&nbsp;</span>&nbsp; &nbsp;Pošlji temo: Re: menu</span>
+							</td>
+							<td valign="middle" align="right" nowrap="nowrap">
+							</td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+			<tr>
+				<td colspan="2"><hr /></td>
+			</tr>
+			<tr>
+				<td colspan="2"><span class="postbody">Pozdravljen na SGD-ju senad! <img src="images/smiles/icon_biggrin.gif" alt=":D" border="0" />
+<br />
+
+<br />
+Prvo me zanima, kakšen menu točno si želiš? Preprost kot je &quot;New Game&quot; ter &quot;Quit&quot; ali naprednejši z raznimi gradniki kot so tekstovna polja za vnos, gumbi itd.?
+<br />
+Poleg tega me še zanima, če že izrisuješ kakšne objekte preko openGL-a.<br />_________________<br />................ <a  target="_blank" class="postlink"><span style="font-weight: bold">My personal GameDev Blog</span></a> ...................
+<br />
+<span style="font-style: italic">&quot;Don't you dare using uninitialized variables, not in C++&quot;</span></span><span class="gensmall"></span></td>
+			</tr>
+		</table></td>
+	</tr>
+	<tr>
+		<td class="row2" width="150" align="left" valign="middle"><span class="nav"><a href="#top" class="nav">Nazaj na vrh</a></span></td>
+		<td class="row2" width="100%" height="28" valign="bottom" nowrap="nowrap"><table cellspacing="0" cellpadding="0" border="0" height="18" width="18">
+			<tr>
+				<td valign="middle" nowrap="nowrap"><a href="profile-971.html"><img src="templates/SGD2/images/lang_slovenian/icon_profile.gif" alt="Poglej uporabnikov profil" title="Poglej uporabnikov profil" border="0" /></a> <a  target="_userwww"><img src="templates/SGD2/images/lang_slovenian/icon_www.gif" alt="Obišči avtorjevo spletno stran" title="Obišči avtorjevo spletno stran" border="0" /></a></td>
+			</tr>
+		</table></td>
+	</tr>
+	<tr>
+		<td class="spaceRow" colspan="2" height="1"><img src="templates/SGD/images/spacer.gif" alt="" width="1" height="1" /></td>
+	</tr>
+	
+	<tr>
+		<td width="150" align="left" valign="top" class="row1"><span class="name"><a name="22023"></a><b>senad</b></span><br /><span class="postdetails">novinec<br /><img src="images/ranks/sgd-0.gif" alt="novinec" title="novinec" border="0" /><br /><br /><br />Pridružen: 15. jan 2012 ob 14:01<br />objav: 12<br /></span><br /></td>
+		<td class="row1" width="100%" height="28" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+			<tr>
+				<td colspan="2" width="100%">
+					<table width="100%" cellpadding="0" cellspacing="0" border="0">
+						<tr>
+							<td valign="middle" align="left">
+								<a href="topic-2455.html#22023"><img src="templates/SGD2/images/icon_minipost.gif" width="12" height="9" alt="objava" title="objava" border="0" /></a>
+								<span class="postdetails">Objavljeno: ned jan 15, 2012 3:17 pm<span class="gen">&nbsp;</span>&nbsp; &nbsp;Pošlji temo: Re: menu</span>
+							</td>
+							<td valign="middle" align="right" nowrap="nowrap">
+							</td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+			<tr>
+				<td colspan="2"><hr /></td>
+			</tr>
+			<tr>
+				<td colspan="2"><span class="postbody">Želim si imeti nekaj vmes new game options (pa sound on off nekaj na ta stil pa še kaj drugega) in še exit seveda delam igro jack sparrow bojevnik na ladji (jack se vozi z ladjo in poskuša izsuti čimveč španskih ladij tako igro na ta stil..)</span><span class="gensmall"></span></td>
+			</tr>
+		</table></td>
+	</tr>
+	<tr>
+		<td class="row1" width="150" align="left" valign="middle"><span class="nav"><a href="#top" class="nav">Nazaj na vrh</a></span></td>
+		<td class="row1" width="100%" height="28" valign="bottom" nowrap="nowrap"><table cellspacing="0" cellpadding="0" border="0" height="18" width="18">
+			<tr>
+				<td valign="middle" nowrap="nowrap"><a href="profile-4952.html"><img src="templates/SGD2/images/lang_slovenian/icon_profile.gif" alt="Poglej uporabnikov profil" title="Poglej uporabnikov profil" border="0" /></a> </td>
+			</tr>
+		</table></td>
+	</tr>
+	<tr>
+		<td class="spaceRow" colspan="2" height="1"><img src="templates/SGD/images/spacer.gif" alt="" width="1" height="1" /></td>
+	</tr>
+	
+	<tr>
+		<td width="150" align="left" valign="top" class="row2"><span class="name"><a name="22024"></a><b>impulse9</b></span><br /><span class="postdetails">SGD Moderator<br /><img src="images/ranks/sgd-mod.gif" alt="SGD Moderator" title="SGD Moderator" border="0" /><br /><br /><br />Pridružen: 10. jan 2003 ob 22:14<br />objav: 397<br /></span><br /></td>
+		<td class="row2" width="100%" height="28" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+			<tr>
+				<td colspan="2" width="100%">
+					<table width="100%" cellpadding="0" cellspacing="0" border="0">
+						<tr>
+							<td valign="middle" align="left">
+								<a href="topic-2455.html#22024"><img src="templates/SGD2/images/icon_minipost.gif" width="12" height="9" alt="objava" title="objava" border="0" /></a>
+								<span class="postdetails">Objavljeno: ned jan 15, 2012 4:53 pm<span class="gen">&nbsp;</span>&nbsp; &nbsp;Pošlji temo: Re: menu</span>
+							</td>
+							<td valign="middle" align="right" nowrap="nowrap">
+							</td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+			<tr>
+				<td colspan="2"><hr /></td>
+			</tr>
+			<tr>
+				<td colspan="2"><span class="postbody">Pozdravljen.
+<br />
+
+<br />
+Za izris teksta v OpenGL obicajno nastavimo ortografsko projekcijo (ce to ze tako ali tako uporabljas kot privzeto projekcijo potem pokomentiraj ustrezne dele):
+<br />
+
+<br />
+</span>
+<br />
+<table width="90%" cellspacing="1" cellpadding="3" border="0" align="center">
+<br />
+<tr> 
+<br />
+	  <td><span class="genmed"><b>Koda:</b></span></td>
+<br />
+	</tr>
+<br />
+	<tr>
+<br />
+	  <td class="code">
+<br />
+	glDisable(GL_LIGHTING); // luci izklopimo, da svetloba ne vpliva na barvo teksta
+<br />
+	setOrthographicProjection();
+<br />
+	glPushMatrix();
+<br />
+	glLoadIdentity();
+<br />
+	drawText(0&#46;0f, 0&#46;0f, &quot;test&quot;, 1&#46;0f, 1&#46;0f, 1&#46;0f);
+<br />
+	glPopMatrix();
+<br />
+	restorePerspectiveProjection();
+<br />
+	glEnable(GL_LIGHTING);
+<br />
+</td>
+<br />
+	</tr>
+<br />
+</table>
+<br />
+<span class="postbody">
+<br />
+
+<br />
+Za izris lahko uporabis tole funkcijo (uporablja GLUT):
+<br />
+
+<br />
+</span>
+<br />
+<table width="90%" cellspacing="1" cellpadding="3" border="0" align="center">
+<br />
+<tr> 
+<br />
+	  <td><span class="genmed"><b>Koda:</b></span></td>
+<br />
+	</tr>
+<br />
+	<tr>
+<br />
+	  <td class="code">
+<br />
+void drawText(float x, float y, const char* text, float r, float g, float b)
+<br />
+{
+<br />
+	// izrise text na ekran
+<br />
+	if(!text || !strlen(text)) return;
+<br />
+	glColor3f(r, g, b);
+<br />
+	glRasterPos2f(2&#46;0f + x, 14&#46;0f + y);
+<br />
+	do {
+<br />
+		glutBitmapCharacter(GLUT_BITMAP_8_BY_13, *text);
+<br />
+		text++;
+<br />
+	} while (*text);
+<br />
+}
+<br />
+</td>
+<br />
+	</tr>
+<br />
+</table>
+<br />
+<span class="postbody">
+<br />
+
+<br />
+Za font lahko poskusis enega od teh:
+<br />
+
+<br />
+</span>
+<br />
+<table width="90%" cellspacing="1" cellpadding="3" border="0" align="center">
+<br />
+<tr> 
+<br />
+	  <td><span class="genmed"><b>Koda:</b></span></td>
+<br />
+	</tr>
+<br />
+	<tr>
+<br />
+	  <td class="code">
+<br />
+GLUT_BITMAP_8_BY_13
+<br />
+GLUT_BITMAP_9_BY_15
+<br />
+GLUT_BITMAP_TIMES_ROMAN_10
+<br />
+GLUT_BITMAP_TIMES_ROMAN_24
+<br />
+GLUT_BITMAP_HELVETICA_10
+<br />
+GLUT_BITMAP_HELVETICA_12
+<br />
+GLUT_BITMAP_HELVETICA_18
+<br />
+</td>
+<br />
+	</tr>
+<br />
+</table>
+<br />
+<span class="postbody">
+<br />
+
+<br />
+Ko imas enkrat to, pa potrebujes le se malo logike (npr. tipke GOR / DOL spreminjajo polozaj v meniju, izbran element pa je obarvan rdece itd.).
+<br />
+
+<br />
+P.S.: naj nekdo ki je dejansko moderator prestavi to temo v Zacetniki / Izdelovanje iger. <img src="images/smiles/icon_smile.gif" alt=":)" border="0" /><br />_________________<br /><span style="font-size: 80%; line-height: normal">What</span></span><span class="gensmall"></span></td>
+			</tr>
+		</table></td>
+	</tr>
+	<tr>
+		<td class="row2" width="150" align="left" valign="middle"><span class="nav"><a href="#top" class="nav">Nazaj na vrh</a></span></td>
+		<td class="row2" width="100%" height="28" valign="bottom" nowrap="nowrap"><table cellspacing="0" cellpadding="0" border="0" height="18" width="18">
+			<tr>
+				<td valign="middle" nowrap="nowrap"><a href="profile-17.html"><img src="templates/SGD2/images/lang_slovenian/icon_profile.gif" alt="Poglej uporabnikov profil" title="Poglej uporabnikov profil" border="0" /></a> </td>
+			</tr>
+		</table></td>
+	</tr>
+	<tr>
+		<td class="spaceRow" colspan="2" height="1"><img src="templates/SGD/images/spacer.gif" alt="" width="1" height="1" /></td>
+	</tr>
+	
+	<tr>
+		<td width="150" align="left" valign="top" class="row1"><span class="name"><a name="22025"></a><b>senad</b></span><br /><span class="postdetails">novinec<br /><img src="images/ranks/sgd-0.gif" alt="novinec" title="novinec" border="0" /><br /><br /><br />Pridružen: 15. jan 2012 ob 14:01<br />objav: 12<br /></span><br /></td>
+		<td class="row1" width="100%" height="28" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+			<tr>
+				<td colspan="2" width="100%">
+					<table width="100%" cellpadding="0" cellspacing="0" border="0">
+						<tr>
+							<td valign="middle" align="left">
+								<a href="topic-2455.html#22025"><img src="templates/SGD2/images/icon_minipost.gif" width="12" height="9" alt="objava" title="objava" border="0" /></a>
+								<span class="postdetails">Objavljeno: ned jan 15, 2012 4:57 pm<span class="gen">&nbsp;</span>&nbsp; &nbsp;Pošlji temo: Re: menu</span>
+							</td>
+							<td valign="middle" align="right" nowrap="nowrap">
+							</td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+			<tr>
+				<td colspan="2"><hr /></td>
+			</tr>
+			<tr>
+				<td colspan="2"><span class="postbody">Ja razmišljal sem malo drugače da bi klikal ne pa da bi se premikal ali pa oboje kaj misliš impluse, če maš kako idejo..</span><span class="gensmall"></span></td>
+			</tr>
+		</table></td>
+	</tr>
+	<tr>
+		<td class="row1" width="150" align="left" valign="middle"><span class="nav"><a href="#top" class="nav">Nazaj na vrh</a></span></td>
+		<td class="row1" width="100%" height="28" valign="bottom" nowrap="nowrap"><table cellspacing="0" cellpadding="0" border="0" height="18" width="18">
+			<tr>
+				<td valign="middle" nowrap="nowrap"><a href="profile-4952.html"><img src="templates/SGD2/images/lang_slovenian/icon_profile.gif" alt="Poglej uporabnikov profil" title="Poglej uporabnikov profil" border="0" /></a> </td>
+			</tr>
+		</table></td>
+	</tr>
+	<tr>
+		<td class="spaceRow" colspan="2" height="1"><img src="templates/SGD/images/spacer.gif" alt="" width="1" height="1" /></td>
+	</tr>
+	
+	<tr>
+		<td width="150" align="left" valign="top" class="row2"><span class="name"><a name="22027"></a><b>impulse9</b></span><br /><span class="postdetails">SGD Moderator<br /><img src="images/ranks/sgd-mod.gif" alt="SGD Moderator" title="SGD Moderator" border="0" /><br /><br /><br />Pridružen: 10. jan 2003 ob 22:14<br />objav: 397<br /></span><br /></td>
+		<td class="row2" width="100%" height="28" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+			<tr>
+				<td colspan="2" width="100%">
+					<table width="100%" cellpadding="0" cellspacing="0" border="0">
+						<tr>
+							<td valign="middle" align="left">
+								<a href="topic-2455.html#22027"><img src="templates/SGD2/images/icon_minipost.gif" width="12" height="9" alt="objava" title="objava" border="0" /></a>
+								<span class="postdetails">Objavljeno: ned jan 15, 2012 5:06 pm<span class="gen">&nbsp;</span>&nbsp; &nbsp;Pošlji temo: Re: menu</span>
+							</td>
+							<td valign="middle" align="right" nowrap="nowrap">
+							</td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+			<tr>
+				<td colspan="2"><hr /></td>
+			</tr>
+			<tr>
+				<td colspan="2"><span class="postbody">Registriraj callback glutMouseFunc, preveri stanje tipke in ce je polozaj miske na koordinatah, ki si si jih zamislil.
+<br />
+
+<br />
+</span>
+<br />
+<table width="90%" cellspacing="1" cellpadding="3" border="0" align="center">
+<br />
+<tr> 
+<br />
+	  <td><span class="genmed"><b>Koda:</b></span></td>
+<br />
+	</tr>
+<br />
+	<tr>
+<br />
+	  <td class="code">
+<br />
+void mouseButtonEvent(int button, int state, int x, int y)
+<br />
+{
+<br />
+	if (state == GLUT_DOWN &amp;&amp; button == GLUT_LEFT_BUTTON)
+<br />
+	{
+<br />
+		if (x &gt;= mojGumb_x &amp;&amp; y &gt;= mojGumb_y &amp;&amp;
+<br />
+		    x &lt;= mojGumb_x + mojGumb_sirina &amp;&amp; y &lt;= mojGumb_y + mojGumb_visina)
+<br />
+		{
+<br />
+			// &#46;&#46;&#46; uporabnik je kliknil gumb &quot;mojGumb&quot; &#46;&#46;&#46;
+<br />
+		}
+<br />
+	}
+<br />
+}
+<br />
+</td>
+<br />
+	</tr>
+<br />
+</table>
+<br />
+<span class="postbody">
+<br />
+
+<br />
+Gumbe lahko das v nek seznam, kjer vsak element opisuje polozaj / tekst itd. od posameznega gumba, nato pa se sprehodis cez njih in preverjas, ce jih je uporabnik kliknil. Podobno naredis za render: sprehodis se cez seznam in izrisujes ustrezne elemente.
+<br />
+
+<br />
+Lp<br />_________________<br /><span style="font-size: 80%; line-height: normal">What</span></span><span class="gensmall"></span></td>
+			</tr>
+		</table></td>
+	</tr>
+	<tr>
+		<td class="row2" width="150" align="left" valign="middle"><span class="nav"><a href="#top" class="nav">Nazaj na vrh</a></span></td>
+		<td class="row2" width="100%" height="28" valign="bottom" nowrap="nowrap"><table cellspacing="0" cellpadding="0" border="0" height="18" width="18">
+			<tr>
+				<td valign="middle" nowrap="nowrap"><a href="profile-17.html"><img src="templates/SGD2/images/lang_slovenian/icon_profile.gif" alt="Poglej uporabnikov profil" title="Poglej uporabnikov profil" border="0" /></a> </td>
+			</tr>
+		</table></td>
+	</tr>
+	<tr>
+		<td class="spaceRow" colspan="2" height="1"><img src="templates/SGD/images/spacer.gif" alt="" width="1" height="1" /></td>
+	</tr>
+	
+	<tr>
+		<td width="150" align="left" valign="top" class="row1"><span class="name"><a name="22028"></a><b>senad</b></span><br /><span class="postdetails">novinec<br /><img src="images/ranks/sgd-0.gif" alt="novinec" title="novinec" border="0" /><br /><br /><br />Pridružen: 15. jan 2012 ob 14:01<br />objav: 12<br /></span><br /></td>
+		<td class="row1" width="100%" height="28" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+			<tr>
+				<td colspan="2" width="100%">
+					<table width="100%" cellpadding="0" cellspacing="0" border="0">
+						<tr>
+							<td valign="middle" align="left">
+								<a href="topic-2455.html#22028"><img src="templates/SGD2/images/icon_minipost.gif" width="12" height="9" alt="objava" title="objava" border="0" /></a>
+								<span class="postdetails">Objavljeno: ned jan 15, 2012 7:51 pm<span class="gen">&nbsp;</span>&nbsp; &nbsp;Pošlji temo: Re: menu</span>
+							</td>
+							<td valign="middle" align="right" nowrap="nowrap">
+							</td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+			<tr>
+				<td colspan="2"><hr /></td>
+			</tr>
+			<tr>
+				<td colspan="2"><span class="postbody">može vendar:
+<br />
+Glej jaz uprabljam nekako takole:
+<br />
+Takole zgleda moj main in nekako je potrebno razbit vse  na dele ker meni takoj zaštarta se igra z asteridi..
+<br />
+</span>
+<br />
+<table width="90%" cellspacing="1" cellpadding="3" border="0" align="center">
+<br />
+<tr> 
+<br />
+	  <td><span class="genmed"><b>Koda:</b></span></td>
+<br />
+	</tr>
+<br />
+	<tr>
+<br />
+	  <td class="code">       
+<br />
+
+<br />
+
+<br />
+int main(int argc, char** argv) {
+<br />
+//	za naključna števila
+<br />
+	srand((unsigned)time(0));
+<br />
+//	generiranje asteroidov
+<br />
+	for (int i=0; i&lt;ASTEROIDS; i++) {
+<br />
+		asteroids&#46;push_back(new Asteroid());
+<br />
+//		cout &lt;&lt; asteroids&#91;i&#93;-&gt;x &lt;&lt; &quot; &quot; &lt;&lt; asteroids&#91;i&#93;-&gt;y &lt;&lt; endl;
+<br />
+	}
+<br />
+		
+<br />
+	ship = new Ship();
+<br />
+		glutInit(&amp;argc, argv);
+<br />
+	glutInitDisplayMode(GLUT_DEPTH | GLUT_DOUBLE | GLUT_RGBA);
+<br />
+	glutInitWindowPosition(10, 10);
+<br />
+	glutInitWindowSize(512, 512);
+<br />
+	glutCreateWindow(&quot;Asteroids&quot;);
+<br />
+	
+<br />
+	glutReshapeFunc(reshape);
+<br />
+	glutDisplayFunc(display);
+<br />
+	glutIdleFunc(idle);
+<br />
+	glutKeyboardFunc(tipkovnica);
+<br />
+	glutMouseFunc(miska);
+<br />
+	glutTimerFunc(1000/FPS, timer, 1);
+<br />
+	
+<br />
+	glClearColor(0, 0, 0, 0);
+<br />
+	
+<br />
+	glutMainLoop();
+<br />
+	return 0;
+<br />
+}
+<br />
+
+<br />
+
+<br />
+</td>
+<br />
+	</tr>
+<br />
+</table>
+<br />
+<span class="postbody"></span><span class="gensmall"></span></td>
+			</tr>
+		</table></td>
+	</tr>
+	<tr>
+		<td class="row1" width="150" align="left" valign="middle"><span class="nav"><a href="#top" class="nav">Nazaj na vrh</a></span></td>
+		<td class="row1" width="100%" height="28" valign="bottom" nowrap="nowrap"><table cellspacing="0" cellpadding="0" border="0" height="18" width="18">
+			<tr>
+				<td valign="middle" nowrap="nowrap"><a href="profile-4952.html"><img src="templates/SGD2/images/lang_slovenian/icon_profile.gif" alt="Poglej uporabnikov profil" title="Poglej uporabnikov profil" border="0" /></a> </td>
+			</tr>
+		</table></td>
+	</tr>
+	<tr>
+		<td class="spaceRow" colspan="2" height="1"><img src="templates/SGD/images/spacer.gif" alt="" width="1" height="1" /></td>
+	</tr>
+	
+	<tr>
+		<td width="150" align="left" valign="top" class="row2"><span class="name"><a name="22032"></a><b>senad</b></span><br /><span class="postdetails">novinec<br /><img src="images/ranks/sgd-0.gif" alt="novinec" title="novinec" border="0" /><br /><br /><br />Pridružen: 15. jan 2012 ob 14:01<br />objav: 12<br /></span><br /></td>
+		<td class="row2" width="100%" height="28" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+			<tr>
+				<td colspan="2" width="100%">
+					<table width="100%" cellpadding="0" cellspacing="0" border="0">
+						<tr>
+							<td valign="middle" align="left">
+								<a href="topic-2455.html#22032"><img src="templates/SGD2/images/icon_minipost.gif" width="12" height="9" alt="objava" title="objava" border="0" /></a>
+								<span class="postdetails">Objavljeno: pon jan 16, 2012 3:00 pm<span class="gen">&nbsp;</span>&nbsp; &nbsp;Pošlji temo: Re: menu</span>
+							</td>
+							<td valign="middle" align="right" nowrap="nowrap">
+							</td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+			<tr>
+				<td colspan="2"><hr /></td>
+			</tr>
+			<tr>
+				<td colspan="2"><span class="postbody">Mogoče če mate kak tutorial ja ga ne najdem ..da jaz se potrudim ali pa če je kdo kdaj delu v open gl- mi naj da primer rad pa bi res tako da kot gumbe da kliknem ..Zelo bom vsakemu hvaležen ki mi bo pomagal</span><span class="gensmall"></span></td>
+			</tr>
+		</table></td>
+	</tr>
+	<tr>
+		<td class="row2" width="150" align="left" valign="middle"><span class="nav"><a href="#top" class="nav">Nazaj na vrh</a></span></td>
+		<td class="row2" width="100%" height="28" valign="bottom" nowrap="nowrap"><table cellspacing="0" cellpadding="0" border="0" height="18" width="18">
+			<tr>
+				<td valign="middle" nowrap="nowrap"><a href="profile-4952.html"><img src="templates/SGD2/images/lang_slovenian/icon_profile.gif" alt="Poglej uporabnikov profil" title="Poglej uporabnikov profil" border="0" /></a> </td>
+			</tr>
+		</table></td>
+	</tr>
+	<tr>
+		<td class="spaceRow" colspan="2" height="1"><img src="templates/SGD/images/spacer.gif" alt="" width="1" height="1" /></td>
+	</tr>
+	
+	<tr>
+		<td width="150" align="left" valign="top" class="row1"><span class="name"><a name="22034"></a><b>Emigma</b></span><br /><span class="postdetails">novinec<br /><img src="images/ranks/sgd-0.gif" alt="novinec" title="novinec" border="0" /><br /><br /><br />Pridružen: 10. jan 2012 ob 22:50<br />objav: 25<br /></span><br /></td>
+		<td class="row1" width="100%" height="28" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+			<tr>
+				<td colspan="2" width="100%">
+					<table width="100%" cellpadding="0" cellspacing="0" border="0">
+						<tr>
+							<td valign="middle" align="left">
+								<a href="topic-2455.html#22034"><img src="templates/SGD2/images/icon_minipost.gif" width="12" height="9" alt="objava" title="objava" border="0" /></a>
+								<span class="postdetails">Objavljeno: pon jan 16, 2012 3:47 pm<span class="gen">&nbsp;</span>&nbsp; &nbsp;Pošlji temo: Re: menu</span>
+							</td>
+							<td valign="middle" align="right" nowrap="nowrap">
+							</td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+			<tr>
+				<td colspan="2"><hr /></td>
+			</tr>
+			<tr>
+				<td colspan="2"><span class="postbody">To pa tudi mene zanima <img src="images/smiles/icon_wink.gif" alt=";)" border="0" /> Se strinjam  z impluze9 da bi eden objavil, primer ker verjetno prvič je problem potem pa gre sej se vse dela na isto štanco..</span><span class="gensmall"></span></td>
+			</tr>
+		</table></td>
+	</tr>
+	<tr>
+		<td class="row1" width="150" align="left" valign="middle"><span class="nav"><a href="#top" class="nav">Nazaj na vrh</a></span></td>
+		<td class="row1" width="100%" height="28" valign="bottom" nowrap="nowrap"><table cellspacing="0" cellpadding="0" border="0" height="18" width="18">
+			<tr>
+				<td valign="middle" nowrap="nowrap"><a href="profile-4949.html"><img src="templates/SGD2/images/lang_slovenian/icon_profile.gif" alt="Poglej uporabnikov profil" title="Poglej uporabnikov profil" border="0" /></a> </td>
+			</tr>
+		</table></td>
+	</tr>
+	<tr>
+		<td class="spaceRow" colspan="2" height="1"><img src="templates/SGD/images/spacer.gif" alt="" width="1" height="1" /></td>
+	</tr>
+	
+	<tr>
+		<td width="150" align="left" valign="top" class="row2"><span class="name"><a name="22035"></a><b>Blodyavenger</b></span><br /><span class="postdetails">expert<br /><img src="images/ranks/sgd-6.gif" alt="expert" title="expert" border="0" /><br /><br /><br />Pridružen: 12. sep 2008 ob 15:31<br />objav: 716<br />Kraj: Land of the Ten Hares</span><br /></td>
+		<td class="row2" width="100%" height="28" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+			<tr>
+				<td colspan="2" width="100%">
+					<table width="100%" cellpadding="0" cellspacing="0" border="0">
+						<tr>
+							<td valign="middle" align="left">
+								<a href="topic-2455.html#22035"><img src="templates/SGD2/images/icon_minipost.gif" width="12" height="9" alt="objava" title="objava" border="0" /></a>
+								<span class="postdetails">Objavljeno: pon jan 16, 2012 6:02 pm<span class="gen">&nbsp;</span>&nbsp; &nbsp;Pošlji temo: Re: menu</span>
+							</td>
+							<td valign="middle" align="right" nowrap="nowrap">
+							</td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+			<tr>
+				<td colspan="2"><hr /></td>
+			</tr>
+			<tr>
+				<td colspan="2"><span class="postbody">Impulse9 je povedal že vse kar je pomembno, sedaj imate najverjetneje problem kako dobit koordinate miškinega kazalca oz. kako ugotovit če je bil na miški klik.
+<br />
+
+<br />
+<a  target="_blank" class="postlink">http&#58;//www&#46;lighthouse3d&#46;com/tutorials/glut-tutorial/the-mouse/</a>
+<br />
+
+<br />
+Tukaj bosta dobila vodič, kako zaznavati miško v in njene klike v GLUTU. Ko boste imela to v delovanju bomo šli korak dalje proti meniju in ustvarjanju gumbov ter njihovih reakcij <img src="images/smiles/icon_smile.gif" alt=":)" border="0" /><br />_________________<br />................ <a  target="_blank" class="postlink"><span style="font-weight: bold">My personal GameDev Blog</span></a> ...................
+<br />
+<span style="font-style: italic">&quot;Don't you dare using uninitialized variables, not in C++&quot;</span></span><span class="gensmall"></span></td>
+			</tr>
+		</table></td>
+	</tr>
+	<tr>
+		<td class="row2" width="150" align="left" valign="middle"><span class="nav"><a href="#top" class="nav">Nazaj na vrh</a></span></td>
+		<td class="row2" width="100%" height="28" valign="bottom" nowrap="nowrap"><table cellspacing="0" cellpadding="0" border="0" height="18" width="18">
+			<tr>
+				<td valign="middle" nowrap="nowrap"><a href="profile-971.html"><img src="templates/SGD2/images/lang_slovenian/icon_profile.gif" alt="Poglej uporabnikov profil" title="Poglej uporabnikov profil" border="0" /></a> <a  target="_userwww"><img src="templates/SGD2/images/lang_slovenian/icon_www.gif" alt="Obišči avtorjevo spletno stran" title="Obišči avtorjevo spletno stran" border="0" /></a></td>
+			</tr>
+		</table></td>
+	</tr>
+	<tr>
+		<td class="spaceRow" colspan="2" height="1"><img src="templates/SGD/images/spacer.gif" alt="" width="1" height="1" /></td>
+	</tr>
+	
+	<tr>
+		<td width="150" align="left" valign="top" class="row1"><span class="name"><a name="22036"></a><b>koscak</b></span><br /><span class="postdetails">wannabe<br /><img src="images/ranks/sgd-2.gif" alt="wannabe" title="wannabe" border="0" /><br /><br /><br />Pridružen: 20. nov 2011 ob 22:23<br />objav: 97<br /></span><br /></td>
+		<td class="row1" width="100%" height="28" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+			<tr>
+				<td colspan="2" width="100%">
+					<table width="100%" cellpadding="0" cellspacing="0" border="0">
+						<tr>
+							<td valign="middle" align="left">
+								<a href="topic-2455.html#22036"><img src="templates/SGD2/images/icon_minipost.gif" width="12" height="9" alt="objava" title="objava" border="0" /></a>
+								<span class="postdetails">Objavljeno: pon jan 16, 2012 10:54 pm<span class="gen">&nbsp;</span>&nbsp; &nbsp;Pošlji temo: Re: menu</span>
+							</td>
+							<td valign="middle" align="right" nowrap="nowrap">
+							</td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+			<tr>
+				<td colspan="2"><hr /></td>
+			</tr>
+			<tr>
+				<td colspan="2"><span class="postbody">Ekola naredil sem vam na ta stil kot ste rekli senad-u in klemziju, sem jima naredil to kar ste rekli sedaj se pripročam za korake <img src="images/smiles/icon_biggrin.gif" alt=":D" border="0" /> <img src="images/smiles/icon_smile.gif" alt=":)" border="0" />)) Kako naprej knofke dodamo tole je za džabe <img src="images/smiles/icon_smile.gif" alt=":)" border="0" />))))))))))))))))))))))
+<br />
+<img src="images/smiles/icon_biggrin.gif" alt=":D" border="0" />
+<br />
+
+<br />
+</span>
+<br />
+<table width="90%" cellspacing="1" cellpadding="3" border="0" align="center">
+<br />
+<tr> 
+<br />
+	  <td><span class="genmed"><b>Koda:</b></span></td>
+<br />
+	</tr>
+<br />
+	<tr>
+<br />
+	  <td class="code">#include &lt;windows&#46;h&gt;
+<br />
+#include &lt;GL/gl&#46;h&gt;
+<br />
+#include &lt;GL/glu&#46;h&gt;
+<br />
+#include &lt;GL/glut&#46;h&gt;
+<br />
+#include &lt;stdlib&#46;h&gt;
+<br />
+
+<br />
+#include &lt;stdlib&#46;h&gt;
+<br />
+
+<br />
+
+<br />
+
+<br />
+#include &lt;stdlib&#46;h&gt;
+<br />
+#include &lt;stdio&#46;h&gt;
+<br />
+
+<br />
+#ifdef WIN32
+<br />
+	#define WIN32_LEAN_AND_MEAN
+<br />
+	#include &lt;Windows&#46;h&gt;
+<br />
+#endif
+<br />
+
+<br />
+#include &lt;GL/glut&#46;h&gt;
+<br />
+
+<br />
+
+<br />
+void Draw2D()
+<br />
+{
+<br />
+
+<br />
+}
+<br />
+
+<br />
+
+<br />
+void Draw()
+<br />
+{
+<br />
+
+<br />
+	glClear( GL_COLOR_BUFFER_BIT |
+<br />
+			 GL_DEPTH_BUFFER_BIT );
+<br />
+
+<br />
+
+<br />
+	glEnable(GL_DEPTH_TEST);
+<br />
+	glEnable(GL_LIGHTING);
+<br />
+
+<br />
+	glMatrixMode(GL_PROJECTION);
+<br />
+	glLoadIdentity();
+<br />
+	gluPerspective(45,1,1,100);
+<br />
+	glMatrixMode(GL_MODELVIEW);
+<br />
+	glLoadIdentity();
+<br />
+
+<br />
+
+<br />
+
+<br />
+
+<br />
+	glDisable(GL_DEPTH_TEST);
+<br />
+	glDisable(GL_LIGHTING);
+<br />
+
+<br />
+
+<br />
+	glMatrixMode(GL_PROJECTION);
+<br />
+	glLoadIdentity();
+<br />
+
+<br />
+	glMatrixMode(GL_MODELVIEW);
+<br />
+	glLoadIdentity();
+<br />
+
+<br />
+
+<br />
+	Draw2D();
+<br />
+
+<br />
+	glutSwapBuffers();
+<br />
+}
+<br />
+
+<br />
+
+<br />
+
+<br />
+
+<br />
+void MouseButton(int button,int state,int x, int y)
+<br />
+{
+<br />
+	if (state == GLUT_DOWN)
+<br />
+	{
+<br />
+		switch(button)
+<br />
+		{
+<br />
+		case GLUT_LEFT_BUTTON&#58;
+<br />
+			printf(&quot;left &quot;);
+<br />
+			break;
+<br />
+		case GLUT_MIDDLE_BUTTON&#58;
+<br />
+			printf(&quot;middle &quot;);
+<br />
+			break;
+<br />
+		case GLUT_RIGHT_BUTTON&#58;
+<br />
+			printf(&quot;right &quot;);
+<br />
+			break;
+<br />
+		}
+<br />
+		printf(&quot;button pressed at (%d,%d)\n&quot;,x,y);
+<br />
+	}
+<br />
+	else
+<br />
+	{
+<br />
+
+<br />
+		switch(button)
+<br />
+		{
+<br />
+		case GLUT_LEFT_BUTTON&#58;
+<br />
+			printf(&quot;left &quot;);
+<br />
+			break;
+<br />
+		case GLUT_MIDDLE_BUTTON&#58;
+<br />
+			printf(&quot;middle &quot;);
+<br />
+			break;
+<br />
+		case GLUT_RIGHT_BUTTON&#58;
+<br />
+			printf(&quot;right &quot;);
+<br />
+			break;
+<br />
+		}
+<br />
+		printf(&quot;button released at (%d,%d)\n&quot;,x,y);
+<br />
+	}
+<br />
+
+<br />
+
+<br />
+	glutPostRedisplay();
+<br />
+}
+<br />
+
+<br />
+
+<br />
+int main(int argc,char **argv)
+<br />
+{
+<br />
+	glutInit(&amp;argc,argv);
+<br />
+	glutInitDisplayMode(GLUT_RGB|GLUT_DEPTH|GLUT_DOUBLE);
+<br />
+	glutInitWindowSize(512,512);
+<br />
+
+<br />
+	glutCreateWindow(&quot;Krneki&quot;);
+<br />
+
+<br />
+	glutDisplayFunc(Draw);
+<br />
+
+<br />
+	glutMouseFunc(MouseButton);
+<br />
+
+<br />
+	glutMainLoop();
+<br />
+}
+<br />
+
+<br />
+
+<br />
+
+<br />
+
+<br />
+
+<br />
+
+<br />
+</td>
+<br />
+	</tr>
+<br />
+</table>
+<br />
+<span class="postbody"></span><span class="gensmall"></span></td>
+			</tr>
+		</table></td>
+	</tr>
+	<tr>
+		<td class="row1" width="150" align="left" valign="middle"><span class="nav"><a href="#top" class="nav">Nazaj na vrh</a></span></td>
+		<td class="row1" width="100%" height="28" valign="bottom" nowrap="nowrap"><table cellspacing="0" cellpadding="0" border="0" height="18" width="18">
+			<tr>
+				<td valign="middle" nowrap="nowrap"><a href="profile-4942.html"><img src="templates/SGD2/images/lang_slovenian/icon_profile.gif" alt="Poglej uporabnikov profil" title="Poglej uporabnikov profil" border="0" /></a> </td>
+			</tr>
+		</table></td>
+	</tr>
+	<tr>
+		<td class="spaceRow" colspan="2" height="1"><img src="templates/SGD/images/spacer.gif" alt="" width="1" height="1" /></td>
+	</tr>
+	
+	<tr>
+		<td width="150" align="left" valign="top" class="row2"><span class="name"><a name="22037"></a><b>klemzi</b></span><br /><span class="postdetails">novinec<br /><img src="images/ranks/sgd-0.gif" alt="novinec" title="novinec" border="0" /><br /><br /><br />Pridružen: 15. jan 2012 ob 13:31<br />objav: 4<br /></span><br /></td>
+		<td class="row2" width="100%" height="28" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+			<tr>
+				<td colspan="2" width="100%">
+					<table width="100%" cellpadding="0" cellspacing="0" border="0">
+						<tr>
+							<td valign="middle" align="left">
+								<a href="topic-2455.html#22037"><img src="templates/SGD2/images/icon_minipost.gif" width="12" height="9" alt="objava" title="objava" border="0" /></a>
+								<span class="postdetails">Objavljeno: pon jan 16, 2012 11:06 pm<span class="gen">&nbsp;</span>&nbsp; &nbsp;Pošlji temo: Re: menu</span>
+							</td>
+							<td valign="middle" align="right" nowrap="nowrap">
+							</td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+			<tr>
+				<td colspan="2"><hr /></td>
+			</tr>
+			<tr>
+				<td colspan="2"><span class="postbody">Ja izpiše je pa do 512 , kot si pikslov nastavil, po moje je ok, nej pa res pogleda kak strokovnak <img src="images/smiles/icon_biggrin.gif" alt=":D" border="0" />, drgač pa kuskack ti si kr strokovnak če ti je to ratal naredit</span><span class="gensmall"></span></td>
+			</tr>
+		</table></td>
+	</tr>
+	<tr>
+		<td class="row2" width="150" align="left" valign="middle"><span class="nav"><a href="#top" class="nav">Nazaj na vrh</a></span></td>
+		<td class="row2" width="100%" height="28" valign="bottom" nowrap="nowrap"><table cellspacing="0" cellpadding="0" border="0" height="18" width="18">
+			<tr>
+				<td valign="middle" nowrap="nowrap"><a href="profile-4951.html"><img src="templates/SGD2/images/lang_slovenian/icon_profile.gif" alt="Poglej uporabnikov profil" title="Poglej uporabnikov profil" border="0" /></a> </td>
+			</tr>
+		</table></td>
+	</tr>
+	<tr>
+		<td class="spaceRow" colspan="2" height="1"><img src="templates/SGD/images/spacer.gif" alt="" width="1" height="1" /></td>
+	</tr>
+	
+	<tr>
+		<td width="150" align="left" valign="top" class="row1"><span class="name"><a name="22039"></a><b>Blodyavenger</b></span><br /><span class="postdetails">expert<br /><img src="images/ranks/sgd-6.gif" alt="expert" title="expert" border="0" /><br /><br /><br />Pridružen: 12. sep 2008 ob 15:31<br />objav: 716<br />Kraj: Land of the Ten Hares</span><br /></td>
+		<td class="row1" width="100%" height="28" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+			<tr>
+				<td colspan="2" width="100%">
+					<table width="100%" cellpadding="0" cellspacing="0" border="0">
+						<tr>
+							<td valign="middle" align="left">
+								<a href="topic-2455.html#22039"><img src="templates/SGD2/images/icon_minipost.gif" width="12" height="9" alt="objava" title="objava" border="0" /></a>
+								<span class="postdetails">Objavljeno: pon jan 16, 2012 11:33 pm<span class="gen">&nbsp;</span>&nbsp; &nbsp;Pošlji temo: Re: menu</span>
+							</td>
+							<td valign="middle" align="right" nowrap="nowrap">
+							</td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+			<tr>
+				<td colspan="2"><hr /></td>
+			</tr>
+			<tr>
+				<td colspan="2"><span class="postbody">Ola, tako tako, se mi dopade da brez večje pomoči implementirate take stvari <img src="images/smiles/icon_smile.gif" alt=":)" border="0" />
+<br />
+No, sedaj pa kar je še treba je zdrava kmečka logika <img src="images/smiles/icon_biggrin.gif" alt=":D" border="0" />
+<br />
+
+<br />
+Recimo da imamo nek kvadrat ki predstavlja gumb:
+<br />
+
+<br />
+Gumb:
+<br />
+int x;  <span style="font-style: italic">// X pozicija gumba</span>
+<br />
+int y;  <span style="font-style: italic">// Y pozicija gumba</span>
+<br />
+int width; <span style="font-style: italic">// širina</span>
+<br />
+int height: <span style="font-style: italic">// višina</span>
+<br />
+
+<br />
+</span>
+<br />
+<table width="90%" cellspacing="1" cellpadding="3" border="0" align="center">
+<br />
+<tr> 
+<br />
+	  <td><span class="genmed"><b>Koda:</b></span></td>
+<br />
+	</tr>
+<br />
+	<tr>
+<br />
+	  <td class="code"> glBegin(GL_QUADS)
+<br />
+     glVertex2f(x, y); 
+<br />
+     glVertex2f(x + width, y);
+<br />
+     glVertex2f(x + width, y + height);
+<br />
+     glVertex2f(x, y height);
+<br />
+ glEnd()</td>
+<br />
+	</tr>
+<br />
+</table>
+<br />
+<span class="postbody">
+<br />
+
+<br />
+Tako, gumb imamo izrisan, sedaj pa ob kliku miške ( case GLUT_LEFT_BUTTON ...)
+<br />
+
+<br />
+</span>
+<br />
+<table width="90%" cellspacing="1" cellpadding="3" border="0" align="center">
+<br />
+<tr> 
+<br />
+	  <td><span class="genmed"><b>Koda:</b></span></td>
+<br />
+	</tr>
+<br />
+	<tr>
+<br />
+	  <td class="code">if( x &gt; gumb&#46;x &amp;&amp; x &lt; gumb&#46;x + width)
+<br />
+if( y &gt; gumb&#46;y &amp;&amp; y &lt; gumb&#46;y + height)
+<br />
+{
+<br />
+    // klik na gumb je uspel, in kupili smo 10 krav za na našo kmetijo
+<br />
+    // s šalo na stran - tukaj napište kaj se zgodi ob kliku na gumb &#58;)
+<br />
+}</td>
+<br />
+	</tr>
+<br />
+</table>
+<br />
+<span class="postbody">
+<br />
+
+<br />
+<span style="font-weight: bold">-----------------  NAPREDNEJŠE  ----------------------------------------------------------</span>
+<br />
+Seveda, pa lahko zakomplicirate vse kolikor je le možno in naredite razred za gumb in nato gumbe vržete v vektor in si naredite lepše življenje v prihodnosti.
+<br />
+
+<br />
+</span>
+<br />
+<table width="90%" cellspacing="1" cellpadding="3" border="0" align="center">
+<br />
+<tr> 
+<br />
+	  <td><span class="genmed"><b>Koda:</b></span></td>
+<br />
+	</tr>
+<br />
+	<tr>
+<br />
+	  <td class="code">class Gumb(){
+<br />
+    
+<br />
+Gumb()  //constructor
+<br />
+{
+<br />
+  x= 0;
+<br />
+  y= 0;
+<br />
+  width  = 128;
+<br />
+  height = 128;
+<br />
+}
+<br />
+
+<br />
+int x;
+<br />
+int y;
+<br />
+int width;
+<br />
+int height;
+<br />
+char* name;
+<br />
+
+<br />
+void Set(int x, int y, int width, int height)  //nastavimo vrednosti
+<br />
+{ 
+<br />
+  this-&gt;x = x;
+<br />
+  this-&gt;y = y;
+<br />
+  this-&gt;width = width;
+<br />
+  this-&gt;height = height;
+<br />
+}
+<br />
+
+<br />
+void Draw() // izris gumba
+<br />
+{
+<br />
+  glBegin(GL_QUADS)
+<br />
+     glVertex2f(x, y); 
+<br />
+     glVertex2f(x + width, y);
+<br />
+     glVertex2f(x + width, y + height);
+<br />
+     glVertex2f(x, y height);
+<br />
+  glEnd()
+<br />
+
+<br />
+}
+<br />
+bool IsClicked(int x, int y) // preverimo če je bil pritisnjen
+<br />
+{
+<br />
+   if( x &gt; gumb&#46;x &amp;&amp; x &lt; gumb&#46;x + width)
+<br />
+   if( y &gt; gumb&#46;y &amp;&amp; y &lt; gumb&#46;y + height)
+<br />
+   {
+<br />
+      return true;
+<br />
+   } 
+<br />
+   return false;
+<br />
+}
+<br />
+
+<br />
+void SetName(char * name)
+<br />
+{
+<br />
+   this-&gt;name = name;
+<br />
+}
+<br />
+
+<br />
+char* GetName() 
+<br />
+{
+<br />
+   return name;
+<br />
+}
+<br />
+}</td>
+<br />
+	</tr>
+<br />
+</table>
+<br />
+<span class="postbody">
+<br />
+
+<br />
+Ustvarimo vektor gumbov
+<br />
+</span>
+<br />
+<table width="90%" cellspacing="1" cellpadding="3" border="0" align="center">
+<br />
+<tr> 
+<br />
+	  <td><span class="genmed"><b>Koda:</b></span></td>
+<br />
+	</tr>
+<br />
+	<tr>
+<br />
+	  <td class="code">vector&lt;Gumb*&gt; vGumbi;</td>
+<br />
+	</tr>
+<br />
+</table>
+<br />
+<span class="postbody">
+<br />
+
+<br />
+V inicializaciji igre ustvarimo gumbe:
+<br />
+</span>
+<br />
+<table width="90%" cellspacing="1" cellpadding="3" border="0" align="center">
+<br />
+<tr> 
+<br />
+	  <td><span class="genmed"><b>Koda:</b></span></td>
+<br />
+	</tr>
+<br />
+	<tr>
+<br />
+	  <td class="code">Gumb *btn = new Gumb();
+<br />
+btn&#46;Set( 128, 128, 100, 20)  // gumb bo na poziciji X=128, Y=128, širok bo 100 pikslov, visok pa 20
+<br />
+btn&#46;Name = &quot;gumb_nova_igra&quot;; //ime gumba, da bomo vedli kateri je
+<br />
+vGumbi&#46;pushBack( btn ); // vrzemo gumb v vektor
+<br />
+//po zelji ustvrami vec gumbov</td>
+<br />
+	</tr>
+<br />
+</table>
+<br />
+<span class="postbody">
+<br />
+
+<br />
+Kjer izrisujemo stvari dodamo:
+<br />
+</span>
+<br />
+<table width="90%" cellspacing="1" cellpadding="3" border="0" align="center">
+<br />
+<tr> 
+<br />
+	  <td><span class="genmed"><b>Koda:</b></span></td>
+<br />
+	</tr>
+<br />
+	<tr>
+<br />
+	  <td class="code">for( int i=0; i&lt; vGumbi&#46;size(); i++ )
+<br />
+{
+<br />
+  vGumbi&#46;at(i)-&gt;Draw();
+<br />
+}</td>
+<br />
+	</tr>
+<br />
+</table>
+<br />
+<span class="postbody">
+<br />
+
+<br />
+Kjer pritisnemo levi miškin gumb:
+<br />
+</span>
+<br />
+<table width="90%" cellspacing="1" cellpadding="3" border="0" align="center">
+<br />
+<tr> 
+<br />
+	  <td><span class="genmed"><b>Koda:</b></span></td>
+<br />
+	</tr>
+<br />
+	<tr>
+<br />
+	  <td class="code">for( int i=0; i&lt; vGumbi&#46;size(); i++ )
+<br />
+{
+<br />
+    if( vGumbi&#46;at()-&gt;IsClicked() )
+<br />
+    {
+<br />
+        if( !strcmp(vGumbi&#46;at()-&gt;GetName(), &quot;gumb_nova_igra&quot;)
+<br />
+        {
+<br />
+           //zaženemo igro
+<br />
+           break; //skočimo iz zanke ker več kot en gumb ne more biti pritisnjen naenkrat
+<br />
+        } else
+<br />
+        if( !strcmp(vGumbi&#46;&#46;at()-&gt;GetName(), &quot;gumb_zajec&quot;)
+<br />
+        {
+<br />
+           //nekaj se zgodi z rjavim zajcem
+<br />
+        }
+<br />
+    }
+<br />
+}
+<br />
+
+<br />
+// strcmp je C-jeva funkcija, ki primerja dva niza med seboj (char*)
+<br />
+// če funkcije vrne 0 pomeni da sta niza enaka
+<br />
+
+<br />
+</td>
+<br />
+	</tr>
+<br />
+</table>
+<br />
+<span class="postbody">
+<br />
+
+<br />
+To je to za lepše življenje. Seveda sem spisal to zdej na hitro in mogoče malo na grdo ampak idejo morate imeti kako si olajšat stvari. Dodate lahko izrisovanje teksture zraven, teskta, oz. karkoli se vam poželi.
+<br />
+
+<br />
+Bo? <img src="images/smiles/icon_smile.gif" alt=":)" border="0" /><br />_________________<br />................ <a  target="_blank" class="postlink"><span style="font-weight: bold">My personal GameDev Blog</span></a> ...................
+<br />
+<span style="font-style: italic">&quot;Don't you dare using uninitialized variables, not in C++&quot;</span></span><span class="gensmall"></span></td>
+			</tr>
+		</table></td>
+	</tr>
+	<tr>
+		<td class="row1" width="150" align="left" valign="middle"><span class="nav"><a href="#top" class="nav">Nazaj na vrh</a></span></td>
+		<td class="row1" width="100%" height="28" valign="bottom" nowrap="nowrap"><table cellspacing="0" cellpadding="0" border="0" height="18" width="18">
+			<tr>
+				<td valign="middle" nowrap="nowrap"><a href="profile-971.html"><img src="templates/SGD2/images/lang_slovenian/icon_profile.gif" alt="Poglej uporabnikov profil" title="Poglej uporabnikov profil" border="0" /></a> <a  target="_userwww"><img src="templates/SGD2/images/lang_slovenian/icon_www.gif" alt="Obišči avtorjevo spletno stran" title="Obišči avtorjevo spletno stran" border="0" /></a></td>
+			</tr>
+		</table></td>
+	</tr>
+	<tr>
+		<td class="spaceRow" colspan="2" height="1"><img src="templates/SGD/images/spacer.gif" alt="" width="1" height="1" /></td>
+	</tr>
+	
+	<tr>
+		<td width="150" align="left" valign="top" class="row2"><span class="name"><a name="22041"></a><b>senad</b></span><br /><span class="postdetails">novinec<br /><img src="images/ranks/sgd-0.gif" alt="novinec" title="novinec" border="0" /><br /><br /><br />Pridružen: 15. jan 2012 ob 14:01<br />objav: 12<br /></span><br /></td>
+		<td class="row2" width="100%" height="28" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+			<tr>
+				<td colspan="2" width="100%">
+					<table width="100%" cellpadding="0" cellspacing="0" border="0">
+						<tr>
+							<td valign="middle" align="left">
+								<a href="topic-2455.html#22041"><img src="templates/SGD2/images/icon_minipost.gif" width="12" height="9" alt="objava" title="objava" border="0" /></a>
+								<span class="postdetails">Objavljeno: tor jan 17, 2012 12:03 pm<span class="gen">&nbsp;</span>&nbsp; &nbsp;Pošlji temo: Re: menu</span>
+							</td>
+							<td valign="middle" align="right" nowrap="nowrap">
+							</td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+			<tr>
+				<td colspan="2"><hr /></td>
+			</tr>
+			<tr>
+				<td colspan="2"><span class="postbody">Hmm napake javi pri vektorju problem je da ga gori ustvariš kot več vektorjov spodaj pa da je kot eden, se opravičujem ker komentiram vendar mi žal ne dela... Tole dober , mislim jave napake potem pa problem je v tem da ko izrišem kvadrat 0.1 in 0.1 velikost je hud problem ker pri miški gledamo kot piksl, tam pa podam pod x,y =0.1 <img src="images/smiles/icon_smile.gif" alt=":)" border="0" />) Tak da ti dva problema če kdo ve lahka pa kodo nalimam..</span><span class="gensmall"></span></td>
+			</tr>
+		</table></td>
+	</tr>
+	<tr>
+		<td class="row2" width="150" align="left" valign="middle"><span class="nav"><a href="#top" class="nav">Nazaj na vrh</a></span></td>
+		<td class="row2" width="100%" height="28" valign="bottom" nowrap="nowrap"><table cellspacing="0" cellpadding="0" border="0" height="18" width="18">
+			<tr>
+				<td valign="middle" nowrap="nowrap"><a href="profile-4952.html"><img src="templates/SGD2/images/lang_slovenian/icon_profile.gif" alt="Poglej uporabnikov profil" title="Poglej uporabnikov profil" border="0" /></a> </td>
+			</tr>
+		</table></td>
+	</tr>
+	<tr>
+		<td class="spaceRow" colspan="2" height="1"><img src="templates/SGD/images/spacer.gif" alt="" width="1" height="1" /></td>
+	</tr>
+	
+	<tr>
+		<td width="150" align="left" valign="top" class="row1"><span class="name"><a name="22042"></a><b>Emigma</b></span><br /><span class="postdetails">novinec<br /><img src="images/ranks/sgd-0.gif" alt="novinec" title="novinec" border="0" /><br /><br /><br />Pridružen: 10. jan 2012 ob 22:50<br />objav: 25<br /></span><br /></td>
+		<td class="row1" width="100%" height="28" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+			<tr>
+				<td colspan="2" width="100%">
+					<table width="100%" cellpadding="0" cellspacing="0" border="0">
+						<tr>
+							<td valign="middle" align="left">
+								<a href="topic-2455.html#22042"><img src="templates/SGD2/images/icon_minipost.gif" width="12" height="9" alt="objava" title="objava" border="0" /></a>
+								<span class="postdetails">Objavljeno: tor jan 17, 2012 1:55 pm<span class="gen">&nbsp;</span>&nbsp; &nbsp;Pošlji temo: Re: menu</span>
+							</td>
+							<td valign="middle" align="right" nowrap="nowrap">
+							</td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+			<tr>
+				<td colspan="2"><hr /></td>
+			</tr>
+			<tr>
+				<td colspan="2"><span class="postbody">He he jaz tut meni rabm..se pravi sem šel po navodilih in mi polno napak jav.. bom poslal kodo ..</span><span class="gensmall"></span></td>
+			</tr>
+		</table></td>
+	</tr>
+	<tr>
+		<td class="row1" width="150" align="left" valign="middle"><span class="nav"><a href="#top" class="nav">Nazaj na vrh</a></span></td>
+		<td class="row1" width="100%" height="28" valign="bottom" nowrap="nowrap"><table cellspacing="0" cellpadding="0" border="0" height="18" width="18">
+			<tr>
+				<td valign="middle" nowrap="nowrap"><a href="profile-4949.html"><img src="templates/SGD2/images/lang_slovenian/icon_profile.gif" alt="Poglej uporabnikov profil" title="Poglej uporabnikov profil" border="0" /></a> </td>
+			</tr>
+		</table></td>
+	</tr>
+	<tr>
+		<td class="spaceRow" colspan="2" height="1"><img src="templates/SGD/images/spacer.gif" alt="" width="1" height="1" /></td>
+	</tr>
+	
+	<tr>
+		<td width="150" align="left" valign="top" class="row2"><span class="name"><a name="22044"></a><b>Blodyavenger</b></span><br /><span class="postdetails">expert<br /><img src="images/ranks/sgd-6.gif" alt="expert" title="expert" border="0" /><br /><br /><br />Pridružen: 12. sep 2008 ob 15:31<br />objav: 716<br />Kraj: Land of the Ten Hares</span><br /></td>
+		<td class="row2" width="100%" height="28" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+			<tr>
+				<td colspan="2" width="100%">
+					<table width="100%" cellpadding="0" cellspacing="0" border="0">
+						<tr>
+							<td valign="middle" align="left">
+								<a href="topic-2455.html#22044"><img src="templates/SGD2/images/icon_minipost.gif" width="12" height="9" alt="objava" title="objava" border="0" /></a>
+								<span class="postdetails">Objavljeno: tor jan 17, 2012 7:47 pm<span class="gen">&nbsp;</span>&nbsp; &nbsp;Pošlji temo: Re: menu</span>
+							</td>
+							<td valign="middle" align="right" nowrap="nowrap">
+							</td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+			<tr>
+				<td colspan="2"><hr /></td>
+			</tr>
+			<tr>
+				<td colspan="2"><span class="postbody">Celotno stvar sem napisal direktno na forum, brez preverjanja in vsekakor so napake vmes ter tiskarski škrati ampak poskusite jih sami razrešit, saj se boste tako največ naučili. 
+<br />
+
+<br />
+Če ne razumete kako deluje vektor class (ki ni nič drugega kot povezana lista objektov), obiščite spodnji link in si malo preberite. 
+<br />
+<a  target="_blank" class="postlink">http&#58;//www&#46;dreamincode&#46;net/forums/topic/33631-c-vector-tutorial/</a>
+<br />
+
+<br />
+Če že kaj pošiljate pošljite raje poročilo o napaki kot pa celo kodo, saj vzame veliko časa za pregledat celo kodo vsakemu posebaj. Programiranja se boste najbolje naučili tako, da se sami trudite reševati napake. Če kopirate vrsto error-ja v google boste lahko marsikaj dobili.
+<br />
+
+<br />
+@senad:
+<br />
+Zgoraj ustvarim le en vektor, ki pa je povezana lista in hrani poljubno število elementov (kolikor jih pač dodamo). Spodaj pa dostopam da posameznega elementa v vektorju.
+<br />
+
+<br />
+<span style="font-weight: bold">vector&lt;Gumb*&gt; Gumbi</span> - seznam kazalcev na objekt Gumb
+<br />
+<span style="font-weight: bold">Gumbi.at(0) </span> - dostop do objekta Gumb, ki se nahaja na poziciji 0 (torej je prvi v seznamu)
+<br />
+
+<br />
+Glede velikosti kvadrata - meni moraš izrisovat v ortografski projekciji (2D) kar že verjetno delaš. V 2D je vs Pri kvadratu pa si moral tudi določiti širino in višino a ne? Širino pa ne boš določil 0.1 ker to ni niti piksel.
+<br />
+
+<br />
+<span style="font-style: italic">(temo sem premaknil pod forum &quot;Začetniki&quot;)</span><br />_________________<br />................ <a  target="_blank" class="postlink"><span style="font-weight: bold">My personal GameDev Blog</span></a> ...................
+<br />
+<span style="font-style: italic">&quot;Don't you dare using uninitialized variables, not in C++&quot;</span></span><span class="gensmall"></span></td>
+			</tr>
+		</table></td>
+	</tr>
+	<tr>
+		<td class="row2" width="150" align="left" valign="middle"><span class="nav"><a href="#top" class="nav">Nazaj na vrh</a></span></td>
+		<td class="row2" width="100%" height="28" valign="bottom" nowrap="nowrap"><table cellspacing="0" cellpadding="0" border="0" height="18" width="18">
+			<tr>
+				<td valign="middle" nowrap="nowrap"><a href="profile-971.html"><img src="templates/SGD2/images/lang_slovenian/icon_profile.gif" alt="Poglej uporabnikov profil" title="Poglej uporabnikov profil" border="0" /></a> <a  target="_userwww"><img src="templates/SGD2/images/lang_slovenian/icon_www.gif" alt="Obišči avtorjevo spletno stran" title="Obišči avtorjevo spletno stran" border="0" /></a></td>
+			</tr>
+		</table></td>
+	</tr>
+	<tr>
+		<td class="spaceRow" colspan="2" height="1"><img src="templates/SGD/images/spacer.gif" alt="" width="1" height="1" /></td>
+	</tr>
+	
+	<tr>
+		<td width="150" align="left" valign="top" class="row1"><span class="name"><a name="22046"></a><b>senad</b></span><br /><span class="postdetails">novinec<br /><img src="images/ranks/sgd-0.gif" alt="novinec" title="novinec" border="0" /><br /><br /><br />Pridružen: 15. jan 2012 ob 14:01<br />objav: 12<br /></span><br /></td>
+		<td class="row1" width="100%" height="28" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+			<tr>
+				<td colspan="2" width="100%">
+					<table width="100%" cellpadding="0" cellspacing="0" border="0">
+						<tr>
+							<td valign="middle" align="left">
+								<a href="topic-2455.html#22046"><img src="templates/SGD2/images/icon_minipost.gif" width="12" height="9" alt="objava" title="objava" border="0" /></a>
+								<span class="postdetails">Objavljeno: tor jan 17, 2012 8:18 pm<span class="gen">&nbsp;</span>&nbsp; &nbsp;Pošlji temo: Re: menu</span>
+							</td>
+							<td valign="middle" align="right" nowrap="nowrap">
+							</td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+			<tr>
+				<td colspan="2"><hr /></td>
+			</tr>
+			<tr>
+				<td colspan="2"><span class="postbody">tega pa ne štekam kako pa dam da mi v pikslih izriše prosim..če mi lahko pokažeš,.. ker drugače ne znam izriat , samo v drugem ne pa v pikslih..</span><span class="gensmall"></span></td>
+			</tr>
+		</table></td>
+	</tr>
+	<tr>
+		<td class="row1" width="150" align="left" valign="middle"><span class="nav"><a href="#top" class="nav">Nazaj na vrh</a></span></td>
+		<td class="row1" width="100%" height="28" valign="bottom" nowrap="nowrap"><table cellspacing="0" cellpadding="0" border="0" height="18" width="18">
+			<tr>
+				<td valign="middle" nowrap="nowrap"><a href="profile-4952.html"><img src="templates/SGD2/images/lang_slovenian/icon_profile.gif" alt="Poglej uporabnikov profil" title="Poglej uporabnikov profil" border="0" /></a> </td>
+			</tr>
+		</table></td>
+	</tr>
+	<tr>
+		<td class="spaceRow" colspan="2" height="1"><img src="templates/SGD/images/spacer.gif" alt="" width="1" height="1" /></td>
+	</tr>
+	
+	<tr>
+		<td width="150" align="left" valign="top" class="row2"><span class="name"><a name="22047"></a><b>Blodyavenger</b></span><br /><span class="postdetails">expert<br /><img src="images/ranks/sgd-6.gif" alt="expert" title="expert" border="0" /><br /><br /><br />Pridružen: 12. sep 2008 ob 15:31<br />objav: 716<br />Kraj: Land of the Ten Hares</span><br /></td>
+		<td class="row2" width="100%" height="28" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+			<tr>
+				<td colspan="2" width="100%">
+					<table width="100%" cellpadding="0" cellspacing="0" border="0">
+						<tr>
+							<td valign="middle" align="left">
+								<a href="topic-2455.html#22047"><img src="templates/SGD2/images/icon_minipost.gif" width="12" height="9" alt="objava" title="objava" border="0" /></a>
+								<span class="postdetails">Objavljeno: tor jan 17, 2012 8:35 pm<span class="gen">&nbsp;</span>&nbsp; &nbsp;Pošlji temo: Re: menu</span>
+							</td>
+							<td valign="middle" align="right" nowrap="nowrap">
+							</td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+			<tr>
+				<td colspan="2"><hr /></td>
+			</tr>
+			<tr>
+				<td colspan="2"><span class="postbody"></span>
+<br />
+<table width="90%" cellspacing="1" cellpadding="3" border="0" align="center">
+<br />
+<tr> 
+<br />
+	  <td><span class="genmed"><b>Koda:</b></span></td>
+<br />
+	</tr>
+<br />
+	<tr>
+<br />
+	  <td class="code">glBegin(GL_QUADS)
+<br />
+     glVertex2f(100, 100); 
+<br />
+     glVertex2f(300, 100);
+<br />
+     glVertex2f(300,120);
+<br />
+     glVertex2f(100, 120);
+<br />
+glEnd()</td>
+<br />
+	</tr>
+<br />
+</table>
+<br />
+<span class="postbody">
+<br />
+
+<br />
+Če imaš velikost okna 640x480 bi ti moralo to izrisat natančno tako kot je na sliki.
+<br />
+Ne razumem česa ne razumeš točno  <img src="images/smiles/icon_biggrin.gif" alt=":D" border="0" /><br />_________________<br />................ <a  target="_blank" class="postlink"><span style="font-weight: bold">My personal GameDev Blog</span></a> ...................
+<br />
+<span style="font-style: italic">&quot;Don't you dare using uninitialized variables, not in C++&quot;</span></span><span class="gensmall"></span></td>
+			</tr>
+		</table></td>
+	</tr>
+	<tr>
+		<td class="row2" width="150" align="left" valign="middle"><span class="nav"><a href="#top" class="nav">Nazaj na vrh</a></span></td>
+		<td class="row2" width="100%" height="28" valign="bottom" nowrap="nowrap"><table cellspacing="0" cellpadding="0" border="0" height="18" width="18">
+			<tr>
+				<td valign="middle" nowrap="nowrap"><a href="profile-971.html"><img src="templates/SGD2/images/lang_slovenian/icon_profile.gif" alt="Poglej uporabnikov profil" title="Poglej uporabnikov profil" border="0" /></a> <a  target="_userwww"><img src="templates/SGD2/images/lang_slovenian/icon_www.gif" alt="Obišči avtorjevo spletno stran" title="Obišči avtorjevo spletno stran" border="0" /></a></td>
+			</tr>
+		</table></td>
+	</tr>
+	<tr>
+		<td class="spaceRow" colspan="2" height="1"><img src="templates/SGD/images/spacer.gif" alt="" width="1" height="1" /></td>
+	</tr>
+	
+	<tr>
+		<td width="150" align="left" valign="top" class="row1"><span class="name"><a name="22048"></a><b>senad</b></span><br /><span class="postdetails">novinec<br /><img src="images/ranks/sgd-0.gif" alt="novinec" title="novinec" border="0" /><br /><br /><br />Pridružen: 15. jan 2012 ob 14:01<br />objav: 12<br /></span><br /></td>
+		<td class="row1" width="100%" height="28" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+			<tr>
+				<td colspan="2" width="100%">
+					<table width="100%" cellpadding="0" cellspacing="0" border="0">
+						<tr>
+							<td valign="middle" align="left">
+								<a href="topic-2455.html#22048"><img src="templates/SGD2/images/icon_minipost.gif" width="12" height="9" alt="objava" title="objava" border="0" /></a>
+								<span class="postdetails">Objavljeno: tor jan 17, 2012 9:17 pm<span class="gen">&nbsp;</span>&nbsp; &nbsp;Pošlji temo: Re: menu</span>
+							</td>
+							<td valign="middle" align="right" nowrap="nowrap">
+							</td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+			<tr>
+				<td colspan="2"><hr /></td>
+			</tr>
+			<tr>
+				<td colspan="2"><span class="postbody">Ni mi jasno tole poskušam tole vspostavit po 3 urnim -5 urnim preverjanjem poskušam rešit da mi naredi normalen knof vendar ne rata javi pa veliko napak, lahko bi malo pogledal, in mi svetoval, kako kaj odpravit. Ni mi pa jasno kako lahko piksle izrisuješ, ker do sedaj sem povedal direktno vrednost in tako izrisoval vrendosti pa so če gledamo koordinatni sistem, takole in po tem sem izrisoval, enako koscak ki mi je dal neko kodo ...Mi lahko poveš kako to drugače po pikslih barvam . Hvala
+<br />
+                   1
+<br />
+                    |
+<br />
+                    |
+<br />
+                    |
+<br />
+----------------|-----------------------&gt;1
+<br />
+ -1                |
+<br />
+                -1 |
+<br />
+</span>
+<br />
+<table width="90%" cellspacing="1" cellpadding="3" border="0" align="center">
+<br />
+<tr> 
+<br />
+	  <td><span class="genmed"><b>Koda:</b></span></td>
+<br />
+	</tr>
+<br />
+	<tr>
+<br />
+	  <td class="code">#include &lt;windows&#46;h&gt;
+<br />
+#include &lt;GL/gl&#46;h&gt;
+<br />
+#include &lt;GL/glu&#46;h&gt;
+<br />
+#include &lt;GL/glut&#46;h&gt;
+<br />
+#include &lt;stdlib&#46;h&gt;
+<br />
+
+<br />
+#include &lt;stdlib&#46;h&gt;
+<br />
+
+<br />
+    class Gumb{
+<br />
+    int x; // X pozicija gumba
+<br />
+int y; // Y pozicija gumba
+<br />
+int width; // širina
+<br />
+int height; // višina
+<br />
+  char* name;
+<br />
+     public&#58;
+<br />
+    Gumb()  //constructor
+<br />
+    {
+<br />
+      x= 0;
+<br />
+      y= 0;
+<br />
+      width  = 128;
+<br />
+      height = 128;
+<br />
+    }
+<br />
+
+<br />
+
+<br />
+
+<br />
+
+<br />
+    void Set(int x, int y, int width, int height)  //nastavimo vrednosti
+<br />
+    {
+<br />
+      this-&gt;x = x;
+<br />
+      this-&gt;y = y;
+<br />
+      this-&gt;width = width;
+<br />
+      this-&gt;height = height;
+<br />
+    }
+<br />
+
+<br />
+    void Draw() // izris gumba
+<br />
+    {
+<br />
+      glBegin(GL_QUADS);
+<br />
+         glVertex2f(x, y);
+<br />
+         glVertex2f(x + width, y);
+<br />
+         glVertex2f(x + width, y + height);
+<br />
+         glVertex2f(x, y+ height);
+<br />
+      glEnd();
+<br />
+
+<br />
+    }
+<br />
+    bool IsClicked(int x, int y) // preverimo če je bil pritisnjen
+<br />
+    {
+<br />
+       if( x &gt; gumb&#46;x &amp;&amp; x &lt; gumb&#46;x + width)
+<br />
+       if( y &gt; gumb&#46;y &amp;&amp; y &lt; gumb&#46;y + height)
+<br />
+       {
+<br />
+          return true;
+<br />
+       }
+<br />
+       return false;
+<br />
+    }
+<br />
+
+<br />
+    void SetName(char * name)
+<br />
+    {
+<br />
+       this-&gt;name = name;
+<br />
+    }
+<br />
+
+<br />
+    char* GetName()
+<br />
+    {
+<br />
+       return name;
+<br />
+    }
+<br />
+    }
+<br />
+    vector&lt;Gumb*&gt; vGumbi;
+<br />
+
+<br />
+
+<br />
+void Draw()
+<br />
+{
+<br />
+
+<br />
+	glClear( GL_COLOR_BUFFER_BIT |
+<br />
+			 GL_DEPTH_BUFFER_BIT );
+<br />
+
+<br />
+
+<br />
+	glEnable(GL_DEPTH_TEST);
+<br />
+	glEnable(GL_LIGHTING);
+<br />
+
+<br />
+	glMatrixMode(GL_PROJECTION);
+<br />
+	glLoadIdentity();
+<br />
+	gluPerspective(45,1,1,100);
+<br />
+	glMatrixMode(GL_MODELVIEW);
+<br />
+	glLoadIdentity();
+<br />
+
+<br />
+
+<br />
+for( int i=0; i&lt; vGumbi&#46;size(); i++ )
+<br />
+{
+<br />
+  vGumbi&#46;at(i)-&gt;Draw();
+<br />
+}
+<br />
+
+<br />
+	glDisable(GL_DEPTH_TEST);
+<br />
+	glDisable(GL_LIGHTING);
+<br />
+
+<br />
+
+<br />
+	glMatrixMode(GL_PROJECTION);
+<br />
+	glLoadIdentity();
+<br />
+
+<br />
+	glMatrixMode(GL_MODELVIEW);
+<br />
+	glLoadIdentity();
+<br />
+
+<br />
+
+<br />
+
+<br />
+
+<br />
+	glutSwapBuffers();
+<br />
+}
+<br />
+
+<br />
+
+<br />
+
+<br />
+
+<br />
+void MouseButton(int button,int state,int x, int y)
+<br />
+{
+<br />
+	if (state == GLUT_DOWN)
+<br />
+	{
+<br />
+		switch(button)
+<br />
+		{
+<br />
+		case GLUT_LEFT_BUTTON&#58;
+<br />
+if( x &gt; x &amp;&amp; x &lt; x + width)
+<br />
+if( y &gt; y &amp;&amp; y &lt; y + height)
+<br />
+{
+<br />
+printf(&quot;nobk &quot;);
+<br />
+
+<br />
+// klik na gumb je uspel, in kupili smo 10 krav za na našo kmetijo
+<br />
+    // s šalo na stran - tukaj napište kaj se zgodi ob kliku na gumb &#58;)
+<br />
+}
+<br />
+else
+<br />
+printf(&quot;nobk ddd&quot;);
+<br />
+        break;
+<br />
+		case GLUT_MIDDLE_BUTTON&#58;
+<br />
+			printf(&quot;middle &quot;);
+<br />
+			break;
+<br />
+		case GLUT_RIGHT_BUTTON&#58;
+<br />
+			printf(&quot;right &quot;);
+<br />
+			break;
+<br />
+		}
+<br />
+		printf(&quot;button pressed at (%d,%d)\n&quot;,x,y);
+<br />
+	}
+<br />
+	else
+<br />
+	{
+<br />
+
+<br />
+		switch(button)
+<br />
+		{
+<br />
+		case GLUT_LEFT_BUTTON&#58;
+<br />
+			if( x &gt; x &amp;&amp; x &lt; x + width)
+<br />
+if( y &gt; y &amp;&amp; y &lt; y + height)
+<br />
+{
+<br />
+printf(&quot;nobk &quot;);
+<br />
+
+<br />
+// klik na gumb je uspel, in kupili smo 10 krav za na našo kmetijo
+<br />
+    // s šalo na stran - tukaj napište kaj se zgodi ob kliku na gumb &#58;)
+<br />
+}
+<br />
+else
+<br />
+printf(&quot;nobk ddd&quot;);
+<br />
+			break;
+<br />
+		case GLUT_MIDDLE_BUTTON&#58;
+<br />
+			printf(&quot;middle &quot;);
+<br />
+			break;
+<br />
+		case GLUT_RIGHT_BUTTON&#58;
+<br />
+			printf(&quot;right &quot;);
+<br />
+			break;
+<br />
+		}
+<br />
+	//	printf(&quot;button released at (%d,%d)\n&quot;,x,y);
+<br />
+	}
+<br />
+
+<br />
+
+<br />
+	glutPostRedisplay();
+<br />
+}
+<br />
+
+<br />
+
+<br />
+int main(int argc,char **argv)
+<br />
+{
+<br />
+Gumb *btn = new Gumb();
+<br />
+btn&#46;Set( 128, 128, 100, 20);  // gumb bo na poziciji X=128, Y=128, širok bo 100 pikslov, visok pa 20
+<br />
+btn&#46;Name = &quot;gumb_nova_igra&quot;; //ime gumba, da bomo vedli kateri je
+<br />
+vGumbi&#46;pushBack( btn ); // vrzemo gumb v vektor
+<br />
+//po zelji ustvrami vec gumbov
+<br />
+
+<br />
+for( int i=0; i&lt; vGumbi&#46;size(); i++ )
+<br />
+{
+<br />
+    if( vGumbi&#46;at()-&gt;IsClicked() )
+<br />
+    {
+<br />
+        if( !strcmp(vGumbi&#46;at()-&gt;GetName(), &quot;gumb_nova_igra&quot;)
+<br />
+        {
+<br />
+           //zaženemo igro
+<br />
+           break; //skočimo iz zanke ker več kot en gumb ne more biti pritisnjen naenkrat
+<br />
+        } else
+<br />
+        if( !strcmp(vGumbi&#46;&#46;at()-&gt;GetName(), &quot;gumb_zajec&quot;)
+<br />
+        {
+<br />
+           //nekaj se zgodi z rjavim zajcem
+<br />
+        }
+<br />
+    }
+<br />
+    }
+<br />
+	glutInit(&amp;argc,argv);
+<br />
+	glutInitDisplayMode(GLUT_RGB|GLUT_DEPTH|GLUT_DOUBLE);
+<br />
+	glutInitWindowSize(512,512);
+<br />
+
+<br />
+	glutCreateWindow(&quot;Krneki&quot;);
+<br />
+
+<br />
+	glutDisplayFunc(Draw);
+<br />
+
+<br />
+	glutMouseFunc(MouseButton);
+<br />
+
+<br />
+	glutMainLoop();
+<br />
+}
+<br />
+
+<br />
+</td>
+<br />
+	</tr>
+<br />
+</table>
+<br />
+<span class="postbody">
+<br />
+
+<br />
+SA PRIMERUM NAPAKE:
+<br />
+</span>
+<br />
+<table width="90%" cellspacing="1" cellpadding="3" border="0" align="center">
+<br />
+<tr> 
+<br />
+	  <td><span class="genmed"><b>Koda:</b></span></td>
+<br />
+	</tr>
+<br />
+	<tr>
+<br />
+	  <td class="code">
+<br />
+
+<br />
+
+<br />
+In member function 'void Gumb&#58;&#58;Set(int, int, int, int)'&#58;|
+<br />
+40|warning&#58; declaration of 'height' shadows a member of 'this'|
+<br />
+40|warning&#58; declaration of 'width' shadows a member of 'this'|
+<br />
+40|warning&#58; declaration of 'y' shadows a member of 'this'|
+<br />
+|40|warning&#58; declaration of 'x' shadows a member of 'this'|
+<br />
+|In member function 'bool Gumb&#58;&#58;IsClicked(int, int)'&#58;|
+<br />
+58|warning&#58; declaration of 'y' shadows a member of 'this'|
+<br />
+58|warning&#58; declaration of 'x' shadows a member of 'this'|
+<br />
+|59|error&#58; 'gumb' was not declared in this scope|
+<br />
+||In member function 'void Gumb&#58;&#58;SetName(char*)'&#58;|
+<br />
+|68|warning&#58; declaration of 'name' shadows a member of 'this'|
+<br />
+77|error&#58; expected initializer before '&lt;' token|
+<br />
+|In function 'void Draw()'&#58;|
+<br />
+97|error&#58; 'vGumbi' was not declared in this scope|
+<br />
+|In function 'void MouseButton(int, int, int, int)'&#58;|
+<br />
+128|error&#58; 'width' was not declared in this scope|
+<br />
+129|error&#58; 'height' was not declared in this scope|
+<br />
+128|warning&#58; suggest explicit braces to avoid ambiguous 'else'|
+<br />
+154|error&#58; 'width' was not declared in this scope|
+<br />
+155|error&#58; 'height' was not declared in this scope|
+<br />
+154|warning&#58; suggest explicit braces to avoid ambiguous 'else'|
+<br />
+|In function 'int main(int, char**)'&#58;|
+<br />
+183|error&#58; request for member 'Set' in 'btn', which is of non-class type 'Gumb*'|
+<br />
+184|error&#58; request for member 'Name' in 'btn', which is of non-class type 'Gumb*'|
+<br />
+185|error&#58; 'vGumbi' was not declared in this scope|
+<br />
+193|error&#58; expected ')' before '{' token|
+<br />
+201|error&#58; expected primary-expression before '}' token|
+<br />
+201|error&#58; expected ';' before '}' token|
+<br />
+549|warning&#58; 'int glutCreateMenu_ATEXIT_HACK(void (*)(int))' defined but not used|
+<br />
+||=== Build finished&#58; 13 errors, 18 warnings ===|
+<br />
+
+<br />
+</td>
+<br />
+	</tr>
+<br />
+</table>
+<br />
+<span class="postbody"></span><span class="gensmall"></span></td>
+			</tr>
+		</table></td>
+	</tr>
+	<tr>
+		<td class="row1" width="150" align="left" valign="middle"><span class="nav"><a href="#top" class="nav">Nazaj na vrh</a></span></td>
+		<td class="row1" width="100%" height="28" valign="bottom" nowrap="nowrap"><table cellspacing="0" cellpadding="0" border="0" height="18" width="18">
+			<tr>
+				<td valign="middle" nowrap="nowrap"><a href="profile-4952.html"><img src="templates/SGD2/images/lang_slovenian/icon_profile.gif" alt="Poglej uporabnikov profil" title="Poglej uporabnikov profil" border="0" /></a> </td>
+			</tr>
+		</table></td>
+	</tr>
+	<tr>
+		<td class="spaceRow" colspan="2" height="1"><img src="templates/SGD/images/spacer.gif" alt="" width="1" height="1" /></td>
+	</tr>
+	
+	<tr>
+		<td width="150" align="left" valign="top" class="row2"><span class="name"><a name="22049"></a><b>Blodyavenger</b></span><br /><span class="postdetails">expert<br /><img src="images/ranks/sgd-6.gif" alt="expert" title="expert" border="0" /><br /><br /><br />Pridružen: 12. sep 2008 ob 15:31<br />objav: 716<br />Kraj: Land of the Ten Hares</span><br /></td>
+		<td class="row2" width="100%" height="28" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+			<tr>
+				<td colspan="2" width="100%">
+					<table width="100%" cellpadding="0" cellspacing="0" border="0">
+						<tr>
+							<td valign="middle" align="left">
+								<a href="topic-2455.html#22049"><img src="templates/SGD2/images/icon_minipost.gif" width="12" height="9" alt="objava" title="objava" border="0" /></a>
+								<span class="postdetails">Objavljeno: tor jan 17, 2012 9:56 pm<span class="gen">&nbsp;</span>&nbsp; &nbsp;Pošlji temo: Re: menu</span>
+							</td>
+							<td valign="middle" align="right" nowrap="nowrap">
+							</td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+			<tr>
+				<td colspan="2"><hr /></td>
+			</tr>
+			<tr>
+				<td colspan="2"><span class="postbody">Še enkrat, kodo ki sem jo napisal, ni za kopirat ter prilepit v vaš projekt ampak je kvečjemu primer kako stvar izgleda. Seveda morate pravilno premaknit te kose kode v vaš projekt. Če je vse pravilno postavljeno ter če so tiskarski škrati popravljeni bi moralo delovati.
+<br />
+
+<br />
+<span style="font-weight: bold">1.) </span>V tvojem primeru si kar kopiral del kode, ki preverja če je bil gumb pritisnjen v Inicializacijo ( v main funkcijo). Se ti zdi da je to pravilno? A ni bolj verjetno da bo tisti del kode prišel tam, kjer zaznamo pristik na miškin gumb? 
+<br />
+
+<br />
+1. NAMIG ----&gt; void MouseButton(int button,int state,int x, int y)
+<br />
+                   --------------&gt; case GLUT_LEFT_BUTTON
+<br />
+
+<br />
+<span style="font-weight: bold">2.)</span> Ali si si prebral članek o C++ vektorju? <img src="images/smiles/icon_wink.gif" alt=".&lt;(4)&gt;" border="0" /> 
+<br />
+Če bi si ga, bi ugotovila da sem naredil tiskarsko napako v nekaj primerih, kot naprimer v
+<br />
+
+<br />
+</span>
+<br />
+<table width="90%" cellspacing="1" cellpadding="3" border="0" align="center">
+<br />
+<tr> 
+<br />
+	  <td><span class="genmed"><b>Koda:</b></span></td>
+<br />
+	</tr>
+<br />
+	<tr>
+<br />
+	  <td class="code">if( !strcmp(vGumbi&#46;at()-&gt;GetName(), &quot;gumb_nova_igra&quot;)</td>
+<br />
+	</tr>
+<br />
+</table>
+<br />
+<span class="postbody">
+<br />
+
+<br />
+<span style="font-weight: bold">vGumbit.at()</span>  ni pravilno, ker ne podamo indexa za parameter. Pravilno je <span style="font-weight: bold"> vGumbi.at( i )</span>
+<br />
+
+<br />
+<span style="font-weight: bold">3.) </span>Še ena napaka in sicer v
+<br />
+</span>
+<br />
+<table width="90%" cellspacing="1" cellpadding="3" border="0" align="center">
+<br />
+<tr> 
+<br />
+	  <td><span class="genmed"><b>Koda:</b></span></td>
+<br />
+	</tr>
+<br />
+	<tr>
+<br />
+	  <td class="code">if( !strcmp(vGumbi&#46;&#46;at()-&gt;GetName(), &quot;gumb_zajec&quot;)</td>
+<br />
+	</tr>
+<br />
+</table>
+<br />
+<span class="postbody">
+<br />
+
+<br />
+Vidimo kaj je narobe? 2 piki sta zaporedoma.
+<br />
+
+<br />
+<span style="font-weight: bold">4.) </span>
+<br />
+</span>
+<br />
+<table width="90%" cellspacing="1" cellpadding="3" border="0" align="center">
+<br />
+<tr> 
+<br />
+	  <td><span class="genmed"><b>Koda:</b></span></td>
+<br />
+	</tr>
+<br />
+	<tr>
+<br />
+	  <td class="code">case GLUT_LEFT_BUTTON&#58;
+<br />
+    if( x &gt; x &amp;&amp; x &lt; x + width)
+<br />
+    if( y &gt; y &amp;&amp; y &lt; y + height)</td>
+<br />
+	</tr>
+<br />
+</table>
+<br />
+<span class="postbody">
+<br />
+
+<br />
+Hmm...hm?  Zakaj si to kopiral sem spodaj? 
+<br />
+
+<br />
+</span>
+<br />
+<table width="90%" cellspacing="1" cellpadding="3" border="0" align="center">
+<br />
+<tr> 
+<br />
+	  <td><span class="genmed"><b>Koda:</b></span></td>
+<br />
+	</tr>
+<br />
+	<tr>
+<br />
+	  <td class="code">128|error&#58; 'width' was not declared in this scope|
+<br />
+129|error&#58; 'height' was not declared in this scope|</td>
+<br />
+	</tr>
+<br />
+</table>
+<br />
+<span class="postbody">
+<br />
+Ta dva errorja ti povesta, da spremenljivki width ter height ne obstajata v tem obsegu. Iz tega lahko razbereš ta tekaj nekaj ne štima.
+<br />
+
+<br />
+Da nekaj ni vredu pa bi lahko tudi opazil saj piše
+<br />
+if( x &gt; x  ... )
+<br />
+To pomeni če je x večji od x ( kar pomeni da se pogoj nikoli ne bo zgodil)
+<br />
+
+<br />
+<span style="font-weight: bold">5.)</span> Vektor je del std knjižnice, in ga moraš includat čisto na vrhu, nato pa še dodat, da uporabljašt namespace std.
+<br />
+</span>
+<br />
+<table width="90%" cellspacing="1" cellpadding="3" border="0" align="center">
+<br />
+<tr> 
+<br />
+	  <td><span class="genmed"><b>Koda:</b></span></td>
+<br />
+	</tr>
+<br />
+	<tr>
+<br />
+	  <td class="code">#include &lt;vector&#46;h&gt;
+<br />
+using namespace std;</td>
+<br />
+	</tr>
+<br />
+</table>
+<br />
+<span class="postbody">
+<br />
+
+<br />
+<span style="font-weight: bold">6.)</span> Seveda, lahko bi ti popravil celo kodo, da bi se ti zagnala takoj ampak s tem se sam ne boš nič naučil ampak bom le zate opravil domačo nalogo. Poskusi it skozi kodo ter se jo potrudi tudi razumet. Prvo moraš popravit osnovne napake kot so dvojne pike, tiskarske škrate ki se jih naredil in šele potem greš na postavlanje kode na pravilno mesto. Ko se ti bo zagnal projekt in ko stvari ne bodo delali pa le vpraši.
+<br />
+
+<br />
+PS:<span style="font-style: italic"> pozabite na tisto s piksli kar sem rekel, hotel sem samo reči, da širino še vedno podajaš v pikslih, ter da med dolžinama 100.2 ter 100.0 je razlika le za 0.2 piklsa, kar skoraj da ni vidno (oz. v nekaj primerih vam lahko poblura del kvadrata) ampak še vedno bo glavna dolžina 100 pikslov.</span><br />_________________<br />................ <a  target="_blank" class="postlink"><span style="font-weight: bold">My personal GameDev Blog</span></a> ...................
+<br />
+<span style="font-style: italic">&quot;Don't you dare using uninitialized variables, not in C++&quot;</span></span><span class="gensmall"></span></td>
+			</tr>
+		</table></td>
+	</tr>
+	<tr>
+		<td class="row2" width="150" align="left" valign="middle"><span class="nav"><a href="#top" class="nav">Nazaj na vrh</a></span></td>
+		<td class="row2" width="100%" height="28" valign="bottom" nowrap="nowrap"><table cellspacing="0" cellpadding="0" border="0" height="18" width="18">
+			<tr>
+				<td valign="middle" nowrap="nowrap"><a href="profile-971.html"><img src="templates/SGD2/images/lang_slovenian/icon_profile.gif" alt="Poglej uporabnikov profil" title="Poglej uporabnikov profil" border="0" /></a> <a  target="_userwww"><img src="templates/SGD2/images/lang_slovenian/icon_www.gif" alt="Obišči avtorjevo spletno stran" title="Obišči avtorjevo spletno stran" border="0" /></a></td>
+			</tr>
+		</table></td>
+	</tr>
+	<tr>
+		<td class="spaceRow" colspan="2" height="1"><img src="templates/SGD/images/spacer.gif" alt="" width="1" height="1" /></td>
+	</tr>
+	
+	<tr>
+		<td width="150" align="left" valign="top" class="row1"><span class="name"><a name="22050"></a><b>senad</b></span><br /><span class="postdetails">novinec<br /><img src="images/ranks/sgd-0.gif" alt="novinec" title="novinec" border="0" /><br /><br /><br />Pridružen: 15. jan 2012 ob 14:01<br />objav: 12<br /></span><br /></td>
+		<td class="row1" width="100%" height="28" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+			<tr>
+				<td colspan="2" width="100%">
+					<table width="100%" cellpadding="0" cellspacing="0" border="0">
+						<tr>
+							<td valign="middle" align="left">
+								<a href="topic-2455.html#22050"><img src="templates/SGD2/images/icon_minipost.gif" width="12" height="9" alt="objava" title="objava" border="0" /></a>
+								<span class="postdetails">Objavljeno: tor jan 17, 2012 11:07 pm<span class="gen">&nbsp;</span>&nbsp; &nbsp;Pošlji temo: Re: menu</span>
+							</td>
+							<td valign="middle" align="right" nowrap="nowrap">
+							</td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+			<tr>
+				<td colspan="2"><hr /></td>
+			</tr>
+			<tr>
+				<td colspan="2"><span class="postbody">Eko porpavu na 3 napke sedaj je le problem še v mainu ..
+<br />
+
+<br />
+</span>
+<br />
+<table width="90%" cellspacing="1" cellpadding="3" border="0" align="center">
+<br />
+<tr> 
+<br />
+	  <td><span class="genmed"><b>Koda:</b></span></td>
+<br />
+	</tr>
+<br />
+	<tr>
+<br />
+	  <td class="code">
+<br />
+Gumb *btn = new Gumb();
+<br />
+btn&#46;Set( 128, 128, 100, 20);  // gumb bo na poziciji X=128, Y=128, širok bo 100 pikslov, visok pa 20
+<br />
+btn&#46;Name = &quot;gumb_nova_igra&quot;; //ime gumba, da bomo vedli kateri je
+<br />
+vGumbi&#46;pushBack( btn ); // vrzemo gumb v vektor
+<br />
+//po zelji ustvrami vec gumbov
+<br />
+
+<br />
+ request for member 'Set' in 'btn', which is of non-class type 'Gumb*'|
+<br />
+ request for member 'Name' in 'btn', which is of non-class type 'Gumb*'|
+<br />
+ class std&#58;&#58;vector&lt;Gumb*, std&#58;&#58;allocator&lt;Gumb*&gt; &gt;' has no member named 'pushBack'|
+<br />
+
+<br />
+||=== Build finished&#58; 3 errors, 16 warnings ===|
+<br />
+
+<br />
+
+<br />
+</td>
+<br />
+	</tr>
+<br />
+</table>
+<br />
+<span class="postbody"></span><span class="gensmall"></span></td>
+			</tr>
+		</table></td>
+	</tr>
+	<tr>
+		<td class="row1" width="150" align="left" valign="middle"><span class="nav"><a href="#top" class="nav">Nazaj na vrh</a></span></td>
+		<td class="row1" width="100%" height="28" valign="bottom" nowrap="nowrap"><table cellspacing="0" cellpadding="0" border="0" height="18" width="18">
+			<tr>
+				<td valign="middle" nowrap="nowrap"><a href="profile-4952.html"><img src="templates/SGD2/images/lang_slovenian/icon_profile.gif" alt="Poglej uporabnikov profil" title="Poglej uporabnikov profil" border="0" /></a> </td>
+			</tr>
+		</table></td>
+	</tr>
+	<tr>
+		<td class="spaceRow" colspan="2" height="1"><img src="templates/SGD/images/spacer.gif" alt="" width="1" height="1" /></td>
+	</tr>
+	
+	<tr>
+		<td width="150" align="left" valign="top" class="row2"><span class="name"><a name="22051"></a><b>Blodyavenger</b></span><br /><span class="postdetails">expert<br /><img src="images/ranks/sgd-6.gif" alt="expert" title="expert" border="0" /><br /><br /><br />Pridružen: 12. sep 2008 ob 15:31<br />objav: 716<br />Kraj: Land of the Ten Hares</span><br /></td>
+		<td class="row2" width="100%" height="28" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+			<tr>
+				<td colspan="2" width="100%">
+					<table width="100%" cellpadding="0" cellspacing="0" border="0">
+						<tr>
+							<td valign="middle" align="left">
+								<a href="topic-2455.html#22051"><img src="templates/SGD2/images/icon_minipost.gif" width="12" height="9" alt="objava" title="objava" border="0" /></a>
+								<span class="postdetails">Objavljeno: tor jan 17, 2012 11:37 pm<span class="gen">&nbsp;</span>&nbsp; &nbsp;Pošlji temo: Re: menu</span>
+							</td>
+							<td valign="middle" align="right" nowrap="nowrap">
+							</td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+			<tr>
+				<td colspan="2"><hr /></td>
+			</tr>
+			<tr>
+				<td colspan="2"><span class="postbody">No no, to pa je nekaj drugega <img src="images/smiles/icon_smile.gif" alt=":)" border="0" /> Gre če se potrudiš!
+<br />
+Lepo da si prepoznal in izpostavil točno mesto napake, tako je lažje tudi zame
+<br />
+
+<br />
+</span>
+<br />
+<table width="90%" cellspacing="1" cellpadding="3" border="0" align="center">
+<br />
+<tr> 
+<br />
+	  <td><span class="genmed"><b>Koda:</b></span></td>
+<br />
+	</tr>
+<br />
+	<tr>
+<br />
+	  <td class="code">Gumb *btn = new Gumb();
+<br />
+btn&#46;Set( 128, 128, 100, 20); 
+<br />
+btn&#46;Name = &quot;gumb_nova_igra&quot;;
+<br />
+vGumbi&#46;pushBack( btn ); </td>
+<br />
+	</tr>
+<br />
+</table>
+<br />
+<span class="postbody">
+<br />
+
+<br />
+<span style="font-weight: bold">1.) Gumb *btn </span> pomeni, da ustvarimo kazalec, ki kaže na objekt tipa &quot;Gumb&quot;.
+<br />
+Do funkcij objekta, na katerega kaže kazalec pa dostopamo preko &quot;-&gt;&quot; in ne preko pike kot sem se zatipkal, torej je pravilno naslednje
+<br />
+</span>
+<br />
+<table width="90%" cellspacing="1" cellpadding="3" border="0" align="center">
+<br />
+<tr> 
+<br />
+	  <td><span class="genmed"><b>Koda:</b></span></td>
+<br />
+	</tr>
+<br />
+	<tr>
+<br />
+	  <td class="code">Gumb *btn = new Gumb();
+<br />
+btn-&gt;Set( 128, 128, 100, 20); 
+<br />
+btn-&gt;Name = &quot;gumb_nova_igra&quot;;
+<br />
+ </td>
+<br />
+	</tr>
+<br />
+</table>
+<br />
+<span class="postbody">
+<br />
+
+<br />
+<span style="font-weight: bold">2.)</span> Še ena napaka pa je v zadnji vrstici, kjer ne prepozna funkcije &quot;pushBack&quot;. Tukaj sem spet na pamet pisal,
+<br />
+pravilno ime funkcije pa je &quot;push_back&quot;, torej je v popravku
+<br />
+</span>
+<br />
+<table width="90%" cellspacing="1" cellpadding="3" border="0" align="center">
+<br />
+<tr> 
+<br />
+	  <td><span class="genmed"><b>Koda:</b></span></td>
+<br />
+	</tr>
+<br />
+	<tr>
+<br />
+	  <td class="code">vGumbi&#46;push_back( btn ); </td>
+<br />
+	</tr>
+<br />
+</table>
+<br />
+<span class="postbody">
+<br />
+
+<br />
+--------------------------------------------------------------------------------------------------------
+<br />
+
+<br />
+Vse skupaj popravljeno:
+<br />
+</span>
+<br />
+<table width="90%" cellspacing="1" cellpadding="3" border="0" align="center">
+<br />
+<tr> 
+<br />
+	  <td><span class="genmed"><b>Koda:</b></span></td>
+<br />
+	</tr>
+<br />
+	<tr>
+<br />
+	  <td class="code">Gumb *btn = new Gumb();
+<br />
+btn-&gt;Set( 128, 128, 100, 20); 
+<br />
+btn-&gt;Name = &quot;gumb_nova_igra&quot;;
+<br />
+vGumbi&#46;push_back( btn ); </td>
+<br />
+	</tr>
+<br />
+</table>
+<br />
+<span class="postbody"><br />_________________<br />................ <a  target="_blank" class="postlink"><span style="font-weight: bold">My personal GameDev Blog</span></a> ...................
+<br />
+<span style="font-style: italic">&quot;Don't you dare using uninitialized variables, not in C++&quot;</span></span><span class="gensmall"></span></td>
+			</tr>
+		</table></td>
+	</tr>
+	<tr>
+		<td class="row2" width="150" align="left" valign="middle"><span class="nav"><a href="#top" class="nav">Nazaj na vrh</a></span></td>
+		<td class="row2" width="100%" height="28" valign="bottom" nowrap="nowrap"><table cellspacing="0" cellpadding="0" border="0" height="18" width="18">
+			<tr>
+				<td valign="middle" nowrap="nowrap"><a href="profile-971.html"><img src="templates/SGD2/images/lang_slovenian/icon_profile.gif" alt="Poglej uporabnikov profil" title="Poglej uporabnikov profil" border="0" /></a> <a  target="_userwww"><img src="templates/SGD2/images/lang_slovenian/icon_www.gif" alt="Obišči avtorjevo spletno stran" title="Obišči avtorjevo spletno stran" border="0" /></a></td>
+			</tr>
+		</table></td>
+	</tr>
+	<tr>
+		<td class="spaceRow" colspan="2" height="1"><img src="templates/SGD/images/spacer.gif" alt="" width="1" height="1" /></td>
+	</tr>
+	
+	<tr>
+		<td width="150" align="left" valign="top" class="row1"><span class="name"><a name="22052"></a><b>koscak</b></span><br /><span class="postdetails">wannabe<br /><img src="images/ranks/sgd-2.gif" alt="wannabe" title="wannabe" border="0" /><br /><br /><br />Pridružen: 20. nov 2011 ob 22:23<br />objav: 97<br /></span><br /></td>
+		<td class="row1" width="100%" height="28" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+			<tr>
+				<td colspan="2" width="100%">
+					<table width="100%" cellpadding="0" cellspacing="0" border="0">
+						<tr>
+							<td valign="middle" align="left">
+								<a href="topic-2455.html#22052"><img src="templates/SGD2/images/icon_minipost.gif" width="12" height="9" alt="objava" title="objava" border="0" /></a>
+								<span class="postdetails">Objavljeno: sre jan 18, 2012 12:01 am<span class="gen">&nbsp;</span>&nbsp; &nbsp;Pošlji temo: Re: menu</span>
+							</td>
+							<td valign="middle" align="right" nowrap="nowrap">
+							</td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+			<tr>
+				<td colspan="2"><hr /></td>
+			</tr>
+			<tr>
+				<td colspan="2"><span class="postbody">Po mojem občutku si malo falil, možn da se motim ampak : tist name ni nič vsaj v gumbku nič, kolikor 
+<br />
+</span>
+<br />
+<table width="90%" cellspacing="1" cellpadding="3" border="0" align="center">
+<br />
+<tr> 
+<br />
+	  <td><span class="genmed"><b>Koda:</b></span></td>
+<br />
+	</tr>
+<br />
+	<tr>
+<br />
+	  <td class="code">btn-&gt;SetName ( &quot;gumb_nova_igra&quot;);</td>
+<br />
+	</tr>
+<br />
+</table>
+<br />
+<span class="postbody"></span><span class="gensmall"></span></td>
+			</tr>
+		</table></td>
+	</tr>
+	<tr>
+		<td class="row1" width="150" align="left" valign="middle"><span class="nav"><a href="#top" class="nav">Nazaj na vrh</a></span></td>
+		<td class="row1" width="100%" height="28" valign="bottom" nowrap="nowrap"><table cellspacing="0" cellpadding="0" border="0" height="18" width="18">
+			<tr>
+				<td valign="middle" nowrap="nowrap"><a href="profile-4942.html"><img src="templates/SGD2/images/lang_slovenian/icon_profile.gif" alt="Poglej uporabnikov profil" title="Poglej uporabnikov profil" border="0" /></a> </td>
+			</tr>
+		</table></td>
+	</tr>
+	<tr>
+		<td class="spaceRow" colspan="2" height="1"><img src="templates/SGD/images/spacer.gif" alt="" width="1" height="1" /></td>
+	</tr>
+	
+	<tr>
+		<td width="150" align="left" valign="top" class="row2"><span class="name"><a name="22053"></a><b>Blodyavenger</b></span><br /><span class="postdetails">expert<br /><img src="images/ranks/sgd-6.gif" alt="expert" title="expert" border="0" /><br /><br /><br />Pridružen: 12. sep 2008 ob 15:31<br />objav: 716<br />Kraj: Land of the Ten Hares</span><br /></td>
+		<td class="row2" width="100%" height="28" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+			<tr>
+				<td colspan="2" width="100%">
+					<table width="100%" cellpadding="0" cellspacing="0" border="0">
+						<tr>
+							<td valign="middle" align="left">
+								<a href="topic-2455.html#22053"><img src="templates/SGD2/images/icon_minipost.gif" width="12" height="9" alt="objava" title="objava" border="0" /></a>
+								<span class="postdetails">Objavljeno: sre jan 18, 2012 12:48 am<span class="gen">&nbsp;</span>&nbsp; &nbsp;Pošlji temo: Re: menu</span>
+							</td>
+							<td valign="middle" align="right" nowrap="nowrap">
+							</td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+			<tr>
+				<td colspan="2"><hr /></td>
+			</tr>
+			<tr>
+				<td colspan="2"><span class="postbody"></span>
+<br />
+<table width="90%" cellspacing="1" cellpadding="3" border="0" align="center">
+<br />
+<tr> 
+<br />
+	  <td><span class="genmed"><b>koscak je napisal:</b></span></td>
+<br />
+	</tr>
+<br />
+	<tr>
+<br />
+	  <td class="quote">Po mojem občutku si malo falil, možn da se motim ampak : tist name ni nič vsaj v gumbku nič, kolikor 
+<br />
+</span>
+<br />
+<table width="90%" cellspacing="1" cellpadding="3" border="0" align="center">
+<br />
+<tr> 
+<br />
+	  <td><span class="genmed"><b>Koda:</b></span></td>
+<br />
+	</tr>
+<br />
+	<tr>
+<br />
+	  <td class="code">btn-&gt;SetName ( &quot;gumb_nova_igra&quot;);</td>
+<br />
+	</tr>
+<br />
+</table>
+<br />
+<span class="postbody"></td>
+<br />
+	</tr>
+<br />
+</table>
+<br />
+<span class="postbody">
+<br />
+
+<br />
+Ko kliknemo z miško in preverjamo če je bil katerikoli od gumbov pritisnjen, lahko preko imena zvemo če je bil pritisnjen gumb za novo igro npr. <img src="images/smiles/icon_smile.gif" alt=":)" border="0" />
+<br />
+
+<br />
+</span>
+<br />
+<table width="90%" cellspacing="1" cellpadding="3" border="0" align="center">
+<br />
+<tr> 
+<br />
+	  <td><span class="genmed"><b>Koda:</b></span></td>
+<br />
+	</tr>
+<br />
+	<tr>
+<br />
+	  <td class="code">if( !strcmp(vGumbi&#46;at()-&gt;GetName(), &quot;gumb_nova_igra&quot;)
+<br />
+{
+<br />
+    //zaženemo igro
+<br />
+    break; 
+<br />
+ }</td>
+<br />
+	</tr>
+<br />
+</table>
+<br />
+<span class="postbody"><br />_________________<br />................ <a  target="_blank" class="postlink"><span style="font-weight: bold">My personal GameDev Blog</span></a> ...................
+<br />
+<span style="font-style: italic">&quot;Don't you dare using uninitialized variables, not in C++&quot;</span></span><span class="gensmall"></span></td>
+			</tr>
+		</table></td>
+	</tr>
+	<tr>
+		<td class="row2" width="150" align="left" valign="middle"><span class="nav"><a href="#top" class="nav">Nazaj na vrh</a></span></td>
+		<td class="row2" width="100%" height="28" valign="bottom" nowrap="nowrap"><table cellspacing="0" cellpadding="0" border="0" height="18" width="18">
+			<tr>
+				<td valign="middle" nowrap="nowrap"><a href="profile-971.html"><img src="templates/SGD2/images/lang_slovenian/icon_profile.gif" alt="Poglej uporabnikov profil" title="Poglej uporabnikov profil" border="0" /></a> <a  target="_userwww"><img src="templates/SGD2/images/lang_slovenian/icon_www.gif" alt="Obišči avtorjevo spletno stran" title="Obišči avtorjevo spletno stran" border="0" /></a></td>
+			</tr>
+		</table></td>
+	</tr>
+	<tr>
+		<td class="spaceRow" colspan="2" height="1"><img src="templates/SGD/images/spacer.gif" alt="" width="1" height="1" /></td>
+	</tr>
+	
+	<tr>
+		<td width="150" align="left" valign="top" class="row1"><span class="name"><a name="22092"></a><b>senad</b></span><br /><span class="postdetails">novinec<br /><img src="images/ranks/sgd-0.gif" alt="novinec" title="novinec" border="0" /><br /><br /><br />Pridružen: 15. jan 2012 ob 14:01<br />objav: 12<br /></span><br /></td>
+		<td class="row1" width="100%" height="28" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+			<tr>
+				<td colspan="2" width="100%">
+					<table width="100%" cellpadding="0" cellspacing="0" border="0">
+						<tr>
+							<td valign="middle" align="left">
+								<a href="topic-2455.html#22092"><img src="templates/SGD2/images/icon_minipost.gif" width="12" height="9" alt="objava" title="objava" border="0" /></a>
+								<span class="postdetails">Objavljeno: čet jan 26, 2012 1:51 pm<span class="gen">&nbsp;</span>&nbsp; &nbsp;Pošlji temo: Re: menu</span>
+							</td>
+							<td valign="middle" align="right" nowrap="nowrap">
+							</td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+			<tr>
+				<td colspan="2"><hr /></td>
+			</tr>
+			<tr>
+				<td colspan="2"><span class="postbody">Eko bloodyavengerd radi sve <img src="images/smiles/icon_smile.gif" alt=":)" border="0" />Najlepša hvala:
+<br />
+
+<br />
+ Sedaj prosim če mi lahko kdo pove kako naj loadam teksture na gumb.
+<br />
+če bi mi kdo pokazal 3 različne slike naloadat na gumbe,
+<br />
+
+<br />
+</span>
+<br />
+<table width="90%" cellspacing="1" cellpadding="3" border="0" align="center">
+<br />
+<tr> 
+<br />
+	  <td><span class="genmed"><b>Koda:</b></span></td>
+<br />
+	</tr>
+<br />
+	<tr>
+<br />
+	  <td class="code">#include &lt;windows&#46;h&gt;
+<br />
+#include &lt;GL/gl&#46;h&gt;
+<br />
+#include &lt;GL/glu&#46;h&gt;
+<br />
+#include &lt;GL/glut&#46;h&gt;
+<br />
+#include &lt;stdlib&#46;h&gt;
+<br />
+
+<br />
+#include &lt;stdlib&#46;h&gt;
+<br />
+
+<br />
+
+<br />
+
+<br />
+#include &lt;stdlib&#46;h&gt;
+<br />
+#include &lt;stdio&#46;h&gt;
+<br />
+
+<br />
+#ifdef WIN32
+<br />
+	#define WIN32_LEAN_AND_MEAN
+<br />
+	#include &lt;Windows&#46;h&gt;
+<br />
+#endif
+<br />
+
+<br />
+#include &lt;GL/glut&#46;h&gt;
+<br />
+#include &lt;vector&gt;
+<br />
+int width=512;
+<br />
+int height=512;
+<br />
+using namespace std;
+<br />
+
+<br />
+    class Gumb{
+<br />
+    int x; // X pozicija gumba
+<br />
+int y; // Y pozicija gumba
+<br />
+int width; // širina
+<br />
+int height; // višina
+<br />
+  char* name;
+<br />
+     public&#58;
+<br />
+    Gumb()  //constructor
+<br />
+    {
+<br />
+      x= 0;
+<br />
+      y= 0;
+<br />
+      width  = 128;
+<br />
+      height = 128;
+<br />
+    }
+<br />
+
+<br />
+
+<br />
+
+<br />
+
+<br />
+    void Set(int x, int y, int width, int height)  //nastavimo vrednosti
+<br />
+    {
+<br />
+      this-&gt;x = x;
+<br />
+      this-&gt;y = y;
+<br />
+      this-&gt;width = width;
+<br />
+      this-&gt;height = height;
+<br />
+    }
+<br />
+
+<br />
+    void Draw() // izris gumba
+<br />
+    {
+<br />
+      glBegin(GL_QUADS);
+<br />
+       glColor3d(1,0,0);
+<br />
+         glVertex2f(x, y);
+<br />
+         glVertex2f(x + width, y);
+<br />
+         glVertex2f(x + width, y + height);
+<br />
+         glVertex2f(x, y+ height);
+<br />
+      glEnd();
+<br />
+
+<br />
+    }
+<br />
+ bool IsClicked(int xx, int yy) // preverimo če je bil pritisnjen
+<br />
+{
+<br />
+
+<br />
+   if( xx &gt; x &amp;&amp; xx &lt; x + width)
+<br />
+   if( yy &gt; y &amp;&amp; yy &lt; y + height)
+<br />
+   {
+<br />
+      return true;
+<br />
+   }
+<br />
+   return false;
+<br />
+}
+<br />
+    void SetName(char * name)
+<br />
+    {
+<br />
+       this-&gt;name = name;
+<br />
+    }
+<br />
+
+<br />
+    char* GetName()
+<br />
+    {
+<br />
+       return name;
+<br />
+    }
+<br />
+    };
+<br />
+
+<br />
+   vector&lt;Gumb*&gt; vGumbi;
+<br />
+
+<br />
+
+<br />
+void Draw()
+<br />
+{
+<br />
+
+<br />
+	glClear( GL_COLOR_BUFFER_BIT |
+<br />
+			 GL_DEPTH_BUFFER_BIT );
+<br />
+
+<br />
+
+<br />
+
+<br />
+
+<br />
+	 glMatrixMode (GL_PROJECTION);
+<br />
+        glLoadIdentity ();
+<br />
+        glOrtho (0, width, height, 0, 0, 1);
+<br />
+         glMatrixMode (GL_MODELVIEW);
+<br />
+
+<br />
+
+<br />
+for( int i=0; i&lt; vGumbi&#46;size(); i++ )
+<br />
+{
+<br />
+  vGumbi&#46;at(i)-&gt;Draw();
+<br />
+}
+<br />
+
+<br />
+
+<br />
+
+<br />
+
+<br />
+
+<br />
+
+<br />
+	glutSwapBuffers();
+<br />
+}
+<br />
+
+<br />
+
+<br />
+
+<br />
+
+<br />
+ void MouseButton(int button,int state,int x, int y)
+<br />
+        {
+<br />
+              if (state == GLUT_DOWN)
+<br />
+                  {
+<br />
+                    switch(button)
+<br />
+                        {
+<br />
+                         case GLUT_LEFT_BUTTON&#58;
+<br />
+                         //  cout&lt;&lt;x&lt;&lt;&quot;  &quot;&lt;&lt;y&lt;&lt;&quot;  &quot;;
+<br />
+
+<br />
+                             for( int i=0; i&lt; vGumbi&#46;size(); i++ )
+<br />
+                                 {
+<br />
+                                     //preverjanje èe je levi gum pritisnjen
+<br />
+
+<br />
+                                  if( vGumbi&#46;at(i)-&gt;IsClicked(x,y) )
+<br />
+                                       {
+<br />
+                                           //preverjanje èe je kliknen gum nova igra
+<br />
+
+<br />
+                                       if( !strcmp(vGumbi&#46;at(i)-&gt;GetName(), &quot;gumb_nova_igra&quot;))
+<br />
+                                               {
+<br />
+
+<br />
+                      }
+<br />
+                      else if( !strcmp(vGumbi&#46;at(i)-&gt;GetName(), &quot;aa&quot;))
+<br />
+                      {
+<br />
+
+<br />
+                      }
+<br />
+
+<br />
+
+<br />
+                      else if( !strcmp(vGumbi&#46;at(i)-&gt;GetName(), &quot;exit&quot;))
+<br />
+                      {
+<br />
+                         exit(1);
+<br />
+                         // printf(&quot;zapri&quot;);
+<br />
+                      }
+<br />
+                      break;
+<br />
+                   }
+<br />
+                }
+<br />
+             glutPostRedisplay();
+<br />
+          }
+<br />
+       }
+<br />
+    }
+<br />
+
+<br />
+
+<br />
+int main(int argc,char **argv)
+<br />
+{
+<br />
+
+<br />
+Gumb *btn = new Gumb();
+<br />
+btn-&gt;Set( 128, 128, 100, 20);
+<br />
+btn-&gt;SetName ( &quot;gumb_nova_igra&quot;);
+<br />
+vGumbi&#46;push_back( btn );
+<br />
+Gumb *bukn = new Gumb();
+<br />
+bukn-&gt;Set( 128, 220, 100, 20);
+<br />
+bukn-&gt;SetName ( &quot;exit&quot;);
+<br />
+vGumbi&#46;push_back( bukn );
+<br />
+Gumb *bun = new Gumb();
+<br />
+bun-&gt;Set( 128, 180, 100, 20);
+<br />
+bun-&gt;SetName ( &quot;aa&quot;);
+<br />
+vGumbi&#46;push_back( bun );
+<br />
+
+<br />
+	glutInit(&amp;argc,argv);
+<br />
+	glutInitDisplayMode(GLUT_RGB|GLUT_DEPTH|GLUT_DOUBLE);
+<br />
+	glutInitWindowSize(width,height);
+<br />
+
+<br />
+	glutCreateWindow(&quot;Krneki&quot;);
+<br />
+
+<br />
+	glutDisplayFunc(Draw);
+<br />
+
+<br />
+	glutMouseFunc(MouseButton);
+<br />
+
+<br />
+	glutMainLoop();
+<br />
+}
+<br />
+
+<br />
+
+<br />
+
+<br />
+
+<br />
+
+<br />
+
+<br />
+</td>
+<br />
+	</tr>
+<br />
+</table>
+<br />
+<span class="postbody"></span><span class="gensmall"></span></td>
+			</tr>
+		</table></td>
+	</tr>
+	<tr>
+		<td class="row1" width="150" align="left" valign="middle"><span class="nav"><a href="#top" class="nav">Nazaj na vrh</a></span></td>
+		<td class="row1" width="100%" height="28" valign="bottom" nowrap="nowrap"><table cellspacing="0" cellpadding="0" border="0" height="18" width="18">
+			<tr>
+				<td valign="middle" nowrap="nowrap"><a href="profile-4952.html"><img src="templates/SGD2/images/lang_slovenian/icon_profile.gif" alt="Poglej uporabnikov profil" title="Poglej uporabnikov profil" border="0" /></a> </td>
+			</tr>
+		</table></td>
+	</tr>
+	<tr>
+		<td class="spaceRow" colspan="2" height="1"><img src="templates/SGD/images/spacer.gif" alt="" width="1" height="1" /></td>
+	</tr>
+	
+	<tr>
+		<td width="150" align="left" valign="top" class="row2"><span class="name"><a name="22096"></a><b>Blodyavenger</b></span><br /><span class="postdetails">expert<br /><img src="images/ranks/sgd-6.gif" alt="expert" title="expert" border="0" /><br /><br /><br />Pridružen: 12. sep 2008 ob 15:31<br />objav: 716<br />Kraj: Land of the Ten Hares</span><br /></td>
+		<td class="row2" width="100%" height="28" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+			<tr>
+				<td colspan="2" width="100%">
+					<table width="100%" cellpadding="0" cellspacing="0" border="0">
+						<tr>
+							<td valign="middle" align="left">
+								<a href="topic-2455.html#22096"><img src="templates/SGD2/images/icon_minipost.gif" width="12" height="9" alt="objava" title="objava" border="0" /></a>
+								<span class="postdetails">Objavljeno: čet jan 26, 2012 10:48 pm<span class="gen">&nbsp;</span>&nbsp; &nbsp;Pošlji temo: Re: menu</span>
+							</td>
+							<td valign="middle" align="right" nowrap="nowrap">
+							</td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+			<tr>
+				<td colspan="2"><hr /></td>
+			</tr>
+			<tr>
+				<td colspan="2"><span class="postbody">Super, sam da si zrihtal <img src="images/smiles/icon_biggrin.gif" alt=":D" border="0" /> Aja, pa dobrodošel na SGD-ju <img src="images/smiles/icon_wink.gif" alt=";)" border="0" />
+<br />
+
+<br />
+Glede tekstur in tega, je Tomaa lepo napisal kako to naredit v eni drugi temi - <a  target="_blank" class="postlink">http&#58;//slogamedev&#46;net/viewtopic&#46;php?f=49&amp;t=2452</a>. Poglej, nekje na sredini je napisal primer uporabe SOIL knjižnice. Upam da ti bo v pomoč<br />_________________<br />................ <a  target="_blank" class="postlink"><span style="font-weight: bold">My personal GameDev Blog</span></a> ...................
+<br />
+<span style="font-style: italic">&quot;Don't you dare using uninitialized variables, not in C++&quot;</span></span><span class="gensmall"></span></td>
+			</tr>
+		</table></td>
+	</tr>
+	<tr>
+		<td class="row2" width="150" align="left" valign="middle"><span class="nav"><a href="#top" class="nav">Nazaj na vrh</a></span></td>
+		<td class="row2" width="100%" height="28" valign="bottom" nowrap="nowrap"><table cellspacing="0" cellpadding="0" border="0" height="18" width="18">
+			<tr>
+				<td valign="middle" nowrap="nowrap"><a href="profile-971.html"><img src="templates/SGD2/images/lang_slovenian/icon_profile.gif" alt="Poglej uporabnikov profil" title="Poglej uporabnikov profil" border="0" /></a> <a  target="_userwww"><img src="templates/SGD2/images/lang_slovenian/icon_www.gif" alt="Obišči avtorjevo spletno stran" title="Obišči avtorjevo spletno stran" border="0" /></a></td>
+			</tr>
+		</table></td>
+	</tr>
+	<tr>
+		<td class="spaceRow" colspan="2" height="1"><img src="templates/SGD/images/spacer.gif" alt="" width="1" height="1" /></td>
+	</tr>
+	
+	<tr>
+		<td width="150" align="left" valign="top" class="row1"><span class="name"><a name="22097"></a><b>senad</b></span><br /><span class="postdetails">novinec<br /><img src="images/ranks/sgd-0.gif" alt="novinec" title="novinec" border="0" /><br /><br /><br />Pridružen: 15. jan 2012 ob 14:01<br />objav: 12<br /></span><br /></td>
+		<td class="row1" width="100%" height="28" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+			<tr>
+				<td colspan="2" width="100%">
+					<table width="100%" cellpadding="0" cellspacing="0" border="0">
+						<tr>
+							<td valign="middle" align="left">
+								<a href="topic-2455.html#22097"><img src="templates/SGD2/images/icon_minipost.gif" width="12" height="9" alt="objava" title="objava" border="0" /></a>
+								<span class="postdetails">Objavljeno: čet jan 26, 2012 11:02 pm<span class="gen">&nbsp;</span>&nbsp; &nbsp;Pošlji temo: Re: menu</span>
+							</td>
+							<td valign="middle" align="right" nowrap="nowrap">
+							</td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+			<tr>
+				<td colspan="2"><hr /></td>
+			</tr>
+			<tr>
+				<td colspan="2"><span class="postbody">..</span><span class="gensmall"><br /><br />Popravil je senad dne, čet jan 26, 2012 11:17 pm, popravljal je 1 krat</span></td>
+			</tr>
+		</table></td>
+	</tr>
+	<tr>
+		<td class="row1" width="150" align="left" valign="middle"><span class="nav"><a href="#top" class="nav">Nazaj na vrh</a></span></td>
+		<td class="row1" width="100%" height="28" valign="bottom" nowrap="nowrap"><table cellspacing="0" cellpadding="0" border="0" height="18" width="18">
+			<tr>
+				<td valign="middle" nowrap="nowrap"><a href="profile-4952.html"><img src="templates/SGD2/images/lang_slovenian/icon_profile.gif" alt="Poglej uporabnikov profil" title="Poglej uporabnikov profil" border="0" /></a> </td>
+			</tr>
+		</table></td>
+	</tr>
+	<tr>
+		<td class="spaceRow" colspan="2" height="1"><img src="templates/SGD/images/spacer.gif" alt="" width="1" height="1" /></td>
+	</tr>
+	
+	<tr>
+		<td width="150" align="left" valign="top" class="row2"><span class="name"><a name="22098"></a><b>senad</b></span><br /><span class="postdetails">novinec<br /><img src="images/ranks/sgd-0.gif" alt="novinec" title="novinec" border="0" /><br /><br /><br />Pridružen: 15. jan 2012 ob 14:01<br />objav: 12<br /></span><br /></td>
+		<td class="row2" width="100%" height="28" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+			<tr>
+				<td colspan="2" width="100%">
+					<table width="100%" cellpadding="0" cellspacing="0" border="0">
+						<tr>
+							<td valign="middle" align="left">
+								<a href="topic-2455.html#22098"><img src="templates/SGD2/images/icon_minipost.gif" width="12" height="9" alt="objava" title="objava" border="0" /></a>
+								<span class="postdetails">Objavljeno: čet jan 26, 2012 11:08 pm<span class="gen">&nbsp;</span>&nbsp; &nbsp;Pošlji temo: Re: menu</span>
+							</td>
+							<td valign="middle" align="right" nowrap="nowrap">
+							</td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+			<tr>
+				<td colspan="2"><hr /></td>
+			</tr>
+			<tr>
+				<td colspan="2"><span class="postbody">...</span><span class="gensmall"></span></td>
+			</tr>
+		</table></td>
+	</tr>
+	<tr>
+		<td class="row2" width="150" align="left" valign="middle"><span class="nav"><a href="#top" class="nav">Nazaj na vrh</a></span></td>
+		<td class="row2" width="100%" height="28" valign="bottom" nowrap="nowrap"><table cellspacing="0" cellpadding="0" border="0" height="18" width="18">
+			<tr>
+				<td valign="middle" nowrap="nowrap"><a href="profile-4952.html"><img src="templates/SGD2/images/lang_slovenian/icon_profile.gif" alt="Poglej uporabnikov profil" title="Poglej uporabnikov profil" border="0" /></a> </td>
+			</tr>
+		</table></td>
+	</tr>
+	<tr>
+		<td class="spaceRow" colspan="2" height="1"><img src="templates/SGD/images/spacer.gif" alt="" width="1" height="1" /></td>
+	</tr>
+	
+	<tr align="center">
+		<td class="catBottom" colspan="2" height="28">&nbsp;</td>
+	</tr>
+</table>
+
+<table width="100%" cellspacing="2" cellpadding="2" border="0" align="center">
+  <tr>
+	<td align="left" valign="middle" nowrap="nowrap">&nbsp;</td>
+	<td align="left" valign="middle" width="100%"><span class="nav">&nbsp;&nbsp;&nbsp;<a href="index.html" class="nav">SloGameDev.net seznam forumov</a>
+	  -> <a href="forum-49.html" class="nav">Začetniki</a></span></td>
+	<td align="right" valign="top" nowrap="nowrap"><span class="gensmall">Časovni pas (GMT +2:00 uri) Slovenija, poletni čas</span><br /><span class="nav"></span>
+	  </td>
+  </tr>
+  <tr>
+	<td align="left" colspan="3"><span class="nav">Stran <b>1</b> od <b>1</b></span></td>
+  </tr>
+</table>
+
+<table width="100%" cellspacing="2" border="0" align="center">
+  <tr>
+	<td width="40%" valign="top" nowrap="nowrap" align="left">&nbsp;</td>
+	<td align="right" valign="top" nowrap="nowrap">&nbsp;</td>
+  </tr>
+</table>
+
+<div align="center"><span class="copyright"><br />Arhiv &mdash; samo za branje.<br />
+<!--
+	We request you retain the full copyright notice below including the link to www.phpbb.com.
+	This not only gives respect to the large amount of time given freely by the developers
+	but also helps build interest, traffic and use of phpBB 2.0. If you cannot (for good
+	reason) retain the full copyright we request you at least leave in place the 
+	Powered by phpBB 2.0.4 line, with phpBB linked to www.phpbb.com. If you refuse
+	to include even this then support on our forums may be affected. 
+
+	The phpBB Group : 2002
+// -->
+Powered by <a  target="_phpbb" class="copyright">phpBB</a> 2.0.4 &copy; 2001, 2002 phpBB Group<br /></span></div>
+		</td>
+	</tr>
+</table>
+
+</body>
+</html>

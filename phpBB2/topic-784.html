@@ -276,13 +276,13 @@ input.liteoption {
   <tr>
 	<td align="left" valign="bottom" nowrap="nowrap">&nbsp;</td>
 	<td align="left" valign="middle" width="100%"><span class="nav">&nbsp;&nbsp;&nbsp;<a href="index.html" class="nav">SloGameDev.net seznam forumov</a>
-	  -> <a href="forum-1.html" class="nav">Splošno Programiranje</a></span></td>
+	  -> <a href="forum-52.html" class="nav">Izdelovanje iger</a></span></td>
   </tr>
 </table>
 
 <table class="forumline" width="100%" cellspacing="1" cellpadding="3" border="0">
 	<tr align="right">
-		<td class="catHead" colspan="2" height="28"><span class="nav"><a href="topic-788.html" class="nav">Prejšnja tema</a> :: <a href="topic-790.html" class="nav">Naslednja tema</a> &nbsp;</span></td>
+		<td class="catHead" colspan="2" height="28"><span class="nav"><a href="topic-774.html" class="nav">Prejšnja tema</a> :: <a href="topic-790.html" class="nav">Naslednja tema</a> &nbsp;</span></td>
 	</tr>
 	
 	<tr>
@@ -311,7 +311,7 @@ input.liteoption {
 				<td colspan="2"><hr /></td>
 			</tr>
 			<tr>
-				<td colspan="2"><span class="postbody">Naj mi dobra duša pove, kaj mi je za storiti  <img src="images/smiles/icon_cry.gif" alt="icon_cry.gif" border="0" /> 
+				<td colspan="2"><span class="postbody">Naj mi dobra duša pove, kaj mi je za storiti  <img src="images/smiles/icon_cry.gif" alt=":cry:" border="0" /> 
 
 <br />
 
@@ -330,199 +330,134 @@ No koda je naslednja:</span>
 	<tr>
 <br />
 	  <td class="code"> void LoadAVIFile&#40;LPCSTR szFile &#41; 
-
 <br />
 &#123;
-
 <br />
-&nbsp; &nbsp; LONG hr; 
-
+    LONG hr; 
 <br />
-&nbsp; &nbsp; PAVIFILE pfile; 
-
+    PAVIFILE pfile; 
 <br />
  
-
 <br />
-&nbsp; &nbsp; AVIFileInit&#40;&#41;;
-
+    AVIFileInit&#40;&#41;;
 <br />
  
-
 <br />
-&nbsp; &nbsp; hr = AVIFileOpen&#40;&amp;pfile, szFile, OF_SHARE_DENY_WRITE, 0L&#41;; 
-
+    hr = AVIFileOpen&#40;&amp;pfile, szFile, OF_SHARE_DENY_WRITE, 0L&#41;; 
 <br />
-&nbsp; &nbsp; if &#40;hr != 0&#41;&#123; 
-
+    if &#40;hr != 0&#41;&#123; 
 <br />
-&nbsp; &nbsp; &nbsp; &nbsp; MessageBox &#40; &quot;Unable to open %s&quot;, szFile&#41;; 
-
+        MessageBox &#40; &quot;Unable to open %s&quot;, szFile&#41;; 
 <br />
-&nbsp; &nbsp; &nbsp; &nbsp; return; 
-
+        return; 
 <br />
-&nbsp; &nbsp; &#125; 
-
+    &#125; 
 <br />
 
-
 <br />
-&nbsp; &nbsp;AVIFILEINFO AFI;
-
+	AVIFILEINFO AFI;
 <br />
-&nbsp; &nbsp;if &#40; AVIFileInfo &#40; pfile, &amp;AFI,sizeof &#40; AVIFILEINFO &#41;&#41; != 0&#41;
-
+	if &#40; AVIFileInfo &#40; pfile, &amp;AFI,sizeof &#40; AVIFILEINFO &#41;&#41; != 0&#41;
 <br />
-&nbsp; &nbsp;&#123;
-
+	&#123;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;MessageBox &#40; &quot;AVIFileInfo ne drma!&quot; &#41;;
-
+		MessageBox &#40; &quot;AVIFileInfo ne drma!&quot; &#41;;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;AVIFileRelease&#40;pfile&#41;;
-
+		AVIFileRelease&#40;pfile&#41;;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;AVIFileExit&#40;&#41;;
-
+		AVIFileExit&#40;&#41;;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;return;
-
+		return;
 <br />
-&nbsp; &nbsp;&#125;
-
+	&#125;
 <br />
 
-
 <br />
-&nbsp; &nbsp;ShowReport &#40; AFI &#41;;
-
+	ShowReport &#40; AFI &#41;;
 <br />
 
-
 <br />
-&nbsp; &nbsp;PAVISTREAM PAS;
-
+	PAVISTREAM PAS;
 <br />
-&nbsp; &nbsp;if &#40; AVIFileGetStream &#40; pfile, &amp;PAS, streamtypeVIDEO, 0 &#41; != 0 &#41;
-
+	if &#40; AVIFileGetStream &#40; pfile, &amp;PAS, streamtypeVIDEO, 0 &#41; != 0 &#41;
 <br />
-&nbsp; &nbsp;&#123;
-
+	&#123;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;MessageBox &#40; &quot;AVIFileGetStream ne drma!&quot;&#41;;
-
+		MessageBox &#40; &quot;AVIFileGetStream ne drma!&quot;&#41;;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;AVIFileRelease&#40;pfile&#41;;
-
+		AVIFileRelease&#40;pfile&#41;;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;AVIFileExit&#40;&#41;;
-
+		AVIFileExit&#40;&#41;;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;return;
-
+		return;
 <br />
-&nbsp; &nbsp;&#125;
-
+	&#125;
 <br />
-&nbsp; &nbsp;
-
+	
 <br />
-&nbsp; &nbsp;AVISTREAMINFO ASI;
-
+	AVISTREAMINFO ASI;
 <br />
-&nbsp; &nbsp;AVIStreamInfo &#40; PAS, &amp;ASI, sizeof &#40; AVISTREAMINFO &#41;&#41;;
-
+	AVIStreamInfo &#40; PAS, &amp;ASI, sizeof &#40; AVISTREAMINFO &#41;&#41;;
 <br />
 
-
 <br />
-&nbsp; &nbsp;long ASStart = AVIStreamStart &#40; PAS &#41;;
-
+	long ASStart = AVIStreamStart &#40; PAS &#41;;
 <br />
-&nbsp; &nbsp;long ASEnd = AVIStreamEnd &#40; PAS &#41;;
-
+	long ASEnd = AVIStreamEnd &#40; PAS &#41;;
 <br />
 
-
 <br />
-&nbsp; &nbsp;long BW;
-
+	long BW;
 <br />
-&nbsp; &nbsp;long SW;
-
+	long SW;
 <br />
-&nbsp; &nbsp;BYTE* pB = new BYTE&#91;100000&#93;;&nbsp; &nbsp;
-
+	BYTE* pB = new BYTE&#91;100000&#93;;	
 <br />
-/*&nbsp; &nbsp;if &#40; AVIStreamRead &#40; PAS, 0, 1, pB, 100000, &amp;BW, &amp;SW &#41; != 0 &#41;
-
+/*	if &#40; AVIStreamRead &#40; PAS, 0, 1, pB, 100000, &amp;BW, &amp;SW &#41; != 0 &#41;
 <br />
-&nbsp; &nbsp;&#123;
-
+	&#123;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;MessageBox &#40; &quot;AVIStreamRead ne drma!&quot;&#41;;
-
+		MessageBox &#40; &quot;AVIStreamRead ne drma!&quot;&#41;;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;AVIStreamRelease &#40; PAS &#41;;
-
+		AVIStreamRelease &#40; PAS &#41;;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;AVIFileRelease&#40;pfile&#41;;
-
+		AVIFileRelease&#40;pfile&#41;;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;AVIFileExit&#40;&#41;;
-
+		AVIFileExit&#40;&#41;;
 <br />
-&nbsp; &nbsp;&#125;
-
+	&#125;
 <br />
 */
-
 <br />
-&nbsp; &nbsp;PGETFRAME FM = &#40;PGETFRAME&#41; AVIStreamGetFrameOpen &#40; PAS, NULL &#41;;
-
+	PGETFRAME FM = &#40;PGETFRAME&#41; AVIStreamGetFrameOpen &#40; PAS, NULL &#41;;
 <br />
-&nbsp; &nbsp;if &#40; FM == NULL &#41;
-
+	if &#40; FM == NULL &#41;
 <br />
-&nbsp; &nbsp;&#123;
-
+	&#123;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;MessageBox &#40; &quot;PGETFRAME je NULL&quot;&#41;;
-
+		MessageBox &#40; &quot;PGETFRAME je NULL&quot;&#41;;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;delete &#91;&#93; pB;
-
+		delete &#91;&#93; pB;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;AVIStreamRelease &#40; PAS &#41;;
-
+		AVIStreamRelease &#40; PAS &#41;;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;AVIFileRelease&#40;pfile&#41;;
-
+		AVIFileRelease&#40;pfile&#41;;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;AVIFileExit&#40;&#41;;
-
+		AVIFileExit&#40;&#41;;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;return;
-
+		return;
 <br />
-&nbsp; &nbsp;&#125;
-
+	&#125;
 <br />
 
-
 <br />
-&nbsp; &nbsp;delete &#91;&#93; pB;
-
+	delete &#91;&#93; pB;
 <br />
-&nbsp; &nbsp;AVIStreamRelease &#40; PAS &#41;;
-
+	AVIStreamRelease &#40; PAS &#41;;
 <br />
-&nbsp; &nbsp;AVIFileRelease&#40;pfile&#41;;
-
+	AVIFileRelease&#40;pfile&#41;;
 <br />
-&nbsp; &nbsp; AVIFileExit&#40;&#41;;
-
+    AVIFileExit&#40;&#41;;
 <br />
 &#125; </td>
 <br />
@@ -536,7 +471,7 @@ No koda je naslednja:</span>
 
 
 <br />
-Obupal sem že, ker mi stalno pri klicu AVIStreamGetFrameOpen vrne NULL. <img src="images/smiles/icon_confused.gif" alt="icon_confused.gif" border="0" /> 
+Obupal sem že, ker mi stalno pri klicu AVIStreamGetFrameOpen vrne NULL. <img src="images/smiles/icon_confused.gif" alt=":?" border="0" /> 
 
 <br />
 
@@ -545,7 +480,7 @@ Obupal sem že, ker mi stalno pri klicu AVIStreamGetFrameOpen vrne NULL. <img sr
 Morda kdo ve če sem prej kaj pozabil klicat al kako.
 
 <br />
-Se še do zdaj nisem ukvarjal s predvajanjem AVI filmčkov, v bistvu rabim samo slikco za slikco in ne celotnega predvajanja filma, tako da sem pri tej stvari še frišn  <img src="images/smiles/icon_smile.gif" alt="icon_smile.gif" border="0" /> 
+Se še do zdaj nisem ukvarjal s predvajanjem AVI filmčkov, v bistvu rabim samo slikco za slikco in ne celotnega predvajanja filma, tako da sem pri tej stvari še frišn  <img src="images/smiles/icon_smile.gif" alt=":)" border="0" /> 
 
 <br />
 Sem iskal na neti, pa ni nekega konkretnega sourca za pogledat.
@@ -571,7 +506,7 @@ Please help</span><span class="gensmall"></span></td>
 	</tr>
 	
 	<tr>
-		<td width="150" align="left" valign="top" class="row2"><span class="name"><a name="9059"></a><b>Shinobi</b></span><br /><span class="postdetails">inštruktor<br /><img src="images/ranks/sgd-4.gif" alt="inštruktor" title="inštruktor" border="0" /><br /><img src="images/avatars/d5fd66913fcf278e24a0c.gif" alt="" border="0" /><br /><br />Pridružen: 15. maj 2003 ob 18:04<br />objav: 257<br />Kraj: Maribor</span><br /></td>
+		<td width="150" align="left" valign="top" class="row2"><span class="name"><a name="9059"></a><b>Shinobi</b></span><br /><span class="postdetails">mojster<br /><img src="images/ranks/sgd-5.gif" alt="mojster" title="mojster" border="0" /><br /><img src="images/avatars/d5fd66913fcf278e24a0c.gif" alt="" border="0" /><br /><br />Pridružen: 15. maj 2003 ob 18:04<br />objav: 491<br />Kraj: Maribor</span><br /></td>
 		<td class="row2" width="100%" height="28" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
 			<tr>
 				<td colspan="2" width="100%">
@@ -621,7 +556,7 @@ Hja, upam da ne boš opubal, ali tu imaš en dober primer:
 
 
 <br />
-<a  target="_blank">http://nehe.gamedev.net/data/lessons/lesson.asp?lesson=35</a>
+<a class="postlink" >http://nehe.gamedev.net/data/lessons/le ... ?lesson=35</a>
 
 <br />
 
@@ -664,7 +599,7 @@ Leti si pozijat zadevo. Morebiti ti kaj pomaga.</span><span class="gensmall"></s
 				<td colspan="2"><hr /></td>
 			</tr>
 			<tr>
-				<td colspan="2"><span class="postbody">Zgleda da je res problem v avi fajlu  <img src="images/smiles/icon_cry.gif" alt="icon_cry.gif" border="0" /> . Shit, zdej bo treba si pa nekaj drugega spomnit.
+				<td colspan="2"><span class="postbody">Zgleda da je res problem v avi fajlu  <img src="images/smiles/icon_cry.gif" alt=":cry:" border="0" /> . Shit, zdej bo treba si pa nekaj drugega spomnit.
 
 <br />
 
@@ -695,7 +630,7 @@ No OK, bo že. Hvala za nasvet.</span><span class="gensmall"></span></td>
   <tr>
 	<td align="left" valign="middle" nowrap="nowrap">&nbsp;</td>
 	<td align="left" valign="middle" width="100%"><span class="nav">&nbsp;&nbsp;&nbsp;<a href="index.html" class="nav">SloGameDev.net seznam forumov</a>
-	  -> <a href="forum-1.html" class="nav">Splošno Programiranje</a></span></td>
+	  -> <a href="forum-52.html" class="nav">Izdelovanje iger</a></span></td>
 	<td align="right" valign="top" nowrap="nowrap"><span class="gensmall">Časovni pas (GMT +2:00 uri) Slovenija, poletni čas</span><br /><span class="nav"></span>
 	  </td>
   </tr>
@@ -711,7 +646,7 @@ No OK, bo že. Hvala za nasvet.</span><span class="gensmall"></span></td>
   </tr>
 </table>
 
-<div align="center"><span class="copyright"><br />Arhiv stanja na dan 13. 2. 2006 &mdash; samo za branje.<br />
+<div align="center"><span class="copyright"><br />Arhiv &mdash; samo za branje.<br />
 <!--
 	We request you retain the full copyright notice below including the link to www.phpbb.com.
 	This not only gives respect to the large amount of time given freely by the developers

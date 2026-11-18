@@ -1,0 +1,2607 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html dir="ltr">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta http-equiv="Content-Style-Type" content="text/css">
+<style type="text/css">
+<!--
+.style1 {color: #FFFFFF}
+-->
+</style>
+
+
+
+<title>SloGameDev.net :: En pameten vzor</title>
+<!-- link rel="stylesheet" href="templates/SGD/SGD2.css" type="text/css" -->
+<style type="text/css">
+<!--
+/*
+  The SGD Theme for phpBB version 2+
+  Created by Rhuantavan
+  http://www.rhuantavan.org
+
+  NOTE: These CSS definitions are stored within the main page body so that you can use the phpBB2
+  theme administration centre. When you have finalised your style you could cut the final CSS code
+  and place it in an external file, deleting this section to save bandwidth.
+*/
+
+/* General page style. The scroll bar colours only visible in IE5.5+ */
+body {
+	background-color: #DDDDDD;
+	scrollbar-face-color: #000000;
+	scrollbar-highlight-color: #000000;
+	scrollbar-3dlight-color: #EEEEEE;
+	scrollbar-darkshadow-color: #EEEEEE;
+	scrollbar-shadow-color: #000000;
+	scrollbar-arrow-color: #55FF00;
+	scrollbar-track-color: #EEEEEE;
+}
+
+/* General font families for common tags */
+font,th,td,p { font-family: Verdana, Arial, Helvetica, sans-serif }
+a:link,a:active,a:visited { color : #338800; }
+a:hover		{ text-decoration: underline; color : #338800; }
+hr	{ height: 0px; border: solid #E9E9E9 0px; border-top-width: 1px;}
+
+/* This is the border line & background colour round the entire page */
+.bodyline	{ background-color: #EEEEEE; border-left: 1px #000000 solid; border-right: 1px #000000 solid; }
+
+/* This is the outline round the main forum tables */
+.forumline	{ background-color: #EEEEEE; border: 0px #DDDDDD solid; }
+
+/* Main table cell colours and backgrounds */
+td.row1	{ background-color: #F8F8F8; }
+td.row2	{ background-color: #F0F0F0; }
+td.row3	{ background-color: #E9E9E9; }
+
+/*
+  This is for the table cell above the Topics, Post & Last posts on the index.php page
+  By default this is the fading out gradiated silver background.
+  However, you could replace this with a bitmap specific for each forum
+*/
+td.rowpic {
+		background-color: #EEEEEE;
+		background-image: url(templates/SGD/images/cellpic3.gif);
+		background-repeat: repeat-y;
+}
+
+/* Header cells - the blue and silver gradient backgrounds */
+th	{
+	color: #66CC33; font-size: 11px; font-weight : bold;
+	background-color: #338800; height: 25px;
+	background-image: url(templates/SGD/images/cellpic2.gif);
+}
+
+td.cat,td.catHead,td.catSides,td.catLeft,td.catRight,td.catBottom {
+			background-image: url(templates/SGD/images/cellpic1.gif);
+			background-color:#E9E9E9; border: #999999; border-style: solid; height: 28px;
+}
+
+/*
+  Setting additional nice inner borders for the main table cells.
+  The names indicate which sides the border will be on.
+  Don't worry if you don't understand this, just ignore it :-)
+*/
+td.cat,td.catHead,td.catBottom {
+	height: 29px;
+	border-width: 0px 0px 0px 0px;
+}
+th.thHead,th.thSides,th.thTop,th.thLeft,th.thRight,th.thBottom,th.thCornerL,th.thCornerR {
+	font-weight: bold; border: #EEEEEE; border-style: solid; height: 28px;
+}
+td.row3Right,td.spaceRow {
+	background-color: #E9E9E9; border: #999999; border-style: solid;
+}
+
+th.thHead,td.catHead { font-size: 12px; border-width: 0px 0px 0px 0px; }
+th.thSides,td.catSides,td.spaceRow	 { border-width: 0px 0px 0px 0px; }
+th.thRight,td.catRight,td.row3Right	 { border-width: 0px 0px 0px 0px; }
+th.thLeft,td.catLeft	  { border-width: 0px 0px 0px 0px; }
+th.thBottom,td.catBottom  { border-width: 0px 0px 0px 1px; }
+th.thTop	 { border-width: 0px 0px 0px 0px; }
+th.thCornerL { border-width: 0px 0px 0px 1px; }
+th.thCornerR { border-width: 0px 0px 0px 0px; }
+
+/* The largest text used in the index page title and toptic title etc. */
+.maintitle	{
+	font-weight: bold; font-size: 18px; font-family: "Trebuchet MS",Verdana, Arial, Helvetica, sans-serif;
+	text-decoration: none; line-height : 120%; color : #666666;
+}
+
+/* General text */
+.gen { font-size : 12px; }
+.genmed { font-size : 11px; }
+.gensmall { font-size : 10px; }
+.gen,.genmed,.gensmall { color : #666666; }
+a.gen,a.genmed,a.gensmall { color: #338800; text-decoration: none; }
+a.gen:hover,a.genmed:hover,a.gensmall:hover	{ color: #338800; text-decoration: underline; }
+
+/* The register, login, search etc links at the top of the page */
+.mainmenu		{ font-size : 11px; color : #666666 }
+a.mainmenu		{ text-decoration: none; color : #338800;  }
+a.mainmenu:hover{ text-decoration: underline; color : #338800; }
+
+/* SGD main menu */
+.sgdmainmenu			{ font-size : 10px; color : #99FF33 }
+a.sgdmainmenu:link		{ text-decoration: none; color : #99FF33;  }
+a.sgdmainmenu:active	{ text-decoration: none; color : #99FF33;  }
+a.sgdmainmenu:visited	{ text-decoration: none; color : #99FF33;  }
+a.sgdmainmenu:hover		{ text-decoration: underline; color : #99FF33; }
+
+/* Forum category titles */
+.cattitle		{ font-weight: bold; font-size: 12px ; letter-spacing: 1px; color : #338800}
+a.cattitle		{ text-decoration: none; color : #338800; }
+a.cattitle:hover{ text-decoration: underline; }
+
+/* Forum title: Text and link to the forums used in: index.php */
+.forumlink		{ font-weight: bold; font-size: 12px; color : #338800; }
+a.forumlink 	{ text-decoration: none; color : #338800; }
+a.forumlink:hover{ text-decoration: underline; color : #338800; }
+
+/* Used for the navigation text, (Page 1,2,3 etc) and the navigation bar when in a forum */
+.nav			{ font-weight: bold; font-size: 11px; color : #666666;}
+a.nav			{ text-decoration: none; color : #338800; }
+a.nav:hover		{ text-decoration: underline; }
+
+/* titles for the topics: could specify viewed link colour too */
+.topictitle,h1,h2	{ font-weight: bold; font-size: 11px; color : #666666; }
+a.topictitle:link   { text-decoration: none; color : #338800; }
+a.topictitle:visited { text-decoration: none; color : #338800; }
+a.topictitle:hover	{ text-decoration: underline; color : #338800; }
+
+/* Name of poster in viewmsg.php and viewtopic.php and other places */
+.name			{ font-size : 11px; color : #000000;}
+
+/* Location, number of posts, post date etc */
+.postdetails		{ font-size : 10px; color : #666666; }
+
+/* The content of the posts (body of text) */
+.postbody { font-size : 12px; line-height: 18px; color : #000000;}
+a.postlink:link	{ text-decoration: none; color : #338800 }
+a.postlink:visited { text-decoration: none; color : #338800; }
+a.postlink:hover { text-decoration: underline; color : #338800}
+
+/* Quote & Code blocks */
+.code {
+	font-family: Courier, 'Courier New', sans-serif; font-size: 11px; color: #006600;
+	background-color: #D6D6D6; border: #E9E9E9; border-style: solid;
+	border-left-width: 1px; border-top-width: 1px; border-right-width: 1px; border-bottom-width: 1px
+}
+
+.quote {
+	font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 11px; color: #444444; line-height: 125%;
+	background-color: #BBBBBB; border: #E9E9E9; border-style: solid;
+	border-left-width: 1px; border-top-width: 1px; border-right-width: 1px; border-bottom-width: 1px
+}
+
+/* Copyright and bottom info */
+.copyright		{ font-size: 10px; font-family: Verdana, Arial, Helvetica, sans-serif; color: #444444; letter-spacing: -1px;}
+a.copyright		{ color: #444444; text-decoration: none;}
+a.copyright:hover { color: #666666; text-decoration: underline;}
+
+/* Form elements */
+input,textarea, select {
+	color : #666666;
+	font: normal 11px Verdana, Arial, Helvetica, sans-serif;
+	border-color : #666666;
+}
+
+/* The text input fields background colour */
+input.post, textarea.post, select {
+	background-color : #EEEEEE;
+}
+
+input { text-indent : 2px; }
+
+/* The buttons used for bbCode styling in message post */
+input.button {
+	background-color : #F8F8F8;
+	color : #666666;
+	font-size: 11px; font-family: Verdana, Arial, Helvetica, sans-serif;
+}
+
+/* The main submit button option */
+input.mainoption {
+	background-color : #BBBBBB;
+	font-weight : bold;
+}
+
+/* None-bold submit button */
+input.liteoption {
+	background-color : #BBBBBB;
+	font-weight : normal;
+}
+
+/* This is the line in the posting page which shows the rollover
+  help line. This is actually a text box, but if set to be the same
+  colour as the background no one will know ;)
+*/
+.helpline { background-color: #F0F0F0; border-style: none; }
+
+/* Import the fancy styles for IE only (NS4.x doesn't use the @import function) */
+@import url("templates/SGD/formIE.css");
+-->
+</style>
+</head>
+<body bgcolor="#DDDDDD" text="#666666" link="#338800" vlink="#338800" topmargin="0" />
+<a name="top"></a>
+<table width="100%" cellspacing="0" cellpadding="0" border="0" align="center" nowrap>
+	<tr>
+		<td class="bodyline">
+			<table width="100%" border="0" cellpadding="0" cellspacing="0">
+				<tr>
+					<td bgcolor="#FFFFFF">
+						<img src="images/spacer.gif" width="760" height="20" alt=""></td>
+				</tr>
+			</table>
+			<table width="100%" border="0" cellpadding="0" cellspacing="0">
+				<tr>
+					<td bgcolor="#000000">
+						<a href="../index.html"><img src="images/home.gif" width="10" height="10" alt="" border="0"></a><img src="images/spacer.gif" width="5" height="5" alt=""><a href="../index.html" class="sgdmainmenu">Nazaj na domačo stran</a> <img src="images/defaulticon_green.gif" alt="" width="7" height="7" border="0"> <a href="../clanki.html" class="sgdmainmenu">Clanki</a> <img src="images/defaulticon_green.gif" alt="" width="7" height="7" border="0"> <a href="../koda.html" class="sgdmainmenu">Koda</a> <img src="images/defaulticon_green.gif" alt="" width="7" height="7" border="0"> <a href="../clani.html" class="sgdmainmenu">Clani</a> <img src="images/defaulticon_green.gif" alt="" width="7" height="7" border="0"> <a href="../skupine.html" class="sgdmainmenu">Skupine</a> <img src="images/defaulticon_green.gif" alt="" width="7" height="7" border="0"> <a href="../projekti.html" class="sgdmainmenu">Projekti</a> <img src="images/defaulticon_green.gif" alt="" width="7" height="7" border="0"> <a href="../povezave.html" class="sgdmainmenu">Povezave</a></td>
+				</tr>
+			</table>
+			<table width="100%" border="0" cellpadding="0" cellspacing="0">
+				<tr>
+					<td colspan="3" bgcolor="#000000">
+						<img src="images/spacer.gif" width="760" height="10" alt=""></td>
+				</tr>
+				<tr>
+					<td>
+						<a href="index.html"><img src="images/logo.gif" width="351" height="62" alt="" border="0"></a></td>
+					<td>
+						<img src="images/forum_03.gif" width="408" height="62" alt=""></td>
+					<td width="100%" bgcolor="#000000">
+						<img src="images/spacer.gif" width="1" height="1" alt=""></td>
+				</tr>
+				<tr>
+					<td colspan="3" bgcolor="#000000" align="center">
+						<a href="memberlist.html" class="sgdmainmenu"><img src="images/defaulticon_green.gif" alt="" width="7" height="7" border="0">&nbsp;Seznam članov</a>
+						<a href="index.html" class="sgdmainmenu"><img src="images/defaulticon_green.gif" alt="" width="7" height="7" border="0">&nbsp;Seznam</a></td>
+				</tr>
+				<tr>
+					<td colspan="3" bgcolor="#000000">
+						<img src="images/spacer.gif" width="760" height="5" alt=""></td>
+				</tr>
+			</table>
+
+<table width="100%" cellspacing="2" cellpadding="2" border="0">
+  <tr>
+	<td align="left" valign="bottom" colspan="2"><a class="maintitle" href="topic-1444.html">En pameten vzor</a><br />
+	  <span class="gensmall"><b>Pojdi na stran <b>1</b>, <a href="topic-1444-30.html">2</a>&nbsp;&nbsp;<a href="topic-1444-30.html">Naslednji</a></b><br />
+	  &nbsp; </span></td>
+  </tr>
+</table>
+
+<table width="100%" cellspacing="2" cellpadding="2" border="0">
+  <tr>
+	<td align="left" valign="bottom" nowrap="nowrap">&nbsp;</td>
+	<td align="left" valign="middle" width="100%"><span class="nav">&nbsp;&nbsp;&nbsp;<a href="index.html" class="nav">SloGameDev.net seznam forumov</a>
+	  -> <a href="forum-53.html" class="nav">Kavarna</a></span></td>
+  </tr>
+</table>
+
+<table class="forumline" width="100%" cellspacing="1" cellpadding="3" border="0">
+	<tr align="right">
+		<td class="catHead" colspan="2" height="28"><span class="nav"><a href="topic-1545.html" class="nav">Prejšnja tema</a> :: <a href="topic-1097.html" class="nav">Naslednja tema</a> &nbsp;</span></td>
+	</tr>
+	
+	<tr>
+		<th class="thLeft" width="150" height="26" nowrap="nowrap">avtor</th>
+		<th class="thRight" nowrap="nowrap">Sporočilo</th>
+	</tr>
+	
+	<tr>
+		<td width="150" align="left" valign="top" class="row1"><span class="name"><a name="17552"></a><b>Retro</b></span><br /><span class="postdetails">SGD Admin<br /><img src="images/ranks/sgd-admin.gif" alt="SGD Admin" title="SGD Admin" border="0" /><br /><br /><br />Pridružen: 04. sep 2003 ob 22:14<br />objav: 1008<br />Kraj: ZX Spectrum 48k+</span><br /></td>
+		<td class="row1" width="100%" height="28" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+			<tr>
+				<td colspan="2" width="100%">
+					<table width="100%" cellpadding="0" cellspacing="0" border="0">
+						<tr>
+							<td valign="middle" align="left">
+								<a href="topic-1444.html#17552"><img src="templates/SGD2/images/icon_minipost.gif" width="12" height="9" alt="objava" title="objava" border="0" /></a>
+								<span class="postdetails">Objavljeno: čet avg 30, 2007 12:33 pm<span class="gen">&nbsp;</span>&nbsp; &nbsp;Pošlji temo: En pameten vzor</span>
+							</td>
+							<td valign="middle" align="right" nowrap="nowrap">
+							</td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+			<tr>
+				<td colspan="2"><hr /></td>
+			</tr>
+			<tr>
+				<td colspan="2"><span class="postbody">To dajem kot odgovor na J.T.jev post v MODanju:
+
+<br />
+</span>
+<br />
+<table width="90%" cellspacing="1" cellpadding="3" border="0" align="center">
+<br />
+<tr> 
+<br />
+	  <td><span class="genmed"><b>J.T. je napisal:</b></span></td>
+<br />
+	</tr>
+<br />
+	<tr>
+<br />
+	  <td class="quote">Dober članek. Na začetku sem hotel samo nek storyline napisat. Potem sem videl, da bom moral celoten design še urediti. Naučiti se bom moral drugačnega načina programiranja. Vedeti, kako delajo engini, kako se vse renderira. Kar naenkrat sem v heightmapih in med žretjem kosmičev razmišljam, kako bi to posodo z mlekom in kosmiči najbolje zmodeliral. Počasi korak za korakom spoznavam nove stvari. Bom potreboval ekipo za uresničitev svojega plana? Seveda, ampak najprej bom projekt dve leti delal sam. Več in bolje bom naredil, boljši bodo zainteresirani za sodelovanje. Zdaj pa že kradem topic janu...</td>
+<br />
+	</tr>
+<br />
+</table>
+<br />
+<span class="postbody">
+
+<br />
+
+
+<br />
+Lepo, da se ti to dogaja. To pomeni, da ti gamedev ze vredu leze pod kozo. Ampak to, da bos delal projekt dve leti sam? Imam bolj pametno idejo.
+
+<br />
+
+
+<br />
+Dve leti nazaj so stirje studenti na Carnegie Mellon University razmisljali, kako bi odkrili nove nacine gameplaya in cimhitreje izdelali igralne prototipe. Dorekli so tri pravila:
+
+<br />
+-Vsako igro morajo naredit v sedmih dneh ali manj.
+
+<br />
+-Vsako igro mora narediti ena sama oseba.
+
+<br />
+-Vsaka igra se mora drzati neke tematike (gravitacija, vegetacija, roji ...)
+
+<br />
+
+
+<br />
+Na netu so objavljali tako narejene prototipe in v enem semestru jim je uspelo narest cez 50 zadev. Folk je bil navdusen nad tem, kako uspejo tako hitro delat igre in tudi nad igralnostjo ter novimi koncepti, idejami.
+
+<br />
+
+
+<br />
+Tako je nastal <a  target="_blank" class="postlink">Experimental Gameplay Project</a>.
+
+<br />
+
+
+<br />
+En zadnjih odlicnih primerkov s te strani: <a class="postlink" >http://www.experimentalgameplay.com/game.php?g=456</a>
+
+<br />
+
+
+<br />
+
+
+<br />
+Meni je stvar mega vsec in sem ze tekom 2006, ko sem vecinoma delal majhne projekte za game code library videl, da sem tako veliko bolj produktiven in na koncu imam nekaj za pokazat. Kljuc prve in tretje tocke je v tem, da ti onemogocita prevelike ideje in se moras res osredotocit na eno samo mehaniko. Skratka, prisili te v to, kar bi z veliko samodiscipline in izkusanjami itak moral sam zase vedet, da je boljse od nevem kakih vecmesecnih al bognedaj dvoletnih projektov, ki jih potem nalagas v portfolio nedokoncanih idej.
+
+<br />
+
+
+<br />
+Sam se na drugo tocko ne bi prevec oziral. Ce imas kakega kolega, s katerim imas priblizno iste ideje in znanje, potem je to super, da vidis kako se dela timsko. Ne pa nevem kako iskanje folka po forumu, postavljanja spletne strani in internega foruma, potem bluzenje po njem itd itd. Preden se tako razdelijo taski in naredi nekaj konkretnega, je en teden zdavnaj mimo. Vazno, da si stalno v komunikaciji in napredek enega zato se bolj podzge ostale.
+
+<br />
+
+
+<br />
+In konec koncev, za 1 teden casa lahko dost dobro vnaprej ves, ce si bos lahko vsak dan vzel 4 urce in delal. Tako se resis stojecih projektov, kjer je izgovor sola, pomanjkanje motivacije, preambicioznost in vse ostale zacetniske tegobe. 1 teden si vzames, delas in imas na koncu viden rezultat.
+
+<br />
+
+
+<br />
+Jaz vem zase, da bom v bliznji prihodnosti fural tocno ta format.<br />_________________<br /><a  target="_blank" class="postlink"><span style="font-weight: bold">Dawn of Play</span></a> // <a  target="_blank" class="postlink"><span style="font-weight: bold">Retronator</span></a></span><span class="gensmall"></span></td>
+			</tr>
+		</table></td>
+	</tr>
+	<tr>
+		<td class="row1" width="150" align="left" valign="middle"><span class="nav"><a href="#top" class="nav">Nazaj na vrh</a></span></td>
+		<td class="row1" width="100%" height="28" valign="bottom" nowrap="nowrap"><table cellspacing="0" cellpadding="0" border="0" height="18" width="18">
+			<tr>
+				<td valign="middle" nowrap="nowrap"><a href="profile-100.html"><img src="templates/SGD2/images/lang_slovenian/icon_profile.gif" alt="Poglej uporabnikov profil" title="Poglej uporabnikov profil" border="0" /></a> <a  target="_userwww"><img src="templates/SGD2/images/lang_slovenian/icon_www.gif" alt="Obišči avtorjevo spletno stran" title="Obišči avtorjevo spletno stran" border="0" /></a></td>
+			</tr>
+		</table></td>
+	</tr>
+	<tr>
+		<td class="spaceRow" colspan="2" height="1"><img src="templates/SGD/images/spacer.gif" alt="" width="1" height="1" /></td>
+	</tr>
+	
+	<tr>
+		<td width="150" align="left" valign="top" class="row2"><span class="name"><a name="17553"></a><b>J.T.</b></span><br /><span class="postdetails">wannabe<br /><img src="images/ranks/sgd-2.gif" alt="wannabe" title="wannabe" border="0" /><br /><br /><br />Pridružen: 06. jul 2007 ob 18:37<br />objav: 82<br /></span><br /></td>
+		<td class="row2" width="100%" height="28" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+			<tr>
+				<td colspan="2" width="100%">
+					<table width="100%" cellpadding="0" cellspacing="0" border="0">
+						<tr>
+							<td valign="middle" align="left">
+								<a href="topic-1444.html#17553"><img src="templates/SGD2/images/icon_minipost.gif" width="12" height="9" alt="objava" title="objava" border="0" /></a>
+								<span class="postdetails">Objavljeno: čet avg 30, 2007 1:28 pm<span class="gen">&nbsp;</span>&nbsp; &nbsp;Pošlji temo: </span>
+							</td>
+							<td valign="middle" align="right" nowrap="nowrap">
+							</td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+			<tr>
+				<td colspan="2"><hr /></td>
+			</tr>
+			<tr>
+				<td colspan="2"><span class="postbody">Zanimiva stvar in zagotovo bi koristila, dejansko uresničevanje idej je vedno koristno. <img src="images/smiles/icon_smile.gif" alt=":)" border="0" /> Čeprav sem morda preveč racionalen in ozkogled, najtežje se mi zdi posvetiti čas nečemu, kar me ne privlači tako zelo, sem bolj tip, ki dela stvari zaradi strasti. Težko se ločim od svojih glavnih projektov, da bi se lotil nečesa drugega, čeprav samo za en teden. Časa manjka.  <img src="images/smiles/icon_sad.gif" alt=":(" border="0" />
+
+<br />
+
+
+<br />
+Na srečo zadnjih 7 let delujem blizu ene game developing firme in spoznavam dobre in slabe stvari industrije (recimo, da sem sodelavec pri stvari, ki s samim razvojem iger nima neposredne povezave). Založniki pritiskajo, hočejo builde, bete so katastrofalno slabe zaenkrat, tipi, ki slabše delajo od mene, dobijo več denarja, roki te stiskajo za vrat... kot sam vidim, je največji problem preklemana Vista, prej lepo tekočim igram ustvari dobesedno ducate crash bugov in vse ostalo trpi, ker to je treba poštimat. Mora biti Vista compatible.  <img src="images/smiles/icon_rolleyes.gif" alt=":roll:" border="0" /> 
+
+<br />
+
+
+<br />
+Verjetno eden izmed pogledov, ki bi najbolj streznili večino nas, sanjačev (tudi sam sem med njimi, se ne slepim), bi bil pogled v software, ki beleži hrošče ene orenk igre. Pred parimi leti, sem po že narejeni gold verziji igre, videl odprtih še več kot 1000 hroščev (ni napaka, 1 in tri nule). Pač založniki imajo v glavi svoj datum izida igre. Kaj je šlo narobe? Podcenili so čas razvoja igre iz nule. Previsoko zastavljeni cilji in to so naredili ljudje, ki so profesionalci v industriji bili že 10+ let. Industrija gre v smeri delanja gold verzije z mnogo odprtimi hrošči, ki naj bi jih zakrpali na dan izida oziroma v tednih po izidu, to ste verjetno opazili.
+
+<br />
+
+
+<br />
+Drugo, kar te strezni je, da si v velikem teamu pomemben samo tam, kjer naj bi bil tvoj primarni džob. Recimo, če jaz nek del igre ocenim za pomanjkljiv in potem naredim analizo, zakaj je tako in predstavim rešitev v obliki pdf fajla z vsemi razdelanimi predlogi, matematičnimi/statističnimi argumenti itd. - tega nikogar ne bo zanimalo, ker nisem designer, ker nisem človek zadožen za to področje. Vsi imajo svoje ideje in tvoja pride na zadnje mesto (čeprav je najboljša <img src="images/smiles/icon_razz.gif" alt=":P" border="0" /> )
+
+<br />
+
+
+<br />
+Zato si zaenkrat še zelo nerad postavljam neke okvirje, rad bi se predvsem čim več naučil, zavedam pa se, da bo pri nabiranju teorije trpela praksa. To bom poskušal omiliti na kakšen drug način. Začarani krog. Hočeš nekaj velikega, ampak to potegne za seboj velik team in imaš sranje, ki sem ga opisal zgoraj. Lahko pa seveda delaš sam, teh problemov nimaš, lahko pa pozabiš na glamurozne ideje...</span><span class="gensmall"></span></td>
+			</tr>
+		</table></td>
+	</tr>
+	<tr>
+		<td class="row2" width="150" align="left" valign="middle"><span class="nav"><a href="#top" class="nav">Nazaj na vrh</a></span></td>
+		<td class="row2" width="100%" height="28" valign="bottom" nowrap="nowrap"><table cellspacing="0" cellpadding="0" border="0" height="18" width="18">
+			<tr>
+				<td valign="middle" nowrap="nowrap"><a href="profile-787.html"><img src="templates/SGD2/images/lang_slovenian/icon_profile.gif" alt="Poglej uporabnikov profil" title="Poglej uporabnikov profil" border="0" /></a> </td>
+			</tr>
+		</table></td>
+	</tr>
+	<tr>
+		<td class="spaceRow" colspan="2" height="1"><img src="templates/SGD/images/spacer.gif" alt="" width="1" height="1" /></td>
+	</tr>
+	
+	<tr>
+		<td width="150" align="left" valign="top" class="row1"><span class="name"><a name="17562"></a><b>Wing</b></span><br /><span class="postdetails">SGD Admin<br /><img src="images/ranks/sgd-admin.gif" alt="SGD Admin" title="SGD Admin" border="0" /><br /><br /><br />Pridružen: 08. jan 2003 ob 21:33<br />objav: 481<br />Kraj: Kranj</span><br /></td>
+		<td class="row1" width="100%" height="28" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+			<tr>
+				<td colspan="2" width="100%">
+					<table width="100%" cellpadding="0" cellspacing="0" border="0">
+						<tr>
+							<td valign="middle" align="left">
+								<a href="topic-1444.html#17562"><img src="templates/SGD2/images/icon_minipost.gif" width="12" height="9" alt="objava" title="objava" border="0" /></a>
+								<span class="postdetails">Objavljeno: čet avg 30, 2007 10:56 pm<span class="gen">&nbsp;</span>&nbsp; &nbsp;Pošlji temo: </span>
+							</td>
+							<td valign="middle" align="right" nowrap="nowrap">
+							</td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+			<tr>
+				<td colspan="2"><hr /></td>
+			</tr>
+			<tr>
+				<td colspan="2"><span class="postbody">Mislim, da se nas večina strinja oz. je na lastni koži občutila (večkrat), da so preveliki in preambiciozni projekti za začetnika smrt in da je nujno začeti z malim in stvari stopnjevati, če hočeš imeti kaj dokončanega. Na dolgo in široko sem se o približno tej temi razpisal <a  target="_blank" class="postlink">tu</a>, zato bom v tem postu probal malo manj nakladati (edit: ni mi uspelo). Link, ki ga je dal Retro, je sicer zanimiv in vse te mini igrice in koncepti so sicer fino fajni, in če ti je cilj imeti na koncu nekaj za pokazati so definitivno way to go. Sigurno lažje narediš 5 mini igric, kjer probavaš različne koncepte, kot pa en über projekt, ki verjetno ni nikoli končan. To se mislim da vsi strinjamo.
+
+<br />
+
+
+<br />
+Ampak - vse se začne pri vprašanju, zakaj posameznik sploh hoče delati igre. Zdaj ne vem za vas, ampak meni cilj definitivno ni narediti 150 malih špilčičev, kjer bom brainstormal in hitro implementiral neke koncepte ter stvari delal samo zato, da bodo na koncu narejene. Mogoče sicer po dvoletnem delu na projektu, ki nato propade, nima avtor za pokazati ničesar, se je pa med tem (če je zdržal dve leti, hehe) verjetno veliko naučil in bo več vedel za drugič in prej ali slej spustil svoje ambicije oz. prilagodil velikost projekta svojim zmožnostim, času in ostalim dejavnikom. Mogoče mu bo projekt propadel 10x, pa bo 11. naredil nekaj omembe vrednega - špil z dušo in atmosfero, na primer. Koncepti so sicer že kul, ampak niso nič drugega kot koncepti. Meni osebno je 15 sicer dokončanih mini iger (v stilu raznih flash iger, recimo poglejte line riderja - sicer super koncept in miniigra, ampak nič več kot to) manj vrednih kot en velik, na pol dokončan projekt, ki ustvari atmosfero in ima dušo ter igralcu ponuja neko zapomnljivo izkušnjo (ne nujno samo zabavo za pol ure), tako da povsem razumem J.T.ja, sploh če se stvari loti resno in ima neko željo po tem (ker je velika razlika med recimo njegovim postom in pa tipičnim &quot;iščem 5 ljudi da naredimo World of Warcraft 2 omg omg, kje dobim program za to?&quot;). Ali je tak projekt smiselen in če ima možnost, da ugleda luč sveta, je že 50x predelana tema, v katero se niti ne mislim spuščati. Hočem samo povedati, da je nižanje ambicij zaradi nižanja samega pomoje druga skrajnost od &quot;hočem narediti najboljši špil ever&quot;...
+
+<br />
+
+
+<br />
+Razne omejitve, ki jih postaviš sam sebi, ala &quot;sedaj bom pa v enem tednu  naredil špil pa pika&quot; so samo še ena oblika samodiscipline in čeravno imajo neko korist (pade kakšna pametna ideja, če se ti gre za portfolio imaš  dejansko nekaj za pokazat ipd.), dvomim da večina nas tu želi delati igre za to, da bomo na koncu imeli za pokazati neke mini - pa četudi izvirne in zabavne - koncepte brez vsega ostalega, kar naredi igre tisto, kar so (oz. kar bi lahko bile, ampak o tem drugič  <img src="images/smiles/icon_twisted.gif" alt=":twisted:" border="0" />). Ali pač, ne vem?
+
+<br />
+
+
+<br />
+Tako da ja, kontrola ambicij je nujna, ampak vsaj jaz raje 5x zabluzim velik projekt (z velik ne mislim nujno hudo 3d grafiko in AAA kvaliteto), kot pa naredim 10 iger, ki niti meni niti igralcem ne pomenijo prav veliko. Odvisno od posameznika pač. <img src="images/smiles/icon_smile.gif" alt=":)" border="0" /> Tako kot je J.T. rekel, strast pa to. Zaradi tega se ne morem strinjati s tem delom tvojega posta, Retro:
+
+<br />
+</span>
+<br />
+<table width="90%" cellspacing="1" cellpadding="3" border="0" align="center">
+<br />
+<tr> 
+<br />
+	  <td><span class="genmed"><b>Citiram:</b></span></td>
+<br />
+	</tr>
+<br />
+	<tr>
+<br />
+	  <td class="quote">da je boljse od nevem kakih vecmesecnih al bognedaj dvoletnih projektov, ki jih potem nalagas v portfolio nedokoncanih idej.</td>
+<br />
+	</tr>
+<br />
+</table>
+<br />
+<span class="postbody">
+
+<br />
+&quot;Boljše&quot; in &quot;dobro&quot; je čisto preveč relativen pojem. <img src="images/smiles/icon_smile.gif" alt=":)" border="0" />
+
+<br />
+
+
+<br />
+
+
+<br />
+Ostali del J.T.jevega posta je pa že druga tema ... samo ne vem če kdo sploh bere tele moje nebuloze (če jih, vam takoj postrežem še s parimi dolgimi filozofiranji hehe) - upam, da se vsaj za silo vidi point. :&gt;</span><span class="gensmall"><br /><br />Popravil je Wing dne, čet avg 30, 2007 11:18 pm, popravljal je 3 krat</span></td>
+			</tr>
+		</table></td>
+	</tr>
+	<tr>
+		<td class="row1" width="150" align="left" valign="middle"><span class="nav"><a href="#top" class="nav">Nazaj na vrh</a></span></td>
+		<td class="row1" width="100%" height="28" valign="bottom" nowrap="nowrap"><table cellspacing="0" cellpadding="0" border="0" height="18" width="18">
+			<tr>
+				<td valign="middle" nowrap="nowrap"><a href="profile-7.html"><img src="templates/SGD2/images/lang_slovenian/icon_profile.gif" alt="Poglej uporabnikov profil" title="Poglej uporabnikov profil" border="0" /></a> </td>
+			</tr>
+		</table></td>
+	</tr>
+	<tr>
+		<td class="spaceRow" colspan="2" height="1"><img src="templates/SGD/images/spacer.gif" alt="" width="1" height="1" /></td>
+	</tr>
+	
+	<tr>
+		<td width="150" align="left" valign="top" class="row2"><span class="name"><a name="17563"></a><b>J.T.</b></span><br /><span class="postdetails">wannabe<br /><img src="images/ranks/sgd-2.gif" alt="wannabe" title="wannabe" border="0" /><br /><br /><br />Pridružen: 06. jul 2007 ob 18:37<br />objav: 82<br /></span><br /></td>
+		<td class="row2" width="100%" height="28" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+			<tr>
+				<td colspan="2" width="100%">
+					<table width="100%" cellpadding="0" cellspacing="0" border="0">
+						<tr>
+							<td valign="middle" align="left">
+								<a href="topic-1444.html#17563"><img src="templates/SGD2/images/icon_minipost.gif" width="12" height="9" alt="objava" title="objava" border="0" /></a>
+								<span class="postdetails">Objavljeno: čet avg 30, 2007 11:07 pm<span class="gen">&nbsp;</span>&nbsp; &nbsp;Pošlji temo: </span>
+							</td>
+							<td valign="middle" align="right" nowrap="nowrap">
+							</td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+			<tr>
+				<td colspan="2"><hr /></td>
+			</tr>
+			<tr>
+				<td colspan="2"><span class="postbody">Beremo, beremo.  <img src="images/smiles/icon_smile.gif" alt=":)" border="0" /></span><span class="gensmall"></span></td>
+			</tr>
+		</table></td>
+	</tr>
+	<tr>
+		<td class="row2" width="150" align="left" valign="middle"><span class="nav"><a href="#top" class="nav">Nazaj na vrh</a></span></td>
+		<td class="row2" width="100%" height="28" valign="bottom" nowrap="nowrap"><table cellspacing="0" cellpadding="0" border="0" height="18" width="18">
+			<tr>
+				<td valign="middle" nowrap="nowrap"><a href="profile-787.html"><img src="templates/SGD2/images/lang_slovenian/icon_profile.gif" alt="Poglej uporabnikov profil" title="Poglej uporabnikov profil" border="0" /></a> </td>
+			</tr>
+		</table></td>
+	</tr>
+	<tr>
+		<td class="spaceRow" colspan="2" height="1"><img src="templates/SGD/images/spacer.gif" alt="" width="1" height="1" /></td>
+	</tr>
+	
+	<tr>
+		<td width="150" align="left" valign="top" class="row1"><span class="name"><a name="17564"></a><b>Alfa</b></span><br /><span class="postdetails">mojster<br /><img src="images/ranks/sgd-5.gif" alt="mojster" title="mojster" border="0" /><br /><img src="images/avatars/c2f90a1540823086cd155.jpg" alt="" border="0" /><br /><br />Pridružen: 04. mar 2004 ob 18:14<br />objav: 471<br />Kraj: SG</span><br /></td>
+		<td class="row1" width="100%" height="28" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+			<tr>
+				<td colspan="2" width="100%">
+					<table width="100%" cellpadding="0" cellspacing="0" border="0">
+						<tr>
+							<td valign="middle" align="left">
+								<a href="topic-1444.html#17564"><img src="templates/SGD2/images/icon_minipost.gif" width="12" height="9" alt="objava" title="objava" border="0" /></a>
+								<span class="postdetails">Objavljeno: pet avg 31, 2007 8:37 am<span class="gen">&nbsp;</span>&nbsp; &nbsp;Pošlji temo: </span>
+							</td>
+							<td valign="middle" align="right" nowrap="nowrap">
+							</td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+			<tr>
+				<td colspan="2"><hr /></td>
+			</tr>
+			<tr>
+				<td colspan="2"><span class="postbody">Mogoče pa se da najti neki kompromis med hitrimi rezultati, ki jih dajejo male konceptualne igre, in velikim projektom ki ti daje (duševno) zadovoljstvo in velike izkušnje. Same sem se puskusil v izdelovanju malih konceptualnih iger, ampak ni bilo kaj iz tega. 
+
+<br />
+
+
+<br />
+Ko se lotim nečesa večjega res da letijo ideje ena za drugo, in da počasi ubijajo moj projekt, dokler ga spravijo na tla in pokončajo, vendar se med tem naučim veliko novega in pridobim neke izkušnje. Ko sem se poiskusil v Ludum dare 48h GD competition, kjer je pristop podoben, kot ga opisuje Retro, sem porabil kar nekaj časa za idejo, potem sm se lotil izdelovanja. Nisem še niti vredu začel, ko je bila moja ideja že nadomeščena. Na srečo to ni bil hud problem, ker še nisem prišel do udejstvovanja ideje, in sem kar direktno prešel na novo. Ozek časovni razpon je ubil tudi mojo novo idejo, ko sem uvidel, da nimam dovolj izkušenj da jo izpeljem. Po kakšnih desetih idejah sem odnehal.
+
+<br />
+
+
+<br />
+Če sestavljaš igro po modulih, ne samo objektno ampak res modularno, (vsak modul sposoben delovati za sebe) bo igra res požrešna, in mogoče ne bo delovala tako lepo, občutek izdelovanja bo pa podoben, kot da bi naredil neka majhnih iger. Tudi če ne prideš povsem do konca, imaš nekaj za pokazat.<br />_________________<br />&quot;Pustimo malenkosti, pravi cesar, PeCe pa nič (več).&quot;
+
+<br />
+Goran Bervar: C++ na kolenih</span><span class="gensmall"></span></td>
+			</tr>
+		</table></td>
+	</tr>
+	<tr>
+		<td class="row1" width="150" align="left" valign="middle"><span class="nav"><a href="#top" class="nav">Nazaj na vrh</a></span></td>
+		<td class="row1" width="100%" height="28" valign="bottom" nowrap="nowrap"><table cellspacing="0" cellpadding="0" border="0" height="18" width="18">
+			<tr>
+				<td valign="middle" nowrap="nowrap"><a href="profile-162.html"><img src="templates/SGD2/images/lang_slovenian/icon_profile.gif" alt="Poglej uporabnikov profil" title="Poglej uporabnikov profil" border="0" /></a> <a  target="_userwww"><img src="templates/SGD2/images/lang_slovenian/icon_www.gif" alt="Obišči avtorjevo spletno stran" title="Obišči avtorjevo spletno stran" border="0" /></a></td>
+			</tr>
+		</table></td>
+	</tr>
+	<tr>
+		<td class="spaceRow" colspan="2" height="1"><img src="templates/SGD/images/spacer.gif" alt="" width="1" height="1" /></td>
+	</tr>
+	
+	<tr>
+		<td width="150" align="left" valign="top" class="row2"><span class="name"><a name="17565"></a><b>Grandy</b></span><br /><span class="postdetails">wannabe<br /><img src="images/ranks/sgd-2.gif" alt="wannabe" title="wannabe" border="0" /><br /><br /><br />Pridružen: 22. sep 2003 ob 09:29<br />objav: 118<br /></span><br /></td>
+		<td class="row2" width="100%" height="28" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+			<tr>
+				<td colspan="2" width="100%">
+					<table width="100%" cellpadding="0" cellspacing="0" border="0">
+						<tr>
+							<td valign="middle" align="left">
+								<a href="topic-1444.html#17565"><img src="templates/SGD2/images/icon_minipost.gif" width="12" height="9" alt="objava" title="objava" border="0" /></a>
+								<span class="postdetails">Objavljeno: pet avg 31, 2007 9:51 am<span class="gen">&nbsp;</span>&nbsp; &nbsp;Pošlji temo: </span>
+							</td>
+							<td valign="middle" align="right" nowrap="nowrap">
+							</td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+			<tr>
+				<td colspan="2"><hr /></td>
+			</tr>
+			<tr>
+				<td colspan="2"><span class="postbody">No, če imaš dobro idejo za igro in ti ni škoda časa in truda, potem se splača vzet čas in zadevo izpelat v nulo. To, da si pa ne postavljaš več previsokih ciljev, je itak stvar izkušenj. Ko enkrat naletiš na mino... Ampak, da bi si pa postavljal prenizke cilje, pa nekej na brzake spacal... hm, to pride v poštev če maš premalo časa, pa bi vseeno rad potešil svojo kreativnost. Sam na dolgi rok, to ni to.
+
+<br />
+
+
+<br />
+Sicer pa, tudi če stvari ne izpelješ do konca, ni nobene tragike. Človek se pri tem veliko nauči, po mojem mnenju je izdelava iger sploh najbolša šola za programiranje. Še vedno pa se lahko tolažiš s tem da ostale 3/4 populacije zabija cajt pred televizijo in se izogiba kakršnemukoli izzivu v življenu in da ti nisi tak <img src="images/smiles/icon_smile.gif" alt=":)" border="0" /></span><span class="gensmall"></span></td>
+			</tr>
+		</table></td>
+	</tr>
+	<tr>
+		<td class="row2" width="150" align="left" valign="middle"><span class="nav"><a href="#top" class="nav">Nazaj na vrh</a></span></td>
+		<td class="row2" width="100%" height="28" valign="bottom" nowrap="nowrap"><table cellspacing="0" cellpadding="0" border="0" height="18" width="18">
+			<tr>
+				<td valign="middle" nowrap="nowrap"><a href="profile-105.html"><img src="templates/SGD2/images/lang_slovenian/icon_profile.gif" alt="Poglej uporabnikov profil" title="Poglej uporabnikov profil" border="0" /></a> </td>
+			</tr>
+		</table></td>
+	</tr>
+	<tr>
+		<td class="spaceRow" colspan="2" height="1"><img src="templates/SGD/images/spacer.gif" alt="" width="1" height="1" /></td>
+	</tr>
+	
+	<tr>
+		<td width="150" align="left" valign="top" class="row1"><span class="name"><a name="17568"></a><b>jankoM</b></span><br /><span class="postdetails">inštruktor<br /><img src="images/ranks/sgd-4.gif" alt="inštruktor" title="inštruktor" border="0" /><br /><br /><br />Pridružen: 11. avg 2005 ob 10:06<br />objav: 274<br /></span><br /></td>
+		<td class="row1" width="100%" height="28" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+			<tr>
+				<td colspan="2" width="100%">
+					<table width="100%" cellpadding="0" cellspacing="0" border="0">
+						<tr>
+							<td valign="middle" align="left">
+								<a href="topic-1444.html#17568"><img src="templates/SGD2/images/icon_minipost.gif" width="12" height="9" alt="objava" title="objava" border="0" /></a>
+								<span class="postdetails">Objavljeno: pet avg 31, 2007 1:52 pm<span class="gen">&nbsp;</span>&nbsp; &nbsp;Pošlji temo: </span>
+							</td>
+							<td valign="middle" align="right" nowrap="nowrap">
+							</td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+			<tr>
+				<td colspan="2"><hr /></td>
+			</tr>
+			<tr>
+				<td colspan="2"><span class="postbody">mislim da se pri eni igri ki jo narediš od začetka do konca naučiš veliko več kot pri dvoletnem projektu ki ga narediš 20% in pobiraš samo nizko viseče sadje potem pa te mine...
+
+<br />
+
+
+<br />
+zavedat se morte da to da narediš vse tazakomplicirane (in tazanimive stvari ki veš da so v igri) predstavlja zelo malo dela in tud takoj mine ker pri tem ma človek ponavad ful entuziazma... veliko indijev naredi vse &quot;tahudo&quot; in s tem delujoč prototip v parih dneh ali tednu - dveh.. ampak na žalost potem tist ebrezvezne stvari trajajo še 5x tolk in pol ko misliš da si že skor končal boš delal pa še 2x tolk... najtežji je končat zadevo... 100x težji kot prvih 15% naredit. večina indie 2d simpl iger se dal 6m do 12m ali več. Vsi mislijo da bojo naredil v 3 mescih <img src="images/smiles/icon_smile.gif" alt=":)" border="0" />
+
+<br />
+
+
+<br />
+in če vam retrojev primer da naredite 10 &quot;mini&quot; iger ni všeč ... potem mogoče razmislite da bi naredil vsaj eno mini al pa ne čist mini preden se lotite večletnega projekta ki že zdej pravte da ga najbrž ne bote naredil ampak se boste vsaj neki naučil <img src="images/smiles/icon_smile.gif" alt=":)" border="0" /> ... sej če mislite delat več let pol se vam 1 mesec ne pozna glih.
+
+<br />
+
+
+<br />
+sicer je pa vse čist odvisno kaj je sploh vaš cilj. Moj cilj je vedno zelo praktičen in zahteva rezultat ker moram oz hočem od tega kar ustvarim živet.
+
+<br />
+
+
+<br />
+npr tist kar omenja retro... tist je zelo aktualno če si človek želi in lahko privošči bit &quot;game designer&quot; (najbol kreativna in mogoče najtežja stvar pri vsem skupi). npr tam te ne zanima nek shader al vertex al karkol zanima te interakcija... koncept... mene npr tud zanima to bol kot strojna oz programska oprema... oprema je samo orodje da se koncept spravi pred uporabnika..
+
+<br />
+
+
+<br />
+--
+
+<br />
+
+
+<br />
+druga stvar pri teh mega projektih... mogoče sem jst nadpovprečno neumen ampak pri meni je tako da že ko hočem naredit neko čist mini igro (in če jo hoče naredit zares) kot je Zze je noter 1000 mikroodločitev ki jih mora tist ki kreira igro sprejet in veliko je takihg kjer ne veš kaj je dobro in s čem boš zavozil igro. Zdej pa računite da niste še nikol naredil (dokončal) prave igre in potem zastavte neki 2 letnega... čez 1 leto ko boste delal boste vedlo TOOOOOLK več kot ste na začetku da se vam bo 80% odločitev ki ste jih takrat sprejel zdelo totalno neumnih, čez dve leti boste ugotovil da sploh niste vedl kaj hočete naredit in da ste dve leti delal čist napačno stvar... ok .. mogoče pretiravam.
+
+<br />
+
+
+<br />
+-<br />_________________<br /><a  target="_blank" class="postlink">Games for kids</a> | <a  target="_blank" class="postlink">Klikni-za-pizzo</a> | <a  target="_blank" class="postlink">REFAKTOR d.o.o.</a> | <a  target="_blank" class="postlink">Oglasko.com</a></span><span class="gensmall"></span></td>
+			</tr>
+		</table></td>
+	</tr>
+	<tr>
+		<td class="row1" width="150" align="left" valign="middle"><span class="nav"><a href="#top" class="nav">Nazaj na vrh</a></span></td>
+		<td class="row1" width="100%" height="28" valign="bottom" nowrap="nowrap"><table cellspacing="0" cellpadding="0" border="0" height="18" width="18">
+			<tr>
+				<td valign="middle" nowrap="nowrap"><a href="profile-243.html"><img src="templates/SGD2/images/lang_slovenian/icon_profile.gif" alt="Poglej uporabnikov profil" title="Poglej uporabnikov profil" border="0" /></a> <a  target="_userwww"><img src="templates/SGD2/images/lang_slovenian/icon_www.gif" alt="Obišči avtorjevo spletno stran" title="Obišči avtorjevo spletno stran" border="0" /></a></td>
+			</tr>
+		</table></td>
+	</tr>
+	<tr>
+		<td class="spaceRow" colspan="2" height="1"><img src="templates/SGD/images/spacer.gif" alt="" width="1" height="1" /></td>
+	</tr>
+	
+	<tr>
+		<td width="150" align="left" valign="top" class="row2"><span class="name"><a name="17569"></a><b>jankoM</b></span><br /><span class="postdetails">inštruktor<br /><img src="images/ranks/sgd-4.gif" alt="inštruktor" title="inštruktor" border="0" /><br /><br /><br />Pridružen: 11. avg 2005 ob 10:06<br />objav: 274<br /></span><br /></td>
+		<td class="row2" width="100%" height="28" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+			<tr>
+				<td colspan="2" width="100%">
+					<table width="100%" cellpadding="0" cellspacing="0" border="0">
+						<tr>
+							<td valign="middle" align="left">
+								<a href="topic-1444.html#17569"><img src="templates/SGD2/images/icon_minipost.gif" width="12" height="9" alt="objava" title="objava" border="0" /></a>
+								<span class="postdetails">Objavljeno: pet avg 31, 2007 2:07 pm<span class="gen">&nbsp;</span>&nbsp; &nbsp;Pošlji temo: </span>
+							</td>
+							<td valign="middle" align="right" nowrap="nowrap">
+							</td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+			<tr>
+				<td colspan="2"><hr /></td>
+			</tr>
+			<tr>
+				<td colspan="2"><span class="postbody"></span>
+<br />
+<table width="90%" cellspacing="1" cellpadding="3" border="0" align="center">
+<br />
+<tr> 
+<br />
+	  <td><span class="genmed"><b>Citiram:</b></span></td>
+<br />
+	</tr>
+<br />
+	<tr>
+<br />
+	  <td class="quote">Mogoče pa se da najti neki kompromis med hitrimi rezultati, ki jih dajejo male konceptualne igre, in velikim projektom ki ti daje (duševno) zadovoljstvo in velike izkušnje.</td>
+<br />
+	</tr>
+<br />
+</table>
+<br />
+<span class="postbody">
+<br />
+
+<br />
+jst ne vidim logike da ti velik projekt daje zadovoljstvo manjši pa ne... 
+<br />
+
+<br />
+a lahko eden pove primer takega velikega projekta da se lažji bol konkretno pogovarjamo...
+<br />
+
+<br />
+</span>
+<br />
+<table width="90%" cellspacing="1" cellpadding="3" border="0" align="center">
+<br />
+<tr> 
+<br />
+	  <td><span class="genmed"><b>Citiram:</b></span></td>
+<br />
+	</tr>
+<br />
+	<tr>
+<br />
+	  <td class="quote">Meni osebno je 15 sicer dokončanih mini iger (v stilu raznih flash iger, recimo poglejte line riderja - sicer super koncept in miniigra, ampak nič več kot to) manj vrednih kot en velik, na pol dokončan projekt, ki ustvari atmosfero in ima dušo ter igralcu ponuja neko zapomnljivo izkušnjo (ne nujno samo zabavo za pol ure)</td>
+<br />
+	</tr>
+<br />
+</table>
+<br />
+<span class="postbody">
+
+<br />
+
+
+<br />
+a lahko daš par primerov teh napol dokončanih projektov ki ustvarijo atmosfero in dušo in zapomnljivo izkušnjo?
+
+<br />
+
+
+<br />
+(upam da me ne boste jemal kot da se tuki kej razburjam al pa hočem kregate ker se ne)<br />_________________<br /><a  target="_blank" class="postlink">Games for kids</a> | <a  target="_blank" class="postlink">Klikni-za-pizzo</a> | <a  target="_blank" class="postlink">REFAKTOR d.o.o.</a> | <a  target="_blank" class="postlink">Oglasko.com</a></span><span class="gensmall"></span></td>
+			</tr>
+		</table></td>
+	</tr>
+	<tr>
+		<td class="row2" width="150" align="left" valign="middle"><span class="nav"><a href="#top" class="nav">Nazaj na vrh</a></span></td>
+		<td class="row2" width="100%" height="28" valign="bottom" nowrap="nowrap"><table cellspacing="0" cellpadding="0" border="0" height="18" width="18">
+			<tr>
+				<td valign="middle" nowrap="nowrap"><a href="profile-243.html"><img src="templates/SGD2/images/lang_slovenian/icon_profile.gif" alt="Poglej uporabnikov profil" title="Poglej uporabnikov profil" border="0" /></a> <a  target="_userwww"><img src="templates/SGD2/images/lang_slovenian/icon_www.gif" alt="Obišči avtorjevo spletno stran" title="Obišči avtorjevo spletno stran" border="0" /></a></td>
+			</tr>
+		</table></td>
+	</tr>
+	<tr>
+		<td class="spaceRow" colspan="2" height="1"><img src="templates/SGD/images/spacer.gif" alt="" width="1" height="1" /></td>
+	</tr>
+	
+	<tr>
+		<td width="150" align="left" valign="top" class="row1"><span class="name"><a name="17570"></a><b>Wing</b></span><br /><span class="postdetails">SGD Admin<br /><img src="images/ranks/sgd-admin.gif" alt="SGD Admin" title="SGD Admin" border="0" /><br /><br /><br />Pridružen: 08. jan 2003 ob 21:33<br />objav: 481<br />Kraj: Kranj</span><br /></td>
+		<td class="row1" width="100%" height="28" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+			<tr>
+				<td colspan="2" width="100%">
+					<table width="100%" cellpadding="0" cellspacing="0" border="0">
+						<tr>
+							<td valign="middle" align="left">
+								<a href="topic-1444.html#17570"><img src="templates/SGD2/images/icon_minipost.gif" width="12" height="9" alt="objava" title="objava" border="0" /></a>
+								<span class="postdetails">Objavljeno: pet avg 31, 2007 2:21 pm<span class="gen">&nbsp;</span>&nbsp; &nbsp;Pošlji temo: </span>
+							</td>
+							<td valign="middle" align="right" nowrap="nowrap">
+							</td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+			<tr>
+				<td colspan="2"><hr /></td>
+			</tr>
+			<tr>
+				<td colspan="2"><span class="postbody"></span>
+<br />
+<table width="90%" cellspacing="1" cellpadding="3" border="0" align="center">
+<br />
+<tr> 
+<br />
+	  <td><span class="genmed"><b>Citiram:</b></span></td>
+<br />
+	</tr>
+<br />
+	<tr>
+<br />
+	  <td class="quote">mislim da se pri eni igri ki jo narediš od začetka do konca naučiš veliko več kot pri dvoletnem projektu ki ga narediš 20% in pobiraš samo nizko viseče sadje potem pa te mine... </td>
+<br />
+	</tr>
+<br />
+</table>
+<br />
+<span class="postbody">
+<br />
+To je vse odvisno od velikosti/zahtevnosti projekta, izkušenj, znanja in še česa. Seveda nekdo, ni niti hello worlda ne zna spisat, ne bo veliko odnesel, če se spravi pisat Half Life 3. Enako kot nekdo, ki ima tehnično znanje kakšnega Yanna L ipd. ne bo veliko odnesel od tega (kar se znanja tiče), če naredi tetris.
+<br />
+Čeprav delno se strinjam, da nekaterih stvari se boljše naučiš s tem, ko končaš projekt, ne glede na velikost. Ampak zase lahko rečem, da sem se zelo veliko načil iz propadlih projektov, medtem ko mi razni tetrisi, space inviderji ipd. niso niti malo izziv in iz teh mini iger se, dokler je govora o striktno tehničnem znanju, nisem naučil ravno nevemkaj oz. veliko manj kot iz preambicioznih projektov. Je pa tudi tu potrebna prava mera seveda, saj je vsa fora ravno v zmernosti.
+<br />
+
+<br />
+</span>
+<br />
+<table width="90%" cellspacing="1" cellpadding="3" border="0" align="center">
+<br />
+<tr> 
+<br />
+	  <td><span class="genmed"><b>Citiram:</b></span></td>
+<br />
+	</tr>
+<br />
+	<tr>
+<br />
+	  <td class="quote">
+<br />
+zavedat se morte da to da narediš vse tazakomplicirane (in tazanimive stvari ki veš da so v igri) predstavlja zelo malo dela in tud takoj mine ker pri tem ma človek ponavad ful entuziazma...</td>
+<br />
+	</tr>
+<br />
+</table>
+<br />
+<span class="postbody">
+<br />
+Ne vem čisto, kaj misliš s tazakompliciranimi stvarmi - upam pa si reči, da za dobre igre (tudi indie) noben del ni lahek oz. ga ne gre podcenjvati. Danes se recimo zelo veliko in pomojem preveč osredotoča na tehnologijo in te to hitro zavede, da pozabiš na glavne stvari (čeprav tehnologija je pomembna, ampak ni zadostna). Sploh je to opazno pri mainstream AAA igrah in je po mojem tudi eden od razlogov, da so igre (tudi indie) vsebinsko v 95% še vedno (ali pa vedno bolj) nekje na stopnji plitkih filmov za 13 letnike in jim še precej manjka do nivoja drugih področij umetnosti. Ampak ok, to je druga tema, hočem rečt da stvari kot so zgodba, liki ipd. niso stvari, ki bi jih naredil na hitro, če hočeš neko kvaliteto.
+<br />
+
+<br />
+</span>
+<br />
+<table width="90%" cellspacing="1" cellpadding="3" border="0" align="center">
+<br />
+<tr> 
+<br />
+	  <td><span class="genmed"><b>Citiram:</b></span></td>
+<br />
+	</tr>
+<br />
+	<tr>
+<br />
+	  <td class="quote">najtežji je končat zadevo... 100x težji kot prvih 15% naredit.</td>
+<br />
+	</tr>
+<br />
+</table>
+<br />
+<span class="postbody">
+<br />
+Se strinjam zelo.
+<br />
+
+<br />
+</span>
+<br />
+<table width="90%" cellspacing="1" cellpadding="3" border="0" align="center">
+<br />
+<tr> 
+<br />
+	  <td><span class="genmed"><b>Citiram:</b></span></td>
+<br />
+	</tr>
+<br />
+	<tr>
+<br />
+	  <td class="quote">Zdej pa računite da niste še nikol naredil (dokončal) prave igre in potem zastavte neki 2 letnega... čez 1 leto ko boste delal boste vedlo TOOOOOLK več kot ste na začetku da se vam bo 80% odločitev ki ste jih takrat sprejel zdelo totalno neumnih, čez dve leti boste ugotovil da sploh niste vedl kaj hočete naredit in da ste dve leti delal čist napačno stvar... ok .. mogoče pretiravam.</td>
+<br />
+	</tr>
+<br />
+</table>
+<br />
+<span class="postbody">
+<br />
+Imaš point, ja. Če nimaš nič izkušenj in greš takoj na mega projekt, je to preskakovanje stopnic navzogr, seveda. Saj zato pa traja nekaj časa, da ugotoviš kje si pa to. Spet odvisno kaj delaš, koliko imaš izkušenj itd.
+<br />
+
+<br />
+</span>
+<br />
+<table width="90%" cellspacing="1" cellpadding="3" border="0" align="center">
+<br />
+<tr> 
+<br />
+	  <td><span class="genmed"><b>Citiram:</b></span></td>
+<br />
+	</tr>
+<br />
+	<tr>
+<br />
+	  <td class="quote">
+<br />
+a lahko daš par primerov teh napol dokončanih projektov ki ustvarijo atmosfero in dušo in zapomnljivo izkušnjo?</td>
+<br />
+	</tr>
+<br />
+</table>
+<br />
+<span class="postbody">
+
+<br />
+Če bi ti to lahko dal, ne bi bili na pol dokončani, jel? <img src="images/smiles/icon_biggrin.gif" alt=":D" border="0" /> Tako da ti lahko kvečjem opisujem zakaj se je šlo... Svoje čase sem pač delal (recimo 3 ali 4) prevelike projekte - z &quot;dušo in atmosfero&quot; pa ciljam predvsem na zgodbo, scenarij, razvoj likov, stilno dodelanost, skratka na vsebino, na katero navežeš sam gameplay koncept. Seveda mi ni nikoli ratalo dokončat kakšne ubr igre (še dosti manjše sam failal, čeprav je bilo to takrat predvsem zaradi pomanjkanja izkušenj, znanja in zaradi zaletavosti, zdaj pa predvsem zaradi pomanjkanja/slabe organizacije časa, zaradi katerih se tudi še tako mali špili premikajo zelo počasi).</span><span class="gensmall"></span></td>
+			</tr>
+		</table></td>
+	</tr>
+	<tr>
+		<td class="row1" width="150" align="left" valign="middle"><span class="nav"><a href="#top" class="nav">Nazaj na vrh</a></span></td>
+		<td class="row1" width="100%" height="28" valign="bottom" nowrap="nowrap"><table cellspacing="0" cellpadding="0" border="0" height="18" width="18">
+			<tr>
+				<td valign="middle" nowrap="nowrap"><a href="profile-7.html"><img src="templates/SGD2/images/lang_slovenian/icon_profile.gif" alt="Poglej uporabnikov profil" title="Poglej uporabnikov profil" border="0" /></a> </td>
+			</tr>
+		</table></td>
+	</tr>
+	<tr>
+		<td class="spaceRow" colspan="2" height="1"><img src="templates/SGD/images/spacer.gif" alt="" width="1" height="1" /></td>
+	</tr>
+	
+	<tr>
+		<td width="150" align="left" valign="top" class="row2"><span class="name"><a name="17571"></a><b>Retro</b></span><br /><span class="postdetails">SGD Admin<br /><img src="images/ranks/sgd-admin.gif" alt="SGD Admin" title="SGD Admin" border="0" /><br /><br /><br />Pridružen: 04. sep 2003 ob 22:14<br />objav: 1008<br />Kraj: ZX Spectrum 48k+</span><br /></td>
+		<td class="row2" width="100%" height="28" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+			<tr>
+				<td colspan="2" width="100%">
+					<table width="100%" cellpadding="0" cellspacing="0" border="0">
+						<tr>
+							<td valign="middle" align="left">
+								<a href="topic-1444.html#17571"><img src="templates/SGD2/images/icon_minipost.gif" width="12" height="9" alt="objava" title="objava" border="0" /></a>
+								<span class="postdetails">Objavljeno: pet avg 31, 2007 4:46 pm<span class="gen">&nbsp;</span>&nbsp; &nbsp;Pošlji temo: </span>
+							</td>
+							<td valign="middle" align="right" nowrap="nowrap">
+							</td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+			<tr>
+				<td colspan="2"><hr /></td>
+			</tr>
+			<tr>
+				<td colspan="2"><span class="postbody">Ce ciljas na velike spile te razumem, da ti miniiger in konceptov ni prevec v veselje delat. Ampak, se da idejo porabit tudi drugace.
+
+<br />
+
+
+<br />
+Jaz tudi zelo rad sanjam o velikih igrah in recimo da imam idejo, nevem, naredit spil podoben kot Incredible Machine, v katerem bi iz sestavnih delov ustvarjal izume. Recimo naredi vozilo pri cemer so pogoji, da mora v 10 sec prevozit 2 metra, vse ostalo se odlocis sam, a bo pogon na kolesa, a bo imelo propeler, a bo metal bombe za sabo itd itd. Tako hodis ti v solo, kjer dobivas take semestrske naloge in tekmujes proti ostalim ucencem. Tekom ucnih ur pa spoznavas nove elemente in kako stvari delujejo. Vse skupaj seveda izgleda kot Dexter's laboratory.
+
+<br />
+
+
+<br />
+Zdaj sem lahko mega navdusen nad to idejo in ze spisem game cocept (en A4). To je slo bp, zato ze nacrtujem celoten plan, 2 leti vnaprej, kdaj moram narest engine, kdaj bom gui, kdaj bom to in ono. Na papirju vse lepo organizirano izgleda in se mi lepo zdi. Tako sem vcasih res delal:
+
+<br />
+
+
+<br />
+<span style="font-size: 75%; line-height: normal">(bolje, da sploh ne veste, da so zgornje stiri vrstice vse za eno osebo (=mene), ker mi je bila pac vsec ideja, da lahko multitaskam vec opravil, odvisno katero mi pase delat - in tudi zato, ker po analizi, koliko casa bi porabil kak del in kdaj bi rad imel spil koncan ne znese drugace, kot da delam quarterload of work - ne da bi me to takrat karkoli opozarjalo, da to pa ne bo slo)</span>
+
+<br />
+
+
+<br />
+Ah ja. Dobri stari casi, ko sem bil zaradi manjka izkusenj pridobljenih the hard way zelo naiven.
+
+<br />
+
+
+<br />
+Danes vem, da take ideje niti pod razno ne morem iz nule narest. Vcasih sem mislil, da lahko vsakic naredis 2x bolj kompleksen projekt, pa se temu ne verjamem vec. Vsaj ne, ce nov projekt ne izhaja direktno iz prejsnjega.
+
+<br />
+
+
+<br />
+Kar bi zdaj jaz naredil je to, da oskubim osnovno idejo. Recimo za prejsnji primer: najprej skrcim na en sam izziv namesto vec predmetov tekom solanja. Nato izziv skrcim na sandbox, kjer samo sestavljas dele skupaj. Nato se omejim na 1 ali 2 dela. Zdaj se skenslam, da lahko skozi editor postavljas kose poljubno, ampak da kar iz kode sestavim eno od postavitev.
+
+<br />
+
+
+<br />
+S tem sem prisel do zelo preproste fizikalne igrice (bolj demo kot igrica), za ta primer celo neinteraktivne, ki recimo kaze, kako je sestavljena stenska ura in kako se posamezni kolesci premikajo. Pac namesto direktno animiranih kazalcev zadaj sprogramiram malo logike za posamezna kolesca.
+
+<br />
+
+
+<br />
+To je projektic za teden dela. Ko bi to sestavil, se bom ze marsikaj naucil o tem kako se kaj takega naredi, kaksni problemi se pojavijo in se lahko veliko lazje odlocim za vnaprej. Pri 2 letnem vnaprejsnjem planiranju se ti niti priblizno ne sanja, na kaksne probleme bos naletel. Tako pa lahko iterativno zacnes z samim bistvom oz enim delckom celotne slike igre, potem naredis se enega ali dva (platformcina kjer teces po hisi, dungeon keepersko kopanje rovov pod zemljo), ki so vsak zase bolj kot ne zakljucen eksperiment ali minigame, na koncu pa lahko vse troje sestavim ze v spil, kjer se sprehajas po hisi, z robotom kopljes rove pod hiso za svoj laboratorij in sestavis uro iz 5 kolesc in 3 kazalcev.
+
+<br />
+
+
+<br />
+Vsaj meni se zdi, da imas na ta nacin veliko vec sans, da bos stvar evolviral v velik projekt, kot pa ce ze takoj nacrtujes stvar na najvisjem nivoju kompleksnosti. V bistvu gre za iterativni (lahko tudi prototipni) projektni razvoj.
+
+<br />
+
+
+<br />
+Za take ambicije in cilje kot jih ima pa Janko je pa vse skupaj se toliko bolj smiselno. Zacnes z vec idejami in od vsake naredis mini game ali prototip. Potem vidis, kater ti je vsec, kje je najbolj odziv in podobno in gradis tistega naprej. Iz preproste mini ideje lahko prides do velikega spila. Recimo en primer z experimental projecta:
+
+<br />
+<a  target="_blank" class="postlink">Tower of GOO</a> Kyle po kupu ostalih mini spilov zdaj s kolegom razvija v poln spil z zgodbo in vsem. Vec <a  target="_blank" class="postlink">tule</a>.
+
+<br />
+<br />_________________<br /><a  target="_blank" class="postlink"><span style="font-weight: bold">Dawn of Play</span></a> // <a  target="_blank" class="postlink"><span style="font-weight: bold">Retronator</span></a></span><span class="gensmall"></span></td>
+			</tr>
+		</table></td>
+	</tr>
+	<tr>
+		<td class="row2" width="150" align="left" valign="middle"><span class="nav"><a href="#top" class="nav">Nazaj na vrh</a></span></td>
+		<td class="row2" width="100%" height="28" valign="bottom" nowrap="nowrap"><table cellspacing="0" cellpadding="0" border="0" height="18" width="18">
+			<tr>
+				<td valign="middle" nowrap="nowrap"><a href="profile-100.html"><img src="templates/SGD2/images/lang_slovenian/icon_profile.gif" alt="Poglej uporabnikov profil" title="Poglej uporabnikov profil" border="0" /></a> <a  target="_userwww"><img src="templates/SGD2/images/lang_slovenian/icon_www.gif" alt="Obišči avtorjevo spletno stran" title="Obišči avtorjevo spletno stran" border="0" /></a></td>
+			</tr>
+		</table></td>
+	</tr>
+	<tr>
+		<td class="spaceRow" colspan="2" height="1"><img src="templates/SGD/images/spacer.gif" alt="" width="1" height="1" /></td>
+	</tr>
+	
+	<tr>
+		<td width="150" align="left" valign="top" class="row1"><span class="name"><a name="17577"></a><b>J.T.</b></span><br /><span class="postdetails">wannabe<br /><img src="images/ranks/sgd-2.gif" alt="wannabe" title="wannabe" border="0" /><br /><br /><br />Pridružen: 06. jul 2007 ob 18:37<br />objav: 82<br /></span><br /></td>
+		<td class="row1" width="100%" height="28" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+			<tr>
+				<td colspan="2" width="100%">
+					<table width="100%" cellpadding="0" cellspacing="0" border="0">
+						<tr>
+							<td valign="middle" align="left">
+								<a href="topic-1444.html#17577"><img src="templates/SGD2/images/icon_minipost.gif" width="12" height="9" alt="objava" title="objava" border="0" /></a>
+								<span class="postdetails">Objavljeno: pet avg 31, 2007 7:06 pm<span class="gen">&nbsp;</span>&nbsp; &nbsp;Pošlji temo: </span>
+							</td>
+							<td valign="middle" align="right" nowrap="nowrap">
+							</td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+			<tr>
+				<td colspan="2"><hr /></td>
+			</tr>
+			<tr>
+				<td colspan="2"><span class="postbody"></span>
+<br />
+<table width="90%" cellspacing="1" cellpadding="3" border="0" align="center">
+<br />
+<tr> 
+<br />
+	  <td><span class="genmed"><b>jankoM je napisal:</b></span></td>
+<br />
+	</tr>
+<br />
+	<tr>
+<br />
+	  <td class="quote">jst ne vidim logike da ti velik projekt daje zadovoljstvo manjši pa ne... 
+<br />
+
+<br />
+a lahko eden pove primer takega velikega projekta da se lažji bol konkretno pogovarjamo...</td>
+<br />
+	</tr>
+<br />
+</table>
+<br />
+<span class="postbody">
+
+<br />
+Gre za zadovoljstvo ob samem ustvarjanju. Predpostavka seveda je, da pri večjem projektu delaš to, kar si res želiš, in da morda ti manjši projekti niso taki.
+
+<br />
+
+
+<br />
+Že od malih nog (recimo od osmega leta) pišem zgodbe, knjige ipd. Zgodba je zame ena od pomembnejših elementov igre. Morda ima to tudi kaj veze z mojo igralsko preferenco - RPG-ji in v manjši meri strategije. Torej kar koli že ustvarim, mora imeti nekaj te moje najmočnejše žilice. Z enotedenskimi projekti tega ne morem izživeti in mi torej ne da zadovoljstva, ki ga iščem.
+
+<br />
+
+
+<br />
+Morda malce offtopic, pa vseeno. Tipičen n00b se po mojem opazovanju sveta loti ene FPS igre. To se mi zdi najbolj &quot;neprava&quot; izbira za n00b sanjača, grafični pogon take igre je prezahteven, njegovi drugi morebitni talenti pa ne pridejo do izraza. RPG scena je zelo specifična in sam sem pred leti par sto ur igranja posvetil igri, ki je bila grafično vsaj ene 7 let &quot;za časom&quot;. Ker je pač  ideja in zgodba bila zanimiva. Opažam recimo, da se mnoge &quot;ocenjevalske&quot; strani tega ne zavedajo. Pred kratkim sem na Gamespotu zasledil opis ene slovaške RPG igre, ki je indie projekt. Sam tip trdi, da je to njegov prvi projekt in da se torej da celo iz nule narediti solidno igro. Ocenjevalec ji je dal oceno 4.0, kar je po mojem mnenju idiotsko. Igralci so ji dali višjo oceno in nekatere druge strani prav tako.
+
+<br />
+Vstavek: <a  target="_blank" class="postlink">Našel.</a>
+
+<br />
+Pred nekaj dnevi potem berem review Guild 2 igre, kjer se ocenjevalec prav tako obregne ob grafiko in jo primerja z - pazi to - 2003's Neverwinter Nights! Torej tale igra za njega izgleda graphically &quot;outdated&quot; in podobna prvemu delu NWN:
+
+<br />
+<a  target="_blank" class="postlink">http&#58;//images&#46;strategyinformer&#46;com/screenshots/00199688&#46;jpg</a>
+
+<br />
+<a  target="_blank" class="postlink">http&#58;//images&#46;strategyinformer&#46;com/screenshots/00178621&#46;jpg</a>
+
+<br />
+Poleg tega, da to pokaže, da RPG-je ponavadi ocenjujejo ljudje, ki tega žanra ne marajo, ne igrajo in ne poznajo, to seveda porodi vprašanje, s čim se sploh primerja te igre? Aha, in imamo že Bioshock, na IGN ocenjen z 9.7. Fajn, zanimivo, s kakšno lahkoto dobijo FPS igre visoke ocene. Ali je Bioshock dejansko prepričljivo boljša igra od Baldurs Gate II, to pa je drugo vprašanje.
+
+<br />
+Vstavek #2: Brett Todd je opisal obe omenjeni igri, sem ugotovil pred parimi minutami. Sem poiskal še en njegov <a  target="_blank" class="postlink">novejši opis RPG-ja</a> in seveda ni naključje, da je spet ocenjeno zelo nizko, poglejte si recimo povprečje ostalih ocen iz revij oziroma strani: 7.2. Tip očitno ne mara RPG-jev. <img src="images/smiles/icon_sad.gif" alt=":(" border="0" /> In za ocene takih se borijo veliki AAA naslovi. A ni to žalostno?
+
+<br />
+
+
+<br />
+Okej, tole je pa res offtopic, ampak vseeno: zadnjič sem par ur čekiral novi Carmackov engine Tech 5, al kaj je že, skupaj z igro Rage. I don't like it.  <img src="images/smiles/icon_smile.gif" alt=":)" border="0" /> Ti engini povečini rinejo v neke vode fotorealizma, kar po mojem mnenju ni prava pot. V prihodnosti imam raje stil, kot sem ga dal na zgornjih dveh slikah-linkih, samo pač bolj &quot;spoliran&quot; morda. A igre se dela zato, da se čimbolj oponaša resnični svet? Po mojem, da ne. Neka umetnost se pa le mora videti v teh igrah.
+
+<br />
+
+
+<br />
+Da se vrnem na temo, kako vseeno imeti dokončane etape pri nekem velikem načrtovanem projektu? Kot prvo določena poglavja designa jaz vidim kot celote oziroma etape. Ko narediš na papirju orožja in razviješ sistem, po katerem delujejo, je to zaključena etapa (kako bo v igri, je seveda druga stvar). Ko razviješ sistem atributov characterjev v igri, je to spet etapa. Pri tem moram poudariti, da mislim na resno premišljen sistem z vsemi vplivi, razvojem, posledicami itd. Potem recimo 3d modeli. Če narediš nekaj fajnega, a ni to že nekaj, kar ti tudi da zadovoljstvo? Zame je, morda ste vi preveč v tej branži in se vam že ne zdi nič več posebnega.
+
+<br />
+Pomembno se mi zdi, da si zastaviš dolgoročne in srednjeročne cilje. Dolgoročni cilj zame ni dokončana igra, ampak neka stopnja razvoja, kjer bi lahko zbral dobro ekipo, s katero bi se dejansko lotili težjih stvari. To je daleč v prihodnosti in se mi niti ne da delati planov za tem. <img src="images/smiles/icon_smile.gif" alt=":)" border="0" /> Srednjeročni veliki cilj pa je zame level editor. Level editor se mi zdi idealna stvar v več ozirih:
+
+<br />
+- je definitivno neka zaključena etapa
+
+<br />
+- imaš nekaj za &quot;pokazat&quot;
+
+<br />
+- če je dobro narejen, je nekaj, kar ti zelo skrajša čas razvoja igre, posebej to velja za RPG
+
+<br />
+- Level editor lahko nadgrajuješ skladno s kakšno novostjo, ki jo narediš. Npr. odločiš se za spremembo v designu ipd.
+
+<br />
+- lahko vključiš skriptiranje direktno v editor; vemo da je skriptiranje v RPG-jih zelo pomembno
+
+<br />
+- vanj lahko vključiš določene simulacije igranja; točno do kakšne mere, to zaenkrat še ne vem, sem prezelen. Ampak vsaj tekstovno zagotovo lahko marsikaj prikaže, npr. boj med vnaprej izbranimi characterji
+
+<br />
+- je dovolj zafrknjena stvar, da bi moral dobiti ogromen impulz zadovoljstva ob njegovem dokončanju.</span><span class="gensmall"></span></td>
+			</tr>
+		</table></td>
+	</tr>
+	<tr>
+		<td class="row1" width="150" align="left" valign="middle"><span class="nav"><a href="#top" class="nav">Nazaj na vrh</a></span></td>
+		<td class="row1" width="100%" height="28" valign="bottom" nowrap="nowrap"><table cellspacing="0" cellpadding="0" border="0" height="18" width="18">
+			<tr>
+				<td valign="middle" nowrap="nowrap"><a href="profile-787.html"><img src="templates/SGD2/images/lang_slovenian/icon_profile.gif" alt="Poglej uporabnikov profil" title="Poglej uporabnikov profil" border="0" /></a> </td>
+			</tr>
+		</table></td>
+	</tr>
+	<tr>
+		<td class="spaceRow" colspan="2" height="1"><img src="templates/SGD/images/spacer.gif" alt="" width="1" height="1" /></td>
+	</tr>
+	
+	<tr>
+		<td width="150" align="left" valign="top" class="row2"><span class="name"><a name="17578"></a><b>Wing</b></span><br /><span class="postdetails">SGD Admin<br /><img src="images/ranks/sgd-admin.gif" alt="SGD Admin" title="SGD Admin" border="0" /><br /><br /><br />Pridružen: 08. jan 2003 ob 21:33<br />objav: 481<br />Kraj: Kranj</span><br /></td>
+		<td class="row2" width="100%" height="28" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+			<tr>
+				<td colspan="2" width="100%">
+					<table width="100%" cellpadding="0" cellspacing="0" border="0">
+						<tr>
+							<td valign="middle" align="left">
+								<a href="topic-1444.html#17578"><img src="templates/SGD2/images/icon_minipost.gif" width="12" height="9" alt="objava" title="objava" border="0" /></a>
+								<span class="postdetails">Objavljeno: pet avg 31, 2007 7:15 pm<span class="gen">&nbsp;</span>&nbsp; &nbsp;Pošlji temo: </span>
+							</td>
+							<td valign="middle" align="right" nowrap="nowrap">
+							</td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+			<tr>
+				<td colspan="2"><hr /></td>
+			</tr>
+			<tr>
+				<td colspan="2"><span class="postbody">Aha, s tem kar si zdaj opisal (Retro) se strinjam - vsekakor je pametno stvar razdeliti na več malih taskov pa potem delati po nekakšnem principu legokock, če je že nuja. To se mi osebno zdi zelo dobra taktika in nekaj približno podobnega probam upoštevati pri tem, kar počnem zdaj (don't ask, itak se kljub relativni skromnsti in tehnološki preproščini premika kot invalidni polž...).
+
+<br />
+Ampak vseeno, če hočeš na koncu dobit iz tega ven nekaj večjega, je zelo zdravo že na začetku planirati, kaj hočeš imeti na koncu, da veš v katero smer delati in da ne ugotoviš po pol leta, da si se zajebal in da lahko začneš znova. To se mi je že zgodilo enkrat - že fino v fazi izdelave vsebine (nivojev) sem kar naenkrat ugotovil, da v tej in tej situaciji pa stvar logično sploh ne deluje oz. da kompleten dizajn pade in postane neuporaben ter da bi moral prepisati praktično vso kodo; čeprav sem prej vse lepo sestavljal skupaj postopoma in je samo za sebe delovalo ... Pač ena izkušnja več. Seveda je z izkušnjami to verjetno lažje in se ta taktika boljše obnese.
+
+<br />
+
+
+<br />
+Se tudi strinjam, da se planiranje do dneva natančno za daljno prihodnost ne obnese (sploh če nimaš hudih izkušenj) - sicer tega nikoli nisem počel, ker sem prepričan, da bi po 14ih dneh itak plan odbezljal po svoje...
+
+<br />
+
+
+<br />
+Pač treba je najti neko mero in ravnovesje pri vsem tem, to mislim da se strinjamo vsi...</span><span class="gensmall"></span></td>
+			</tr>
+		</table></td>
+	</tr>
+	<tr>
+		<td class="row2" width="150" align="left" valign="middle"><span class="nav"><a href="#top" class="nav">Nazaj na vrh</a></span></td>
+		<td class="row2" width="100%" height="28" valign="bottom" nowrap="nowrap"><table cellspacing="0" cellpadding="0" border="0" height="18" width="18">
+			<tr>
+				<td valign="middle" nowrap="nowrap"><a href="profile-7.html"><img src="templates/SGD2/images/lang_slovenian/icon_profile.gif" alt="Poglej uporabnikov profil" title="Poglej uporabnikov profil" border="0" /></a> </td>
+			</tr>
+		</table></td>
+	</tr>
+	<tr>
+		<td class="spaceRow" colspan="2" height="1"><img src="templates/SGD/images/spacer.gif" alt="" width="1" height="1" /></td>
+	</tr>
+	
+	<tr>
+		<td width="150" align="left" valign="top" class="row1"><span class="name"><a name="17579"></a><b>Retro</b></span><br /><span class="postdetails">SGD Admin<br /><img src="images/ranks/sgd-admin.gif" alt="SGD Admin" title="SGD Admin" border="0" /><br /><br /><br />Pridružen: 04. sep 2003 ob 22:14<br />objav: 1008<br />Kraj: ZX Spectrum 48k+</span><br /></td>
+		<td class="row1" width="100%" height="28" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+			<tr>
+				<td colspan="2" width="100%">
+					<table width="100%" cellpadding="0" cellspacing="0" border="0">
+						<tr>
+							<td valign="middle" align="left">
+								<a href="topic-1444.html#17579"><img src="templates/SGD2/images/icon_minipost.gif" width="12" height="9" alt="objava" title="objava" border="0" /></a>
+								<span class="postdetails">Objavljeno: sob sep 01, 2007 1:03 pm<span class="gen">&nbsp;</span>&nbsp; &nbsp;Pošlji temo: </span>
+							</td>
+							<td valign="middle" align="right" nowrap="nowrap">
+							</td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+			<tr>
+				<td colspan="2"><hr /></td>
+			</tr>
+			<tr>
+				<td colspan="2"><span class="postbody">Ma ja, saj na koncu vedno prides do tega kaj te zanima. Ce J.T. zeli samo uresnicit zgodbo v RPGju potem bi bil better off z RPG Makerjem, ce te zanima tudi tehnicna stran, potem ni druge kot da sam programiras (saj ne da pri makerji ni skriptanja, samo si zelis cim manj programiranja vseeno). 
+
+<br />
+
+
+<br />
+Tu potem ni druge kot da naredis ta editor kot si rekel. A je to srednjerocen al dolgorocen task pa je odvisno od zmogljivosti. Da naredis TES Construction Set (Morrowind, Oblivion) je to fucking long delo celega teama vec let. Ampak folk bo seveda sel delat kaj tako zapletenega, ker taki so trenutni FRPji in je to edino kul.
+
+<br />
+
+
+<br />
+Jaz bi bil tu spet Retro (to zdaj, vcasih bi sel seveda delat vecletni plan kot za Lands of Illusions) in pogledal v osemdeseta, kako so nastal FRPji. In bi se spomnil Ultime, al pa vseh tistih FRPjk, kjer si videl 4 portrete in hodil naokoli po svetu iz kvadratkov. Zakaj so bli takrat taki spili? Ker sta jih delala dva al pet ljudi v pol leta. Tudi ta spil ki zgoraj navajas ni videt indie projekt, sicer pa si mogoce falil link, ker si dal od nekega korejskega MMOGja, ne ravno slovaske RPG igre.
+
+<br />
+
+
+<br />
+Uglavnem, tudi ce hoces delat RPGje, se mi zdi da bi folk moral zacet z malimi spili. Koncami, zakljucenimi zadevami. Pa ceprav izgledajo in se igrajo kot v osemdesetih.<br />_________________<br /><a  target="_blank" class="postlink"><span style="font-weight: bold">Dawn of Play</span></a> // <a  target="_blank" class="postlink"><span style="font-weight: bold">Retronator</span></a></span><span class="gensmall"></span></td>
+			</tr>
+		</table></td>
+	</tr>
+	<tr>
+		<td class="row1" width="150" align="left" valign="middle"><span class="nav"><a href="#top" class="nav">Nazaj na vrh</a></span></td>
+		<td class="row1" width="100%" height="28" valign="bottom" nowrap="nowrap"><table cellspacing="0" cellpadding="0" border="0" height="18" width="18">
+			<tr>
+				<td valign="middle" nowrap="nowrap"><a href="profile-100.html"><img src="templates/SGD2/images/lang_slovenian/icon_profile.gif" alt="Poglej uporabnikov profil" title="Poglej uporabnikov profil" border="0" /></a> <a  target="_userwww"><img src="templates/SGD2/images/lang_slovenian/icon_www.gif" alt="Obišči avtorjevo spletno stran" title="Obišči avtorjevo spletno stran" border="0" /></a></td>
+			</tr>
+		</table></td>
+	</tr>
+	<tr>
+		<td class="spaceRow" colspan="2" height="1"><img src="templates/SGD/images/spacer.gif" alt="" width="1" height="1" /></td>
+	</tr>
+	
+	<tr>
+		<td width="150" align="left" valign="top" class="row2"><span class="name"><a name="17580"></a><b>jankoM</b></span><br /><span class="postdetails">inštruktor<br /><img src="images/ranks/sgd-4.gif" alt="inštruktor" title="inštruktor" border="0" /><br /><br /><br />Pridružen: 11. avg 2005 ob 10:06<br />objav: 274<br /></span><br /></td>
+		<td class="row2" width="100%" height="28" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+			<tr>
+				<td colspan="2" width="100%">
+					<table width="100%" cellpadding="0" cellspacing="0" border="0">
+						<tr>
+							<td valign="middle" align="left">
+								<a href="topic-1444.html#17580"><img src="templates/SGD2/images/icon_minipost.gif" width="12" height="9" alt="objava" title="objava" border="0" /></a>
+								<span class="postdetails">Objavljeno: sob sep 01, 2007 2:19 pm<span class="gen">&nbsp;</span>&nbsp; &nbsp;Pošlji temo: </span>
+							</td>
+							<td valign="middle" align="right" nowrap="nowrap">
+							</td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+			<tr>
+				<td colspan="2"><hr /></td>
+			</tr>
+			<tr>
+				<td colspan="2"><span class="postbody"></span>
+<br />
+<table width="90%" cellspacing="1" cellpadding="3" border="0" align="center">
+<br />
+<tr> 
+<br />
+	  <td><span class="genmed"><b>Citiram:</b></span></td>
+<br />
+	</tr>
+<br />
+	<tr>
+<br />
+	  <td class="quote">Sploh je to opazno pri mainstream AAA igrah in je po mojem tudi eden od razlogov, da so igre (tudi indie) vsebinsko v 95% še vedno (ali pa vedno bolj) nekje na stopnji plitkih filmov za 13 letnike in jim še precej manjka do nivoja drugih področij umetnosti. Ampak ok, to je druga tema, hočem rečt da stvari kot so zgodba, liki ipd. niso stvari, ki bi jih naredil na hitro, če hočeš neko kvaliteto.</td>
+<br />
+	</tr>
+<br />
+</table>
+<br />
+<span class="postbody">
+<br />
+
+<br />
+ja, &quot;velika&quot; igra v smislu kocepta, zgodbe izdelanosti likov itd nek indie lažje naredi ker gre bol za kvalitativne stvari kot kvantitativne. Jst nikakor ne trdim da morajo bit vse indie igre match-3 oz breakouti.
+<br />
+
+<br />
+pipstrelovo ultralahko letalo virus je tudi kot igrača za 13 letnike če primerjaš z boeingom. v bistvu je pa nekih pogledih ravno to ruši do sedaj obstoječe omejitve in odkriva nove možnosti hitrega potovanja.
+<br />
+
+<br />
+</span>
+<br />
+<table width="90%" cellspacing="1" cellpadding="3" border="0" align="center">
+<br />
+<tr> 
+<br />
+	  <td><span class="genmed"><b>Citiram:</b></span></td>
+<br />
+	</tr>
+<br />
+	<tr>
+<br />
+	  <td class="quote">Ne vem čisto, kaj misliš s tazakompliciranimi stvarmi - upam pa si reči, da za dobre igre (tudi indie) noben del ni lahek oz. ga ne gre podcenjvati.</td>
+<br />
+	</tr>
+<br />
+</table>
+<br />
+<span class="postbody">
+<br />
+zakoplicirano in zanimivo: npr. collision, fizika, enemiji, ai, (tist core od 0 do playable prototipa)
+<br />
+manj zakomplicirano, bol mučno in ne tolk zanimivo (in trajajo veliko dlje): npr. menuji, podatkovne strukture strukture ,  razni prehodi in efekti, pisanje helpa, ...
+<br />
+
+<br />
+</span>
+<br />
+<table width="90%" cellspacing="1" cellpadding="3" border="0" align="center">
+<br />
+<tr> 
+<br />
+	  <td><span class="genmed"><b>Citiram:</b></span></td>
+<br />
+	</tr>
+<br />
+	<tr>
+<br />
+	  <td class="quote">Z enotedenskimi projekti tega ne morem izživeti in mi torej ne da zadovoljstva, ki ga iščem.</td>
+<br />
+	</tr>
+<br />
+</table>
+<br />
+<span class="postbody">
+<br />
+
+<br />
+V enem tednu ne narediš nobene igre , lahko narediš playable prototip še prej samo nobene igre (razen neke ful izjeme v levo) ne narediš v 1 tednu.
+<br />
+
+<br />
+</span>
+<br />
+<table width="90%" cellspacing="1" cellpadding="3" border="0" align="center">
+<br />
+<tr> 
+<br />
+	  <td><span class="genmed"><b>Citiram:</b></span></td>
+<br />
+	</tr>
+<br />
+	<tr>
+<br />
+	  <td class="quote">Pred kratkim sem na Gamespotu zasledil opis ene slovaške RPG igre, ki je indie projekt. Sam tip trdi, da je to njegov prvi projekt in da se torej da celo iz nule narediti solidno igro.</td>
+<br />
+	</tr>
+<br />
+</table>
+<br />
+<span class="postbody">
+
+<br />
+
+
+<br />
+te slike sem pa že nekje videl pa se ne morem spomnt kje.. dej če najdeš link povej ker me mal zanima če se da kej sprobat 
+
+<br />
+
+
+<br />
+jst ne vem če maš ti čist občutek o skali takega projekta.. npr tud če si kr dober modeler .. a kej veš kolko časa bi delal eno od tistih stavb na tej sceni.. kolk časa vse na sceni... kolk različnih okolij bi mogu ustvarit, kolk animiranih ljudi živali itd... to je samo kar se tiče modeliranja... in s tem bi blo tolk dela da ne vem če bi zgodba nej bi bla še tako velika pri tem imela velki delež 
+
+<br />
+
+
+<br />
+če misliš da lahko to vse narediš kot prvi projekt potem je npr tale italjan ki je glih včeri objavu postmortem svojga 2d &quot;rpg&quot;-ja s kartami in kupljenimi modeli pri daz3d čisti pokovc 
+
+<br />
+<a class="postlink" >http://www.winterwolves.net/blog/2007/0 ... ostmortem/</a>
+
+<br />
+
+
+<br />
+<a class="postlink" >http://www.winterwolves.com/rpg_game.htm</a> (to je pa igra če si jo želi kdo zdownloadat)
+
+<br />
+
+
+<br />
+drugač če ti je pomembna zgodba , amando fitch ki pravi da ji je zgodba edino pomembno je naredila lani Aveyond ki jo je ful folka špilal in kupil in je postala po yahoo-ju celo neka igra leta ... narejena je pa v RPG-makerju <a class="postlink" >http://www.amaranthia.com/</a>
+
+<br />
+
+
+<br />
+pač jst bi tud delal bioshock al pa wow samo da bi mal boljšo grafiko naredu pa boljši AI seveda ker te shooterji še kr nimajo pametnega ai-ja pa tud namesto da se po krki s kajakom furam bi čez niagarske slapove skaku pa še kej..<br />_________________<br /><a  target="_blank" class="postlink">Games for kids</a> | <a  target="_blank" class="postlink">Klikni-za-pizzo</a> | <a  target="_blank" class="postlink">REFAKTOR d.o.o.</a> | <a  target="_blank" class="postlink">Oglasko.com</a></span><span class="gensmall"></span></td>
+			</tr>
+		</table></td>
+	</tr>
+	<tr>
+		<td class="row2" width="150" align="left" valign="middle"><span class="nav"><a href="#top" class="nav">Nazaj na vrh</a></span></td>
+		<td class="row2" width="100%" height="28" valign="bottom" nowrap="nowrap"><table cellspacing="0" cellpadding="0" border="0" height="18" width="18">
+			<tr>
+				<td valign="middle" nowrap="nowrap"><a href="profile-243.html"><img src="templates/SGD2/images/lang_slovenian/icon_profile.gif" alt="Poglej uporabnikov profil" title="Poglej uporabnikov profil" border="0" /></a> <a  target="_userwww"><img src="templates/SGD2/images/lang_slovenian/icon_www.gif" alt="Obišči avtorjevo spletno stran" title="Obišči avtorjevo spletno stran" border="0" /></a></td>
+			</tr>
+		</table></td>
+	</tr>
+	<tr>
+		<td class="spaceRow" colspan="2" height="1"><img src="templates/SGD/images/spacer.gif" alt="" width="1" height="1" /></td>
+	</tr>
+	
+	<tr>
+		<td width="150" align="left" valign="top" class="row1"><span class="name"><a name="17581"></a><b>jankoM</b></span><br /><span class="postdetails">inštruktor<br /><img src="images/ranks/sgd-4.gif" alt="inštruktor" title="inštruktor" border="0" /><br /><br /><br />Pridružen: 11. avg 2005 ob 10:06<br />objav: 274<br /></span><br /></td>
+		<td class="row1" width="100%" height="28" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+			<tr>
+				<td colspan="2" width="100%">
+					<table width="100%" cellpadding="0" cellspacing="0" border="0">
+						<tr>
+							<td valign="middle" align="left">
+								<a href="topic-1444.html#17581"><img src="templates/SGD2/images/icon_minipost.gif" width="12" height="9" alt="objava" title="objava" border="0" /></a>
+								<span class="postdetails">Objavljeno: sob sep 01, 2007 2:32 pm<span class="gen">&nbsp;</span>&nbsp; &nbsp;Pošlji temo: </span>
+							</td>
+							<td valign="middle" align="right" nowrap="nowrap">
+							</td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+			<tr>
+				<td colspan="2"><hr /></td>
+			</tr>
+			<tr>
+				<td colspan="2"><span class="postbody">drugač pa itak ne vem kaj ti to sploh govorim... itak naj vsak dela in raziskuje kar hoče... in omejitve so samo v glavi <img src="images/smiles/icon_wink.gif" alt=";)" border="0" />
+
+<br />
+
+
+<br />
+sej zdej bi najrajš kr pobrisu prejšn post samo sem se tolk matru da sem ga skup spravu da ga že zarad tega ne bom <img src="images/smiles/icon_smile.gif" alt=":)" border="0" /><br />_________________<br /><a  target="_blank" class="postlink">Games for kids</a> | <a  target="_blank" class="postlink">Klikni-za-pizzo</a> | <a  target="_blank" class="postlink">REFAKTOR d.o.o.</a> | <a  target="_blank" class="postlink">Oglasko.com</a></span><span class="gensmall"></span></td>
+			</tr>
+		</table></td>
+	</tr>
+	<tr>
+		<td class="row1" width="150" align="left" valign="middle"><span class="nav"><a href="#top" class="nav">Nazaj na vrh</a></span></td>
+		<td class="row1" width="100%" height="28" valign="bottom" nowrap="nowrap"><table cellspacing="0" cellpadding="0" border="0" height="18" width="18">
+			<tr>
+				<td valign="middle" nowrap="nowrap"><a href="profile-243.html"><img src="templates/SGD2/images/lang_slovenian/icon_profile.gif" alt="Poglej uporabnikov profil" title="Poglej uporabnikov profil" border="0" /></a> <a  target="_userwww"><img src="templates/SGD2/images/lang_slovenian/icon_www.gif" alt="Obišči avtorjevo spletno stran" title="Obišči avtorjevo spletno stran" border="0" /></a></td>
+			</tr>
+		</table></td>
+	</tr>
+	<tr>
+		<td class="spaceRow" colspan="2" height="1"><img src="templates/SGD/images/spacer.gif" alt="" width="1" height="1" /></td>
+	</tr>
+	
+	<tr>
+		<td width="150" align="left" valign="top" class="row2"><span class="name"><a name="17582"></a><b>Retro</b></span><br /><span class="postdetails">SGD Admin<br /><img src="images/ranks/sgd-admin.gif" alt="SGD Admin" title="SGD Admin" border="0" /><br /><br /><br />Pridružen: 04. sep 2003 ob 22:14<br />objav: 1008<br />Kraj: ZX Spectrum 48k+</span><br /></td>
+		<td class="row2" width="100%" height="28" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+			<tr>
+				<td colspan="2" width="100%">
+					<table width="100%" cellpadding="0" cellspacing="0" border="0">
+						<tr>
+							<td valign="middle" align="left">
+								<a href="topic-1444.html#17582"><img src="templates/SGD2/images/icon_minipost.gif" width="12" height="9" alt="objava" title="objava" border="0" /></a>
+								<span class="postdetails">Objavljeno: sob sep 01, 2007 3:18 pm<span class="gen">&nbsp;</span>&nbsp; &nbsp;Pošlji temo: </span>
+							</td>
+							<td valign="middle" align="right" nowrap="nowrap">
+							</td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+			<tr>
+				<td colspan="2"><hr /></td>
+			</tr>
+			<tr>
+				<td colspan="2"><span class="postbody">Jaz sem isto prej pomislu <img src="images/smiles/icon_biggrin.gif" alt=":D" border="0" /> Dej Retro, bod tih, pa pejt v sluzbo in se ucit, da bos cimprej mimo izpitov in bo koncno prisel tist teden casa, ko bos lahko naredu en eksperiment v sedmih dneh.<br />_________________<br /><a  target="_blank" class="postlink"><span style="font-weight: bold">Dawn of Play</span></a> // <a  target="_blank" class="postlink"><span style="font-weight: bold">Retronator</span></a></span><span class="gensmall"></span></td>
+			</tr>
+		</table></td>
+	</tr>
+	<tr>
+		<td class="row2" width="150" align="left" valign="middle"><span class="nav"><a href="#top" class="nav">Nazaj na vrh</a></span></td>
+		<td class="row2" width="100%" height="28" valign="bottom" nowrap="nowrap"><table cellspacing="0" cellpadding="0" border="0" height="18" width="18">
+			<tr>
+				<td valign="middle" nowrap="nowrap"><a href="profile-100.html"><img src="templates/SGD2/images/lang_slovenian/icon_profile.gif" alt="Poglej uporabnikov profil" title="Poglej uporabnikov profil" border="0" /></a> <a  target="_userwww"><img src="templates/SGD2/images/lang_slovenian/icon_www.gif" alt="Obišči avtorjevo spletno stran" title="Obišči avtorjevo spletno stran" border="0" /></a></td>
+			</tr>
+		</table></td>
+	</tr>
+	<tr>
+		<td class="spaceRow" colspan="2" height="1"><img src="templates/SGD/images/spacer.gif" alt="" width="1" height="1" /></td>
+	</tr>
+	
+	<tr>
+		<td width="150" align="left" valign="top" class="row1"><span class="name"><a name="17583"></a><b>J.T.</b></span><br /><span class="postdetails">wannabe<br /><img src="images/ranks/sgd-2.gif" alt="wannabe" title="wannabe" border="0" /><br /><br /><br />Pridružen: 06. jul 2007 ob 18:37<br />objav: 82<br /></span><br /></td>
+		<td class="row1" width="100%" height="28" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+			<tr>
+				<td colspan="2" width="100%">
+					<table width="100%" cellpadding="0" cellspacing="0" border="0">
+						<tr>
+							<td valign="middle" align="left">
+								<a href="topic-1444.html#17583"><img src="templates/SGD2/images/icon_minipost.gif" width="12" height="9" alt="objava" title="objava" border="0" /></a>
+								<span class="postdetails">Objavljeno: sob sep 01, 2007 5:15 pm<span class="gen">&nbsp;</span>&nbsp; &nbsp;Pošlji temo: </span>
+							</td>
+							<td valign="middle" align="right" nowrap="nowrap">
+							</td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+			<tr>
+				<td colspan="2"><hr /></td>
+			</tr>
+			<tr>
+				<td colspan="2"><span class="postbody"></span>
+<br />
+<table width="90%" cellspacing="1" cellpadding="3" border="0" align="center">
+<br />
+<tr> 
+<br />
+	  <td><span class="genmed"><b>Citiram:</b></span></td>
+<br />
+	</tr>
+<br />
+	<tr>
+<br />
+	  <td class="quote">Jaz bi bil tu spet Retro (to zdaj, vcasih bi sel seveda delat vecletni plan kot za Lands of Illusions) in pogledal v osemdeseta, kako so nastal FRPji. In bi se spomnil Ultime, al pa vseh tistih FRPjk, kjer si videl 4 portrete in hodil naokoli po svetu iz kvadratkov. Zakaj so bli takrat taki spili? Ker sta jih delala dva al pet ljudi v pol leta. Tudi ta spil ki zgoraj navajas ni videt indie projekt, sicer pa si mogoce falil link, ker si dal od nekega korejskega MMOGja, ne ravno slovaske RPG igre. </td>
+<br />
+	</tr>
+<br />
+</table>
+<br />
+<span class="postbody">
+<br />
+Ravno trenutno berem (v bistvu trenutno berem 10 knjig od opengl, directx do modeliranja, neural networks... multitasking, ja) eno knjigo, ki jo je napisal nekdanji programer pri Ultimi. Ena boljših knjig, 880 strani, natančno opisuje, kako v praksi te stvari zgledajo. 84-urni delovni teden je bil obvezen, veliko njih pa je dobilo tudi simbolično na pol zabavno nagrado, če so bili člani &quot;Club 100&quot;. <img src="images/smiles/icon_smile.gif" alt=":)" border="0" /> Zabavna knjiga.
+<br />
+
+<br />
+</span>
+<br />
+<table width="90%" cellspacing="1" cellpadding="3" border="0" align="center">
+<br />
+<tr> 
+<br />
+	  <td><span class="genmed"><b>Citiram:</b></span></td>
+<br />
+	</tr>
+<br />
+	<tr>
+<br />
+	  <td class="quote">te slike sem pa že nekje videl pa se ne morem spomnt kje.. dej če najdeš link povej ker me mal zanima če se da kej sprobat </td>
+<br />
+	</tr>
+<br />
+</table>
+<br />
+<span class="postbody">
+<br />
+<a class="postlink" >http://www.gamershell.com/download_20322.shtml</a>
+<br />
+Aja, Evo Brett Todd je včeraj nov RPG opisal:
+<br />
+<a class="postlink" >http://www.gamespot.com/pc/rpg/twoworlds/review.html</a>
+<br />
+
+<br />
+</span>
+<br />
+<table width="90%" cellspacing="1" cellpadding="3" border="0" align="center">
+<br />
+<tr> 
+<br />
+	  <td><span class="genmed"><b>Citiram:</b></span></td>
+<br />
+	</tr>
+<br />
+	<tr>
+<br />
+	  <td class="quote">jst ne vem če maš ti čist občutek o skali takega projekta.. npr tud če si kr dober modeler .. a kej veš kolko časa bi delal eno od tistih stavb na tej sceni.. kolk časa vse na sceni... kolk različnih okolij bi mogu ustvarit, kolk animiranih ljudi živali itd... to je samo kar se tiče modeliranja... in s tem bi blo tolk dela da ne vem če bi zgodba nej bi bla še tako velika pri tem imela velki delež </td>
+<br />
+	</tr>
+<br />
+</table>
+<br />
+<span class="postbody">
+<br />
+Zato pa vem, da igre ne bom sam dokončal. Ene par 3d modelarjev in animatorjev se bo moralo pridružiti. Nekoč. Tega dela je ogromno. Zahtevnih 3d modelov se niti lotevati ne mislim trenutno, škoda časa za izdelek, ki bi nastal. <img src="images/smiles/icon_smile.gif" alt=":)" border="0" />
+<br />
+
+<br />
+</span>
+<br />
+<table width="90%" cellspacing="1" cellpadding="3" border="0" align="center">
+<br />
+<tr> 
+<br />
+	  <td><span class="genmed"><b>Citiram:</b></span></td>
+<br />
+	</tr>
+<br />
+	<tr>
+<br />
+	  <td class="quote">drugač če ti je pomembna zgodba , amando fitch ki pravi da ji je zgodba edino pomembno je naredila lani Aveyond ki jo je ful folka špilal in kupil in je postala po yahoo-ju celo neka igra leta ... narejena je pa v RPG-makerju <a class="postlink" >http://www.amaranthia.com/</a></td>
+<br />
+	</tr>
+<br />
+</table>
+<br />
+<span class="postbody">
+<br />
+Dobro se je odločila, če ji je zgodba <span style="font-weight: bold">edino</span> pomembna, zanimiva igra zgleda. nekaj takega sem že pogledal, mislim da je bil ravno rpg maker. Ampak me je preveč oviralo pri designu in tudi pri sami zgodbi. z RPG makerjem ne moreš kar vsake zgodbe implementirati, razen če ne pišeš dolgih vmesnih romanov zelo pomembnih dogodkov, ki bi definitivno morali biti v igri. Spomnim se svoje gimnazijske profesorice slovenščine, ko sva se pred leti srečala. Njena hčerka je hotela študirati slikanje oziroma nekaj v tej smeri. &quot;Ampak to kar je narisala, res ni bilo dobro, je brez talenta,&quot; mi je rekla. In tako je pač hčerki rekla, naj gre raje študirat za učiteljico razrednega pouka, pa še en prijazen argument ji je dala: &quot;boš lahko z otroki risala.&quot; Si mislite, kako ji je moral dol pasti nos, ko ji mama kaj takega reče? <img src="images/smiles/icon_smile.gif" alt=":)" border="0" /> Nekaj podobnega je po mojem trditi, da se da z rpg makerjem vsako zgodbo implementirati. Morda pa samo jaz tega ne znam.
+<br />
+
+<br />
+</span>
+<br />
+<table width="90%" cellspacing="1" cellpadding="3" border="0" align="center">
+<br />
+<tr> 
+<br />
+	  <td><span class="genmed"><b>Citiram:</b></span></td>
+<br />
+	</tr>
+<br />
+	<tr>
+<br />
+	  <td class="quote">pač jst bi tud delal bioshock al pa wow samo da bi mal boljšo grafiko naredu pa boljši AI seveda ker te shooterji še kr nimajo pametnega ai-ja pa tud namesto da se po krki s kajakom furam bi čez niagarske slapove skaku pa še kej..</td>
+<br />
+	</tr>
+<br />
+</table>
+<br />
+<span class="postbody">
+
+<br />
+Eh, pust Bioshock, boring game. <img src="images/smiles/icon_smile.gif" alt=":)" border="0" /> Krka je pa tud zakon... dobro, probaj vsaj še Sočo.  <img src="images/smiles/icon_wink.gif" alt=":wink:" border="0" />
+
+<br />
+
+
+<br />
+Edit: aja glede brisanja ipd... če mislite, da bom kakor koli prizadet z vašimi realističnimi komentarji, ne skrbeti. <img src="images/smiles/icon_smile.gif" alt=":)" border="0" /> Sam ocenjujem verjetnost, da bo ta igra (dokončana) ugledala luč sveta na 0.01, pa še to sem zelo zelo optimističen. Kot vedno. To delam za hobi in to sprejemam, ker s tem nimam problemov.</span><span class="gensmall"></span></td>
+			</tr>
+		</table></td>
+	</tr>
+	<tr>
+		<td class="row1" width="150" align="left" valign="middle"><span class="nav"><a href="#top" class="nav">Nazaj na vrh</a></span></td>
+		<td class="row1" width="100%" height="28" valign="bottom" nowrap="nowrap"><table cellspacing="0" cellpadding="0" border="0" height="18" width="18">
+			<tr>
+				<td valign="middle" nowrap="nowrap"><a href="profile-787.html"><img src="templates/SGD2/images/lang_slovenian/icon_profile.gif" alt="Poglej uporabnikov profil" title="Poglej uporabnikov profil" border="0" /></a> </td>
+			</tr>
+		</table></td>
+	</tr>
+	<tr>
+		<td class="spaceRow" colspan="2" height="1"><img src="templates/SGD/images/spacer.gif" alt="" width="1" height="1" /></td>
+	</tr>
+	
+	<tr>
+		<td width="150" align="left" valign="top" class="row2"><span class="name"><a name="17634"></a><b>Retro</b></span><br /><span class="postdetails">SGD Admin<br /><img src="images/ranks/sgd-admin.gif" alt="SGD Admin" title="SGD Admin" border="0" /><br /><br /><br />Pridružen: 04. sep 2003 ob 22:14<br />objav: 1008<br />Kraj: ZX Spectrum 48k+</span><br /></td>
+		<td class="row2" width="100%" height="28" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+			<tr>
+				<td colspan="2" width="100%">
+					<table width="100%" cellpadding="0" cellspacing="0" border="0">
+						<tr>
+							<td valign="middle" align="left">
+								<a href="topic-1444.html#17634"><img src="templates/SGD2/images/icon_minipost.gif" width="12" height="9" alt="objava" title="objava" border="0" /></a>
+								<span class="postdetails">Objavljeno: tor sep 11, 2007 1:03 pm<span class="gen">&nbsp;</span>&nbsp; &nbsp;Pošlji temo: </span>
+							</td>
+							<td valign="middle" align="right" nowrap="nowrap">
+							</td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+			<tr>
+				<td colspan="2"><hr /></td>
+			</tr>
+			<tr>
+				<td colspan="2"><span class="postbody">Ker vem da ste leni in niste sli gledat Tower of Goo, ceprav je tako mega zabeven, evo, tle imate zdaj trailer spila World of Goo, ki je nastaja iz tistega eksperimenta:
+
+<br />
+<a class="postlink" >http://2dboy.com/trailer.php</a><br />_________________<br /><a  target="_blank" class="postlink"><span style="font-weight: bold">Dawn of Play</span></a> // <a  target="_blank" class="postlink"><span style="font-weight: bold">Retronator</span></a></span><span class="gensmall"></span></td>
+			</tr>
+		</table></td>
+	</tr>
+	<tr>
+		<td class="row2" width="150" align="left" valign="middle"><span class="nav"><a href="#top" class="nav">Nazaj na vrh</a></span></td>
+		<td class="row2" width="100%" height="28" valign="bottom" nowrap="nowrap"><table cellspacing="0" cellpadding="0" border="0" height="18" width="18">
+			<tr>
+				<td valign="middle" nowrap="nowrap"><a href="profile-100.html"><img src="templates/SGD2/images/lang_slovenian/icon_profile.gif" alt="Poglej uporabnikov profil" title="Poglej uporabnikov profil" border="0" /></a> <a  target="_userwww"><img src="templates/SGD2/images/lang_slovenian/icon_www.gif" alt="Obišči avtorjevo spletno stran" title="Obišči avtorjevo spletno stran" border="0" /></a></td>
+			</tr>
+		</table></td>
+	</tr>
+	<tr>
+		<td class="spaceRow" colspan="2" height="1"><img src="templates/SGD/images/spacer.gif" alt="" width="1" height="1" /></td>
+	</tr>
+	
+	<tr>
+		<td width="150" align="left" valign="top" class="row1"><span class="name"><a name="17635"></a><b>Wing</b></span><br /><span class="postdetails">SGD Admin<br /><img src="images/ranks/sgd-admin.gif" alt="SGD Admin" title="SGD Admin" border="0" /><br /><br /><br />Pridružen: 08. jan 2003 ob 21:33<br />objav: 481<br />Kraj: Kranj</span><br /></td>
+		<td class="row1" width="100%" height="28" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+			<tr>
+				<td colspan="2" width="100%">
+					<table width="100%" cellpadding="0" cellspacing="0" border="0">
+						<tr>
+							<td valign="middle" align="left">
+								<a href="topic-1444.html#17635"><img src="templates/SGD2/images/icon_minipost.gif" width="12" height="9" alt="objava" title="objava" border="0" /></a>
+								<span class="postdetails">Objavljeno: tor sep 11, 2007 1:13 pm<span class="gen">&nbsp;</span>&nbsp; &nbsp;Pošlji temo: </span>
+							</td>
+							<td valign="middle" align="right" nowrap="nowrap">
+							</td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+			<tr>
+				<td colspan="2"><hr /></td>
+			</tr>
+			<tr>
+				<td colspan="2"><span class="postbody">Še en (vsaj meni) zanimiv indie špil, ki ga delata dva človeka: <a  target="_blank" class="postlink">Aquaria</a> - poskrolajte dol za video.
+
+<br />
+Obstaja tud <a  target="_blank" class="postlink">blog</a> o tem. Če bo koga zanimalo...
+
+<br />
+
+
+<br />
+Tale Goo pa tud ne zgleda slabo. <img src="images/smiles/icon_smile.gif" alt=":)" border="0" /></span><span class="gensmall"></span></td>
+			</tr>
+		</table></td>
+	</tr>
+	<tr>
+		<td class="row1" width="150" align="left" valign="middle"><span class="nav"><a href="#top" class="nav">Nazaj na vrh</a></span></td>
+		<td class="row1" width="100%" height="28" valign="bottom" nowrap="nowrap"><table cellspacing="0" cellpadding="0" border="0" height="18" width="18">
+			<tr>
+				<td valign="middle" nowrap="nowrap"><a href="profile-7.html"><img src="templates/SGD2/images/lang_slovenian/icon_profile.gif" alt="Poglej uporabnikov profil" title="Poglej uporabnikov profil" border="0" /></a> </td>
+			</tr>
+		</table></td>
+	</tr>
+	<tr>
+		<td class="spaceRow" colspan="2" height="1"><img src="templates/SGD/images/spacer.gif" alt="" width="1" height="1" /></td>
+	</tr>
+	
+	<tr>
+		<td width="150" align="left" valign="top" class="row2"><span class="name"><a name="17636"></a><b>ArYeS</b></span><br /><span class="postdetails">expert<br /><img src="images/ranks/sgd-6.gif" alt="expert" title="expert" border="0" /><br /><img src="images/avatars/c14d4e41428ef6735091f.gif" alt="" border="0" /><br /><br />Pridružen: 18. jan 2004 ob 21:21<br />objav: 717<br />Kraj: Miren</span><br /></td>
+		<td class="row2" width="100%" height="28" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+			<tr>
+				<td colspan="2" width="100%">
+					<table width="100%" cellpadding="0" cellspacing="0" border="0">
+						<tr>
+							<td valign="middle" align="left">
+								<a href="topic-1444.html#17636"><img src="templates/SGD2/images/icon_minipost.gif" width="12" height="9" alt="objava" title="objava" border="0" /></a>
+								<span class="postdetails">Objavljeno: tor sep 11, 2007 2:41 pm<span class="gen">&nbsp;</span>&nbsp; &nbsp;Pošlji temo: </span>
+							</td>
+							<td valign="middle" align="right" nowrap="nowrap">
+							</td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+			<tr>
+				<td colspan="2"><hr /></td>
+			</tr>
+			<tr>
+				<td colspan="2"><span class="postbody">Igral sem Tower of Goo že pred nekaj meseci, kar fascinantna igra. Aquaria pa tudi kar lepo pobira nagrade.. lepo videti kako nekaj indie špilov kar dobro uspeva.<br />_________________<br /><a class="postlink" >http://www.inverse-gravity.net</a></span><span class="gensmall"></span></td>
+			</tr>
+		</table></td>
+	</tr>
+	<tr>
+		<td class="row2" width="150" align="left" valign="middle"><span class="nav"><a href="#top" class="nav">Nazaj na vrh</a></span></td>
+		<td class="row2" width="100%" height="28" valign="bottom" nowrap="nowrap"><table cellspacing="0" cellpadding="0" border="0" height="18" width="18">
+			<tr>
+				<td valign="middle" nowrap="nowrap"><a href="profile-145.html"><img src="templates/SGD2/images/lang_slovenian/icon_profile.gif" alt="Poglej uporabnikov profil" title="Poglej uporabnikov profil" border="0" /></a> <a  target="_userwww"><img src="templates/SGD2/images/lang_slovenian/icon_www.gif" alt="Obišči avtorjevo spletno stran" title="Obišči avtorjevo spletno stran" border="0" /></a></td>
+			</tr>
+		</table></td>
+	</tr>
+	<tr>
+		<td class="spaceRow" colspan="2" height="1"><img src="templates/SGD/images/spacer.gif" alt="" width="1" height="1" /></td>
+	</tr>
+	
+	<tr>
+		<td width="150" align="left" valign="top" class="row1"><span class="name"><a name="17641"></a><b>J.T.</b></span><br /><span class="postdetails">wannabe<br /><img src="images/ranks/sgd-2.gif" alt="wannabe" title="wannabe" border="0" /><br /><br /><br />Pridružen: 06. jul 2007 ob 18:37<br />objav: 82<br /></span><br /></td>
+		<td class="row1" width="100%" height="28" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+			<tr>
+				<td colspan="2" width="100%">
+					<table width="100%" cellpadding="0" cellspacing="0" border="0">
+						<tr>
+							<td valign="middle" align="left">
+								<a href="topic-1444.html#17641"><img src="templates/SGD2/images/icon_minipost.gif" width="12" height="9" alt="objava" title="objava" border="0" /></a>
+								<span class="postdetails">Objavljeno: sre sep 12, 2007 5:08 am<span class="gen">&nbsp;</span>&nbsp; &nbsp;Pošlji temo: </span>
+							</td>
+							<td valign="middle" align="right" nowrap="nowrap">
+							</td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+			<tr>
+				<td colspan="2"><hr /></td>
+			</tr>
+			<tr>
+				<td colspan="2"><span class="postbody">Goo koncept zgleda igralen, zanimiv, inovativen. Aquario pa osebno ne bi igral, sem že preveč iger na isto foro obrnil v življenju.
+
+<br />
+
+
+<br />
+BTW, sem gledal, kdo <a  target="_blank" class="postlink">dela</a> World of Goo in čeprav sta le dva, sta s svojim znanjem in izkušnjami verjetno za celo ekipo &quot;običajnih&quot; indiev. Vsekakor pa zanimiv način dela, če delata na opisani način. <img src="images/smiles/icon_smile.gif" alt=":)" border="0" /></span><span class="gensmall"></span></td>
+			</tr>
+		</table></td>
+	</tr>
+	<tr>
+		<td class="row1" width="150" align="left" valign="middle"><span class="nav"><a href="#top" class="nav">Nazaj na vrh</a></span></td>
+		<td class="row1" width="100%" height="28" valign="bottom" nowrap="nowrap"><table cellspacing="0" cellpadding="0" border="0" height="18" width="18">
+			<tr>
+				<td valign="middle" nowrap="nowrap"><a href="profile-787.html"><img src="templates/SGD2/images/lang_slovenian/icon_profile.gif" alt="Poglej uporabnikov profil" title="Poglej uporabnikov profil" border="0" /></a> </td>
+			</tr>
+		</table></td>
+	</tr>
+	<tr>
+		<td class="spaceRow" colspan="2" height="1"><img src="templates/SGD/images/spacer.gif" alt="" width="1" height="1" /></td>
+	</tr>
+	
+	<tr>
+		<td width="150" align="left" valign="top" class="row2"><span class="name"><a name="17918"></a><b>Retro</b></span><br /><span class="postdetails">SGD Admin<br /><img src="images/ranks/sgd-admin.gif" alt="SGD Admin" title="SGD Admin" border="0" /><br /><br /><br />Pridružen: 04. sep 2003 ob 22:14<br />objav: 1008<br />Kraj: ZX Spectrum 48k+</span><br /></td>
+		<td class="row2" width="100%" height="28" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+			<tr>
+				<td colspan="2" width="100%">
+					<table width="100%" cellpadding="0" cellspacing="0" border="0">
+						<tr>
+							<td valign="middle" align="left">
+								<a href="topic-1444.html#17918"><img src="templates/SGD2/images/icon_minipost.gif" width="12" height="9" alt="objava" title="objava" border="0" /></a>
+								<span class="postdetails">Objavljeno: tor dec 04, 2007 4:36 am<span class="gen">&nbsp;</span>&nbsp; &nbsp;Pošlji temo: </span>
+							</td>
+							<td valign="middle" align="right" nowrap="nowrap">
+							</td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+			<tr>
+				<td colspan="2"><hr /></td>
+			</tr>
+			<tr>
+				<td colspan="2"><span class="postbody">Finalisti Independent Games Festivala so oznanjeni! Zakaj pisem v ta topic, kjer smo debatirali o experimental gameplay projectu? Ker sta med finalisti kar dve igri, nastali iz taksnih prototipov:
+
+<br />
+<a class="postlink" >http://igf.com/02finalists.html</a>
+
+<br />
+
+
+<br />
+Seumas McNally Grand Prize:
+
+<br />
+Audiosurf
+
+<br />
+<span style="font-weight: bold">Crayon Physics Deluxe</span>
+
+<br />
+Hammerfall
+
+<br />
+Noitu Love 2: Devolution
+
+<br />
+<span style="font-weight: bold">World of Goo</span>
+
+<br />
+
+
+<br />
+Best Web Browser Game:
+
+<br />
+Globulos.com
+
+<br />
+Iron Dukes
+
+<br />
+Tri-Achnid
+
+<br />
+
+
+<br />
+Design Innovation Award:
+
+<br />
+Battleships Forever
+
+<br />
+Fez
+
+<br />
+Fret Nice
+
+<br />
+Snapshot Adventures: Secret Of Bird Island
+
+<br />
+World Of Goo
+
+<br />
+
+
+<br />
+Excellence in Visual Art:
+
+<br />
+Clean Asia!
+
+<br />
+Fez
+
+<br />
+Hammerfall
+
+<br />
+Synaesthete
+
+<br />
+The Path
+
+<br />
+
+
+<br />
+Excellence in Audio:
+
+<br />
+Cinnamon Beats
+
+<br />
+Fret Nice
+
+<br />
+Audiosurf
+
+<br />
+Clean Asia!
+
+<br />
+OokiBloks
+
+<br />
+
+
+<br />
+Technical Excellence:
+
+<br />
+World of Goo
+
+<br />
+Goo!
+
+<br />
+Audiosurf
+
+<br />
+Axiom: Overdrive
+
+<br />
+Gumboy Tournament
+
+<br />
+
+
+<br />
+
+
+<br />
+Mater, da decembra naredim en tak spil v enem tednu. Se slisimo.<br />_________________<br /><a  target="_blank" class="postlink"><span style="font-weight: bold">Dawn of Play</span></a> // <a  target="_blank" class="postlink"><span style="font-weight: bold">Retronator</span></a></span><span class="gensmall"></span></td>
+			</tr>
+		</table></td>
+	</tr>
+	<tr>
+		<td class="row2" width="150" align="left" valign="middle"><span class="nav"><a href="#top" class="nav">Nazaj na vrh</a></span></td>
+		<td class="row2" width="100%" height="28" valign="bottom" nowrap="nowrap"><table cellspacing="0" cellpadding="0" border="0" height="18" width="18">
+			<tr>
+				<td valign="middle" nowrap="nowrap"><a href="profile-100.html"><img src="templates/SGD2/images/lang_slovenian/icon_profile.gif" alt="Poglej uporabnikov profil" title="Poglej uporabnikov profil" border="0" /></a> <a  target="_userwww"><img src="templates/SGD2/images/lang_slovenian/icon_www.gif" alt="Obišči avtorjevo spletno stran" title="Obišči avtorjevo spletno stran" border="0" /></a></td>
+			</tr>
+		</table></td>
+	</tr>
+	<tr>
+		<td class="spaceRow" colspan="2" height="1"><img src="templates/SGD/images/spacer.gif" alt="" width="1" height="1" /></td>
+	</tr>
+	
+	<tr>
+		<td width="150" align="left" valign="top" class="row1"><span class="name"><a name="17921"></a><b>Iason</b></span><br /><span class="postdetails">inštruktor<br /><img src="images/ranks/sgd-4.gif" alt="inštruktor" title="inštruktor" border="0" /><br /><br /><br />Pridružen: 21. sep 2004 ob 22:57<br />objav: 329<br />Kraj: Kranj</span><br /></td>
+		<td class="row1" width="100%" height="28" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+			<tr>
+				<td colspan="2" width="100%">
+					<table width="100%" cellpadding="0" cellspacing="0" border="0">
+						<tr>
+							<td valign="middle" align="left">
+								<a href="topic-1444.html#17921"><img src="templates/SGD2/images/icon_minipost.gif" width="12" height="9" alt="objava" title="objava" border="0" /></a>
+								<span class="postdetails">Objavljeno: sre dec 05, 2007 11:28 pm<span class="gen">&nbsp;</span>&nbsp; &nbsp;Pošlji temo: </span>
+							</td>
+							<td valign="middle" align="right" nowrap="nowrap">
+							</td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+			<tr>
+				<td colspan="2"><hr /></td>
+			</tr>
+			<tr>
+				<td colspan="2"><span class="postbody">Ah, zamudil sem  <img src="images/smiles/icon_sad.gif" alt=":(" border="0" /> 
+
+<br />
+nekdo je naredil &quot;mojo&quot; igro in dobil Design Innovation Award.
+
+<br />
+Battleships Forever
+
+<br />
+
+
+<br />
+Kaj točno pomeni design innovation?
+
+<br />
+A je to gameplay?</span><span class="gensmall"></span></td>
+			</tr>
+		</table></td>
+	</tr>
+	<tr>
+		<td class="row1" width="150" align="left" valign="middle"><span class="nav"><a href="#top" class="nav">Nazaj na vrh</a></span></td>
+		<td class="row1" width="100%" height="28" valign="bottom" nowrap="nowrap"><table cellspacing="0" cellpadding="0" border="0" height="18" width="18">
+			<tr>
+				<td valign="middle" nowrap="nowrap"><a href="profile-202.html"><img src="templates/SGD2/images/lang_slovenian/icon_profile.gif" alt="Poglej uporabnikov profil" title="Poglej uporabnikov profil" border="0" /></a> </td>
+			</tr>
+		</table></td>
+	</tr>
+	<tr>
+		<td class="spaceRow" colspan="2" height="1"><img src="templates/SGD/images/spacer.gif" alt="" width="1" height="1" /></td>
+	</tr>
+	
+	<tr>
+		<td width="150" align="left" valign="top" class="row2"><span class="name"><a name="17922"></a><b>J.T.</b></span><br /><span class="postdetails">wannabe<br /><img src="images/ranks/sgd-2.gif" alt="wannabe" title="wannabe" border="0" /><br /><br /><br />Pridružen: 06. jul 2007 ob 18:37<br />objav: 82<br /></span><br /></td>
+		<td class="row2" width="100%" height="28" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+			<tr>
+				<td colspan="2" width="100%">
+					<table width="100%" cellpadding="0" cellspacing="0" border="0">
+						<tr>
+							<td valign="middle" align="left">
+								<a href="topic-1444.html#17922"><img src="templates/SGD2/images/icon_minipost.gif" width="12" height="9" alt="objava" title="objava" border="0" /></a>
+								<span class="postdetails">Objavljeno: čet dec 06, 2007 3:39 am<span class="gen">&nbsp;</span>&nbsp; &nbsp;Pošlji temo: </span>
+							</td>
+							<td valign="middle" align="right" nowrap="nowrap">
+							</td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+			<tr>
+				<td colspan="2"><hr /></td>
+			</tr>
+			<tr>
+				<td colspan="2"><span class="postbody">Sicer ni med temi igrami, ampak sem pred kratkim zvedel, da nekdo dela igro, za katero sem mislil da imam originalno idejo. Ne moreš verjet.  <img src="images/smiles/icon_sad.gif" alt=":(" border="0" /> Bi ga poskusil prehiteti, ampak njegova igra zgleda kot da bo AAA naslov, ima izreden CV.
+
+<br />
+
+
+<br />
+Še eno svojo &quot;originalno&quot; tehniko sem našel opisano na netu. Menda jo je že nekdo drug odkril pred 27 leti, patentiral in do zdaj je patent že potekel.
+
+<br />
+
+
+<br />
+Dobra stran je, da vsaj vidim, da imam dobre ideje.  <img src="images/smiles/icon_confused.gif" alt=":?" border="0" /></span><span class="gensmall"></span></td>
+			</tr>
+		</table></td>
+	</tr>
+	<tr>
+		<td class="row2" width="150" align="left" valign="middle"><span class="nav"><a href="#top" class="nav">Nazaj na vrh</a></span></td>
+		<td class="row2" width="100%" height="28" valign="bottom" nowrap="nowrap"><table cellspacing="0" cellpadding="0" border="0" height="18" width="18">
+			<tr>
+				<td valign="middle" nowrap="nowrap"><a href="profile-787.html"><img src="templates/SGD2/images/lang_slovenian/icon_profile.gif" alt="Poglej uporabnikov profil" title="Poglej uporabnikov profil" border="0" /></a> </td>
+			</tr>
+		</table></td>
+	</tr>
+	<tr>
+		<td class="spaceRow" colspan="2" height="1"><img src="templates/SGD/images/spacer.gif" alt="" width="1" height="1" /></td>
+	</tr>
+	
+	<tr>
+		<td width="150" align="left" valign="top" class="row1"><span class="name"><a name="17923"></a><b>ArYeS</b></span><br /><span class="postdetails">expert<br /><img src="images/ranks/sgd-6.gif" alt="expert" title="expert" border="0" /><br /><img src="images/avatars/c14d4e41428ef6735091f.gif" alt="" border="0" /><br /><br />Pridružen: 18. jan 2004 ob 21:21<br />objav: 717<br />Kraj: Miren</span><br /></td>
+		<td class="row1" width="100%" height="28" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+			<tr>
+				<td colspan="2" width="100%">
+					<table width="100%" cellpadding="0" cellspacing="0" border="0">
+						<tr>
+							<td valign="middle" align="left">
+								<a href="topic-1444.html#17923"><img src="templates/SGD2/images/icon_minipost.gif" width="12" height="9" alt="objava" title="objava" border="0" /></a>
+								<span class="postdetails">Objavljeno: čet dec 06, 2007 5:41 pm<span class="gen">&nbsp;</span>&nbsp; &nbsp;Pošlji temo: </span>
+							</td>
+							<td valign="middle" align="right" nowrap="nowrap">
+							</td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+			<tr>
+				<td colspan="2"><hr /></td>
+			</tr>
+			<tr>
+				<td colspan="2"><span class="postbody"></span>
+<br />
+<table width="90%" cellspacing="1" cellpadding="3" border="0" align="center">
+<br />
+<tr> 
+<br />
+	  <td><span class="genmed"><b>Iason je napisal:</b></span></td>
+<br />
+	</tr>
+<br />
+	<tr>
+<br />
+	  <td class="quote">Kaj točno pomeni design innovation?
+<br />
+A je to gameplay?</td>
+<br />
+	</tr>
+<br />
+</table>
+<br />
+<span class="postbody">
+
+<br />
+
+
+<br />
+Gre za inovativnost v gameplayu <img src="images/smiles/icon_wink.gif" alt=";)" border="0" /><br />_________________<br /><a class="postlink" >http://www.inverse-gravity.net</a></span><span class="gensmall"></span></td>
+			</tr>
+		</table></td>
+	</tr>
+	<tr>
+		<td class="row1" width="150" align="left" valign="middle"><span class="nav"><a href="#top" class="nav">Nazaj na vrh</a></span></td>
+		<td class="row1" width="100%" height="28" valign="bottom" nowrap="nowrap"><table cellspacing="0" cellpadding="0" border="0" height="18" width="18">
+			<tr>
+				<td valign="middle" nowrap="nowrap"><a href="profile-145.html"><img src="templates/SGD2/images/lang_slovenian/icon_profile.gif" alt="Poglej uporabnikov profil" title="Poglej uporabnikov profil" border="0" /></a> <a  target="_userwww"><img src="templates/SGD2/images/lang_slovenian/icon_www.gif" alt="Obišči avtorjevo spletno stran" title="Obišči avtorjevo spletno stran" border="0" /></a></td>
+			</tr>
+		</table></td>
+	</tr>
+	<tr>
+		<td class="spaceRow" colspan="2" height="1"><img src="templates/SGD/images/spacer.gif" alt="" width="1" height="1" /></td>
+	</tr>
+	
+	<tr>
+		<td width="150" align="left" valign="top" class="row2"><span class="name"><a name="17924"></a><b>Retro</b></span><br /><span class="postdetails">SGD Admin<br /><img src="images/ranks/sgd-admin.gif" alt="SGD Admin" title="SGD Admin" border="0" /><br /><br /><br />Pridružen: 04. sep 2003 ob 22:14<br />objav: 1008<br />Kraj: ZX Spectrum 48k+</span><br /></td>
+		<td class="row2" width="100%" height="28" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+			<tr>
+				<td colspan="2" width="100%">
+					<table width="100%" cellpadding="0" cellspacing="0" border="0">
+						<tr>
+							<td valign="middle" align="left">
+								<a href="topic-1444.html#17924"><img src="templates/SGD2/images/icon_minipost.gif" width="12" height="9" alt="objava" title="objava" border="0" /></a>
+								<span class="postdetails">Objavljeno: čet dec 06, 2007 8:46 pm<span class="gen">&nbsp;</span>&nbsp; &nbsp;Pošlji temo: </span>
+							</td>
+							<td valign="middle" align="right" nowrap="nowrap">
+							</td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+			<tr>
+				<td colspan="2"><hr /></td>
+			</tr>
+			<tr>
+				<td colspan="2"><span class="postbody">Jaz sem imel idejo za Bomboholica, da bi bili nivoji taki <a  target="_blank" class="postlink">Escherjevski</a> (stopnice, ki grejo vedno gor in take opticne prevare). Potem kmalu je prisel E3, kjer so pokazal en downloadable spil za PS3, ki se dogaja v tocno takih svetovih. Mamuti.
+
+<br />
+
+
+<br />
+Za tole kar bom zdaj naredil, upam da bom res prvi, vsaj jaz ne poznam oz na netu se nisem nasel kaj takega. Namrec kot Guitar Hero, le da ne igras vnaprej dolocenih komadov, ampak lahko sam zagas, kot ti pase. Kot nekak freeplay mode pri bobnih v Rock Bandu, samo za kitaro. Ni ravno spil, zna bit pa hudo zabavno.<br />_________________<br /><a  target="_blank" class="postlink"><span style="font-weight: bold">Dawn of Play</span></a> // <a  target="_blank" class="postlink"><span style="font-weight: bold">Retronator</span></a></span><span class="gensmall"></span></td>
+			</tr>
+		</table></td>
+	</tr>
+	<tr>
+		<td class="row2" width="150" align="left" valign="middle"><span class="nav"><a href="#top" class="nav">Nazaj na vrh</a></span></td>
+		<td class="row2" width="100%" height="28" valign="bottom" nowrap="nowrap"><table cellspacing="0" cellpadding="0" border="0" height="18" width="18">
+			<tr>
+				<td valign="middle" nowrap="nowrap"><a href="profile-100.html"><img src="templates/SGD2/images/lang_slovenian/icon_profile.gif" alt="Poglej uporabnikov profil" title="Poglej uporabnikov profil" border="0" /></a> <a  target="_userwww"><img src="templates/SGD2/images/lang_slovenian/icon_www.gif" alt="Obišči avtorjevo spletno stran" title="Obišči avtorjevo spletno stran" border="0" /></a></td>
+			</tr>
+		</table></td>
+	</tr>
+	<tr>
+		<td class="spaceRow" colspan="2" height="1"><img src="templates/SGD/images/spacer.gif" alt="" width="1" height="1" /></td>
+	</tr>
+	
+	<tr>
+		<td width="150" align="left" valign="top" class="row1"><span class="name"><a name="17925"></a><b>Iason</b></span><br /><span class="postdetails">inštruktor<br /><img src="images/ranks/sgd-4.gif" alt="inštruktor" title="inštruktor" border="0" /><br /><br /><br />Pridružen: 21. sep 2004 ob 22:57<br />objav: 329<br />Kraj: Kranj</span><br /></td>
+		<td class="row1" width="100%" height="28" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+			<tr>
+				<td colspan="2" width="100%">
+					<table width="100%" cellpadding="0" cellspacing="0" border="0">
+						<tr>
+							<td valign="middle" align="left">
+								<a href="topic-1444.html#17925"><img src="templates/SGD2/images/icon_minipost.gif" width="12" height="9" alt="objava" title="objava" border="0" /></a>
+								<span class="postdetails">Objavljeno: čet dec 06, 2007 9:14 pm<span class="gen">&nbsp;</span>&nbsp; &nbsp;Pošlji temo: </span>
+							</td>
+							<td valign="middle" align="right" nowrap="nowrap">
+							</td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+			<tr>
+				<td colspan="2"><hr /></td>
+			</tr>
+			<tr>
+				<td colspan="2"><span class="postbody"></span>
+<br />
+<table width="90%" cellspacing="1" cellpadding="3" border="0" align="center">
+<br />
+<tr> 
+<br />
+	  <td><span class="genmed"><b>aryes je napisal:</b></span></td>
+<br />
+	</tr>
+<br />
+	<tr>
+<br />
+	  <td class="quote"></span>
+<br />
+<table width="90%" cellspacing="1" cellpadding="3" border="0" align="center">
+<br />
+<tr> 
+<br />
+	  <td><span class="genmed"><b>Iason je napisal:</b></span></td>
+<br />
+	</tr>
+<br />
+	<tr>
+<br />
+	  <td class="quote">Kaj točno pomeni design innovation?
+<br />
+A je to gameplay?</td>
+<br />
+	</tr>
+<br />
+</table>
+<br />
+<span class="postbody">
+<br />
+
+<br />
+Gre za inovativnost v gameplayu <img src="images/smiles/icon_wink.gif" alt=";)" border="0" /></td>
+<br />
+	</tr>
+<br />
+</table>
+<br />
+<span class="postbody">
+
+<br />
+No to pomeni da imam tudi jaz kakšne inovativne gameplay ideje <img src="images/smiles/icon_biggrin.gif" alt=":D" border="0" /></span><span class="gensmall"></span></td>
+			</tr>
+		</table></td>
+	</tr>
+	<tr>
+		<td class="row1" width="150" align="left" valign="middle"><span class="nav"><a href="#top" class="nav">Nazaj na vrh</a></span></td>
+		<td class="row1" width="100%" height="28" valign="bottom" nowrap="nowrap"><table cellspacing="0" cellpadding="0" border="0" height="18" width="18">
+			<tr>
+				<td valign="middle" nowrap="nowrap"><a href="profile-202.html"><img src="templates/SGD2/images/lang_slovenian/icon_profile.gif" alt="Poglej uporabnikov profil" title="Poglej uporabnikov profil" border="0" /></a> </td>
+			</tr>
+		</table></td>
+	</tr>
+	<tr>
+		<td class="spaceRow" colspan="2" height="1"><img src="templates/SGD/images/spacer.gif" alt="" width="1" height="1" /></td>
+	</tr>
+	
+	<tr>
+		<td width="150" align="left" valign="top" class="row2"><span class="name"><a name="17926"></a><b>Wing</b></span><br /><span class="postdetails">SGD Admin<br /><img src="images/ranks/sgd-admin.gif" alt="SGD Admin" title="SGD Admin" border="0" /><br /><br /><br />Pridružen: 08. jan 2003 ob 21:33<br />objav: 481<br />Kraj: Kranj</span><br /></td>
+		<td class="row2" width="100%" height="28" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+			<tr>
+				<td colspan="2" width="100%">
+					<table width="100%" cellpadding="0" cellspacing="0" border="0">
+						<tr>
+							<td valign="middle" align="left">
+								<a href="topic-1444.html#17926"><img src="templates/SGD2/images/icon_minipost.gif" width="12" height="9" alt="objava" title="objava" border="0" /></a>
+								<span class="postdetails">Objavljeno: čet dec 06, 2007 10:56 pm<span class="gen">&nbsp;</span>&nbsp; &nbsp;Pošlji temo: </span>
+							</td>
+							<td valign="middle" align="right" nowrap="nowrap">
+							</td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+			<tr>
+				<td colspan="2"><hr /></td>
+			</tr>
+			<tr>
+				<td colspan="2"><span class="postbody"></span>
+<br />
+<table width="90%" cellspacing="1" cellpadding="3" border="0" align="center">
+<br />
+<tr> 
+<br />
+	  <td><span class="genmed"><b>Retro je napisal:</b></span></td>
+<br />
+	</tr>
+<br />
+	<tr>
+<br />
+	  <td class="quote">
+<br />
+Za tole kar bom zdaj naredil, upam da bom res prvi, vsaj jaz ne poznam oz na netu se nisem nasel kaj takega. Namrec kot Guitar Hero, le da ne igras vnaprej dolocenih komadov, ampak lahko sam zagas, kot ti pase. Kot nekak freeplay mode pri bobnih v Rock Bandu, samo za kitaro. Ni ravno spil, zna bit pa hudo zabavno.</td>
+<br />
+	</tr>
+<br />
+</table>
+<br />
+<span class="postbody">
+
+<br />
+OMG, s TOČNO isto stvarjo sem se jaz igral v mislih. <img src="images/smiles/icon_biggrin.gif" alt=":D" border="0" /> Nikoli sicer nisem imel resnega namena to narediti, ampak vseeno sem večkrat pomislil na točno isti koncept. <img src="images/smiles/icon_smile.gif" alt=":)" border="0" /> Pa razmišljal sem tudi nekaj v smeri, da ti žaga komad, ti pa po ritmu pritiskaš tipke in se ne moreš zmotiti, pač po filingu (čisto špilčič za 15 minutno sprostitev ob glasbi, če se to sploh lahko imenuje špil, pač bolj intenzivno doživljanje glasbe). <img src="images/smiles/icon_smile.gif" alt=":)" border="0" />
+
+<br />
+
+
+<br />
+Sicer pa nekaj, s čimer se da početi za silo podobno stvar, že obstaja - imenuje se Guitar Pro. <img src="images/smiles/icon_smile.gif" alt=":)" border="0" /> (nič bat, je software za tablature in te stvari, ne igra <img src="images/smiles/icon_smile.gif" alt=":)" border="0" />)
+
+<br />
+
+
+<br />
+Izvirne ideje so križ hehe. <img src="images/smiles/icon_smile.gif" alt=":)" border="0" /></span><span class="gensmall"></span></td>
+			</tr>
+		</table></td>
+	</tr>
+	<tr>
+		<td class="row2" width="150" align="left" valign="middle"><span class="nav"><a href="#top" class="nav">Nazaj na vrh</a></span></td>
+		<td class="row2" width="100%" height="28" valign="bottom" nowrap="nowrap"><table cellspacing="0" cellpadding="0" border="0" height="18" width="18">
+			<tr>
+				<td valign="middle" nowrap="nowrap"><a href="profile-7.html"><img src="templates/SGD2/images/lang_slovenian/icon_profile.gif" alt="Poglej uporabnikov profil" title="Poglej uporabnikov profil" border="0" /></a> </td>
+			</tr>
+		</table></td>
+	</tr>
+	<tr>
+		<td class="spaceRow" colspan="2" height="1"><img src="templates/SGD/images/spacer.gif" alt="" width="1" height="1" /></td>
+	</tr>
+	
+	<tr>
+		<td width="150" align="left" valign="top" class="row1"><span class="name"><a name="17927"></a><b>ArYeS</b></span><br /><span class="postdetails">expert<br /><img src="images/ranks/sgd-6.gif" alt="expert" title="expert" border="0" /><br /><img src="images/avatars/c14d4e41428ef6735091f.gif" alt="" border="0" /><br /><br />Pridružen: 18. jan 2004 ob 21:21<br />objav: 717<br />Kraj: Miren</span><br /></td>
+		<td class="row1" width="100%" height="28" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+			<tr>
+				<td colspan="2" width="100%">
+					<table width="100%" cellpadding="0" cellspacing="0" border="0">
+						<tr>
+							<td valign="middle" align="left">
+								<a href="topic-1444.html#17927"><img src="templates/SGD2/images/icon_minipost.gif" width="12" height="9" alt="objava" title="objava" border="0" /></a>
+								<span class="postdetails">Objavljeno: čet dec 06, 2007 11:24 pm<span class="gen">&nbsp;</span>&nbsp; &nbsp;Pošlji temo: </span>
+							</td>
+							<td valign="middle" align="right" nowrap="nowrap">
+							</td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+			<tr>
+				<td colspan="2"><hr /></td>
+			</tr>
+			<tr>
+				<td colspan="2"><span class="postbody">Retro, pred kratkim sem ravno tako igro iskal... prosim te naredi kaj takega <img src="images/smiles/icon_biggrin.gif" alt=":D" border="0" /><br />_________________<br /><a class="postlink" >http://www.inverse-gravity.net</a></span><span class="gensmall"></span></td>
+			</tr>
+		</table></td>
+	</tr>
+	<tr>
+		<td class="row1" width="150" align="left" valign="middle"><span class="nav"><a href="#top" class="nav">Nazaj na vrh</a></span></td>
+		<td class="row1" width="100%" height="28" valign="bottom" nowrap="nowrap"><table cellspacing="0" cellpadding="0" border="0" height="18" width="18">
+			<tr>
+				<td valign="middle" nowrap="nowrap"><a href="profile-145.html"><img src="templates/SGD2/images/lang_slovenian/icon_profile.gif" alt="Poglej uporabnikov profil" title="Poglej uporabnikov profil" border="0" /></a> <a  target="_userwww"><img src="templates/SGD2/images/lang_slovenian/icon_www.gif" alt="Obišči avtorjevo spletno stran" title="Obišči avtorjevo spletno stran" border="0" /></a></td>
+			</tr>
+		</table></td>
+	</tr>
+	<tr>
+		<td class="spaceRow" colspan="2" height="1"><img src="templates/SGD/images/spacer.gif" alt="" width="1" height="1" /></td>
+	</tr>
+	
+	<tr>
+		<td width="150" align="left" valign="top" class="row2"><span class="name"><a name="17928"></a><b>Alfa</b></span><br /><span class="postdetails">mojster<br /><img src="images/ranks/sgd-5.gif" alt="mojster" title="mojster" border="0" /><br /><img src="images/avatars/c2f90a1540823086cd155.jpg" alt="" border="0" /><br /><br />Pridružen: 04. mar 2004 ob 18:14<br />objav: 471<br />Kraj: SG</span><br /></td>
+		<td class="row2" width="100%" height="28" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+			<tr>
+				<td colspan="2" width="100%">
+					<table width="100%" cellpadding="0" cellspacing="0" border="0">
+						<tr>
+							<td valign="middle" align="left">
+								<a href="topic-1444.html#17928"><img src="templates/SGD2/images/icon_minipost.gif" width="12" height="9" alt="objava" title="objava" border="0" /></a>
+								<span class="postdetails">Objavljeno: pet dec 07, 2007 7:36 am<span class="gen">&nbsp;</span>&nbsp; &nbsp;Pošlji temo: </span>
+							</td>
+							<td valign="middle" align="right" nowrap="nowrap">
+							</td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+			<tr>
+				<td colspan="2"><hr /></td>
+			</tr>
+			<tr>
+				<td colspan="2"><span class="postbody">Ena izmed mojih idej: digitalna kitara. Kot prava kitara, le da ima namesto strun in fretov gumbe, razporejene tako da vsak odgovarja svojemu tonu.  <img src="images/smiles/icon_biggrin.gif" alt=":D" border="0" /><br />_________________<br />&quot;Pustimo malenkosti, pravi cesar, PeCe pa nič (več).&quot;
+
+<br />
+Goran Bervar: C++ na kolenih</span><span class="gensmall"></span></td>
+			</tr>
+		</table></td>
+	</tr>
+	<tr>
+		<td class="row2" width="150" align="left" valign="middle"><span class="nav"><a href="#top" class="nav">Nazaj na vrh</a></span></td>
+		<td class="row2" width="100%" height="28" valign="bottom" nowrap="nowrap"><table cellspacing="0" cellpadding="0" border="0" height="18" width="18">
+			<tr>
+				<td valign="middle" nowrap="nowrap"><a href="profile-162.html"><img src="templates/SGD2/images/lang_slovenian/icon_profile.gif" alt="Poglej uporabnikov profil" title="Poglej uporabnikov profil" border="0" /></a> <a  target="_userwww"><img src="templates/SGD2/images/lang_slovenian/icon_www.gif" alt="Obišči avtorjevo spletno stran" title="Obišči avtorjevo spletno stran" border="0" /></a></td>
+			</tr>
+		</table></td>
+	</tr>
+	<tr>
+		<td class="spaceRow" colspan="2" height="1"><img src="templates/SGD/images/spacer.gif" alt="" width="1" height="1" /></td>
+	</tr>
+	
+	<tr align="center">
+		<td class="catBottom" colspan="2" height="28">&nbsp;</td>
+	</tr>
+</table>
+
+<table width="100%" cellspacing="2" cellpadding="2" border="0" align="center">
+  <tr>
+	<td align="left" valign="middle" nowrap="nowrap">&nbsp;</td>
+	<td align="left" valign="middle" width="100%"><span class="nav">&nbsp;&nbsp;&nbsp;<a href="index.html" class="nav">SloGameDev.net seznam forumov</a>
+	  -> <a href="forum-53.html" class="nav">Kavarna</a></span></td>
+	<td align="right" valign="top" nowrap="nowrap"><span class="gensmall">Časovni pas (GMT +2:00 uri) Slovenija, poletni čas</span><br /><span class="nav">Pojdi na stran <b>1</b>, <a href="topic-1444-30.html">2</a>&nbsp;&nbsp;<a href="topic-1444-30.html">Naslednji</a></span>
+	  </td>
+  </tr>
+  <tr>
+	<td align="left" colspan="3"><span class="nav">Stran <b>1</b> od <b>2</b></span></td>
+  </tr>
+</table>
+
+<table width="100%" cellspacing="2" border="0" align="center">
+  <tr>
+	<td width="40%" valign="top" nowrap="nowrap" align="left">&nbsp;</td>
+	<td align="right" valign="top" nowrap="nowrap">&nbsp;</td>
+  </tr>
+</table>
+
+<div align="center"><span class="copyright"><br />Arhiv &mdash; samo za branje.<br />
+<!--
+	We request you retain the full copyright notice below including the link to www.phpbb.com.
+	This not only gives respect to the large amount of time given freely by the developers
+	but also helps build interest, traffic and use of phpBB 2.0. If you cannot (for good
+	reason) retain the full copyright we request you at least leave in place the 
+	Powered by phpBB 2.0.4 line, with phpBB linked to www.phpbb.com. If you refuse
+	to include even this then support on our forums may be affected. 
+
+	The phpBB Group : 2002
+// -->
+Powered by <a  target="_phpbb" class="copyright">phpBB</a> 2.0.4 &copy; 2001, 2002 phpBB Group<br /></span></div>
+		</td>
+	</tr>
+</table>
+
+</body>
+</html>

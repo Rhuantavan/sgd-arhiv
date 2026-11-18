@@ -1,0 +1,1742 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html dir="ltr">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta http-equiv="Content-Style-Type" content="text/css">
+<style type="text/css">
+<!--
+.style1 {color: #FFFFFF}
+-->
+</style>
+
+
+
+<title>SloGameDev.net :: nočno dogajanje v RTS</title>
+<!-- link rel="stylesheet" href="templates/SGD/SGD2.css" type="text/css" -->
+<style type="text/css">
+<!--
+/*
+  The SGD Theme for phpBB version 2+
+  Created by Rhuantavan
+  http://www.rhuantavan.org
+
+  NOTE: These CSS definitions are stored within the main page body so that you can use the phpBB2
+  theme administration centre. When you have finalised your style you could cut the final CSS code
+  and place it in an external file, deleting this section to save bandwidth.
+*/
+
+/* General page style. The scroll bar colours only visible in IE5.5+ */
+body {
+	background-color: #DDDDDD;
+	scrollbar-face-color: #000000;
+	scrollbar-highlight-color: #000000;
+	scrollbar-3dlight-color: #EEEEEE;
+	scrollbar-darkshadow-color: #EEEEEE;
+	scrollbar-shadow-color: #000000;
+	scrollbar-arrow-color: #55FF00;
+	scrollbar-track-color: #EEEEEE;
+}
+
+/* General font families for common tags */
+font,th,td,p { font-family: Verdana, Arial, Helvetica, sans-serif }
+a:link,a:active,a:visited { color : #338800; }
+a:hover		{ text-decoration: underline; color : #338800; }
+hr	{ height: 0px; border: solid #E9E9E9 0px; border-top-width: 1px;}
+
+/* This is the border line & background colour round the entire page */
+.bodyline	{ background-color: #EEEEEE; border-left: 1px #000000 solid; border-right: 1px #000000 solid; }
+
+/* This is the outline round the main forum tables */
+.forumline	{ background-color: #EEEEEE; border: 0px #DDDDDD solid; }
+
+/* Main table cell colours and backgrounds */
+td.row1	{ background-color: #F8F8F8; }
+td.row2	{ background-color: #F0F0F0; }
+td.row3	{ background-color: #E9E9E9; }
+
+/*
+  This is for the table cell above the Topics, Post & Last posts on the index.php page
+  By default this is the fading out gradiated silver background.
+  However, you could replace this with a bitmap specific for each forum
+*/
+td.rowpic {
+		background-color: #EEEEEE;
+		background-image: url(templates/SGD/images/cellpic3.gif);
+		background-repeat: repeat-y;
+}
+
+/* Header cells - the blue and silver gradient backgrounds */
+th	{
+	color: #66CC33; font-size: 11px; font-weight : bold;
+	background-color: #338800; height: 25px;
+	background-image: url(templates/SGD/images/cellpic2.gif);
+}
+
+td.cat,td.catHead,td.catSides,td.catLeft,td.catRight,td.catBottom {
+			background-image: url(templates/SGD/images/cellpic1.gif);
+			background-color:#E9E9E9; border: #999999; border-style: solid; height: 28px;
+}
+
+/*
+  Setting additional nice inner borders for the main table cells.
+  The names indicate which sides the border will be on.
+  Don't worry if you don't understand this, just ignore it :-)
+*/
+td.cat,td.catHead,td.catBottom {
+	height: 29px;
+	border-width: 0px 0px 0px 0px;
+}
+th.thHead,th.thSides,th.thTop,th.thLeft,th.thRight,th.thBottom,th.thCornerL,th.thCornerR {
+	font-weight: bold; border: #EEEEEE; border-style: solid; height: 28px;
+}
+td.row3Right,td.spaceRow {
+	background-color: #E9E9E9; border: #999999; border-style: solid;
+}
+
+th.thHead,td.catHead { font-size: 12px; border-width: 0px 0px 0px 0px; }
+th.thSides,td.catSides,td.spaceRow	 { border-width: 0px 0px 0px 0px; }
+th.thRight,td.catRight,td.row3Right	 { border-width: 0px 0px 0px 0px; }
+th.thLeft,td.catLeft	  { border-width: 0px 0px 0px 0px; }
+th.thBottom,td.catBottom  { border-width: 0px 0px 0px 1px; }
+th.thTop	 { border-width: 0px 0px 0px 0px; }
+th.thCornerL { border-width: 0px 0px 0px 1px; }
+th.thCornerR { border-width: 0px 0px 0px 0px; }
+
+/* The largest text used in the index page title and toptic title etc. */
+.maintitle	{
+	font-weight: bold; font-size: 18px; font-family: "Trebuchet MS",Verdana, Arial, Helvetica, sans-serif;
+	text-decoration: none; line-height : 120%; color : #666666;
+}
+
+/* General text */
+.gen { font-size : 12px; }
+.genmed { font-size : 11px; }
+.gensmall { font-size : 10px; }
+.gen,.genmed,.gensmall { color : #666666; }
+a.gen,a.genmed,a.gensmall { color: #338800; text-decoration: none; }
+a.gen:hover,a.genmed:hover,a.gensmall:hover	{ color: #338800; text-decoration: underline; }
+
+/* The register, login, search etc links at the top of the page */
+.mainmenu		{ font-size : 11px; color : #666666 }
+a.mainmenu		{ text-decoration: none; color : #338800;  }
+a.mainmenu:hover{ text-decoration: underline; color : #338800; }
+
+/* SGD main menu */
+.sgdmainmenu			{ font-size : 10px; color : #99FF33 }
+a.sgdmainmenu:link		{ text-decoration: none; color : #99FF33;  }
+a.sgdmainmenu:active	{ text-decoration: none; color : #99FF33;  }
+a.sgdmainmenu:visited	{ text-decoration: none; color : #99FF33;  }
+a.sgdmainmenu:hover		{ text-decoration: underline; color : #99FF33; }
+
+/* Forum category titles */
+.cattitle		{ font-weight: bold; font-size: 12px ; letter-spacing: 1px; color : #338800}
+a.cattitle		{ text-decoration: none; color : #338800; }
+a.cattitle:hover{ text-decoration: underline; }
+
+/* Forum title: Text and link to the forums used in: index.php */
+.forumlink		{ font-weight: bold; font-size: 12px; color : #338800; }
+a.forumlink 	{ text-decoration: none; color : #338800; }
+a.forumlink:hover{ text-decoration: underline; color : #338800; }
+
+/* Used for the navigation text, (Page 1,2,3 etc) and the navigation bar when in a forum */
+.nav			{ font-weight: bold; font-size: 11px; color : #666666;}
+a.nav			{ text-decoration: none; color : #338800; }
+a.nav:hover		{ text-decoration: underline; }
+
+/* titles for the topics: could specify viewed link colour too */
+.topictitle,h1,h2	{ font-weight: bold; font-size: 11px; color : #666666; }
+a.topictitle:link   { text-decoration: none; color : #338800; }
+a.topictitle:visited { text-decoration: none; color : #338800; }
+a.topictitle:hover	{ text-decoration: underline; color : #338800; }
+
+/* Name of poster in viewmsg.php and viewtopic.php and other places */
+.name			{ font-size : 11px; color : #000000;}
+
+/* Location, number of posts, post date etc */
+.postdetails		{ font-size : 10px; color : #666666; }
+
+/* The content of the posts (body of text) */
+.postbody { font-size : 12px; line-height: 18px; color : #000000;}
+a.postlink:link	{ text-decoration: none; color : #338800 }
+a.postlink:visited { text-decoration: none; color : #338800; }
+a.postlink:hover { text-decoration: underline; color : #338800}
+
+/* Quote & Code blocks */
+.code {
+	font-family: Courier, 'Courier New', sans-serif; font-size: 11px; color: #006600;
+	background-color: #D6D6D6; border: #E9E9E9; border-style: solid;
+	border-left-width: 1px; border-top-width: 1px; border-right-width: 1px; border-bottom-width: 1px
+}
+
+.quote {
+	font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 11px; color: #444444; line-height: 125%;
+	background-color: #BBBBBB; border: #E9E9E9; border-style: solid;
+	border-left-width: 1px; border-top-width: 1px; border-right-width: 1px; border-bottom-width: 1px
+}
+
+/* Copyright and bottom info */
+.copyright		{ font-size: 10px; font-family: Verdana, Arial, Helvetica, sans-serif; color: #444444; letter-spacing: -1px;}
+a.copyright		{ color: #444444; text-decoration: none;}
+a.copyright:hover { color: #666666; text-decoration: underline;}
+
+/* Form elements */
+input,textarea, select {
+	color : #666666;
+	font: normal 11px Verdana, Arial, Helvetica, sans-serif;
+	border-color : #666666;
+}
+
+/* The text input fields background colour */
+input.post, textarea.post, select {
+	background-color : #EEEEEE;
+}
+
+input { text-indent : 2px; }
+
+/* The buttons used for bbCode styling in message post */
+input.button {
+	background-color : #F8F8F8;
+	color : #666666;
+	font-size: 11px; font-family: Verdana, Arial, Helvetica, sans-serif;
+}
+
+/* The main submit button option */
+input.mainoption {
+	background-color : #BBBBBB;
+	font-weight : bold;
+}
+
+/* None-bold submit button */
+input.liteoption {
+	background-color : #BBBBBB;
+	font-weight : normal;
+}
+
+/* This is the line in the posting page which shows the rollover
+  help line. This is actually a text box, but if set to be the same
+  colour as the background no one will know ;)
+*/
+.helpline { background-color: #F0F0F0; border-style: none; }
+
+/* Import the fancy styles for IE only (NS4.x doesn't use the @import function) */
+@import url("templates/SGD/formIE.css");
+-->
+</style>
+</head>
+<body bgcolor="#DDDDDD" text="#666666" link="#338800" vlink="#338800" topmargin="0" />
+<a name="top"></a>
+<table width="100%" cellspacing="0" cellpadding="0" border="0" align="center" nowrap>
+	<tr>
+		<td class="bodyline">
+			<table width="100%" border="0" cellpadding="0" cellspacing="0">
+				<tr>
+					<td bgcolor="#FFFFFF">
+						<img src="images/spacer.gif" width="760" height="20" alt=""></td>
+				</tr>
+			</table>
+			<table width="100%" border="0" cellpadding="0" cellspacing="0">
+				<tr>
+					<td bgcolor="#000000">
+						<a href="../index.html"><img src="images/home.gif" width="10" height="10" alt="" border="0"></a><img src="images/spacer.gif" width="5" height="5" alt=""><a href="../index.html" class="sgdmainmenu">Nazaj na domačo stran</a> <img src="images/defaulticon_green.gif" alt="" width="7" height="7" border="0"> <a href="../clanki.html" class="sgdmainmenu">Clanki</a> <img src="images/defaulticon_green.gif" alt="" width="7" height="7" border="0"> <a href="../koda.html" class="sgdmainmenu">Koda</a> <img src="images/defaulticon_green.gif" alt="" width="7" height="7" border="0"> <a href="../clani.html" class="sgdmainmenu">Clani</a> <img src="images/defaulticon_green.gif" alt="" width="7" height="7" border="0"> <a href="../skupine.html" class="sgdmainmenu">Skupine</a> <img src="images/defaulticon_green.gif" alt="" width="7" height="7" border="0"> <a href="../projekti.html" class="sgdmainmenu">Projekti</a> <img src="images/defaulticon_green.gif" alt="" width="7" height="7" border="0"> <a href="../povezave.html" class="sgdmainmenu">Povezave</a></td>
+				</tr>
+			</table>
+			<table width="100%" border="0" cellpadding="0" cellspacing="0">
+				<tr>
+					<td colspan="3" bgcolor="#000000">
+						<img src="images/spacer.gif" width="760" height="10" alt=""></td>
+				</tr>
+				<tr>
+					<td>
+						<a href="index.html"><img src="images/logo.gif" width="351" height="62" alt="" border="0"></a></td>
+					<td>
+						<img src="images/forum_03.gif" width="408" height="62" alt=""></td>
+					<td width="100%" bgcolor="#000000">
+						<img src="images/spacer.gif" width="1" height="1" alt=""></td>
+				</tr>
+				<tr>
+					<td colspan="3" bgcolor="#000000" align="center">
+						<a href="memberlist.html" class="sgdmainmenu"><img src="images/defaulticon_green.gif" alt="" width="7" height="7" border="0">&nbsp;Seznam članov</a>
+						<a href="index.html" class="sgdmainmenu"><img src="images/defaulticon_green.gif" alt="" width="7" height="7" border="0">&nbsp;Seznam</a></td>
+				</tr>
+				<tr>
+					<td colspan="3" bgcolor="#000000">
+						<img src="images/spacer.gif" width="760" height="5" alt=""></td>
+				</tr>
+			</table>
+
+<table width="100%" cellspacing="2" cellpadding="2" border="0">
+  <tr>
+	<td align="left" valign="bottom" colspan="2"><a class="maintitle" href="topic-1387.html">nočno dogajanje v RTS</a><br />
+	  <span class="gensmall"><b></b><br />
+	  &nbsp; </span></td>
+  </tr>
+</table>
+
+<table width="100%" cellspacing="2" cellpadding="2" border="0">
+  <tr>
+	<td align="left" valign="bottom" nowrap="nowrap">&nbsp;</td>
+	<td align="left" valign="middle" width="100%"><span class="nav">&nbsp;&nbsp;&nbsp;<a href="index.html" class="nav">SloGameDev.net seznam forumov</a>
+	  -> <a href="forum-52.html" class="nav">Izdelovanje iger</a></span></td>
+  </tr>
+</table>
+
+<table class="forumline" width="100%" cellspacing="1" cellpadding="3" border="0">
+	<tr align="right">
+		<td class="catHead" colspan="2" height="28"><span class="nav"><a href="topic-1126.html" class="nav">Prejšnja tema</a> :: <a href="topic-1399.html" class="nav">Naslednja tema</a> &nbsp;</span></td>
+	</tr>
+	
+	<tr>
+		<th class="thLeft" width="150" height="26" nowrap="nowrap">avtor</th>
+		<th class="thRight" nowrap="nowrap">Sporočilo</th>
+	</tr>
+	
+	<tr>
+		<td width="150" align="left" valign="top" class="row1"><span class="name"><a name="16866"></a><b>neuronicus</b></span><br /><span class="postdetails">poznavalec<br /><img src="images/ranks/sgd-3.gif" alt="poznavalec" title="poznavalec" border="0" /><br /><br /><br />Pridružen: 12. jan 2003 ob 12:03<br />objav: 226<br /></span><br /></td>
+		<td class="row1" width="100%" height="28" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+			<tr>
+				<td colspan="2" width="100%">
+					<table width="100%" cellpadding="0" cellspacing="0" border="0">
+						<tr>
+							<td valign="middle" align="left">
+								<a href="topic-1387.html#16866"><img src="templates/SGD2/images/icon_minipost.gif" width="12" height="9" alt="objava" title="objava" border="0" /></a>
+								<span class="postdetails">Objavljeno: pet apr 20, 2007 8:52 pm<span class="gen">&nbsp;</span>&nbsp; &nbsp;Pošlji temo: nočno dogajanje v RTS</span>
+							</td>
+							<td valign="middle" align="right" nowrap="nowrap">
+							</td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+			<tr>
+				<td colspan="2"><hr /></td>
+			</tr>
+			<tr>
+				<td colspan="2"><span class="postbody">razmišljal sem, da bi se moralo nočno igranje v strategijah zelo razlikovati. vsaj kar se tiče tistih v katerih se spopadajo ljudje. ti ponoči namreč potrebujejo spanje. če ne spijo, so utrujeni. no, lahko spijo kadarkoli, ampak pustimo to <img src="images/smiles/icon_smile.gif" alt=":)" border="0" />
+
+<br />
+no, da bi lahko spali pa si morajo postaviti taborišče. tega sestavljajo šotori za vojake in druge ljudi. lahko je neograjeno ali pa ograjeno z lesom oziroma kamnitim zidom.
+
+<br />
+ker pa vojaki ponoči spijo, je potrebno igralca zaposliti kako drugače, saj bi v nasprotnem primeru vse skupaj bilo bedno. no, v tem času se lahko igralec ukvarja z načrtovanjem napada. sestavlja skupine, jih razporeja v formacije, jim določi tarče in njihovo obnašanje ter celo kdaj naj neka skupina krene v napad (na primer takrat, ko skupina 1 uniči tarčo B, v napad krene skupina 2. kar je kul, ker se je večina nasprotnikovih enot skoncentrirala na skupino 1 in ima druga tako lažje delo), pripravlja orožje in zaloge (ja, treba bi bilo skrbeti tudi za oskrbovanje vojakov).
+
+<br />
+
+
+<br />
+ampak noč lahko nasprotnik izkoristi in nas napade. ali pa mi njega. če je nepreviden, ga stražar opazi in zažene alarm. vojaki se zbudijo in napad je lahko povsem pokvarjen. dalo bi se uporabiti tudi dve različni taktiki - prva je prikrita. tiho se je treba znebiti stražarjev in zaklati speče vojake. dobro izurjena peščica vojakov lahko povsem uniči mnogokrat večjo vojsko <img src="images/smiles/icon_twisted.gif" alt=":twisted:" border="0" /> lahko pa se zgodi napad v katerem sodeluje mnogo enot in sploh ni prikrit. ravnokar zbujene in nekoliko zmedene (odvisno na kateri stopnji so) vojake je lažji kot na spočite in prisebne.
+
+<br />
+lahko pa smo tudi zlobni in nasprotniku pripravimo past. vojake skrijemo okoli taborišča, on pride vanj, mi ga obkolimo in uničimo. še prej pa lahko po taborišču razporedimo kakšne mine ali druge predmete, ki bi lahko povzročili mnogo škode. seveda isto lahko naredi nasprotnik in nas zajebe. tako da se dnevni in nočni del na koncu niti ne razlikujeta tako zelo.
+
+<br />
+aja, da ne pozabim. stražarja bi se dalo tudi podkupiti in bi pogledal mimo, ko bi se dogajal napad. vendar pa je stražar lahko p****c in sprejme podkupnino, vendar pa za to pove nadrejenim, ta pa lahko pripravi že prej omenjeno past
+
+<br />
+
+
+<br />
+ker bi se igralec ponoči ukvarjal z načrtovanjem, bi bilo manj možnosti, da bi videl smrt stražarja <img src="images/smiles/icon_twisted.gif" alt=":twisted:" border="0" /> opozorjen bi bil šele, ko bi nasprotnik naredil kakšno napako in opozoril nase. <img src="images/smiles/icon_twisted.gif" alt=":twisted:" border="0" /></span><span class="gensmall"></span></td>
+			</tr>
+		</table></td>
+	</tr>
+	<tr>
+		<td class="row1" width="150" align="left" valign="middle"><span class="nav"><a href="#top" class="nav">Nazaj na vrh</a></span></td>
+		<td class="row1" width="100%" height="28" valign="bottom" nowrap="nowrap"><table cellspacing="0" cellpadding="0" border="0" height="18" width="18">
+			<tr>
+				<td valign="middle" nowrap="nowrap"><a href="profile-25.html"><img src="templates/SGD2/images/lang_slovenian/icon_profile.gif" alt="Poglej uporabnikov profil" title="Poglej uporabnikov profil" border="0" /></a> </td>
+			</tr>
+		</table></td>
+	</tr>
+	<tr>
+		<td class="spaceRow" colspan="2" height="1"><img src="templates/SGD/images/spacer.gif" alt="" width="1" height="1" /></td>
+	</tr>
+	
+	<tr>
+		<td width="150" align="left" valign="top" class="row2"><span class="name"><a name="16867"></a><b>Acid Cool</b></span><br /><span class="postdetails">guru<br /><img src="images/ranks/sgd-8.gif" alt="guru" title="guru" border="0" /><br /><img src="images/avatars/c15ff85a40e32fec16332.gif" alt="" border="0" /><br /><br />Pridružen: 17. jun 2003 ob 07:23<br />objav: 1329<br /></span><br /></td>
+		<td class="row2" width="100%" height="28" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+			<tr>
+				<td colspan="2" width="100%">
+					<table width="100%" cellpadding="0" cellspacing="0" border="0">
+						<tr>
+							<td valign="middle" align="left">
+								<a href="topic-1387.html#16867"><img src="templates/SGD2/images/icon_minipost.gif" width="12" height="9" alt="objava" title="objava" border="0" /></a>
+								<span class="postdetails">Objavljeno: sob apr 21, 2007 12:28 am<span class="gen">&nbsp;</span>&nbsp; &nbsp;Pošlji temo: </span>
+							</td>
+							<td valign="middle" align="right" nowrap="nowrap">
+							</td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+			<tr>
+				<td colspan="2"><hr /></td>
+			</tr>
+			<tr>
+				<td colspan="2"><span class="postbody">ni slabo...samo moraš ti dojeti, da bi za tako igro rabil hitro menjavanje dneva in noči, kar pa spet ni dobro, ker pol ni nič drgega za delat kot načrtovat napade in jih izvajat...
+
+<br />
+če že maš dneve in noči moraš tudi realno prikazat gradnjo objektov ipd, kar pa bi potekalo dokaj počasi...
+
+<br />
+nevem no po moje pride do velikih zapletov...
+
+<br />
+
+
+<br />
+drgač pa glede spanja...čisto vseeno ni kdaj spiš...ponoči se res najbolje spi...ampak če vojaki ponavadi spijo ponoči, pol pa bo npr naslednjo noč napad in so zato tisti dan pred napadom spali podnevi (kar je dokaj slab spanec, ker v bistvu vojaki niso bili zaspani) bodo vojaki dosti manj efektivno kot bi bili če bi bili res naspani in še noč je kar zmanjša efektivnost...<br />_________________<br />Home page: <a  target="_blank" class="postlink">Goran Gligorin</a></span><span class="gensmall"></span></td>
+			</tr>
+		</table></td>
+	</tr>
+	<tr>
+		<td class="row2" width="150" align="left" valign="middle"><span class="nav"><a href="#top" class="nav">Nazaj na vrh</a></span></td>
+		<td class="row2" width="100%" height="28" valign="bottom" nowrap="nowrap"><table cellspacing="0" cellpadding="0" border="0" height="18" width="18">
+			<tr>
+				<td valign="middle" nowrap="nowrap"><a href="profile-68.html"><img src="templates/SGD2/images/lang_slovenian/icon_profile.gif" alt="Poglej uporabnikov profil" title="Poglej uporabnikov profil" border="0" /></a> <a  target="_userwww"><img src="templates/SGD2/images/lang_slovenian/icon_www.gif" alt="Obišči avtorjevo spletno stran" title="Obišči avtorjevo spletno stran" border="0" /></a></td>
+			</tr>
+		</table></td>
+	</tr>
+	<tr>
+		<td class="spaceRow" colspan="2" height="1"><img src="templates/SGD/images/spacer.gif" alt="" width="1" height="1" /></td>
+	</tr>
+	
+	<tr>
+		<td width="150" align="left" valign="top" class="row1"><span class="name"><a name="16868"></a><b>neuronicus</b></span><br /><span class="postdetails">poznavalec<br /><img src="images/ranks/sgd-3.gif" alt="poznavalec" title="poznavalec" border="0" /><br /><br /><br />Pridružen: 12. jan 2003 ob 12:03<br />objav: 226<br /></span><br /></td>
+		<td class="row1" width="100%" height="28" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+			<tr>
+				<td colspan="2" width="100%">
+					<table width="100%" cellpadding="0" cellspacing="0" border="0">
+						<tr>
+							<td valign="middle" align="left">
+								<a href="topic-1387.html#16868"><img src="templates/SGD2/images/icon_minipost.gif" width="12" height="9" alt="objava" title="objava" border="0" /></a>
+								<span class="postdetails">Objavljeno: sob apr 21, 2007 1:48 am<span class="gen">&nbsp;</span>&nbsp; &nbsp;Pošlji temo: </span>
+							</td>
+							<td valign="middle" align="right" nowrap="nowrap">
+							</td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+			<tr>
+				<td colspan="2"><hr /></td>
+			</tr>
+			<tr>
+				<td colspan="2"><span class="postbody">glede na to, da gre za igro, je lahko dan daljši, noč pa krajša. čeprav to spet ni dobro, ker bi kdo hotel napad izvesti ponoči.
+
+<br />
+
+
+<br />
+lahko bi šlo brez gradnje ali pa bi ta vseeno trajala le nekaj časa. mogoče dan, dva. - pač bolj usmerjeno v boj.
+
+<br />
+
+
+<br />
+človek je lahko buden tudi ponoči, čeprav je spal prejšnjo noč. ni mu treba spati podnevi. lahko počiva ali počne kaj drugega. nimam pojma kaj. mogoče varujejo kamp. nevojaki ustrezne usmeritve pa lahko čez dan pripravljajo poživilne napitke (če je igralec raziskal to tehnologijo), če je treba.
+
+<br />
+
+
+<br />
+neprespan vojak je mrtev vojak. lahko bi se boril par dni in noči, igra pač, ampak ta utrujenost lahko kar zakomplicira stvar.</span><span class="gensmall"></span></td>
+			</tr>
+		</table></td>
+	</tr>
+	<tr>
+		<td class="row1" width="150" align="left" valign="middle"><span class="nav"><a href="#top" class="nav">Nazaj na vrh</a></span></td>
+		<td class="row1" width="100%" height="28" valign="bottom" nowrap="nowrap"><table cellspacing="0" cellpadding="0" border="0" height="18" width="18">
+			<tr>
+				<td valign="middle" nowrap="nowrap"><a href="profile-25.html"><img src="templates/SGD2/images/lang_slovenian/icon_profile.gif" alt="Poglej uporabnikov profil" title="Poglej uporabnikov profil" border="0" /></a> </td>
+			</tr>
+		</table></td>
+	</tr>
+	<tr>
+		<td class="spaceRow" colspan="2" height="1"><img src="templates/SGD/images/spacer.gif" alt="" width="1" height="1" /></td>
+	</tr>
+	
+	<tr>
+		<td width="150" align="left" valign="top" class="row2"><span class="name"><a name="16869"></a><b>neuronicus</b></span><br /><span class="postdetails">poznavalec<br /><img src="images/ranks/sgd-3.gif" alt="poznavalec" title="poznavalec" border="0" /><br /><br /><br />Pridružen: 12. jan 2003 ob 12:03<br />objav: 226<br /></span><br /></td>
+		<td class="row2" width="100%" height="28" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+			<tr>
+				<td colspan="2" width="100%">
+					<table width="100%" cellpadding="0" cellspacing="0" border="0">
+						<tr>
+							<td valign="middle" align="left">
+								<a href="topic-1387.html#16869"><img src="templates/SGD2/images/icon_minipost.gif" width="12" height="9" alt="objava" title="objava" border="0" /></a>
+								<span class="postdetails">Objavljeno: sob apr 21, 2007 2:51 pm<span class="gen">&nbsp;</span>&nbsp; &nbsp;Pošlji temo: </span>
+							</td>
+							<td valign="middle" align="right" nowrap="nowrap">
+							</td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+			<tr>
+				<td colspan="2"><hr /></td>
+			</tr>
+			<tr>
+				<td colspan="2"><span class="postbody">pa še eno vprašanje.
+
+<br />
+
+
+<br />
+je kdo v kakšni rts igri videl enoto, ki se premika pri streljanju na določeno tarčo. streljanje pri premikanju do cilja sem že večkrat videl, ampak to, da bi krožila okrog tarče pa še ne. kolikor se spomnim, so nato vse obmirovale in streljale z istega mesta.
+
+<br />
+mogoče v company of heroes? igral še nisem, sem pa slišal, da vojaki sami iščejo zaklon - torej se premikajo. ampak na enem videu sem videl tank, ki je počel to kar sem napisal že prej - pri vožnji do tarče je streljal, nato pa obmiroval.</span><span class="gensmall"></span></td>
+			</tr>
+		</table></td>
+	</tr>
+	<tr>
+		<td class="row2" width="150" align="left" valign="middle"><span class="nav"><a href="#top" class="nav">Nazaj na vrh</a></span></td>
+		<td class="row2" width="100%" height="28" valign="bottom" nowrap="nowrap"><table cellspacing="0" cellpadding="0" border="0" height="18" width="18">
+			<tr>
+				<td valign="middle" nowrap="nowrap"><a href="profile-25.html"><img src="templates/SGD2/images/lang_slovenian/icon_profile.gif" alt="Poglej uporabnikov profil" title="Poglej uporabnikov profil" border="0" /></a> </td>
+			</tr>
+		</table></td>
+	</tr>
+	<tr>
+		<td class="spaceRow" colspan="2" height="1"><img src="templates/SGD/images/spacer.gif" alt="" width="1" height="1" /></td>
+	</tr>
+	
+	<tr>
+		<td width="150" align="left" valign="top" class="row1"><span class="name"><a name="16870"></a><b>Iason</b></span><br /><span class="postdetails">inštruktor<br /><img src="images/ranks/sgd-4.gif" alt="inštruktor" title="inštruktor" border="0" /><br /><br /><br />Pridružen: 21. sep 2004 ob 22:57<br />objav: 329<br />Kraj: Kranj</span><br /></td>
+		<td class="row1" width="100%" height="28" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+			<tr>
+				<td colspan="2" width="100%">
+					<table width="100%" cellpadding="0" cellspacing="0" border="0">
+						<tr>
+							<td valign="middle" align="left">
+								<a href="topic-1387.html#16870"><img src="templates/SGD2/images/icon_minipost.gif" width="12" height="9" alt="objava" title="objava" border="0" /></a>
+								<span class="postdetails">Objavljeno: sob apr 21, 2007 5:24 pm<span class="gen">&nbsp;</span>&nbsp; &nbsp;Pošlji temo: </span>
+							</td>
+							<td valign="middle" align="right" nowrap="nowrap">
+							</td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+			<tr>
+				<td colspan="2"><hr /></td>
+			</tr>
+			<tr>
+				<td colspan="2"><span class="postbody"></span>
+<br />
+<table width="90%" cellspacing="1" cellpadding="3" border="0" align="center">
+<br />
+<tr> 
+<br />
+	  <td><span class="genmed"><b>neuronicus je napisal:</b></span></td>
+<br />
+	</tr>
+<br />
+	<tr>
+<br />
+	  <td class="quote">
+<br />
+je kdo v kakšni rts igri videl enoto, ki se premika pri streljanju na določeno tarčo..</td>
+<br />
+	</tr>
+<br />
+</table>
+<br />
+<span class="postbody">
+
+<br />
+Da, sem že videl tak rts <img src="images/smiles/icon_smile.gif" alt=":)" border="0" />
+
+<br />
+Evo en kul video
+
+<br />
+<a  target="_blank" class="postlink">http&#58;//youtube&#46;com/watch?v=HtWn1aKGWkI</a>
+
+<br />
+
+
+<br />
+Ampak gotovo nisi imel tega v mislih <img src="images/smiles/icon_smile.gif" alt=":)" border="0" /></span><span class="gensmall"></span></td>
+			</tr>
+		</table></td>
+	</tr>
+	<tr>
+		<td class="row1" width="150" align="left" valign="middle"><span class="nav"><a href="#top" class="nav">Nazaj na vrh</a></span></td>
+		<td class="row1" width="100%" height="28" valign="bottom" nowrap="nowrap"><table cellspacing="0" cellpadding="0" border="0" height="18" width="18">
+			<tr>
+				<td valign="middle" nowrap="nowrap"><a href="profile-202.html"><img src="templates/SGD2/images/lang_slovenian/icon_profile.gif" alt="Poglej uporabnikov profil" title="Poglej uporabnikov profil" border="0" /></a> </td>
+			</tr>
+		</table></td>
+	</tr>
+	<tr>
+		<td class="spaceRow" colspan="2" height="1"><img src="templates/SGD/images/spacer.gif" alt="" width="1" height="1" /></td>
+	</tr>
+	
+	<tr>
+		<td width="150" align="left" valign="top" class="row2"><span class="name"><a name="16902"></a><b>ArYeS</b></span><br /><span class="postdetails">expert<br /><img src="images/ranks/sgd-6.gif" alt="expert" title="expert" border="0" /><br /><img src="images/avatars/c14d4e41428ef6735091f.gif" alt="" border="0" /><br /><br />Pridružen: 18. jan 2004 ob 21:21<br />objav: 717<br />Kraj: Miren</span><br /></td>
+		<td class="row2" width="100%" height="28" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+			<tr>
+				<td colspan="2" width="100%">
+					<table width="100%" cellpadding="0" cellspacing="0" border="0">
+						<tr>
+							<td valign="middle" align="left">
+								<a href="topic-1387.html#16902"><img src="templates/SGD2/images/icon_minipost.gif" width="12" height="9" alt="objava" title="objava" border="0" /></a>
+								<span class="postdetails">Objavljeno: sob apr 28, 2007 7:54 pm<span class="gen">&nbsp;</span>&nbsp; &nbsp;Pošlji temo: </span>
+							</td>
+							<td valign="middle" align="right" nowrap="nowrap">
+							</td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+			<tr>
+				<td colspan="2"><hr /></td>
+			</tr>
+			<tr>
+				<td colspan="2"><span class="postbody">neuronicus, v Supreme Commanderju in Warhammer 40000 sem videl enote ki streljajo tudi ko bežijo.<br />_________________<br /><a class="postlink" >http://www.inverse-gravity.net</a></span><span class="gensmall"></span></td>
+			</tr>
+		</table></td>
+	</tr>
+	<tr>
+		<td class="row2" width="150" align="left" valign="middle"><span class="nav"><a href="#top" class="nav">Nazaj na vrh</a></span></td>
+		<td class="row2" width="100%" height="28" valign="bottom" nowrap="nowrap"><table cellspacing="0" cellpadding="0" border="0" height="18" width="18">
+			<tr>
+				<td valign="middle" nowrap="nowrap"><a href="profile-145.html"><img src="templates/SGD2/images/lang_slovenian/icon_profile.gif" alt="Poglej uporabnikov profil" title="Poglej uporabnikov profil" border="0" /></a> <a  target="_userwww"><img src="templates/SGD2/images/lang_slovenian/icon_www.gif" alt="Obišči avtorjevo spletno stran" title="Obišči avtorjevo spletno stran" border="0" /></a></td>
+			</tr>
+		</table></td>
+	</tr>
+	<tr>
+		<td class="spaceRow" colspan="2" height="1"><img src="templates/SGD/images/spacer.gif" alt="" width="1" height="1" /></td>
+	</tr>
+	
+	<tr>
+		<td width="150" align="left" valign="top" class="row1"><span class="name"><a name="16905"></a><b>neuronicus</b></span><br /><span class="postdetails">poznavalec<br /><img src="images/ranks/sgd-3.gif" alt="poznavalec" title="poznavalec" border="0" /><br /><br /><br />Pridružen: 12. jan 2003 ob 12:03<br />objav: 226<br /></span><br /></td>
+		<td class="row1" width="100%" height="28" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+			<tr>
+				<td colspan="2" width="100%">
+					<table width="100%" cellpadding="0" cellspacing="0" border="0">
+						<tr>
+							<td valign="middle" align="left">
+								<a href="topic-1387.html#16905"><img src="templates/SGD2/images/icon_minipost.gif" width="12" height="9" alt="objava" title="objava" border="0" /></a>
+								<span class="postdetails">Objavljeno: ned apr 29, 2007 7:31 pm<span class="gen">&nbsp;</span>&nbsp; &nbsp;Pošlji temo: </span>
+							</td>
+							<td valign="middle" align="right" nowrap="nowrap">
+							</td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+			<tr>
+				<td colspan="2"><hr /></td>
+			</tr>
+			<tr>
+				<td colspan="2"><span class="postbody">take enote, ki streljajo med premikanjem do tarče ali bežanjem, poznam. mene je zanimalo, če je kje enota, ki ne miruje, ko pride do tarče ampak se premika. na primer kroži okoli nje.
+
+<br />
+ampak to zdaj niti ni važno <img src="images/smiles/icon_smile.gif" alt=":)" border="0" /></span><span class="gensmall"></span></td>
+			</tr>
+		</table></td>
+	</tr>
+	<tr>
+		<td class="row1" width="150" align="left" valign="middle"><span class="nav"><a href="#top" class="nav">Nazaj na vrh</a></span></td>
+		<td class="row1" width="100%" height="28" valign="bottom" nowrap="nowrap"><table cellspacing="0" cellpadding="0" border="0" height="18" width="18">
+			<tr>
+				<td valign="middle" nowrap="nowrap"><a href="profile-25.html"><img src="templates/SGD2/images/lang_slovenian/icon_profile.gif" alt="Poglej uporabnikov profil" title="Poglej uporabnikov profil" border="0" /></a> </td>
+			</tr>
+		</table></td>
+	</tr>
+	<tr>
+		<td class="spaceRow" colspan="2" height="1"><img src="templates/SGD/images/spacer.gif" alt="" width="1" height="1" /></td>
+	</tr>
+	
+	<tr>
+		<td width="150" align="left" valign="top" class="row2"><span class="name"><a name="16920"></a><b>blan</b></span><br /><span class="postdetails">poizvedovalec<br /><img src="images/ranks/sgd-1.gif" alt="poizvedovalec" title="poizvedovalec" border="0" /><br /><br /><br />Pridružen: 18. apr 2006 ob 21:23<br />objav: 69<br /></span><br /></td>
+		<td class="row2" width="100%" height="28" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+			<tr>
+				<td colspan="2" width="100%">
+					<table width="100%" cellpadding="0" cellspacing="0" border="0">
+						<tr>
+							<td valign="middle" align="left">
+								<a href="topic-1387.html#16920"><img src="templates/SGD2/images/icon_minipost.gif" width="12" height="9" alt="objava" title="objava" border="0" /></a>
+								<span class="postdetails">Objavljeno: pon apr 30, 2007 10:56 pm<span class="gen">&nbsp;</span>&nbsp; &nbsp;Pošlji temo: </span>
+							</td>
+							<td valign="middle" align="right" nowrap="nowrap">
+							</td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+			<tr>
+				<td colspan="2"><hr /></td>
+			</tr>
+			<tr>
+				<td colspan="2"><span class="postbody">Na primer v Generalsih so to Letala ki krožijo okol tarče (nekaj metrov nad njo). 
+
+<br />
+Drugač pa je ideja zanimiva. Sam bi potem moralo biti veliko stvari drugačnih, nekatere stvari bi potem morale res trajati toliko kakor v resnici, naprimer podiranje zidov in postavljanje topov. Ker če bi potreboval toliko časa za razišljanje, potem mora biti zadeva odvisna od načrta in ne toliko improvizacije kot je sedaj. Bi pa bilo zanimivo če bi bila zaradi tega interakcija z okoljem večja (skrivanje  rastlinju, zasede, uporaban naravnih nevararnosti...).</span><span class="gensmall"></span></td>
+			</tr>
+		</table></td>
+	</tr>
+	<tr>
+		<td class="row2" width="150" align="left" valign="middle"><span class="nav"><a href="#top" class="nav">Nazaj na vrh</a></span></td>
+		<td class="row2" width="100%" height="28" valign="bottom" nowrap="nowrap"><table cellspacing="0" cellpadding="0" border="0" height="18" width="18">
+			<tr>
+				<td valign="middle" nowrap="nowrap"><a href="profile-277.html"><img src="templates/SGD2/images/lang_slovenian/icon_profile.gif" alt="Poglej uporabnikov profil" title="Poglej uporabnikov profil" border="0" /></a> </td>
+			</tr>
+		</table></td>
+	</tr>
+	<tr>
+		<td class="spaceRow" colspan="2" height="1"><img src="templates/SGD/images/spacer.gif" alt="" width="1" height="1" /></td>
+	</tr>
+	
+	<tr>
+		<td width="150" align="left" valign="top" class="row1"><span class="name"><a name="16922"></a><b>Alfa</b></span><br /><span class="postdetails">mojster<br /><img src="images/ranks/sgd-5.gif" alt="mojster" title="mojster" border="0" /><br /><img src="images/avatars/c2f90a1540823086cd155.jpg" alt="" border="0" /><br /><br />Pridružen: 04. mar 2004 ob 18:14<br />objav: 471<br />Kraj: SG</span><br /></td>
+		<td class="row1" width="100%" height="28" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+			<tr>
+				<td colspan="2" width="100%">
+					<table width="100%" cellpadding="0" cellspacing="0" border="0">
+						<tr>
+							<td valign="middle" align="left">
+								<a href="topic-1387.html#16922"><img src="templates/SGD2/images/icon_minipost.gif" width="12" height="9" alt="objava" title="objava" border="0" /></a>
+								<span class="postdetails">Objavljeno: tor maj 01, 2007 6:13 am<span class="gen">&nbsp;</span>&nbsp; &nbsp;Pošlji temo: </span>
+							</td>
+							<td valign="middle" align="right" nowrap="nowrap">
+							</td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+			<tr>
+				<td colspan="2"><hr /></td>
+			</tr>
+			<tr>
+				<td colspan="2"><span class="postbody">Pl bi rabla vsaka enota v strateiji svoj AI, ki bi bil podoben AI-ju botov v kakih streljačinah. Dodati bi morali tudi podobno fiziko (če ne kritje ne bi veliko pomagalo.Za vse to boš rabil pa precej močnejši računalnik, kot jih delajo sedaj, tako da tega še nekaj časa nebo.<br />_________________<br />&quot;Pustimo malenkosti, pravi cesar, PeCe pa nič (več).&quot;
+
+<br />
+Goran Bervar: C++ na kolenih</span><span class="gensmall"></span></td>
+			</tr>
+		</table></td>
+	</tr>
+	<tr>
+		<td class="row1" width="150" align="left" valign="middle"><span class="nav"><a href="#top" class="nav">Nazaj na vrh</a></span></td>
+		<td class="row1" width="100%" height="28" valign="bottom" nowrap="nowrap"><table cellspacing="0" cellpadding="0" border="0" height="18" width="18">
+			<tr>
+				<td valign="middle" nowrap="nowrap"><a href="profile-162.html"><img src="templates/SGD2/images/lang_slovenian/icon_profile.gif" alt="Poglej uporabnikov profil" title="Poglej uporabnikov profil" border="0" /></a> <a  target="_userwww"><img src="templates/SGD2/images/lang_slovenian/icon_www.gif" alt="Obišči avtorjevo spletno stran" title="Obišči avtorjevo spletno stran" border="0" /></a></td>
+			</tr>
+		</table></td>
+	</tr>
+	<tr>
+		<td class="spaceRow" colspan="2" height="1"><img src="templates/SGD/images/spacer.gif" alt="" width="1" height="1" /></td>
+	</tr>
+	
+	<tr>
+		<td width="150" align="left" valign="top" class="row2"><span class="name"><a name="16926"></a><b>neuronicus</b></span><br /><span class="postdetails">poznavalec<br /><img src="images/ranks/sgd-3.gif" alt="poznavalec" title="poznavalec" border="0" /><br /><br /><br />Pridružen: 12. jan 2003 ob 12:03<br />objav: 226<br /></span><br /></td>
+		<td class="row2" width="100%" height="28" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+			<tr>
+				<td colspan="2" width="100%">
+					<table width="100%" cellpadding="0" cellspacing="0" border="0">
+						<tr>
+							<td valign="middle" align="left">
+								<a href="topic-1387.html#16926"><img src="templates/SGD2/images/icon_minipost.gif" width="12" height="9" alt="objava" title="objava" border="0" /></a>
+								<span class="postdetails">Objavljeno: tor maj 01, 2007 8:49 pm<span class="gen">&nbsp;</span>&nbsp; &nbsp;Pošlji temo: </span>
+							</td>
+							<td valign="middle" align="right" nowrap="nowrap">
+							</td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+			<tr>
+				<td colspan="2"><hr /></td>
+			</tr>
+			<tr>
+				<td colspan="2"><span class="postbody">ja, takšna stvar bi za seboj potegnila kar nekaj stvari.
+
+<br />
+
+
+<br />
+pa danes sem ugotovil, da so enote totalno zabite in včasih uberejo ravno najslabšo pot do nasprotnika. bi bilo fajn, če bi lahko najprej določil koga naj napade, nato pa po možnosti še pot po kateri naj se premika (in ga prestreže). ne pa da z določanjem poti premikanja izgubi tarčo, ki jo je treba nato še enkrat določiti.
+
+<br />
+
+
+<br />
+pa nekatere enote bi po smrti lahko za seboj pustile dušo oziroma nekakšno energijo. ko bi je nabrale dovolj, bi enote izvajale posebno močne napade. napadi kakšnih enot pa bi temeljili izključno na dotični energiji. <img src="images/smiles/icon_smile.gif" alt=":)" border="0" />
+
+<br />
+no, ko sem pomislil na to, sem se spomnil, da enote v TA za seboj pustijo kovino, ki je uporabna kot surovina.
+
+<br />
+
+
+<br />
+aja, pa spodkopati nasprotnikovo bazo bi bilo tud fajn. podzemni boji pa bi bili bolj osmišljeni in ne samo butast &quot;kozmetični&quot; dodatek <img src="images/smiles/icon_smile.gif" alt=":)" border="0" />
+
+<br />
+
+
+<br />
+
+
+<br />
+ja, spet se mi je fajn ukvarjat s strategijami. včasih sem naredil kar precej (dobrih) map za RA2. pa tud kakšne nove enote. ena ekipa me je celo prosila, če ji lahko pošljem kakšne nove enote. sem jih, ampak potem sem pozabil za kater mod je sploh šlo <img src="images/smiles/icon_redface.gif" alt=":oops:" border="0" /> tako da nimam pojma kaj se je zgodilo s tem.</span><span class="gensmall"></span></td>
+			</tr>
+		</table></td>
+	</tr>
+	<tr>
+		<td class="row2" width="150" align="left" valign="middle"><span class="nav"><a href="#top" class="nav">Nazaj na vrh</a></span></td>
+		<td class="row2" width="100%" height="28" valign="bottom" nowrap="nowrap"><table cellspacing="0" cellpadding="0" border="0" height="18" width="18">
+			<tr>
+				<td valign="middle" nowrap="nowrap"><a href="profile-25.html"><img src="templates/SGD2/images/lang_slovenian/icon_profile.gif" alt="Poglej uporabnikov profil" title="Poglej uporabnikov profil" border="0" /></a> </td>
+			</tr>
+		</table></td>
+	</tr>
+	<tr>
+		<td class="spaceRow" colspan="2" height="1"><img src="templates/SGD/images/spacer.gif" alt="" width="1" height="1" /></td>
+	</tr>
+	
+	<tr>
+		<td width="150" align="left" valign="top" class="row1"><span class="name"><a name="16958"></a><b>neuronicus</b></span><br /><span class="postdetails">poznavalec<br /><img src="images/ranks/sgd-3.gif" alt="poznavalec" title="poznavalec" border="0" /><br /><br /><br />Pridružen: 12. jan 2003 ob 12:03<br />objav: 226<br /></span><br /></td>
+		<td class="row1" width="100%" height="28" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+			<tr>
+				<td colspan="2" width="100%">
+					<table width="100%" cellpadding="0" cellspacing="0" border="0">
+						<tr>
+							<td valign="middle" align="left">
+								<a href="topic-1387.html#16958"><img src="templates/SGD2/images/icon_minipost.gif" width="12" height="9" alt="objava" title="objava" border="0" /></a>
+								<span class="postdetails">Objavljeno: pon maj 07, 2007 8:59 am<span class="gen">&nbsp;</span>&nbsp; &nbsp;Pošlji temo: </span>
+							</td>
+							<td valign="middle" align="right" nowrap="nowrap">
+							</td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+			<tr>
+				<td colspan="2"><hr /></td>
+			</tr>
+			<tr>
+				<td colspan="2"><span class="postbody">se kdo mogoče spomni kakšne strategije v kateri bi bilo vidno polje enot nekoliko bolj realistično? da enota ne vidi ozemlja v krogu 360°, ampak vidi samo pred seboj oziroma za seboj vidi manj. ali pa da mogoče ne vidijo ozemlja za neko vzpetino in podobno.</span><span class="gensmall"></span></td>
+			</tr>
+		</table></td>
+	</tr>
+	<tr>
+		<td class="row1" width="150" align="left" valign="middle"><span class="nav"><a href="#top" class="nav">Nazaj na vrh</a></span></td>
+		<td class="row1" width="100%" height="28" valign="bottom" nowrap="nowrap"><table cellspacing="0" cellpadding="0" border="0" height="18" width="18">
+			<tr>
+				<td valign="middle" nowrap="nowrap"><a href="profile-25.html"><img src="templates/SGD2/images/lang_slovenian/icon_profile.gif" alt="Poglej uporabnikov profil" title="Poglej uporabnikov profil" border="0" /></a> </td>
+			</tr>
+		</table></td>
+	</tr>
+	<tr>
+		<td class="spaceRow" colspan="2" height="1"><img src="templates/SGD/images/spacer.gif" alt="" width="1" height="1" /></td>
+	</tr>
+	
+	<tr>
+		<td width="150" align="left" valign="top" class="row2"><span class="name"><a name="16961"></a><b>Iason</b></span><br /><span class="postdetails">inštruktor<br /><img src="images/ranks/sgd-4.gif" alt="inštruktor" title="inštruktor" border="0" /><br /><br /><br />Pridružen: 21. sep 2004 ob 22:57<br />objav: 329<br />Kraj: Kranj</span><br /></td>
+		<td class="row2" width="100%" height="28" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+			<tr>
+				<td colspan="2" width="100%">
+					<table width="100%" cellpadding="0" cellspacing="0" border="0">
+						<tr>
+							<td valign="middle" align="left">
+								<a href="topic-1387.html#16961"><img src="templates/SGD2/images/icon_minipost.gif" width="12" height="9" alt="objava" title="objava" border="0" /></a>
+								<span class="postdetails">Objavljeno: pon maj 07, 2007 2:37 pm<span class="gen">&nbsp;</span>&nbsp; &nbsp;Pošlji temo: </span>
+							</td>
+							<td valign="middle" align="right" nowrap="nowrap">
+							</td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+			<tr>
+				<td colspan="2"><hr /></td>
+			</tr>
+			<tr>
+				<td colspan="2"><span class="postbody">Se spomnim ampak ne imen.
+
+<br />
+
+
+<br />
+Pa še neki glede kroženja okrog tarče.
+
+<br />
+Bilo bi nerealn, ker imajo tanki spredaj močnejši oklep, pehota pa ne more tečt pa strelat, če hoče kaj zadet  <img src="images/smiles/icon_smile.gif" alt=":)" border="0" /></span><span class="gensmall"></span></td>
+			</tr>
+		</table></td>
+	</tr>
+	<tr>
+		<td class="row2" width="150" align="left" valign="middle"><span class="nav"><a href="#top" class="nav">Nazaj na vrh</a></span></td>
+		<td class="row2" width="100%" height="28" valign="bottom" nowrap="nowrap"><table cellspacing="0" cellpadding="0" border="0" height="18" width="18">
+			<tr>
+				<td valign="middle" nowrap="nowrap"><a href="profile-202.html"><img src="templates/SGD2/images/lang_slovenian/icon_profile.gif" alt="Poglej uporabnikov profil" title="Poglej uporabnikov profil" border="0" /></a> </td>
+			</tr>
+		</table></td>
+	</tr>
+	<tr>
+		<td class="spaceRow" colspan="2" height="1"><img src="templates/SGD/images/spacer.gif" alt="" width="1" height="1" /></td>
+	</tr>
+	
+	<tr>
+		<td width="150" align="left" valign="top" class="row1"><span class="name"><a name="16967"></a><b>neuronicus</b></span><br /><span class="postdetails">poznavalec<br /><img src="images/ranks/sgd-3.gif" alt="poznavalec" title="poznavalec" border="0" /><br /><br /><br />Pridružen: 12. jan 2003 ob 12:03<br />objav: 226<br /></span><br /></td>
+		<td class="row1" width="100%" height="28" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+			<tr>
+				<td colspan="2" width="100%">
+					<table width="100%" cellpadding="0" cellspacing="0" border="0">
+						<tr>
+							<td valign="middle" align="left">
+								<a href="topic-1387.html#16967"><img src="templates/SGD2/images/icon_minipost.gif" width="12" height="9" alt="objava" title="objava" border="0" /></a>
+								<span class="postdetails">Objavljeno: pon maj 07, 2007 9:54 pm<span class="gen">&nbsp;</span>&nbsp; &nbsp;Pošlji temo: </span>
+							</td>
+							<td valign="middle" align="right" nowrap="nowrap">
+							</td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+			<tr>
+				<td colspan="2"><hr /></td>
+			</tr>
+			<tr>
+				<td colspan="2"><span class="postbody">hmm... zakaj nerealn?
+
+<br />
+pehota lahko teče in strelja, ampak je v tem primeru njena natančnost pač nekoliko manjša.
+
+<br />
+okrog tanka bi mogoče težko tekla, še posebej, če bi se ta premikal. ampak saj ni treba, da se premika ravno pehota. okrog tarče lahko kroži lahko napadalno vozilo, ki je dovolj hitro. pehota pa bi na primer tekla okrog nekega stražnega stolpa, ki bi streljal. in ni nobene potrebe, da bi se bal za stolp. igralec bi na voljo na primer imel &quot;tehnologijo&quot;, ki bi bolj natančno streljala na premične tarče <img src="images/smiles/icon_wink.gif" alt=";)" border="0" /> za vsako bolezen namreč obstaja zdravilo.
+
+<br />
+poleg tega ni potrebe po tankih, vse to se da (mogoče še bolj učinkovito) prenesti v fantazijski svet.
+
+<br />
+
+
+<br />
+
+
+<br />
+sm pa tud jst slišal za igro (ali pa samo neka razmišljanja na to temo) kjer je bilo vidno polje omejeno.
+
+<br />
+stvar omogoča zanimive prijeme. vidna polja so lahko za različne enote pač lahko različna. lahko tudi 360°. lahko ga (360) kakšni enoti začasno omogočiš. na primer z raziskanjem &quot;zavedanja okolice&quot;. pa še napadi od zadaj ali z boka bi bili bolj zanimivi. če ima igralec na voljo enote, ki vidijo tudi nazaj, si je pač sam kriv, če jih ni uporabil pravilno. poleg tega pa bi lahko tudi scouti pridobivali izkušnje (in s tem nove sposobnosti) z raziskovanjem ozemlja in skrivanjem pred pogledi nasprotnikovih enot/zgradb. zakaj bi morali napredovati samo vojaki?</span><span class="gensmall"></span></td>
+			</tr>
+		</table></td>
+	</tr>
+	<tr>
+		<td class="row1" width="150" align="left" valign="middle"><span class="nav"><a href="#top" class="nav">Nazaj na vrh</a></span></td>
+		<td class="row1" width="100%" height="28" valign="bottom" nowrap="nowrap"><table cellspacing="0" cellpadding="0" border="0" height="18" width="18">
+			<tr>
+				<td valign="middle" nowrap="nowrap"><a href="profile-25.html"><img src="templates/SGD2/images/lang_slovenian/icon_profile.gif" alt="Poglej uporabnikov profil" title="Poglej uporabnikov profil" border="0" /></a> </td>
+			</tr>
+		</table></td>
+	</tr>
+	<tr>
+		<td class="spaceRow" colspan="2" height="1"><img src="templates/SGD/images/spacer.gif" alt="" width="1" height="1" /></td>
+	</tr>
+	
+	<tr>
+		<td width="150" align="left" valign="top" class="row2"><span class="name"><a name="16969"></a><b>Iason</b></span><br /><span class="postdetails">inštruktor<br /><img src="images/ranks/sgd-4.gif" alt="inštruktor" title="inštruktor" border="0" /><br /><br /><br />Pridružen: 21. sep 2004 ob 22:57<br />objav: 329<br />Kraj: Kranj</span><br /></td>
+		<td class="row2" width="100%" height="28" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+			<tr>
+				<td colspan="2" width="100%">
+					<table width="100%" cellpadding="0" cellspacing="0" border="0">
+						<tr>
+							<td valign="middle" align="left">
+								<a href="topic-1387.html#16969"><img src="templates/SGD2/images/icon_minipost.gif" width="12" height="9" alt="objava" title="objava" border="0" /></a>
+								<span class="postdetails">Objavljeno: pon maj 07, 2007 11:15 pm<span class="gen">&nbsp;</span>&nbsp; &nbsp;Pošlji temo: </span>
+							</td>
+							<td valign="middle" align="right" nowrap="nowrap">
+							</td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+			<tr>
+				<td colspan="2"><hr /></td>
+			</tr>
+			<tr>
+				<td colspan="2"><span class="postbody"></span>
+<br />
+<table width="90%" cellspacing="1" cellpadding="3" border="0" align="center">
+<br />
+<tr> 
+<br />
+	  <td><span class="genmed"><b>neuronicus je napisal:</b></span></td>
+<br />
+	</tr>
+<br />
+	<tr>
+<br />
+	  <td class="quote">hmm... zakaj nerealn?
+<br />
+</td>
+<br />
+	</tr>
+<br />
+</table>
+<br />
+<span class="postbody">
+
+<br />
+Saj če je nerealn ni nič narobe, igre so skor zmer nerealne/neralistične.
+
+<br />
+Če imaš fantasy ali future okolje potem je že zarad tega nerealn <img src="images/smiles/icon_biggrin.gif" alt=":D" border="0" />
+
+<br />
+
+
+<br />
+Lahko napadalno vozilo bi lahko krožilo okrog tarče ampak men se zdi da bi voznik težko gledal kje je tarča in kaj je pred njim <img src="images/smiles/icon_smile.gif" alt=":)" border="0" /></span><span class="gensmall"></span></td>
+			</tr>
+		</table></td>
+	</tr>
+	<tr>
+		<td class="row2" width="150" align="left" valign="middle"><span class="nav"><a href="#top" class="nav">Nazaj na vrh</a></span></td>
+		<td class="row2" width="100%" height="28" valign="bottom" nowrap="nowrap"><table cellspacing="0" cellpadding="0" border="0" height="18" width="18">
+			<tr>
+				<td valign="middle" nowrap="nowrap"><a href="profile-202.html"><img src="templates/SGD2/images/lang_slovenian/icon_profile.gif" alt="Poglej uporabnikov profil" title="Poglej uporabnikov profil" border="0" /></a> </td>
+			</tr>
+		</table></td>
+	</tr>
+	<tr>
+		<td class="spaceRow" colspan="2" height="1"><img src="templates/SGD/images/spacer.gif" alt="" width="1" height="1" /></td>
+	</tr>
+	
+	<tr>
+		<td width="150" align="left" valign="top" class="row1"><span class="name"><a name="16970"></a><b>neuronicus</b></span><br /><span class="postdetails">poznavalec<br /><img src="images/ranks/sgd-3.gif" alt="poznavalec" title="poznavalec" border="0" /><br /><br /><br />Pridružen: 12. jan 2003 ob 12:03<br />objav: 226<br /></span><br /></td>
+		<td class="row1" width="100%" height="28" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+			<tr>
+				<td colspan="2" width="100%">
+					<table width="100%" cellpadding="0" cellspacing="0" border="0">
+						<tr>
+							<td valign="middle" align="left">
+								<a href="topic-1387.html#16970"><img src="templates/SGD2/images/icon_minipost.gif" width="12" height="9" alt="objava" title="objava" border="0" /></a>
+								<span class="postdetails">Objavljeno: pon maj 07, 2007 11:33 pm<span class="gen">&nbsp;</span>&nbsp; &nbsp;Pošlji temo: </span>
+							</td>
+							<td valign="middle" align="right" nowrap="nowrap">
+							</td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+			<tr>
+				<td colspan="2"><hr /></td>
+			</tr>
+			<tr>
+				<td colspan="2"><span class="postbody">no, pustmo to. <img src="images/smiles/icon_smile.gif" alt=":)" border="0" /> ker bi lahko argumentirano rekel, da je uporaba magije v letu 1942 realna. pač v okviru sveta v katerem se zadeva dogaja. nerealno bi bilo, če bi v warcraft svet pretihotapil F-117. <img src="images/smiles/icon_lol.gif" alt=":lol:" border="0" />
+
+<br />
+
+
+<br />
+zakaj pa bi bil v vozilu samo en osebek? en lahko vozi, drugi strelja. streljanje je lahko avtomatično. oboje je avtomatično. vse to zveni čisto realno, kajne? <img src="images/smiles/icon_wink.gif" alt=":wink:" border="0" /></span><span class="gensmall"></span></td>
+			</tr>
+		</table></td>
+	</tr>
+	<tr>
+		<td class="row1" width="150" align="left" valign="middle"><span class="nav"><a href="#top" class="nav">Nazaj na vrh</a></span></td>
+		<td class="row1" width="100%" height="28" valign="bottom" nowrap="nowrap"><table cellspacing="0" cellpadding="0" border="0" height="18" width="18">
+			<tr>
+				<td valign="middle" nowrap="nowrap"><a href="profile-25.html"><img src="templates/SGD2/images/lang_slovenian/icon_profile.gif" alt="Poglej uporabnikov profil" title="Poglej uporabnikov profil" border="0" /></a> </td>
+			</tr>
+		</table></td>
+	</tr>
+	<tr>
+		<td class="spaceRow" colspan="2" height="1"><img src="templates/SGD/images/spacer.gif" alt="" width="1" height="1" /></td>
+	</tr>
+	
+	<tr>
+		<td width="150" align="left" valign="top" class="row2"><span class="name"><a name="16972"></a><b>Iason</b></span><br /><span class="postdetails">inštruktor<br /><img src="images/ranks/sgd-4.gif" alt="inštruktor" title="inštruktor" border="0" /><br /><br /><br />Pridružen: 21. sep 2004 ob 22:57<br />objav: 329<br />Kraj: Kranj</span><br /></td>
+		<td class="row2" width="100%" height="28" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+			<tr>
+				<td colspan="2" width="100%">
+					<table width="100%" cellpadding="0" cellspacing="0" border="0">
+						<tr>
+							<td valign="middle" align="left">
+								<a href="topic-1387.html#16972"><img src="templates/SGD2/images/icon_minipost.gif" width="12" height="9" alt="objava" title="objava" border="0" /></a>
+								<span class="postdetails">Objavljeno: tor maj 08, 2007 8:22 am<span class="gen">&nbsp;</span>&nbsp; &nbsp;Pošlji temo: </span>
+							</td>
+							<td valign="middle" align="right" nowrap="nowrap">
+							</td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+			<tr>
+				<td colspan="2"><hr /></td>
+			</tr>
+			<tr>
+				<td colspan="2"><span class="postbody">En lahko vozi drug pa strelja ampak je še zmeri problem da mora voznik gledat tarčo, da lahko kroži okrog nje in teren ponavad ni čisto ravn pa brez ovir.
+
+<br />
+
+
+<br />
+Te stvari sem razmišlal za eno svoji idejo za igro, ki naj bi bila realistična strategija. 
+
+<br />
+V bistvu bi bila kot fps tipa Operation Flashpoint / Armed Assault, samo da bi imel pogled od zgor pa dajal bi ukaze squadom <img src="images/smiles/icon_smile.gif" alt=":)" border="0" /></span><span class="gensmall"></span></td>
+			</tr>
+		</table></td>
+	</tr>
+	<tr>
+		<td class="row2" width="150" align="left" valign="middle"><span class="nav"><a href="#top" class="nav">Nazaj na vrh</a></span></td>
+		<td class="row2" width="100%" height="28" valign="bottom" nowrap="nowrap"><table cellspacing="0" cellpadding="0" border="0" height="18" width="18">
+			<tr>
+				<td valign="middle" nowrap="nowrap"><a href="profile-202.html"><img src="templates/SGD2/images/lang_slovenian/icon_profile.gif" alt="Poglej uporabnikov profil" title="Poglej uporabnikov profil" border="0" /></a> </td>
+			</tr>
+		</table></td>
+	</tr>
+	<tr>
+		<td class="spaceRow" colspan="2" height="1"><img src="templates/SGD/images/spacer.gif" alt="" width="1" height="1" /></td>
+	</tr>
+	
+	<tr>
+		<td width="150" align="left" valign="top" class="row1"><span class="name"><a name="16974"></a><b>Boc16</b></span><br /><span class="postdetails">novinec<br /><img src="images/ranks/sgd-0.gif" alt="novinec" title="novinec" border="0" /><br /><br /><br />Pridružen: 14. nov 2006 ob 21:47<br />objav: 21<br /></span><br /></td>
+		<td class="row1" width="100%" height="28" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+			<tr>
+				<td colspan="2" width="100%">
+					<table width="100%" cellpadding="0" cellspacing="0" border="0">
+						<tr>
+							<td valign="middle" align="left">
+								<a href="topic-1387.html#16974"><img src="templates/SGD2/images/icon_minipost.gif" width="12" height="9" alt="objava" title="objava" border="0" /></a>
+								<span class="postdetails">Objavljeno: tor maj 08, 2007 2:04 pm<span class="gen">&nbsp;</span>&nbsp; &nbsp;Pošlji temo: </span>
+							</td>
+							<td valign="middle" align="right" nowrap="nowrap">
+							</td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+			<tr>
+				<td colspan="2"><hr /></td>
+			</tr>
+			<tr>
+				<td colspan="2"><span class="postbody">Mja... za realnost strategij so pomoje bolj pomembni dejavniki obveščevalni podatki, količina streliva, goriva, hitrost enot, mobilnost, komunikacija...
+
+<br />
+
+
+<br />
+To pa se da vse dost lažje izvest kej pravite...</span><span class="gensmall"></span></td>
+			</tr>
+		</table></td>
+	</tr>
+	<tr>
+		<td class="row1" width="150" align="left" valign="middle"><span class="nav"><a href="#top" class="nav">Nazaj na vrh</a></span></td>
+		<td class="row1" width="100%" height="28" valign="bottom" nowrap="nowrap"><table cellspacing="0" cellpadding="0" border="0" height="18" width="18">
+			<tr>
+				<td valign="middle" nowrap="nowrap"><a href="profile-460.html"><img src="templates/SGD2/images/lang_slovenian/icon_profile.gif" alt="Poglej uporabnikov profil" title="Poglej uporabnikov profil" border="0" /></a> </td>
+			</tr>
+		</table></td>
+	</tr>
+	<tr>
+		<td class="spaceRow" colspan="2" height="1"><img src="templates/SGD/images/spacer.gif" alt="" width="1" height="1" /></td>
+	</tr>
+	
+	<tr>
+		<td width="150" align="left" valign="top" class="row2"><span class="name"><a name="16975"></a><b>neuronicus</b></span><br /><span class="postdetails">poznavalec<br /><img src="images/ranks/sgd-3.gif" alt="poznavalec" title="poznavalec" border="0" /><br /><br /><br />Pridružen: 12. jan 2003 ob 12:03<br />objav: 226<br /></span><br /></td>
+		<td class="row2" width="100%" height="28" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+			<tr>
+				<td colspan="2" width="100%">
+					<table width="100%" cellpadding="0" cellspacing="0" border="0">
+						<tr>
+							<td valign="middle" align="left">
+								<a href="topic-1387.html#16975"><img src="templates/SGD2/images/icon_minipost.gif" width="12" height="9" alt="objava" title="objava" border="0" /></a>
+								<span class="postdetails">Objavljeno: tor maj 08, 2007 4:37 pm<span class="gen">&nbsp;</span>&nbsp; &nbsp;Pošlji temo: </span>
+							</td>
+							<td valign="middle" align="right" nowrap="nowrap">
+							</td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+			<tr>
+				<td colspan="2"><hr /></td>
+			</tr>
+			<tr>
+				<td colspan="2"><span class="postbody">to je res. (ok, nimam pojma glede zahtevnosti implementacije) ampak zakaj bi se omejil samo na to, če se pa da implementirati še druge elemente, ki so zanimivi in uporabni? <img src="images/smiles/icon_wink.gif" alt=":wink:" border="0" /> treba je samo paziti, da ne dodaš preveč (nepotrebnih) stvari in z njimi onemogočiš igranje. če so že notri, naj bodo neobvezne, ampak vseeno naj dajo uporabniku neko prednost.</span><span class="gensmall"></span></td>
+			</tr>
+		</table></td>
+	</tr>
+	<tr>
+		<td class="row2" width="150" align="left" valign="middle"><span class="nav"><a href="#top" class="nav">Nazaj na vrh</a></span></td>
+		<td class="row2" width="100%" height="28" valign="bottom" nowrap="nowrap"><table cellspacing="0" cellpadding="0" border="0" height="18" width="18">
+			<tr>
+				<td valign="middle" nowrap="nowrap"><a href="profile-25.html"><img src="templates/SGD2/images/lang_slovenian/icon_profile.gif" alt="Poglej uporabnikov profil" title="Poglej uporabnikov profil" border="0" /></a> </td>
+			</tr>
+		</table></td>
+	</tr>
+	<tr>
+		<td class="spaceRow" colspan="2" height="1"><img src="templates/SGD/images/spacer.gif" alt="" width="1" height="1" /></td>
+	</tr>
+	
+	<tr>
+		<td width="150" align="left" valign="top" class="row1"><span class="name"><a name="16977"></a><b>Boc16</b></span><br /><span class="postdetails">novinec<br /><img src="images/ranks/sgd-0.gif" alt="novinec" title="novinec" border="0" /><br /><br /><br />Pridružen: 14. nov 2006 ob 21:47<br />objav: 21<br /></span><br /></td>
+		<td class="row1" width="100%" height="28" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+			<tr>
+				<td colspan="2" width="100%">
+					<table width="100%" cellpadding="0" cellspacing="0" border="0">
+						<tr>
+							<td valign="middle" align="left">
+								<a href="topic-1387.html#16977"><img src="templates/SGD2/images/icon_minipost.gif" width="12" height="9" alt="objava" title="objava" border="0" /></a>
+								<span class="postdetails">Objavljeno: tor maj 08, 2007 5:34 pm<span class="gen">&nbsp;</span>&nbsp; &nbsp;Pošlji temo: </span>
+							</td>
+							<td valign="middle" align="right" nowrap="nowrap">
+							</td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+			<tr>
+				<td colspan="2"><hr /></td>
+			</tr>
+			<tr>
+				<td colspan="2"><span class="postbody">HM, kaj pa prednost terena? (tu so spet obveščevalni...) Ne vem, na ne poznanem je malo spremenjena slika... npr... Tanki so v pesku tako počasni, da niso za nikamor, močvirje zdela pehoto, letalstvo v megli in hribovju nima kaj počet...
+
+<br />
+
+
+<br />
+SE pa itak strinnjam glede zanimivosti poteka bitke, če so vključeni prej našteti elementi...</span><span class="gensmall"></span></td>
+			</tr>
+		</table></td>
+	</tr>
+	<tr>
+		<td class="row1" width="150" align="left" valign="middle"><span class="nav"><a href="#top" class="nav">Nazaj na vrh</a></span></td>
+		<td class="row1" width="100%" height="28" valign="bottom" nowrap="nowrap"><table cellspacing="0" cellpadding="0" border="0" height="18" width="18">
+			<tr>
+				<td valign="middle" nowrap="nowrap"><a href="profile-460.html"><img src="templates/SGD2/images/lang_slovenian/icon_profile.gif" alt="Poglej uporabnikov profil" title="Poglej uporabnikov profil" border="0" /></a> </td>
+			</tr>
+		</table></td>
+	</tr>
+	<tr>
+		<td class="spaceRow" colspan="2" height="1"><img src="templates/SGD/images/spacer.gif" alt="" width="1" height="1" /></td>
+	</tr>
+	
+	<tr>
+		<td width="150" align="left" valign="top" class="row2"><span class="name"><a name="16978"></a><b>neuronicus</b></span><br /><span class="postdetails">poznavalec<br /><img src="images/ranks/sgd-3.gif" alt="poznavalec" title="poznavalec" border="0" /><br /><br /><br />Pridružen: 12. jan 2003 ob 12:03<br />objav: 226<br /></span><br /></td>
+		<td class="row2" width="100%" height="28" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+			<tr>
+				<td colspan="2" width="100%">
+					<table width="100%" cellpadding="0" cellspacing="0" border="0">
+						<tr>
+							<td valign="middle" align="left">
+								<a href="topic-1387.html#16978"><img src="templates/SGD2/images/icon_minipost.gif" width="12" height="9" alt="objava" title="objava" border="0" /></a>
+								<span class="postdetails">Objavljeno: tor maj 08, 2007 6:36 pm<span class="gen">&nbsp;</span>&nbsp; &nbsp;Pošlji temo: </span>
+							</td>
+							<td valign="middle" align="right" nowrap="nowrap">
+							</td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+			<tr>
+				<td colspan="2"><hr /></td>
+			</tr>
+			<tr>
+				<td colspan="2"><span class="postbody">teren je pomemben, ampak pogosto še zdaleč ne toliko kot bi lahko bil. no, pretiravat ni treba. poleg tega enote na višjem položaju ne smejo vedno imeti bonusa zaradi tega. nekatera orožja so enako zmogljiva, če delujejo navzdol ali pa navzgor <img src="images/smiles/icon_smile.gif" alt=":)" border="0" />.
+
+<br />
+
+
+<br />
+letala letijo tako visoko, da jih hribovje niti ne moti. megla ovira skoraj vse in bi bila mogoče zanimiva zadeva. itak pa obstajajo radarji in podobna tehnologija, ki zmanjšajo ali odstranijo vpliv megle.
+
+<br />
+težje enote niti ne morejo v močvirje, se pa vanj lahko skrijejo protitankovske enote <img src="images/smiles/icon_twisted.gif" alt=":twisted:" border="0" />
+
+<br />
+
+
+<br />
+izvidniki bi izkušnje dobivali z raziskovanjem ozemlja. več bi raziskali, dlje bi videli, na koncu pa bi celo razločili na kateri stopnji so nasprotnikove enote. da igralec slučajno ne bi poslal bataljona zelencev na osamljenega heroja <img src="images/smiles/icon_lol.gif" alt=":lol:" border="0" />
+
+<br />
+potem je pa samo še domišljija omejitev. izvidnik ima lahko spremljevalca, ki mu pomaga odkrivati ali nadzorovati teren. ta spremljevalec lahko teren razkriva na povsem svoj način. na primer kot netopir. poleg tega, da nekoliko vidi, lahko uporablja sonar. zaradi tega, ker bi se zvok oddajal v pulzih, bi se tudi teren odkrival na ta način. pulz bi se oddaljeval od enote in ne bi bil povezan z njo.
+
+<br />
+
+
+<br />
+kaj pa padanje natančnosti z razdaljo? bi bilo težko narediti kurzor, ki bi spreminjal velikost kroga, ko bi ga premikal stran ali proti enoti? do neke razdalje je natančen, nato pa mu ta počasi pada. itak ni treba, da se natančnost zelo spremeni. še posebej ob primerni tehnologiji in/ali izkušenosti.</span><span class="gensmall"></span></td>
+			</tr>
+		</table></td>
+	</tr>
+	<tr>
+		<td class="row2" width="150" align="left" valign="middle"><span class="nav"><a href="#top" class="nav">Nazaj na vrh</a></span></td>
+		<td class="row2" width="100%" height="28" valign="bottom" nowrap="nowrap"><table cellspacing="0" cellpadding="0" border="0" height="18" width="18">
+			<tr>
+				<td valign="middle" nowrap="nowrap"><a href="profile-25.html"><img src="templates/SGD2/images/lang_slovenian/icon_profile.gif" alt="Poglej uporabnikov profil" title="Poglej uporabnikov profil" border="0" /></a> </td>
+			</tr>
+		</table></td>
+	</tr>
+	<tr>
+		<td class="spaceRow" colspan="2" height="1"><img src="templates/SGD/images/spacer.gif" alt="" width="1" height="1" /></td>
+	</tr>
+	
+	<tr>
+		<td width="150" align="left" valign="top" class="row1"><span class="name"><a name="16984"></a><b>Boc16</b></span><br /><span class="postdetails">novinec<br /><img src="images/ranks/sgd-0.gif" alt="novinec" title="novinec" border="0" /><br /><br /><br />Pridružen: 14. nov 2006 ob 21:47<br />objav: 21<br /></span><br /></td>
+		<td class="row1" width="100%" height="28" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+			<tr>
+				<td colspan="2" width="100%">
+					<table width="100%" cellpadding="0" cellspacing="0" border="0">
+						<tr>
+							<td valign="middle" align="left">
+								<a href="topic-1387.html#16984"><img src="templates/SGD2/images/icon_minipost.gif" width="12" height="9" alt="objava" title="objava" border="0" /></a>
+								<span class="postdetails">Objavljeno: sre maj 09, 2007 2:36 pm<span class="gen">&nbsp;</span>&nbsp; &nbsp;Pošlji temo: </span>
+							</td>
+							<td valign="middle" align="right" nowrap="nowrap">
+							</td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+			<tr>
+				<td colspan="2"><hr /></td>
+			</tr>
+			<tr>
+				<td colspan="2"><span class="postbody">No nekaj takega sm si zamislil... lepo d si me razumel...
+
+<br />
+
+
+<br />
+Tudi sposobnosti herojev ne morejo biti v povečani moči (npr. red alert, ko je kirov airship sesu s tremi zvezdicami pol baze)... puško ima enako, al pa mora po boljšo v orožarno... poveča se mu vid, morda bi se dalu upeljati tudi stezosledstvo.... 
+
+<br />
+
+
+<br />
+
+
+<br />
+Kaj pa misliš o bolj povdarjenjem šolanju vojakv?
+
+<br />
+
+
+<br />
+Npr... Skupino vojakov izšolaš za kar hočeš....
+
+<br />
+
+
+<br />
+Lahko narediš 20 bataljonov n00bov al pa enega, ki ga pelješ v šolo za kamuflažo(zna se bolj neopazno gibat), potem še v šolo za vzdrževajhe orožja(poveča se mu vzdržljivost orožja in natančnost), inžinerstvo(zna postavljat mine, krast avtomobile, zadeti posadko v avtomobilu), komunikacijo(boljše razporejanje voda po terenu), preživetništvo(bom potem obrazložil), navigacijo( poznavanje kart, terena....)
+
+<br />
+
+
+<br />
+
+
+<br />
+Pomen komunikacije....
+
+<br />
+
+
+<br />
+Enota, ki izgubi vezista ali je preslabo komunkacijsko izobražena se lahko na terenu izgubi in nanjo NE moremo vplivati... luta okoli in lahko zabrede ne vem kako daleč... takrat pa pridejo do izraza točke izobraženosti na področju preživetništva.... več kot jih ima dalj asa bo enota živa preden jo najdemo če so čehi in ne znajo nič bo enota po dveh ali treh dneh mrzla...
+
+<br />
+Ne vem mislm, da je to bolj pomembno-namreč vpliv komunikacije... brez tega ni modernega vojskovanja...</span><span class="gensmall"></span></td>
+			</tr>
+		</table></td>
+	</tr>
+	<tr>
+		<td class="row1" width="150" align="left" valign="middle"><span class="nav"><a href="#top" class="nav">Nazaj na vrh</a></span></td>
+		<td class="row1" width="100%" height="28" valign="bottom" nowrap="nowrap"><table cellspacing="0" cellpadding="0" border="0" height="18" width="18">
+			<tr>
+				<td valign="middle" nowrap="nowrap"><a href="profile-460.html"><img src="templates/SGD2/images/lang_slovenian/icon_profile.gif" alt="Poglej uporabnikov profil" title="Poglej uporabnikov profil" border="0" /></a> </td>
+			</tr>
+		</table></td>
+	</tr>
+	<tr>
+		<td class="spaceRow" colspan="2" height="1"><img src="templates/SGD/images/spacer.gif" alt="" width="1" height="1" /></td>
+	</tr>
+	
+	<tr>
+		<td width="150" align="left" valign="top" class="row2"><span class="name"><a name="16987"></a><b>neuronicus</b></span><br /><span class="postdetails">poznavalec<br /><img src="images/ranks/sgd-3.gif" alt="poznavalec" title="poznavalec" border="0" /><br /><br /><br />Pridružen: 12. jan 2003 ob 12:03<br />objav: 226<br /></span><br /></td>
+		<td class="row2" width="100%" height="28" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+			<tr>
+				<td colspan="2" width="100%">
+					<table width="100%" cellpadding="0" cellspacing="0" border="0">
+						<tr>
+							<td valign="middle" align="left">
+								<a href="topic-1387.html#16987"><img src="templates/SGD2/images/icon_minipost.gif" width="12" height="9" alt="objava" title="objava" border="0" /></a>
+								<span class="postdetails">Objavljeno: sre maj 09, 2007 8:35 pm<span class="gen">&nbsp;</span>&nbsp; &nbsp;Pošlji temo: </span>
+							</td>
+							<td valign="middle" align="right" nowrap="nowrap">
+							</td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+			<tr>
+				<td colspan="2"><hr /></td>
+			</tr>
+			<tr>
+				<td colspan="2"><span class="postbody">tole šolanje se mi zdi smiselno samo, če bi lahko za vsako enoto že na začetku, ko bi naročal njeno izdelavo, določil katere sposobnosti naj ima. vsaka bi stala določeno vsoto surovin in časa. nekaj v stilu battle realms - pošiljanje iz ene zgradbe v drugo, nato pa mogoče še v tretjo, se mi ne zdi ok.
+
+<br />
+
+
+<br />
+navigacija in komunikacije sta po moje smiselna samo za večje mape in še to za igro, v kateri bi bil realizem res bolj poudarjen. ker drugače je zajebano kar izgubljati enote oziroma jih poslati na točko A, znajdejo se pa na B.
+
+<br />
+
+
+<br />
+kar bi se enota naučila na začetku, to bi kasneje avtomatično nadgrajevala, hkrati pa bi lahko točke vlagala še v kakšno drugo sposobnost - nekatere stvari mogoče niso jasne že kar od začetka.
+
+<br />
+
+
+<br />
+ali pa imaš na začetku nekaj različnih vrst enot, nato pa jim skladno z napredovanjem razvijaš še druge sposobnosti <img src="images/smiles/icon_biggrin.gif" alt=":D" border="0" /> ker bi moral imeti mnogo različnih uporabnih sposobnosti, drugače mogoče ne bi imel občutka, da enota napreduje res napreduje (samo višanje statistike ni dovolj). za vsako stopnjo mora imeti na voljo nekaj novega. pa kakšne sposobnosti se lahko tudi razcepijo.</span><span class="gensmall"></span></td>
+			</tr>
+		</table></td>
+	</tr>
+	<tr>
+		<td class="row2" width="150" align="left" valign="middle"><span class="nav"><a href="#top" class="nav">Nazaj na vrh</a></span></td>
+		<td class="row2" width="100%" height="28" valign="bottom" nowrap="nowrap"><table cellspacing="0" cellpadding="0" border="0" height="18" width="18">
+			<tr>
+				<td valign="middle" nowrap="nowrap"><a href="profile-25.html"><img src="templates/SGD2/images/lang_slovenian/icon_profile.gif" alt="Poglej uporabnikov profil" title="Poglej uporabnikov profil" border="0" /></a> </td>
+			</tr>
+		</table></td>
+	</tr>
+	<tr>
+		<td class="spaceRow" colspan="2" height="1"><img src="templates/SGD/images/spacer.gif" alt="" width="1" height="1" /></td>
+	</tr>
+	
+	<tr>
+		<td width="150" align="left" valign="top" class="row1"><span class="name"><a name="16992"></a><b>Boc16</b></span><br /><span class="postdetails">novinec<br /><img src="images/ranks/sgd-0.gif" alt="novinec" title="novinec" border="0" /><br /><br /><br />Pridružen: 14. nov 2006 ob 21:47<br />objav: 21<br /></span><br /></td>
+		<td class="row1" width="100%" height="28" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+			<tr>
+				<td colspan="2" width="100%">
+					<table width="100%" cellpadding="0" cellspacing="0" border="0">
+						<tr>
+							<td valign="middle" align="left">
+								<a href="topic-1387.html#16992"><img src="templates/SGD2/images/icon_minipost.gif" width="12" height="9" alt="objava" title="objava" border="0" /></a>
+								<span class="postdetails">Objavljeno: čet maj 10, 2007 2:21 pm<span class="gen">&nbsp;</span>&nbsp; &nbsp;Pošlji temo: </span>
+							</td>
+							<td valign="middle" align="right" nowrap="nowrap">
+							</td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+			<tr>
+				<td colspan="2"><hr /></td>
+			</tr>
+			<tr>
+				<td colspan="2"><span class="postbody">oprosti z numn predlog...</span><span class="gensmall"></span></td>
+			</tr>
+		</table></td>
+	</tr>
+	<tr>
+		<td class="row1" width="150" align="left" valign="middle"><span class="nav"><a href="#top" class="nav">Nazaj na vrh</a></span></td>
+		<td class="row1" width="100%" height="28" valign="bottom" nowrap="nowrap"><table cellspacing="0" cellpadding="0" border="0" height="18" width="18">
+			<tr>
+				<td valign="middle" nowrap="nowrap"><a href="profile-460.html"><img src="templates/SGD2/images/lang_slovenian/icon_profile.gif" alt="Poglej uporabnikov profil" title="Poglej uporabnikov profil" border="0" /></a> </td>
+			</tr>
+		</table></td>
+	</tr>
+	<tr>
+		<td class="spaceRow" colspan="2" height="1"><img src="templates/SGD/images/spacer.gif" alt="" width="1" height="1" /></td>
+	</tr>
+	
+	<tr>
+		<td width="150" align="left" valign="top" class="row2"><span class="name"><a name="16994"></a><b>neuronicus</b></span><br /><span class="postdetails">poznavalec<br /><img src="images/ranks/sgd-3.gif" alt="poznavalec" title="poznavalec" border="0" /><br /><br /><br />Pridružen: 12. jan 2003 ob 12:03<br />objav: 226<br /></span><br /></td>
+		<td class="row2" width="100%" height="28" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+			<tr>
+				<td colspan="2" width="100%">
+					<table width="100%" cellpadding="0" cellspacing="0" border="0">
+						<tr>
+							<td valign="middle" align="left">
+								<a href="topic-1387.html#16994"><img src="templates/SGD2/images/icon_minipost.gif" width="12" height="9" alt="objava" title="objava" border="0" /></a>
+								<span class="postdetails">Objavljeno: čet maj 10, 2007 4:38 pm<span class="gen">&nbsp;</span>&nbsp; &nbsp;Pošlji temo: </span>
+							</td>
+							<td valign="middle" align="right" nowrap="nowrap">
+							</td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+			<tr>
+				<td colspan="2"><hr /></td>
+			</tr>
+			<tr>
+				<td colspan="2"><span class="postbody">neumn? še zdaleč ne <img src="images/smiles/icon_wink.gif" alt=";)" border="0" /> vsaka ideja, naj bo dobra ali &quot;slaba&quot;, lahko porodi nove ideje.
+
+<br />
+če idejo dobro predstaviš, pokažeš njene močne in šibke točke, potem si na dobri poti. tudi iz slabše ideje lahko na koncu dobiš nekaj dobrega. razmišljaj o njej in si zapiši vse posledične ideje, ki jih dobiš zaradi tega.</span><span class="gensmall"></span></td>
+			</tr>
+		</table></td>
+	</tr>
+	<tr>
+		<td class="row2" width="150" align="left" valign="middle"><span class="nav"><a href="#top" class="nav">Nazaj na vrh</a></span></td>
+		<td class="row2" width="100%" height="28" valign="bottom" nowrap="nowrap"><table cellspacing="0" cellpadding="0" border="0" height="18" width="18">
+			<tr>
+				<td valign="middle" nowrap="nowrap"><a href="profile-25.html"><img src="templates/SGD2/images/lang_slovenian/icon_profile.gif" alt="Poglej uporabnikov profil" title="Poglej uporabnikov profil" border="0" /></a> </td>
+			</tr>
+		</table></td>
+	</tr>
+	<tr>
+		<td class="spaceRow" colspan="2" height="1"><img src="templates/SGD/images/spacer.gif" alt="" width="1" height="1" /></td>
+	</tr>
+	
+	<tr>
+		<td width="150" align="left" valign="top" class="row1"><span class="name"><a name="16995"></a><b>Boc16</b></span><br /><span class="postdetails">novinec<br /><img src="images/ranks/sgd-0.gif" alt="novinec" title="novinec" border="0" /><br /><br /><br />Pridružen: 14. nov 2006 ob 21:47<br />objav: 21<br /></span><br /></td>
+		<td class="row1" width="100%" height="28" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+			<tr>
+				<td colspan="2" width="100%">
+					<table width="100%" cellpadding="0" cellspacing="0" border="0">
+						<tr>
+							<td valign="middle" align="left">
+								<a href="topic-1387.html#16995"><img src="templates/SGD2/images/icon_minipost.gif" width="12" height="9" alt="objava" title="objava" border="0" /></a>
+								<span class="postdetails">Objavljeno: čet maj 10, 2007 4:58 pm<span class="gen">&nbsp;</span>&nbsp; &nbsp;Pošlji temo: </span>
+							</td>
+							<td valign="middle" align="right" nowrap="nowrap">
+							</td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+			<tr>
+				<td colspan="2"><hr /></td>
+			</tr>
+			<tr>
+				<td colspan="2"><span class="postbody">mja pomagu ti nism neč..</span><span class="gensmall"></span></td>
+			</tr>
+		</table></td>
+	</tr>
+	<tr>
+		<td class="row1" width="150" align="left" valign="middle"><span class="nav"><a href="#top" class="nav">Nazaj na vrh</a></span></td>
+		<td class="row1" width="100%" height="28" valign="bottom" nowrap="nowrap"><table cellspacing="0" cellpadding="0" border="0" height="18" width="18">
+			<tr>
+				<td valign="middle" nowrap="nowrap"><a href="profile-460.html"><img src="templates/SGD2/images/lang_slovenian/icon_profile.gif" alt="Poglej uporabnikov profil" title="Poglej uporabnikov profil" border="0" /></a> </td>
+			</tr>
+		</table></td>
+	</tr>
+	<tr>
+		<td class="spaceRow" colspan="2" height="1"><img src="templates/SGD/images/spacer.gif" alt="" width="1" height="1" /></td>
+	</tr>
+	
+	<tr>
+		<td width="150" align="left" valign="top" class="row2"><span class="name"><a name="16996"></a><b>neuronicus</b></span><br /><span class="postdetails">poznavalec<br /><img src="images/ranks/sgd-3.gif" alt="poznavalec" title="poznavalec" border="0" /><br /><br /><br />Pridružen: 12. jan 2003 ob 12:03<br />objav: 226<br /></span><br /></td>
+		<td class="row2" width="100%" height="28" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+			<tr>
+				<td colspan="2" width="100%">
+					<table width="100%" cellpadding="0" cellspacing="0" border="0">
+						<tr>
+							<td valign="middle" align="left">
+								<a href="topic-1387.html#16996"><img src="templates/SGD2/images/icon_minipost.gif" width="12" height="9" alt="objava" title="objava" border="0" /></a>
+								<span class="postdetails">Objavljeno: čet maj 10, 2007 5:38 pm<span class="gen">&nbsp;</span>&nbsp; &nbsp;Pošlji temo: </span>
+							</td>
+							<td valign="middle" align="right" nowrap="nowrap">
+							</td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+			<tr>
+				<td colspan="2"><hr /></td>
+			</tr>
+			<tr>
+				<td colspan="2"><span class="postbody">to ti mislš <img src="images/smiles/icon_wink.gif" alt=":wink:" border="0" /> če ti ne bi omenu šolanja, bi jst mogoče kasnej, al pa sploh nikol, pomislu na to, da bi enotam lahko že ob začetku določil dodatne sposobnosti.
+
+<br />
+
+
+<br />
+pri brainstormingu ni opravičevanja. vsaka ideja je zelo dobrodošla.</span><span class="gensmall"></span></td>
+			</tr>
+		</table></td>
+	</tr>
+	<tr>
+		<td class="row2" width="150" align="left" valign="middle"><span class="nav"><a href="#top" class="nav">Nazaj na vrh</a></span></td>
+		<td class="row2" width="100%" height="28" valign="bottom" nowrap="nowrap"><table cellspacing="0" cellpadding="0" border="0" height="18" width="18">
+			<tr>
+				<td valign="middle" nowrap="nowrap"><a href="profile-25.html"><img src="templates/SGD2/images/lang_slovenian/icon_profile.gif" alt="Poglej uporabnikov profil" title="Poglej uporabnikov profil" border="0" /></a> </td>
+			</tr>
+		</table></td>
+	</tr>
+	<tr>
+		<td class="spaceRow" colspan="2" height="1"><img src="templates/SGD/images/spacer.gif" alt="" width="1" height="1" /></td>
+	</tr>
+	
+	<tr>
+		<td width="150" align="left" valign="top" class="row1"><span class="name"><a name="17000"></a><b>Boc16</b></span><br /><span class="postdetails">novinec<br /><img src="images/ranks/sgd-0.gif" alt="novinec" title="novinec" border="0" /><br /><br /><br />Pridružen: 14. nov 2006 ob 21:47<br />objav: 21<br /></span><br /></td>
+		<td class="row1" width="100%" height="28" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+			<tr>
+				<td colspan="2" width="100%">
+					<table width="100%" cellpadding="0" cellspacing="0" border="0">
+						<tr>
+							<td valign="middle" align="left">
+								<a href="topic-1387.html#17000"><img src="templates/SGD2/images/icon_minipost.gif" width="12" height="9" alt="objava" title="objava" border="0" /></a>
+								<span class="postdetails">Objavljeno: pet maj 11, 2007 3:42 pm<span class="gen">&nbsp;</span>&nbsp; &nbsp;Pošlji temo: </span>
+							</td>
+							<td valign="middle" align="right" nowrap="nowrap">
+							</td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+			<tr>
+				<td colspan="2"><hr /></td>
+			</tr>
+			<tr>
+				<td colspan="2"><span class="postbody">ok o k
+
+<br />
+ma zakaj točno to ti rabiš... mislm ne d bi ti težil sam vidim d več al man sam dizajniraš... a tud programirš(te ne žalim samo zanima me)</span><span class="gensmall"></span></td>
+			</tr>
+		</table></td>
+	</tr>
+	<tr>
+		<td class="row1" width="150" align="left" valign="middle"><span class="nav"><a href="#top" class="nav">Nazaj na vrh</a></span></td>
+		<td class="row1" width="100%" height="28" valign="bottom" nowrap="nowrap"><table cellspacing="0" cellpadding="0" border="0" height="18" width="18">
+			<tr>
+				<td valign="middle" nowrap="nowrap"><a href="profile-460.html"><img src="templates/SGD2/images/lang_slovenian/icon_profile.gif" alt="Poglej uporabnikov profil" title="Poglej uporabnikov profil" border="0" /></a> </td>
+			</tr>
+		</table></td>
+	</tr>
+	<tr>
+		<td class="spaceRow" colspan="2" height="1"><img src="templates/SGD/images/spacer.gif" alt="" width="1" height="1" /></td>
+	</tr>
+	
+	<tr>
+		<td width="150" align="left" valign="top" class="row2"><span class="name"><a name="17005"></a><b>neuronicus</b></span><br /><span class="postdetails">poznavalec<br /><img src="images/ranks/sgd-3.gif" alt="poznavalec" title="poznavalec" border="0" /><br /><br /><br />Pridružen: 12. jan 2003 ob 12:03<br />objav: 226<br /></span><br /></td>
+		<td class="row2" width="100%" height="28" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+			<tr>
+				<td colspan="2" width="100%">
+					<table width="100%" cellpadding="0" cellspacing="0" border="0">
+						<tr>
+							<td valign="middle" align="left">
+								<a href="topic-1387.html#17005"><img src="templates/SGD2/images/icon_minipost.gif" width="12" height="9" alt="objava" title="objava" border="0" /></a>
+								<span class="postdetails">Objavljeno: pet maj 11, 2007 7:16 pm<span class="gen">&nbsp;</span>&nbsp; &nbsp;Pošlji temo: </span>
+							</td>
+							<td valign="middle" align="right" nowrap="nowrap">
+							</td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+			<tr>
+				<td colspan="2"><hr /></td>
+			</tr>
+			<tr>
+				<td colspan="2"><span class="postbody">ne rabim, samo razmigavam možgane in upam, da se dobre(?) ideje ne izgubijo <img src="images/smiles/icon_wink.gif" alt=":wink:" border="0" /> 
+
+<br />
+o programiranju nimam mnogo pojma <img src="images/smiles/icon_redface.gif" alt=":oops:" border="0" /></span><span class="gensmall"></span></td>
+			</tr>
+		</table></td>
+	</tr>
+	<tr>
+		<td class="row2" width="150" align="left" valign="middle"><span class="nav"><a href="#top" class="nav">Nazaj na vrh</a></span></td>
+		<td class="row2" width="100%" height="28" valign="bottom" nowrap="nowrap"><table cellspacing="0" cellpadding="0" border="0" height="18" width="18">
+			<tr>
+				<td valign="middle" nowrap="nowrap"><a href="profile-25.html"><img src="templates/SGD2/images/lang_slovenian/icon_profile.gif" alt="Poglej uporabnikov profil" title="Poglej uporabnikov profil" border="0" /></a> </td>
+			</tr>
+		</table></td>
+	</tr>
+	<tr>
+		<td class="spaceRow" colspan="2" height="1"><img src="templates/SGD/images/spacer.gif" alt="" width="1" height="1" /></td>
+	</tr>
+	
+	<tr>
+		<td width="150" align="left" valign="top" class="row1"><span class="name"><a name="17014"></a><b>neuronicus</b></span><br /><span class="postdetails">poznavalec<br /><img src="images/ranks/sgd-3.gif" alt="poznavalec" title="poznavalec" border="0" /><br /><br /><br />Pridružen: 12. jan 2003 ob 12:03<br />objav: 226<br /></span><br /></td>
+		<td class="row1" width="100%" height="28" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+			<tr>
+				<td colspan="2" width="100%">
+					<table width="100%" cellpadding="0" cellspacing="0" border="0">
+						<tr>
+							<td valign="middle" align="left">
+								<a href="topic-1387.html#17014"><img src="templates/SGD2/images/icon_minipost.gif" width="12" height="9" alt="objava" title="objava" border="0" /></a>
+								<span class="postdetails">Objavljeno: tor maj 15, 2007 9:32 pm<span class="gen">&nbsp;</span>&nbsp; &nbsp;Pošlji temo: </span>
+							</td>
+							<td valign="middle" align="right" nowrap="nowrap">
+							</td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+			<tr>
+				<td colspan="2"><hr /></td>
+			</tr>
+			<tr>
+				<td colspan="2"><span class="postbody">tole ni neka noro originalna ideja, ampak vseeno. itak sem kakšno idejo, ki sem jo sam dobil, kasneje videl v kakšni igri, ki je že izšla ali pa so jo malce kasneje napovedali <img src="images/smiles/icon_biggrin.gif" alt=":D" border="0" /> torej...
+
+<br />
+
+
+<br />
+zaposlovanje različnih ljudi v razne zgradbe. med njimi so razlike v hitrosti produkcije, tehnoloških drevesih oziroma različnih enotah. seveda sem se nato spomnil, da je to mogoče podobno generalom v zero hour, ki je sicer nisem igral. damn <img src="images/smiles/icon_biggrin.gif" alt=":D" border="0" /> ampak je možnih več kombinacij. ha <img src="images/smiles/icon_biggrin.gif" alt=":D" border="0" /></span><span class="gensmall"></span></td>
+			</tr>
+		</table></td>
+	</tr>
+	<tr>
+		<td class="row1" width="150" align="left" valign="middle"><span class="nav"><a href="#top" class="nav">Nazaj na vrh</a></span></td>
+		<td class="row1" width="100%" height="28" valign="bottom" nowrap="nowrap"><table cellspacing="0" cellpadding="0" border="0" height="18" width="18">
+			<tr>
+				<td valign="middle" nowrap="nowrap"><a href="profile-25.html"><img src="templates/SGD2/images/lang_slovenian/icon_profile.gif" alt="Poglej uporabnikov profil" title="Poglej uporabnikov profil" border="0" /></a> </td>
+			</tr>
+		</table></td>
+	</tr>
+	<tr>
+		<td class="spaceRow" colspan="2" height="1"><img src="templates/SGD/images/spacer.gif" alt="" width="1" height="1" /></td>
+	</tr>
+	
+	<tr align="center">
+		<td class="catBottom" colspan="2" height="28">&nbsp;</td>
+	</tr>
+</table>
+
+<table width="100%" cellspacing="2" cellpadding="2" border="0" align="center">
+  <tr>
+	<td align="left" valign="middle" nowrap="nowrap">&nbsp;</td>
+	<td align="left" valign="middle" width="100%"><span class="nav">&nbsp;&nbsp;&nbsp;<a href="index.html" class="nav">SloGameDev.net seznam forumov</a>
+	  -> <a href="forum-52.html" class="nav">Izdelovanje iger</a></span></td>
+	<td align="right" valign="top" nowrap="nowrap"><span class="gensmall">Časovni pas (GMT +2:00 uri) Slovenija, poletni čas</span><br /><span class="nav"></span>
+	  </td>
+  </tr>
+  <tr>
+	<td align="left" colspan="3"><span class="nav">Stran <b>1</b> od <b>1</b></span></td>
+  </tr>
+</table>
+
+<table width="100%" cellspacing="2" border="0" align="center">
+  <tr>
+	<td width="40%" valign="top" nowrap="nowrap" align="left">&nbsp;</td>
+	<td align="right" valign="top" nowrap="nowrap">&nbsp;</td>
+  </tr>
+</table>
+
+<div align="center"><span class="copyright"><br />Arhiv &mdash; samo za branje.<br />
+<!--
+	We request you retain the full copyright notice below including the link to www.phpbb.com.
+	This not only gives respect to the large amount of time given freely by the developers
+	but also helps build interest, traffic and use of phpBB 2.0. If you cannot (for good
+	reason) retain the full copyright we request you at least leave in place the 
+	Powered by phpBB 2.0.4 line, with phpBB linked to www.phpbb.com. If you refuse
+	to include even this then support on our forums may be affected. 
+
+	The phpBB Group : 2002
+// -->
+Powered by <a  target="_phpbb" class="copyright">phpBB</a> 2.0.4 &copy; 2001, 2002 phpBB Group<br /></span></div>
+		</td>
+	</tr>
+</table>
+
+</body>
+</html>

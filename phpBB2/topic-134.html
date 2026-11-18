@@ -276,13 +276,13 @@ input.liteoption {
   <tr>
 	<td align="left" valign="bottom" nowrap="nowrap">&nbsp;</td>
 	<td align="left" valign="middle" width="100%"><span class="nav">&nbsp;&nbsp;&nbsp;<a href="index.html" class="nav">SloGameDev.net seznam forumov</a>
-	  -> <a href="forum-1.html" class="nav">Splošno Programiranje</a></span></td>
+	  -> <a href="forum-52.html" class="nav">Izdelovanje iger</a></span></td>
   </tr>
 </table>
 
 <table class="forumline" width="100%" cellspacing="1" cellpadding="3" border="0">
 	<tr align="right">
-		<td class="catHead" colspan="2" height="28"><span class="nav"><a href="topic-135.html" class="nav">Prejšnja tema</a> :: <a href="topic-143.html" class="nav">Naslednja tema</a> &nbsp;</span></td>
+		<td class="catHead" colspan="2" height="28"><span class="nav"><a href="topic-93.html" class="nav">Prejšnja tema</a> :: <a href="topic-143.html" class="nav">Naslednja tema</a> &nbsp;</span></td>
 	</tr>
 	
 	<tr>
@@ -291,7 +291,7 @@ input.liteoption {
 	</tr>
 	
 	<tr>
-		<td width="150" align="left" valign="top" class="row1"><span class="name"><a name="1152"></a><b>hugoboss</b></span><br /><span class="postdetails">poznavalec<br /><img src="images/ranks/sgd-3.gif" alt="poznavalec" title="poznavalec" border="0" /><br /><img src="images/avatars/c2f900cf3e245e2ad2ecf.gif" alt="" border="0" /><br /><br />Pridružen: 11. jan 2003 ob 21:57<br />objav: 193<br /></span><br /></td>
+		<td width="150" align="left" valign="top" class="row1"><span class="name"><a name="1152"></a><b>hugoboss</b></span><br /><span class="postdetails">poznavalec<br /><img src="images/ranks/sgd-3.gif" alt="poznavalec" title="poznavalec" border="0" /><br /><img src="images/avatars/c2f900cf3e245e2ad2ecf.gif" alt="" border="0" /><br /><br />Pridružen: 11. jan 2003 ob 21:57<br />objav: 189<br /></span><br /></td>
 		<td class="row1" width="100%" height="28" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
 			<tr>
 				<td colspan="2" width="100%">
@@ -330,349 +330,234 @@ input.liteoption {
 	<tr>
 <br />
 	  <td class="code">
-
 <br />
-#include &lt;stdio.h&gt;
-
+#include &lt;stdio&#46;h&gt;
 <br />
-
 
 <br />
 int rd&#40;&#41;
-
 <br />
 &#123;
-
 <br />
-&nbsp; &nbsp;int x = 0;
-
+	int x = 0;
 <br />
-&nbsp; &nbsp;__asm__ __volatile__ &#40;&quot;rdtsc\nmov %%eax, %0\n&quot;&#58;&#58;&quot;g&quot;&#40;x&#41;&#41;;
-
+	__asm__ __volatile__ &#40;&quot;rdtsc\nmov %%eax, %0\n&quot;&#58;&#58;&quot;g&quot;&#40;x&#41;&#41;;
 <br />
-&nbsp; &nbsp;return x;
-
+	return x;
 <br />
 &#125;
-
 <br />
 
-
 <br />
-
 
 <br />
 int main&#40;&#41;
-
 <br />
 &#123;
-
 <br />
-&nbsp; &nbsp;printf&#40;&quot;--- START ---\n&quot;&#41;;
-
+	printf&#40;&quot;--- START ---\n&quot;&#41;;
 <br />
 #ifdef AMD
-
 <br />
-&nbsp; &nbsp;printf&#40;&quot;---- AMD ----\n&quot;&#41;;
-
+	printf&#40;&quot;---- AMD ----\n&quot;&#41;;
 <br />
 #endif
-
 <br />
 
-
 <br />
-&nbsp; &nbsp;double a = 1.2345;
-
+	double a = 1&#46;2345;
 <br />
-&nbsp; &nbsp;double b = 5.4321;
-
+	double b = 5&#46;4321;
 <br />
-&nbsp; &nbsp;double c = 0;
-
+	double c = 0;
 <br />
 
-
 <br />
-&nbsp; &nbsp;int s;
-
+	int s;
 <br />
-&nbsp; &nbsp;s = rd&#40;&#41;;
-
+	s = rd&#40;&#41;;
 <br />
-&nbsp; &nbsp;c = a/b;
-
+	c = a/b;
 <br />
-&nbsp; &nbsp;s = rd&#40;&#41; - s;
-
+	s = rd&#40;&#41; - s;
 <br />
-&nbsp; &nbsp;printf&#40;&quot;cpp-atm = %i &#40;%f&#41;\n&quot;, s-80, c&#41;;
-
+	printf&#40;&quot;cpp-atm = %i &#40;%f&#41;\n&quot;, s-80, c&#41;;
 <br />
 
-
 <br />
-&nbsp; &nbsp;__asm__ __volatile__ &#40;&quot;
-
+	__asm__ __volatile__ &#40;&quot;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;prefetcht1 %1\nprefetcht1 %2\n
-
+		prefetcht1 %1\nprefetcht1 %2\n
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;rdtsc\nmov %%eax, %0\n
-
+		rdtsc\nmov %%eax, %0\n
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;fld %1\n fld %2\n fdivp\n fstp %3\n
-
+		fld %1\n fld %2\n fdivp\n fstp %3\n
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;rdtsc\nsub %0, %%eax\nmov %%eax, %0&quot;
-
+		rdtsc\nsub %0, %%eax\nmov %%eax, %0&quot;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&#58;&#58;&quot;g&quot;&#40;s&#41;,&quot;g&quot;&#40;a&#41;,&quot;g&quot;&#40;b&#41;,&quot;g&quot;&#40;c&#41;&#41;;
-
+		&#58;&#58;&quot;g&quot;&#40;s&#41;,&quot;g&quot;&#40;a&#41;,&quot;g&quot;&#40;b&#41;,&quot;g&quot;&#40;c&#41;&#41;;
 <br />
-&nbsp; &nbsp;printf&#40;&quot;fpu-atm = %i &#40;%f&#41;\n&quot;, s-80, c&#41;;
-
+	printf&#40;&quot;fpu-atm = %i &#40;%f&#41;\n&quot;, s-80, c&#41;;
 <br />
-
 
 <br />
 #ifndef AMD
-
 <br />
-&nbsp; &nbsp;__asm__ __volatile__ &#40;&quot;
-
+	__asm__ __volatile__ &#40;&quot;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;prefetcht1 %1\nprefetcht1 %2\n
-
+		prefetcht1 %1\nprefetcht1 %2\n
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;rdtsc\nmov %%eax, %0\n
-
+		rdtsc\nmov %%eax, %0\n
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;movsd %1, %%xmm1\nmovsd %2, %%xmm2\n
-
+		movsd %1, %%xmm1\nmovsd %2, %%xmm2\n
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;divsd %%xmm2, %%xmm1\n
-
+		divsd %%xmm2, %%xmm1\n
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;//divsd %%xmm2, %%xmm1\n
-
+		//divsd %%xmm2, %%xmm1\n
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;//addsd %%xmm2, %%xmm1\n
-
+		//addsd %%xmm2, %%xmm1\n
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;movsd %%xmm1, %3\n
-
+		movsd %%xmm1, %3\n
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;emms\n
-
+		emms\n
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;rdtsc\nsub %0, %%eax\nmov %%eax, %0&quot;
-
+		rdtsc\nsub %0, %%eax\nmov %%eax, %0&quot;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&#58;&#58;&quot;g&quot;&#40;s&#41;,&quot;g&quot;&#40;a&#41;,&quot;g&quot;&#40;b&#41;,&quot;g&quot;&#40;c&#41;&#41;;
-
+		&#58;&#58;&quot;g&quot;&#40;s&#41;,&quot;g&quot;&#40;a&#41;,&quot;g&quot;&#40;b&#41;,&quot;g&quot;&#40;c&#41;&#41;;
 <br />
-&nbsp; &nbsp;printf&#40;&quot;sse2-atm = %i &#40;%f&#41;\n&quot;, s-80, c&#41;;
-
+	printf&#40;&quot;sse2-atm = %i &#40;%f&#41;\n&quot;, s-80, c&#41;;
 <br />
-&nbsp; &nbsp;
-
+	
 <br />
-&nbsp; &nbsp;__asm__ __volatile__ &#40;&quot;
-
+	__asm__ __volatile__ &#40;&quot;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;prefetcht1 %1\nprefetcht1 %2\n
-
+		prefetcht1 %1\nprefetcht1 %2\n
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;movsd %1, %%xmm1\nmovsd %2, %%xmm2\n
-
+		movsd %1, %%xmm1\nmovsd %2, %%xmm2\n
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;rdtsc\nmov %%eax, %0\n
-
+		rdtsc\nmov %%eax, %0\n
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;divsd %%xmm2, %%xmm1\n
-
+		divsd %%xmm2, %%xmm1\n
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;//divsd %%xmm2, %%xmm1\n
-
+		//divsd %%xmm2, %%xmm1\n
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;addsd %%xmm2, %%xmm1\n
-
+		addsd %%xmm2, %%xmm1\n
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;addsd %%xmm2, %%xmm1\n
-
+		addsd %%xmm2, %%xmm1\n
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;rdtsc\nsub %0, %%eax\nmov %%eax, %0\n
-
+		rdtsc\nsub %0, %%eax\nmov %%eax, %0\n
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;movsd %%xmm1, %3\n
-
+		movsd %%xmm1, %3\n
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;emms\n&quot;
-
+		emms\n&quot;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&#58;&#58;&quot;g&quot;&#40;s&#41;,&quot;g&quot;&#40;a&#41;,&quot;g&quot;&#40;b&#41;,&quot;g&quot;&#40;c&#41;&#41;;
-
+		&#58;&#58;&quot;g&quot;&#40;s&#41;,&quot;g&quot;&#40;a&#41;,&quot;g&quot;&#40;b&#41;,&quot;g&quot;&#40;c&#41;&#41;;
 <br />
-&nbsp; &nbsp;printf&#40;&quot;sse2++atm = %i &#40;%f&#41;\n&quot;, s-80, c&#41;;
-
+	printf&#40;&quot;sse2++atm = %i &#40;%f&#41;\n&quot;, s-80, c&#41;;
 <br />
 #endif
-
 <br />
 
-
 <br />
-&nbsp; &nbsp;short x = 1234;
-
+	short x = 1234;
 <br />
-&nbsp; &nbsp;short y = 4321;
-
+	short y = 4321;
 <br />
-&nbsp; &nbsp;short z = 0;
-
+	short z = 0;
 <br />
-&nbsp; &nbsp;
-
+	
 <br />
-&nbsp; &nbsp;__asm__ __volatile__ &#40;&quot;
-
+	__asm__ __volatile__ &#40;&quot;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;push %%ebx\n
-
+		push %%ebx\n
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;mov %1, %%bx\n mov %2, %%cx
-
+		mov %1, %%bx\n mov %2, %%cx
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;rdtsc\n
-
+		rdtsc\n
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;mov %%ecx, %%edx\n
-
+		mov %%ecx, %%edx\n
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;mov %%eax, %%ecx\n
-
+		mov %%eax, %%ecx\n
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;mov %%edx, %%eax\n
-
+		mov %%edx, %%eax\n
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;imul %%bx, %%ax\n
-
+		imul %%bx, %%ax\n
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;mov %%eax, %%edx\n
-
+		mov %%eax, %%edx\n
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;mov %%ecx, %%eax\n
-
+		mov %%ecx, %%eax\n
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;mov %%edx, %%ecx\n
-
+		mov %%edx, %%ecx\n
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;add %%bx, %%cx\n
-
+		add %%bx, %%cx\n
 <br />
-&nbsp; &nbsp;//&nbsp; &nbsp;add %%bx, %%cx\n
-
+	//	add %%bx, %%cx\n
 <br />
-&nbsp; &nbsp;//&nbsp; &nbsp;add %%bx, %%cx\n
-
+	//	add %%bx, %%cx\n
 <br />
-&nbsp; &nbsp;//&nbsp; &nbsp;add %%bx, %%cx\n
-
+	//	add %%bx, %%cx\n
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;mov %%eax, %%ebx\n
-
+		mov %%eax, %%ebx\n
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;rdtsc\n sub %%ebx, %%eax\nmov %%eax, %0\n
-
+		rdtsc\n sub %%ebx, %%eax\nmov %%eax, %0\n
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;mov %%cx, %3\n
-
+		mov %%cx, %3\n
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;pop %%ebx&quot;
-
+		pop %%ebx&quot;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&#58;&#58;&quot;g&quot;&#40;s&#41;,&quot;g&quot;&#40;x&#41;,&quot;g&quot;&#40;y&#41;,&quot;g&quot;&#40;z&#41;&#41;;
-
+		&#58;&#58;&quot;g&quot;&#40;s&#41;,&quot;g&quot;&#40;x&#41;,&quot;g&quot;&#40;y&#41;,&quot;g&quot;&#40;z&#41;&#41;;
 <br />
-&nbsp; &nbsp;printf&#40;&quot;int++atm = %i &#40;%i&#41;\n&quot;, s-80, z&#41;;
-
+	printf&#40;&quot;int++atm = %i &#40;%i&#41;\n&quot;, s-80, z&#41;;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;
-
+		
 <br />
-&nbsp; &nbsp;x = 1;
-
+	x = 1;
 <br />
-&nbsp; &nbsp;y = 0;
-
+	y = 0;
 <br />
-&nbsp; &nbsp;__asm__ __volatile__ &#40;&quot;
-
+	__asm__ __volatile__ &#40;&quot;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;push %%ebx\n
-
+		push %%ebx\n
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;mov %1, %%bx\n mov %2, %%cx
-
+		mov %1, %%bx\n mov %2, %%cx
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;rdtsc\n
-
+		rdtsc\n
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;mov $1024, %%edx\n&nbsp; &nbsp;
-
+		mov $1024, %%edx\n	
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;.loop&#58;\n
-
+		&#46;loop&#58;\n
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;add %%bx, %%cx\n
-
+		add %%bx, %%cx\n
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;add %%bx, %%cx\n
-
+		add %%bx, %%cx\n
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;add %%bx, %%cx\n
-
+		add %%bx, %%cx\n
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;add %%bx, %%cx\n
-
+		add %%bx, %%cx\n
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;dec %%edx\n
-
+		dec %%edx\n
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;jnz .loop\n
-
+		jnz &#46;loop\n
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;mov %%eax, %%ebx\n
-
+		mov %%eax, %%ebx\n
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;rdtsc\n sub %%ebx, %%eax\nmov %%eax, %0\n
-
+		rdtsc\n sub %%ebx, %%eax\nmov %%eax, %0\n
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;mov %%cx, %3\n
-
+		mov %%cx, %3\n
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;pop %%ebx&quot;
-
+		pop %%ebx&quot;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&#58;&#58;&quot;g&quot;&#40;s&#41;,&quot;g&quot;&#40;x&#41;,&quot;g&quot;&#40;y&#41;,&quot;g&quot;&#40;z&#41;&#41;;
-
+		&#58;&#58;&quot;g&quot;&#40;s&#41;,&quot;g&quot;&#40;x&#41;,&quot;g&quot;&#40;y&#41;,&quot;g&quot;&#40;z&#41;&#41;;
 <br />
-&nbsp; &nbsp;printf&#40;&quot;int!!atm = %i &#40;%i&#41;\n&quot;, s-80, z&#41;;
-
+	printf&#40;&quot;int!!atm = %i &#40;%i&#41;\n&quot;, s-80, z&#41;;
 <br />
-&nbsp; &nbsp;
-
+	
 <br />
-&nbsp; &nbsp;printf&#40;&quot;---- END ----\n&quot;&#41;;
-
+	printf&#40;&quot;---- END ----\n&quot;&#41;;
 <br />
-&nbsp; &nbsp;return 0;
-
+	return 0;
 <br />
 &#125;
-
 <br />
 </td>
 <br />
@@ -681,9 +566,7 @@ int main&#40;&#41;
 </table>
 <br />
 <span class="postbody">
-
 <br />
-
 
 <br />
 </span>
@@ -699,34 +582,24 @@ int main&#40;&#41;
 	<tr>
 <br />
 	  <td class="code">
-
 <br />
 D&#58;\&gt;ts
-
 <br />
 --- START ---
-
 <br />
-cpp-atm = 3760 &#40;0.227260&#41;
-
+cpp-atm = 3760 &#40;0&#46;227260&#41;
 <br />
-fpu-atm = 3556 &#40;0.227260&#41;
-
+fpu-atm = 3556 &#40;0&#46;227260&#41;
 <br />
-sse2-atm = 3780 &#40;0.227260&#41;
-
+sse2-atm = 3780 &#40;0&#46;227260&#41;
 <br />
-sse2++atm = 24 &#40;11.091460&#41;
-
+sse2++atm = 24 &#40;11&#46;091460&#41;
 <br />
 int++atm = 8 &#40;24932&#41;
-
 <br />
 int!!atm = 3212 &#40;4096&#41;
-
 <br />
 ---- END ----
-
 <br />
 </td>
 <br />
@@ -770,7 +643,7 @@ Kje je moje razmisljanje napacno?
 
 
 <br />
-p.s.: mogoce se dodatno vprasanje - zakaj dostop do pomnilnika traja ~1000 ciklov, ce pa je faktor core/bus freq. max. 20 in so podatki prefetch-ani v L2 cache?<br />_________________<br />hugo2me@…
+p.s.: mogoce se dodatno vprasanje - zakaj dostop do pomnilnika traja ~1000 ciklov, ce pa je faktor core/bus freq. max. 20 in so podatki prefetch-ani v L2 cache?<br />_________________<br /><a >hugo2me@…</a>
 
 <br />
 
@@ -796,7 +669,7 @@ School SUX!</span><span class="gensmall"></span></td>
 	</tr>
 	
 	<tr>
-		<td width="150" align="left" valign="top" class="row2"><span class="name"><a name="1203"></a><b>vesoljc</b></span><br /><span class="postdetails">inštruktor<br /><img src="images/ranks/sgd-4.gif" alt="inštruktor" title="inštruktor" border="0" /><br /><img src="images/avatars/c1bdb98c3fb49342927df.jpg" alt="" border="0" /><br /><br />Pridružen: 18. feb 2003 ob 22:16<br />objav: 297<br />Kraj: Brezovica, homeland of the mighty Beawer Blasters</span><br /></td>
+		<td width="150" align="left" valign="top" class="row2"><span class="name"><a name="1203"></a><b>vesoljc</b></span><br /><span class="postdetails">inštruktor<br /><img src="images/ranks/sgd-4.gif" alt="inštruktor" title="inštruktor" border="0" /><br /><img src="images/avatars/c1bdb98c3fb49342927df.jpg" alt="" border="0" /><br /><br />Pridružen: 18. feb 2003 ob 22:16<br />objav: 291<br />Kraj: Brezovica, homeland of the mighty Beawer Blasters</span><br /></td>
 		<td class="row2" width="100%" height="28" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
 			<tr>
 				<td colspan="2" width="100%">
@@ -816,7 +689,7 @@ School SUX!</span><span class="gensmall"></span></td>
 				<td colspan="2"><hr /></td>
 			</tr>
 			<tr>
-				<td colspan="2"><span class="postbody"><a  target="_blank" class="postlink">http://www.cpp-home.com/contests/tests.php</a><br />_________________<br /><span style="font-style: italic">Abnormal behaviour of abnormal brain makes me normal...</span></span><span class="gensmall"></span></td>
+				<td colspan="2"><span class="postbody"><a  target="_blank" class="postlink">http&#58;//www&#46;cpp-home&#46;com/contests/tests&#46;php</a><br />_________________<br /><span style="font-style: italic">Abnormal behaviour of abnormal brain makes me normal...</span></span><span class="gensmall"></span></td>
 			</tr>
 		</table></td>
 	</tr>
@@ -841,7 +714,7 @@ School SUX!</span><span class="gensmall"></span></td>
   <tr>
 	<td align="left" valign="middle" nowrap="nowrap">&nbsp;</td>
 	<td align="left" valign="middle" width="100%"><span class="nav">&nbsp;&nbsp;&nbsp;<a href="index.html" class="nav">SloGameDev.net seznam forumov</a>
-	  -> <a href="forum-1.html" class="nav">Splošno Programiranje</a></span></td>
+	  -> <a href="forum-52.html" class="nav">Izdelovanje iger</a></span></td>
 	<td align="right" valign="top" nowrap="nowrap"><span class="gensmall">Časovni pas (GMT +2:00 uri) Slovenija, poletni čas</span><br /><span class="nav"></span>
 	  </td>
   </tr>
@@ -857,7 +730,7 @@ School SUX!</span><span class="gensmall"></span></td>
   </tr>
 </table>
 
-<div align="center"><span class="copyright"><br />Arhiv stanja na dan 13. 2. 2006 &mdash; samo za branje.<br />
+<div align="center"><span class="copyright"><br />Arhiv &mdash; samo za branje.<br />
 <!--
 	We request you retain the full copyright notice below including the link to www.phpbb.com.
 	This not only gives respect to the large amount of time given freely by the developers

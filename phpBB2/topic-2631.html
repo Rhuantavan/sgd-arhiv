@@ -1,0 +1,1562 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html dir="ltr">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta http-equiv="Content-Style-Type" content="text/css">
+<style type="text/css">
+<!--
+.style1 {color: #FFFFFF}
+-->
+</style>
+
+
+
+<title>SloGameDev.net :: ukinjanje thread-a</title>
+<!-- link rel="stylesheet" href="templates/SGD/SGD2.css" type="text/css" -->
+<style type="text/css">
+<!--
+/*
+  The SGD Theme for phpBB version 2+
+  Created by Rhuantavan
+  http://www.rhuantavan.org
+
+  NOTE: These CSS definitions are stored within the main page body so that you can use the phpBB2
+  theme administration centre. When you have finalised your style you could cut the final CSS code
+  and place it in an external file, deleting this section to save bandwidth.
+*/
+
+/* General page style. The scroll bar colours only visible in IE5.5+ */
+body {
+	background-color: #DDDDDD;
+	scrollbar-face-color: #000000;
+	scrollbar-highlight-color: #000000;
+	scrollbar-3dlight-color: #EEEEEE;
+	scrollbar-darkshadow-color: #EEEEEE;
+	scrollbar-shadow-color: #000000;
+	scrollbar-arrow-color: #55FF00;
+	scrollbar-track-color: #EEEEEE;
+}
+
+/* General font families for common tags */
+font,th,td,p { font-family: Verdana, Arial, Helvetica, sans-serif }
+a:link,a:active,a:visited { color : #338800; }
+a:hover		{ text-decoration: underline; color : #338800; }
+hr	{ height: 0px; border: solid #E9E9E9 0px; border-top-width: 1px;}
+
+/* This is the border line & background colour round the entire page */
+.bodyline	{ background-color: #EEEEEE; border-left: 1px #000000 solid; border-right: 1px #000000 solid; }
+
+/* This is the outline round the main forum tables */
+.forumline	{ background-color: #EEEEEE; border: 0px #DDDDDD solid; }
+
+/* Main table cell colours and backgrounds */
+td.row1	{ background-color: #F8F8F8; }
+td.row2	{ background-color: #F0F0F0; }
+td.row3	{ background-color: #E9E9E9; }
+
+/*
+  This is for the table cell above the Topics, Post & Last posts on the index.php page
+  By default this is the fading out gradiated silver background.
+  However, you could replace this with a bitmap specific for each forum
+*/
+td.rowpic {
+		background-color: #EEEEEE;
+		background-image: url(templates/SGD/images/cellpic3.gif);
+		background-repeat: repeat-y;
+}
+
+/* Header cells - the blue and silver gradient backgrounds */
+th	{
+	color: #66CC33; font-size: 11px; font-weight : bold;
+	background-color: #338800; height: 25px;
+	background-image: url(templates/SGD/images/cellpic2.gif);
+}
+
+td.cat,td.catHead,td.catSides,td.catLeft,td.catRight,td.catBottom {
+			background-image: url(templates/SGD/images/cellpic1.gif);
+			background-color:#E9E9E9; border: #999999; border-style: solid; height: 28px;
+}
+
+/*
+  Setting additional nice inner borders for the main table cells.
+  The names indicate which sides the border will be on.
+  Don't worry if you don't understand this, just ignore it :-)
+*/
+td.cat,td.catHead,td.catBottom {
+	height: 29px;
+	border-width: 0px 0px 0px 0px;
+}
+th.thHead,th.thSides,th.thTop,th.thLeft,th.thRight,th.thBottom,th.thCornerL,th.thCornerR {
+	font-weight: bold; border: #EEEEEE; border-style: solid; height: 28px;
+}
+td.row3Right,td.spaceRow {
+	background-color: #E9E9E9; border: #999999; border-style: solid;
+}
+
+th.thHead,td.catHead { font-size: 12px; border-width: 0px 0px 0px 0px; }
+th.thSides,td.catSides,td.spaceRow	 { border-width: 0px 0px 0px 0px; }
+th.thRight,td.catRight,td.row3Right	 { border-width: 0px 0px 0px 0px; }
+th.thLeft,td.catLeft	  { border-width: 0px 0px 0px 0px; }
+th.thBottom,td.catBottom  { border-width: 0px 0px 0px 1px; }
+th.thTop	 { border-width: 0px 0px 0px 0px; }
+th.thCornerL { border-width: 0px 0px 0px 1px; }
+th.thCornerR { border-width: 0px 0px 0px 0px; }
+
+/* The largest text used in the index page title and toptic title etc. */
+.maintitle	{
+	font-weight: bold; font-size: 18px; font-family: "Trebuchet MS",Verdana, Arial, Helvetica, sans-serif;
+	text-decoration: none; line-height : 120%; color : #666666;
+}
+
+/* General text */
+.gen { font-size : 12px; }
+.genmed { font-size : 11px; }
+.gensmall { font-size : 10px; }
+.gen,.genmed,.gensmall { color : #666666; }
+a.gen,a.genmed,a.gensmall { color: #338800; text-decoration: none; }
+a.gen:hover,a.genmed:hover,a.gensmall:hover	{ color: #338800; text-decoration: underline; }
+
+/* The register, login, search etc links at the top of the page */
+.mainmenu		{ font-size : 11px; color : #666666 }
+a.mainmenu		{ text-decoration: none; color : #338800;  }
+a.mainmenu:hover{ text-decoration: underline; color : #338800; }
+
+/* SGD main menu */
+.sgdmainmenu			{ font-size : 10px; color : #99FF33 }
+a.sgdmainmenu:link		{ text-decoration: none; color : #99FF33;  }
+a.sgdmainmenu:active	{ text-decoration: none; color : #99FF33;  }
+a.sgdmainmenu:visited	{ text-decoration: none; color : #99FF33;  }
+a.sgdmainmenu:hover		{ text-decoration: underline; color : #99FF33; }
+
+/* Forum category titles */
+.cattitle		{ font-weight: bold; font-size: 12px ; letter-spacing: 1px; color : #338800}
+a.cattitle		{ text-decoration: none; color : #338800; }
+a.cattitle:hover{ text-decoration: underline; }
+
+/* Forum title: Text and link to the forums used in: index.php */
+.forumlink		{ font-weight: bold; font-size: 12px; color : #338800; }
+a.forumlink 	{ text-decoration: none; color : #338800; }
+a.forumlink:hover{ text-decoration: underline; color : #338800; }
+
+/* Used for the navigation text, (Page 1,2,3 etc) and the navigation bar when in a forum */
+.nav			{ font-weight: bold; font-size: 11px; color : #666666;}
+a.nav			{ text-decoration: none; color : #338800; }
+a.nav:hover		{ text-decoration: underline; }
+
+/* titles for the topics: could specify viewed link colour too */
+.topictitle,h1,h2	{ font-weight: bold; font-size: 11px; color : #666666; }
+a.topictitle:link   { text-decoration: none; color : #338800; }
+a.topictitle:visited { text-decoration: none; color : #338800; }
+a.topictitle:hover	{ text-decoration: underline; color : #338800; }
+
+/* Name of poster in viewmsg.php and viewtopic.php and other places */
+.name			{ font-size : 11px; color : #000000;}
+
+/* Location, number of posts, post date etc */
+.postdetails		{ font-size : 10px; color : #666666; }
+
+/* The content of the posts (body of text) */
+.postbody { font-size : 12px; line-height: 18px; color : #000000;}
+a.postlink:link	{ text-decoration: none; color : #338800 }
+a.postlink:visited { text-decoration: none; color : #338800; }
+a.postlink:hover { text-decoration: underline; color : #338800}
+
+/* Quote & Code blocks */
+.code {
+	font-family: Courier, 'Courier New', sans-serif; font-size: 11px; color: #006600;
+	background-color: #D6D6D6; border: #E9E9E9; border-style: solid;
+	border-left-width: 1px; border-top-width: 1px; border-right-width: 1px; border-bottom-width: 1px
+}
+
+.quote {
+	font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 11px; color: #444444; line-height: 125%;
+	background-color: #BBBBBB; border: #E9E9E9; border-style: solid;
+	border-left-width: 1px; border-top-width: 1px; border-right-width: 1px; border-bottom-width: 1px
+}
+
+/* Copyright and bottom info */
+.copyright		{ font-size: 10px; font-family: Verdana, Arial, Helvetica, sans-serif; color: #444444; letter-spacing: -1px;}
+a.copyright		{ color: #444444; text-decoration: none;}
+a.copyright:hover { color: #666666; text-decoration: underline;}
+
+/* Form elements */
+input,textarea, select {
+	color : #666666;
+	font: normal 11px Verdana, Arial, Helvetica, sans-serif;
+	border-color : #666666;
+}
+
+/* The text input fields background colour */
+input.post, textarea.post, select {
+	background-color : #EEEEEE;
+}
+
+input { text-indent : 2px; }
+
+/* The buttons used for bbCode styling in message post */
+input.button {
+	background-color : #F8F8F8;
+	color : #666666;
+	font-size: 11px; font-family: Verdana, Arial, Helvetica, sans-serif;
+}
+
+/* The main submit button option */
+input.mainoption {
+	background-color : #BBBBBB;
+	font-weight : bold;
+}
+
+/* None-bold submit button */
+input.liteoption {
+	background-color : #BBBBBB;
+	font-weight : normal;
+}
+
+/* This is the line in the posting page which shows the rollover
+  help line. This is actually a text box, but if set to be the same
+  colour as the background no one will know ;)
+*/
+.helpline { background-color: #F0F0F0; border-style: none; }
+
+/* Import the fancy styles for IE only (NS4.x doesn't use the @import function) */
+@import url("templates/SGD/formIE.css");
+-->
+</style>
+</head>
+<body bgcolor="#DDDDDD" text="#666666" link="#338800" vlink="#338800" topmargin="0" />
+<a name="top"></a>
+<table width="100%" cellspacing="0" cellpadding="0" border="0" align="center" nowrap>
+	<tr>
+		<td class="bodyline">
+			<table width="100%" border="0" cellpadding="0" cellspacing="0">
+				<tr>
+					<td bgcolor="#FFFFFF">
+						<img src="images/spacer.gif" width="760" height="20" alt=""></td>
+				</tr>
+			</table>
+			<table width="100%" border="0" cellpadding="0" cellspacing="0">
+				<tr>
+					<td bgcolor="#000000">
+						<a href="../index.html"><img src="images/home.gif" width="10" height="10" alt="" border="0"></a><img src="images/spacer.gif" width="5" height="5" alt=""><a href="../index.html" class="sgdmainmenu">Nazaj na domačo stran</a> <img src="images/defaulticon_green.gif" alt="" width="7" height="7" border="0"> <a href="../clanki.html" class="sgdmainmenu">Clanki</a> <img src="images/defaulticon_green.gif" alt="" width="7" height="7" border="0"> <a href="../koda.html" class="sgdmainmenu">Koda</a> <img src="images/defaulticon_green.gif" alt="" width="7" height="7" border="0"> <a href="../clani.html" class="sgdmainmenu">Clani</a> <img src="images/defaulticon_green.gif" alt="" width="7" height="7" border="0"> <a href="../skupine.html" class="sgdmainmenu">Skupine</a> <img src="images/defaulticon_green.gif" alt="" width="7" height="7" border="0"> <a href="../projekti.html" class="sgdmainmenu">Projekti</a> <img src="images/defaulticon_green.gif" alt="" width="7" height="7" border="0"> <a href="../povezave.html" class="sgdmainmenu">Povezave</a></td>
+				</tr>
+			</table>
+			<table width="100%" border="0" cellpadding="0" cellspacing="0">
+				<tr>
+					<td colspan="3" bgcolor="#000000">
+						<img src="images/spacer.gif" width="760" height="10" alt=""></td>
+				</tr>
+				<tr>
+					<td>
+						<a href="index.html"><img src="images/logo.gif" width="351" height="62" alt="" border="0"></a></td>
+					<td>
+						<img src="images/forum_03.gif" width="408" height="62" alt=""></td>
+					<td width="100%" bgcolor="#000000">
+						<img src="images/spacer.gif" width="1" height="1" alt=""></td>
+				</tr>
+				<tr>
+					<td colspan="3" bgcolor="#000000" align="center">
+						<a href="memberlist.html" class="sgdmainmenu"><img src="images/defaulticon_green.gif" alt="" width="7" height="7" border="0">&nbsp;Seznam članov</a>
+						<a href="index.html" class="sgdmainmenu"><img src="images/defaulticon_green.gif" alt="" width="7" height="7" border="0">&nbsp;Seznam</a></td>
+				</tr>
+				<tr>
+					<td colspan="3" bgcolor="#000000">
+						<img src="images/spacer.gif" width="760" height="5" alt=""></td>
+				</tr>
+			</table>
+
+<table width="100%" cellspacing="2" cellpadding="2" border="0">
+  <tr>
+	<td align="left" valign="bottom" colspan="2"><a class="maintitle" href="topic-2631.html">ukinjanje thread-a</a><br />
+	  <span class="gensmall"><b></b><br />
+	  &nbsp; </span></td>
+  </tr>
+</table>
+
+<table width="100%" cellspacing="2" cellpadding="2" border="0">
+  <tr>
+	<td align="left" valign="bottom" nowrap="nowrap">&nbsp;</td>
+	<td align="left" valign="middle" width="100%"><span class="nav">&nbsp;&nbsp;&nbsp;<a href="index.html" class="nav">SloGameDev.net seznam forumov</a>
+	  -> <a href="forum-49.html" class="nav">Začetniki</a></span></td>
+  </tr>
+</table>
+
+<table class="forumline" width="100%" cellspacing="1" cellpadding="3" border="0">
+	<tr align="right">
+		<td class="catHead" colspan="2" height="28"><span class="nav"><a href="topic-2629.html" class="nav">Prejšnja tema</a> :: <a href="topic-2634.html" class="nav">Naslednja tema</a> &nbsp;</span></td>
+	</tr>
+	
+	<tr>
+		<th class="thLeft" width="150" height="26" nowrap="nowrap">avtor</th>
+		<th class="thRight" nowrap="nowrap">Sporočilo</th>
+	</tr>
+	
+	<tr>
+		<td width="150" align="left" valign="top" class="row1"><span class="name"><a name="23351"></a><b>newbe</b></span><br /><span class="postdetails">novinec<br /><img src="images/ranks/sgd-0.gif" alt="novinec" title="novinec" border="0" /><br /><br /><br />Pridružen: 20. sep 2015 ob 14:28<br />objav: 5<br /></span><br /></td>
+		<td class="row1" width="100%" height="28" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+			<tr>
+				<td colspan="2" width="100%">
+					<table width="100%" cellpadding="0" cellspacing="0" border="0">
+						<tr>
+							<td valign="middle" align="left">
+								<a href="topic-2631.html#23351"><img src="templates/SGD2/images/icon_minipost.gif" width="12" height="9" alt="objava" title="objava" border="0" /></a>
+								<span class="postdetails">Objavljeno: ned sep 20, 2015 2:44 pm<span class="gen">&nbsp;</span>&nbsp; &nbsp;Pošlji temo: ukinjanje thread-a</span>
+							</td>
+							<td valign="middle" align="right" nowrap="nowrap">
+							</td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+			<tr>
+				<td colspan="2"><hr /></td>
+			</tr>
+			<tr>
+				<td colspan="2"><span class="postbody">Živjo!
+<br />
+Sem nov pri tehle zadevah (forumi, Android za telebane in par drugih knjig o Javi za Androida), pa poskušam za otroka napisati čisto preprosto igrico, kjer je potrebno deaktivirati odštevalnik še pred njegovim iztekom. To bi potem uporabil za druge elemente, ampak mi trenutno ne ratuje. Odštevalnik sem si zamislil poganjati v ločenem threadu, pa ko ga hočem ustaviti oz. resetirati ter ponovno zagnati, mi stari thread še vedno teče, novi pa se zažene dodatno preko njega. Če ima kdo kakšno idejo, kako se tem stvarem streže, bom zelo hvaležen za pomoč. Pišem pa v android Java.
+<br />
+
+<br />
+Hvala
+<br />
+
+<br />
+lp Rok
+<br />
+
+<br />
+Spodaj je koda:
+<br />
+</span>
+<br />
+<table width="90%" cellspacing="1" cellpadding="3" border="0" align="center">
+<br />
+<tr> 
+<br />
+	  <td><span class="genmed"><b>Koda:</b></span></td>
+<br />
+	</tr>
+<br />
+	<tr>
+<br />
+	  <td class="code">
+<br />
+import android&#46;app&#46;Activity;
+<br />
+import android&#46;graphics&#46;Color;
+<br />
+import android&#46;os&#46;Bundle;
+<br />
+import android&#46;os&#46;Handler;
+<br />
+import android&#46;view&#46;View;
+<br />
+import android&#46;view&#46;View&#46;OnClickListener;
+<br />
+import android&#46;widget&#46;Button;
+<br />
+import android&#46;widget&#46;TextView;
+<br />
+
+<br />
+public class Reset extends Activity implements OnClickListener{
+<br />
+
+<br />
+	TextView finalResult, result, counter;
+<br />
+	Button button1;
+<br />
+	Integer score;
+<br />
+	long timer, timeCounter;
+<br />
+	Thread countDown;
+<br />
+	private Handler handler = new Handler();
+<br />
+	
+<br />
+	@Override
+<br />
+	protected void onCreate(Bundle savedInstanceState) {
+<br />
+		super&#46;onCreate(savedInstanceState);
+<br />
+		setContentView(R&#46;layout&#46;reset);
+<br />
+		initialize();
+<br />
+		result&#46;setText(&quot;Your score is&#58; &quot; + score);
+<br />
+		}
+<br />
+
+<br />
+	private void initialize() {
+<br />
+		score = 0;
+<br />
+		finalResult=(TextView) findViewById(R&#46;id&#46;tvFinalResult);
+<br />
+		result=(TextView) findViewById(R&#46;id&#46;tvResult);
+<br />
+		counter=(TextView) findViewById(R&#46;id&#46;tvCounter);
+<br />
+		//timer=100;
+<br />
+		button1=(Button) findViewById(R&#46;id&#46;bButton_1);
+<br />
+		button1&#46;setOnClickListener(this);
+<br />
+	}
+<br />
+	
+<br />
+	public void countdown() {  	
+<br />
+		// This method is called on the main GUI thread&#46;
+<br />
+		countDown = new Thread(null, doBackgroundThreadProcessing);
+<br />
+		countDown&#46;start();	
+<br />
+	}
+<br />
+                    	
+<br />
+	// Runnable that executes the background processing method&#46;
+<br />
+	public Runnable doBackgroundThreadProcessing = new Runnable() {
+<br />
+		public void run() {
+<br />
+			while(!countDown&#46;isInterrupted()) {
+<br />
+				backgroundThreadProcessing ();
+<br />
+			}
+<br />
+			return;
+<br />
+		}
+<br />
+	};
+<br />
+	
+<br />
+	public void backgroundThreadProcessing() {
+<br />
+		// &#91; &#46;&#46;&#46; Time consuming operations &#46;&#46;&#46; &#93;
+<br />
+		
+<br />
+		int timeCounter = 0;
+<br />
+		timer = 100;
+<br />
+		
+<br />
+		while(timer &gt; 0) {
+<br />
+	    	
+<br />
+	    	try {
+<br />
+				Thread&#46;sleep(100);
+<br />
+			} catch (InterruptedException e) {
+<br />
+				e&#46;printStackTrace();
+<br />
+			}
+<br />
+	        
+<br />
+	if (countDown&#46;isInterrupted()){
+<br />
+			//	handler&#46;post(doUpdateGUIshowEndResult);
+<br />
+				return;
+<br />
+	}else 
+<br />
+				timer = 100 - timeCounter;
+<br />
+				handler&#46;post(doUpdateGUI);
+<br />
+				//printTimer();
+<br />
+				timeCounter ++;
+<br />
+		    }
+<br />
+		showEndResult();
+<br />
+		}
+<br />
+	
+<br />
+	private Runnable doUpdateGUI = new Runnable() {
+<br />
+		public void run() {
+<br />
+			printTimer ();
+<br />
+		}
+<br />
+		};
+<br />
+		
+<br />
+	public void stopCountDown() {
+<br />
+       // Thread myThread;
+<br />
+		//Thread countDown = myThread;
+<br />
+       // myThread = null;
+<br />
+        if (countDown != null) {
+<br />
+        	countDown&#46;interrupt();
+<br />
+        	} 
+<br />
+		}
+<br />
+	
+<br />
+	
+<br />
+	private void printTimer() {
+<br />
+		
+<br />
+		if (timer&gt;=0 &amp;&amp; timer&lt;=30){
+<br />
+			counter&#46;setTextColor(Color&#46;RED);
+<br />
+			counter&#46;setText(&quot; &quot; + timer);
+<br />
+			}
+<br />
+		else
+<br />
+		{
+<br />
+			counter&#46;setTextColor(Color&#46;GREEN);
+<br />
+			counter&#46;setText(&quot; &quot; + timer);
+<br />
+			}
+<br />
+		}
+<br />
+	
+<br />
+	
+<br />
+	private void showEndResult() {
+<br />
+
+<br />
+			finalResult&#46;setText(&quot;Your Final Result is&#58; &quot; + score);	
+<br />
+			try {
+<br />
+				Thread&#46;sleep(5000);
+<br />
+			} catch (InterruptedException e) {
+<br />
+				e&#46;printStackTrace();
+<br />
+			}
+<br />
+			this&#46;finish();
+<br />
+		}
+<br />
+	
+<br />
+	@Override
+<br />
+	public void onClick(View v) {
+<br />
+		
+<br />
+		score ++;
+<br />
+		result&#46;setText(&quot;Your score is&#58; &quot; + score);
+<br />
+		
+<br />
+		stopCountDown();
+<br />
+		countdown();
+<br />
+	}
+<br />
+
+<br />
+}
+<br />
+
+<br />
+</td>
+<br />
+	</tr>
+<br />
+</table>
+<br />
+<span class="postbody"></span><span class="gensmall"></span></td>
+			</tr>
+		</table></td>
+	</tr>
+	<tr>
+		<td class="row1" width="150" align="left" valign="middle"><span class="nav"><a href="#top" class="nav">Nazaj na vrh</a></span></td>
+		<td class="row1" width="100%" height="28" valign="bottom" nowrap="nowrap"><table cellspacing="0" cellpadding="0" border="0" height="18" width="18">
+			<tr>
+				<td valign="middle" nowrap="nowrap"><a href="profile-5062.html"><img src="templates/SGD2/images/lang_slovenian/icon_profile.gif" alt="Poglej uporabnikov profil" title="Poglej uporabnikov profil" border="0" /></a> </td>
+			</tr>
+		</table></td>
+	</tr>
+	<tr>
+		<td class="spaceRow" colspan="2" height="1"><img src="templates/SGD/images/spacer.gif" alt="" width="1" height="1" /></td>
+	</tr>
+	
+	<tr>
+		<td width="150" align="left" valign="top" class="row2"><span class="name"><a name="23353"></a><b>errorage</b></span><br /><span class="postdetails">novinec<br /><img src="images/ranks/sgd-0.gif" alt="novinec" title="novinec" border="0" /><br /><br /><br />Pridružen: 10. mar 2011 ob 14:43<br />objav: 16<br /></span><br /></td>
+		<td class="row2" width="100%" height="28" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+			<tr>
+				<td colspan="2" width="100%">
+					<table width="100%" cellpadding="0" cellspacing="0" border="0">
+						<tr>
+							<td valign="middle" align="left">
+								<a href="topic-2631.html#23353"><img src="templates/SGD2/images/icon_minipost.gif" width="12" height="9" alt="objava" title="objava" border="0" /></a>
+								<span class="postdetails">Objavljeno: sob sep 26, 2015 11:50 pm<span class="gen">&nbsp;</span>&nbsp; &nbsp;Pošlji temo: Re: ukinjanje thread-a</span>
+							</td>
+							<td valign="middle" align="right" nowrap="nowrap">
+							</td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+			<tr>
+				<td colspan="2"><hr /></td>
+			</tr>
+			<tr>
+				<td colspan="2"><span class="postbody">Najlažje rešiš tako, da med threadi komuniciraš s statičnimi spremenljivkami. Thread moreš zaključiti od znotraj threada, ne moreš ga kar thread.stop() od zunaj ali kaj takega. Tako lahko zunaj nastaviš neko statično spremenljivko na true, znotraj threada pa preveriš stanje spremenljivke: če je false izvajaš program, če je true končaš thread.
+<br />
+
+<br />
+pseudokoda:
+<br />
+</span>
+<br />
+<table width="90%" cellspacing="1" cellpadding="3" border="0" align="center">
+<br />
+<tr> 
+<br />
+	  <td><span class="genmed"><b>Koda:</b></span></td>
+<br />
+	</tr>
+<br />
+	<tr>
+<br />
+	  <td class="code">
+<br />
+Class Ext{
+<br />
+
+<br />
+	public main(&#46;&#46;&#46;){
+<br />
+		//Kreiraš thread iz razreda Thrd in ga zaženeš
+<br />
+		Data&#46;stopThread = false;
+<br />
+		Thread t = new Thread(Thrd);
+<br />
+		t&#46;start();
+<br />
+	}
+<br />
+
+<br />
+	public StopThread{
+<br />
+		//Da thread ustaviš od zunaj samo nastaviš ta parameter na true&#46; Thread se ustavi sam&#46;
+<br />
+		Data&#46;stopThread = true;
+<br />
+	}
+<br />
+
+<br />
+}
+<br />
+
+<br />
+Class Thrd{
+<br />
+	public run(){
+<br />
+		while(true){
+<br />
+			//Najprej preveriš če naj bi se thread ustavil
+<br />
+			if(Data&#46;stopThread){
+<br />
+				//Če ja, potem ga ustavi
+<br />
+				return;
+<br />
+			}else{
+<br />
+				//Sicer storit to, kar naj bi thread počel
+<br />
+			}
+<br />
+		}
+<br />
+	}
+<br />
+}
+<br />
+
+<br />
+Class Data{
+<br />
+	//V tem razredu samo hranimo to statično spremenljivko&#46;
+<br />
+	public static bool stopThread = false;
+<br />
+}
+<br />
+
+<br />
+</td>
+<br />
+	</tr>
+<br />
+</table>
+<br />
+<span class="postbody"></span><span class="gensmall"></span></td>
+			</tr>
+		</table></td>
+	</tr>
+	<tr>
+		<td class="row2" width="150" align="left" valign="middle"><span class="nav"><a href="#top" class="nav">Nazaj na vrh</a></span></td>
+		<td class="row2" width="100%" height="28" valign="bottom" nowrap="nowrap"><table cellspacing="0" cellpadding="0" border="0" height="18" width="18">
+			<tr>
+				<td valign="middle" nowrap="nowrap"><a href="profile-3506.html"><img src="templates/SGD2/images/lang_slovenian/icon_profile.gif" alt="Poglej uporabnikov profil" title="Poglej uporabnikov profil" border="0" /></a> </td>
+			</tr>
+		</table></td>
+	</tr>
+	<tr>
+		<td class="spaceRow" colspan="2" height="1"><img src="templates/SGD/images/spacer.gif" alt="" width="1" height="1" /></td>
+	</tr>
+	
+	<tr>
+		<td width="150" align="left" valign="top" class="row1"><span class="name"><a name="23355"></a><b>newbe</b></span><br /><span class="postdetails">novinec<br /><img src="images/ranks/sgd-0.gif" alt="novinec" title="novinec" border="0" /><br /><br /><br />Pridružen: 20. sep 2015 ob 14:28<br />objav: 5<br /></span><br /></td>
+		<td class="row1" width="100%" height="28" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+			<tr>
+				<td colspan="2" width="100%">
+					<table width="100%" cellpadding="0" cellspacing="0" border="0">
+						<tr>
+							<td valign="middle" align="left">
+								<a href="topic-2631.html#23355"><img src="templates/SGD2/images/icon_minipost.gif" width="12" height="9" alt="objava" title="objava" border="0" /></a>
+								<span class="postdetails">Objavljeno: ned sep 27, 2015 8:41 pm<span class="gen">&nbsp;</span>&nbsp; &nbsp;Pošlji temo: Re: ukinjanje thread-a</span>
+							</td>
+							<td valign="middle" align="right" nowrap="nowrap">
+							</td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+			<tr>
+				<td colspan="2"><hr /></td>
+			</tr>
+			<tr>
+				<td colspan="2"><span class="postbody">Hvala za odgovor! 
+<br />
+Upam, da mi uspe čim prej preoblikovati kodo, pa sporočim uspešnost <img src="images/smiles/icon_smile.gif" alt=":-)" border="0" />
+<br />
+
+<br />
+lp Rok</span><span class="gensmall"></span></td>
+			</tr>
+		</table></td>
+	</tr>
+	<tr>
+		<td class="row1" width="150" align="left" valign="middle"><span class="nav"><a href="#top" class="nav">Nazaj na vrh</a></span></td>
+		<td class="row1" width="100%" height="28" valign="bottom" nowrap="nowrap"><table cellspacing="0" cellpadding="0" border="0" height="18" width="18">
+			<tr>
+				<td valign="middle" nowrap="nowrap"><a href="profile-5062.html"><img src="templates/SGD2/images/lang_slovenian/icon_profile.gif" alt="Poglej uporabnikov profil" title="Poglej uporabnikov profil" border="0" /></a> </td>
+			</tr>
+		</table></td>
+	</tr>
+	<tr>
+		<td class="spaceRow" colspan="2" height="1"><img src="templates/SGD/images/spacer.gif" alt="" width="1" height="1" /></td>
+	</tr>
+	
+	<tr>
+		<td width="150" align="left" valign="top" class="row2"><span class="name"><a name="23356"></a><b>newbe</b></span><br /><span class="postdetails">novinec<br /><img src="images/ranks/sgd-0.gif" alt="novinec" title="novinec" border="0" /><br /><br /><br />Pridružen: 20. sep 2015 ob 14:28<br />objav: 5<br /></span><br /></td>
+		<td class="row2" width="100%" height="28" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+			<tr>
+				<td colspan="2" width="100%">
+					<table width="100%" cellpadding="0" cellspacing="0" border="0">
+						<tr>
+							<td valign="middle" align="left">
+								<a href="topic-2631.html#23356"><img src="templates/SGD2/images/icon_minipost.gif" width="12" height="9" alt="objava" title="objava" border="0" /></a>
+								<span class="postdetails">Objavljeno: sob okt 03, 2015 8:52 am<span class="gen">&nbsp;</span>&nbsp; &nbsp;Pošlji temo: Re: ukinjanje thread-a</span>
+							</td>
+							<td valign="middle" align="right" nowrap="nowrap">
+							</td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+			<tr>
+				<td colspan="2"><hr /></td>
+			</tr>
+			<tr>
+				<td colspan="2"><span class="postbody">Živjo!
+<br />
+Sedaj ko sem vnesel tole kodo, mi pa zajamra da Thrd ne more resolvat v spremenljivko (komentar 5. vrstici kode). Kaj je potrebno sedaj spremeniti?
+<br />
+
+<br />
+lp Rok
+<br />
+</span>
+<br />
+<table width="90%" cellspacing="1" cellpadding="3" border="0" align="center">
+<br />
+<tr> 
+<br />
+	  <td><span class="genmed"><b>Koda:</b></span></td>
+<br />
+	</tr>
+<br />
+	<tr>
+<br />
+	  <td class="code">
+<br />
+public class Ext{
+<br />
+
+<br />
+		   public void main(){
+<br />
+		      //Kreiraš thread iz razreda Thrd in ga zaženeš
+<br />
+		      Data&#46;stopThread = false;
+<br />
+		      Thread t = new Thread(Thrd); //Sedaj mi tukaj Thrd podčrta in napiše &quot;Thrd cannot be resolved to a variable&quot;
+<br />
+		      t&#46;start();
+<br />
+		   }
+<br />
+
+<br />
+		   public void StopThread(){
+<br />
+		      //Da thread ustaviš od zunaj samo nastaviš ta parameter na true&#46; Thread se ustavi sam&#46;
+<br />
+		      Data&#46;stopThread = true;
+<br />
+		   }
+<br />
+		}
+<br />
+
+<br />
+public class Thrd{
+<br />
+	   public void run(){
+<br />
+	      while(true){
+<br />
+	         //Najprej preveriš če naj bi se thread ustavil
+<br />
+	         if(Data&#46;stopThread){
+<br />
+	            //Če ja, potem ga ustavi
+<br />
+	            return;
+<br />
+	         }else{
+<br />
+	            //Sicer storit to, kar naj bi thread počel
+<br />
+	         }
+<br />
+	      }
+<br />
+	   }
+<br />
+	}
+<br />
+
+<br />
+public static class Data{
+<br />
+	   //V tem razredu samo hranimo to statično spremenljivko&#46;
+<br />
+	   public static boolean stopThread = false;
+<br />
+	}
+<br />
+</td>
+<br />
+	</tr>
+<br />
+</table>
+<br />
+<span class="postbody"></span><span class="gensmall"></span></td>
+			</tr>
+		</table></td>
+	</tr>
+	<tr>
+		<td class="row2" width="150" align="left" valign="middle"><span class="nav"><a href="#top" class="nav">Nazaj na vrh</a></span></td>
+		<td class="row2" width="100%" height="28" valign="bottom" nowrap="nowrap"><table cellspacing="0" cellpadding="0" border="0" height="18" width="18">
+			<tr>
+				<td valign="middle" nowrap="nowrap"><a href="profile-5062.html"><img src="templates/SGD2/images/lang_slovenian/icon_profile.gif" alt="Poglej uporabnikov profil" title="Poglej uporabnikov profil" border="0" /></a> </td>
+			</tr>
+		</table></td>
+	</tr>
+	<tr>
+		<td class="spaceRow" colspan="2" height="1"><img src="templates/SGD/images/spacer.gif" alt="" width="1" height="1" /></td>
+	</tr>
+	
+	<tr>
+		<td width="150" align="left" valign="top" class="row1"><span class="name"><a name="23357"></a><b>errorage</b></span><br /><span class="postdetails">novinec<br /><img src="images/ranks/sgd-0.gif" alt="novinec" title="novinec" border="0" /><br /><br /><br />Pridružen: 10. mar 2011 ob 14:43<br />objav: 16<br /></span><br /></td>
+		<td class="row1" width="100%" height="28" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+			<tr>
+				<td colspan="2" width="100%">
+					<table width="100%" cellpadding="0" cellspacing="0" border="0">
+						<tr>
+							<td valign="middle" align="left">
+								<a href="topic-2631.html#23357"><img src="templates/SGD2/images/icon_minipost.gif" width="12" height="9" alt="objava" title="objava" border="0" /></a>
+								<span class="postdetails">Objavljeno: pon okt 05, 2015 9:36 pm<span class="gen">&nbsp;</span>&nbsp; &nbsp;Pošlji temo: Re: ukinjanje thread-a</span>
+							</td>
+							<td valign="middle" align="right" nowrap="nowrap">
+							</td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+			<tr>
+				<td colspan="2"><hr /></td>
+			</tr>
+			<tr>
+				<td colspan="2"><span class="postbody">Koda, ki sem jo postal je bila zgolj pseudokoda za rašiti težavo ustavitve threada. V Javo moraš prevesti sam.
+<br />
+
+<br />
+Za Thrd si poglej sledeče:
+<br />
+<a class="postlink" >https://docs.oracle.com/javase/tutorial ... hread.html</a>
+<br />
+
+<br />
+To ti pokaže kako kreiraš nov thread in ga zaženeš - V tem primeru sta Thrd in Ext isti razred, ko to prirediš v svojo kodo boš moral v Thrd extendat Thread in implementirat Run metodo kot v linkanem primeru, v Run metodo vključiš kodo iz mojega primera, sam thread pa začneš v Ext razredu. 
+<br />
+
+<br />
+Thread torej začneš v Ext -&gt; main() tako:
+<br />
+(new Thrd()).start();
+<br />
+
+<br />
+public class Thrd{ ... }
+<br />
+bo moral extendat Thread, torej:
+<br />
+public class Thrd extends Thread{ ... }
+<br />
+
+<br />
+in v Thrd moraš implementirat run metood:
+<br />
+public void run() { ... }
+<br />
+
+<br />
+Ostalo je v mojem prejšnjem postu.</span><span class="gensmall"></span></td>
+			</tr>
+		</table></td>
+	</tr>
+	<tr>
+		<td class="row1" width="150" align="left" valign="middle"><span class="nav"><a href="#top" class="nav">Nazaj na vrh</a></span></td>
+		<td class="row1" width="100%" height="28" valign="bottom" nowrap="nowrap"><table cellspacing="0" cellpadding="0" border="0" height="18" width="18">
+			<tr>
+				<td valign="middle" nowrap="nowrap"><a href="profile-3506.html"><img src="templates/SGD2/images/lang_slovenian/icon_profile.gif" alt="Poglej uporabnikov profil" title="Poglej uporabnikov profil" border="0" /></a> </td>
+			</tr>
+		</table></td>
+	</tr>
+	<tr>
+		<td class="spaceRow" colspan="2" height="1"><img src="templates/SGD/images/spacer.gif" alt="" width="1" height="1" /></td>
+	</tr>
+	
+	<tr>
+		<td width="150" align="left" valign="top" class="row2"><span class="name"><a name="23358"></a><b>newbe</b></span><br /><span class="postdetails">novinec<br /><img src="images/ranks/sgd-0.gif" alt="novinec" title="novinec" border="0" /><br /><br /><br />Pridružen: 20. sep 2015 ob 14:28<br />objav: 5<br /></span><br /></td>
+		<td class="row2" width="100%" height="28" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+			<tr>
+				<td colspan="2" width="100%">
+					<table width="100%" cellpadding="0" cellspacing="0" border="0">
+						<tr>
+							<td valign="middle" align="left">
+								<a href="topic-2631.html#23358"><img src="templates/SGD2/images/icon_minipost.gif" width="12" height="9" alt="objava" title="objava" border="0" /></a>
+								<span class="postdetails">Objavljeno: čet okt 08, 2015 9:14 pm<span class="gen">&nbsp;</span>&nbsp; &nbsp;Pošlji temo: Re: ukinjanje thread-a</span>
+							</td>
+							<td valign="middle" align="right" nowrap="nowrap">
+							</td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+			<tr>
+				<td colspan="2"><hr /></td>
+			</tr>
+			<tr>
+				<td colspan="2"><span class="postbody">thx
+<br />
+
+<br />
+upam, da mi uspe sprobat čez vikend 
+<br />
+
+<br />
+lp Rok</span><span class="gensmall"></span></td>
+			</tr>
+		</table></td>
+	</tr>
+	<tr>
+		<td class="row2" width="150" align="left" valign="middle"><span class="nav"><a href="#top" class="nav">Nazaj na vrh</a></span></td>
+		<td class="row2" width="100%" height="28" valign="bottom" nowrap="nowrap"><table cellspacing="0" cellpadding="0" border="0" height="18" width="18">
+			<tr>
+				<td valign="middle" nowrap="nowrap"><a href="profile-5062.html"><img src="templates/SGD2/images/lang_slovenian/icon_profile.gif" alt="Poglej uporabnikov profil" title="Poglej uporabnikov profil" border="0" /></a> </td>
+			</tr>
+		</table></td>
+	</tr>
+	<tr>
+		<td class="spaceRow" colspan="2" height="1"><img src="templates/SGD/images/spacer.gif" alt="" width="1" height="1" /></td>
+	</tr>
+	
+	<tr>
+		<td width="150" align="left" valign="top" class="row1"><span class="name"><a name="23359"></a><b>newbe</b></span><br /><span class="postdetails">novinec<br /><img src="images/ranks/sgd-0.gif" alt="novinec" title="novinec" border="0" /><br /><br /><br />Pridružen: 20. sep 2015 ob 14:28<br />objav: 5<br /></span><br /></td>
+		<td class="row1" width="100%" height="28" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+			<tr>
+				<td colspan="2" width="100%">
+					<table width="100%" cellpadding="0" cellspacing="0" border="0">
+						<tr>
+							<td valign="middle" align="left">
+								<a href="topic-2631.html#23359"><img src="templates/SGD2/images/icon_minipost.gif" width="12" height="9" alt="objava" title="objava" border="0" /></a>
+								<span class="postdetails">Objavljeno: sob okt 17, 2015 10:24 pm<span class="gen">&nbsp;</span>&nbsp; &nbsp;Pošlji temo: Re: ukinjanje thread-a</span>
+							</td>
+							<td valign="middle" align="right" nowrap="nowrap">
+							</td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+			<tr>
+				<td colspan="2"><hr /></td>
+			</tr>
+			<tr>
+				<td colspan="2"><span class="postbody">Živjo!
+<br />
+
+<br />
+Zdaj sem ga uspel preoblikovati v predlagani smeri, pa mi zopet ne uspe ustaviti threada. Še vedno zaganja en thread čez drugega, brez da bi prvega ustavil.
+<br />
+
+<br />
+A daš lahko tole v eclipse ali pa v android studio, pa mi poveš v čem je štos?
+<br />
+
+<br />
+Hvala
+<br />
+
+<br />
+lp Rok
+<br />
+
+<br />
+xml:
+<br />
+</span>
+<br />
+<table width="90%" cellspacing="1" cellpadding="3" border="0" align="center">
+<br />
+<tr> 
+<br />
+	  <td><span class="genmed"><b>Koda:</b></span></td>
+<br />
+	</tr>
+<br />
+	<tr>
+<br />
+	  <td class="code">
+<br />
+&lt;?xml version=&quot;1&#46;0&quot; encoding=&quot;utf-8&quot;?&gt;
+<br />
+&lt;LinearLayout xmlns&#58;android=&quot;http&#58;//schemas&#46;android&#46;com/apk/res/android&quot;
+<br />
+    android&#58;layout_width=&quot;match_parent&quot;
+<br />
+    android&#58;layout_height=&quot;match_parent&quot;
+<br />
+    android&#58;orientation=&quot;vertical&quot; &gt;
+<br />
+
+<br />
+    &lt;TextView
+<br />
+        android&#58;id=&quot;@+id/tvFinalResult&quot;
+<br />
+        android&#58;layout_width=&quot;wrap_content&quot;
+<br />
+        android&#58;layout_height=&quot;wrap_content&quot;
+<br />
+        android&#58;text=&quot;Final result&quot; 
+<br />
+        android&#58;textColor=&quot;@color/green&quot;
+<br />
+        android&#58;textSize=&quot;45dp&quot;
+<br />
+        android&#58;layout_gravity=&quot;center&quot;
+<br />
+       	android&#58;gravity=&quot;center&quot;
+<br />
+       	android&#58;textAppearance=&quot;?android&#58;attr/textAppearanceLarge&quot;/&gt;
+<br />
+
+<br />
+        &lt;TextView
+<br />
+        android&#58;id=&quot;@+id/tvResult&quot;
+<br />
+        android&#58;layout_width=&quot;wrap_content&quot;
+<br />
+        android&#58;layout_height=&quot;wrap_content&quot;
+<br />
+        android&#58;text=&quot;Result&quot; 
+<br />
+        android&#58;textColor=&quot;@color/green&quot;
+<br />
+        android&#58;textSize=&quot;45dp&quot;
+<br />
+        android&#58;layout_gravity=&quot;center&quot;
+<br />
+       	android&#58;gravity=&quot;center&quot;
+<br />
+       	android&#58;textAppearance=&quot;?android&#58;attr/textAppearanceLarge&quot;/&gt;
+<br />
+        
+<br />
+                &lt;TextView
+<br />
+        android&#58;id=&quot;@+id/tvCounter&quot;
+<br />
+        android&#58;layout_width=&quot;wrap_content&quot;
+<br />
+        android&#58;layout_height=&quot;wrap_content&quot;
+<br />
+        android&#58;text=&quot;Counter&quot; 
+<br />
+        android&#58;textColor=&quot;@color/green&quot;
+<br />
+        android&#58;textSize=&quot;45dp&quot;
+<br />
+        android&#58;layout_gravity=&quot;center&quot;
+<br />
+       	android&#58;gravity=&quot;center&quot;
+<br />
+       	android&#58;textAppearance=&quot;?android&#58;attr/textAppearanceLarge&quot;/&gt;
+<br />
+   
+<br />
+    &lt;Button
+<br />
+        android&#58;id=&quot;@+id/bButton_1&quot;
+<br />
+        android&#58;layout_width=&quot;match_parent&quot;
+<br />
+        android&#58;layout_height=&quot;wrap_content&quot;
+<br />
+        android&#58;layout_gravity=&quot;fill_vertical&quot;
+<br />
+        android&#58;text=&quot;Button1&quot; /&gt;
+<br />
+
+<br />
+&lt;/LinearLayout&gt;
+<br />
+</td>
+<br />
+	</tr>
+<br />
+</table>
+<br />
+<span class="postbody">
+<br />
+
+<br />
+program:
+<br />
+</span>
+<br />
+<table width="90%" cellspacing="1" cellpadding="3" border="0" align="center">
+<br />
+<tr> 
+<br />
+	  <td><span class="genmed"><b>Koda:</b></span></td>
+<br />
+	</tr>
+<br />
+	<tr>
+<br />
+	  <td class="code">
+<br />
+import android&#46;app&#46;Activity;
+<br />
+import android&#46;graphics&#46;Color;
+<br />
+import android&#46;os&#46;Bundle;
+<br />
+import android&#46;os&#46;Handler;
+<br />
+import android&#46;view&#46;View;
+<br />
+import android&#46;view&#46;View&#46;OnClickListener;
+<br />
+import android&#46;widget&#46;Button;
+<br />
+import android&#46;widget&#46;TextView;
+<br />
+
+<br />
+public class Reset extends Activity implements OnClickListener{
+<br />
+
+<br />
+	TextView finalResult, result, counter;
+<br />
+	Button button1;
+<br />
+	Integer score;
+<br />
+	long timer, timeCounter;
+<br />
+	Thread countDown;
+<br />
+	private Handler handler = new Handler();
+<br />
+	
+<br />
+	@Override
+<br />
+	protected void onCreate(Bundle savedInstanceState) {
+<br />
+		super&#46;onCreate(savedInstanceState);
+<br />
+		setContentView(R&#46;layout&#46;reset);
+<br />
+		initialize();
+<br />
+		result&#46;setText(&quot;Your score is&#58; &quot; + score);
+<br />
+		main();
+<br />
+		}
+<br />
+
+<br />
+	private void initialize() {
+<br />
+		score = 0;
+<br />
+		finalResult=(TextView) findViewById(R&#46;id&#46;tvFinalResult);
+<br />
+		result=(TextView) findViewById(R&#46;id&#46;tvResult);
+<br />
+		counter=(TextView) findViewById(R&#46;id&#46;tvCounter);
+<br />
+		button1=(Button) findViewById(R&#46;id&#46;bButton_1);
+<br />
+		button1&#46;setOnClickListener(this);
+<br />
+	}
+<br />
+	
+<br />
+		   public void main(){
+<br />
+		      //Kreiraš thread iz razreda Thrd in ga zaženeš
+<br />
+		      Data&#46;stopThread = false;
+<br />
+		 //     Thread t = new Thread(Thrd); //Sedaj mi tukaj THRD podčrta in napiše &quot;Thrd cannot be resolved to a variable&quot;
+<br />
+		 //     t&#46;start();
+<br />
+                      new Thrd()&#46;start();
+<br />
+		   }
+<br />
+
+<br />
+		   public void stopThread(){
+<br />
+		      //Da thread ustaviš od zunaj samo nastaviš ta parameter na true&#46; Thread se ustavi sam&#46;
+<br />
+		      Data&#46;stopThread = true;
+<br />
+		   }
+<br />
+		
+<br />
+ 
+<br />
+public class Thrd extends Thread {
+<br />
+	
+<br />
+	public void run(){
+<br />
+	      while(true){
+<br />
+	         //Najprej preveriš če naj bi se thread ustavil
+<br />
+	         if(Data&#46;stopThread){
+<br />
+	            //Če ja, potem ga ustavi
+<br />
+	            return;
+<br />
+	         }else{
+<br />
+	            //Sicer storit to, kar naj bi thread počel
+<br />
+	        	 
+<br />
+	        	 int timeCounter = 0;
+<br />
+	     		timer = 100;
+<br />
+	     		
+<br />
+	     		while(timer &gt; 0) {
+<br />
+	     	    	
+<br />
+	     	    	try {
+<br />
+	     				Thread&#46;sleep(100);
+<br />
+	     			} catch (InterruptedException e) {
+<br />
+	     				e&#46;printStackTrace();
+<br />
+	     			}
+<br />
+	     	    	
+<br />
+	     	    	if(Data&#46;stopThread){
+<br />
+	    	            //Če ja, potem ga ustavi
+<br />
+	    	            return;
+<br />
+	    	         }else{
+<br />
+	     	   	timer = 100 - timeCounter;
+<br />
+	     	   	//printTimer();
+<br />
+				handler&#46;post(doUpdateGUI);
+<br />
+				timeCounter ++;
+<br />
+	    	         }
+<br />
+		    }
+<br />
+		showEndResult();
+<br />
+		}
+<br />
+	  }
+<br />
+	}
+<br />
+ }
+<br />
+	      
+<br />
+
+<br />
+public static class Data{
+<br />
+	   //V tem razredu samo hranimo to statično spremenljivko&#46;
+<br />
+	   public static boolean stopThread = false;
+<br />
+	}
+<br />
+
+<br />
+private Runnable doUpdateGUI = new Runnable() {
+<br />
+	public void run() {
+<br />
+		printTimer ();
+<br />
+	}
+<br />
+	};
+<br />
+	
+<br />
+private void printTimer() {
+<br />
+		
+<br />
+		if (timer&gt;=0 &amp;&amp; timer&lt;=30){
+<br />
+			counter&#46;setTextColor(Color&#46;RED);
+<br />
+			counter&#46;setText(&quot; &quot; + timer);
+<br />
+			}
+<br />
+		else
+<br />
+		{
+<br />
+			counter&#46;setTextColor(Color&#46;GREEN);
+<br />
+			counter&#46;setText(&quot; &quot; + timer);
+<br />
+			}
+<br />
+		}
+<br />
+	
+<br />
+	
+<br />
+	private void showEndResult() {
+<br />
+
+<br />
+			finalResult&#46;setText(&quot;Your Final Result is&#58; &quot; + score);	
+<br />
+			try {
+<br />
+				Thread&#46;sleep(5000);
+<br />
+			} catch (InterruptedException e) {
+<br />
+				e&#46;printStackTrace();
+<br />
+			}
+<br />
+			this&#46;finish();
+<br />
+		}
+<br />
+
+<br />
+@Override
+<br />
+	public void onClick(View v) {
+<br />
+		
+<br />
+		score ++;
+<br />
+		result&#46;setText(&quot;Your score is&#58; &quot; + score);
+<br />
+		
+<br />
+		stopThread();
+<br />
+		main();
+<br />
+	}
+<br />
+}
+<br />
+</td>
+<br />
+	</tr>
+<br />
+</table>
+<br />
+<span class="postbody"></span><span class="gensmall"></span></td>
+			</tr>
+		</table></td>
+	</tr>
+	<tr>
+		<td class="row1" width="150" align="left" valign="middle"><span class="nav"><a href="#top" class="nav">Nazaj na vrh</a></span></td>
+		<td class="row1" width="100%" height="28" valign="bottom" nowrap="nowrap"><table cellspacing="0" cellpadding="0" border="0" height="18" width="18">
+			<tr>
+				<td valign="middle" nowrap="nowrap"><a href="profile-5062.html"><img src="templates/SGD2/images/lang_slovenian/icon_profile.gif" alt="Poglej uporabnikov profil" title="Poglej uporabnikov profil" border="0" /></a> </td>
+			</tr>
+		</table></td>
+	</tr>
+	<tr>
+		<td class="spaceRow" colspan="2" height="1"><img src="templates/SGD/images/spacer.gif" alt="" width="1" height="1" /></td>
+	</tr>
+	
+	<tr align="center">
+		<td class="catBottom" colspan="2" height="28">&nbsp;</td>
+	</tr>
+</table>
+
+<table width="100%" cellspacing="2" cellpadding="2" border="0" align="center">
+  <tr>
+	<td align="left" valign="middle" nowrap="nowrap">&nbsp;</td>
+	<td align="left" valign="middle" width="100%"><span class="nav">&nbsp;&nbsp;&nbsp;<a href="index.html" class="nav">SloGameDev.net seznam forumov</a>
+	  -> <a href="forum-49.html" class="nav">Začetniki</a></span></td>
+	<td align="right" valign="top" nowrap="nowrap"><span class="gensmall">Časovni pas (GMT +2:00 uri) Slovenija, poletni čas</span><br /><span class="nav"></span>
+	  </td>
+  </tr>
+  <tr>
+	<td align="left" colspan="3"><span class="nav">Stran <b>1</b> od <b>1</b></span></td>
+  </tr>
+</table>
+
+<table width="100%" cellspacing="2" border="0" align="center">
+  <tr>
+	<td width="40%" valign="top" nowrap="nowrap" align="left">&nbsp;</td>
+	<td align="right" valign="top" nowrap="nowrap">&nbsp;</td>
+  </tr>
+</table>
+
+<div align="center"><span class="copyright"><br />Arhiv &mdash; samo za branje.<br />
+<!--
+	We request you retain the full copyright notice below including the link to www.phpbb.com.
+	This not only gives respect to the large amount of time given freely by the developers
+	but also helps build interest, traffic and use of phpBB 2.0. If you cannot (for good
+	reason) retain the full copyright we request you at least leave in place the 
+	Powered by phpBB 2.0.4 line, with phpBB linked to www.phpbb.com. If you refuse
+	to include even this then support on our forums may be affected. 
+
+	The phpBB Group : 2002
+// -->
+Powered by <a  target="_phpbb" class="copyright">phpBB</a> 2.0.4 &copy; 2001, 2002 phpBB Group<br /></span></div>
+		</td>
+	</tr>
+</table>
+
+</body>
+</html>

@@ -1,0 +1,2827 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html dir="ltr">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta http-equiv="Content-Style-Type" content="text/css">
+<style type="text/css">
+<!--
+.style1 {color: #FFFFFF}
+-->
+</style>
+
+
+
+<title>SloGameDev.net :: OpenGL(Win32) Info konzola --&gt; Kako oz. kam?</title>
+<!-- link rel="stylesheet" href="templates/SGD/SGD2.css" type="text/css" -->
+<style type="text/css">
+<!--
+/*
+  The SGD Theme for phpBB version 2+
+  Created by Rhuantavan
+  http://www.rhuantavan.org
+
+  NOTE: These CSS definitions are stored within the main page body so that you can use the phpBB2
+  theme administration centre. When you have finalised your style you could cut the final CSS code
+  and place it in an external file, deleting this section to save bandwidth.
+*/
+
+/* General page style. The scroll bar colours only visible in IE5.5+ */
+body {
+	background-color: #DDDDDD;
+	scrollbar-face-color: #000000;
+	scrollbar-highlight-color: #000000;
+	scrollbar-3dlight-color: #EEEEEE;
+	scrollbar-darkshadow-color: #EEEEEE;
+	scrollbar-shadow-color: #000000;
+	scrollbar-arrow-color: #55FF00;
+	scrollbar-track-color: #EEEEEE;
+}
+
+/* General font families for common tags */
+font,th,td,p { font-family: Verdana, Arial, Helvetica, sans-serif }
+a:link,a:active,a:visited { color : #338800; }
+a:hover		{ text-decoration: underline; color : #338800; }
+hr	{ height: 0px; border: solid #E9E9E9 0px; border-top-width: 1px;}
+
+/* This is the border line & background colour round the entire page */
+.bodyline	{ background-color: #EEEEEE; border-left: 1px #000000 solid; border-right: 1px #000000 solid; }
+
+/* This is the outline round the main forum tables */
+.forumline	{ background-color: #EEEEEE; border: 0px #DDDDDD solid; }
+
+/* Main table cell colours and backgrounds */
+td.row1	{ background-color: #F8F8F8; }
+td.row2	{ background-color: #F0F0F0; }
+td.row3	{ background-color: #E9E9E9; }
+
+/*
+  This is for the table cell above the Topics, Post & Last posts on the index.php page
+  By default this is the fading out gradiated silver background.
+  However, you could replace this with a bitmap specific for each forum
+*/
+td.rowpic {
+		background-color: #EEEEEE;
+		background-image: url(templates/SGD/images/cellpic3.gif);
+		background-repeat: repeat-y;
+}
+
+/* Header cells - the blue and silver gradient backgrounds */
+th	{
+	color: #66CC33; font-size: 11px; font-weight : bold;
+	background-color: #338800; height: 25px;
+	background-image: url(templates/SGD/images/cellpic2.gif);
+}
+
+td.cat,td.catHead,td.catSides,td.catLeft,td.catRight,td.catBottom {
+			background-image: url(templates/SGD/images/cellpic1.gif);
+			background-color:#E9E9E9; border: #999999; border-style: solid; height: 28px;
+}
+
+/*
+  Setting additional nice inner borders for the main table cells.
+  The names indicate which sides the border will be on.
+  Don't worry if you don't understand this, just ignore it :-)
+*/
+td.cat,td.catHead,td.catBottom {
+	height: 29px;
+	border-width: 0px 0px 0px 0px;
+}
+th.thHead,th.thSides,th.thTop,th.thLeft,th.thRight,th.thBottom,th.thCornerL,th.thCornerR {
+	font-weight: bold; border: #EEEEEE; border-style: solid; height: 28px;
+}
+td.row3Right,td.spaceRow {
+	background-color: #E9E9E9; border: #999999; border-style: solid;
+}
+
+th.thHead,td.catHead { font-size: 12px; border-width: 0px 0px 0px 0px; }
+th.thSides,td.catSides,td.spaceRow	 { border-width: 0px 0px 0px 0px; }
+th.thRight,td.catRight,td.row3Right	 { border-width: 0px 0px 0px 0px; }
+th.thLeft,td.catLeft	  { border-width: 0px 0px 0px 0px; }
+th.thBottom,td.catBottom  { border-width: 0px 0px 0px 1px; }
+th.thTop	 { border-width: 0px 0px 0px 0px; }
+th.thCornerL { border-width: 0px 0px 0px 1px; }
+th.thCornerR { border-width: 0px 0px 0px 0px; }
+
+/* The largest text used in the index page title and toptic title etc. */
+.maintitle	{
+	font-weight: bold; font-size: 18px; font-family: "Trebuchet MS",Verdana, Arial, Helvetica, sans-serif;
+	text-decoration: none; line-height : 120%; color : #666666;
+}
+
+/* General text */
+.gen { font-size : 12px; }
+.genmed { font-size : 11px; }
+.gensmall { font-size : 10px; }
+.gen,.genmed,.gensmall { color : #666666; }
+a.gen,a.genmed,a.gensmall { color: #338800; text-decoration: none; }
+a.gen:hover,a.genmed:hover,a.gensmall:hover	{ color: #338800; text-decoration: underline; }
+
+/* The register, login, search etc links at the top of the page */
+.mainmenu		{ font-size : 11px; color : #666666 }
+a.mainmenu		{ text-decoration: none; color : #338800;  }
+a.mainmenu:hover{ text-decoration: underline; color : #338800; }
+
+/* SGD main menu */
+.sgdmainmenu			{ font-size : 10px; color : #99FF33 }
+a.sgdmainmenu:link		{ text-decoration: none; color : #99FF33;  }
+a.sgdmainmenu:active	{ text-decoration: none; color : #99FF33;  }
+a.sgdmainmenu:visited	{ text-decoration: none; color : #99FF33;  }
+a.sgdmainmenu:hover		{ text-decoration: underline; color : #99FF33; }
+
+/* Forum category titles */
+.cattitle		{ font-weight: bold; font-size: 12px ; letter-spacing: 1px; color : #338800}
+a.cattitle		{ text-decoration: none; color : #338800; }
+a.cattitle:hover{ text-decoration: underline; }
+
+/* Forum title: Text and link to the forums used in: index.php */
+.forumlink		{ font-weight: bold; font-size: 12px; color : #338800; }
+a.forumlink 	{ text-decoration: none; color : #338800; }
+a.forumlink:hover{ text-decoration: underline; color : #338800; }
+
+/* Used for the navigation text, (Page 1,2,3 etc) and the navigation bar when in a forum */
+.nav			{ font-weight: bold; font-size: 11px; color : #666666;}
+a.nav			{ text-decoration: none; color : #338800; }
+a.nav:hover		{ text-decoration: underline; }
+
+/* titles for the topics: could specify viewed link colour too */
+.topictitle,h1,h2	{ font-weight: bold; font-size: 11px; color : #666666; }
+a.topictitle:link   { text-decoration: none; color : #338800; }
+a.topictitle:visited { text-decoration: none; color : #338800; }
+a.topictitle:hover	{ text-decoration: underline; color : #338800; }
+
+/* Name of poster in viewmsg.php and viewtopic.php and other places */
+.name			{ font-size : 11px; color : #000000;}
+
+/* Location, number of posts, post date etc */
+.postdetails		{ font-size : 10px; color : #666666; }
+
+/* The content of the posts (body of text) */
+.postbody { font-size : 12px; line-height: 18px; color : #000000;}
+a.postlink:link	{ text-decoration: none; color : #338800 }
+a.postlink:visited { text-decoration: none; color : #338800; }
+a.postlink:hover { text-decoration: underline; color : #338800}
+
+/* Quote & Code blocks */
+.code {
+	font-family: Courier, 'Courier New', sans-serif; font-size: 11px; color: #006600;
+	background-color: #D6D6D6; border: #E9E9E9; border-style: solid;
+	border-left-width: 1px; border-top-width: 1px; border-right-width: 1px; border-bottom-width: 1px
+}
+
+.quote {
+	font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 11px; color: #444444; line-height: 125%;
+	background-color: #BBBBBB; border: #E9E9E9; border-style: solid;
+	border-left-width: 1px; border-top-width: 1px; border-right-width: 1px; border-bottom-width: 1px
+}
+
+/* Copyright and bottom info */
+.copyright		{ font-size: 10px; font-family: Verdana, Arial, Helvetica, sans-serif; color: #444444; letter-spacing: -1px;}
+a.copyright		{ color: #444444; text-decoration: none;}
+a.copyright:hover { color: #666666; text-decoration: underline;}
+
+/* Form elements */
+input,textarea, select {
+	color : #666666;
+	font: normal 11px Verdana, Arial, Helvetica, sans-serif;
+	border-color : #666666;
+}
+
+/* The text input fields background colour */
+input.post, textarea.post, select {
+	background-color : #EEEEEE;
+}
+
+input { text-indent : 2px; }
+
+/* The buttons used for bbCode styling in message post */
+input.button {
+	background-color : #F8F8F8;
+	color : #666666;
+	font-size: 11px; font-family: Verdana, Arial, Helvetica, sans-serif;
+}
+
+/* The main submit button option */
+input.mainoption {
+	background-color : #BBBBBB;
+	font-weight : bold;
+}
+
+/* None-bold submit button */
+input.liteoption {
+	background-color : #BBBBBB;
+	font-weight : normal;
+}
+
+/* This is the line in the posting page which shows the rollover
+  help line. This is actually a text box, but if set to be the same
+  colour as the background no one will know ;)
+*/
+.helpline { background-color: #F0F0F0; border-style: none; }
+
+/* Import the fancy styles for IE only (NS4.x doesn't use the @import function) */
+@import url("templates/SGD/formIE.css");
+-->
+</style>
+</head>
+<body bgcolor="#DDDDDD" text="#666666" link="#338800" vlink="#338800" topmargin="0" />
+<a name="top"></a>
+<table width="100%" cellspacing="0" cellpadding="0" border="0" align="center" nowrap>
+	<tr>
+		<td class="bodyline">
+			<table width="100%" border="0" cellpadding="0" cellspacing="0">
+				<tr>
+					<td bgcolor="#FFFFFF">
+						<img src="images/spacer.gif" width="760" height="20" alt=""></td>
+				</tr>
+			</table>
+			<table width="100%" border="0" cellpadding="0" cellspacing="0">
+				<tr>
+					<td bgcolor="#000000">
+						<a href="../index.html"><img src="images/home.gif" width="10" height="10" alt="" border="0"></a><img src="images/spacer.gif" width="5" height="5" alt=""><a href="../index.html" class="sgdmainmenu">Nazaj na domačo stran</a> <img src="images/defaulticon_green.gif" alt="" width="7" height="7" border="0"> <a href="../clanki.html" class="sgdmainmenu">Clanki</a> <img src="images/defaulticon_green.gif" alt="" width="7" height="7" border="0"> <a href="../koda.html" class="sgdmainmenu">Koda</a> <img src="images/defaulticon_green.gif" alt="" width="7" height="7" border="0"> <a href="../clani.html" class="sgdmainmenu">Clani</a> <img src="images/defaulticon_green.gif" alt="" width="7" height="7" border="0"> <a href="../skupine.html" class="sgdmainmenu">Skupine</a> <img src="images/defaulticon_green.gif" alt="" width="7" height="7" border="0"> <a href="../projekti.html" class="sgdmainmenu">Projekti</a> <img src="images/defaulticon_green.gif" alt="" width="7" height="7" border="0"> <a href="../povezave.html" class="sgdmainmenu">Povezave</a></td>
+				</tr>
+			</table>
+			<table width="100%" border="0" cellpadding="0" cellspacing="0">
+				<tr>
+					<td colspan="3" bgcolor="#000000">
+						<img src="images/spacer.gif" width="760" height="10" alt=""></td>
+				</tr>
+				<tr>
+					<td>
+						<a href="index.html"><img src="images/logo.gif" width="351" height="62" alt="" border="0"></a></td>
+					<td>
+						<img src="images/forum_03.gif" width="408" height="62" alt=""></td>
+					<td width="100%" bgcolor="#000000">
+						<img src="images/spacer.gif" width="1" height="1" alt=""></td>
+				</tr>
+				<tr>
+					<td colspan="3" bgcolor="#000000" align="center">
+						<a href="memberlist.html" class="sgdmainmenu"><img src="images/defaulticon_green.gif" alt="" width="7" height="7" border="0">&nbsp;Seznam članov</a>
+						<a href="index.html" class="sgdmainmenu"><img src="images/defaulticon_green.gif" alt="" width="7" height="7" border="0">&nbsp;Seznam</a></td>
+				</tr>
+				<tr>
+					<td colspan="3" bgcolor="#000000">
+						<img src="images/spacer.gif" width="760" height="5" alt=""></td>
+				</tr>
+			</table>
+
+<table width="100%" cellspacing="2" cellpadding="2" border="0">
+  <tr>
+	<td align="left" valign="bottom" colspan="2"><a class="maintitle" href="topic-1391.html">OpenGL(Win32) Info konzola --&gt; Kako oz. kam?</a><br />
+	  <span class="gensmall"><b></b><br />
+	  &nbsp; </span></td>
+  </tr>
+</table>
+
+<table width="100%" cellspacing="2" cellpadding="2" border="0">
+  <tr>
+	<td align="left" valign="bottom" nowrap="nowrap">&nbsp;</td>
+	<td align="left" valign="middle" width="100%"><span class="nav">&nbsp;&nbsp;&nbsp;<a href="index.html" class="nav">SloGameDev.net seznam forumov</a>
+	  -> <a href="forum-52.html" class="nav">Izdelovanje iger</a></span></td>
+  </tr>
+</table>
+
+<table class="forumline" width="100%" cellspacing="1" cellpadding="3" border="0">
+	<tr align="right">
+		<td class="catHead" colspan="2" height="28"><span class="nav"><a href="topic-1296.html" class="nav">Prejšnja tema</a> :: <a href="topic-1393.html" class="nav">Naslednja tema</a> &nbsp;</span></td>
+	</tr>
+	
+	<tr>
+		<th class="thLeft" width="150" height="26" nowrap="nowrap">avtor</th>
+		<th class="thRight" nowrap="nowrap">Sporočilo</th>
+	</tr>
+	
+	<tr>
+		<td width="150" align="left" valign="top" class="row1"><span class="name"><a name="16936"></a><b>[Beer]</b></span><br /><span class="postdetails">poizvedovalec<br /><img src="images/ranks/sgd-1.gif" alt="poizvedovalec" title="poizvedovalec" border="0" /><br /><br /><br />Pridružen: 29. nov 2003 ob 21:36<br />objav: 35<br /></span><br /></td>
+		<td class="row1" width="100%" height="28" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+			<tr>
+				<td colspan="2" width="100%">
+					<table width="100%" cellpadding="0" cellspacing="0" border="0">
+						<tr>
+							<td valign="middle" align="left">
+								<a href="topic-1391.html#16936"><img src="templates/SGD2/images/icon_minipost.gif" width="12" height="9" alt="objava" title="objava" border="0" /></a>
+								<span class="postdetails">Objavljeno: sre maj 02, 2007 8:32 pm<span class="gen">&nbsp;</span>&nbsp; &nbsp;Pošlji temo: OpenGL(Win32) Info konzola --&gt; Kako oz. kam?</span>
+							</td>
+							<td valign="middle" align="right" nowrap="nowrap">
+							</td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+			<tr>
+				<td colspan="2"><hr /></td>
+			</tr>
+			<tr>
+				<td colspan="2"><span class="postbody">Živjo !
+
+<br />
+
+
+<br />
+Za izhodišče sem vzel NeHe tutorial št. 6  (vrteča se texturirana kocka).
+
+<br />
+Napisal sem dva class-a:
+
+<br />
+1. TextureManager, ki loada BMP-je in vrne textureID
+
+<br />
+2. GLFont, ki skrbi, da lahko na sceno še kaj napišem (za fonte uporabljam texturo)
+
+<br />
+
+
+<br />
+Preverjeno na tem tutorialu in zadeva dela kot mora.
+
+<br />
+
+
+<br />
+Naredil sem še eno manjšo modifikacijo --&gt; samo za testiranje
+
+<br />
+Iz metode DrawGLScene sem izrezal del, kjer se riše kocka in to spravil v funkcijo DrawCube().
+
+<br />
+Naredil sem še manjšo modifikacijo --&gt; glej spodaj (source)
+
+<br />
+Btw: Vem, da lahko kocko potexturiram z eno samo texturo tako, 
+
+<br />
+da ustrezno nastavim koordinate texture, vendar tokrat namenoma nisem naredil tako, 
+
+<br />
+ker sem želel, da imam za vsako stranico svojo texturo. Razlog?
+
+<br />
+
+
+<br />
+Želim narediti naslednje:
+
+<br />
+Želim prikazati dinamčno nalaganje textur.
+
+<br />
+Torej. Najprej kocka ni texturirana (še vedno pa se vrti), potem pa začnemo nalagati texture.
+
+<br />
+
+
+<br />
+Saj veste:
+
+<br />
+
+
+<br />
+ -------------- Console  ----------------------
+
+<br />
+Loading textures.....
+
+<br />
+    Loading Data/1.bmp ....... done  // textura se naj takoj prikaže na kocki
+
+<br />
+    Loading Data/2.bmp ....... done
+
+<br />
+    Loading Data/3.bmp ....... done
+
+<br />
+    Loading Data/4.bmp ....... done
+
+<br />
+    Loading Data/5.bmp ....... done
+
+<br />
+    Loading Data/6.bmp ....... done
+
+<br />
+
+
+<br />
+Loading geometry .....
+
+<br />
+
+
+<br />
+Initializing Level1 .....
+
+<br />
+------------------------------------------------
+
+<br />
+
+
+<br />
+
+
+<br />
+OK. Upam, da razumete.
+
+<br />
+Vprašanje.
+
+<br />
+Kam zdej dat klic funkcije LoadTextures(), da se bo zadeva sproti izpisovala in prikazovala.
+
+<br />
+Poskušal sem dat v DrawGLscene, vendar se zadeva po par sekundah zelo upočasni --&gt; skratka že na prvi pogled je opazno, da nekaj ni ok.
+
+<br />
+
+
+<br />
+Prosim za kakšen nasvet. 
+
+<br />
+Če pa se komu ljubi še Lesson6 dopolnit, pa dam za pir.  <img src="images/smiles/icon_biggrin.gif" alt=":D" border="0" />
+
+<br />
+
+
+<br />
+
+
+<br />
+
+
+<br />
+</span>
+<br />
+<table width="90%" cellspacing="1" cellpadding="3" border="0" align="center">
+<br />
+<tr> 
+<br />
+	  <td><span class="genmed"><b>Koda:</b></span></td>
+<br />
+	</tr>
+<br />
+	<tr>
+<br />
+	  <td class="code">GLvoid DrawCube&#40;GLvoid&#41;
+<br />
+&#123;
+<br />
+	glEnable&#40;GL_TEXTURE_2D&#41;;							// Enable Texture Mapping &#40; NEW &#41;
+<br />
+	glBindTexture&#40;GL_TEXTURE_2D, texture&#91;0&#93;&#41;;
+<br />
+	glBegin&#40;GL_QUADS&#41;;
+<br />
+		// Front Face
+<br />
+		glTexCoord2f&#40;0&#46;0f, 0&#46;0f&#41;; glVertex3f&#40;-1&#46;0f, -1&#46;0f,  1&#46;0f&#41;;
+<br />
+		glTexCoord2f&#40;1&#46;0f, 0&#46;0f&#41;; glVertex3f&#40; 1&#46;0f, -1&#46;0f,  1&#46;0f&#41;;
+<br />
+		glTexCoord2f&#40;1&#46;0f, 1&#46;0f&#41;; glVertex3f&#40; 1&#46;0f,  1&#46;0f,  1&#46;0f&#41;;
+<br />
+		glTexCoord2f&#40;0&#46;0f, 1&#46;0f&#41;; glVertex3f&#40;-1&#46;0f,  1&#46;0f,  1&#46;0f&#41;;
+<br />
+	glEnd&#40;&#41;;
+<br />
+
+<br />
+	glBindTexture&#40;GL_TEXTURE_2D, texture&#91;1&#93;&#41;;
+<br />
+	glBegin&#40;GL_QUADS&#41;;
+<br />
+		// Back Face
+<br />
+		glTexCoord2f&#40;1&#46;0f, 0&#46;0f&#41;; glVertex3f&#40;-1&#46;0f, -1&#46;0f, -1&#46;0f&#41;;
+<br />
+		glTexCoord2f&#40;1&#46;0f, 1&#46;0f&#41;; glVertex3f&#40;-1&#46;0f,  1&#46;0f, -1&#46;0f&#41;;
+<br />
+		glTexCoord2f&#40;0&#46;0f, 1&#46;0f&#41;; glVertex3f&#40; 1&#46;0f,  1&#46;0f, -1&#46;0f&#41;;
+<br />
+		glTexCoord2f&#40;0&#46;0f, 0&#46;0f&#41;; glVertex3f&#40; 1&#46;0f, -1&#46;0f, -1&#46;0f&#41;;
+<br />
+	glEnd&#40;&#41;;
+<br />
+
+<br />
+	glBindTexture&#40;GL_TEXTURE_2D, texture&#91;2&#93;&#41;;
+<br />
+	glBegin&#40;GL_QUADS&#41;;
+<br />
+		// Top Face
+<br />
+		glTexCoord2f&#40;0&#46;0f, 1&#46;0f&#41;; glVertex3f&#40;-1&#46;0f,  1&#46;0f, -1&#46;0f&#41;;
+<br />
+		glTexCoord2f&#40;0&#46;0f, 0&#46;0f&#41;; glVertex3f&#40;-1&#46;0f,  1&#46;0f,  1&#46;0f&#41;;
+<br />
+		glTexCoord2f&#40;1&#46;0f, 0&#46;0f&#41;; glVertex3f&#40; 1&#46;0f,  1&#46;0f,  1&#46;0f&#41;;
+<br />
+		glTexCoord2f&#40;1&#46;0f, 1&#46;0f&#41;; glVertex3f&#40; 1&#46;0f,  1&#46;0f, -1&#46;0f&#41;;
+<br />
+	glEnd&#40;&#41;;
+<br />
+
+<br />
+	glBindTexture&#40;GL_TEXTURE_2D, texture&#91;3&#93;&#41;;
+<br />
+	glBegin&#40;GL_QUADS&#41;;
+<br />
+		// Bottom Face
+<br />
+		glTexCoord2f&#40;1&#46;0f, 1&#46;0f&#41;; glVertex3f&#40;-1&#46;0f, -1&#46;0f, -1&#46;0f&#41;;
+<br />
+		glTexCoord2f&#40;0&#46;0f, 1&#46;0f&#41;; glVertex3f&#40; 1&#46;0f, -1&#46;0f, -1&#46;0f&#41;;
+<br />
+		glTexCoord2f&#40;0&#46;0f, 0&#46;0f&#41;; glVertex3f&#40; 1&#46;0f, -1&#46;0f,  1&#46;0f&#41;;
+<br />
+		glTexCoord2f&#40;1&#46;0f, 0&#46;0f&#41;; glVertex3f&#40;-1&#46;0f, -1&#46;0f,  1&#46;0f&#41;;
+<br />
+
+<br />
+	glBindTexture&#40;GL_TEXTURE_2D, texture&#91;4&#93;&#41;;
+<br />
+	glBegin&#40;GL_QUADS&#41;;
+<br />
+		// Right face
+<br />
+		glTexCoord2f&#40;1&#46;0f, 0&#46;0f&#41;; glVertex3f&#40; 1&#46;0f, -1&#46;0f, -1&#46;0f&#41;;
+<br />
+		glTexCoord2f&#40;1&#46;0f, 1&#46;0f&#41;; glVertex3f&#40; 1&#46;0f,  1&#46;0f, -1&#46;0f&#41;;
+<br />
+		glTexCoord2f&#40;0&#46;0f, 1&#46;0f&#41;; glVertex3f&#40; 1&#46;0f,  1&#46;0f,  1&#46;0f&#41;;
+<br />
+		glTexCoord2f&#40;0&#46;0f, 0&#46;0f&#41;; glVertex3f&#40; 1&#46;0f, -1&#46;0f,  1&#46;0f&#41;;
+<br />
+	glEnd&#40;&#41;;
+<br />
+
+<br />
+	glBindTexture&#40;GL_TEXTURE_2D, texture&#91;5&#93;&#41;;
+<br />
+	glBegin&#40;GL_QUADS&#41;;
+<br />
+		// Left Face
+<br />
+		glTexCoord2f&#40;0&#46;0f, 0&#46;0f&#41;; glVertex3f&#40;-1&#46;0f, -1&#46;0f, -1&#46;0f&#41;;
+<br />
+		glTexCoord2f&#40;1&#46;0f, 0&#46;0f&#41;; glVertex3f&#40;-1&#46;0f, -1&#46;0f,  1&#46;0f&#41;;
+<br />
+		glTexCoord2f&#40;1&#46;0f, 1&#46;0f&#41;; glVertex3f&#40;-1&#46;0f,  1&#46;0f,  1&#46;0f&#41;;
+<br />
+		glTexCoord2f&#40;0&#46;0f, 1&#46;0f&#41;; glVertex3f&#40;-1&#46;0f,  1&#46;0f, -1&#46;0f&#41;;
+<br />
+	glEnd&#40;&#41;;
+<br />
+&#125;</td>
+<br />
+	</tr>
+<br />
+</table>
+<br />
+<span class="postbody">
+<br />
+
+<br />
+
+<br />
+</span>
+<br />
+<table width="90%" cellspacing="1" cellpadding="3" border="0" align="center">
+<br />
+<tr> 
+<br />
+	  <td><span class="genmed"><b>Koda:</b></span></td>
+<br />
+	</tr>
+<br />
+	<tr>
+<br />
+	  <td class="code">GLvoid LoadTextures&#40;GLvoid&#41;
+<br />
+&#123;
+<br />
+	char* tmp&#91;6&#93; = &#123;&quot;Data/1&#46;bmp&quot;, 
+<br />
+					&quot;Data/2&#46;bmp&quot;, 
+<br />
+					&quot;Data/3&#46;bmp&quot;, 
+<br />
+					&quot;Data/4&#46;bmp&quot;, 
+<br />
+					&quot;Data/5&#46;bmp&quot;, 
+<br />
+					&quot;Data/6&#46;bmp&quot;&#125;;
+<br />
+
+<br />
+	char tmp1&#91;255&#93; = &quot;&quot;;
+<br />
+	font-&gt;Print&#40;10, 10, &quot;Loading textures &#46;&#46;&#46;&#46; &quot;&#41;;
+<br />
+	
+<br />
+	for &#40;int i=0; i&lt;6; i++&#41;
+<br />
+	&#123;
+<br />
+		texture&#91;i&#93; = TextureManager&#40;&#41;&#46;LoadBMP&#40;tmp&#91;i&#93;&#41;;
+<br />
+		tmp1&#91;0&#93; = '\0';
+<br />
+		strcat&#40;tmp1, tmp&#91;i&#93;&#41;;
+<br />
+		if &#40;texture&#91;i&#93; &gt; 0&#41;
+<br />
+			strcat&#40;tmp1, &quot; &#46;&#46;&#46;&#46;&#46;&#46; done&quot;&#41;;
+<br />
+		else
+<br />
+			strcat&#40;tmp1, &quot; &#46;&#46;&#46;&#46;&#46;&#46; FAILED&quot;&#41;;
+<br />
+		
+<br />
+		font-&gt;Print&#40;10, 30 + i * 16, tmp1&#41;;
+<br />
+	&#125;
+<br />
+
+<br />
+&#125;</td>
+<br />
+	</tr>
+<br />
+</table>
+<br />
+<span class="postbody"></span><span class="gensmall"></span></td>
+			</tr>
+		</table></td>
+	</tr>
+	<tr>
+		<td class="row1" width="150" align="left" valign="middle"><span class="nav"><a href="#top" class="nav">Nazaj na vrh</a></span></td>
+		<td class="row1" width="100%" height="28" valign="bottom" nowrap="nowrap"><table cellspacing="0" cellpadding="0" border="0" height="18" width="18">
+			<tr>
+				<td valign="middle" nowrap="nowrap"><a href="profile-126.html"><img src="templates/SGD2/images/lang_slovenian/icon_profile.gif" alt="Poglej uporabnikov profil" title="Poglej uporabnikov profil" border="0" /></a> </td>
+			</tr>
+		</table></td>
+	</tr>
+	<tr>
+		<td class="spaceRow" colspan="2" height="1"><img src="templates/SGD/images/spacer.gif" alt="" width="1" height="1" /></td>
+	</tr>
+	
+	<tr>
+		<td width="150" align="left" valign="top" class="row2"><span class="name"><a name="16937"></a><b>Person</b></span><br /><span class="postdetails">igralec<br /><img src="images/ranks/sgd-7.gif" alt="igralec" title="igralec" border="0" /><br /><img src="images/avatars/d5fa111d422d913c2ca73.gif" alt="" border="0" /><br /><br />Pridružen: 11. jan 2003 ob 21:25<br />objav: 810<br /></span><br /></td>
+		<td class="row2" width="100%" height="28" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+			<tr>
+				<td colspan="2" width="100%">
+					<table width="100%" cellpadding="0" cellspacing="0" border="0">
+						<tr>
+							<td valign="middle" align="left">
+								<a href="topic-1391.html#16937"><img src="templates/SGD2/images/icon_minipost.gif" width="12" height="9" alt="objava" title="objava" border="0" /></a>
+								<span class="postdetails">Objavljeno: sre maj 02, 2007 8:50 pm<span class="gen">&nbsp;</span>&nbsp; &nbsp;Pošlji temo: </span>
+							</td>
+							<td valign="middle" align="right" nowrap="nowrap">
+							</td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+			<tr>
+				<td colspan="2"><hr /></td>
+			</tr>
+			<tr>
+				<td colspan="2"><span class="postbody">Hm, vse lepo in prav.
+
+<br />
+Problem je v tem, da imaš samo en thread, kar pomeni, da se bo najprej scena narisala ... potem, ko boš klical LoadTextures() se bodo v tvojem primeru najprej naložile vse teksture, to lahko traja kako sekundo, nato pa se bo šele narisala nova scena (nova slika oz. frame). In potem se bo spet klicala ista funkcija in bo to spet upočasnilo delovanje ... rešitev bi bila, da pač narediš še dodatno nit, ki nalaga teksture in hkrati moraš še paziti, da se stara tekstura odstrani šele, ko je bil narisan del kocke s staro teksturo.
+
+<br />
+
+
+<br />
+Dej za foro mi pošlji ta projekt s teksturami na moj mejl oz. prek MSNja na naslov, pa se bom potrudil to naredit: the.person.si(AT)gmail.com</span><span class="gensmall"></span></td>
+			</tr>
+		</table></td>
+	</tr>
+	<tr>
+		<td class="row2" width="150" align="left" valign="middle"><span class="nav"><a href="#top" class="nav">Nazaj na vrh</a></span></td>
+		<td class="row2" width="100%" height="28" valign="bottom" nowrap="nowrap"><table cellspacing="0" cellpadding="0" border="0" height="18" width="18">
+			<tr>
+				<td valign="middle" nowrap="nowrap"><a href="profile-22.html"><img src="templates/SGD2/images/lang_slovenian/icon_profile.gif" alt="Poglej uporabnikov profil" title="Poglej uporabnikov profil" border="0" /></a> </td>
+			</tr>
+		</table></td>
+	</tr>
+	<tr>
+		<td class="spaceRow" colspan="2" height="1"><img src="templates/SGD/images/spacer.gif" alt="" width="1" height="1" /></td>
+	</tr>
+	
+	<tr>
+		<td width="150" align="left" valign="top" class="row1"><span class="name"><a name="16939"></a><b>[Beer]</b></span><br /><span class="postdetails">poizvedovalec<br /><img src="images/ranks/sgd-1.gif" alt="poizvedovalec" title="poizvedovalec" border="0" /><br /><br /><br />Pridružen: 29. nov 2003 ob 21:36<br />objav: 35<br /></span><br /></td>
+		<td class="row1" width="100%" height="28" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+			<tr>
+				<td colspan="2" width="100%">
+					<table width="100%" cellpadding="0" cellspacing="0" border="0">
+						<tr>
+							<td valign="middle" align="left">
+								<a href="topic-1391.html#16939"><img src="templates/SGD2/images/icon_minipost.gif" width="12" height="9" alt="objava" title="objava" border="0" /></a>
+								<span class="postdetails">Objavljeno: sre maj 02, 2007 10:35 pm<span class="gen">&nbsp;</span>&nbsp; &nbsp;Pošlji temo: </span>
+							</td>
+							<td valign="middle" align="right" nowrap="nowrap">
+							</td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+			<tr>
+				<td colspan="2"><hr /></td>
+			</tr>
+			<tr>
+				<td colspan="2"><span class="postbody">Dobra ideja.
+
+<br />
+Bom probal nalagati texture v drugem threadu.
+
+<br />
+
+
+<br />
+Bom poročal.</span><span class="gensmall"></span></td>
+			</tr>
+		</table></td>
+	</tr>
+	<tr>
+		<td class="row1" width="150" align="left" valign="middle"><span class="nav"><a href="#top" class="nav">Nazaj na vrh</a></span></td>
+		<td class="row1" width="100%" height="28" valign="bottom" nowrap="nowrap"><table cellspacing="0" cellpadding="0" border="0" height="18" width="18">
+			<tr>
+				<td valign="middle" nowrap="nowrap"><a href="profile-126.html"><img src="templates/SGD2/images/lang_slovenian/icon_profile.gif" alt="Poglej uporabnikov profil" title="Poglej uporabnikov profil" border="0" /></a> </td>
+			</tr>
+		</table></td>
+	</tr>
+	<tr>
+		<td class="spaceRow" colspan="2" height="1"><img src="templates/SGD/images/spacer.gif" alt="" width="1" height="1" /></td>
+	</tr>
+	
+	<tr>
+		<td width="150" align="left" valign="top" class="row2"><span class="name"><a name="16940"></a><b>Person</b></span><br /><span class="postdetails">igralec<br /><img src="images/ranks/sgd-7.gif" alt="igralec" title="igralec" border="0" /><br /><img src="images/avatars/d5fa111d422d913c2ca73.gif" alt="" border="0" /><br /><br />Pridružen: 11. jan 2003 ob 21:25<br />objav: 810<br /></span><br /></td>
+		<td class="row2" width="100%" height="28" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+			<tr>
+				<td colspan="2" width="100%">
+					<table width="100%" cellpadding="0" cellspacing="0" border="0">
+						<tr>
+							<td valign="middle" align="left">
+								<a href="topic-1391.html#16940"><img src="templates/SGD2/images/icon_minipost.gif" width="12" height="9" alt="objava" title="objava" border="0" /></a>
+								<span class="postdetails">Objavljeno: sre maj 02, 2007 10:47 pm<span class="gen">&nbsp;</span>&nbsp; &nbsp;Pošlji temo: </span>
+							</td>
+							<td valign="middle" align="right" nowrap="nowrap">
+							</td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+			<tr>
+				<td colspan="2"><hr /></td>
+			</tr>
+			<tr>
+				<td colspan="2"><span class="postbody">Velja, pač nisem vedel, koliko izkušenj imaš v C++.
+
+<br />
+Aja, ti bi samo želel, da se teh 6 tekstur dinamično naloži?
+
+<br />
+Potem mislim da samo tole funkcijo poženeš v novem threadu, pa mislim, da bo zadeva lepo delovala (drugače, če bi želel menjavati te teksture, da bi pač čez čas naložil dodatno iz datoteke, pa staro sprostil iz pomnilnika, bi pa moral še paziti na nekaj dodatnih stvari) ... lahko med posameznimi texturami, v tisti for zanki dodaš še Sleep(100) ... da se bo to dinamično nalaganje lepo videlo.
+
+<br />
+Pač za testiranje. Potem pa pokaži, ko boš to naredil <img src="images/smiles/icon_wink.gif" alt=":wink:" border="0" /></span><span class="gensmall"></span></td>
+			</tr>
+		</table></td>
+	</tr>
+	<tr>
+		<td class="row2" width="150" align="left" valign="middle"><span class="nav"><a href="#top" class="nav">Nazaj na vrh</a></span></td>
+		<td class="row2" width="100%" height="28" valign="bottom" nowrap="nowrap"><table cellspacing="0" cellpadding="0" border="0" height="18" width="18">
+			<tr>
+				<td valign="middle" nowrap="nowrap"><a href="profile-22.html"><img src="templates/SGD2/images/lang_slovenian/icon_profile.gif" alt="Poglej uporabnikov profil" title="Poglej uporabnikov profil" border="0" /></a> </td>
+			</tr>
+		</table></td>
+	</tr>
+	<tr>
+		<td class="spaceRow" colspan="2" height="1"><img src="templates/SGD/images/spacer.gif" alt="" width="1" height="1" /></td>
+	</tr>
+	
+	<tr>
+		<td width="150" align="left" valign="top" class="row1"><span class="name"><a name="16943"></a><b>[Beer]</b></span><br /><span class="postdetails">poizvedovalec<br /><img src="images/ranks/sgd-1.gif" alt="poizvedovalec" title="poizvedovalec" border="0" /><br /><br /><br />Pridružen: 29. nov 2003 ob 21:36<br />objav: 35<br /></span><br /></td>
+		<td class="row1" width="100%" height="28" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+			<tr>
+				<td colspan="2" width="100%">
+					<table width="100%" cellpadding="0" cellspacing="0" border="0">
+						<tr>
+							<td valign="middle" align="left">
+								<a href="topic-1391.html#16943"><img src="templates/SGD2/images/icon_minipost.gif" width="12" height="9" alt="objava" title="objava" border="0" /></a>
+								<span class="postdetails">Objavljeno: čet maj 03, 2007 1:54 am<span class="gen">&nbsp;</span>&nbsp; &nbsp;Pošlji temo: </span>
+							</td>
+							<td valign="middle" align="right" nowrap="nowrap">
+							</td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+			<tr>
+				<td colspan="2"><hr /></td>
+			</tr>
+			<tr>
+				<td colspan="2"><span class="postbody">Grrr....
+
+<br />
+
+
+<br />
+Zgleda prihaja do težav, če želiš generirati texturo v drugem threadu.
+
+<br />
+glGenTextures(1, &amp;m_TextID); namreč ne dela.
+
+<br />
+glGetError() pa vrne kodo 1282 oz. #define GL_INVALID_OPERATION              0x0502
+
+<br />
+
+
+<br />
+Nekje na google-u sem prebral, da so neke težave.
+
+<br />
+
+
+<br />
+Ve kdo kaj več o tem?
+
+<br />
+
+
+<br />
+Hvala
+
+<br />
+
+
+<br />
+ps: Dost bo za danes, grem spat!
+
+<br />
+
+
+<br />
+edit: 
+
+<br />
+Ja ni mi dalo mira. Sem moral iskat dalje. Problem bi naj bil v tem, da main thread drži current context in zato v thread-u gl* ukazi ne delajo.
+
+<br />
+
+
+<br />
+Treba je najprej sprostit context v main threadu, potem pa v drugem threadu RC nastavit na current. Sem probal pa mi sedaj scena utripa.
+
+<br />
+Predvidevam, da zaradi menjavanja contexta.
+
+<br />
+
+
+<br />
+Lahko bi tudi mel dva contexta, sam potem bi moral delat še na sinhronizaciji.
+
+<br />
+
+
+<br />
+Se mi zdi, da se je tole začelo komplicirat. Moram zgleda prespat. Lahko noč</span><span class="gensmall"></span></td>
+			</tr>
+		</table></td>
+	</tr>
+	<tr>
+		<td class="row1" width="150" align="left" valign="middle"><span class="nav"><a href="#top" class="nav">Nazaj na vrh</a></span></td>
+		<td class="row1" width="100%" height="28" valign="bottom" nowrap="nowrap"><table cellspacing="0" cellpadding="0" border="0" height="18" width="18">
+			<tr>
+				<td valign="middle" nowrap="nowrap"><a href="profile-126.html"><img src="templates/SGD2/images/lang_slovenian/icon_profile.gif" alt="Poglej uporabnikov profil" title="Poglej uporabnikov profil" border="0" /></a> </td>
+			</tr>
+		</table></td>
+	</tr>
+	<tr>
+		<td class="spaceRow" colspan="2" height="1"><img src="templates/SGD/images/spacer.gif" alt="" width="1" height="1" /></td>
+	</tr>
+	
+	<tr>
+		<td width="150" align="left" valign="top" class="row2"><span class="name"><a name="16944"></a><b>Person</b></span><br /><span class="postdetails">igralec<br /><img src="images/ranks/sgd-7.gif" alt="igralec" title="igralec" border="0" /><br /><img src="images/avatars/d5fa111d422d913c2ca73.gif" alt="" border="0" /><br /><br />Pridružen: 11. jan 2003 ob 21:25<br />objav: 810<br /></span><br /></td>
+		<td class="row2" width="100%" height="28" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+			<tr>
+				<td colspan="2" width="100%">
+					<table width="100%" cellpadding="0" cellspacing="0" border="0">
+						<tr>
+							<td valign="middle" align="left">
+								<a href="topic-1391.html#16944"><img src="templates/SGD2/images/icon_minipost.gif" width="12" height="9" alt="objava" title="objava" border="0" /></a>
+								<span class="postdetails">Objavljeno: čet maj 03, 2007 8:36 am<span class="gen">&nbsp;</span>&nbsp; &nbsp;Pošlji temo: </span>
+							</td>
+							<td valign="middle" align="right" nowrap="nowrap">
+							</td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+			<tr>
+				<td colspan="2"><hr /></td>
+			</tr>
+			<tr>
+				<td colspan="2"><span class="postbody">Poskusi še s tem:
+
+<br />
+</span>
+<br />
+<table width="90%" cellspacing="1" cellpadding="3" border="0" align="center">
+<br />
+<tr> 
+<br />
+	  <td><span class="genmed"><b>Koda:</b></span></td>
+<br />
+	</tr>
+<br />
+	<tr>
+<br />
+	  <td class="code">// Global variable
+<br />
+CRITICAL_SECTION CriticalSection; 
+<br />
+
+<br />
+void main&#40;&#41;
+<br />
+&#123;
+<br />
+    // Initialize the critical section one time only&#46;
+<br />
+    InitializeCriticalSection&#40;&amp;CriticalSection&#41;;
+<br />
+    
+<br />
+// &#46;&#46;&#46; ostala koda
+<br />
+
+<br />
+    // Release resources used by the critical section object&#46;
+<br />
+    DeleteCriticalSection&#40;&amp;CriticalSection&#41;
+<br />
+&#125;
+<br />
+
+<br />
+DWORD WINAPI ThreadProc&#40; LPVOID lpParameter &#41; // thread od nalagalca texture
+<br />
+&#123;
+<br />
+    &#46;&#46;&#46;
+<br />
+
+<br />
+    // Request ownership of the critical section&#46;
+<br />
+    EnterCriticalSection&#40;&amp;CriticalSection&#41;; 
+<br />
+
+<br />
+    // Access the shared resource&#46;
+<br />
+// OpenGL klic
+<br />
+&#46;&#46; to bi po mojem delovalo, razen če bi ga kaj zmedlo, da bi se sočasno poklicala dva opengl klica &#40;recimo, da bi se ta, ki generira texturo poklical preden recimo se en OpenGL ukaz iz 1&#46; threada končal&#41;
+<br />
+
+<br />
+    // Release ownership of the critical section&#46;
+<br />
+    LeaveCriticalSection&#40;&amp;CriticalSection&#41;;
+<br />
+
+<br />
+    &#46;&#46;&#46;
+<br />
+&#125;
+<br />
+</td>
+<br />
+	</tr>
+<br />
+</table>
+<br />
+<span class="postbody"></span><span class="gensmall"></span></td>
+			</tr>
+		</table></td>
+	</tr>
+	<tr>
+		<td class="row2" width="150" align="left" valign="middle"><span class="nav"><a href="#top" class="nav">Nazaj na vrh</a></span></td>
+		<td class="row2" width="100%" height="28" valign="bottom" nowrap="nowrap"><table cellspacing="0" cellpadding="0" border="0" height="18" width="18">
+			<tr>
+				<td valign="middle" nowrap="nowrap"><a href="profile-22.html"><img src="templates/SGD2/images/lang_slovenian/icon_profile.gif" alt="Poglej uporabnikov profil" title="Poglej uporabnikov profil" border="0" /></a> </td>
+			</tr>
+		</table></td>
+	</tr>
+	<tr>
+		<td class="spaceRow" colspan="2" height="1"><img src="templates/SGD/images/spacer.gif" alt="" width="1" height="1" /></td>
+	</tr>
+	
+	<tr>
+		<td width="150" align="left" valign="top" class="row1"><span class="name"><a name="16945"></a><b>Person</b></span><br /><span class="postdetails">igralec<br /><img src="images/ranks/sgd-7.gif" alt="igralec" title="igralec" border="0" /><br /><img src="images/avatars/d5fa111d422d913c2ca73.gif" alt="" border="0" /><br /><br />Pridružen: 11. jan 2003 ob 21:25<br />objav: 810<br /></span><br /></td>
+		<td class="row1" width="100%" height="28" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+			<tr>
+				<td colspan="2" width="100%">
+					<table width="100%" cellpadding="0" cellspacing="0" border="0">
+						<tr>
+							<td valign="middle" align="left">
+								<a href="topic-1391.html#16945"><img src="templates/SGD2/images/icon_minipost.gif" width="12" height="9" alt="objava" title="objava" border="0" /></a>
+								<span class="postdetails">Objavljeno: čet maj 03, 2007 8:40 am<span class="gen">&nbsp;</span>&nbsp; &nbsp;Pošlji temo: </span>
+							</td>
+							<td valign="middle" align="right" nowrap="nowrap">
+							</td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+			<tr>
+				<td colspan="2"><hr /></td>
+			</tr>
+			<tr>
+				<td colspan="2"><span class="postbody">Zgornji kao kritični del bi po moje klical OpenGL funkcije kot da bi bil v 1. threadu.
+
+<br />
+
+
+<br />
+Drugače je pa še nekaj napisano tukaj:
+
+<br />
+<a class="postlink" >http://msdn.microsoft.com/library/defau ... r_2u0k.asp</a>
+
+<br />
+
+
+<br />
+Ma v glavnem naj bi bile še kar težave z multithreading-om v OpenGL.</span><span class="gensmall"></span></td>
+			</tr>
+		</table></td>
+	</tr>
+	<tr>
+		<td class="row1" width="150" align="left" valign="middle"><span class="nav"><a href="#top" class="nav">Nazaj na vrh</a></span></td>
+		<td class="row1" width="100%" height="28" valign="bottom" nowrap="nowrap"><table cellspacing="0" cellpadding="0" border="0" height="18" width="18">
+			<tr>
+				<td valign="middle" nowrap="nowrap"><a href="profile-22.html"><img src="templates/SGD2/images/lang_slovenian/icon_profile.gif" alt="Poglej uporabnikov profil" title="Poglej uporabnikov profil" border="0" /></a> </td>
+			</tr>
+		</table></td>
+	</tr>
+	<tr>
+		<td class="spaceRow" colspan="2" height="1"><img src="templates/SGD/images/spacer.gif" alt="" width="1" height="1" /></td>
+	</tr>
+	
+	<tr>
+		<td width="150" align="left" valign="top" class="row2"><span class="name"><a name="16946"></a><b>Person</b></span><br /><span class="postdetails">igralec<br /><img src="images/ranks/sgd-7.gif" alt="igralec" title="igralec" border="0" /><br /><img src="images/avatars/d5fa111d422d913c2ca73.gif" alt="" border="0" /><br /><br />Pridružen: 11. jan 2003 ob 21:25<br />objav: 810<br /></span><br /></td>
+		<td class="row2" width="100%" height="28" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+			<tr>
+				<td colspan="2" width="100%">
+					<table width="100%" cellpadding="0" cellspacing="0" border="0">
+						<tr>
+							<td valign="middle" align="left">
+								<a href="topic-1391.html#16946"><img src="templates/SGD2/images/icon_minipost.gif" width="12" height="9" alt="objava" title="objava" border="0" /></a>
+								<span class="postdetails">Objavljeno: čet maj 03, 2007 8:55 am<span class="gen">&nbsp;</span>&nbsp; &nbsp;Pošlji temo: </span>
+							</td>
+							<td valign="middle" align="right" nowrap="nowrap">
+							</td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+			<tr>
+				<td colspan="2"><hr /></td>
+			</tr>
+			<tr>
+				<td colspan="2"><span class="postbody">Če ne pa poskusi, da bi imel dva konteksta (pač oba narediš, vsakega za svoj thread). Pa potem rišeš itak samo preko 1. (če bi želel še v drugega bi moral nastaviti trenutnega na drugega in paziti, da vmes 1. thread ne poskuša kaj narisati). Preko 2. pa bi naj lahko dostopal do istih textur.
+
+<br />
+
+
+<br />
+To sem tukaj našel, <a  target="_blank" class="postlink">klik</a>.
+
+<br />
+</span>
+<br />
+<table width="90%" cellspacing="1" cellpadding="3" border="0" align="center">
+<br />
+<tr> 
+<br />
+	  <td><span class="genmed"><b>Citiram:</b></span></td>
+<br />
+	</tr>
+<br />
+	<tr>
+<br />
+	  <td class="quote">Contexts that are on different threads can share object resources. For example, it is acceptable for one context in one thread to modify a texture and a second context in a second thread to modify the same texture. Why? Because the shared object handling provided by the Apple APIs automatically protects against thread errors. And, your application is following the &quot;one thread per context&quot; guideline.</td>
+<br />
+	</tr>
+<br />
+</table>
+<br />
+<span class="postbody">
+
+<br />
+(sicer je originalno za Apple, mislim pa, da bi moralo veljati tudi za PC platformo)</span><span class="gensmall"></span></td>
+			</tr>
+		</table></td>
+	</tr>
+	<tr>
+		<td class="row2" width="150" align="left" valign="middle"><span class="nav"><a href="#top" class="nav">Nazaj na vrh</a></span></td>
+		<td class="row2" width="100%" height="28" valign="bottom" nowrap="nowrap"><table cellspacing="0" cellpadding="0" border="0" height="18" width="18">
+			<tr>
+				<td valign="middle" nowrap="nowrap"><a href="profile-22.html"><img src="templates/SGD2/images/lang_slovenian/icon_profile.gif" alt="Poglej uporabnikov profil" title="Poglej uporabnikov profil" border="0" /></a> </td>
+			</tr>
+		</table></td>
+	</tr>
+	<tr>
+		<td class="spaceRow" colspan="2" height="1"><img src="templates/SGD/images/spacer.gif" alt="" width="1" height="1" /></td>
+	</tr>
+	
+	<tr>
+		<td width="150" align="left" valign="top" class="row1"><span class="name"><a name="16948"></a><b>Shinobi</b></span><br /><span class="postdetails">mojster<br /><img src="images/ranks/sgd-5.gif" alt="mojster" title="mojster" border="0" /><br /><img src="images/avatars/d5fd66913fcf278e24a0c.gif" alt="" border="0" /><br /><br />Pridružen: 15. maj 2003 ob 18:04<br />objav: 491<br />Kraj: Maribor</span><br /></td>
+		<td class="row1" width="100%" height="28" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+			<tr>
+				<td colspan="2" width="100%">
+					<table width="100%" cellpadding="0" cellspacing="0" border="0">
+						<tr>
+							<td valign="middle" align="left">
+								<a href="topic-1391.html#16948"><img src="templates/SGD2/images/icon_minipost.gif" width="12" height="9" alt="objava" title="objava" border="0" /></a>
+								<span class="postdetails">Objavljeno: sob maj 05, 2007 3:20 pm<span class="gen">&nbsp;</span>&nbsp; &nbsp;Pošlji temo: </span>
+							</td>
+							<td valign="middle" align="right" nowrap="nowrap">
+							</td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+			<tr>
+				<td colspan="2"><hr /></td>
+			</tr>
+			<tr>
+				<td colspan="2"><span class="postbody">Jaz mislim, da to ni glih ideja.
+
+<br />
+
+
+<br />
+Pomoje je v gamingu bolj verjetno, da imas recimo en thread ki renderira in en thread ki pripravlja podatke.
+
+<br />
+
+
+<br />
+Vec kje se recimo vidi princip:
+
+<br />
+</span>
+<br />
+<table width="90%" cellspacing="1" cellpadding="3" border="0" align="center">
+<br />
+<tr> 
+<br />
+	  <td><span class="genmed"><b>Koda:</b></span></td>
+<br />
+	</tr>
+<br />
+	<tr>
+<br />
+	  <td class="code">
+<br />
+void GameState&#58;&#58;Update&#40;float fElapsed&#41;
+<br />
+&#123;
+<br />
+&#46;&#46;&#46;Compute animations &amp; stuff
+<br />
+&#125;
+<br />
+
+<br />
+void GameState&#58;&#58;Render&#40;&#41;
+<br />
+&#123;
+<br />
+&#46;&#46;&#46;Draw precomupted stuff
+<br />
+&#125;
+<br />
+</td>
+<br />
+	</tr>
+<br />
+</table>
+<br />
+<span class="postbody">
+<br />
+Najprej kaj je treba realizirat je npr.: da se lahko update izvede za (DolocenTrenutek) in potem pa Render() rise tocno ta trenutek. A medtem ko render rise trenutek T0 ti ze lahko delas Update za T1 s tem, da podatkov za T0 ne prepises. In tako naprej.
+<br />
+
+<br />
+Se pravi, ce bi imel animacijo 10 keyframov:
+<br />
+Update(Key=1)
+<br />
+Render() vzporedno Update(Key=2)
+<br />
+
+<br />
+Potem pa lahko imas se ne kriticne utilitye, ki recimo lahko asinhrono updejtajo game podatke, kot so npr.: risanje heightmapov za vodo, modificiranje oblakov, mogoce veter za drevesa. Zakaj to pravim? Ni nujno, da recimo 2nd hand objekti rabijo najvecji speed. Recimo nihce ne bo opazil, ce se voda updejta samo z 42 FPS namesto z 60 FPS.
+<br />
+
+<br />
+Paziti moras samo sledece:
+<br />
+</span>
+<br />
+<table width="90%" cellspacing="1" cellpadding="3" border="0" align="center">
+<br />
+<tr> 
+<br />
+	  <td><span class="genmed"><b>Koda:</b></span></td>
+<br />
+	</tr>
+<br />
+	<tr>
+<br />
+	  <td class="code">
+<br />
+class Voda
+<br />
+&#123;
+<br />
+Texture* m_pRenderSource;
+<br />
+Texture* m_pBufferOne;
+<br />
+Texture* m_pBufferTwo;
+<br />
+Texture* m_pBufferActive;
+<br />
+&#125;
+<br />
+</td>
+<br />
+	</tr>
+<br />
+</table>
+<br />
+<span class="postbody">
+
+<br />
+Critical sectionov ne uporabljaj prevec, ker to je nesmisel? Zakaj? Ce thread 1 gre v Critical Section, potem se vsi ostali threadi pauzirajo in se ne izvajajo. Ko thread ena zapusti critical section, potem gre Thread 2 v critical section in thread 1 pauzira. Dejansko nic s tem ne uredis. Samo program zakompliciras.
+
+<br />
+
+
+<br />
+Kako naj delas? Semafori (Mutex). Poglej si recimo moj razred Valovi:
+
+<br />
+Update() ti npr. naredi novo heightmap texturo za valove (1) in bi jo rad podal renderju:
+
+<br />
+
+
+<br />
+WaitForSingleObject(Valovi);
+
+<br />
+ce ni timeout potem
+
+<br />
+..m_pRenderSource = m_pBufferOne;
+
+<br />
+..m_pBufferActive = m_pBufferTwo;
+
+<br />
+Release(Valovi);
+
+<br />
+
+
+<br />
+..Zdaj lahko risemo v BufferTwo render engine pa bo vzel Buffer ENa. Render bo cakal samo toliko da se Bufferji menjajo potem pa nadaljeval. Ampak dokler render rise iz bufferONE tudi Update ne more buffer one uporabljat, mora pac cakati.
+
+<br />
+
+
+<br />
+Ce preveckrat uporabljas critical section, potem odpravis multithreading.</span><span class="gensmall"></span></td>
+			</tr>
+		</table></td>
+	</tr>
+	<tr>
+		<td class="row1" width="150" align="left" valign="middle"><span class="nav"><a href="#top" class="nav">Nazaj na vrh</a></span></td>
+		<td class="row1" width="100%" height="28" valign="bottom" nowrap="nowrap"><table cellspacing="0" cellpadding="0" border="0" height="18" width="18">
+			<tr>
+				<td valign="middle" nowrap="nowrap"><a href="profile-62.html"><img src="templates/SGD2/images/lang_slovenian/icon_profile.gif" alt="Poglej uporabnikov profil" title="Poglej uporabnikov profil" border="0" /></a> </td>
+			</tr>
+		</table></td>
+	</tr>
+	<tr>
+		<td class="spaceRow" colspan="2" height="1"><img src="templates/SGD/images/spacer.gif" alt="" width="1" height="1" /></td>
+	</tr>
+	
+	<tr>
+		<td width="150" align="left" valign="top" class="row2"><span class="name"><a name="16951"></a><b>[Beer]</b></span><br /><span class="postdetails">poizvedovalec<br /><img src="images/ranks/sgd-1.gif" alt="poizvedovalec" title="poizvedovalec" border="0" /><br /><br /><br />Pridružen: 29. nov 2003 ob 21:36<br />objav: 35<br /></span><br /></td>
+		<td class="row2" width="100%" height="28" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+			<tr>
+				<td colspan="2" width="100%">
+					<table width="100%" cellpadding="0" cellspacing="0" border="0">
+						<tr>
+							<td valign="middle" align="left">
+								<a href="topic-1391.html#16951"><img src="templates/SGD2/images/icon_minipost.gif" width="12" height="9" alt="objava" title="objava" border="0" /></a>
+								<span class="postdetails">Objavljeno: ned maj 06, 2007 12:27 am<span class="gen">&nbsp;</span>&nbsp; &nbsp;Pošlji temo: </span>
+							</td>
+							<td valign="middle" align="right" nowrap="nowrap">
+							</td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+			<tr>
+				<td colspan="2"><hr /></td>
+			</tr>
+			<tr>
+				<td colspan="2"><span class="postbody">@Shinobi:
+
+<br />
+
+
+<br />
+Poučno. Hvala za odgovor, vendar...
+
+<br />
+
+
+<br />
+Ne strinjam se z vsemi trditvami glede multithreadinga in uporabe Critical Sectionov. V podrobnosti se ne bom spuščal. Vsekakor moraš pri multithreading biti zelo pazljiv. Naj samo še povem, da mi programiranje v C/C++ ni tuje (le v OpenGL-u sem bolj beginner).
+
+<br />
+
+
+<br />
+Glede teme o kateri govorimo pa naslednje. Definitivno se strinjam, da bi naj imel samo en thread, ki renderira sceno. Vsi ostali threadi, pa bi naj glavnemu threadu le pripravljali podatke. 
+
+<br />
+To sem v svoji testni aplikaciji tudi POSKUŠAL implementirati. Vendar je prišlo do naslednjega problema (sem že opisal v svojem 1. prispevku) pa vseeno še enkrat:
+
+<br />
+
+
+<br />
+1. korak: Priprava ogrodja (kreiranje okna, RC-ja,...)
+
+<br />
+2. Init OpenGL-a --&gt; <span style="font-weight: bold">kreiranje child thread-a za nalaganje textur</span>
+
+<br />
+3. Skok v Message Pump
+
+<br />
+4. Renderiranje kocke
+
+<br />
+
+
+<br />
+
+
+<br />
+Ključna točka je v inicializaciji, kjer se kreira child thread in se začne nalaganje textur.
+
+<br />
+Pri texturiranju kocke (poligona) moramo v končni fazi le podati index texture, zato sem napisal razred TextureManager s funkcijo, ki vrne ID texture.
+
+<br />
+texture[0] = TextureManager().LoadBMP(&quot;Data/NeHe.bmp&quot;);
+
+<br />
+
+
+<br />
+Kje se zdaj skriva problem?
+
+<br />
+
+
+<br />
+V Metodi LoadBMP!!!
+
+<br />
+Znotraj nje namreč kličem glGenTextures (in še nekaj gl*) funkcij.
+
+<br />
+Natančneje:</span>
+<br />
+<table width="90%" cellspacing="1" cellpadding="3" border="0" align="center">
+<br />
+<tr> 
+<br />
+	  <td><span class="genmed"><b>Koda:</b></span></td>
+<br />
+	</tr>
+<br />
+	<tr>
+<br />
+	  <td class="code">	glGenTextures&#40;1, &amp;m_TextID&#41;;
+<br />
+	glBindTexture&#40;GL_TEXTURE_2D, m_TextID&#41;;
+<br />
+
+<br />
+//	glTexParameterf&#40;GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_REPEAT&#41;;	// GL_CLAMP | GL_REPEAT
+<br />
+//	glTexParameterf&#40;GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_REPEAT&#41;;	// GL_CLAMP | GL_REPEAT
+<br />
+	glTexParameterf&#40;GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR&#41;;		// GL_LINEAR | GL_NEAREST
+<br />
+	glTexParameterf&#40;GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_NEAREST&#41;;	// GL_LINEAR | GL_NEAREST
+<br />
+
+<br />
+	glTexEnvf&#40;GL_TEXTURE_ENV, GL_TEXTURE_ENV_MODE, GL_REPLACE&#41;;	// GL_DECAL | GL_BLEND | GL_REPLACE | GL_MODULATE
+<br />
+	glTexImage2D&#40; GL_TEXTURE_2D, 0, GL_RGB, Bmp&#46;bmWidth, Bmp&#46;bmHeight, 0,
+<br />
+				  GL_BGR_EXT, GL_UNSIGNED_BYTE, Bmp&#46;bmBits&#41;;
+<br />
+	return m_TextID;</td>
+<br />
+	</tr>
+<br />
+</table>
+<br />
+<span class="postbody">
+
+<br />
+
+
+<br />
+Ta funkcija se čisto lepo izvede (in celo dela, če jo pokličem v main threadu).
+
+<br />
+Takoj, ko pa zadevo pokličem v child threadu pa mi funkcija vrne ID npr: 6534532 (kljub temu, da se čisto lepo izvede)
+
+<br />
+
+
+<br />
+Po urah googlanja in nadlegovanja po forumu (tudi enega člana foruma) sem naletel na ugotovitev, da mora vsak thread biti lastnik RC-ja, če želi na njega risati.
+
+<br />
+</span>
+<br />
+<table width="90%" cellspacing="1" cellpadding="3" border="0" align="center">
+<br />
+<tr> 
+<br />
+	  <td><span class="genmed"><b>Citiram:</b></span></td>
+<br />
+	</tr>
+<br />
+	<tr>
+<br />
+	  <td class="quote">Vir:<a  target="_blank" class="postlink">GameDev</a>
+<br />
+A thread can have one current rendering context. A process can have multiple rendering contexts by means of multithreading. A thread must set a current rendering context before calling any OpenGL functions. Otherwise, all OpenGL calls are ignored.
+<br />
+
+<br />
+A rendering context can be current to only one thread at a time. You cannot make a rendering context current to multiple threads.
+<br />
+
+<br />
+An application can perform multithread drawing by making different rendering contexts current to different threads, supplying each thread with its own rendering context and device context.</td>
+<br />
+	</tr>
+<br />
+</table>
+<br />
+<span class="postbody">
+
+<br />
+
+
+<br />
+ 
+
+<br />
+Torej so se takoj zvrstili poskusi:
+
+<br />
+1. 
+
+<br />
+v child threadu pokličem wglMakeCurrent(hDC, hRC);
+
+<br />
+in na koncu še wglMakeCurrent(NULL, NULL); da vrnem &quot;lastništvo&quot; main threadu
+
+<br />
+
+
+<br />
+2. Kreiram novi  RC posebej za child thread (SLABO --&gt; sinhronizacija izrisa, saj imamo dve različni vsebini)
+
+<br />
+
+
+<br />
+Oba poskusa sta obrodila toliko sadov, da se je texture ID sedaj normaliziral --&gt; se pravi, ko v child threadu pokličem LoadBMP, dobim pravilno vrednosti ID-ja (1,2,3....).
+
+<br />
+
+
+<br />
+Te ID-je lepo zapišem v globalno variablo texture[i] in jih uporabim pri renderiranju kocke. --&gt; <span style="font-weight: bold">PROBLEM, KER NI TEXTUR</span>.
+
+<br />
+
+
+<br />
+Updam, da je sedaj bolj jasno!
+
+<br />
+
+
+<br />
+
+
+<br />
+LP, [Beer]
+
+<br />
+
+
+<br />
+PS: V tem času sem prišel še na idejo, da bi v globalno spremenljivko shranil kar cel BMP in bi potem v main threadu generiral texture ID-je.
+
+<br />
+Vendar se mi zdi nepotrebno hranit cele BMP-je (TGA-je, JPG-je,...)</span><span class="gensmall"></span></td>
+			</tr>
+		</table></td>
+	</tr>
+	<tr>
+		<td class="row2" width="150" align="left" valign="middle"><span class="nav"><a href="#top" class="nav">Nazaj na vrh</a></span></td>
+		<td class="row2" width="100%" height="28" valign="bottom" nowrap="nowrap"><table cellspacing="0" cellpadding="0" border="0" height="18" width="18">
+			<tr>
+				<td valign="middle" nowrap="nowrap"><a href="profile-126.html"><img src="templates/SGD2/images/lang_slovenian/icon_profile.gif" alt="Poglej uporabnikov profil" title="Poglej uporabnikov profil" border="0" /></a> </td>
+			</tr>
+		</table></td>
+	</tr>
+	<tr>
+		<td class="spaceRow" colspan="2" height="1"><img src="templates/SGD/images/spacer.gif" alt="" width="1" height="1" /></td>
+	</tr>
+	
+	<tr>
+		<td width="150" align="left" valign="top" class="row1"><span class="name"><a name="16952"></a><b>Person</b></span><br /><span class="postdetails">igralec<br /><img src="images/ranks/sgd-7.gif" alt="igralec" title="igralec" border="0" /><br /><img src="images/avatars/d5fa111d422d913c2ca73.gif" alt="" border="0" /><br /><br />Pridružen: 11. jan 2003 ob 21:25<br />objav: 810<br /></span><br /></td>
+		<td class="row1" width="100%" height="28" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+			<tr>
+				<td colspan="2" width="100%">
+					<table width="100%" cellpadding="0" cellspacing="0" border="0">
+						<tr>
+							<td valign="middle" align="left">
+								<a href="topic-1391.html#16952"><img src="templates/SGD2/images/icon_minipost.gif" width="12" height="9" alt="objava" title="objava" border="0" /></a>
+								<span class="postdetails">Objavljeno: ned maj 06, 2007 8:45 am<span class="gen">&nbsp;</span>&nbsp; &nbsp;Pošlji temo: </span>
+							</td>
+							<td valign="middle" align="right" nowrap="nowrap">
+							</td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+			<tr>
+				<td colspan="2"><hr /></td>
+			</tr>
+			<tr>
+				<td colspan="2"><span class="postbody">Oj!
+
+<br />
+
+
+<br />
+Sej zdaj pa mislim, da smo končno napraskali dovolj podatkov, da se lahko to sprogramira, da bo delalo tako kot mora biti.
+
+<br />
+
+
+<br />
+Za izhodišče vzameš izvorno obliko programa, ko si mu dodal dodaten thread. In sedaj narediš tako.
+
+<br />
+Na začetku programa ustvraiš nov Mutex s funkcijo hMutex = CreateMutex() (parameter pri imenu daš na null).
+
+<br />
+Nato daš v main threadu pred glBegin () funkcijo WaitForSingleObject(hMutex,INFINITE);
+
+<br />
+nato za glEnd(); daš ReleaseMutex(hMutex);
+
+<br />
+
+
+<br />
+In sedaj še dodaš v 2. threadu pred glGenTextures najprej spet WaitForSingleObject(hMutex,INFINITE);, potem v naslednji vrstici prevzameš lastništvo nad RCjem, nato lahko normalno ustvariš texture ... ko se te ustvarijo vrneš lastništvo RCja in nato sprostiš mutex s funkcijo ReleaseMutex(hMutex);
+
+<br />
+
+
+<br />
+In tako smo (če nismo še na kaj spregledali) zaobili še problem, ko znotraj med klicem funkcije glBegin in glEnd ne moreš ustvarjati tekstur!
+
+<br />
+
+
+<br />
+Sedaj pa res mislim, da bi lahko dokončal program.
+
+<br />
+Pač nekako moraš te IDje iz 2. threada spraviti v 1. thread, da jih boš lahko uporabil pri risanju.
+
+<br />
+
+
+<br />
+Še kratek opis delovanja:
+
+<br />
+pač main thread deluje ciklično, pač pobriše zaslon, se pripravi za risanje (glBegin), nato riše, ter nato konča z risanjem scene (glEnd). Dokler je main thread med glBegin in glEnd daje 2. threadu rdečo luč za klicancje OpenGL funkcij, lahko pa on dokler pripravi ostale podatke, pač prebere iz datoteke (to najbrž ni gl funkcija). Ko je pa 2. thread prišel do semaforja (WaitForSingleObject) pa počaka na 1. zeleno luč, ki jo ima dokler ne pokliče na koncu funkcije ReleaseMutex(). Če boš še prebral malo o mutexih, boš videl, da če vsi threadi sprostijo mutex, lahko nato dobi zeleno luč tisti thread, ki bo prvi želel jo imeti (WaitForSingleObject).
+
+<br />
+
+
+<br />
+
+
+<br />
+<span style="font-style: italic">Če sem pa kako napako uspel narediti, pa se posipam s pepelom <img src="images/smiles/icon_smile.gif" alt=":)" border="0" /> </span></span><span class="gensmall"></span></td>
+			</tr>
+		</table></td>
+	</tr>
+	<tr>
+		<td class="row1" width="150" align="left" valign="middle"><span class="nav"><a href="#top" class="nav">Nazaj na vrh</a></span></td>
+		<td class="row1" width="100%" height="28" valign="bottom" nowrap="nowrap"><table cellspacing="0" cellpadding="0" border="0" height="18" width="18">
+			<tr>
+				<td valign="middle" nowrap="nowrap"><a href="profile-22.html"><img src="templates/SGD2/images/lang_slovenian/icon_profile.gif" alt="Poglej uporabnikov profil" title="Poglej uporabnikov profil" border="0" /></a> </td>
+			</tr>
+		</table></td>
+	</tr>
+	<tr>
+		<td class="spaceRow" colspan="2" height="1"><img src="templates/SGD/images/spacer.gif" alt="" width="1" height="1" /></td>
+	</tr>
+	
+	<tr>
+		<td width="150" align="left" valign="top" class="row2"><span class="name"><a name="16953"></a><b>Shinobi</b></span><br /><span class="postdetails">mojster<br /><img src="images/ranks/sgd-5.gif" alt="mojster" title="mojster" border="0" /><br /><img src="images/avatars/d5fd66913fcf278e24a0c.gif" alt="" border="0" /><br /><br />Pridružen: 15. maj 2003 ob 18:04<br />objav: 491<br />Kraj: Maribor</span><br /></td>
+		<td class="row2" width="100%" height="28" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+			<tr>
+				<td colspan="2" width="100%">
+					<table width="100%" cellpadding="0" cellspacing="0" border="0">
+						<tr>
+							<td valign="middle" align="left">
+								<a href="topic-1391.html#16953"><img src="templates/SGD2/images/icon_minipost.gif" width="12" height="9" alt="objava" title="objava" border="0" /></a>
+								<span class="postdetails">Objavljeno: ned maj 06, 2007 1:51 pm<span class="gen">&nbsp;</span>&nbsp; &nbsp;Pošlji temo: </span>
+							</td>
+							<td valign="middle" align="right" nowrap="nowrap">
+							</td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+			<tr>
+				<td colspan="2"><hr /></td>
+			</tr>
+			<tr>
+				<td colspan="2"><span class="postbody">Eh, pomoje si se zapicil v napacni predel. Zdaj na PCju je pomoje cisto vseeno, ce imas posebej thread za loadanje objektov oz. je bolj kot ne nesmiselno, razen ce bi zelel imeti animirani loader.
+
+<br />
+
+
+<br />
+Po drugi strani pa bi teoreticno lahko imel thread, ki bi nalagal texutre dinamicno in sicer v ozadju. To je nekako ona finta kot v HALO. Ce se pribluzijes tunelu, zacne texture manager ze nalagati texture v ozadju ti pa hodis cez &quot;simple&quot; tunel in ko prides ven je vse nalozeno.
+
+<br />
+
+
+<br />
+Drugace pa ne vidim vecjega smisla v tem. Zdaj ciljati na prenosljivost samo zaradi OpenGL je pa po eni strani tudi nesmiselno, ker CreateMutex in podobne jajce delajo samo na Windowsih, za unix varinate rabite druge metode.
+
+<br />
+
+
+<br />
+Na tvojem mestu daj loaderje v main thread in uporabi druge threade za pripravljanje dinamicne vsebine.
+
+<br />
+
+
+<br />
+Aja pa se nekaj: ne dajajte Inputa v svoj thread. To je skrajno brezveze. Po vecih testiranjih sem odkril, da nasploh joysticki delujejo slabse, ce direct input laufa v seperate threadu.
+
+<br />
+
+
+<br />
+V threade bi pomoje lahko dal animation deformer (skeletalna animacija), pa kaksne proceduralne texture in audio decoder (vorbis ogg).</span><span class="gensmall"></span></td>
+			</tr>
+		</table></td>
+	</tr>
+	<tr>
+		<td class="row2" width="150" align="left" valign="middle"><span class="nav"><a href="#top" class="nav">Nazaj na vrh</a></span></td>
+		<td class="row2" width="100%" height="28" valign="bottom" nowrap="nowrap"><table cellspacing="0" cellpadding="0" border="0" height="18" width="18">
+			<tr>
+				<td valign="middle" nowrap="nowrap"><a href="profile-62.html"><img src="templates/SGD2/images/lang_slovenian/icon_profile.gif" alt="Poglej uporabnikov profil" title="Poglej uporabnikov profil" border="0" /></a> </td>
+			</tr>
+		</table></td>
+	</tr>
+	<tr>
+		<td class="spaceRow" colspan="2" height="1"><img src="templates/SGD/images/spacer.gif" alt="" width="1" height="1" /></td>
+	</tr>
+	
+	<tr>
+		<td width="150" align="left" valign="top" class="row1"><span class="name"><a name="16954"></a><b>Person</b></span><br /><span class="postdetails">igralec<br /><img src="images/ranks/sgd-7.gif" alt="igralec" title="igralec" border="0" /><br /><img src="images/avatars/d5fa111d422d913c2ca73.gif" alt="" border="0" /><br /><br />Pridružen: 11. jan 2003 ob 21:25<br />objav: 810<br /></span><br /></td>
+		<td class="row1" width="100%" height="28" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+			<tr>
+				<td colspan="2" width="100%">
+					<table width="100%" cellpadding="0" cellspacing="0" border="0">
+						<tr>
+							<td valign="middle" align="left">
+								<a href="topic-1391.html#16954"><img src="templates/SGD2/images/icon_minipost.gif" width="12" height="9" alt="objava" title="objava" border="0" /></a>
+								<span class="postdetails">Objavljeno: ned maj 06, 2007 2:09 pm<span class="gen">&nbsp;</span>&nbsp; &nbsp;Pošlji temo: </span>
+							</td>
+							<td valign="middle" align="right" nowrap="nowrap">
+							</td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+			<tr>
+				<td colspan="2"><hr /></td>
+			</tr>
+			<tr>
+				<td colspan="2"><span class="postbody">Hehe, sej to se tudi jaz zavedam, da se je malo preveč zapiknil v določeno stvar.
+
+<br />
+Pa sej bo potrebno še nekaj časa, da se bo dovolj naučil OpenGL ali kaj podobnega, da bo lahko naredil igro, ki bi to prednost izkoriščala.
+
+<br />
+
+
+<br />
+Pač jaz sem to stvar vzel tako, da je pač želel narediti nekakšen tehnični demo, ki bi pač dinamično nalagal texture med izvajanjem. In potem sem se odločil, da mu pomagam, ker se mi zdi zanimiva zamisel in sva/smo tako marsikaj novega ugotovili glede OpenGL in splošnega delovanja programov. <img src="images/smiles/icon_wink.gif" alt=":wink:" border="0" /></span><span class="gensmall"></span></td>
+			</tr>
+		</table></td>
+	</tr>
+	<tr>
+		<td class="row1" width="150" align="left" valign="middle"><span class="nav"><a href="#top" class="nav">Nazaj na vrh</a></span></td>
+		<td class="row1" width="100%" height="28" valign="bottom" nowrap="nowrap"><table cellspacing="0" cellpadding="0" border="0" height="18" width="18">
+			<tr>
+				<td valign="middle" nowrap="nowrap"><a href="profile-22.html"><img src="templates/SGD2/images/lang_slovenian/icon_profile.gif" alt="Poglej uporabnikov profil" title="Poglej uporabnikov profil" border="0" /></a> </td>
+			</tr>
+		</table></td>
+	</tr>
+	<tr>
+		<td class="spaceRow" colspan="2" height="1"><img src="templates/SGD/images/spacer.gif" alt="" width="1" height="1" /></td>
+	</tr>
+	
+	<tr>
+		<td width="150" align="left" valign="top" class="row2"><span class="name"><a name="16955"></a><b>[Beer]</b></span><br /><span class="postdetails">poizvedovalec<br /><img src="images/ranks/sgd-1.gif" alt="poizvedovalec" title="poizvedovalec" border="0" /><br /><br /><br />Pridružen: 29. nov 2003 ob 21:36<br />objav: 35<br /></span><br /></td>
+		<td class="row2" width="100%" height="28" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+			<tr>
+				<td colspan="2" width="100%">
+					<table width="100%" cellpadding="0" cellspacing="0" border="0">
+						<tr>
+							<td valign="middle" align="left">
+								<a href="topic-1391.html#16955"><img src="templates/SGD2/images/icon_minipost.gif" width="12" height="9" alt="objava" title="objava" border="0" /></a>
+								<span class="postdetails">Objavljeno: ned maj 06, 2007 4:57 pm<span class="gen">&nbsp;</span>&nbsp; &nbsp;Pošlji temo: </span>
+							</td>
+							<td valign="middle" align="right" nowrap="nowrap">
+							</td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+			<tr>
+				<td colspan="2"><hr /></td>
+			</tr>
+			<tr>
+				<td colspan="2"><span class="postbody">Najprej:
+
+<br />
+Shinobi! Oprosti, ker za komentiranje citiram tvoje izjave, vendar vedi, da sem hvaležen za tvoje prispevke. 
+
+<br />
+
+
+<br />
+</span>
+<br />
+<table width="90%" cellspacing="1" cellpadding="3" border="0" align="center">
+<br />
+<tr> 
+<br />
+	  <td><span class="genmed"><b>Shinobi je napisal:</b></span></td>
+<br />
+	</tr>
+<br />
+	<tr>
+<br />
+	  <td class="quote">Eh, pomoje si se zapicil v napacni predel. Zdaj na PCju je pomoje cisto vseeno, ce imas posebej thread za loadanje objektov oz. je bolj kot ne nesmiselno, razen ce bi zelel imeti animirani loader.</td>
+<br />
+	</tr>
+<br />
+</table>
+<br />
+<span class="postbody">
+<br />
+Da sem se zapičil v napačni predel? Animirani loader je lep primer delovanje tega kar hočem jaz naredit --&gt; zdi se mi, da animirani loaderji niso nesmiselni dodatki programu/igri.
+<br />
+
+<br />
+</span>
+<br />
+<table width="90%" cellspacing="1" cellpadding="3" border="0" align="center">
+<br />
+<tr> 
+<br />
+	  <td><span class="genmed"><b>Shinobi je napisal:</b></span></td>
+<br />
+	</tr>
+<br />
+	<tr>
+<br />
+	  <td class="quote">... // del originalnega prispevka je pobrisan
+<br />
+Drugace pa ne vidim vecjega smisla v tem. Zdaj ciljati na prenosljivost samo zaradi OpenGL je pa po eni strani tudi nesmiselno, ker CreateMutex in podobne jajce delajo samo na Windowsih, za unix varinate rabite druge metode.</td>
+<br />
+	</tr>
+<br />
+</table>
+<br />
+<span class="postbody">
+<br />
+O prenosljivosti kode ni bilo govora. Zadeva bo laufala na Win platformi in sem s tem popolnoma zadovoljen. Čeprav se da z raznimi direktivami tudi to rešit (ampak ni potrebe)
+<br />
+
+<br />
+</span>
+<br />
+<table width="90%" cellspacing="1" cellpadding="3" border="0" align="center">
+<br />
+<tr> 
+<br />
+	  <td><span class="genmed"><b>Shinobi je napisal:</b></span></td>
+<br />
+	</tr>
+<br />
+	<tr>
+<br />
+	  <td class="quote">Na tvojem mestu daj loaderje v main thread in uporabi druge threade za pripravljanje dinamicne vsebine.</td>
+<br />
+	</tr>
+<br />
+</table>
+<br />
+<span class="postbody">
+<br />
+Kaj konkretno si imel v mislih pod &quot;loaderji&quot; in pod &quot;pripravljanje dinamične vsebine&quot;.
+<br />
+
+<br />
+</span>
+<br />
+<table width="90%" cellspacing="1" cellpadding="3" border="0" align="center">
+<br />
+<tr> 
+<br />
+	  <td><span class="genmed"><b>Person je napisal:</b></span></td>
+<br />
+	</tr>
+<br />
+	<tr>
+<br />
+	  <td class="quote">Pač nekako moraš te IDje iz 2. threada spraviti v 1. thread, da jih boš lahko uporabil pri risanju.</td>
+<br />
+	</tr>
+<br />
+</table>
+<br />
+<span class="postbody">
+
+<br />
+Mam jaz ID-je v globalni variabli. To ni problem. Jaz mislim, da v hRC (ki pripada main threadu) ni ustreznih textur v pomnilniku. 
+
+<br />
+Torej funkcija glBindTexture(GL_TEXTURE_2D, 1); želi v pomnilniku poiskati texturo, ki je seveda NI. Ker je bila naložena v pomnilniški prostor drugega RC-ja (hThreadRC).
+
+<br />
+
+
+<br />
+Veliko je bilo govora o Mutexih in CriticalSection-ih. To sta samo dva izmed mehanizmov sinhronizacije threadov. To je (po mojem mnenju) sedaj sekundarnega pomena. Kako realizirati sinhronizacijo ni važno(zaenkrat). V tem trenutku ni pomembno ali dela optimalno, ampak DA SPLOH DELA.
+
+<br />
+
+
+<br />
+OK. Natrosila sta tisoč razlogov kako NE SMEM reševati problema. Z mojim omejenim znanjem OpenGL-a žal iz vaših dobronamernih prispevkov nisem razbral kaj takega, da bi mi pomagalo pri implementaciji.
+
+<br />
+
+
+<br />
+Kaj pa, če bi z enim kratkim prispevkom odgovorili na naslednje vprašanje:
+
+<br />
+<span style="font-weight: bold">Kako pa vi naredite ta animirani loader? </span>
+
+<br />
+Verjetno jih mate. Ali samo nalagate in nalagate, preračunavate, dekompresirate,... potem pa naenkrat POK --&gt; in scena se prikaže.
+
+<br />
+
+
+<br />
+
+
+<br />
+Hvala za vse poučne prispevke.
+
+<br />
+
+
+<br />
+LP, [Beer]</span><span class="gensmall"></span></td>
+			</tr>
+		</table></td>
+	</tr>
+	<tr>
+		<td class="row2" width="150" align="left" valign="middle"><span class="nav"><a href="#top" class="nav">Nazaj na vrh</a></span></td>
+		<td class="row2" width="100%" height="28" valign="bottom" nowrap="nowrap"><table cellspacing="0" cellpadding="0" border="0" height="18" width="18">
+			<tr>
+				<td valign="middle" nowrap="nowrap"><a href="profile-126.html"><img src="templates/SGD2/images/lang_slovenian/icon_profile.gif" alt="Poglej uporabnikov profil" title="Poglej uporabnikov profil" border="0" /></a> </td>
+			</tr>
+		</table></td>
+	</tr>
+	<tr>
+		<td class="spaceRow" colspan="2" height="1"><img src="templates/SGD/images/spacer.gif" alt="" width="1" height="1" /></td>
+	</tr>
+	
+	<tr>
+		<td width="150" align="left" valign="top" class="row1"><span class="name"><a name="16956"></a><b>Alfa</b></span><br /><span class="postdetails">mojster<br /><img src="images/ranks/sgd-5.gif" alt="mojster" title="mojster" border="0" /><br /><img src="images/avatars/c2f90a1540823086cd155.jpg" alt="" border="0" /><br /><br />Pridružen: 04. mar 2004 ob 18:14<br />objav: 471<br />Kraj: SG</span><br /></td>
+		<td class="row1" width="100%" height="28" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+			<tr>
+				<td colspan="2" width="100%">
+					<table width="100%" cellpadding="0" cellspacing="0" border="0">
+						<tr>
+							<td valign="middle" align="left">
+								<a href="topic-1391.html#16956"><img src="templates/SGD2/images/icon_minipost.gif" width="12" height="9" alt="objava" title="objava" border="0" /></a>
+								<span class="postdetails">Objavljeno: ned maj 06, 2007 6:54 pm<span class="gen">&nbsp;</span>&nbsp; &nbsp;Pošlji temo: </span>
+							</td>
+							<td valign="middle" align="right" nowrap="nowrap">
+							</td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+			<tr>
+				<td colspan="2"><hr /></td>
+			</tr>
+			<tr>
+				<td colspan="2"><span class="postbody">Z loaderjem neki grozno komplicirat je brezveze. Prvič, tu je malo osebkov, ki dejansko delajo naigrah kjer ima loader smisel (za tistih par deset slikic js ne mislim nekega hudega loaderja delat, da bo pol sekunde gr). Drugič pa dvomim da boš dobu ful pohvale če bo na loaderju neki skakalo okulo pa plesalo po zaslona, če si igra sama pohvale ne zasluži. Skratka, meni se zdi najbolje da pocneš eno lepo sliko gr, pa loader bar. Pa glej rajši da čim krajši čas loada.<br />_________________<br />&quot;Pustimo malenkosti, pravi cesar, PeCe pa nič (več).&quot;
+
+<br />
+Goran Bervar: C++ na kolenih</span><span class="gensmall"></span></td>
+			</tr>
+		</table></td>
+	</tr>
+	<tr>
+		<td class="row1" width="150" align="left" valign="middle"><span class="nav"><a href="#top" class="nav">Nazaj na vrh</a></span></td>
+		<td class="row1" width="100%" height="28" valign="bottom" nowrap="nowrap"><table cellspacing="0" cellpadding="0" border="0" height="18" width="18">
+			<tr>
+				<td valign="middle" nowrap="nowrap"><a href="profile-162.html"><img src="templates/SGD2/images/lang_slovenian/icon_profile.gif" alt="Poglej uporabnikov profil" title="Poglej uporabnikov profil" border="0" /></a> <a  target="_userwww"><img src="templates/SGD2/images/lang_slovenian/icon_www.gif" alt="Obišči avtorjevo spletno stran" title="Obišči avtorjevo spletno stran" border="0" /></a></td>
+			</tr>
+		</table></td>
+	</tr>
+	<tr>
+		<td class="spaceRow" colspan="2" height="1"><img src="templates/SGD/images/spacer.gif" alt="" width="1" height="1" /></td>
+	</tr>
+	
+	<tr>
+		<td width="150" align="left" valign="top" class="row2"><span class="name"><a name="16957"></a><b>Shinobi</b></span><br /><span class="postdetails">mojster<br /><img src="images/ranks/sgd-5.gif" alt="mojster" title="mojster" border="0" /><br /><img src="images/avatars/d5fd66913fcf278e24a0c.gif" alt="" border="0" /><br /><br />Pridružen: 15. maj 2003 ob 18:04<br />objav: 491<br />Kraj: Maribor</span><br /></td>
+		<td class="row2" width="100%" height="28" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+			<tr>
+				<td colspan="2" width="100%">
+					<table width="100%" cellpadding="0" cellspacing="0" border="0">
+						<tr>
+							<td valign="middle" align="left">
+								<a href="topic-1391.html#16957"><img src="templates/SGD2/images/icon_minipost.gif" width="12" height="9" alt="objava" title="objava" border="0" /></a>
+								<span class="postdetails">Objavljeno: pon maj 07, 2007 8:21 am<span class="gen">&nbsp;</span>&nbsp; &nbsp;Pošlji temo: </span>
+							</td>
+							<td valign="middle" align="right" nowrap="nowrap">
+							</td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+			<tr>
+				<td colspan="2"><hr /></td>
+			</tr>
+			<tr>
+				<td colspan="2"><span class="postbody">Ne ne ne. Animiran loader seveda lahko imas. Samo zadeve se drugace loti. Texture in model managerji (Asset Manager / Resource Manager) naj laufa v istem threadu kot OpenGL (main thread).
+
+<br />
+
+
+<br />
+1. Recimo, da imas texutro, ki se vrti za load (al pa vec, saj ni bitno). Preden zacnes igro nalagat, nalozi v main threadu stvari ki jih rabis za loader (to gre zelo hitro).
+
+<br />
+
+
+<br />
+2. Ko si nalozil vse, kar potrebuje loader, zazeni ali resumaj thread, ki dejansko ne pocne nic drugega, kot animirano rise na zaslon. To pocne v loopu. Se pravi ponavlja render loop tako dolgo, dokler ni izpolnjen en pogoj (spremenljivka ali mutex)
+
+<br />
+
+
+<br />
+3. Ko main thread nalozi vse kar je potreboval, sprozi semafor/mutex ali pa nastavi spremenljivko (to je grda pot). Loader pogrunta da je mutex ali spremenljivka nastavljena in prekine delovanje (gre ven iz loopa).
+
+<br />
+
+
+<br />
+opomba: ce bi rad imel recimo % koliko je igra nalozena, lahko imas neko spremenljivko, v katero potem main thread zapise % in loader to pokaze. Ne rabi loader sprasevat kako dalec je.
+
+<br />
+
+
+<br />
+4. Main thread pocaka, da se je loader zakljucil in nadaljuje z igro...
+
+<br />
+
+
+<br />
+Ekola pa si elegantno resil problem. Edino kar moras paziti je, da ti loader ne rise s pretiranimi 60 FPS in podobne jajce, da ti nebo loading time zaradi tega 6x daljsi kot bi bil drugace.</span><span class="gensmall"></span></td>
+			</tr>
+		</table></td>
+	</tr>
+	<tr>
+		<td class="row2" width="150" align="left" valign="middle"><span class="nav"><a href="#top" class="nav">Nazaj na vrh</a></span></td>
+		<td class="row2" width="100%" height="28" valign="bottom" nowrap="nowrap"><table cellspacing="0" cellpadding="0" border="0" height="18" width="18">
+			<tr>
+				<td valign="middle" nowrap="nowrap"><a href="profile-62.html"><img src="templates/SGD2/images/lang_slovenian/icon_profile.gif" alt="Poglej uporabnikov profil" title="Poglej uporabnikov profil" border="0" /></a> </td>
+			</tr>
+		</table></td>
+	</tr>
+	<tr>
+		<td class="spaceRow" colspan="2" height="1"><img src="templates/SGD/images/spacer.gif" alt="" width="1" height="1" /></td>
+	</tr>
+	
+	<tr>
+		<td width="150" align="left" valign="top" class="row1"><span class="name"><a name="16959"></a><b>Person</b></span><br /><span class="postdetails">igralec<br /><img src="images/ranks/sgd-7.gif" alt="igralec" title="igralec" border="0" /><br /><img src="images/avatars/d5fa111d422d913c2ca73.gif" alt="" border="0" /><br /><br />Pridružen: 11. jan 2003 ob 21:25<br />objav: 810<br /></span><br /></td>
+		<td class="row1" width="100%" height="28" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+			<tr>
+				<td colspan="2" width="100%">
+					<table width="100%" cellpadding="0" cellspacing="0" border="0">
+						<tr>
+							<td valign="middle" align="left">
+								<a href="topic-1391.html#16959"><img src="templates/SGD2/images/icon_minipost.gif" width="12" height="9" alt="objava" title="objava" border="0" /></a>
+								<span class="postdetails">Objavljeno: pon maj 07, 2007 9:14 am<span class="gen">&nbsp;</span>&nbsp; &nbsp;Pošlji temo: </span>
+							</td>
+							<td valign="middle" align="right" nowrap="nowrap">
+							</td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+			<tr>
+				<td colspan="2"><hr /></td>
+			</tr>
+			<tr>
+				<td colspan="2"><span class="postbody"></span>
+<br />
+<table width="90%" cellspacing="1" cellpadding="3" border="0" align="center">
+<br />
+<tr> 
+<br />
+	  <td><span class="genmed"><b>Shinobi je napisal:</b></span></td>
+<br />
+	</tr>
+<br />
+	<tr>
+<br />
+	  <td class="quote">2. Ko si nalozil vse, kar potrebuje loader, zazeni ali resumaj thread, ki dejansko ne pocne nic drugega, kot animirano rise na zaslon. To pocne v loopu. Se pravi ponavlja render loop tako dolgo, dokler ni izpolnjen en pogoj (spremenljivka ali mutex)</td>
+<br />
+	</tr>
+<br />
+</table>
+<br />
+<span class="postbody">
+<br />
+Ravno tukaj je en veliki problem ... do zdaj še nismo uspeli rešiti problema, da bi lahko OpenGL nalagal teksture v 2. threadu, ki bi jih potem lahko uporabil v prve threadu!!!
+<br />
+
+<br />
+Za hec, bom poskusil tole danes popoldne poskusil narediti s C++ v navadnem D3D9, pa potem jutri objavim.
+<br />
+
+<br />
+</span>
+<br />
+<table width="90%" cellspacing="1" cellpadding="3" border="0" align="center">
+<br />
+<tr> 
+<br />
+	  <td><span class="genmed"><b>Citiram:</b></span></td>
+<br />
+	</tr>
+<br />
+	<tr>
+<br />
+	  <td class="quote">Mam jaz ID-je v globalni variabli. To ni problem. Jaz mislim, da v hRC (ki pripada main threadu) ni ustreznih textur v pomnilniku.
+<br />
+Torej funkcija glBindTexture(GL_TEXTURE_2D, 1); želi v pomnilniku poiskati texturo, ki je seveda NI. Ker je bila naložena v pomnilniški prostor drugega RC-ja (hThreadRC).</td>
+<br />
+	</tr>
+<br />
+</table>
+<br />
+<span class="postbody">
+
+<br />
+Če bi se še kaj o tem dalo zguglalt ali pa če bi slučajno <a  target="_blank" class="postlink">ALTF4</a> to znal ... on je kar ekspert v OpenGL ...</span><span class="gensmall"></span></td>
+			</tr>
+		</table></td>
+	</tr>
+	<tr>
+		<td class="row1" width="150" align="left" valign="middle"><span class="nav"><a href="#top" class="nav">Nazaj na vrh</a></span></td>
+		<td class="row1" width="100%" height="28" valign="bottom" nowrap="nowrap"><table cellspacing="0" cellpadding="0" border="0" height="18" width="18">
+			<tr>
+				<td valign="middle" nowrap="nowrap"><a href="profile-22.html"><img src="templates/SGD2/images/lang_slovenian/icon_profile.gif" alt="Poglej uporabnikov profil" title="Poglej uporabnikov profil" border="0" /></a> </td>
+			</tr>
+		</table></td>
+	</tr>
+	<tr>
+		<td class="spaceRow" colspan="2" height="1"><img src="templates/SGD/images/spacer.gif" alt="" width="1" height="1" /></td>
+	</tr>
+	
+	<tr>
+		<td width="150" align="left" valign="top" class="row2"><span class="name"><a name="16960"></a><b>Shinobi</b></span><br /><span class="postdetails">mojster<br /><img src="images/ranks/sgd-5.gif" alt="mojster" title="mojster" border="0" /><br /><img src="images/avatars/d5fd66913fcf278e24a0c.gif" alt="" border="0" /><br /><br />Pridružen: 15. maj 2003 ob 18:04<br />objav: 491<br />Kraj: Maribor</span><br /></td>
+		<td class="row2" width="100%" height="28" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+			<tr>
+				<td colspan="2" width="100%">
+					<table width="100%" cellpadding="0" cellspacing="0" border="0">
+						<tr>
+							<td valign="middle" align="left">
+								<a href="topic-1391.html#16960"><img src="templates/SGD2/images/icon_minipost.gif" width="12" height="9" alt="objava" title="objava" border="0" /></a>
+								<span class="postdetails">Objavljeno: pon maj 07, 2007 1:53 pm<span class="gen">&nbsp;</span>&nbsp; &nbsp;Pošlji temo: </span>
+							</td>
+							<td valign="middle" align="right" nowrap="nowrap">
+							</td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+			<tr>
+				<td colspan="2"><hr /></td>
+			</tr>
+			<tr>
+				<td colspan="2"><span class="postbody">Jaz mislim, da vem v cem je stos. Vsak thread rabi svoj render context, ni druge. Se pravi, ce bi ti imel rad metodo Loader() potem lahko reces tak:
+
+<br />
+</span>
+<br />
+<table width="90%" cellspacing="1" cellpadding="3" border="0" align="center">
+<br />
+<tr> 
+<br />
+	  <td><span class="genmed"><b>Koda:</b></span></td>
+<br />
+	</tr>
+<br />
+	<tr>
+<br />
+	  <td class="code">
+<br />
+DWORD Loader&#40;LPVOID lpParameter&#41;
+<br />
+&#123;
+<br />
+  HGLRC glRC;
+<br />
+ 
+<br />
+  // Re-aquire the context as we are in a different thread
+<br />
+  glRC=wglCreateContext&#40;GLDC&#41;;
+<br />
+  wglMakeCurrent&#40;GLDC,glRC&#41;;
+<br />
+
+<br />
+  while &#40;loading == true&#41;
+<br />
+ &#123;
+<br />
+    risi&#46;&#46;&#46;
+<br />
+    SwapBuffers&#46;&#46;&#46;
+<br />
+ &#125;
+<br />
+wglMakeCurrent&#40;GLDC,NULL&#41;;
+<br />
+wglDestroyContext&#40;GLDC&#41;;
+<br />
+return 0;
+<br />
+&#125;
+<br />
+</td>
+<br />
+	</tr>
+<br />
+</table>
+<br />
+<span class="postbody">
+
+<br />
+
+
+<br />
+Veliko informacij je tukaj:
+
+<br />
+<a class="postlink" >http://gpwiki.org/index.php/OpenGL:Tuto ... ework:Base</a>
+
+<br />
+
+
+<br />
+Edini problem je se, da si bo moral Loader pac za sebe naloziti texturo in jo potem freejat.</span><span class="gensmall"></span></td>
+			</tr>
+		</table></td>
+	</tr>
+	<tr>
+		<td class="row2" width="150" align="left" valign="middle"><span class="nav"><a href="#top" class="nav">Nazaj na vrh</a></span></td>
+		<td class="row2" width="100%" height="28" valign="bottom" nowrap="nowrap"><table cellspacing="0" cellpadding="0" border="0" height="18" width="18">
+			<tr>
+				<td valign="middle" nowrap="nowrap"><a href="profile-62.html"><img src="templates/SGD2/images/lang_slovenian/icon_profile.gif" alt="Poglej uporabnikov profil" title="Poglej uporabnikov profil" border="0" /></a> </td>
+			</tr>
+		</table></td>
+	</tr>
+	<tr>
+		<td class="spaceRow" colspan="2" height="1"><img src="templates/SGD/images/spacer.gif" alt="" width="1" height="1" /></td>
+	</tr>
+	
+	<tr>
+		<td width="150" align="left" valign="top" class="row1"><span class="name"><a name="16971"></a><b>Person</b></span><br /><span class="postdetails">igralec<br /><img src="images/ranks/sgd-7.gif" alt="igralec" title="igralec" border="0" /><br /><img src="images/avatars/d5fa111d422d913c2ca73.gif" alt="" border="0" /><br /><br />Pridružen: 11. jan 2003 ob 21:25<br />objav: 810<br /></span><br /></td>
+		<td class="row1" width="100%" height="28" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+			<tr>
+				<td colspan="2" width="100%">
+					<table width="100%" cellpadding="0" cellspacing="0" border="0">
+						<tr>
+							<td valign="middle" align="left">
+								<a href="topic-1391.html#16971"><img src="templates/SGD2/images/icon_minipost.gif" width="12" height="9" alt="objava" title="objava" border="0" /></a>
+								<span class="postdetails">Objavljeno: tor maj 08, 2007 8:18 am<span class="gen">&nbsp;</span>&nbsp; &nbsp;Pošlji temo: </span>
+							</td>
+							<td valign="middle" align="right" nowrap="nowrap">
+							</td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+			<tr>
+				<td colspan="2"><hr /></td>
+			</tr>
+			<tr>
+				<td colspan="2"><span class="postbody">V D3D9 deluje brez problemov ... samo novi thread narediš, pa nič ne rabiš komplicirati, <a  target="_blank" class="postlink">demo</a></span><span class="gensmall"></span></td>
+			</tr>
+		</table></td>
+	</tr>
+	<tr>
+		<td class="row1" width="150" align="left" valign="middle"><span class="nav"><a href="#top" class="nav">Nazaj na vrh</a></span></td>
+		<td class="row1" width="100%" height="28" valign="bottom" nowrap="nowrap"><table cellspacing="0" cellpadding="0" border="0" height="18" width="18">
+			<tr>
+				<td valign="middle" nowrap="nowrap"><a href="profile-22.html"><img src="templates/SGD2/images/lang_slovenian/icon_profile.gif" alt="Poglej uporabnikov profil" title="Poglej uporabnikov profil" border="0" /></a> </td>
+			</tr>
+		</table></td>
+	</tr>
+	<tr>
+		<td class="spaceRow" colspan="2" height="1"><img src="templates/SGD/images/spacer.gif" alt="" width="1" height="1" /></td>
+	</tr>
+	
+	<tr>
+		<td width="150" align="left" valign="top" class="row2"><span class="name"><a name="16973"></a><b>Shinobi</b></span><br /><span class="postdetails">mojster<br /><img src="images/ranks/sgd-5.gif" alt="mojster" title="mojster" border="0" /><br /><img src="images/avatars/d5fd66913fcf278e24a0c.gif" alt="" border="0" /><br /><br />Pridružen: 15. maj 2003 ob 18:04<br />objav: 491<br />Kraj: Maribor</span><br /></td>
+		<td class="row2" width="100%" height="28" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+			<tr>
+				<td colspan="2" width="100%">
+					<table width="100%" cellpadding="0" cellspacing="0" border="0">
+						<tr>
+							<td valign="middle" align="left">
+								<a href="topic-1391.html#16973"><img src="templates/SGD2/images/icon_minipost.gif" width="12" height="9" alt="objava" title="objava" border="0" /></a>
+								<span class="postdetails">Objavljeno: tor maj 08, 2007 12:42 pm<span class="gen">&nbsp;</span>&nbsp; &nbsp;Pošlji temo: </span>
+							</td>
+							<td valign="middle" align="right" nowrap="nowrap">
+							</td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+			<tr>
+				<td colspan="2"><hr /></td>
+			</tr>
+			<tr>
+				<td colspan="2"><span class="postbody">Person, ni cisto tako, nujno moras paziti na SwapChaine.
+
+<br />
+
+
+<br />
+V D3D je se toliko huje, ker lahko rise <span style="font-weight: bold">ZGOLJ IN SAMO</span> tisti thread, ki je kreiral Direct3D9 objekte.
+
+<br />
+
+
+<br />
+Edit:
+
+<br />
+
+
+<br />
+Demo, ki ga ti navajas, samo nalozi texture, rise pa ne prav nicesar. Ce bi po drugi strani gledali, ti bi lahko na bilo kaksnem sistemu nalozil texture v ram, potem pa jih v main threadu bindas z grafo.
+
+<br />
+
+
+<br />
+Navedeni demo dela vse v main threadu, samo texture nalozi v drugem, kar pa ne pomeni, da bi lahko narisal &quot;Loading...&quot; v samem threadu.</span><span class="gensmall"></span></td>
+			</tr>
+		</table></td>
+	</tr>
+	<tr>
+		<td class="row2" width="150" align="left" valign="middle"><span class="nav"><a href="#top" class="nav">Nazaj na vrh</a></span></td>
+		<td class="row2" width="100%" height="28" valign="bottom" nowrap="nowrap"><table cellspacing="0" cellpadding="0" border="0" height="18" width="18">
+			<tr>
+				<td valign="middle" nowrap="nowrap"><a href="profile-62.html"><img src="templates/SGD2/images/lang_slovenian/icon_profile.gif" alt="Poglej uporabnikov profil" title="Poglej uporabnikov profil" border="0" /></a> </td>
+			</tr>
+		</table></td>
+	</tr>
+	<tr>
+		<td class="spaceRow" colspan="2" height="1"><img src="templates/SGD/images/spacer.gif" alt="" width="1" height="1" /></td>
+	</tr>
+	
+	<tr>
+		<td width="150" align="left" valign="top" class="row1"><span class="name"><a name="16979"></a><b>[Beer]</b></span><br /><span class="postdetails">poizvedovalec<br /><img src="images/ranks/sgd-1.gif" alt="poizvedovalec" title="poizvedovalec" border="0" /><br /><br /><br />Pridružen: 29. nov 2003 ob 21:36<br />objav: 35<br /></span><br /></td>
+		<td class="row1" width="100%" height="28" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+			<tr>
+				<td colspan="2" width="100%">
+					<table width="100%" cellpadding="0" cellspacing="0" border="0">
+						<tr>
+							<td valign="middle" align="left">
+								<a href="topic-1391.html#16979"><img src="templates/SGD2/images/icon_minipost.gif" width="12" height="9" alt="objava" title="objava" border="0" /></a>
+								<span class="postdetails">Objavljeno: tor maj 08, 2007 11:37 pm<span class="gen">&nbsp;</span>&nbsp; &nbsp;Pošlji temo: </span>
+							</td>
+							<td valign="middle" align="right" nowrap="nowrap">
+							</td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+			<tr>
+				<td colspan="2"><hr /></td>
+			</tr>
+			<tr>
+				<td colspan="2"><span class="postbody"></span>
+<br />
+<table width="90%" cellspacing="1" cellpadding="3" border="0" align="center">
+<br />
+<tr> 
+<br />
+	  <td><span class="genmed"><b>Shinobi je napisal:</b></span></td>
+<br />
+	</tr>
+<br />
+	<tr>
+<br />
+	  <td class="quote">Jaz mislim, da vem v cem je stos. Vsak thread rabi svoj render context, ni druge. Se pravi, ce bi ti imel rad metodo Loader() potem lahko reces tak:
+<br />
+</span>
+<br />
+<table width="90%" cellspacing="1" cellpadding="3" border="0" align="center">
+<br />
+<tr> 
+<br />
+	  <td><span class="genmed"><b>Koda:</b></span></td>
+<br />
+	</tr>
+<br />
+	<tr>
+<br />
+	  <td class="code">
+<br />
+DWORD Loader&#40;LPVOID lpParameter&#41;
+<br />
+&#123;
+<br />
+  HGLRC glRC;
+<br />
+ 
+<br />
+  // Re-aquire the context as we are in a different thread
+<br />
+  glRC=wglCreateContext&#40;GLDC&#41;;
+<br />
+  wglMakeCurrent&#40;GLDC,glRC&#41;;
+<br />
+
+<br />
+  while &#40;loading == true&#41;
+<br />
+ &#123;
+<br />
+    risi&#46;&#46;&#46;
+<br />
+    SwapBuffers&#46;&#46;&#46;
+<br />
+ &#125;
+<br />
+wglMakeCurrent&#40;GLDC,NULL&#41;;
+<br />
+wglDestroyContext&#40;GLDC&#41;;
+<br />
+return 0;
+<br />
+&#125;
+<br />
+</td>
+<br />
+	</tr>
+<br />
+</table>
+<br />
+<span class="postbody">
+<br />
+
+<br />
+Veliko informacij je tukaj:
+<br />
+<a class="postlink" >http://gpwiki.org/index.php/OpenGL:Tuto ... ework:Base</a>
+<br />
+
+<br />
+Edini problem je se, da si bo moral Loader pac za sebe naloziti texturo in jo potem freejat.</td>
+<br />
+	</tr>
+<br />
+</table>
+<br />
+<span class="postbody">
+
+<br />
+
+
+<br />
+Točno tako kot si v kodi napisal --&gt; le da jaz ne rabim v drugem threadu nič risat ampak samo naloadat texturo, ki jo potem uporabim v main threadu. Za loader, bi pa v drugem threadu lepo globalno variablo ustrezno spreminjal (npr: 0..100).
+
+<br />
+
+
+<br />
+Fora ja samo v tem, da se lahko main thread &quot;normalno&quot; izvaja (rišejo se netexturirani objekti) , medtem ko se v drugem threadu loadajo texture. Ko se textura naloži, se to pozna v main threadu tako, da pač nariše texturiran objekt.</span><span class="gensmall"></span></td>
+			</tr>
+		</table></td>
+	</tr>
+	<tr>
+		<td class="row1" width="150" align="left" valign="middle"><span class="nav"><a href="#top" class="nav">Nazaj na vrh</a></span></td>
+		<td class="row1" width="100%" height="28" valign="bottom" nowrap="nowrap"><table cellspacing="0" cellpadding="0" border="0" height="18" width="18">
+			<tr>
+				<td valign="middle" nowrap="nowrap"><a href="profile-126.html"><img src="templates/SGD2/images/lang_slovenian/icon_profile.gif" alt="Poglej uporabnikov profil" title="Poglej uporabnikov profil" border="0" /></a> </td>
+			</tr>
+		</table></td>
+	</tr>
+	<tr>
+		<td class="spaceRow" colspan="2" height="1"><img src="templates/SGD/images/spacer.gif" alt="" width="1" height="1" /></td>
+	</tr>
+	
+	<tr>
+		<td width="150" align="left" valign="top" class="row2"><span class="name"><a name="16981"></a><b>Shinobi</b></span><br /><span class="postdetails">mojster<br /><img src="images/ranks/sgd-5.gif" alt="mojster" title="mojster" border="0" /><br /><img src="images/avatars/d5fd66913fcf278e24a0c.gif" alt="" border="0" /><br /><br />Pridružen: 15. maj 2003 ob 18:04<br />objav: 491<br />Kraj: Maribor</span><br /></td>
+		<td class="row2" width="100%" height="28" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+			<tr>
+				<td colspan="2" width="100%">
+					<table width="100%" cellpadding="0" cellspacing="0" border="0">
+						<tr>
+							<td valign="middle" align="left">
+								<a href="topic-1391.html#16981"><img src="templates/SGD2/images/icon_minipost.gif" width="12" height="9" alt="objava" title="objava" border="0" /></a>
+								<span class="postdetails">Objavljeno: sre maj 09, 2007 7:47 am<span class="gen">&nbsp;</span>&nbsp; &nbsp;Pošlji temo: </span>
+							</td>
+							<td valign="middle" align="right" nowrap="nowrap">
+							</td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+			<tr>
+				<td colspan="2"><hr /></td>
+			</tr>
+			<tr>
+				<td colspan="2"><span class="postbody">Meni sicer se vedno ni vsec, da nalagas texture v drugem threadu, samo zato da jih v main threadu uporabljas (btw, to je dodatno zakompliciranje programa). Ampak ce ze moras, glej naslednji primer.
+
+<br />
+
+
+<br />
+Texturo preko gluta nalozis takole (Ni nujno da glut uporabljas):
+
+<br />
+</span>
+<br />
+<table width="90%" cellspacing="1" cellpadding="3" border="0" align="center">
+<br />
+<tr> 
+<br />
+	  <td><span class="genmed"><b>Koda:</b></span></td>
+<br />
+	</tr>
+<br />
+	<tr>
+<br />
+	  <td class="code">
+<br />
+AUX_RGBImageRec* TextureImage = NULL;
+<br />
+TextureImage = auxDIBImageLoad&#40;&quot;texture&#46;bmp&quot;&#41;;
+<br />
+DWORD dwTextureID = 0;
+<br />
+glGenTextures&#40;1, &amp;dwTextureID&#41;;
+<br />
+glBindTexture&#40;GL_TEXTURE_2D, dwTextureID&#41;;
+<br />
+glTexImage2D&#40;GL_TEXTURE_2D, 0, 3, TextureImage-&gt;sizeX, TextureImage-&gt;sizeY, 0, GL_RGB, GL_UNSIGNED_BYTE, TextureImage-&gt;data&#41;;
+<br />
+</td>
+<br />
+	</tr>
+<br />
+</table>
+<br />
+<span class="postbody">
+<br />
+Ok, to je tak cisto simple loader. Ta seveda v tej obliki ne bo delal. Kar ti lahko reces je, da naredis dinamicni siznam (STL) kar gre zelo simple. Najprej rabis structe za image:
+<br />
+</span>
+<br />
+<table width="90%" cellspacing="1" cellpadding="3" border="0" align="center">
+<br />
+<tr> 
+<br />
+	  <td><span class="genmed"><b>Koda:</b></span></td>
+<br />
+	</tr>
+<br />
+	<tr>
+<br />
+	  <td class="code">
+<br />
+typdef struct
+<br />
+&#123;
+<br />
+char szFileName&#91;256&#93;;
+<br />
+AUX_RGBImageRec* lpTexture;
+<br />
+DWORD dwIndex;
+<br />
+BOOL isLoaded;
+<br />
+texture_t&#40;&#41;
+<br />
+&#123;
+<br />
+memset&#40;szFileName, 0, 256&#41;;
+<br />
+lpTexture=NULL;
+<br />
+dwIndex=0;
+<br />
+isLoaded=FALSE;
+<br />
+&#125;
+<br />
+&#125;texture_t;
+<br />
+
+<br />
+std&#58;&#58;vector&lt;texture_t&gt; texturePool;
+<br />
+</td>
+<br />
+	</tr>
+<br />
+</table>
+<br />
+<span class="postbody">
+<br />
+Ideja je zdaj sledeca, v tvojem threadu lahko nalagas texture samo do auxDIBImageLoad(&quot;texture.bmp&quot;); bindas pa jih ne. Se pravi ideja je, da ti nalozis slikce v RAM in ne na Graficno kartico. Ko bo loader zakljucil, potem lahko main thread pogleda v texturePool in jih nalozi. Primer:
+<br />
+</span>
+<br />
+<table width="90%" cellspacing="1" cellpadding="3" border="0" align="center">
+<br />
+<tr> 
+<br />
+	  <td><span class="genmed"><b>Koda:</b></span></td>
+<br />
+	</tr>
+<br />
+	<tr>
+<br />
+	  <td class="code">
+<br />
+&#46;&#46;&#46;tvoja thread rutina
+<br />
+&#46;&#46;&#46;predpostavimo da imas seznam datotek&#58;
+<br />
+char szFileList&#91;3&#93;&#91;12&#93; = &#123;&quot;ena&#46;bmp&quot;,&quot;dva&#46;bmp&quot;,&quot;tri&#46;bmp&quot;&#125;;
+<br />
+texturePool&#46;clear&#40;&#41;; //seznam je itak prazen
+<br />
+for &#40;size_t i=0; i&lt;3; i++&#41;
+<br />
+&#123;
+<br />
+texture_t tekstura;
+<br />
+strcpy&#40;tekstura&#46;szFileName, szFileList&#91;i&#93;&#41;;
+<br />
+tekstura&#46;lpTexture = auxDIBImageLoad&#40;tekstura&#46;szFileName&#41;;
+<br />
+tekstura&#46;isLoaded = &#40;textura&#46;lpTexture != NULL&#41;;
+<br />
+//Najbolj vazen del&#58;
+<br />
+texturePool&#46;push_back&#40;tekstura&#41;;
+<br />
+&#125;
+<br />
+</td>
+<br />
+	</tr>
+<br />
+</table>
+<br />
+<span class="postbody">
+<br />
+Tako, zdaj pa v igri, ce nekdo rabi texturo &quot;ena.bmp&quot; gres skozi seznam:
+<br />
+</span>
+<br />
+<table width="90%" cellspacing="1" cellpadding="3" border="0" align="center">
+<br />
+<tr> 
+<br />
+	  <td><span class="genmed"><b>Koda:</b></span></td>
+<br />
+	</tr>
+<br />
+	<tr>
+<br />
+	  <td class="code">
+<br />
+for &#40;size_t i=0; i&lt;texturePool&#46;size&#40;&#41;;i++&#41;
+<br />
+if &#40;strcmp&#40;texturePool&#91;i&#93;&#46;szFileName, &quot;ena&#46;bmp&quot;&#41; == 0&#41;
+<br />
+if &#40;texturePool&#91;i&#93;&#46;isLoaded == TRUE&#41;
+<br />
+&#123;
+<br />
+//Tako do tukaj vemo, da je textura v memoriji
+<br />
+//Ali je textura v AGP?
+<br />
+if &#40;texturePool&#91;i&#93;&#46;dwIndex == 0&#41;
+<br />
+&#123;
+<br />
+glGenTextures&#40;1, &amp;texturePool&#91;i&#93;&#46;dwIndex&#41;;
+<br />
+glBindTexture&#40;GL_TEXTURE_2D, texturePool&#91;i&#93;&#46;dwIndex&#41;;
+<br />
+glTexImage2D&#40;GL_TEXTURE_2D, 0, 3, TextureImage-&gt;sizeX, TextureImage-&gt;sizeY, 0, GL_RGB, GL_UNSIGNED_BYTE, TextureImage-&gt;data&#41;;
+<br />
+&#125;
+<br />
+else
+<br />
+&#123;
+<br />
+//DwIndex je ze postavljen, se pravi ga samo izberemo
+<br />
+glBindTexture&#40;GL_TEXTURE_2D, texturePool&#91;i&#93;&#46;dwIndex&#41;;
+<br />
+&#125;
+<br />
+&#125;
+<br />
+</td>
+<br />
+	</tr>
+<br />
+</table>
+<br />
+<span class="postbody">
+
+<br />
+
+
+<br />
+Upam, da si razumel idejo. Tvoj thread bo samo sestavil seznam nalozenih textur v ramu. Potem pa bo igra, ko bo texturo potrebovala, pogledala v seznam, in ce je not jo bo aktivirala.
+
+<br />
+
+
+<br />
+Ce pa ze od vsega zacetka ves, da bos potreboval texture, pa samo pocakaj, da se loader thread konca, in potem za vsako texutro klices glGenerate, glBind in GlTexImage pa si stvar resil.
+
+<br />
+
+
+<br />
+Mozno da ne deluje cisto 1:1 ker sem vse skupaj na pamet spisal, ali to je tudi lahko ideja.</span><span class="gensmall"></span></td>
+			</tr>
+		</table></td>
+	</tr>
+	<tr>
+		<td class="row2" width="150" align="left" valign="middle"><span class="nav"><a href="#top" class="nav">Nazaj na vrh</a></span></td>
+		<td class="row2" width="100%" height="28" valign="bottom" nowrap="nowrap"><table cellspacing="0" cellpadding="0" border="0" height="18" width="18">
+			<tr>
+				<td valign="middle" nowrap="nowrap"><a href="profile-62.html"><img src="templates/SGD2/images/lang_slovenian/icon_profile.gif" alt="Poglej uporabnikov profil" title="Poglej uporabnikov profil" border="0" /></a> </td>
+			</tr>
+		</table></td>
+	</tr>
+	<tr>
+		<td class="spaceRow" colspan="2" height="1"><img src="templates/SGD/images/spacer.gif" alt="" width="1" height="1" /></td>
+	</tr>
+	
+	<tr align="center">
+		<td class="catBottom" colspan="2" height="28">&nbsp;</td>
+	</tr>
+</table>
+
+<table width="100%" cellspacing="2" cellpadding="2" border="0" align="center">
+  <tr>
+	<td align="left" valign="middle" nowrap="nowrap">&nbsp;</td>
+	<td align="left" valign="middle" width="100%"><span class="nav">&nbsp;&nbsp;&nbsp;<a href="index.html" class="nav">SloGameDev.net seznam forumov</a>
+	  -> <a href="forum-52.html" class="nav">Izdelovanje iger</a></span></td>
+	<td align="right" valign="top" nowrap="nowrap"><span class="gensmall">Časovni pas (GMT +2:00 uri) Slovenija, poletni čas</span><br /><span class="nav"></span>
+	  </td>
+  </tr>
+  <tr>
+	<td align="left" colspan="3"><span class="nav">Stran <b>1</b> od <b>1</b></span></td>
+  </tr>
+</table>
+
+<table width="100%" cellspacing="2" border="0" align="center">
+  <tr>
+	<td width="40%" valign="top" nowrap="nowrap" align="left">&nbsp;</td>
+	<td align="right" valign="top" nowrap="nowrap">&nbsp;</td>
+  </tr>
+</table>
+
+<div align="center"><span class="copyright"><br />Arhiv &mdash; samo za branje.<br />
+<!--
+	We request you retain the full copyright notice below including the link to www.phpbb.com.
+	This not only gives respect to the large amount of time given freely by the developers
+	but also helps build interest, traffic and use of phpBB 2.0. If you cannot (for good
+	reason) retain the full copyright we request you at least leave in place the 
+	Powered by phpBB 2.0.4 line, with phpBB linked to www.phpbb.com. If you refuse
+	to include even this then support on our forums may be affected. 
+
+	The phpBB Group : 2002
+// -->
+Powered by <a  target="_phpbb" class="copyright">phpBB</a> 2.0.4 &copy; 2001, 2002 phpBB Group<br /></span></div>
+		</td>
+	</tr>
+</table>
+
+</body>
+</html>

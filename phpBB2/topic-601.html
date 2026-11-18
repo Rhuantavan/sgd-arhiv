@@ -276,7 +276,7 @@ input.liteoption {
   <tr>
 	<td align="left" valign="bottom" nowrap="nowrap">&nbsp;</td>
 	<td align="left" valign="middle" width="100%"><span class="nav">&nbsp;&nbsp;&nbsp;<a href="index.html" class="nav">SloGameDev.net seznam forumov</a>
-	  -> <a href="forum-1.html" class="nav">Splošno Programiranje</a></span></td>
+	  -> <a href="forum-52.html" class="nav">Izdelovanje iger</a></span></td>
   </tr>
 </table>
 
@@ -291,7 +291,7 @@ input.liteoption {
 	</tr>
 	
 	<tr>
-		<td width="150" align="left" valign="top" class="row1"><span class="name"><a name="6841"></a><b>_t3ch_</b></span><br /><span class="postdetails">wannabe<br /><img src="images/ranks/sgd-2.gif" alt="wannabe" title="wannabe" border="0" /><br /><img src="images/avatars/c2f922b13f93ced57f936.gif" alt="" border="0" /><br /><br />Pridružen: 09. okt 2003 ob 16:04<br />objav: 75<br />Kraj: Mafia SoftWare IT</span><br /></td>
+		<td width="150" align="left" valign="top" class="row1"><span class="name"><a name="6841"></a><b>_t3ch_</b></span><br /><span class="postdetails">wannabe<br /><img src="images/ranks/sgd-2.gif" alt="wannabe" title="wannabe" border="0" /><br /><img src="images/avatars/c2f922b13f93ced57f936.gif" alt="" border="0" /><br /><br />Pridružen: 09. okt 2003 ob 16:04<br />objav: 77<br />Kraj: Mafia SoftWare IT</span><br /></td>
 		<td class="row1" width="100%" height="28" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
 			<tr>
 				<td colspan="2" width="100%">
@@ -330,586 +330,392 @@ input.liteoption {
 	<tr>
 <br />
 	  <td class="code">
-
 <br />
 // Server z funkcijama send&#40;&#41; &amp; recv&#40;&#41;
-
 <br />
 
-
 <br />
-#include &lt;winsock2.h&gt; // uporabmo za povezavo prek neta
-
+#include &lt;winsock2&#46;h&gt; // uporabmo za povezavo prek neta
 <br />
-#include &lt;stdio.h&gt; // za I/O
-
+#include &lt;stdio&#46;h&gt; // za I/O
 <br />
-
 
 <br />
 // startupServerForListning&#40;&#41; nam vrne socket ki so boundane na port ki smo ga dolocili
-
 <br />
 // ce bo kaksna napaka nam vrne -1
-
 <br />
-
 
 <br />
 int startupServerForListning&#40;unsigned short port&#41;;
-
 <br />
-
 
 <br />
 // shutdown&#40;&#41; bo izklopilo socket in izklopilo program ki smo ga prizgali
-
 <br />
-
 
 <br />
 void shutdownServer&#40;int socket&#41;;
-
 <br />
-
 
 <br />
 void main&#40;&#41;
-
 <br />
-
 
 <br />
 &#123;
-
 <br />
-&nbsp; &nbsp;printf&#40;&quot; Server V 0.1 v izdelavi &#58;&#41; mogoe bo chat prog mogoce trojan kaj te ves\n&quot;&#41;;
-
+	printf&#40;&quot; Server V 0&#46;1 v izdelavi &#58;&#41; mogoe bo chat prog mogoce trojan kaj te ves\n&quot;&#41;;
 <br />
 
-
 <br />
-&nbsp; &nbsp;// initializiramo spremenljivko serversocket
-
+	// initializiramo spremenljivko serversocket
 <br />
 
-
 <br />
-&nbsp; &nbsp;int serverSocket;
-
+	int serverSocket;
 <br />
 
-
 <br />
-&nbsp; &nbsp; // zazenemo server z to funkcijo
-
+    // zazenemo server z to funkcijo
 <br />
 
-
 <br />
-&nbsp; &nbsp;serverSocket = startupServerForListning&#40;7777&#41;;
-
+	serverSocket = startupServerForListning&#40;7777&#41;;
 <br />
 
-
 <br />
-&nbsp; &nbsp;// preverimo error
-
+	// preverimo error
 <br />
 
-
 <br />
-&nbsp; &nbsp;if &#40; serverSocket == -1&#41;
-
+	if &#40; serverSocket == -1&#41;
 <br />
-&nbsp; &nbsp;&#123;
-
+	&#123;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;printf&#40;&quot; Startup spodletel! \n Program se zakljucuje\n &quot;&#41;;
-
+		printf&#40;&quot; Startup spodletel! \n Program se zakljucuje\n &quot;&#41;;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;return;
-
+		return;
 <br />
-&nbsp; &nbsp;&#125;
-
+	&#125;
 <br />
 
-
 <br />
-&nbsp; &nbsp;// sprejmemo client 
-
+	// sprejmemo client 
 <br />
 
-
 <br />
-&nbsp; &nbsp;int clientSocket;
-
+	int clientSocket;
 <br />
 
-
 <br />
-&nbsp; &nbsp;clientSocket = accept&#40;serverSocket, 0, 0&#41;;
-
+	clientSocket = accept&#40;serverSocket, 0, 0&#41;;
 <br />
 
-
 <br />
-&nbsp; &nbsp;// preverimo error
-
+	// preverimo error
 <br />
 
-
 <br />
-&nbsp; &nbsp;if &#40;clientSocket == SOCKET_ERROR&#41;
-
+	if &#40;clientSocket == SOCKET_ERROR&#41;
 <br />
-&nbsp; &nbsp;&#123;
-
+	&#123;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;printf&#40;&quot; Sprejemanje spodletelo!\n&quot;&#41;;
-
+		printf&#40;&quot; Sprejemanje spodletelo!\n&quot;&#41;;
 <br />
-&nbsp; &nbsp;&#125;
-
+	&#125;
 <br />
 
-
 <br />
-&nbsp; &nbsp;// inicializiramo koliko bajtov dovolimo da se rpenese
-
+	// inicializiramo koliko bajtov dovolimo da se rpenese
 <br />
 
-
 <br />
-&nbsp; &nbsp;int nBytes;
-
+	int nBytes;
 <br />
 
-
 <br />
-&nbsp; &nbsp;// sedaj rabimo nekaj bufferjev , rabimo ga za posiljat podatke in prostor kam jih bomo shranjevali
-
+	// sedaj rabimo nekaj bufferjev , rabimo ga za posiljat podatke in prostor kam jih bomo shranjevali
 <br />
-&nbsp; &nbsp; // spodaj definiramo koliko bajtov lahko sprejmemo in poslemo
-
+    // spodaj definiramo koliko bajtov lahko sprejmemo in poslemo
 <br />
-
 
 <br />
 #define MESSAGE_SIZE 24
-
 <br />
 
-
 <br />
-&nbsp; &nbsp;// in se buffer
-
+	// in se buffer
 <br />
 
-
 <br />
-&nbsp; &nbsp;char inMessage&#91;MESSAGE_SIZE&#93;;
-
+	char inMessage&#91;MESSAGE_SIZE&#93;;
 <br />
-&nbsp; &nbsp;char outMessage&#91;MESSAGE_SIZE&#93; = &quot; To posilja serv.&quot;;
-
+	char outMessage&#91;MESSAGE_SIZE&#93; = &quot; To posilja serv&#46;&quot;;
 <br />
 
-
 <br />
-&nbsp; &nbsp; // ko se bo client povezal bo poslal sporocilo serveru server pa nazaj sporocilo clientu
-
+    // ko se bo client povezal bo poslal sporocilo serveru server pa nazaj sporocilo clientu
 <br />
-&nbsp; &nbsp; // spodaj uporabimo funk. recv&#40;&#41; in flag 0 ki ga ne razumem neke prevec &#58;&#41;
-
+    // spodaj uporabimo funk&#46; recv&#40;&#41; in flag 0 ki ga ne razumem neke prevec &#58;&#41;
 <br />
-&nbsp; &nbsp; // nato se preverimo ali je kaksen error ali ne
-
+    // nato se preverimo ali je kaksen error ali ne
 <br />
 
-
 <br />
-&nbsp; &nbsp; nBytes = recv&#40;clientSocket, inMessage, sizeof&#40;inMessage&#41;, 0&#41;;
-
+    nBytes = recv&#40;clientSocket, inMessage, sizeof&#40;inMessage&#41;, 0&#41;;
 <br />
 
-
 <br />
-&nbsp; &nbsp;// preverimo error
-
+	// preverimo error
 <br />
 
-
 <br />
-&nbsp; &nbsp;if &#40;nBytes == SOCKET_ERROR&#41;
-
+	if &#40;nBytes == SOCKET_ERROR&#41;
 <br />
-&nbsp; &nbsp;&#123;
-
+	&#123;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;printf&#40;&quot;Sprejemanje spodletelo!\n&quot;&#41;;
-
+		printf&#40;&quot;Sprejemanje spodletelo!\n&quot;&#41;;
 <br />
-&nbsp; &nbsp;&#125;
-
+	&#125;
 <br />
  
-
 <br />
-&nbsp; &nbsp;// na tej tocki smo sprejeli podatke in shranli v inMessage
-
+	// na tej tocki smo sprejeli podatke in shranli v inMessage
 <br />
-&nbsp; &nbsp;// zato izpisemo buffer da vidimo kaksno je bilo sporocilo
-
+	// zato izpisemo buffer da vidimo kaksno je bilo sporocilo
 <br />
 
-
 <br />
-&nbsp; &nbsp; printf&#40;&quot;Sporocilo prispelo&#58; %s\n&quot;, inMessage&#41;;
-
+    printf&#40;&quot;Sporocilo prispelo&#58; %s\n&quot;, inMessage&#41;;
 <br />
 
-
 <br />
-&nbsp; &nbsp; // sedaj smo sprejeli sporocilo zdaj pa se moremo poslati clientu nekaj nazaj z funkcijo send&#40;&#41;
-
+    // sedaj smo sprejeli sporocilo zdaj pa se moremo poslati clientu nekaj nazaj z funkcijo send&#40;&#41;
 <br />
-&nbsp; &nbsp;// funkcija send&#40;&#41; ima 4 parametre kot funk. recv&#40;&#41;...
-
+	// funkcija send&#40;&#41; ima 4 parametre kot funk&#46; recv&#40;&#41;&#46;&#46;&#46;
 <br />
-&nbsp; &nbsp; // posljemo sizeof&#40;outMessage&#41; k klientu
-
+    // posljemo sizeof&#40;outMessage&#41; k klientu
 <br />
-&nbsp; &nbsp;
-
+	
 <br />
-&nbsp; &nbsp;nBytes = send&#40;clientSocket, outMessage, sizeof&#40;outMessage&#41;, 0&#41;;
-
+	nBytes = send&#40;clientSocket, outMessage, sizeof&#40;outMessage&#41;, 0&#41;;
 <br />
 
-
 <br />
-&nbsp; &nbsp; // preverimo error
-
+    // preverimo error
 <br />
 
-
 <br />
-&nbsp; &nbsp;if &#40;nBytes == SOCKET_ERROR&#41;
-
+	if &#40;nBytes == SOCKET_ERROR&#41;
 <br />
-&nbsp; &nbsp;&#123;
-
+	&#123;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;printf&#40;&quot; Sporocilo spodletelo!\n&quot;&#41;;
-
+		printf&#40;&quot; Sporocilo spodletelo!\n&quot;&#41;;
 <br />
-&nbsp; &nbsp;&#125;
-
+	&#125;
 <br />
-&nbsp; &nbsp;else
-
+	else
 <br />
-&nbsp; &nbsp;&#123;
-
+	&#123;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;printf&#40;&quot; Sporocilo dostavljeno\n&quot;&#41;;
-
+		printf&#40;&quot; Sporocilo dostavljeno\n&quot;&#41;;
 <br />
-&nbsp; &nbsp;&#125;
-
+	&#125;
 <br />
 
-
 <br />
-&nbsp; &nbsp;// sedaj nam je uspelo poslati in sprejeti sporocilo 
-
+	// sedaj nam je uspelo poslati in sprejeti sporocilo 
 <br />
-&nbsp; &nbsp; // sedaj ko nam je uspelo sprejeti in poslati moramo se za sabo pocistiti
-
+    // sedaj ko nam je uspelo sprejeti in poslati moramo se za sabo pocistiti
 <br />
-&nbsp; &nbsp; // zato zapremo socket
-
+    // zato zapremo socket
 <br />
 
-
 <br />
-&nbsp; &nbsp;closesocket&#40;clientSocket&#41;;
-
+	closesocket&#40;clientSocket&#41;;
 <br />
 
-
 <br />
-&nbsp; &nbsp;// in izklopimo povezavo
-
+	// in izklopimo povezavo
 <br />
 
-
 <br />
-&nbsp; &nbsp;shutdownServer&#40;serverSocket&#41;;
-
+	shutdownServer&#40;serverSocket&#41;;
 <br />
 
-
 <br />
-&nbsp; &nbsp;printf&#40;&quot; Pritisni tipko za nadaljevanje ...\n&quot;&#41;;
-
+	printf&#40;&quot; Pritisni tipko za nadaljevanje &#46;&#46;&#46;\n&quot;&#41;;
 <br />
-&nbsp; &nbsp;getchar&#40;&#41;;
-
+	getchar&#40;&#41;;
 <br />
-
 
 <br />
 &#125;
-
 <br />
-
 
 <br />
 //--------------------------------------------------------------------
-
 <br />
 // startupServerForListning&#40;&#41; - funkcija ki zazene winsock in odpre socket da cakajo na klic
-
 <br />
-
 
 <br />
 int startupServerForListning&#40;unsigned short port&#41;
-
 <br />
-
 
 <br />
 &#123;
-
 <br />
-&nbsp; &nbsp;// winsock podatkovna struktura
-
+	// winsock podatkovna struktura
 <br />
 
-
 <br />
-&nbsp; &nbsp;WSAData wsaData;
-
+	WSAData wsaData;
 <br />
 
-
 <br />
-&nbsp; &nbsp;// zazenemo winsock
-
+	// zazenemo winsock
 <br />
 
-
 <br />
-&nbsp; &nbsp;if &#40;WSAStartup&#40;MAKEWORD&#40;2, 2&#41;, &amp;wsaData&#41; == SOCKET_ERROR&#41;
-
+	if &#40;WSAStartup&#40;MAKEWORD&#40;2, 2&#41;, &amp;wsaData&#41; == SOCKET_ERROR&#41;
 <br />
-&nbsp; &nbsp;&#123;
-
+	&#123;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;printf&#40;&quot; Ne morem zagnati winsock \n&quot;&#41;;
-
+		printf&#40;&quot; Ne morem zagnati winsock \n&quot;&#41;;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;return -1;
-
+		return -1;
 <br />
-&nbsp; &nbsp;&#125;
-
+	&#125;
 <br />
 
-
 <br />
-&nbsp; &nbsp;// napravimo mysocket
-
+	// napravimo mysocket
 <br />
 
-
 <br />
-&nbsp; &nbsp;int mySocket = socket&#40;AF_INET, SOCK_STREAM, 0&#41;;
-
+	int mySocket = socket&#40;AF_INET, SOCK_STREAM, 0&#41;;
 <br />
 
-
 <br />
-&nbsp; &nbsp;// preverimo errore
-
+	// preverimo errore
 <br />
 
-
 <br />
-&nbsp; &nbsp;if &#40;mySocket == SOCKET_ERROR&#41;
-
+	if &#40;mySocket == SOCKET_ERROR&#41;
 <br />
-&nbsp; &nbsp;&#123;
-
+	&#123;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;printf&#40;&quot; Ne gre odpret socket!\n&quot;&#41;;
-
+		printf&#40;&quot; Ne gre odpret socket!\n&quot;&#41;;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;return -1;
-
+		return -1;
 <br />
-&nbsp; &nbsp;&#125;
-
+	&#125;
 <br />
 
-
 <br />
-&nbsp; &nbsp;// struktura o naslovu
-
+	// struktura o naslovu
 <br />
 
-
 <br />
-&nbsp; &nbsp;struct sockaddr_in server;
-
+	struct sockaddr_in server;
 <br />
 
-
 <br />
-&nbsp; &nbsp;// napolnimo strukturo z podatki
-
+	// napolnimo strukturo z podatki
 <br />
 
-
 <br />
-&nbsp; &nbsp;server.sin_family = AF_INET;
-
+	server&#46;sin_family = AF_INET;
 <br />
-&nbsp; &nbsp;server.sin_port = htons&#40;port&#41;;
-
+	server&#46;sin_port = htons&#40;port&#41;;
 <br />
-&nbsp; &nbsp;server.sin_addr.s_addr = INADDR_ANY;
-
+	server&#46;sin_addr&#46;s_addr = INADDR_ANY;
 <br />
 
-
 <br />
-&nbsp; &nbsp;// sedaj bindamo socket
-
+	// sedaj bindamo socket
 <br />
 
-
 <br />
-&nbsp; &nbsp;if &#40;bind&#40;mySocket, &#40;sockaddr*&#41;&amp;server, sizeof&#40;server&#41;&#41; == SOCKET_ERROR&#41;
-
+	if &#40;bind&#40;mySocket, &#40;sockaddr*&#41;&amp;server, sizeof&#40;server&#41;&#41; == SOCKET_ERROR&#41;
 <br />
-&nbsp; &nbsp;&#123;
-
+	&#123;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;printf&#40;&quot; Bindanje ni uspelo!\n&quot;&#41;;
-
+		printf&#40;&quot; Bindanje ni uspelo!\n&quot;&#41;;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;closesocket&#40;mySocket&#41;;
-
+		closesocket&#40;mySocket&#41;;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;return -1;
-
+		return -1;
 <br />
-&nbsp; &nbsp;&#125;
-
+	&#125;
 <br />
 
-
 <br />
-&nbsp; &nbsp;// pripravimo socket da cakajo na klic
-
+	// pripravimo socket da cakajo na klic
 <br />
 
-
 <br />
-&nbsp; &nbsp;if &#40;listen&#40;mySocket, 5&#41; == SOCKET_ERROR&#41;
-
+	if &#40;listen&#40;mySocket, 5&#41; == SOCKET_ERROR&#41;
 <br />
-&nbsp; &nbsp;&#123;
-
+	&#123;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;printf&#40;&quot; Cakanje spodletelo!\n&quot;&#41;;
-
+		printf&#40;&quot; Cakanje spodletelo!\n&quot;&#41;;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;closesocket&#40;mySocket&#41;;
-
+		closesocket&#40;mySocket&#41;;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;return -1;
-
+		return -1;
 <br />
-&nbsp; &nbsp;&#125;
-
+	&#125;
 <br />
 
-
 <br />
-&nbsp; &nbsp;printf&#40;&quot; Server zagnan\n&quot;&#41;;
-
+	printf&#40;&quot; Server zagnan\n&quot;&#41;;
 <br />
 
-
 <br />
-&nbsp; &nbsp;return mySocket;
-
+	return mySocket;
 <br />
 &#125;
-
 <br />
-
 
 <br />
 /*--------------------------------------------------------------
-
 <br />
-&nbsp; shutdownServer&#40;&#41; - funkcija za zapret socket in ugasnit povezavo*/
-
+  shutdownServer&#40;&#41; - funkcija za zapret socket in ugasnit povezavo*/
 <br />
-
 
 <br />
 void shutdownServer&#40;int socket&#41;
-
 <br />
-&nbsp; &nbsp;
-
+	
 <br />
 &#123;
-
 <br />
-&nbsp; &nbsp;
-
+	
 <br />
-&nbsp; &nbsp;// zapremo socket
-
+	// zapremo socket
 <br />
-&nbsp; &nbsp;
-
+	
 <br />
-&nbsp; &nbsp;closesocket&#40;socket&#41;;
-
+	closesocket&#40;socket&#41;;
 <br />
 
-
 <br />
-&nbsp; &nbsp;// ugasnemo winsock
-
+	// ugasnemo winsock
 <br />
 
-
 <br />
-&nbsp; &nbsp;WSACleanup&#40;&#41;;
-
+	WSACleanup&#40;&#41;;
 <br />
 
-
 <br />
-&nbsp; &nbsp;printf&#40;&quot; Server izkloplen\n&quot;&#41;;
-
+	printf&#40;&quot; Server izkloplen\n&quot;&#41;;
 <br />
-
 
 <br />
 &#125;
-
 <br />
 </td>
 <br />
@@ -918,15 +724,11 @@ void shutdownServer&#40;int socket&#41;
 </table>
 <br />
 <span class="postbody">
-
 <br />
-
 
 <br />
 <span style="font-weight: bold">Client:</span>
-
 <br />
-
 
 <br />
 </span>
@@ -942,490 +744,328 @@ void shutdownServer&#40;int socket&#41;
 	<tr>
 <br />
 	  <td class="code">
-
 <br />
 // Client z funkcijama send&#40;&#41; &amp; recive&#40;&#41;
-
 <br />
 // startup funkcija se bo konektala na dolocen server in vrnila -1 ce bo kje kaksen error
-
 <br />
-
 
 <br />
 int startupClient&#40;unsigned short port, const char* serverName&#41;;
-
 <br />
-
 
 <br />
 // shutdownClient&#40;&#41; bo zaprla socket in ugasnila winsock
-
 <br />
-
 
 <br />
 void shutdownClient&#40;int clientSocket&#41;;
+<br />
 
 <br />
 
-
 <br />
-
-
+#include &lt;winsock2&#46;h&gt; // winsock za povezavo prek interneta
 <br />
-#include &lt;winsock2.h&gt; // winsock za povezavo prek interneta
-
+#include &lt;stdio&#46;h&gt; // za I/O
 <br />
-#include &lt;stdio.h&gt; // za I/O
-
-<br />
-
 
 <br />
 void main&#40;&#41;
-
 <br />
-
 
 <br />
 &#123;
-
 <br />
-&nbsp; &nbsp;printf&#40;&quot; Toturial o clientu \n &quot;&#41;;
-
+	printf&#40;&quot; Toturial o clientu \n &quot;&#41;;
 <br />
 
-
 <br />
-&nbsp; &nbsp;int mySocket;
-
+	int mySocket;
 <br />
 
-
 <br />
-&nbsp; &nbsp;// zazenemo client in se probamo povezat
-
+	// zazenemo client in se probamo povezat
 <br />
 
-
 <br />
-&nbsp; &nbsp;mySocket = startupClient&#40;7777, &quot;localhost&quot;&#41;;
-
+	mySocket = startupClient&#40;7777, &quot;localhost&quot;&#41;;
 <br />
 
-
 <br />
-&nbsp; &nbsp;if &#40;mySocket == -1&#41;
-
+	if &#40;mySocket == -1&#41;
 <br />
-&nbsp; &nbsp;&#123;
-
+	&#123;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;// naslo je error izklopimo klienta in adio &#58;&#41;
-
+		// naslo je error izklopimo klienta in adio &#58;&#41;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;shutdownClient&#40;mySocket&#41;;
-
+		shutdownClient&#40;mySocket&#41;;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;return;
-
+		return;
 <br />
-&nbsp; &nbsp;&#125;
-
+	&#125;
 <br />
 
-
 <br />
-&nbsp; &nbsp; // naredimo spremenljivko nBytes ta bo dovolila koliko bajtov bo lahko slo do serverja prek enega sporocila
-
+    // naredimo spremenljivko nBytes ta bo dovolila koliko bajtov bo lahko slo do serverja prek enega sporocila
 <br />
 
-
 <br />
-&nbsp; &nbsp;int nBytes;
-
+	int nBytes;
 <br />
 
-
 <br />
-&nbsp; &nbsp;// tu definiramo koliko jih bo slo skozi
-
+	// tu definiramo koliko jih bo slo skozi
 <br />
-
 
 <br />
 #define MESSAGE_SIZE 24
-
 <br />
 
-
 <br />
-&nbsp; &nbsp;// in buffers
-
+	// in buffers
 <br />
 
-
 <br />
-&nbsp; &nbsp;char inMessage&#91;MESSAGE_SIZE&#93;;
-
+	char inMessage&#91;MESSAGE_SIZE&#93;;
 <br />
-&nbsp; &nbsp;char outMessage&#91;MESSAGE_SIZE&#93; = &quot; To send iz client&quot;;
-
+	char outMessage&#91;MESSAGE_SIZE&#93; = &quot; To send iz client&quot;;
 <br />
 
-
 <br />
-&nbsp; &nbsp;// pošljimo sporocilo serveru
-
+	// pošljimo sporocilo serveru
 <br />
 
-
 <br />
-&nbsp; &nbsp;nBytes = send&#40;mySocket, outMessage, sizeof&#40;outMessage&#41;, 0&#41;;
-
+	nBytes = send&#40;mySocket, outMessage, sizeof&#40;outMessage&#41;, 0&#41;;
 <br />
-&nbsp; &nbsp;
-
+	
 <br />
-&nbsp; &nbsp;// preverimo error
-
+	// preverimo error
 <br />
 
-
 <br />
-&nbsp; &nbsp;if &#40;nBytes == SOCKET_ERROR&#41;
-
+	if &#40;nBytes == SOCKET_ERROR&#41;
 <br />
-&nbsp; &nbsp;&#123;
-
+	&#123;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;printf&#40;&quot; Posiljanje spodletelo! \n&quot;&#41;;
-
+		printf&#40;&quot; Posiljanje spodletelo! \n&quot;&#41;;
 <br />
-&nbsp; &nbsp;&#125;
-
+	&#125;
 <br />
-&nbsp; &nbsp;else
-
+	else
 <br />
-&nbsp; &nbsp;&#123;
-
+	&#123;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;// sprinta sporocilo ki ga je poslalo
-
+		// sprinta sporocilo ki ga je poslalo
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;printf&#40;&quot;Sporocilo&#58; %s\n&quot;, outMessage&#41;;
-
+		printf&#40;&quot;Sporocilo&#58; %s\n&quot;, outMessage&#41;;
 <br />
-&nbsp; &nbsp;&#125;
-
+	&#125;
 <br />
 
-
 <br />
-&nbsp; &nbsp;// tu pricakujemo nekaj nazaj od serverja
-
+	// tu pricakujemo nekaj nazaj od serverja
 <br />
 
-
 <br />
-&nbsp; &nbsp;nBytes = recv&#40;mySocket, inMessage, sizeof&#40;inMessage&#41;, 0&#41;;
-
+	nBytes = recv&#40;mySocket, inMessage, sizeof&#40;inMessage&#41;, 0&#41;;
 <br />
-&nbsp; 
-
+  
 <br />
-&nbsp; &nbsp;// preverimo errore
-
+	// preverimo errore
 <br />
 
-
 <br />
-&nbsp; &nbsp;if &#40;nBytes == SOCKET_ERROR&#41;
-
+	if &#40;nBytes == SOCKET_ERROR&#41;
 <br />
-&nbsp; &nbsp;&#123;
-
+	&#123;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;printf&#40;&quot; Sprejemanje spodletelo!\n&quot;&#41;;
-
+		printf&#40;&quot; Sprejemanje spodletelo!\n&quot;&#41;;
 <br />
-&nbsp; &nbsp;&#125;
-
+	&#125;
 <br />
-&nbsp; &nbsp;else
-
+	else
 <br />
-&nbsp; &nbsp;&#123;
-
+	&#123;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;printf&#40;&quot;Sporocilo dostavljeno&#58; %s\n&quot;, inMessage&#41;;
-
+		printf&#40;&quot;Sporocilo dostavljeno&#58; %s\n&quot;, inMessage&#41;;
 <br />
-&nbsp; &nbsp;&#125;
-
+	&#125;
 <br />
 
-
 <br />
-&nbsp; &nbsp;// zaprimo clienta
-
+	// zaprimo clienta
 <br />
-&nbsp; &nbsp;shutdownClient&#40;mySocket&#41;;
-
+	shutdownClient&#40;mySocket&#41;;
 <br />
 
-
 <br />
-&nbsp; &nbsp;printf&#40;&quot; Stisni tipko za nadaljevanje\n&quot;&#41;;
-
+	printf&#40;&quot; Stisni tipko za nadaljevanje\n&quot;&#41;;
 <br />
 
-
 <br />
-&nbsp; &nbsp;getchar&#40;&#41;;
-
+	getchar&#40;&#41;;
 <br />
 &#125;
-
 <br />
-
 
 <br />
 // startupClient&#40;&#41; - funkcija za prizgat socket in conektat se na server
-
 <br />
-
 
 <br />
 int startupClient&#40;unsigned short port, const char* serverName&#41;
-
 <br />
 &#123;
-
 <br />
-&nbsp; &nbsp;// spremenljivka za informacije o errorih
-
+	// spremenljivka za informacije o errorih
 <br />
 
-
 <br />
-&nbsp; &nbsp;int error;
-
+	int error;
 <br />
 
-
 <br />
-&nbsp; &nbsp;// winsock struktura tu shranimo informacije
-
+	// winsock struktura tu shranimo informacije
 <br />
 
-
 <br />
-&nbsp; &nbsp;WSAData wsaData;
-
+	WSAData wsaData;
 <br />
 
-
 <br />
-&nbsp; &nbsp;// zazenemo winsock
-
+	// zazenemo winsock
 <br />
 
-
 <br />
-&nbsp; &nbsp;if &#40;&#40;error = WSAStartup&#40;MAKEWORD&#40;2, 2&#41;, &amp;wsaData&#41;&#41; == SOCKET_ERROR&#41;
-
+	if &#40;&#40;error = WSAStartup&#40;MAKEWORD&#40;2, 2&#41;, &amp;wsaData&#41;&#41; == SOCKET_ERROR&#41;
 <br />
-&nbsp; &nbsp;&#123;
-
+	&#123;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;printf&#40;&quot; Ne morem zagnati winsock!\n&quot;&#41;;
-
+		printf&#40;&quot; Ne morem zagnati winsock!\n&quot;&#41;;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp; return -1;
-
+	    return -1;
 <br />
-&nbsp; &nbsp;&#125;
-
+	&#125;
 <br />
 
-
 <br />
-&nbsp; &nbsp;// naredimo socket
-
+	// naredimo socket
 <br />
 
-
 <br />
-&nbsp; &nbsp;int mySocket = socket&#40;AF_INET, SOCK_STREAM, 0&#41;;
-
+	int mySocket = socket&#40;AF_INET, SOCK_STREAM, 0&#41;;
 <br />
 
-
 <br />
-&nbsp; &nbsp;// preverimo da ni kaj narobe
-
+	// preverimo da ni kaj narobe
 <br />
 
-
 <br />
-&nbsp; &nbsp;if &#40;mySocket == SOCKET_ERROR&#41;
-
+	if &#40;mySocket == SOCKET_ERROR&#41;
 <br />
-&nbsp; &nbsp;&#123;
-
+	&#123;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;printf&#40;&quot; Pri odpriranju socket nastal error!\n&quot;&#41;;
-
+		printf&#40;&quot; Pri odpriranju socket nastal error!\n&quot;&#41;;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;return -1;
-
+		return -1;
 <br />
-&nbsp; &nbsp;&#125;
-
+	&#125;
 <br />
 
-
 <br />
-&nbsp; &nbsp;struct hostent *host_entry;
-
+	struct hostent *host_entry;
 <br />
-&nbsp; &nbsp;
-
+	
 <br />
-&nbsp; &nbsp;// struktura z hostom in preverimo ce je server zagnan ali je sploh na internetu
-
+	// struktura z hostom in preverimo ce je server zagnan ali je sploh na internetu
 <br />
 
-
 <br />
-&nbsp; &nbsp;if &#40;&#40;host_entry = gethostbyname&#40;serverName&#41;&#41; == NULL&#41;
-
+	if &#40;&#40;host_entry = gethostbyname&#40;serverName&#41;&#41; == NULL&#41;
 <br />
-&nbsp; &nbsp;&#123;
-
+	&#123;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;printf&#40;&quot; Ne najdem serverja ali racunalnik ni povezan na internet!\n&quot;&#41;;
-
+		printf&#40;&quot; Ne najdem serverja ali racunalnik ni povezan na internet!\n&quot;&#41;;
 <br />
-&nbsp; &nbsp;&#125;
-
+	&#125;
 <br />
 
-
 <br />
-&nbsp; &nbsp;// strukrtura server informacij
-
+	// strukrtura server informacij
 <br />
 
-
 <br />
-&nbsp; &nbsp;struct sockaddr_in server;
-
+	struct sockaddr_in server;
 <br />
 
-
 <br />
-&nbsp; &nbsp;// napolnimo socket server informacije
-
+	// napolnimo socket server informacije
 <br />
 
-
 <br />
-&nbsp; &nbsp;server.sin_family = AF_INET;
-
+	server&#46;sin_family = AF_INET;
 <br />
-&nbsp; &nbsp;server.sin_port = htons&#40;port&#41;;
-
+	server&#46;sin_port = htons&#40;port&#41;;
 <br />
-&nbsp; &nbsp;server.sin_addr.s_addr = *&#40;unsigned long*&#41; host_entry-&gt;h_addr;
-
+	server&#46;sin_addr&#46;s_addr = *&#40;unsigned long*&#41; host_entry-&gt;h_addr;
 <br />
 
-
 <br />
-&nbsp; &nbsp;// se povezemo na server
-
+	// se povezemo na server
 <br />
 
-
 <br />
-&nbsp; &nbsp;if &#40;connect&#40;mySocket, &#40;sockaddr*&#41;&amp;server, sizeof&#40;server&#41;&#41; == SOCKET_ERROR&#41;
-
+	if &#40;connect&#40;mySocket, &#40;sockaddr*&#41;&amp;server, sizeof&#40;server&#41;&#41; == SOCKET_ERROR&#41;
 <br />
-&nbsp; &nbsp;&#123;
-
+	&#123;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;printf&#40;&quot; Ne da se povezati na server!\n&quot;&#41;;
-
+		printf&#40;&quot; Ne da se povezati na server!\n&quot;&#41;;
 <br />
-&nbsp; &nbsp;&#125;
-
+	&#125;
 <br />
 
-
 <br />
-&nbsp; &nbsp;printf&#40;&quot; Client Prizgan Uspelo se konektat\n&quot;&#41;;
-
+	printf&#40;&quot; Client Prizgan Uspelo se konektat\n&quot;&#41;;
 <br />
 
-
 <br />
-&nbsp; &nbsp;return mySocket;
-
+	return mySocket;
 <br />
 &#125;
-
 <br />
-
 
 <br />
 // shutdownClient&#40;&#41; - funkcija za ugasnit socket in izklopiti winsock
-
 <br />
-
 
 <br />
 void shutdownClient&#40;int clientSocket&#41;
-
 <br />
-
 
 <br />
 &#123;
-
 <br />
-&nbsp; &nbsp;// zapremo socket
-
+	// zapremo socket
 <br />
-&nbsp; &nbsp;
-
+	
 <br />
-&nbsp; &nbsp;closesocket&#40;clientSocket&#41;;
-
+	closesocket&#40;clientSocket&#41;;
 <br />
 
-
 <br />
-&nbsp; &nbsp;// ugasnemo winsock
-
+	// ugasnemo winsock
 <br />
 
-
 <br />
-&nbsp; &nbsp;WSACleanup&#40;&#41;;
-
+	WSACleanup&#40;&#41;;
 <br />
 
-
 <br />
-&nbsp; &nbsp;printf&#40;&quot; Client Ugasnjen \n&quot;&#41;;
-
+	printf&#40;&quot; Client Ugasnjen \n&quot;&#41;;
 <br />
 &#125;
-
 <br />
 </td>
 <br />
@@ -1439,7 +1079,7 @@ void shutdownClient&#40;int clientSocket&#41;
 
 
 <br />
-Mogoce bo komu kaj pomagalo, mogoce ne jas kuj dobre volje  <img src="images/smiles/icon_smile.gif" alt="icon_smile.gif" border="0" /></span><span class="gensmall"></span></td>
+Mogoce bo komu kaj pomagalo, mogoce ne jas kuj dobre volje  <img src="images/smiles/icon_smile.gif" alt=":)" border="0" /></span><span class="gensmall"></span></td>
 			</tr>
 		</table></td>
 	</tr>
@@ -1456,7 +1096,7 @@ Mogoce bo komu kaj pomagalo, mogoce ne jas kuj dobre volje  <img src="images/smi
 	</tr>
 	
 	<tr>
-		<td width="150" align="left" valign="top" class="row2"><span class="name"><a name="6842"></a><b>Napsy</b></span><br /><span class="postdetails">inštruktor<br /><img src="images/ranks/sgd-4.gif" alt="inštruktor" title="inštruktor" border="0" /><br /><br /><br />Pridružen: 09. jan 2003 ob 22:37<br />objav: 306<br />Kraj: Letuš</span><br /></td>
+		<td width="150" align="left" valign="top" class="row2"><span class="name"><a name="6842"></a><b>Napsy</b></span><br /><span class="postdetails">inštruktor<br /><img src="images/ranks/sgd-4.gif" alt="inštruktor" title="inštruktor" border="0" /><br /><br /><br />Pridružen: 09. jan 2003 ob 22:37<br />objav: 258<br />Kraj: Letuš</span><br /></td>
 		<td class="row2" width="100%" height="28" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
 			<tr>
 				<td colspan="2" width="100%">
@@ -1482,7 +1122,7 @@ Mogoce bo komu kaj pomagalo, mogoce ne jas kuj dobre volje  <img src="images/smi
 
 
 <br />
-Vsaj jaz nisem nikjer opazil select()<br />_________________<br /><a  target="_blank">http://luka-napotnik.net</a></span><span class="gensmall"></span></td>
+Vsaj jaz nisem nikjer opazil select()<br />_________________<br /><a class="postlink" >http://luka-napotnik.net</a></span><span class="gensmall"></span></td>
 			</tr>
 		</table></td>
 	</tr>
@@ -1507,7 +1147,7 @@ Vsaj jaz nisem nikjer opazil select()<br />_________________<br /><a  target="_b
   <tr>
 	<td align="left" valign="middle" nowrap="nowrap">&nbsp;</td>
 	<td align="left" valign="middle" width="100%"><span class="nav">&nbsp;&nbsp;&nbsp;<a href="index.html" class="nav">SloGameDev.net seznam forumov</a>
-	  -> <a href="forum-1.html" class="nav">Splošno Programiranje</a></span></td>
+	  -> <a href="forum-52.html" class="nav">Izdelovanje iger</a></span></td>
 	<td align="right" valign="top" nowrap="nowrap"><span class="gensmall">Časovni pas (GMT +2:00 uri) Slovenija, poletni čas</span><br /><span class="nav"></span>
 	  </td>
   </tr>
@@ -1523,7 +1163,7 @@ Vsaj jaz nisem nikjer opazil select()<br />_________________<br /><a  target="_b
   </tr>
 </table>
 
-<div align="center"><span class="copyright"><br />Arhiv stanja na dan 13. 2. 2006 &mdash; samo za branje.<br />
+<div align="center"><span class="copyright"><br />Arhiv &mdash; samo za branje.<br />
 <!--
 	We request you retain the full copyright notice below including the link to www.phpbb.com.
 	This not only gives respect to the large amount of time given freely by the developers

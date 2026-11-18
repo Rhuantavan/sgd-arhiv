@@ -276,13 +276,13 @@ input.liteoption {
   <tr>
 	<td align="left" valign="bottom" nowrap="nowrap">&nbsp;</td>
 	<td align="left" valign="middle" width="100%"><span class="nav">&nbsp;&nbsp;&nbsp;<a href="index.html" class="nav">SloGameDev.net seznam forumov</a>
-	  -> <a href="forum-1.html" class="nav">Splošno Programiranje</a></span></td>
+	  -> <a href="forum-52.html" class="nav">Izdelovanje iger</a></span></td>
   </tr>
 </table>
 
 <table class="forumline" width="100%" cellspacing="1" cellpadding="3" border="0">
 	<tr align="right">
-		<td class="catHead" colspan="2" height="28"><span class="nav"><a href="topic-932.html" class="nav">Prejšnja tema</a> :: <a href="topic-942.html" class="nav">Naslednja tema</a> &nbsp;</span></td>
+		<td class="catHead" colspan="2" height="28"><span class="nav"><a href="topic-686.html" class="nav">Prejšnja tema</a> :: <a href="topic-941.html" class="nav">Naslednja tema</a> &nbsp;</span></td>
 	</tr>
 	
 	<tr>
@@ -291,7 +291,7 @@ input.liteoption {
 	</tr>
 	
 	<tr>
-		<td width="150" align="left" valign="top" class="row1"><span class="name"><a name="10698"></a><b>kosov</b></span><br /><span class="postdetails">novinec<br /><img src="images/ranks/sgd-0.gif" alt="novinec" title="novinec" border="0" /><br /><br /><br />Pridružen: 23. jul 2003 ob 06:46<br />objav: 21<br /></span><br /></td>
+		<td width="150" align="left" valign="top" class="row1"><span class="name"><a name="10698"></a><b>kosov</b></span><br /><span class="postdetails">novinec<br /><img src="images/ranks/sgd-0.gif" alt="novinec" title="novinec" border="0" /><br /><br /><br />Pridružen: 23. jul 2003 ob 06:46<br />objav: 22<br /></span><br /></td>
 		<td class="row1" width="100%" height="28" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
 			<tr>
 				<td colspan="2" width="100%">
@@ -342,151 +342,102 @@ rad preračunaval več številskih tipov(int, double, long...) sem uporabil temp
 	<tr>
 <br />
 	  <td class="code">// TarSumaryStat
-
 <br />
 template&lt;class T&gt;
-
 <br />
 class TarSummaryStat &#123;
-
 <br />
-&nbsp; &nbsp; private&#58;
-
+    private&#58;
 <br />
-&nbsp; &nbsp; &nbsp; &nbsp; size_t FNum; // Število elementov
-
+        size_t FNum; // Število elementov
 <br />
-&nbsp; &nbsp; &nbsp; &nbsp; T FSum;&nbsp; &nbsp; &nbsp; // Vsota elementov
-
+        T FSum;      // Vsota elementov
 <br />
-&nbsp; &nbsp; &nbsp; &nbsp; T FMin;&nbsp; &nbsp; &nbsp; // Najmanjši element&nbsp;  
-
+        T FMin;      // Najmanjši element   
 <br />
-&nbsp; &nbsp; &nbsp; &nbsp; T FMax;&nbsp; &nbsp; &nbsp; // Največji element
-
+        T FMax;      // Največji element
 <br />
-&nbsp; &nbsp; public&#58;
-
+    public&#58;
 <br />
-&nbsp; &nbsp; &nbsp; &nbsp; TarSummaryStat&#40;&#41; &#58; FNum&#40;0&#41;, 
-
+        TarSummaryStat&#40;&#41; &#58; FNum&#40;0&#41;, 
 <br />
-&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  FSum&#40;0&#41;,
-
+                           FSum&#40;0&#41;,
 <br />
-&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  FMin&#40;0&#41;,
-
+                           FMin&#40;0&#41;,
 <br />
-&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  FMax&#40;0&#41; &#123;&#125;;&nbsp; &nbsp; // Ctor
-
+                           FMax&#40;0&#41; &#123;&#125;;    // Ctor
 <br />
-&nbsp; &nbsp; &nbsp; &nbsp; 
-
+        
 <br />
-&nbsp; &nbsp; &nbsp; &nbsp; // &quot;function call&quot;
-
+        // &quot;function call&quot;
 <br />
-&nbsp; &nbsp; &nbsp; &nbsp; // process one more element of the sequence
-
+        // process one more element of the sequence
 <br />
-&nbsp; &nbsp; &nbsp; &nbsp; void operator&#40;&#41; &#40;T elem&#41; 
-
+        void operator&#40;&#41; &#40;T elem&#41; 
 <br />
-&nbsp; &nbsp; &nbsp; &nbsp; &#123;
-
+        &#123;
 <br />
-&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; FNum++;&nbsp; &nbsp; &nbsp; &nbsp;  // inkrementalno štetje elementov
-
+            FNum++;         // inkrementalno štetje elementov
 <br />
-&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; FSum += elem;&nbsp;  //add value
-
+            FSum += elem;   //add value
 <br />
-&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 
-
+            
 <br />
-&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; // Initialization of FMin and FMax with first element
-
+            // Initialization of FMin and FMax with first element
 <br />
-&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; if &#40;FNum == 1&#41; 
-
+            if &#40;FNum == 1&#41; 
 <br />
-&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &#123; 
-
+            &#123; 
 <br />
-&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; FMin = elem;
-
+                FMin = elem;
 <br />
-&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; FMax = elem;
-
+                FMax = elem;
 <br />
-&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &#125;;
-
+            &#125;;
 <br />
-&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 
-
+            
 <br />
-&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; if &#40;elem &lt; FMin&#41; &#123; FMin = elem; &#125;
-
+            if &#40;elem &lt; FMin&#41; &#123; FMin = elem; &#125;
 <br />
-&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; if &#40;elem &gt; FMax&#41; &#123; FMax = elem; &#125;
-
+            if &#40;elem &gt; FMax&#41; &#123; FMax = elem; &#125;
 <br />
-&nbsp; &nbsp; &nbsp; &nbsp; &#125;;
-
+        &#125;;
 <br />
-&nbsp; &nbsp; &nbsp; &nbsp; 
-
+        
 <br />
-&nbsp; &nbsp; &nbsp; &nbsp; // return number of elements
-
+        // return number of elements
 <br />
-&nbsp; &nbsp; &nbsp; &nbsp; size_t count&#40;&#41; &#123; return FNum; &#125;;
-
+        size_t count&#40;&#41; &#123; return FNum; &#125;;
 <br />
-&nbsp; &nbsp; &nbsp; &nbsp; 
-
+        
 <br />
-&nbsp; &nbsp; &nbsp; &nbsp; // return averege of values
-
+        // return averege of values
 <br />
-&nbsp; &nbsp; &nbsp; &nbsp; T average&#40;&#41; &#123; return arsavedivide&#40;FSum, FNum&#41;; &#125;;&nbsp; &nbsp;  
-
+        T average&#40;&#41; &#123; return arsavedivide&#40;FSum, FNum&#41;; &#125;;     
 <br />
-&nbsp; &nbsp; &nbsp; &nbsp; 
-
+        
 <br />
-&nbsp; &nbsp; &nbsp; &nbsp; // return sum of values
-
+        // return sum of values
 <br />
-&nbsp; &nbsp; &nbsp; &nbsp; T sum&#40;&#41; &#123; return FSum; &#125;;&nbsp;  
-
+        T sum&#40;&#41; &#123; return FSum; &#125;;   
 <br />
-&nbsp; &nbsp; &nbsp; &nbsp; 
-
+        
 <br />
-&nbsp; &nbsp; &nbsp; &nbsp; // return&nbsp; min of values
-
+        // return  min of values
 <br />
-&nbsp; &nbsp; &nbsp; &nbsp; T min&#40;&#41; &#123; return FMin; &#125;;
-
+        T min&#40;&#41; &#123; return FMin; &#125;;
 <br />
-&nbsp; &nbsp; &nbsp; &nbsp; 
-
+        
 <br />
-&nbsp; &nbsp; &nbsp; &nbsp; // return&nbsp; max of values
-
+        // return  max of values
 <br />
-&nbsp; &nbsp; &nbsp; &nbsp; T max&#40;&#41; &#123; return FMax; &#125;;
-
+        T max&#40;&#41; &#123; return FMax; &#125;;
 <br />
-&nbsp; &nbsp; &nbsp; &nbsp; 
-
+        
 <br />
-&nbsp; &nbsp; &nbsp; &nbsp; // return range of values
-
+        // return range of values
 <br />
-&nbsp; &nbsp; &nbsp; &nbsp; T range&#40;&#41; &#123; return FMax - FMin; &#125;
-
+        T range&#40;&#41; &#123; return FMax - FMin; &#125;
 <br />
 &#125;;</td>
 <br />
@@ -495,15 +446,11 @@ class TarSummaryStat &#123;
 </table>
 <br />
 <span class="postbody">
-
 <br />
-
 
 <br />
 Za izračun povprečja, uporabljam funkcijo arsavedivide, ki je tudi narejena s pomočjo templateov.
-
 <br />
-
 
 <br />
 </span>
@@ -519,22 +466,16 @@ Za izračun povprečja, uporabljam funkcijo arsavedivide, ki je tudi narejena s 
 	<tr>
 <br />
 	  <td class="code">// arsavedivide &#40;Preprečuje deljenje z 0&#41;
-
 <br />
 template&lt;class T&gt;
-
 <br />
 inline T arsavedivide&#40;T first, T second&#41;
-
 <br />
 &#123;
-
 <br />
-&nbsp; &nbsp; return &#40; second != 0 ? &#40;first / second&#41; &#58; 0 &#41;;
-
+    return &#40; second != 0 ? &#40;first / second&#41; &#58; 0 &#41;;
 <br />
 &#125;
-
 <br />
 </td>
 <br />
@@ -543,15 +484,11 @@ inline T arsavedivide&#40;T first, T second&#41;
 </table>
 <br />
 <span class="postbody">
-
 <br />
-
 
 <br />
 Ta objekt pa potem uporabim na slednji način recimo za vrednosti tipa double:
-
 <br />
-
 
 <br />
 </span>
@@ -567,82 +504,56 @@ Ta objekt pa potem uporabim na slednji način recimo za vrednosti tipa double:
 	<tr>
 <br />
 	  <td class="code">#include &lt;iostream&gt;
-
 <br />
-#include &lt;stdlib.h&gt;
-
+#include &lt;stdlib&#46;h&gt;
 <br />
 #include &lt;vector&gt;
-
 <br />
 #include &lt;algorithm&gt;
-
 <br />
 using namespace std;
-
 <br />
-
 
 <br />
 int main&#40;int argc, char *argv&#91;&#93;&#41;
-
 <br />
 &#123;
-
 <br />
-&nbsp; vector&lt;double&gt; values;
-
+  vector&lt;double&gt; values;
 <br />
-&nbsp; 
-
+  
 <br />
-&nbsp; for &#40;int i = 0; i &lt; 7; i++&#41;
-
+  for &#40;int i = 0; i &lt; 7; i++&#41;
 <br />
-&nbsp; &#123;
-
+  &#123;
 <br />
-&nbsp; &nbsp; values.push_back&#40;i&#41;;
-
+    values&#46;push_back&#40;i&#41;;
 <br />
-&nbsp; &#125;
-
+  &#125;
 <br />
-&nbsp; 
-
+  
 <br />
-&nbsp; TarSummaryStat&lt;double&gt; st = for_each&#40; values.begin&#40;&#41;, values.end&#40;&#41;, TarSummaryStat&lt;double&gt;&#40;&#41; &#41;;&nbsp; 
-
+  TarSummaryStat&lt;double&gt; st = for_each&#40; values&#46;begin&#40;&#41;, values&#46;end&#40;&#41;, TarSummaryStat&lt;double&gt;&#40;&#41; &#41;;  
 <br />
 
-
 <br />
-&nbsp; cout &lt;&lt; &quot;count&#58; &quot; &lt;&lt; st.count&#40;&#41; &lt;&lt; endl;
-
+  cout &lt;&lt; &quot;count&#58; &quot; &lt;&lt; st&#46;count&#40;&#41; &lt;&lt; endl;
 <br />
-&nbsp; cout &lt;&lt; &quot;sum&#58; &quot; &lt;&lt; st.sum&#40;&#41; &lt;&lt; endl;
-
+  cout &lt;&lt; &quot;sum&#58; &quot; &lt;&lt; st&#46;sum&#40;&#41; &lt;&lt; endl;
 <br />
-&nbsp; cout &lt;&lt; &quot;average&#58; &quot; &lt;&lt; st.average&#40;&#41; &lt;&lt; endl;
-
+  cout &lt;&lt; &quot;average&#58; &quot; &lt;&lt; st&#46;average&#40;&#41; &lt;&lt; endl;
 <br />
-&nbsp; cout &lt;&lt; &quot;min&#58; &quot; &lt;&lt; st.min&#40;&#41; &lt;&lt; endl;
-
+  cout &lt;&lt; &quot;min&#58; &quot; &lt;&lt; st&#46;min&#40;&#41; &lt;&lt; endl;
 <br />
-&nbsp; cout &lt;&lt; &quot;max&#58; &quot; &lt;&lt; st.max&#40;&#41; &lt;&lt; endl;
-
+  cout &lt;&lt; &quot;max&#58; &quot; &lt;&lt; st&#46;max&#40;&#41; &lt;&lt; endl;
 <br />
-&nbsp; cout &lt;&lt; &quot;range&#58; &quot; &lt;&lt; st.range&#40;&#41; &lt;&lt; endl;
-
+  cout &lt;&lt; &quot;range&#58; &quot; &lt;&lt; st&#46;range&#40;&#41; &lt;&lt; endl;
 <br />
-&nbsp; 
-
+  
 <br />
-&nbsp; system&#40;&quot;PAUSE&quot;&#41;;&nbsp; &nbsp;
-
+  system&#40;&quot;PAUSE&quot;&#41;;	
 <br />
-&nbsp; return 0;
-
+  return 0;
 <br />
 &#125;</td>
 <br />
@@ -688,7 +599,7 @@ Hvala</span><span class="gensmall"></span></td>
 	</tr>
 	
 	<tr>
-		<td width="150" align="left" valign="top" class="row2"><span class="name"><a name="10699"></a><b>Shinobi</b></span><br /><span class="postdetails">inštruktor<br /><img src="images/ranks/sgd-4.gif" alt="inštruktor" title="inštruktor" border="0" /><br /><img src="images/avatars/d5fd66913fcf278e24a0c.gif" alt="" border="0" /><br /><br />Pridružen: 15. maj 2003 ob 18:04<br />objav: 257<br />Kraj: Maribor</span><br /></td>
+		<td width="150" align="left" valign="top" class="row2"><span class="name"><a name="10699"></a><b>Shinobi</b></span><br /><span class="postdetails">mojster<br /><img src="images/ranks/sgd-5.gif" alt="mojster" title="mojster" border="0" /><br /><img src="images/avatars/d5fd66913fcf278e24a0c.gif" alt="" border="0" /><br /><br />Pridružen: 15. maj 2003 ob 18:04<br />objav: 491<br />Kraj: Maribor</span><br /></td>
 		<td class="row2" width="100%" height="28" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
 			<tr>
 				<td colspan="2" width="100%">
@@ -761,7 +672,7 @@ osebe.push_back( new oseba() );</span><span class="gensmall"></span></td>
 	</tr>
 	
 	<tr>
-		<td width="150" align="left" valign="top" class="row1"><span class="name"><a name="10702"></a><b>kosov</b></span><br /><span class="postdetails">novinec<br /><img src="images/ranks/sgd-0.gif" alt="novinec" title="novinec" border="0" /><br /><br /><br />Pridružen: 23. jul 2003 ob 06:46<br />objav: 21<br /></span><br /></td>
+		<td width="150" align="left" valign="top" class="row1"><span class="name"><a name="10702"></a><b>kosov</b></span><br /><span class="postdetails">novinec<br /><img src="images/ranks/sgd-0.gif" alt="novinec" title="novinec" border="0" /><br /><br /><br />Pridružen: 23. jul 2003 ob 06:46<br />objav: 22<br /></span><br /></td>
 		<td class="row1" width="100%" height="28" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
 			<tr>
 				<td colspan="2" width="100%">
@@ -877,7 +788,7 @@ Drugače pa nisem globje analiziral kaj želiš doseči s kodo ...</span><span c
 	</tr>
 	
 	<tr>
-		<td width="150" align="left" valign="top" class="row1"><span class="name"><a name="10727"></a><b>kosov</b></span><br /><span class="postdetails">novinec<br /><img src="images/ranks/sgd-0.gif" alt="novinec" title="novinec" border="0" /><br /><br /><br />Pridružen: 23. jul 2003 ob 06:46<br />objav: 21<br /></span><br /></td>
+		<td width="150" align="left" valign="top" class="row1"><span class="name"><a name="10727"></a><b>kosov</b></span><br /><span class="postdetails">novinec<br /><img src="images/ranks/sgd-0.gif" alt="novinec" title="novinec" border="0" /><br /><br /><br />Pridružen: 23. jul 2003 ob 06:46<br />objav: 22<br /></span><br /></td>
 		<td class="row1" width="100%" height="28" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
 			<tr>
 				<td colspan="2" width="100%">
@@ -922,7 +833,7 @@ Drugače pa nisem globje analiziral kaj želiš doseči s kodo ...</span><span c
   <tr>
 	<td align="left" valign="middle" nowrap="nowrap">&nbsp;</td>
 	<td align="left" valign="middle" width="100%"><span class="nav">&nbsp;&nbsp;&nbsp;<a href="index.html" class="nav">SloGameDev.net seznam forumov</a>
-	  -> <a href="forum-1.html" class="nav">Splošno Programiranje</a></span></td>
+	  -> <a href="forum-52.html" class="nav">Izdelovanje iger</a></span></td>
 	<td align="right" valign="top" nowrap="nowrap"><span class="gensmall">Časovni pas (GMT +2:00 uri) Slovenija, poletni čas</span><br /><span class="nav"></span>
 	  </td>
   </tr>
@@ -938,7 +849,7 @@ Drugače pa nisem globje analiziral kaj želiš doseči s kodo ...</span><span c
   </tr>
 </table>
 
-<div align="center"><span class="copyright"><br />Arhiv stanja na dan 13. 2. 2006 &mdash; samo za branje.<br />
+<div align="center"><span class="copyright"><br />Arhiv &mdash; samo za branje.<br />
 <!--
 	We request you retain the full copyright notice below including the link to www.phpbb.com.
 	This not only gives respect to the large amount of time given freely by the developers

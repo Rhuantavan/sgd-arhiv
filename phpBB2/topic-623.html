@@ -276,13 +276,13 @@ input.liteoption {
   <tr>
 	<td align="left" valign="bottom" nowrap="nowrap">&nbsp;</td>
 	<td align="left" valign="middle" width="100%"><span class="nav">&nbsp;&nbsp;&nbsp;<a href="index.html" class="nav">SloGameDev.net seznam forumov</a>
-	  -> <a href="forum-1.html" class="nav">Splošno Programiranje</a></span></td>
+	  -> <a href="forum-52.html" class="nav">Izdelovanje iger</a></span></td>
   </tr>
 </table>
 
 <table class="forumline" width="100%" cellspacing="1" cellpadding="3" border="0">
 	<tr align="right">
-		<td class="catHead" colspan="2" height="28"><span class="nav"><a href="topic-622.html" class="nav">Prejšnja tema</a> :: <a href="topic-674.html" class="nav">Naslednja tema</a> &nbsp;</span></td>
+		<td class="catHead" colspan="2" height="28"><span class="nav"><a href="topic-622.html" class="nav">Prejšnja tema</a> :: <a href="topic-626.html" class="nav">Naslednja tema</a> &nbsp;</span></td>
 	</tr>
 	
 	<tr>
@@ -291,7 +291,7 @@ input.liteoption {
 	</tr>
 	
 	<tr>
-		<td width="150" align="left" valign="top" class="row1"><span class="name"><a name="7052"></a><b>kosov</b></span><br /><span class="postdetails">novinec<br /><img src="images/ranks/sgd-0.gif" alt="novinec" title="novinec" border="0" /><br /><br /><br />Pridružen: 23. jul 2003 ob 06:46<br />objav: 21<br /></span><br /></td>
+		<td width="150" align="left" valign="top" class="row1"><span class="name"><a name="7052"></a><b>kosov</b></span><br /><span class="postdetails">novinec<br /><img src="images/ranks/sgd-0.gif" alt="novinec" title="novinec" border="0" /><br /><br /><br />Pridružen: 23. jul 2003 ob 06:46<br />objav: 22<br /></span><br /></td>
 		<td class="row1" width="100%" height="28" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
 			<tr>
 				<td colspan="2" width="100%">
@@ -351,21 +351,15 @@ Imam npr. strukturo
 	<tr>
 <br />
 	  <td class="code"> 
-
 <br />
 struct coord &#123;
-
 <br />
-&nbsp; &nbsp; int x;
-
+    int x;
 <br />
-&nbsp; &nbsp; int y;
-
+    int y;
 <br />
 &#125;
-
 <br />
-
 
 <br />
 </td>
@@ -375,15 +369,11 @@ struct coord &#123;
 </table>
 <br />
 <span class="postbody"> 
-
 <br />
-
 
 <br />
 In naredim list of coord
-
 <br />
-
 
 <br />
 </span>
@@ -399,10 +389,8 @@ In naredim list of coord
 	<tr>
 <br />
 	  <td class="code">
-
 <br />
 std&#58;&#58;list&lt; coord &gt; koordinate;
-
 <br />
 </td>
 <br />
@@ -411,18 +399,13 @@ std&#58;&#58;list&lt; coord &gt; koordinate;
 </table>
 <br />
 <span class="postbody">
-
 <br />
-
 
 <br />
 Sedaj pa naredil funkcijo recimo ki bi recimo preverila, 
-
 <br />
 ali je v list-u že kakšen element s temi koordinatami ali ne;
-
 <br />
-
 
 <br />
 </span>
@@ -438,55 +421,38 @@ ali je v list-u že kakšen element s temi koordinatami ali ne;
 	<tr>
 <br />
 	  <td class="code">
-
 <br />
 bool ifCoordExist&#40;int ax, int ay&#41;
-
 <br />
 &#123;
-
 <br />
-&nbsp; &nbsp; std&#58;&#58;list&lt; coord &gt;&#58;&#58;iterator iter;
-
+    std&#58;&#58;list&lt; coord &gt;&#58;&#58;iterator iter;
 <br />
 
-
 <br />
-&nbsp; &nbsp; if &#40;koordinate.size&#40;&#41; &gt; 0&#41;
-
+    if &#40;koordinate&#46;size&#40;&#41; &gt; 0&#41;
 <br />
-&nbsp; &nbsp; &#123;
-
+    &#123;
 <br />
-&nbsp; &nbsp; &nbsp; &nbsp;  for &#40;iter = koordinate.begin&#40;&#41;; iter != koorinate.end&#40;&#41;; iter++&#41;
-
+         for &#40;iter = koordinate&#46;begin&#40;&#41;; iter != koorinate&#46;end&#40;&#41;; iter++&#41;
 <br />
-&nbsp; &nbsp;&#123;
-
+	&#123;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;if &#40; &#40; &#40;*iter&#41;.x == ax &#41; &amp;&amp; &#40; &#40;*iter&#41;.y == ay &#41; &#41;
-
+		if &#40; &#40; &#40;*iter&#41;&#46;x == ax &#41; &amp;&amp; &#40; &#40;*iter&#41;&#46;y == ay &#41; &#41;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;return true;
-
+			return true;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;else
-
+		else
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;return false;
-
+			return false;
 <br />
-&nbsp; &nbsp;&#125;
-
+	&#125;
 <br />
-&nbsp; &nbsp;  &#125; 
-
+     &#125; 
 <br />
-&nbsp; &nbsp;  else return false;
-
+     else return false;
 <br />
 &#125;
-
 <br />
 </td>
 <br />
@@ -495,36 +461,25 @@ bool ifCoordExist&#40;int ax, int ay&#41;
 </table>
 <br />
 <span class="postbody">
-
 <br />
-
 
 <br />
 Z mojim (ne)znanjem STL-ja in s pomočjo logike iz Delphija sem
-
 <br />
 napisal zgornjo funkcijo, ki je sicer zelo nerodna in bi rabil pomoč, kako
-
 <br />
 bi tole funkcijo napisal na bolj eleganten način. Probaval sem z algoritmom find vendar pa imam težave (zaradi struct).
-
 <br />
-
 
 <br />
 Recimo, če bi imel list &lt;int&gt; bi znal narediti (pogledal sem si spodnji primer ), vendar pa moram jaz iskati v strukturi (struct coord)  po 
-
 <br />
 lastnostih x in y. Zato bi vas prosil, če mi pomagate rešiti funkcijo na bolj eleganten način ( Skoraj sme prepričan da s pomočjo algoritma find ).
-
 <br />
-
 
 <br />
 Hvala za odgovore
-
 <br />
-
 
 <br />
 </span>
@@ -540,84 +495,57 @@ Hvala za odgovore
 	<tr>
 <br />
 	  <td class="code">
-
 <br />
-#include &lt;vector&gt;&nbsp; // vector class library
-
+#include &lt;vector&gt;  // vector class library
 <br />
-#include &lt;list&gt;&nbsp; &nbsp;&nbsp;  // list class library
-
+#include &lt;list&gt;	   // list class library
 <br />
-#include &lt;algorithm&gt;&nbsp; &nbsp;&nbsp;  // STL algorithms class library
-
+#include &lt;algorithm&gt;	   // STL algorithms class library
 <br />
 using namespace std;
-
 <br />
-...
-
+&#46;&#46;&#46;
 <br />
 list&lt;int&gt; nums;
-
 <br />
 list&lt;int&gt;&#58;&#58;iterator nums_iter;
-
 <br />
 
-
 <br />
-nums.push_back &#40;3&#41;;
-
+nums&#46;push_back &#40;3&#41;;
 <br />
-nums.push_back &#40;7&#41;;
-
+nums&#46;push_back &#40;7&#41;;
 <br />
-nums.push_front &#40;10&#41;;
-
+nums&#46;push_front &#40;10&#41;;
 <br />
 
-
 <br />
-nums_iter = find&#40;nums.begin&#40;&#41;, nums.end&#40;&#41;, 3&#41;; // Search the list.
-
+nums_iter = find&#40;nums&#46;begin&#40;&#41;, nums&#46;end&#40;&#41;, 3&#41;; // Search the list&#46;
 <br />
-if &#40;nums_iter != nums.end&#40;&#41;&#41;
-
+if &#40;nums_iter != nums&#46;end&#40;&#41;&#41;
 <br />
 &#123;
-
 <br />
-&nbsp; &nbsp; cout &lt;&lt; &quot;Number &quot; &lt;&lt; &#40;*nums_iter&#41; &lt;&lt; &quot; found.&quot; &lt;&lt; endl; // 3
-
+    cout &lt;&lt; &quot;Number &quot; &lt;&lt; &#40;*nums_iter&#41; &lt;&lt; &quot; found&#46;&quot; &lt;&lt; endl; // 3
 <br />
 &#125;
-
 <br />
 else
-
 <br />
 &#123;
-
 <br />
-&nbsp; &nbsp; cout &lt;&lt; &quot;Number not found.&quot; &lt;&lt; endl;
-
+    cout &lt;&lt; &quot;Number not found&#46;&quot; &lt;&lt; endl;
 <br />
 &#125;
-
 <br />
 
-
 <br />
-// If we found the element, erase it from the list.
-
+// If we found the element, erase it from the list&#46;
 <br />
-if &#40;nums_iter != nums.end&#40;&#41;&#41; nums.erase&#40;nums_iter&#41;;
-
+if &#40;nums_iter != nums&#46;end&#40;&#41;&#41; nums&#46;erase&#40;nums_iter&#41;;
 <br />
 // List now contains&#58; 10 7 
-
 <br />
-
 
 <br />
 </td>
@@ -643,7 +571,7 @@ if &#40;nums_iter != nums.end&#40;&#41;&#41; nums.erase&#40;nums_iter&#41;;
 	</tr>
 	
 	<tr>
-		<td width="150" align="left" valign="top" class="row2"><span class="name"><a name="7054"></a><b>Rhuantavan</b></span><br /><span class="postdetails">SGD Admin<br /><img src="images/ranks/sgd-admin.gif" alt="SGD Admin" title="SGD Admin" border="0" /><br /><img src="images/avatars/c14db2394124b99a07556.gif" alt="" border="0" /><br /><br />Pridružen: 26. okt 2002 ob 14:16<br />objav: 644<br />Kraj: Renče (NG), Slovenia</span><br /></td>
+		<td width="150" align="left" valign="top" class="row2"><span class="name"><a name="7054"></a><b>Rhuantavan</b></span><br /><span class="postdetails">SGD Admin<br /><img src="images/ranks/sgd-admin.gif" alt="SGD Admin" title="SGD Admin" border="0" /><br /><img src="images/avatars/c14db2394124b99a07556.gif" alt="" border="0" /><br /><br />Pridružen: 26. okt 2002 ob 14:16<br />objav: 632<br />Kraj: Renče, Slovenia</span><br /></td>
 		<td class="row2" width="100%" height="28" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
 			<tr>
 				<td colspan="2" width="100%">
@@ -682,52 +610,36 @@ if &#40;nums_iter != nums.end&#40;&#41;&#41; nums.erase&#40;nums_iter&#41;;
 	<tr>
 <br />
 	  <td class="code">
-
 <br />
 // function object that adds the passed value
-
 <br />
 class Add &#123;
-
 <br />
-&nbsp; private&#58;
-
+  private&#58;
 <br />
-&nbsp; &nbsp; int val;&nbsp; &nbsp; // value to add
-
+    int val;    // value to add
 <br />
-&nbsp; public&#58;
-
+  public&#58;
 <br />
-&nbsp; &nbsp; // constructor &#40;initializes the value to add&#41;
-
+    // constructor &#40;initializes the value to add&#41;
 <br />
-&nbsp; &nbsp; Add&#40;int w&#41; &#58; val&#40;w&#41; &#123;
-
+    Add&#40;int w&#41; &#58; val&#40;w&#41; &#123;
 <br />
-&nbsp; &nbsp; &#125;
-
+    &#125;
 <br />
 
-
 <br />
-&nbsp; &nbsp; // `function call' &#40;adds the value&#41;
-
+    // `function call' &#40;adds the value&#41;
 <br />
-&nbsp; &nbsp; int operator&#40;&#41; &#40;int elem&#41; const
-
+    int operator&#40;&#41; &#40;int elem&#41; const
 <br />
-&nbsp; &nbsp; &#123;
-
+    &#123;
 <br />
-&nbsp; &nbsp; &nbsp; &nbsp; return elem + val;
-
+        return elem + val;
 <br />
-&nbsp; &nbsp; &#125;
-
+    &#125;
 <br />
 &#125;;
-
 <br />
 </td>
 <br />
@@ -747,10 +659,7 @@ To je le primer zgradbe nekega functorja. Z operatorjem lahko rešiš logiko isk
 
 
 <br />
-Malo pogooglaj pa boš našel rešitev <img src="images/smiles/icon_wink.gif" alt="icon_wink.gif" border="0" /><br />_________________<br /><span style="font-size: 10px; line-height: normal">Where's the fun?</span>
-
-<br />
-<span style="font-size: 10px; line-height: normal"><a  target="_blank" class="postlink">http://dw.slogamedev.net</a></span></span><span class="gensmall"></span></td>
+Malo pogooglaj pa boš našel rešitev <img src="images/smiles/icon_wink.gif" alt=";)" border="0" /><br />_________________<br /><a class="postlink" >http://www.damjanmozetic.si</a></span><span class="gensmall"></span></td>
 			</tr>
 		</table></td>
 	</tr>
@@ -767,7 +676,7 @@ Malo pogooglaj pa boš našel rešitev <img src="images/smiles/icon_wink.gif" al
 	</tr>
 	
 	<tr>
-		<td width="150" align="left" valign="top" class="row1"><span class="name"><a name="7060"></a><b>kosov</b></span><br /><span class="postdetails">novinec<br /><img src="images/ranks/sgd-0.gif" alt="novinec" title="novinec" border="0" /><br /><br /><br />Pridružen: 23. jul 2003 ob 06:46<br />objav: 21<br /></span><br /></td>
+		<td width="150" align="left" valign="top" class="row1"><span class="name"><a name="7060"></a><b>kosov</b></span><br /><span class="postdetails">novinec<br /><img src="images/ranks/sgd-0.gif" alt="novinec" title="novinec" border="0" /><br /><br /><br />Pridružen: 23. jul 2003 ob 06:46<br />objav: 22<br /></span><br /></td>
 		<td class="row1" width="100%" height="28" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
 			<tr>
 				<td colspan="2" width="100%">
@@ -814,7 +723,7 @@ osnovne računske operacije, kot so povprečje, min, max itd.
 Bom šel počasi skozi tale STL, pa mislim da bodo stvari kmalu
 
 <br />
-bolj jasne. Knjigo sem si pa že naročil <img src="images/smiles/icon_biggrin.gif" alt="icon_biggrin.gif" border="0" />.</span><span class="gensmall"></span></td>
+bolj jasne. Knjigo sem si pa že naročil <img src="images/smiles/icon_biggrin.gif" alt=":D" border="0" />.</span><span class="gensmall"></span></td>
 			</tr>
 		</table></td>
 	</tr>
@@ -831,7 +740,7 @@ bolj jasne. Knjigo sem si pa že naročil <img src="images/smiles/icon_biggrin.g
 	</tr>
 	
 	<tr>
-		<td width="150" align="left" valign="top" class="row2"><span class="name"><a name="7061"></a><b>vesoljc</b></span><br /><span class="postdetails">inštruktor<br /><img src="images/ranks/sgd-4.gif" alt="inštruktor" title="inštruktor" border="0" /><br /><img src="images/avatars/c1bdb98c3fb49342927df.jpg" alt="" border="0" /><br /><br />Pridružen: 18. feb 2003 ob 22:16<br />objav: 297<br />Kraj: Brezovica, homeland of the mighty Beawer Blasters</span><br /></td>
+		<td width="150" align="left" valign="top" class="row2"><span class="name"><a name="7061"></a><b>vesoljc</b></span><br /><span class="postdetails">inštruktor<br /><img src="images/ranks/sgd-4.gif" alt="inštruktor" title="inštruktor" border="0" /><br /><img src="images/avatars/c1bdb98c3fb49342927df.jpg" alt="" border="0" /><br /><br />Pridružen: 18. feb 2003 ob 22:16<br />objav: 291<br />Kraj: Brezovica, homeland of the mighty Beawer Blasters</span><br /></td>
 		<td class="row2" width="100%" height="28" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
 			<tr>
 				<td colspan="2" width="100%">
@@ -864,16 +773,12 @@ bolj jasne. Knjigo sem si pa že naročil <img src="images/smiles/icon_biggrin.g
 	<tr>
 <br />
 	  <td class="code">
-
 <br />
-std&#58;&#58;list&lt; std&#58;&#58;list&lt;double&gt; &gt;&nbsp; &nbsp; &nbsp; seznam_seznamov;
-
+std&#58;&#58;list&lt; std&#58;&#58;list&lt;double&gt; &gt;      seznam_seznamov;
 <br />
-//&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; ^
-
+//                          ^
 <br />
-//&nbsp; &nbsp; ta presledek je nujen |
-
+//    ta presledek je nujen |
 <br />
 </td>
 <br />
@@ -918,7 +823,7 @@ lahko pogledaš tudi for_each<br />_________________<br /><span style="font-styl
   <tr>
 	<td align="left" valign="middle" nowrap="nowrap">&nbsp;</td>
 	<td align="left" valign="middle" width="100%"><span class="nav">&nbsp;&nbsp;&nbsp;<a href="index.html" class="nav">SloGameDev.net seznam forumov</a>
-	  -> <a href="forum-1.html" class="nav">Splošno Programiranje</a></span></td>
+	  -> <a href="forum-52.html" class="nav">Izdelovanje iger</a></span></td>
 	<td align="right" valign="top" nowrap="nowrap"><span class="gensmall">Časovni pas (GMT +2:00 uri) Slovenija, poletni čas</span><br /><span class="nav"></span>
 	  </td>
   </tr>
@@ -934,7 +839,7 @@ lahko pogledaš tudi for_each<br />_________________<br /><span style="font-styl
   </tr>
 </table>
 
-<div align="center"><span class="copyright"><br />Arhiv stanja na dan 13. 2. 2006 &mdash; samo za branje.<br />
+<div align="center"><span class="copyright"><br />Arhiv &mdash; samo za branje.<br />
 <!--
 	We request you retain the full copyright notice below including the link to www.phpbb.com.
 	This not only gives respect to the large amount of time given freely by the developers

@@ -276,13 +276,13 @@ input.liteoption {
   <tr>
 	<td align="left" valign="bottom" nowrap="nowrap">&nbsp;</td>
 	<td align="left" valign="middle" width="100%"><span class="nav">&nbsp;&nbsp;&nbsp;<a href="index.html" class="nav">SloGameDev.net seznam forumov</a>
-	  -> <a href="forum-1.html" class="nav">Splošno Programiranje</a></span></td>
+	  -> <a href="forum-52.html" class="nav">Izdelovanje iger</a></span></td>
   </tr>
 </table>
 
 <table class="forumline" width="100%" cellspacing="1" cellpadding="3" border="0">
 	<tr align="right">
-		<td class="catHead" colspan="2" height="28"><span class="nav"><a href="topic-393.html" class="nav">Prejšnja tema</a> :: <a href="topic-404.html" class="nav">Naslednja tema</a> &nbsp;</span></td>
+		<td class="catHead" colspan="2" height="28"><span class="nav"><a href="topic-398.html" class="nav">Prejšnja tema</a> :: <a href="topic-4.html" class="nav">Naslednja tema</a> &nbsp;</span></td>
 	</tr>
 	
 	<tr>
@@ -291,7 +291,7 @@ input.liteoption {
 	</tr>
 	
 	<tr>
-		<td width="150" align="left" valign="top" class="row1"><span class="name"><a name="3780"></a><b>Napsy</b></span><br /><span class="postdetails">inštruktor<br /><img src="images/ranks/sgd-4.gif" alt="inštruktor" title="inštruktor" border="0" /><br /><br /><br />Pridružen: 09. jan 2003 ob 22:37<br />objav: 306<br />Kraj: Letuš</span><br /></td>
+		<td width="150" align="left" valign="top" class="row1"><span class="name"><a name="3780"></a><b>Napsy</b></span><br /><span class="postdetails">inštruktor<br /><img src="images/ranks/sgd-4.gif" alt="inštruktor" title="inštruktor" border="0" /><br /><br /><br />Pridružen: 09. jan 2003 ob 22:37<br />objav: 258<br />Kraj: Letuš</span><br /></td>
 		<td class="row1" width="100%" height="28" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
 			<tr>
 				<td colspan="2" width="100%">
@@ -330,373 +330,250 @@ input.liteoption {
 	<tr>
 <br />
 	  <td class="code">////////////////////////////////////////////////////////////////
-
 <br />
 // Razred za gradnjo tekstovnih menijev z uporabo ncurses
-
 <br />
 // Copyright &#40;C&#41; 2003, Luka Napotnik
-
 <br />
-// E-mail&#58; nluka@…
-
+// E-mail&#58; nluka@email&#46;si
 <br />
 ////////////////////////////////////////////////////////////////
-
 <br />
-#include &lt;ncurses.h&gt;
-
+#include &lt;ncurses&#46;h&gt;
 <br />
 #include &lt;string&gt;
-
 <br />
 #include &lt;vector&gt;
-
 <br />
 #include &lt;cstdlib&gt;
-
 <br />
 #include &lt;iostream&gt;
-
 <br />
-
 
 <br />
 using namespace std;
-
 <br />
 class cMenu
-
 <br />
 &#123;
-
 <br />
-&nbsp; &nbsp;class menu_item &#123;
-
+	class menu_item &#123;
 <br />
-&nbsp; &nbsp;public&#58;
-
+	public&#58;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;string caption;
-
+		string caption;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;int &#40;*func_call&#41;&#40;&#41;;
-
+		int &#40;*func_call&#41;&#40;&#41;;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;bool selected;
-
+		bool selected;
 <br />
-&nbsp; &nbsp;&#125;;
-
+	&#125;;
 <br />
-&nbsp; &nbsp;vector&lt;menu_item *&gt; menu_items;
-
+	vector&lt;menu_item *&gt; menu_items;
 <br />
-&nbsp; &nbsp;string menu_title;
-
+	string menu_title;
 <br />
-&nbsp; &nbsp;int row, col;
-
+	int row, col;
 <br />
-&nbsp; &nbsp;int selected;
-
+	int selected;
 <br />
 public&#58;
-
 <br />
-&nbsp; &nbsp;cMenu&#40;string title&#41; &#123;
-
+	cMenu&#40;string title&#41; &#123;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;menu_title = title;
-
+		menu_title = title;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;initscr&#40;&#41;;
-
+		initscr&#40;&#41;;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;raw&#40;&#41;;
-
+		raw&#40;&#41;;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;keypad&#40;stdscr, TRUE&#41;;
-
+		keypad&#40;stdscr, TRUE&#41;;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;noecho&#40;&#41;;
-
+		noecho&#40;&#41;;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;selected = 0;
-
+		selected = 0;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;curs_set&#40;0&#41;;
-
+		curs_set&#40;0&#41;;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;getmaxyx&#40;stdscr,row,col&#41;;
-
+		getmaxyx&#40;stdscr,row,col&#41;;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;
-
+		
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;//start_color&#40;&#41;;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;/* Start color &nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;*/
-
+		//start_color&#40;&#41;;			/* Start color 			*/
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;//init_pair&#40;1, COLOR_RED, COLOR_BLACK&#41;;
-
+		//init_pair&#40;1, COLOR_RED, COLOR_BLACK&#41;;
 <br />
-&nbsp; &nbsp;&#125;
-
+	&#125;
 <br />
-&nbsp; &nbsp;~cMenu&#40;&#41; &#123;
-
+	~cMenu&#40;&#41; &#123;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;for&#40;int i = 0; i &lt; menu_items.size&#40;&#41;; i++&#41;
-
+		for&#40;int i = 0; i &lt; menu_items&#46;size&#40;&#41;; i++&#41;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;delete menu_items&#91;i&#93;;
-
+			delete menu_items&#91;i&#93;;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;endwin&#40;&#41;;
-
+		endwin&#40;&#41;;
 <br />
-&nbsp; &nbsp;&#125;
-
+	&#125;
 <br />
-&nbsp; &nbsp;int addItem&#40;string caption, int &#40;*func_call&#41;&#40;&#41;&#41;;
-
+	int addItem&#40;string caption, int &#40;*func_call&#41;&#40;&#41;&#41;;
 <br />
-&nbsp; &nbsp;int draw&#40;&#41;;
-
+	int draw&#40;&#41;;
 <br />
-&nbsp; &nbsp;int mainLoop&#40;&#41;;
-
+	int mainLoop&#40;&#41;;
 <br />
-&nbsp; &nbsp;int getKey&#40;&#41;;
-
+	int getKey&#40;&#41;;
 <br />
 &#125;;
-
 <br />
 //--------------------------------------------------------
-
 <br />
 int cMenu&#58;&#58;addItem&#40;string caption, int&#40;*func_call&#41;&#40;&#41;&#41; &#123;
-
 <br />
-&nbsp; &nbsp;//endwin&#40;&#41;;
-
+	//endwin&#40;&#41;;
 <br />
-&nbsp; &nbsp;menu_item *new_item = new menu_item;
-
+	menu_item *new_item = new menu_item;
 <br />
-&nbsp; &nbsp;new_item-&gt;caption = caption;
-
+	new_item-&gt;caption = caption;
 <br />
-&nbsp; &nbsp;if &#40;menu_items.size&#40;&#41; == 0&#41;
-
+	if &#40;menu_items&#46;size&#40;&#41; == 0&#41;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;new_item-&gt;selected = 1;
-
+		new_item-&gt;selected = 1;
 <br />
-&nbsp; &nbsp;else
-
+	else
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;new_item-&gt;selected = 0;
-
+		new_item-&gt;selected = 0;
 <br />
-&nbsp; &nbsp;new_item-&gt;func_call = func_call;
-
+	new_item-&gt;func_call = func_call;
 <br />
-&nbsp; &nbsp;menu_items.push_back&#40;new_item&#41;;
-
+	menu_items&#46;push_back&#40;new_item&#41;;
 <br />
-&nbsp; &nbsp;//reset_prog_mode&#40;&#41;;
-
+	//reset_prog_mode&#40;&#41;;
 <br />
-&nbsp; &nbsp;//printw&#40;&quot;Stevilo elementov&#58; %d\n&quot;, menu_items.size&#40;&#41;&#41;;
-
+	//printw&#40;&quot;Stevilo elementov&#58; %d\n&quot;, menu_items&#46;size&#40;&#41;&#41;;
 <br />
-&nbsp; &nbsp;return&#40;0&#41;;
-
+	return&#40;0&#41;;
 <br />
 &#125;
-
 <br />
-
 
 <br />
 int cMenu&#58;&#58;draw&#40;&#41; &#123;
-
 <br />
-&nbsp; &nbsp;int count = row;
-
+	int count = row;
 <br />
-&nbsp; &nbsp;clear&#40;&#41;;
-
+	clear&#40;&#41;;
 <br />
-&nbsp; &nbsp;mvprintw&#40;0, 2, &quot;%s&quot;, menu_title.c_str&#40;&#41;&#41;;
-
+	mvprintw&#40;0, 2, &quot;%s&quot;, menu_title&#46;c_str&#40;&#41;&#41;;
 <br />
-&nbsp; &nbsp;for&#40;int i = 0; i &lt; menu_items.size&#40;&#41;; i++&#41;&#123;
-
+	for&#40;int i = 0; i &lt; menu_items&#46;size&#40;&#41;; i++&#41;&#123;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;if&#40;menu_items&#91;i&#93;-&gt;selected == 1&#41; &#123;
-
+		if&#40;menu_items&#91;i&#93;-&gt;selected == 1&#41; &#123;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;move&#40;&#40;i + 1&#41; + 1, 2&#41;;
-
+			move&#40;&#40;i + 1&#41; + 1, 2&#41;;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;//attron&#40;COLOR_PAIR&#40;1&#41;&#41;;
-
+			//attron&#40;COLOR_PAIR&#40;1&#41;&#41;;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;printw&#40;&quot;%s &lt;&quot;, menu_items&#91;i&#93;-&gt;caption.c_str&#40;&#41;&#41;;
-
+			printw&#40;&quot;%s &lt;&quot;, menu_items&#91;i&#93;-&gt;caption&#46;c_str&#40;&#41;&#41;;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&#125;
-
+		&#125;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;else &#123;
-
+		else &#123;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;move&#40;&#40;i + 1&#41; + 1, 2&#41;;
-
+			move&#40;&#40;i + 1&#41; + 1, 2&#41;;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;//attroff&#40;COLOR_PAIR&#40;1&#41;&#41;;
-
+			//attroff&#40;COLOR_PAIR&#40;1&#41;&#41;;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;printw&#40;&quot;%s&quot;, menu_items&#91;i&#93;-&gt;caption.c_str&#40;&#41;&#41;;
-
+			printw&#40;&quot;%s&quot;, menu_items&#91;i&#93;-&gt;caption&#46;c_str&#40;&#41;&#41;;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&#125;
-
+		&#125;
 <br />
-&nbsp; &nbsp;&#125;
-
+	&#125;
 <br />
-&nbsp; &nbsp;return&#40;0&#41;;
-
+	return&#40;0&#41;;
 <br />
 &#125;
-
 <br />
 int cMenu&#58;&#58;mainLoop&#40;&#41; &#123;
-
 <br />
-&nbsp; &nbsp;char ch;
-
+	char ch;
 <br />
-&nbsp; &nbsp;while&#40;1&#41; &#123;
-
+	while&#40;1&#41; &#123;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;draw&#40;&#41;;
-
+		draw&#40;&#41;;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;ch = getch&#40;&#41;;
-
+		ch = getch&#40;&#41;;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;menu_items&#91;selected&#93;-&gt;selected = 0;
-
+		menu_items&#91;selected&#93;-&gt;selected = 0;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;switch&#40;ch&#41; &#123;
-
+		switch&#40;ch&#41; &#123;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;case KEY_UP&#58;
-
+		case KEY_UP&#58;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;if &#40;selected == 0&#41; &#123;
-
+			if &#40;selected == 0&#41; &#123;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;menu_items&#91;0&#93;-&gt;selected = 0;
-
+				menu_items&#91;0&#93;-&gt;selected = 0;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;menu_items&#91;menu_items.size&#40;&#41; - 1&#93;-&gt;selected = 1;
-
+				menu_items&#91;menu_items&#46;size&#40;&#41; - 1&#93;-&gt;selected = 1;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;selected = menu_items.size&#40;&#41; - 1;
-
+				selected = menu_items&#46;size&#40;&#41; - 1;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;break;
-
+				break;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&#125;
-
+			&#125;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;selected--;
-
+			selected--;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;menu_items&#91;selected&#93;-&gt;selected= 1;
-
+			menu_items&#91;selected&#93;-&gt;selected= 1;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;break;
-
+			break;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;case KEY_DOWN&#58;
-
+		case KEY_DOWN&#58;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;if &#40;selected &gt; &#40;menu_items.size&#40;&#41; - 2&#41;&#41; &#123;
-
+			if &#40;selected &gt; &#40;menu_items&#46;size&#40;&#41; - 2&#41;&#41; &#123;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;menu_items&#91;selected&#93;-&gt;selected = 0;
-
+				menu_items&#91;selected&#93;-&gt;selected = 0;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;selected = 0;
-
+				selected = 0;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;menu_items&#91;0&#93;-&gt;selected = 1;
-
+				menu_items&#91;0&#93;-&gt;selected = 1;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;break;
-
+				break;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&#125;
-
+			&#125;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;selected++;
-
+			selected++;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;menu_items&#91;selected&#93;-&gt;selected= 1;
-
+			menu_items&#91;selected&#93;-&gt;selected= 1;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;break;
-
+			break;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;case KEY_F&#40;5&#41;&#58;
-
+		case KEY_F&#40;5&#41;&#58;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;endwin&#40;&#41;;
-
+			endwin&#40;&#41;;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;exit&#40;1&#41;;
-
+			exit&#40;1&#41;;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;case 10&#58;
-
+		case 10&#58;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;endwin&#40;&#41;;
-
+			endwin&#40;&#41;;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;menu_items&#91;selected&#93;-&gt;func_call&#40;&#41;;
-
+			menu_items&#91;selected&#93;-&gt;func_call&#40;&#41;;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;reset_prog_mode&#40;&#41;;
-
+			reset_prog_mode&#40;&#41;;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;break;
-
+			break;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;default&#58;
-
+		default&#58;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;printw&#40;&quot;Neznana tipka!\n&quot;&#41;;
-
+			printw&#40;&quot;Neznana tipka!\n&quot;&#41;;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&#125;
-
+		&#125;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;refresh&#40;&#41;;
-
+		refresh&#40;&#41;;
 <br />
-&nbsp; &nbsp;&#125;
-
+	&#125;
 <br />
-&nbsp; &nbsp;return&#40;0&#41;;
-
+	return&#40;0&#41;;
 <br />
 &#125;;</td>
 <br />
@@ -705,10 +582,8 @@ int cMenu&#58;&#58;mainLoop&#40;&#41; &#123;
 </table>
 <br />
 <span class="postbody">
-
 <br />
 Primer:
-
 <br />
 </span>
 <br />
@@ -723,49 +598,34 @@ Primer:
 	<tr>
 <br />
 	  <td class="code">int menu_izhod&#40;&#41; &#123;
-
 <br />
-&nbsp; &nbsp;cout &lt;&lt; &quot;DEEEEEEEEEEELA!&quot; &lt;&lt; endl &lt;&lt; &quot;Pritisni &lt;ENTER&gt; za nadaljevanje ...&quot; &lt;&lt; endl;
-
+	cout &lt;&lt; &quot;DEEEEEEEEEEELA!&quot; &lt;&lt; endl &lt;&lt; &quot;Pritisni &lt;ENTER&gt; za nadaljevanje &#46;&#46;&#46;&quot; &lt;&lt; endl;
 <br />
-&nbsp; &nbsp;cin.get&#40;&#41;;
-
+	cin&#46;get&#40;&#41;;
 <br />
-&nbsp; &nbsp;return&#40;0&#41;;
-
+	return&#40;0&#41;;
 <br />
 &#125;
-
 <br />
-
 
 <br />
 int main&#40;int argc, char **argv&#41;
-
 <br />
 &#123;
-
 <br />
-&nbsp; &nbsp;
-
+	
 <br />
-&nbsp; &nbsp;cMenu *main_menu = new cMenu&#40;&quot;GLAVNI MENI&quot;&#41;;
-
+	cMenu *main_menu = new cMenu&#40;&quot;GLAVNI MENI&quot;&#41;;
 <br />
-&nbsp; &nbsp;main_menu-&gt;addItem&#40;&quot;Ime&quot;, NULL&#41;;
-
+	main_menu-&gt;addItem&#40;&quot;Ime&quot;, NULL&#41;;
 <br />
-&nbsp; &nbsp;main_menu-&gt;addItem&#40;&quot;Priimek&quot;, NULL&#41;;
-
+	main_menu-&gt;addItem&#40;&quot;Priimek&quot;, NULL&#41;;
 <br />
-&nbsp; &nbsp;main_menu-&gt;addItem&#40;&quot;Izhod&quot;, menu_izhod&#41;;
-
+	main_menu-&gt;addItem&#40;&quot;Izhod&quot;, menu_izhod&#41;;
 <br />
-&nbsp; &nbsp;main_menu-&gt;mainLoop&#40;&#41;;
-
+	main_menu-&gt;mainLoop&#40;&#41;;
 <br />
-&nbsp; &nbsp;return&#40;0&#41;;
-
+	return&#40;0&#41;;
 <br />
 &#125;</td>
 <br />
@@ -776,7 +636,7 @@ int main&#40;int argc, char **argv&#41;
 <span class="postbody">
 
 <br />
-Če kdo hoče, lahko prosto uporablja ta razred. Mogoče ga bom tut prevedel za windowse. Zaželjeni so pa seveda tudi kakšni komentarji.<br />_________________<br /><a  target="_blank">http://luka-napotnik.net</a></span><span class="gensmall"></span></td>
+Če kdo hoče, lahko prosto uporablja ta razred. Mogoče ga bom tut prevedel za windowse. Zaželjeni so pa seveda tudi kakšni komentarji.<br />_________________<br /><a class="postlink" >http://luka-napotnik.net</a></span><span class="gensmall"></span></td>
 			</tr>
 		</table></td>
 	</tr>
@@ -830,7 +690,7 @@ int main&#40;int argc, char **argv&#41;
 	</tr>
 	
 	<tr>
-		<td width="150" align="left" valign="top" class="row1"><span class="name"><a name="4018"></a><b>Napsy</b></span><br /><span class="postdetails">inštruktor<br /><img src="images/ranks/sgd-4.gif" alt="inštruktor" title="inštruktor" border="0" /><br /><br /><br />Pridružen: 09. jan 2003 ob 22:37<br />objav: 306<br />Kraj: Letuš</span><br /></td>
+		<td width="150" align="left" valign="top" class="row1"><span class="name"><a name="4018"></a><b>Napsy</b></span><br /><span class="postdetails">inštruktor<br /><img src="images/ranks/sgd-4.gif" alt="inštruktor" title="inštruktor" border="0" /><br /><br /><br />Pridružen: 09. jan 2003 ob 22:37<br />objav: 258<br />Kraj: Letuš</span><br /></td>
 		<td class="row1" width="100%" height="28" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
 			<tr>
 				<td colspan="2" width="100%">
@@ -850,7 +710,7 @@ int main&#40;int argc, char **argv&#41;
 				<td colspan="2"><hr /></td>
 			</tr>
 			<tr>
-				<td colspan="2"><span class="postbody">eh. getKey ni nič. To sem pozabil pokomentirati.<br />_________________<br /><a  target="_blank">http://luka-napotnik.net</a></span><span class="gensmall"></span></td>
+				<td colspan="2"><span class="postbody">eh. getKey ni nič. To sem pozabil pokomentirati.<br />_________________<br /><a class="postlink" >http://luka-napotnik.net</a></span><span class="gensmall"></span></td>
 			</tr>
 		</table></td>
 	</tr>
@@ -875,7 +735,7 @@ int main&#40;int argc, char **argv&#41;
   <tr>
 	<td align="left" valign="middle" nowrap="nowrap">&nbsp;</td>
 	<td align="left" valign="middle" width="100%"><span class="nav">&nbsp;&nbsp;&nbsp;<a href="index.html" class="nav">SloGameDev.net seznam forumov</a>
-	  -> <a href="forum-1.html" class="nav">Splošno Programiranje</a></span></td>
+	  -> <a href="forum-52.html" class="nav">Izdelovanje iger</a></span></td>
 	<td align="right" valign="top" nowrap="nowrap"><span class="gensmall">Časovni pas (GMT +2:00 uri) Slovenija, poletni čas</span><br /><span class="nav"></span>
 	  </td>
   </tr>
@@ -891,7 +751,7 @@ int main&#40;int argc, char **argv&#41;
   </tr>
 </table>
 
-<div align="center"><span class="copyright"><br />Arhiv stanja na dan 13. 2. 2006 &mdash; samo za branje.<br />
+<div align="center"><span class="copyright"><br />Arhiv &mdash; samo za branje.<br />
 <!--
 	We request you retain the full copyright notice below including the link to www.phpbb.com.
 	This not only gives respect to the large amount of time given freely by the developers

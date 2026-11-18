@@ -276,7 +276,7 @@ input.liteoption {
   <tr>
 	<td align="left" valign="bottom" nowrap="nowrap">&nbsp;</td>
 	<td align="left" valign="middle" width="100%"><span class="nav">&nbsp;&nbsp;&nbsp;<a href="index.html" class="nav">SloGameDev.net seznam forumov</a>
-	  -> <a href="forum-10.html" class="nav">Za Začetnike</a></span></td>
+	  -> <a href="forum-49.html" class="nav">Začetniki</a></span></td>
   </tr>
 </table>
 
@@ -291,7 +291,7 @@ input.liteoption {
 	</tr>
 	
 	<tr>
-		<td width="150" align="left" valign="top" class="row1"><span class="name"><a name="8923"></a><b>_t3ch_</b></span><br /><span class="postdetails">wannabe<br /><img src="images/ranks/sgd-2.gif" alt="wannabe" title="wannabe" border="0" /><br /><img src="images/avatars/c2f922b13f93ced57f936.gif" alt="" border="0" /><br /><br />Pridružen: 09. okt 2003 ob 16:04<br />objav: 75<br />Kraj: Mafia SoftWare IT</span><br /></td>
+		<td width="150" align="left" valign="top" class="row1"><span class="name"><a name="8923"></a><b>_t3ch_</b></span><br /><span class="postdetails">wannabe<br /><img src="images/ranks/sgd-2.gif" alt="wannabe" title="wannabe" border="0" /><br /><img src="images/avatars/c2f922b13f93ced57f936.gif" alt="" border="0" /><br /><br />Pridružen: 09. okt 2003 ob 16:04<br />objav: 77<br />Kraj: Mafia SoftWare IT</span><br /></td>
 		<td class="row1" width="100%" height="28" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
 			<tr>
 				<td colspan="2" width="100%">
@@ -330,232 +330,156 @@ input.liteoption {
 	<tr>
 <br />
 	  <td class="code">
-
 <br />
 #include &lt;iostream&gt;
-
 <br />
-#include &lt;windows.h&gt;
-
+#include &lt;windows&#46;h&gt;
 <br />
-
 
 <br />
 using namespace std;
-
 <br />
-
 
 <br />
 int main&#40;&#41;
-
 <br />
 &#123;
-
 <br />
-&nbsp; &nbsp;HANDLE output_h, input_h;
-
+	HANDLE output_h, input_h;
 <br />
 
-
 <br />
-&nbsp; &nbsp;INPUT_RECORD input;
-
+	INPUT_RECORD input;
 <br />
 
-
 <br />
-&nbsp; &nbsp;COORD pozicija;
-
+	COORD pozicija;
 <br />
 
-
 <br />
-&nbsp; &nbsp;DWORD info;
-
+	DWORD info;
 <br />
 
-
 <br />
-&nbsp; &nbsp;CONSOLE_SCREEN_BUFFER_INFO screen_info;
-
+	CONSOLE_SCREEN_BUFFER_INFO screen_info;
 <br />
 
-
 <br />
-&nbsp; &nbsp;input_h = GetStdHandle&#40;STD_INPUT_HANDLE&#41;;
-
+	input_h = GetStdHandle&#40;STD_INPUT_HANDLE&#41;;
 <br />
-&nbsp; &nbsp;output_h = GetStdHandle&#40;STD_OUTPUT_HANDLE&#41;;
-
+	output_h = GetStdHandle&#40;STD_OUTPUT_HANDLE&#41;;
 <br />
-
 
 <br />
-&nbsp; &nbsp;GetConsoleScreenBufferInfo&#40;output_h, &amp;screen_info&#41;;
-
+	GetConsoleScreenBufferInfo&#40;output_h, &amp;screen_info&#41;;
 <br />
-&nbsp; &nbsp;SetConsoleMode&#40;input_h, ENABLE_PROCESSED_INPUT&#41;;
-
+	SetConsoleMode&#40;input_h, ENABLE_PROCESSED_INPUT&#41;;
 <br />
-
 
 <br />
-&nbsp; &nbsp;pozicija.X = screen_info.srWindow.Right / 2-5;
-
+	pozicija&#46;X = screen_info&#46;srWindow&#46;Right / 2-5;
 <br />
-&nbsp; &nbsp;pozicija.Y = screen_info.srWindow.Bottom / 2;
-
+	pozicija&#46;Y = screen_info&#46;srWindow&#46;Bottom / 2;
 <br />
 
-
 <br />
-&nbsp; &nbsp;while&#40;1&#41;
-
+	while&#40;1&#41;
 <br />
-&nbsp; &nbsp;&#123;
-
+	&#123;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;
-
+		
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;SetConsoleCursorPosition&#40;output_h, pozicija&#41;;
-
+		SetConsoleCursorPosition&#40;output_h, pozicija&#41;;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;ReadConsoleInput&#40;input_h, &amp;input, 1, &amp;info&#41;;
-
+		ReadConsoleInput&#40;input_h, &amp;input, 1, &amp;info&#41;;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;
-
+		
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;if &#40;input.Event.KeyEvent.bKeyDown&#41;
-
+		if &#40;input&#46;Event&#46;KeyEvent&#46;bKeyDown&#41;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&#123;
-
+		&#123;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;char theChar = &#40;char&#41;input.Event.KeyEvent.uChar.AsciiChar;
-
+			char theChar = &#40;char&#41;input&#46;Event&#46;KeyEvent&#46;uChar&#46;AsciiChar;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;
-
+			
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;if &#40;theChar == 'l'&#41;
-
+			if &#40;theChar == 'l'&#41;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&#123;&nbsp; &nbsp;
-
+			&#123;	
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;//while &#40;theChar != 'k' || theChar != 'j' || theChar != 'i'&#41;
-
+				//while &#40;theChar != 'k' || theChar != 'j' || theChar != 'i'&#41;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;do
-
+				do
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&#123;
-
+				&#123;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;pozicija.X++;
-
+				pozicija&#46;X++;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&#125;
-
+				&#125;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;while &#40;theChar != 'k' || theChar != 'j' || theChar != 'i'&#41;;
-
+				while &#40;theChar != 'k' || theChar != 'j' || theChar != 'i'&#41;;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;// em ce ma gdo kako idejo to se noce premaknit ce tak nareim ce pa ne nareim tak pa se premika za ena po ena &#58;|
-
+				// em ce ma gdo kako idejo to se noce premaknit ce tak nareim ce pa ne nareim tak pa se premika za ena po ena &#58;|
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&#125;
-
+			&#125;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;
-
+			
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;if &#40;theChar == 'k'&#41;
-
+			if &#40;theChar == 'k'&#41;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&#123;
-
+			&#123;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;//while &#40;theChar != 'l' || theChar != 'j' || theChar != 'i'&#41;&nbsp; &nbsp;
-
+				//while &#40;theChar != 'l' || theChar != 'j' || theChar != 'i'&#41;	
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;pozicija.Y++;&nbsp; &nbsp;
-
+				pozicija&#46;Y++;	
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&#125;
-
+			&#125;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;
-
+			
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;if &#40;theChar == 'j'&#41;
-
+			if &#40;theChar == 'j'&#41;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&#123;
-
+			&#123;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;//while &#40;theChar != 'k' || theChar != 'l' || theChar != 'i'&#41;&nbsp; &nbsp;
-
+				//while &#40;theChar != 'k' || theChar != 'l' || theChar != 'i'&#41;	
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;pozicija.X--;&nbsp; &nbsp;&nbsp; &nbsp;
-
+				pozicija&#46;X--;		
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&#125;
-
+			&#125;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;if &#40;theChar == 'i'&#41;
-
+			if &#40;theChar == 'i'&#41;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&#123;
-
+			&#123;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;//while &#40;theChar != 'k' || theChar != 'l' || theChar != 'j'&#41;&nbsp; &nbsp;
-
+				//while &#40;theChar != 'k' || theChar != 'l' || theChar != 'j'&#41;	
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;pozicija.Y--;&nbsp; &nbsp;
-
+				pozicija&#46;Y--;	
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&#125;
-
+			&#125;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;
-
+			
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;cout &lt;&lt; &quot;@&quot;;
-
+			cout &lt;&lt; &quot;@&quot;;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;
-
+			
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;
-
+			
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;SetConsoleCursorPosition&#40; output_h, pozicija&#41;;
-
+			SetConsoleCursorPosition&#40; output_h, pozicija&#41;;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&#125;
-
+		&#125;
 <br />
-&nbsp; &nbsp;&#125;&nbsp; &nbsp;
-
+	&#125;	
 <br />
-&nbsp; &nbsp;
-
+	
 <br />
-&nbsp; &nbsp;
-
+	
 <br />
-&nbsp; &nbsp;system&#40;&quot;pause&quot;&#41;;
-
+	system&#40;&quot;pause&quot;&#41;;
 <br />
-&nbsp; &nbsp;return 0;
-
+	return 0;
 <br />
 &#125;
-
 <br />
 </td>
 <br />
@@ -580,7 +504,7 @@ int main&#40;&#41;
 	</tr>
 	
 	<tr>
-		<td width="150" align="left" valign="top" class="row2"><span class="name"><a name="8928"></a><b>Alfa</b></span><br /><span class="postdetails">poznavalec<br /><img src="images/ranks/sgd-3.gif" alt="poznavalec" title="poznavalec" border="0" /><br /><img src="images/avatars/c2f90a1540823086cd155.jpg" alt="" border="0" /><br /><br />Pridružen: 04. mar 2004 ob 18:14<br />objav: 235<br />Kraj: SG</span><br /></td>
+		<td width="150" align="left" valign="top" class="row2"><span class="name"><a name="8928"></a><b>Alfa</b></span><br /><span class="postdetails">mojster<br /><img src="images/ranks/sgd-5.gif" alt="mojster" title="mojster" border="0" /><br /><img src="images/avatars/c2f90a1540823086cd155.jpg" alt="" border="0" /><br /><br />Pridružen: 04. mar 2004 ob 18:14<br />objav: 471<br />Kraj: SG</span><br /></td>
 		<td class="row2" width="100%" height="28" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
 			<tr>
 				<td colspan="2" width="100%">
@@ -613,40 +537,28 @@ int main&#40;&#41;
 	<tr>
 <br />
 	  <td class="quote">char theChar = (char)input.Event.KeyEvent.uChar.AsciiChar; 
-
 <br />
           
-
 <br />
          if (theChar == 'l') 
-
 <br />
          {    
-
 <br />
             //while (theChar != 'k' || theChar != 'j' || theChar != 'i') 
-
 <br />
             do 
-
 <br />
             { 
-
 <br />
             pozicija.X++; 
-
 <br />
             } 
-
 <br />
             while (theChar != 'k' || theChar != 'j' || theChar != 'i'); 
-
 <br />
-            // em ce ma gdo kako idejo to se noce premaknit ce tak nareim ce pa ne nareim tak pa se premika za ena po ena <img src="images/smiles/icon_neutral.gif" alt="icon_neutral.gif" border="0" /> 
-
+            // em ce ma gdo kako idejo to se noce premaknit ce tak nareim ce pa ne nareim tak pa se premika za ena po ena <img src="images/smiles/icon_neutral.gif" alt=":|" border="0" /> 
 <br />
          } 
-
 <br />
  </td>
 <br />
@@ -660,7 +572,7 @@ int main&#40;&#41;
 
 
 <br />
-Vseeno mal preveri moje trditve k je možžno da niso čist prave. <img src="images/smiles/icon_smile.gif" alt="icon_smile.gif" border="0" /><br />_________________<br />"Pustimo malenkosti, pravi cesar, PeCe pa nič (več)."
+Vseeno mal preveri moje trditve k je možžno da niso čist prave. <img src="images/smiles/icon_smile.gif" alt=":)" border="0" /><br />_________________<br />&quot;Pustimo malenkosti, pravi cesar, PeCe pa nič (več).&quot;
 
 <br />
 Goran Bervar: C++ na kolenih</span><span class="gensmall"></span></td>
@@ -680,7 +592,7 @@ Goran Bervar: C++ na kolenih</span><span class="gensmall"></span></td>
 	</tr>
 	
 	<tr>
-		<td width="150" align="left" valign="top" class="row1"><span class="name"><a name="8963"></a><b>_t3ch_</b></span><br /><span class="postdetails">wannabe<br /><img src="images/ranks/sgd-2.gif" alt="wannabe" title="wannabe" border="0" /><br /><img src="images/avatars/c2f922b13f93ced57f936.gif" alt="" border="0" /><br /><br />Pridružen: 09. okt 2003 ob 16:04<br />objav: 75<br />Kraj: Mafia SoftWare IT</span><br /></td>
+		<td width="150" align="left" valign="top" class="row1"><span class="name"><a name="8963"></a><b>_t3ch_</b></span><br /><span class="postdetails">wannabe<br /><img src="images/ranks/sgd-2.gif" alt="wannabe" title="wannabe" border="0" /><br /><img src="images/avatars/c2f922b13f93ced57f936.gif" alt="" border="0" /><br /><br />Pridružen: 09. okt 2003 ob 16:04<br />objav: 77<br />Kraj: Mafia SoftWare IT</span><br /></td>
 		<td class="row1" width="100%" height="28" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
 			<tr>
 				<td colspan="2" width="100%">
@@ -700,7 +612,7 @@ Goran Bervar: C++ na kolenih</span><span class="gensmall"></span></td>
 				<td colspan="2"><hr /></td>
 			</tr>
 			<tr>
-				<td colspan="2"><span class="postbody">Tnx em sem zaj malo odlozo ta snake se ukvarjam z linujom pa Qt vmesnikom, vsaj probavam ce mi bo kaj uspelo. Drugac pa mi je uspelo premaknit se premika na te tipke in z while <img src="images/smiles/icon_smile.gif" alt="icon_smile.gif" border="0" />, ajd.<br />_________________<br />Mafia SoftWare IT ™</span><span class="gensmall"></span></td>
+				<td colspan="2"><span class="postbody">Tnx em sem zaj malo odlozo ta snake se ukvarjam z linujom pa Qt vmesnikom, vsaj probavam ce mi bo kaj uspelo. Drugac pa mi je uspelo premaknit se premika na te tipke in z while <img src="images/smiles/icon_smile.gif" alt=":)" border="0" />, ajd.<br />_________________<br />Mafia SoftWare IT ™</span><span class="gensmall"></span></td>
 			</tr>
 		</table></td>
 	</tr>
@@ -725,7 +637,7 @@ Goran Bervar: C++ na kolenih</span><span class="gensmall"></span></td>
   <tr>
 	<td align="left" valign="middle" nowrap="nowrap">&nbsp;</td>
 	<td align="left" valign="middle" width="100%"><span class="nav">&nbsp;&nbsp;&nbsp;<a href="index.html" class="nav">SloGameDev.net seznam forumov</a>
-	  -> <a href="forum-10.html" class="nav">Za Začetnike</a></span></td>
+	  -> <a href="forum-49.html" class="nav">Začetniki</a></span></td>
 	<td align="right" valign="top" nowrap="nowrap"><span class="gensmall">Časovni pas (GMT +2:00 uri) Slovenija, poletni čas</span><br /><span class="nav"></span>
 	  </td>
   </tr>
@@ -741,7 +653,7 @@ Goran Bervar: C++ na kolenih</span><span class="gensmall"></span></td>
   </tr>
 </table>
 
-<div align="center"><span class="copyright"><br />Arhiv stanja na dan 13. 2. 2006 &mdash; samo za branje.<br />
+<div align="center"><span class="copyright"><br />Arhiv &mdash; samo za branje.<br />
 <!--
 	We request you retain the full copyright notice below including the link to www.phpbb.com.
 	This not only gives respect to the large amount of time given freely by the developers

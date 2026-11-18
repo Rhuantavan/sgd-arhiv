@@ -276,7 +276,7 @@ input.liteoption {
   <tr>
 	<td align="left" valign="bottom" nowrap="nowrap">&nbsp;</td>
 	<td align="left" valign="middle" width="100%"><span class="nav">&nbsp;&nbsp;&nbsp;<a href="index.html" class="nav">SloGameDev.net seznam forumov</a>
-	  -> <a href="forum-10.html" class="nav">Za Začetnike</a></span></td>
+	  -> <a href="forum-49.html" class="nav">Začetniki</a></span></td>
   </tr>
 </table>
 
@@ -331,7 +331,7 @@ Ne rabim niti preklapljanja med window in fullscreen. Samo fullscreen.</span><sp
 	</tr>
 	
 	<tr>
-		<td width="150" align="left" valign="top" class="row2"><span class="name"><a name="12395"></a><b>Iason</b></span><br /><span class="postdetails">poizvedovalec<br /><img src="images/ranks/sgd-1.gif" alt="poizvedovalec" title="poizvedovalec" border="0" /><br /><br /><br />Pridružen: 21. sep 2004 ob 22:57<br />objav: 42<br />Kraj: Kranj</span><br /></td>
+		<td width="150" align="left" valign="top" class="row2"><span class="name"><a name="12395"></a><b>Iason</b></span><br /><span class="postdetails">inštruktor<br /><img src="images/ranks/sgd-4.gif" alt="inštruktor" title="inštruktor" border="0" /><br /><br /><br />Pridružen: 21. sep 2004 ob 22:57<br />objav: 329<br />Kraj: Kranj</span><br /></td>
 		<td class="row2" width="100%" height="28" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
 			<tr>
 				<td colspan="2" width="100%">
@@ -351,7 +351,7 @@ Ne rabim niti preklapljanja med window in fullscreen. Samo fullscreen.</span><sp
 				<td colspan="2"><hr /></td>
 			</tr>
 			<tr>
-				<td colspan="2"><span class="postbody">Poglej to stran <a  target="_blank" class="postlink">http://nehe.gamedev.net/</a>, lesson 1.</span><span class="gensmall"></span></td>
+				<td colspan="2"><span class="postbody">Poglej to stran <a  target="_blank" class="postlink">http&#58;//nehe&#46;gamedev&#46;net/</a>, lesson 1.</span><span class="gensmall"></span></td>
 			</tr>
 		</table></td>
 	</tr>
@@ -368,7 +368,7 @@ Ne rabim niti preklapljanja med window in fullscreen. Samo fullscreen.</span><sp
 	</tr>
 	
 	<tr>
-		<td width="150" align="left" valign="top" class="row1"><span class="name"><a name="12396"></a><b>Shinobi</b></span><br /><span class="postdetails">inštruktor<br /><img src="images/ranks/sgd-4.gif" alt="inštruktor" title="inštruktor" border="0" /><br /><img src="images/avatars/d5fd66913fcf278e24a0c.gif" alt="" border="0" /><br /><br />Pridružen: 15. maj 2003 ob 18:04<br />objav: 257<br />Kraj: Maribor</span><br /></td>
+		<td width="150" align="left" valign="top" class="row1"><span class="name"><a name="12396"></a><b>Shinobi</b></span><br /><span class="postdetails">mojster<br /><img src="images/ranks/sgd-5.gif" alt="mojster" title="mojster" border="0" /><br /><img src="images/avatars/d5fd66913fcf278e24a0c.gif" alt="" border="0" /><br /><br />Pridružen: 15. maj 2003 ob 18:04<br />objav: 491<br />Kraj: Maribor</span><br /></td>
 		<td class="row1" width="100%" height="28" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
 			<tr>
 				<td colspan="2" width="100%">
@@ -483,1219 +483,814 @@ Ce je ukaz GetDesktopSettings dejansko obstaja ne vem, vem pa da se nekako tako 
 	<tr>
 <br />
 	  <td class="code">
-
 <br />
 /*
-
 <br />
- *&nbsp; &nbsp;&nbsp; &nbsp;This Code Was Created By Jeff Molofee 2000
-
+ *		This Code Was Created By Jeff Molofee 2000
 <br />
- *&nbsp; &nbsp;&nbsp; &nbsp;A HUGE Thanks To Fredric Echols For Cleaning Up
-
+ *		A HUGE Thanks To Fredric Echols For Cleaning Up
 <br />
- *&nbsp; &nbsp;&nbsp; &nbsp;And Optimizing This Code, Making It More Flexible!
-
+ *		And Optimizing This Code, Making It More Flexible!
 <br />
- *&nbsp; &nbsp;&nbsp; &nbsp;If You've Found This Code Useful, Please Let Me Know.
-
+ *		If You've Found This Code Useful, Please Let Me Know&#46;
 <br />
- *&nbsp; &nbsp;&nbsp; &nbsp;Visit My Site At nehe.gamedev.net
-
+ *		Visit My Site At nehe&#46;gamedev&#46;net
 <br />
  */
-
 <br />
 
-
 <br />
-#include &lt;windows.h&gt;&nbsp; &nbsp;&nbsp; &nbsp;// Header File For Windows
-
+#include &lt;windows&#46;h&gt;		// Header File For Windows
 <br />
-#include &lt;gl\gl.h&gt;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;// Header File For The OpenGL32 Library
-
+#include &lt;gl\gl&#46;h&gt;			// Header File For The OpenGL32 Library
 <br />
-#include &lt;gl\glu.h&gt;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;// Header File For The GLu32 Library
-
+#include &lt;gl\glu&#46;h&gt;			// Header File For The GLu32 Library
 <br />
-#include &lt;gl\glaux.h&gt;&nbsp; &nbsp;&nbsp; &nbsp;// Header File For The Glaux Library
-
+#include &lt;gl\glaux&#46;h&gt;		// Header File For The Glaux Library
 <br />
 
-
 <br />
-HDC&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;hDC=NULL;&nbsp; &nbsp;&nbsp; &nbsp;// Private GDI Device Context
-
+HDC			hDC=NULL;		// Private GDI Device Context
 <br />
-HGLRC&nbsp; &nbsp;&nbsp; &nbsp;hRC=NULL;&nbsp; &nbsp;&nbsp; &nbsp;// Permanent Rendering Context
-
+HGLRC		hRC=NULL;		// Permanent Rendering Context
 <br />
-HWND&nbsp; &nbsp;&nbsp; &nbsp;hWnd=NULL;&nbsp; &nbsp;&nbsp; &nbsp;// Holds Our Window Handle
-
+HWND		hWnd=NULL;		// Holds Our Window Handle
 <br />
-HINSTANCE&nbsp; &nbsp;hInstance;&nbsp; &nbsp;&nbsp; &nbsp;// Holds The Instance Of The Application
-
+HINSTANCE	hInstance;		// Holds The Instance Of The Application
 <br />
 
-
 <br />
-bool&nbsp; &nbsp;keys&#91;256&#93;;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;// Array Used For The Keyboard Routine
-
+bool	keys&#91;256&#93;;			// Array Used For The Keyboard Routine
 <br />
-bool&nbsp; &nbsp;active=TRUE;&nbsp; &nbsp;&nbsp; &nbsp;// Window Active Flag Set To TRUE By Default
-
+bool	active=TRUE;		// Window Active Flag Set To TRUE By Default
 <br />
-bool&nbsp; &nbsp;fullscreen=TRUE;&nbsp; &nbsp;// Fullscreen Flag Set To Fullscreen Mode By Default
-
+bool	fullscreen=TRUE;	// Fullscreen Flag Set To Fullscreen Mode By Default
 <br />
 
-
 <br />
-LRESULT&nbsp; &nbsp;CALLBACK WndProc&#40;HWND, UINT, WPARAM, LPARAM&#41;;&nbsp; &nbsp;// Declaration For WndProc
-
+LRESULT	CALLBACK WndProc&#40;HWND, UINT, WPARAM, LPARAM&#41;;	// Declaration For WndProc
 <br />
 
-
 <br />
-GLvoid ReSizeGLScene&#40;GLsizei width, GLsizei height&#41;&nbsp; &nbsp;&nbsp; &nbsp;// Resize And Initialize The GL Window
-
+GLvoid ReSizeGLScene&#40;GLsizei width, GLsizei height&#41;		// Resize And Initialize The GL Window
 <br />
 &#123;
-
 <br />
-&nbsp; &nbsp;if &#40;height==0&#41;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;// Prevent A Divide By Zero By
-
+	if &#40;height==0&#41;										// Prevent A Divide By Zero By
 <br />
-&nbsp; &nbsp;&#123;
-
+	&#123;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;height=1;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;// Making Height Equal One
-
+		height=1;										// Making Height Equal One
 <br />
-&nbsp; &nbsp;&#125;
-
+	&#125;
 <br />
 
-
 <br />
-&nbsp; &nbsp;glViewport&#40;0,0,width,height&#41;;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;// Reset The Current Viewport
-
+	glViewport&#40;0,0,width,height&#41;;						// Reset The Current Viewport
 <br />
 
-
 <br />
-&nbsp; &nbsp;glMatrixMode&#40;GL_PROJECTION&#41;;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;// Select The Projection Matrix
-
+	glMatrixMode&#40;GL_PROJECTION&#41;;						// Select The Projection Matrix
 <br />
-&nbsp; &nbsp;glLoadIdentity&#40;&#41;;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;// Reset The Projection Matrix
-
+	glLoadIdentity&#40;&#41;;									// Reset The Projection Matrix
 <br />
 
-
 <br />
-&nbsp; &nbsp;// Calculate The Aspect Ratio Of The Window
-
+	// Calculate The Aspect Ratio Of The Window
 <br />
-&nbsp; &nbsp;gluPerspective&#40;45.0f,&#40;GLfloat&#41;width/&#40;GLfloat&#41;height,0.1f,100.0f&#41;;
-
+	gluPerspective&#40;45&#46;0f,&#40;GLfloat&#41;width/&#40;GLfloat&#41;height,0&#46;1f,100&#46;0f&#41;;
 <br />
 
-
 <br />
-&nbsp; &nbsp;glMatrixMode&#40;GL_MODELVIEW&#41;;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;// Select The Modelview Matrix
-
+	glMatrixMode&#40;GL_MODELVIEW&#41;;							// Select The Modelview Matrix
 <br />
-&nbsp; &nbsp;glLoadIdentity&#40;&#41;;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;// Reset The Modelview Matrix
-
+	glLoadIdentity&#40;&#41;;									// Reset The Modelview Matrix
 <br />
 &#125;
-
 <br />
 
-
 <br />
-int InitGL&#40;GLvoid&#41;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;// All Setup For OpenGL Goes Here
-
+int InitGL&#40;GLvoid&#41;										// All Setup For OpenGL Goes Here
 <br />
 &#123;
-
 <br />
-&nbsp; &nbsp;glShadeModel&#40;GL_SMOOTH&#41;;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;// Enable Smooth Shading
-
+	glShadeModel&#40;GL_SMOOTH&#41;;							// Enable Smooth Shading
 <br />
-&nbsp; &nbsp;glClearColor&#40;0.0f, 0.0f, 0.0f, 0.5f&#41;;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;// Black Background
-
+	glClearColor&#40;0&#46;0f, 0&#46;0f, 0&#46;0f, 0&#46;5f&#41;;				// Black Background
 <br />
-&nbsp; &nbsp;glClearDepth&#40;1.0f&#41;;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;// Depth Buffer Setup
-
+	glClearDepth&#40;1&#46;0f&#41;;									// Depth Buffer Setup
 <br />
-&nbsp; &nbsp;glEnable&#40;GL_DEPTH_TEST&#41;;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;// Enables Depth Testing
-
+	glEnable&#40;GL_DEPTH_TEST&#41;;							// Enables Depth Testing
 <br />
-&nbsp; &nbsp;glDepthFunc&#40;GL_LEQUAL&#41;;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;// The Type Of Depth Testing To Do
-
+	glDepthFunc&#40;GL_LEQUAL&#41;;								// The Type Of Depth Testing To Do
 <br />
-&nbsp; &nbsp;glHint&#40;GL_PERSPECTIVE_CORRECTION_HINT, GL_NICEST&#41;;&nbsp; &nbsp;// Really Nice Perspective Calculations
-
+	glHint&#40;GL_PERSPECTIVE_CORRECTION_HINT, GL_NICEST&#41;;	// Really Nice Perspective Calculations
 <br />
-&nbsp; &nbsp;return TRUE;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;// Initialization Went OK
-
+	return TRUE;										// Initialization Went OK
 <br />
 &#125;
-
 <br />
 
-
 <br />
-int DrawGLScene&#40;GLvoid&#41;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;// Here's Where We Do All The Drawing
-
+int DrawGLScene&#40;GLvoid&#41;									// Here's Where We Do All The Drawing
 <br />
 &#123;
-
 <br />
-&nbsp; &nbsp;glClear&#40;GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT&#41;;&nbsp; &nbsp;// Clear Screen And Depth Buffer
-
+	glClear&#40;GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT&#41;;	// Clear Screen And Depth Buffer
 <br />
-&nbsp; &nbsp;glLoadIdentity&#40;&#41;;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;// Reset The Current Modelview Matrix
-
+	glLoadIdentity&#40;&#41;;									// Reset The Current Modelview Matrix
 <br />
-&nbsp; &nbsp;return TRUE;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;// Everything Went OK
-
+	return TRUE;										// Everything Went OK
 <br />
 &#125;
-
 <br />
 
-
 <br />
-GLvoid KillGLWindow&#40;GLvoid&#41;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;// Properly Kill The Window
-
+GLvoid KillGLWindow&#40;GLvoid&#41;								// Properly Kill The Window
 <br />
 &#123;
-
 <br />
-&nbsp; &nbsp;if &#40;fullscreen&#41;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;// Are We In Fullscreen Mode?
-
+	if &#40;fullscreen&#41;										// Are We In Fullscreen Mode?
 <br />
-&nbsp; &nbsp;&#123;
-
+	&#123;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;ChangeDisplaySettings&#40;NULL,0&#41;;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;// If So Switch Back To The Desktop
-
+		ChangeDisplaySettings&#40;NULL,0&#41;;					// If So Switch Back To The Desktop
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;ShowCursor&#40;TRUE&#41;;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;// Show Mouse Pointer
-
+		ShowCursor&#40;TRUE&#41;;								// Show Mouse Pointer
 <br />
-&nbsp; &nbsp;&#125;
-
+	&#125;
 <br />
 
-
 <br />
-&nbsp; &nbsp;if &#40;hRC&#41;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;// Do We Have A Rendering Context?
-
+	if &#40;hRC&#41;											// Do We Have A Rendering Context?
 <br />
-&nbsp; &nbsp;&#123;
-
+	&#123;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;if &#40;!wglMakeCurrent&#40;NULL,NULL&#41;&#41;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;// Are We Able To Release The DC And RC Contexts?
-
+		if &#40;!wglMakeCurrent&#40;NULL,NULL&#41;&#41;					// Are We Able To Release The DC And RC Contexts?
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&#123;
-
+		&#123;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;MessageBox&#40;NULL,&quot;Release Of DC And RC Failed.&quot;,&quot;SHUTDOWN ERROR&quot;,MB_OK | MB_ICONINFORMATION&#41;;
-
+			MessageBox&#40;NULL,&quot;Release Of DC And RC Failed&#46;&quot;,&quot;SHUTDOWN ERROR&quot;,MB_OK | MB_ICONINFORMATION&#41;;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&#125;
-
+		&#125;
 <br />
 
-
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;if &#40;!wglDeleteContext&#40;hRC&#41;&#41;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;// Are We Able To Delete The RC?
-
+		if &#40;!wglDeleteContext&#40;hRC&#41;&#41;						// Are We Able To Delete The RC?
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&#123;
-
+		&#123;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;MessageBox&#40;NULL,&quot;Release Rendering Context Failed.&quot;,&quot;SHUTDOWN ERROR&quot;,MB_OK | MB_ICONINFORMATION&#41;;
-
+			MessageBox&#40;NULL,&quot;Release Rendering Context Failed&#46;&quot;,&quot;SHUTDOWN ERROR&quot;,MB_OK | MB_ICONINFORMATION&#41;;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&#125;
-
+		&#125;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;hRC=NULL;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;// Set RC To NULL
-
+		hRC=NULL;										// Set RC To NULL
 <br />
-&nbsp; &nbsp;&#125;
-
+	&#125;
 <br />
 
-
 <br />
-&nbsp; &nbsp;if &#40;hDC &amp;&amp; !ReleaseDC&#40;hWnd,hDC&#41;&#41;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;// Are We Able To Release The DC
-
+	if &#40;hDC &amp;&amp; !ReleaseDC&#40;hWnd,hDC&#41;&#41;					// Are We Able To Release The DC
 <br />
-&nbsp; &nbsp;&#123;
-
+	&#123;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;MessageBox&#40;NULL,&quot;Release Device Context Failed.&quot;,&quot;SHUTDOWN ERROR&quot;,MB_OK | MB_ICONINFORMATION&#41;;
-
+		MessageBox&#40;NULL,&quot;Release Device Context Failed&#46;&quot;,&quot;SHUTDOWN ERROR&quot;,MB_OK | MB_ICONINFORMATION&#41;;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;hDC=NULL;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;// Set DC To NULL
-
+		hDC=NULL;										// Set DC To NULL
 <br />
-&nbsp; &nbsp;&#125;
-
+	&#125;
 <br />
 
-
 <br />
-&nbsp; &nbsp;if &#40;hWnd &amp;&amp; !DestroyWindow&#40;hWnd&#41;&#41;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;// Are We Able To Destroy The Window?
-
+	if &#40;hWnd &amp;&amp; !DestroyWindow&#40;hWnd&#41;&#41;					// Are We Able To Destroy The Window?
 <br />
-&nbsp; &nbsp;&#123;
-
+	&#123;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;MessageBox&#40;NULL,&quot;Could Not Release hWnd.&quot;,&quot;SHUTDOWN ERROR&quot;,MB_OK | MB_ICONINFORMATION&#41;;
-
+		MessageBox&#40;NULL,&quot;Could Not Release hWnd&#46;&quot;,&quot;SHUTDOWN ERROR&quot;,MB_OK | MB_ICONINFORMATION&#41;;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;hWnd=NULL;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;// Set hWnd To NULL
-
+		hWnd=NULL;										// Set hWnd To NULL
 <br />
-&nbsp; &nbsp;&#125;
-
+	&#125;
 <br />
 
-
 <br />
-&nbsp; &nbsp;if &#40;!UnregisterClass&#40;&quot;OpenGL&quot;,hInstance&#41;&#41;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;// Are We Able To Unregister Class
-
+	if &#40;!UnregisterClass&#40;&quot;OpenGL&quot;,hInstance&#41;&#41;			// Are We Able To Unregister Class
 <br />
-&nbsp; &nbsp;&#123;
-
+	&#123;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;MessageBox&#40;NULL,&quot;Could Not Unregister Class.&quot;,&quot;SHUTDOWN ERROR&quot;,MB_OK | MB_ICONINFORMATION&#41;;
-
+		MessageBox&#40;NULL,&quot;Could Not Unregister Class&#46;&quot;,&quot;SHUTDOWN ERROR&quot;,MB_OK | MB_ICONINFORMATION&#41;;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;hInstance=NULL;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;// Set hInstance To NULL
-
+		hInstance=NULL;									// Set hInstance To NULL
 <br />
-&nbsp; &nbsp;&#125;
-
+	&#125;
 <br />
 &#125;
-
 <br />
 
-
 <br />
-/*&nbsp; &nbsp;This Code Creates Our OpenGL Window.&nbsp; Parameters Are&#58;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;*
-
+/*	This Code Creates Our OpenGL Window&#46;  Parameters Are&#58;					*
 <br />
- *&nbsp; &nbsp;title&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;- Title To Appear At The Top Of The Window&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;*
-
+ *	title			- Title To Appear At The Top Of The Window				*
 <br />
- *&nbsp; &nbsp;width&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;- Width Of The GL Window Or Fullscreen Mode&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;*
-
+ *	width			- Width Of The GL Window Or Fullscreen Mode				*
 <br />
- *&nbsp; &nbsp;height&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;- Height Of The GL Window Or Fullscreen Mode&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;*
-
+ *	height			- Height Of The GL Window Or Fullscreen Mode			*
 <br />
- *&nbsp; &nbsp;bits&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;- Number Of Bits To Use For Color &#40;8/16/24/32&#41;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;*
-
+ *	bits			- Number Of Bits To Use For Color &#40;8/16/24/32&#41;			*
 <br />
- *&nbsp; &nbsp;fullscreenflag&nbsp; &nbsp;- Use Fullscreen Mode &#40;TRUE&#41; Or Windowed Mode &#40;FALSE&#41;&nbsp; &nbsp;*/
-
+ *	fullscreenflag	- Use Fullscreen Mode &#40;TRUE&#41; Or Windowed Mode &#40;FALSE&#41;	*/
 <br />
  
-
 <br />
 BOOL CreateGLWindow&#40;char* title, int width, int height, int bits, bool fullscreenflag&#41;
-
 <br />
 &#123;
-
 <br />
-&nbsp; &nbsp;GLuint&nbsp; &nbsp;&nbsp; &nbsp;PixelFormat;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;// Holds The Results After Searching For A Match
-
+	GLuint		PixelFormat;			// Holds The Results After Searching For A Match
 <br />
-&nbsp; &nbsp;WNDCLASS&nbsp; &nbsp;wc;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;// Windows Class Structure
-
+	WNDCLASS	wc;						// Windows Class Structure
 <br />
-&nbsp; &nbsp;DWORD&nbsp; &nbsp;&nbsp; &nbsp;dwExStyle;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;// Window Extended Style
-
+	DWORD		dwExStyle;				// Window Extended Style
 <br />
-&nbsp; &nbsp;DWORD&nbsp; &nbsp;&nbsp; &nbsp;dwStyle;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;// Window Style
-
+	DWORD		dwStyle;				// Window Style
 <br />
-&nbsp; &nbsp;RECT&nbsp; &nbsp;&nbsp; &nbsp;WindowRect;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;// Grabs Rectangle Upper Left / Lower Right Values
-
+	RECT		WindowRect;				// Grabs Rectangle Upper Left / Lower Right Values
 <br />
-&nbsp; &nbsp;WindowRect.left=&#40;long&#41;0;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;// Set Left Value To 0
-
+	WindowRect&#46;left=&#40;long&#41;0;			// Set Left Value To 0
 <br />
-&nbsp; &nbsp;WindowRect.right=&#40;long&#41;width;&nbsp; &nbsp;&nbsp; &nbsp;// Set Right Value To Requested Width
-
+	WindowRect&#46;right=&#40;long&#41;width;		// Set Right Value To Requested Width
 <br />
-&nbsp; &nbsp;WindowRect.top=&#40;long&#41;0;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;// Set Top Value To 0
-
+	WindowRect&#46;top=&#40;long&#41;0;				// Set Top Value To 0
 <br />
-&nbsp; &nbsp;WindowRect.bottom=&#40;long&#41;height;&nbsp; &nbsp;&nbsp; &nbsp;// Set Bottom Value To Requested Height
-
+	WindowRect&#46;bottom=&#40;long&#41;height;		// Set Bottom Value To Requested Height
 <br />
 
-
 <br />
-&nbsp; &nbsp;fullscreen=fullscreenflag;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;// Set The Global Fullscreen Flag
-
+	fullscreen=fullscreenflag;			// Set The Global Fullscreen Flag
 <br />
 
-
 <br />
-&nbsp; &nbsp;hInstance&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;= GetModuleHandle&#40;NULL&#41;;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;// Grab An Instance For Our Window
-
+	hInstance			= GetModuleHandle&#40;NULL&#41;;				// Grab An Instance For Our Window
 <br />
-&nbsp; &nbsp;wc.style&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;= CS_HREDRAW | CS_VREDRAW | CS_OWNDC;&nbsp; &nbsp;// Redraw On Size, And Own DC For Window.
-
+	wc&#46;style			= CS_HREDRAW | CS_VREDRAW | CS_OWNDC;	// Redraw On Size, And Own DC For Window&#46;
 <br />
-&nbsp; &nbsp;wc.lpfnWndProc&nbsp; &nbsp;&nbsp; &nbsp;= &#40;WNDPROC&#41; WndProc;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;// WndProc Handles Messages
-
+	wc&#46;lpfnWndProc		= &#40;WNDPROC&#41; WndProc;					// WndProc Handles Messages
 <br />
-&nbsp; &nbsp;wc.cbClsExtra&nbsp; &nbsp;&nbsp; &nbsp;= 0;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;// No Extra Window Data
-
+	wc&#46;cbClsExtra		= 0;									// No Extra Window Data
 <br />
-&nbsp; &nbsp;wc.cbWndExtra&nbsp; &nbsp;&nbsp; &nbsp;= 0;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;// No Extra Window Data
-
+	wc&#46;cbWndExtra		= 0;									// No Extra Window Data
 <br />
-&nbsp; &nbsp;wc.hInstance&nbsp; &nbsp;&nbsp; &nbsp;= hInstance;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;// Set The Instance
-
+	wc&#46;hInstance		= hInstance;							// Set The Instance
 <br />
-&nbsp; &nbsp;wc.hIcon&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;= LoadIcon&#40;NULL, IDI_WINLOGO&#41;;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;// Load The Default Icon
-
+	wc&#46;hIcon			= LoadIcon&#40;NULL, IDI_WINLOGO&#41;;			// Load The Default Icon
 <br />
-&nbsp; &nbsp;wc.hCursor&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;= LoadCursor&#40;NULL, IDC_ARROW&#41;;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;// Load The Arrow Pointer
-
+	wc&#46;hCursor			= LoadCursor&#40;NULL, IDC_ARROW&#41;;			// Load The Arrow Pointer
 <br />
-&nbsp; &nbsp;wc.hbrBackground&nbsp; &nbsp;= NULL;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;// No Background Required For GL
-
+	wc&#46;hbrBackground	= NULL;									// No Background Required For GL
 <br />
-&nbsp; &nbsp;wc.lpszMenuName&nbsp; &nbsp;&nbsp; &nbsp;= NULL;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;// We Don't Want A Menu
-
+	wc&#46;lpszMenuName		= NULL;									// We Don't Want A Menu
 <br />
-&nbsp; &nbsp;wc.lpszClassName&nbsp; &nbsp;= &quot;OpenGL&quot;;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;// Set The Class Name
-
+	wc&#46;lpszClassName	= &quot;OpenGL&quot;;								// Set The Class Name
 <br />
-
 
 <br />
-&nbsp; &nbsp;if &#40;!RegisterClass&#40;&amp;wc&#41;&#41;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;// Attempt To Register The Window Class
-
+	if &#40;!RegisterClass&#40;&amp;wc&#41;&#41;									// Attempt To Register The Window Class
 <br />
-&nbsp; &nbsp;&#123;
-
+	&#123;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;MessageBox&#40;NULL,&quot;Failed To Register The Window Class.&quot;,&quot;ERROR&quot;,MB_OK|MB_ICONEXCLAMATION&#41;;
-
+		MessageBox&#40;NULL,&quot;Failed To Register The Window Class&#46;&quot;,&quot;ERROR&quot;,MB_OK|MB_ICONEXCLAMATION&#41;;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;return FALSE;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;// Return FALSE
-
+		return FALSE;											// Return FALSE
 <br />
-&nbsp; &nbsp;&#125;
-
+	&#125;
 <br />
-&nbsp; &nbsp;
-
+	
 <br />
-&nbsp; &nbsp;if &#40;fullscreen&#41;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;// Attempt Fullscreen Mode?
-
+	if &#40;fullscreen&#41;												// Attempt Fullscreen Mode?
 <br />
-&nbsp; &nbsp;&#123;
-
+	&#123;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;DEVMODE dmScreenSettings;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;// Device Mode
-
+		DEVMODE dmScreenSettings;								// Device Mode
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;memset&#40;&amp;dmScreenSettings,0,sizeof&#40;dmScreenSettings&#41;&#41;;&nbsp; &nbsp;// Makes Sure Memory's Cleared
-
+		memset&#40;&amp;dmScreenSettings,0,sizeof&#40;dmScreenSettings&#41;&#41;;	// Makes Sure Memory's Cleared
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;dmScreenSettings.dmSize=sizeof&#40;dmScreenSettings&#41;;&nbsp; &nbsp;&nbsp; &nbsp;// Size Of The Devmode Structure
-
+		dmScreenSettings&#46;dmSize=sizeof&#40;dmScreenSettings&#41;;		// Size Of The Devmode Structure
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;dmScreenSettings.dmPelsWidth&nbsp; &nbsp;= width;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;// Selected Screen Width
-
+		dmScreenSettings&#46;dmPelsWidth	= width;				// Selected Screen Width
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;dmScreenSettings.dmPelsHeight&nbsp; &nbsp;= height;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;// Selected Screen Height
-
+		dmScreenSettings&#46;dmPelsHeight	= height;				// Selected Screen Height
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;dmScreenSettings.dmBitsPerPel&nbsp; &nbsp;= bits;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;// Selected Bits Per Pixel
-
+		dmScreenSettings&#46;dmBitsPerPel	= bits;					// Selected Bits Per Pixel
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;dmScreenSettings.dmFields=DM_BITSPERPEL|DM_PELSWIDTH|DM_PELSHEIGHT;
-
+		dmScreenSettings&#46;dmFields=DM_BITSPERPEL|DM_PELSWIDTH|DM_PELSHEIGHT;
 <br />
 
-
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;// Try To Set Selected Mode And Get Results.&nbsp; NOTE&#58; CDS_FULLSCREEN Gets Rid Of Start Bar.
-
+		// Try To Set Selected Mode And Get Results&#46;  NOTE&#58; CDS_FULLSCREEN Gets Rid Of Start Bar&#46;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;if &#40;ChangeDisplaySettings&#40;&amp;dmScreenSettings,CDS_FULLSCREEN&#41;!=DISP_CHANGE_SUCCESSFUL&#41;
-
+		if &#40;ChangeDisplaySettings&#40;&amp;dmScreenSettings,CDS_FULLSCREEN&#41;!=DISP_CHANGE_SUCCESSFUL&#41;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&#123;
-
+		&#123;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;// If The Mode Fails, Offer Two Options.&nbsp; Quit Or Use Windowed Mode.
-
+			// If The Mode Fails, Offer Two Options&#46;  Quit Or Use Windowed Mode&#46;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;if &#40;MessageBox&#40;NULL,&quot;The Requested Fullscreen Mode Is Not Supported By\nYour Video Card. Use Windowed Mode Instead?&quot;,&quot;NeHe GL&quot;,MB_YESNO|MB_ICONEXCLAMATION&#41;==IDYES&#41;
-
+			if &#40;MessageBox&#40;NULL,&quot;The Requested Fullscreen Mode Is Not Supported By\nYour Video Card&#46; Use Windowed Mode Instead?&quot;,&quot;NeHe GL&quot;,MB_YESNO|MB_ICONEXCLAMATION&#41;==IDYES&#41;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&#123;
-
+			&#123;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;fullscreen=FALSE;&nbsp; &nbsp;&nbsp; &nbsp;// Windowed Mode Selected.&nbsp; Fullscreen = FALSE
-
+				fullscreen=FALSE;		// Windowed Mode Selected&#46;  Fullscreen = FALSE
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&#125;
-
+			&#125;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;else
-
+			else
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&#123;
-
+			&#123;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;// Pop Up A Message Box Letting User Know The Program Is Closing.
-
+				// Pop Up A Message Box Letting User Know The Program Is Closing&#46;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;MessageBox&#40;NULL,&quot;Program Will Now Close.&quot;,&quot;ERROR&quot;,MB_OK|MB_ICONSTOP&#41;;
-
+				MessageBox&#40;NULL,&quot;Program Will Now Close&#46;&quot;,&quot;ERROR&quot;,MB_OK|MB_ICONSTOP&#41;;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;return FALSE;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;// Return FALSE
-
+				return FALSE;									// Return FALSE
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&#125;
-
+			&#125;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&#125;
-
+		&#125;
 <br />
-&nbsp; &nbsp;&#125;
-
+	&#125;
 <br />
 
-
 <br />
-&nbsp; &nbsp;if &#40;fullscreen&#41;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;// Are We Still In Fullscreen Mode?
-
+	if &#40;fullscreen&#41;												// Are We Still In Fullscreen Mode?
 <br />
-&nbsp; &nbsp;&#123;
-
+	&#123;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;dwExStyle=WS_EX_APPWINDOW;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;// Window Extended Style
-
+		dwExStyle=WS_EX_APPWINDOW;								// Window Extended Style
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;dwStyle=WS_POPUP;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;// Windows Style
-
+		dwStyle=WS_POPUP;										// Windows Style
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;ShowCursor&#40;FALSE&#41;;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;// Hide Mouse Pointer
-
+		ShowCursor&#40;FALSE&#41;;										// Hide Mouse Pointer
 <br />
-&nbsp; &nbsp;&#125;
-
+	&#125;
 <br />
-&nbsp; &nbsp;else
-
+	else
 <br />
-&nbsp; &nbsp;&#123;
-
+	&#123;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;dwExStyle=WS_EX_APPWINDOW | WS_EX_WINDOWEDGE;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;// Window Extended Style
-
+		dwExStyle=WS_EX_APPWINDOW | WS_EX_WINDOWEDGE;			// Window Extended Style
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;dwStyle=WS_OVERLAPPEDWINDOW;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;// Windows Style
-
+		dwStyle=WS_OVERLAPPEDWINDOW;							// Windows Style
 <br />
-&nbsp; &nbsp;&#125;
-
+	&#125;
 <br />
-
 
 <br />
-&nbsp; &nbsp;AdjustWindowRectEx&#40;&amp;WindowRect, dwStyle, FALSE, dwExStyle&#41;;&nbsp; &nbsp;&nbsp; &nbsp;// Adjust Window To True Requested Size
-
+	AdjustWindowRectEx&#40;&amp;WindowRect, dwStyle, FALSE, dwExStyle&#41;;		// Adjust Window To True Requested Size
 <br />
-
 
 <br />
-&nbsp; &nbsp;// Create The Window
-
+	// Create The Window
 <br />
-&nbsp; &nbsp;if &#40;!&#40;hWnd=CreateWindowEx&#40;&nbsp; &nbsp;dwExStyle,&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;// Extended Style For The Window
-
+	if &#40;!&#40;hWnd=CreateWindowEx&#40;	dwExStyle,							// Extended Style For The Window
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&quot;OpenGL&quot;,&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;// Class Name
-
+								&quot;OpenGL&quot;,							// Class Name
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;title,&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;// Window Title
-
+								title,								// Window Title
 <br />
 
-
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;dwStyle |&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;// Defined Window Style
-
+								dwStyle |							// Defined Window Style
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;WS_CLIPSIBLINGS |&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;// Required Window Style
-
+								WS_CLIPSIBLINGS |					// Required Window Style
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;WS_CLIPCHILDREN,&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;// Required Window Style
-
+								WS_CLIPCHILDREN,					// Required Window Style
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;0, 0,&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;// Window Position
-
+								0, 0,								// Window Position
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;WindowRect.right-WindowRect.left,&nbsp; &nbsp;// Calculate Window Width
-
+								WindowRect&#46;right-WindowRect&#46;left,	// Calculate Window Width
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;WindowRect.bottom-WindowRect.top,&nbsp; &nbsp;// Calculate Window Height
-
+								WindowRect&#46;bottom-WindowRect&#46;top,	// Calculate Window Height
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;NULL,&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;// No Parent Window
-
+								NULL,								// No Parent Window
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;NULL,&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;// No Menu
-
+								NULL,								// No Menu
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;hInstance,&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;// Instance
-
+								hInstance,							// Instance
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;NULL&#41;&#41;&#41;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;// Dont Pass Anything To WM_CREATE
-
+								NULL&#41;&#41;&#41;								// Dont Pass Anything To WM_CREATE
 <br />
-&nbsp; &nbsp;&#123;
-
+	&#123;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;KillGLWindow&#40;&#41;;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;// Reset The Display
-
+		KillGLWindow&#40;&#41;;								// Reset The Display
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;MessageBox&#40;NULL,&quot;Window Creation Error.&quot;,&quot;ERROR&quot;,MB_OK|MB_ICONEXCLAMATION&#41;;
-
+		MessageBox&#40;NULL,&quot;Window Creation Error&#46;&quot;,&quot;ERROR&quot;,MB_OK|MB_ICONEXCLAMATION&#41;;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;return FALSE;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;// Return FALSE
-
+		return FALSE;								// Return FALSE
 <br />
-&nbsp; &nbsp;&#125;
-
+	&#125;
 <br />
-
 
 <br />
-&nbsp; &nbsp;static&nbsp; &nbsp;PIXELFORMATDESCRIPTOR pfd=&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;// pfd Tells Windows How We Want Things To Be
-
+	static	PIXELFORMATDESCRIPTOR pfd=				// pfd Tells Windows How We Want Things To Be
 <br />
-&nbsp; &nbsp;&#123;
-
+	&#123;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;sizeof&#40;PIXELFORMATDESCRIPTOR&#41;,&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;// Size Of This Pixel Format Descriptor
-
+		sizeof&#40;PIXELFORMATDESCRIPTOR&#41;,				// Size Of This Pixel Format Descriptor
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;1,&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;// Version Number
-
+		1,											// Version Number
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;PFD_DRAW_TO_WINDOW |&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;// Format Must Support Window
-
+		PFD_DRAW_TO_WINDOW |						// Format Must Support Window
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;PFD_SUPPORT_OPENGL |&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;// Format Must Support OpenGL
-
+		PFD_SUPPORT_OPENGL |						// Format Must Support OpenGL
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;PFD_DOUBLEBUFFER,&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;// Must Support Double Buffering
-
+		PFD_DOUBLEBUFFER,							// Must Support Double Buffering
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;PFD_TYPE_RGBA,&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;// Request An RGBA Format
-
+		PFD_TYPE_RGBA,								// Request An RGBA Format
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;bits,&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;// Select Our Color Depth
-
+		bits,										// Select Our Color Depth
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;0, 0, 0, 0, 0, 0,&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;// Color Bits Ignored
-
+		0, 0, 0, 0, 0, 0,							// Color Bits Ignored
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;0,&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;// No Alpha Buffer
-
+		0,											// No Alpha Buffer
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;0,&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;// Shift Bit Ignored
-
+		0,											// Shift Bit Ignored
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;0,&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;// No Accumulation Buffer
-
+		0,											// No Accumulation Buffer
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;0, 0, 0, 0,&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;// Accumulation Bits Ignored
-
+		0, 0, 0, 0,									// Accumulation Bits Ignored
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;16,&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;// 16Bit Z-Buffer &#40;Depth Buffer&#41;&nbsp; 
-
+		16,											// 16Bit Z-Buffer &#40;Depth Buffer&#41;  
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;0,&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;// No Stencil Buffer
-
+		0,											// No Stencil Buffer
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;0,&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;// No Auxiliary Buffer
-
+		0,											// No Auxiliary Buffer
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;PFD_MAIN_PLANE,&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;// Main Drawing Layer
-
+		PFD_MAIN_PLANE,								// Main Drawing Layer
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;0,&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;// Reserved
-
+		0,											// Reserved
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;0, 0, 0&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;// Layer Masks Ignored
-
+		0, 0, 0										// Layer Masks Ignored
 <br />
-&nbsp; &nbsp;&#125;;
-
+	&#125;;
 <br />
-&nbsp; &nbsp;
-
+	
 <br />
-&nbsp; &nbsp;if &#40;!&#40;hDC=GetDC&#40;hWnd&#41;&#41;&#41;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;// Did We Get A Device Context?
-
+	if &#40;!&#40;hDC=GetDC&#40;hWnd&#41;&#41;&#41;							// Did We Get A Device Context?
 <br />
-&nbsp; &nbsp;&#123;
-
+	&#123;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;KillGLWindow&#40;&#41;;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;// Reset The Display
-
+		KillGLWindow&#40;&#41;;								// Reset The Display
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;MessageBox&#40;NULL,&quot;Can't Create A GL Device Context.&quot;,&quot;ERROR&quot;,MB_OK|MB_ICONEXCLAMATION&#41;;
-
+		MessageBox&#40;NULL,&quot;Can't Create A GL Device Context&#46;&quot;,&quot;ERROR&quot;,MB_OK|MB_ICONEXCLAMATION&#41;;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;return FALSE;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;// Return FALSE
-
+		return FALSE;								// Return FALSE
 <br />
-&nbsp; &nbsp;&#125;
-
+	&#125;
 <br />
-
 
 <br />
-&nbsp; &nbsp;if &#40;!&#40;PixelFormat=ChoosePixelFormat&#40;hDC,&amp;pfd&#41;&#41;&#41;&nbsp; &nbsp;// Did Windows Find A Matching Pixel Format?
-
+	if &#40;!&#40;PixelFormat=ChoosePixelFormat&#40;hDC,&amp;pfd&#41;&#41;&#41;	// Did Windows Find A Matching Pixel Format?
 <br />
-&nbsp; &nbsp;&#123;
-
+	&#123;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;KillGLWindow&#40;&#41;;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;// Reset The Display
-
+		KillGLWindow&#40;&#41;;								// Reset The Display
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;MessageBox&#40;NULL,&quot;Can't Find A Suitable PixelFormat.&quot;,&quot;ERROR&quot;,MB_OK|MB_ICONEXCLAMATION&#41;;
-
+		MessageBox&#40;NULL,&quot;Can't Find A Suitable PixelFormat&#46;&quot;,&quot;ERROR&quot;,MB_OK|MB_ICONEXCLAMATION&#41;;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;return FALSE;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;// Return FALSE
-
+		return FALSE;								// Return FALSE
 <br />
-&nbsp; &nbsp;&#125;
-
+	&#125;
 <br />
-
 
 <br />
-&nbsp; &nbsp;if&#40;!SetPixelFormat&#40;hDC,PixelFormat,&amp;pfd&#41;&#41;&nbsp; &nbsp;&nbsp; &nbsp;// Are We Able To Set The Pixel Format?
-
+	if&#40;!SetPixelFormat&#40;hDC,PixelFormat,&amp;pfd&#41;&#41;		// Are We Able To Set The Pixel Format?
 <br />
-&nbsp; &nbsp;&#123;
-
+	&#123;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;KillGLWindow&#40;&#41;;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;// Reset The Display
-
+		KillGLWindow&#40;&#41;;								// Reset The Display
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;MessageBox&#40;NULL,&quot;Can't Set The PixelFormat.&quot;,&quot;ERROR&quot;,MB_OK|MB_ICONEXCLAMATION&#41;;
-
+		MessageBox&#40;NULL,&quot;Can't Set The PixelFormat&#46;&quot;,&quot;ERROR&quot;,MB_OK|MB_ICONEXCLAMATION&#41;;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;return FALSE;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;// Return FALSE
-
+		return FALSE;								// Return FALSE
 <br />
-&nbsp; &nbsp;&#125;
-
+	&#125;
 <br />
 
-
 <br />
-&nbsp; &nbsp;if &#40;!&#40;hRC=wglCreateContext&#40;hDC&#41;&#41;&#41;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;// Are We Able To Get A Rendering Context?
-
+	if &#40;!&#40;hRC=wglCreateContext&#40;hDC&#41;&#41;&#41;				// Are We Able To Get A Rendering Context?
 <br />
-&nbsp; &nbsp;&#123;
-
+	&#123;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;KillGLWindow&#40;&#41;;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;// Reset The Display
-
+		KillGLWindow&#40;&#41;;								// Reset The Display
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;MessageBox&#40;NULL,&quot;Can't Create A GL Rendering Context.&quot;,&quot;ERROR&quot;,MB_OK|MB_ICONEXCLAMATION&#41;;
-
+		MessageBox&#40;NULL,&quot;Can't Create A GL Rendering Context&#46;&quot;,&quot;ERROR&quot;,MB_OK|MB_ICONEXCLAMATION&#41;;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;return FALSE;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;// Return FALSE
-
+		return FALSE;								// Return FALSE
 <br />
-&nbsp; &nbsp;&#125;
-
+	&#125;
 <br />
 
-
 <br />
-&nbsp; &nbsp;if&#40;!wglMakeCurrent&#40;hDC,hRC&#41;&#41;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;// Try To Activate The Rendering Context
-
+	if&#40;!wglMakeCurrent&#40;hDC,hRC&#41;&#41;					// Try To Activate The Rendering Context
 <br />
-&nbsp; &nbsp;&#123;
-
+	&#123;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;KillGLWindow&#40;&#41;;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;// Reset The Display
-
+		KillGLWindow&#40;&#41;;								// Reset The Display
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;MessageBox&#40;NULL,&quot;Can't Activate The GL Rendering Context.&quot;,&quot;ERROR&quot;,MB_OK|MB_ICONEXCLAMATION&#41;;
-
+		MessageBox&#40;NULL,&quot;Can't Activate The GL Rendering Context&#46;&quot;,&quot;ERROR&quot;,MB_OK|MB_ICONEXCLAMATION&#41;;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;return FALSE;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;// Return FALSE
-
+		return FALSE;								// Return FALSE
 <br />
-&nbsp; &nbsp;&#125;
-
+	&#125;
 <br />
 
-
 <br />
-&nbsp; &nbsp;ShowWindow&#40;hWnd,SW_SHOW&#41;;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;// Show The Window
-
+	ShowWindow&#40;hWnd,SW_SHOW&#41;;						// Show The Window
 <br />
-&nbsp; &nbsp;SetForegroundWindow&#40;hWnd&#41;;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;// Slightly Higher Priority
-
+	SetForegroundWindow&#40;hWnd&#41;;						// Slightly Higher Priority
 <br />
-&nbsp; &nbsp;SetFocus&#40;hWnd&#41;;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;// Sets Keyboard Focus To The Window
-
+	SetFocus&#40;hWnd&#41;;									// Sets Keyboard Focus To The Window
 <br />
-&nbsp; &nbsp;ReSizeGLScene&#40;width, height&#41;;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;// Set Up Our Perspective GL Screen
-
+	ReSizeGLScene&#40;width, height&#41;;					// Set Up Our Perspective GL Screen
 <br />
 
-
 <br />
-&nbsp; &nbsp;if &#40;!InitGL&#40;&#41;&#41;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;// Initialize Our Newly Created GL Window
-
+	if &#40;!InitGL&#40;&#41;&#41;									// Initialize Our Newly Created GL Window
 <br />
-&nbsp; &nbsp;&#123;
-
+	&#123;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;KillGLWindow&#40;&#41;;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;// Reset The Display
-
+		KillGLWindow&#40;&#41;;								// Reset The Display
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;MessageBox&#40;NULL,&quot;Initialization Failed.&quot;,&quot;ERROR&quot;,MB_OK|MB_ICONEXCLAMATION&#41;;
-
+		MessageBox&#40;NULL,&quot;Initialization Failed&#46;&quot;,&quot;ERROR&quot;,MB_OK|MB_ICONEXCLAMATION&#41;;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;return FALSE;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;// Return FALSE
-
+		return FALSE;								// Return FALSE
 <br />
-&nbsp; &nbsp;&#125;
-
+	&#125;
 <br />
 
-
 <br />
-&nbsp; &nbsp;return TRUE;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;// Success
-
+	return TRUE;									// Success
 <br />
 &#125;
-
 <br />
 
-
 <br />
-LRESULT CALLBACK WndProc&#40;&nbsp; &nbsp;HWND&nbsp; &nbsp;hWnd,&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;// Handle For This Window
-
+LRESULT CALLBACK WndProc&#40;	HWND	hWnd,			// Handle For This Window
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;UINT&nbsp; &nbsp;uMsg,&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;// Message For This Window
-
+							UINT	uMsg,			// Message For This Window
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;WPARAM&nbsp; &nbsp;wParam,&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;// Additional Message Information
-
+							WPARAM	wParam,			// Additional Message Information
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;LPARAM&nbsp; &nbsp;lParam&#41;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;// Additional Message Information
-
+							LPARAM	lParam&#41;			// Additional Message Information
 <br />
 &#123;
-
 <br />
-&nbsp; &nbsp;switch &#40;uMsg&#41;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;// Check For Windows Messages
-
+	switch &#40;uMsg&#41;									// Check For Windows Messages
 <br />
-&nbsp; &nbsp;&#123;
-
+	&#123;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;case WM_ACTIVATE&#58;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;// Watch For Window Activate Message
-
+		case WM_ACTIVATE&#58;							// Watch For Window Activate Message
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&#123;
-
+		&#123;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;if &#40;!HIWORD&#40;wParam&#41;&#41;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;// Check Minimization State
-
+			if &#40;!HIWORD&#40;wParam&#41;&#41;					// Check Minimization State
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&#123;
-
+			&#123;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;active=TRUE;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;// Program Is Active
-
+				active=TRUE;						// Program Is Active
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&#125;
-
+			&#125;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;else
-
+			else
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&#123;
-
+			&#123;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;active=FALSE;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;// Program Is No Longer Active
-
+				active=FALSE;						// Program Is No Longer Active
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&#125;
-
+			&#125;
 <br />
 
-
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;return 0;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;// Return To The Message Loop
-
+			return 0;								// Return To The Message Loop
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&#125;
-
+		&#125;
 <br />
 
-
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;case WM_SYSCOMMAND&#58;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;// Intercept System Commands
-
+		case WM_SYSCOMMAND&#58;							// Intercept System Commands
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&#123;
-
+		&#123;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;switch &#40;wParam&#41;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;// Check System Calls
-
+			switch &#40;wParam&#41;							// Check System Calls
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&#123;
-
+			&#123;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;case SC_SCREENSAVE&#58;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;// Screensaver Trying To Start?
-
+				case SC_SCREENSAVE&#58;					// Screensaver Trying To Start?
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;case SC_MONITORPOWER&#58;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;// Monitor Trying To Enter Powersave?
-
+				case SC_MONITORPOWER&#58;				// Monitor Trying To Enter Powersave?
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;return 0;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;// Prevent From Happening
-
+				return 0;							// Prevent From Happening
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&#125;
-
+			&#125;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;break;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;// Exit
-
+			break;									// Exit
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&#125;
-
+		&#125;
 <br />
 
-
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;case WM_CLOSE&#58;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;// Did We Receive A Close Message?
-
+		case WM_CLOSE&#58;								// Did We Receive A Close Message?
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&#123;
-
+		&#123;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;PostQuitMessage&#40;0&#41;;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;// Send A Quit Message
-
+			PostQuitMessage&#40;0&#41;;						// Send A Quit Message
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;return 0;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;// Jump Back
-
+			return 0;								// Jump Back
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&#125;
-
+		&#125;
 <br />
 
-
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;case WM_KEYDOWN&#58;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;// Is A Key Being Held Down?
-
+		case WM_KEYDOWN&#58;							// Is A Key Being Held Down?
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&#123;
-
+		&#123;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;keys&#91;wParam&#93; = TRUE;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;// If So, Mark It As TRUE
-
+			keys&#91;wParam&#93; = TRUE;					// If So, Mark It As TRUE
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;return 0;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;// Jump Back
-
+			return 0;								// Jump Back
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&#125;
-
+		&#125;
 <br />
 
-
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;case WM_KEYUP&#58;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;// Has A Key Been Released?
-
+		case WM_KEYUP&#58;								// Has A Key Been Released?
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&#123;
-
+		&#123;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;keys&#91;wParam&#93; = FALSE;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;// If So, Mark It As FALSE
-
+			keys&#91;wParam&#93; = FALSE;					// If So, Mark It As FALSE
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;return 0;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;// Jump Back
-
+			return 0;								// Jump Back
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&#125;
-
+		&#125;
 <br />
 
-
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;case WM_SIZE&#58;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;// Resize The OpenGL Window
-
+		case WM_SIZE&#58;								// Resize The OpenGL Window
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&#123;
-
+		&#123;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;ReSizeGLScene&#40;LOWORD&#40;lParam&#41;,HIWORD&#40;lParam&#41;&#41;;&nbsp; // LoWord=Width, HiWord=Height
-
+			ReSizeGLScene&#40;LOWORD&#40;lParam&#41;,HIWORD&#40;lParam&#41;&#41;;  // LoWord=Width, HiWord=Height
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;return 0;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;// Jump Back
-
+			return 0;								// Jump Back
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&#125;
-
+		&#125;
 <br />
-&nbsp; &nbsp;&#125;
-
+	&#125;
 <br />
 
-
 <br />
-&nbsp; &nbsp;// Pass All Unhandled Messages To DefWindowProc
-
+	// Pass All Unhandled Messages To DefWindowProc
 <br />
-&nbsp; &nbsp;return DefWindowProc&#40;hWnd,uMsg,wParam,lParam&#41;;
-
+	return DefWindowProc&#40;hWnd,uMsg,wParam,lParam&#41;;
 <br />
 &#125;
-
 <br />
 
-
 <br />
-int WINAPI WinMain&#40;&nbsp; &nbsp;HINSTANCE&nbsp; &nbsp;hInstance,&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;// Instance
-
+int WINAPI WinMain&#40;	HINSTANCE	hInstance,			// Instance
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;HINSTANCE&nbsp; &nbsp;hPrevInstance,&nbsp; &nbsp;&nbsp; &nbsp;// Previous Instance
-
+					HINSTANCE	hPrevInstance,		// Previous Instance
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;LPSTR&nbsp; &nbsp;&nbsp; &nbsp;lpCmdLine,&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;// Command Line Parameters
-
+					LPSTR		lpCmdLine,			// Command Line Parameters
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;int&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;nCmdShow&#41;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;// Window Show State
-
+					int			nCmdShow&#41;			// Window Show State
 <br />
 &#123;
-
 <br />
-&nbsp; &nbsp;MSG&nbsp; &nbsp;&nbsp; &nbsp;msg;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;// Windows Message Structure
-
+	MSG		msg;									// Windows Message Structure
 <br />
-&nbsp; &nbsp;BOOL&nbsp; &nbsp;done=FALSE;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;// Bool Variable To Exit Loop
-
+	BOOL	done=FALSE;								// Bool Variable To Exit Loop
 <br />
 
-
 <br />
-&nbsp; &nbsp;// Ask The User Which Screen Mode They Prefer
-
+	// Ask The User Which Screen Mode They Prefer
 <br />
-&nbsp; &nbsp;if &#40;MessageBox&#40;NULL,&quot;Would You Like To Run In Fullscreen Mode?&quot;, &quot;Start FullScreen?&quot;,MB_YESNO|MB_ICONQUESTION&#41;==IDNO&#41;
-
+	if &#40;MessageBox&#40;NULL,&quot;Would You Like To Run In Fullscreen Mode?&quot;, &quot;Start FullScreen?&quot;,MB_YESNO|MB_ICONQUESTION&#41;==IDNO&#41;
 <br />
-&nbsp; &nbsp;&#123;
-
+	&#123;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;fullscreen=FALSE;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;// Windowed Mode
-
+		fullscreen=FALSE;							// Windowed Mode
 <br />
-&nbsp; &nbsp;&#125;
-
+	&#125;
 <br />
 
-
 <br />
-&nbsp; &nbsp;// Create Our OpenGL Window
-
+	// Create Our OpenGL Window
 <br />
-&nbsp; &nbsp;if &#40;!CreateGLWindow&#40;&quot;NeHe's OpenGL Framework&quot;,640,480,16,fullscreen&#41;&#41;
-
+	if &#40;!CreateGLWindow&#40;&quot;NeHe's OpenGL Framework&quot;,640,480,16,fullscreen&#41;&#41;
 <br />
-&nbsp; &nbsp;&#123;
-
+	&#123;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;return 0;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;// Quit If Window Was Not Created
-
+		return 0;									// Quit If Window Was Not Created
 <br />
-&nbsp; &nbsp;&#125;
-
+	&#125;
 <br />
 
-
 <br />
-&nbsp; &nbsp;while&#40;!done&#41;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;// Loop That Runs While done=FALSE
-
+	while&#40;!done&#41;									// Loop That Runs While done=FALSE
 <br />
-&nbsp; &nbsp;&#123;
-
+	&#123;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;if &#40;PeekMessage&#40;&amp;msg,NULL,0,0,PM_REMOVE&#41;&#41;&nbsp; &nbsp;// Is There A Message Waiting?
-
+		if &#40;PeekMessage&#40;&amp;msg,NULL,0,0,PM_REMOVE&#41;&#41;	// Is There A Message Waiting?
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&#123;
-
+		&#123;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;if &#40;msg.message==WM_QUIT&#41;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;// Have We Received A Quit Message?
-
+			if &#40;msg&#46;message==WM_QUIT&#41;				// Have We Received A Quit Message?
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&#123;
-
+			&#123;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;done=TRUE;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;// If So done=TRUE
-
+				done=TRUE;							// If So done=TRUE
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&#125;
-
+			&#125;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;else&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;// If Not, Deal With Window Messages
-
+			else									// If Not, Deal With Window Messages
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&#123;
-
+			&#123;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;TranslateMessage&#40;&amp;msg&#41;;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;// Translate The Message
-
+				TranslateMessage&#40;&amp;msg&#41;;				// Translate The Message
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;DispatchMessage&#40;&amp;msg&#41;;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;// Dispatch The Message
-
+				DispatchMessage&#40;&amp;msg&#41;;				// Dispatch The Message
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&#125;
-
+			&#125;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&#125;
-
+		&#125;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;else&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;// If There Are No Messages
-
+		else										// If There Are No Messages
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&#123;
-
+		&#123;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;// Draw The Scene.&nbsp; Watch For ESC Key And Quit Messages From DrawGLScene&#40;&#41;
-
+			// Draw The Scene&#46;  Watch For ESC Key And Quit Messages From DrawGLScene&#40;&#41;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;if &#40;active&#41;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;// Program Active?
-
+			if &#40;active&#41;								// Program Active?
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&#123;
-
+			&#123;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;if &#40;keys&#91;VK_ESCAPE&#93;&#41;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;// Was ESC Pressed?
-
+				if &#40;keys&#91;VK_ESCAPE&#93;&#41;				// Was ESC Pressed?
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&#123;
-
+				&#123;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;done=TRUE;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;// ESC Signalled A Quit
-
+					done=TRUE;						// ESC Signalled A Quit
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&#125;
-
+				&#125;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;else&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;// Not Time To Quit, Update Screen
-
+				else								// Not Time To Quit, Update Screen
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&#123;
-
+				&#123;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;DrawGLScene&#40;&#41;;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;// Draw The Scene
-
+					DrawGLScene&#40;&#41;;					// Draw The Scene
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;SwapBuffers&#40;hDC&#41;;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;// Swap Buffers &#40;Double Buffering&#41;
-
+					SwapBuffers&#40;hDC&#41;;				// Swap Buffers &#40;Double Buffering&#41;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&#125;
-
+				&#125;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&#125;
-
+			&#125;
 <br />
 
-
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;if &#40;keys&#91;VK_F1&#93;&#41;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;// Is F1 Being Pressed?
-
+			if &#40;keys&#91;VK_F1&#93;&#41;						// Is F1 Being Pressed?
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&#123;
-
+			&#123;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;keys&#91;VK_F1&#93;=FALSE;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;// If So Make Key FALSE
-
+				keys&#91;VK_F1&#93;=FALSE;					// If So Make Key FALSE
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;KillGLWindow&#40;&#41;;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;// Kill Our Current Window
-
+				KillGLWindow&#40;&#41;;						// Kill Our Current Window
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;fullscreen=!fullscreen;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;// Toggle Fullscreen / Windowed Mode
-
+				fullscreen=!fullscreen;				// Toggle Fullscreen / Windowed Mode
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;// Recreate Our OpenGL Window
-
+				// Recreate Our OpenGL Window
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;if &#40;!CreateGLWindow&#40;&quot;NeHe's OpenGL Framework&quot;,640,480,16,fullscreen&#41;&#41;
-
+				if &#40;!CreateGLWindow&#40;&quot;NeHe's OpenGL Framework&quot;,640,480,16,fullscreen&#41;&#41;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&#123;
-
+				&#123;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;return 0;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;// Quit If Window Was Not Created
-
+					return 0;						// Quit If Window Was Not Created
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&#125;
-
+				&#125;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&#125;
-
+			&#125;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&#125;
-
+		&#125;
 <br />
-&nbsp; &nbsp;&#125;
-
+	&#125;
 <br />
 
-
 <br />
-&nbsp; &nbsp;// Shutdown
-
+	// Shutdown
 <br />
-&nbsp; &nbsp;KillGLWindow&#40;&#41;;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;// Kill The Window
-
+	KillGLWindow&#40;&#41;;									// Kill The Window
 <br />
-&nbsp; &nbsp;return &#40;msg.wParam&#41;;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;// Exit The Program
-
+	return &#40;msg&#46;wParam&#41;;							// Exit The Program
 <br />
 &#125;
-
 <br />
 </td>
 <br />
@@ -1720,7 +1315,7 @@ int WINAPI WinMain&#40;&nbsp; &nbsp;HINSTANCE&nbsp; &nbsp;hInstance,&nbsp; &nbsp
 	</tr>
 	
 	<tr>
-		<td width="150" align="left" valign="top" class="row1"><span class="name"><a name="12400"></a><b>Alfa</b></span><br /><span class="postdetails">poznavalec<br /><img src="images/ranks/sgd-3.gif" alt="poznavalec" title="poznavalec" border="0" /><br /><img src="images/avatars/c2f90a1540823086cd155.jpg" alt="" border="0" /><br /><br />Pridružen: 04. mar 2004 ob 18:14<br />objav: 235<br />Kraj: SG</span><br /></td>
+		<td width="150" align="left" valign="top" class="row1"><span class="name"><a name="12400"></a><b>Alfa</b></span><br /><span class="postdetails">mojster<br /><img src="images/ranks/sgd-5.gif" alt="mojster" title="mojster" border="0" /><br /><img src="images/avatars/c2f90a1540823086cd155.jpg" alt="" border="0" /><br /><br />Pridružen: 04. mar 2004 ob 18:14<br />objav: 471<br />Kraj: SG</span><br /></td>
 		<td class="row1" width="100%" height="28" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
 			<tr>
 				<td colspan="2" width="100%">
@@ -1746,7 +1341,7 @@ int WINAPI WinMain&#40;&nbsp; &nbsp;HINSTANCE&nbsp; &nbsp;hInstance,&nbsp; &nbsp
 
 
 <br />
-Je pa v bistvu čisto preprosto. Zbrišeš vse, kar se zgodi, če je fullscreen=false.<br />_________________<br />"Pustimo malenkosti, pravi cesar, PeCe pa nič (več)."
+Je pa v bistvu čisto preprosto. Zbrišeš vse, kar se zgodi, če je fullscreen=false.<br />_________________<br />&quot;Pustimo malenkosti, pravi cesar, PeCe pa nič (več).&quot;
 
 <br />
 Goran Bervar: C++ na kolenih</span><span class="gensmall"></span></td>
@@ -1766,7 +1361,7 @@ Goran Bervar: C++ na kolenih</span><span class="gensmall"></span></td>
 	</tr>
 	
 	<tr>
-		<td width="150" align="left" valign="top" class="row2"><span class="name"><a name="12401"></a><b>Wingman</b></span><br /><span class="postdetails">SGD Moderator<br /><img src="images/ranks/sgd-mod.gif" alt="SGD Moderator" title="SGD Moderator" border="0" /><br /><img src="images/avatars/c14d9fca410a4a42927d3.jpg" alt="" border="0" /><br /><br />Pridružen: 08. jan 2003 ob 21:33<br />objav: 293<br />Kraj: Kranj</span><br /></td>
+		<td width="150" align="left" valign="top" class="row2"><span class="name"><a name="12401"></a><b>Wing</b></span><br /><span class="postdetails">SGD Admin<br /><img src="images/ranks/sgd-admin.gif" alt="SGD Admin" title="SGD Admin" border="0" /><br /><br /><br />Pridružen: 08. jan 2003 ob 21:33<br />objav: 481<br />Kraj: Kranj</span><br /></td>
 		<td class="row2" width="100%" height="28" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
 			<tr>
 				<td colspan="2" width="100%">
@@ -1789,7 +1384,7 @@ Goran Bervar: C++ na kolenih</span><span class="gensmall"></span></td>
 				<td colspan="2"><span class="postbody">Sem že na mn3njalu napisal odgovor, ni se ti treba vedno znova zajebavat z vsemi 300 vrsticami kode, ko enkrat razumeš kaj naredijo:
 
 <br />
-<a  target="_blank" class="postlink">http://www.joker.si/mn3njalnik/index.php?showtopic=30329&amp;view=findpost&amp;p=1062145768</a><br />_________________<br />In Soviet Russia, if your program doesn't execute, they execute YOU!</span><span class="gensmall"></span></td>
+<a  target="_blank" class="postlink">http&#58;//www&#46;joker&#46;si/mn3njalnik/index&#46;php?showtopic=30329&amp;view=findpost&amp;p=1062145768</a></span><span class="gensmall"></span></td>
 			</tr>
 		</table></td>
 	</tr>
@@ -1814,7 +1409,7 @@ Goran Bervar: C++ na kolenih</span><span class="gensmall"></span></td>
   <tr>
 	<td align="left" valign="middle" nowrap="nowrap">&nbsp;</td>
 	<td align="left" valign="middle" width="100%"><span class="nav">&nbsp;&nbsp;&nbsp;<a href="index.html" class="nav">SloGameDev.net seznam forumov</a>
-	  -> <a href="forum-10.html" class="nav">Za Začetnike</a></span></td>
+	  -> <a href="forum-49.html" class="nav">Začetniki</a></span></td>
 	<td align="right" valign="top" nowrap="nowrap"><span class="gensmall">Časovni pas (GMT +2:00 uri) Slovenija, poletni čas</span><br /><span class="nav"></span>
 	  </td>
   </tr>
@@ -1830,7 +1425,7 @@ Goran Bervar: C++ na kolenih</span><span class="gensmall"></span></td>
   </tr>
 </table>
 
-<div align="center"><span class="copyright"><br />Arhiv stanja na dan 13. 2. 2006 &mdash; samo za branje.<br />
+<div align="center"><span class="copyright"><br />Arhiv &mdash; samo za branje.<br />
 <!--
 	We request you retain the full copyright notice below including the link to www.phpbb.com.
 	This not only gives respect to the large amount of time given freely by the developers

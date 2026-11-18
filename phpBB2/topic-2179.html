@@ -1,0 +1,633 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html dir="ltr">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta http-equiv="Content-Style-Type" content="text/css">
+<style type="text/css">
+<!--
+.style1 {color: #FFFFFF}
+-->
+</style>
+
+
+
+<title>SloGameDev.net :: Tvoj &quot;začetek - sedanjost&quot; v izdelavi iger</title>
+<!-- link rel="stylesheet" href="templates/SGD/SGD2.css" type="text/css" -->
+<style type="text/css">
+<!--
+/*
+  The SGD Theme for phpBB version 2+
+  Created by Rhuantavan
+  http://www.rhuantavan.org
+
+  NOTE: These CSS definitions are stored within the main page body so that you can use the phpBB2
+  theme administration centre. When you have finalised your style you could cut the final CSS code
+  and place it in an external file, deleting this section to save bandwidth.
+*/
+
+/* General page style. The scroll bar colours only visible in IE5.5+ */
+body {
+	background-color: #DDDDDD;
+	scrollbar-face-color: #000000;
+	scrollbar-highlight-color: #000000;
+	scrollbar-3dlight-color: #EEEEEE;
+	scrollbar-darkshadow-color: #EEEEEE;
+	scrollbar-shadow-color: #000000;
+	scrollbar-arrow-color: #55FF00;
+	scrollbar-track-color: #EEEEEE;
+}
+
+/* General font families for common tags */
+font,th,td,p { font-family: Verdana, Arial, Helvetica, sans-serif }
+a:link,a:active,a:visited { color : #338800; }
+a:hover		{ text-decoration: underline; color : #338800; }
+hr	{ height: 0px; border: solid #E9E9E9 0px; border-top-width: 1px;}
+
+/* This is the border line & background colour round the entire page */
+.bodyline	{ background-color: #EEEEEE; border-left: 1px #000000 solid; border-right: 1px #000000 solid; }
+
+/* This is the outline round the main forum tables */
+.forumline	{ background-color: #EEEEEE; border: 0px #DDDDDD solid; }
+
+/* Main table cell colours and backgrounds */
+td.row1	{ background-color: #F8F8F8; }
+td.row2	{ background-color: #F0F0F0; }
+td.row3	{ background-color: #E9E9E9; }
+
+/*
+  This is for the table cell above the Topics, Post & Last posts on the index.php page
+  By default this is the fading out gradiated silver background.
+  However, you could replace this with a bitmap specific for each forum
+*/
+td.rowpic {
+		background-color: #EEEEEE;
+		background-image: url(templates/SGD/images/cellpic3.gif);
+		background-repeat: repeat-y;
+}
+
+/* Header cells - the blue and silver gradient backgrounds */
+th	{
+	color: #66CC33; font-size: 11px; font-weight : bold;
+	background-color: #338800; height: 25px;
+	background-image: url(templates/SGD/images/cellpic2.gif);
+}
+
+td.cat,td.catHead,td.catSides,td.catLeft,td.catRight,td.catBottom {
+			background-image: url(templates/SGD/images/cellpic1.gif);
+			background-color:#E9E9E9; border: #999999; border-style: solid; height: 28px;
+}
+
+/*
+  Setting additional nice inner borders for the main table cells.
+  The names indicate which sides the border will be on.
+  Don't worry if you don't understand this, just ignore it :-)
+*/
+td.cat,td.catHead,td.catBottom {
+	height: 29px;
+	border-width: 0px 0px 0px 0px;
+}
+th.thHead,th.thSides,th.thTop,th.thLeft,th.thRight,th.thBottom,th.thCornerL,th.thCornerR {
+	font-weight: bold; border: #EEEEEE; border-style: solid; height: 28px;
+}
+td.row3Right,td.spaceRow {
+	background-color: #E9E9E9; border: #999999; border-style: solid;
+}
+
+th.thHead,td.catHead { font-size: 12px; border-width: 0px 0px 0px 0px; }
+th.thSides,td.catSides,td.spaceRow	 { border-width: 0px 0px 0px 0px; }
+th.thRight,td.catRight,td.row3Right	 { border-width: 0px 0px 0px 0px; }
+th.thLeft,td.catLeft	  { border-width: 0px 0px 0px 0px; }
+th.thBottom,td.catBottom  { border-width: 0px 0px 0px 1px; }
+th.thTop	 { border-width: 0px 0px 0px 0px; }
+th.thCornerL { border-width: 0px 0px 0px 1px; }
+th.thCornerR { border-width: 0px 0px 0px 0px; }
+
+/* The largest text used in the index page title and toptic title etc. */
+.maintitle	{
+	font-weight: bold; font-size: 18px; font-family: "Trebuchet MS",Verdana, Arial, Helvetica, sans-serif;
+	text-decoration: none; line-height : 120%; color : #666666;
+}
+
+/* General text */
+.gen { font-size : 12px; }
+.genmed { font-size : 11px; }
+.gensmall { font-size : 10px; }
+.gen,.genmed,.gensmall { color : #666666; }
+a.gen,a.genmed,a.gensmall { color: #338800; text-decoration: none; }
+a.gen:hover,a.genmed:hover,a.gensmall:hover	{ color: #338800; text-decoration: underline; }
+
+/* The register, login, search etc links at the top of the page */
+.mainmenu		{ font-size : 11px; color : #666666 }
+a.mainmenu		{ text-decoration: none; color : #338800;  }
+a.mainmenu:hover{ text-decoration: underline; color : #338800; }
+
+/* SGD main menu */
+.sgdmainmenu			{ font-size : 10px; color : #99FF33 }
+a.sgdmainmenu:link		{ text-decoration: none; color : #99FF33;  }
+a.sgdmainmenu:active	{ text-decoration: none; color : #99FF33;  }
+a.sgdmainmenu:visited	{ text-decoration: none; color : #99FF33;  }
+a.sgdmainmenu:hover		{ text-decoration: underline; color : #99FF33; }
+
+/* Forum category titles */
+.cattitle		{ font-weight: bold; font-size: 12px ; letter-spacing: 1px; color : #338800}
+a.cattitle		{ text-decoration: none; color : #338800; }
+a.cattitle:hover{ text-decoration: underline; }
+
+/* Forum title: Text and link to the forums used in: index.php */
+.forumlink		{ font-weight: bold; font-size: 12px; color : #338800; }
+a.forumlink 	{ text-decoration: none; color : #338800; }
+a.forumlink:hover{ text-decoration: underline; color : #338800; }
+
+/* Used for the navigation text, (Page 1,2,3 etc) and the navigation bar when in a forum */
+.nav			{ font-weight: bold; font-size: 11px; color : #666666;}
+a.nav			{ text-decoration: none; color : #338800; }
+a.nav:hover		{ text-decoration: underline; }
+
+/* titles for the topics: could specify viewed link colour too */
+.topictitle,h1,h2	{ font-weight: bold; font-size: 11px; color : #666666; }
+a.topictitle:link   { text-decoration: none; color : #338800; }
+a.topictitle:visited { text-decoration: none; color : #338800; }
+a.topictitle:hover	{ text-decoration: underline; color : #338800; }
+
+/* Name of poster in viewmsg.php and viewtopic.php and other places */
+.name			{ font-size : 11px; color : #000000;}
+
+/* Location, number of posts, post date etc */
+.postdetails		{ font-size : 10px; color : #666666; }
+
+/* The content of the posts (body of text) */
+.postbody { font-size : 12px; line-height: 18px; color : #000000;}
+a.postlink:link	{ text-decoration: none; color : #338800 }
+a.postlink:visited { text-decoration: none; color : #338800; }
+a.postlink:hover { text-decoration: underline; color : #338800}
+
+/* Quote & Code blocks */
+.code {
+	font-family: Courier, 'Courier New', sans-serif; font-size: 11px; color: #006600;
+	background-color: #D6D6D6; border: #E9E9E9; border-style: solid;
+	border-left-width: 1px; border-top-width: 1px; border-right-width: 1px; border-bottom-width: 1px
+}
+
+.quote {
+	font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 11px; color: #444444; line-height: 125%;
+	background-color: #BBBBBB; border: #E9E9E9; border-style: solid;
+	border-left-width: 1px; border-top-width: 1px; border-right-width: 1px; border-bottom-width: 1px
+}
+
+/* Copyright and bottom info */
+.copyright		{ font-size: 10px; font-family: Verdana, Arial, Helvetica, sans-serif; color: #444444; letter-spacing: -1px;}
+a.copyright		{ color: #444444; text-decoration: none;}
+a.copyright:hover { color: #666666; text-decoration: underline;}
+
+/* Form elements */
+input,textarea, select {
+	color : #666666;
+	font: normal 11px Verdana, Arial, Helvetica, sans-serif;
+	border-color : #666666;
+}
+
+/* The text input fields background colour */
+input.post, textarea.post, select {
+	background-color : #EEEEEE;
+}
+
+input { text-indent : 2px; }
+
+/* The buttons used for bbCode styling in message post */
+input.button {
+	background-color : #F8F8F8;
+	color : #666666;
+	font-size: 11px; font-family: Verdana, Arial, Helvetica, sans-serif;
+}
+
+/* The main submit button option */
+input.mainoption {
+	background-color : #BBBBBB;
+	font-weight : bold;
+}
+
+/* None-bold submit button */
+input.liteoption {
+	background-color : #BBBBBB;
+	font-weight : normal;
+}
+
+/* This is the line in the posting page which shows the rollover
+  help line. This is actually a text box, but if set to be the same
+  colour as the background no one will know ;)
+*/
+.helpline { background-color: #F0F0F0; border-style: none; }
+
+/* Import the fancy styles for IE only (NS4.x doesn't use the @import function) */
+@import url("templates/SGD/formIE.css");
+-->
+</style>
+</head>
+<body bgcolor="#DDDDDD" text="#666666" link="#338800" vlink="#338800" topmargin="0" />
+<a name="top"></a>
+<table width="100%" cellspacing="0" cellpadding="0" border="0" align="center" nowrap>
+	<tr>
+		<td class="bodyline">
+			<table width="100%" border="0" cellpadding="0" cellspacing="0">
+				<tr>
+					<td bgcolor="#FFFFFF">
+						<img src="images/spacer.gif" width="760" height="20" alt=""></td>
+				</tr>
+			</table>
+			<table width="100%" border="0" cellpadding="0" cellspacing="0">
+				<tr>
+					<td bgcolor="#000000">
+						<a href="../index.html"><img src="images/home.gif" width="10" height="10" alt="" border="0"></a><img src="images/spacer.gif" width="5" height="5" alt=""><a href="../index.html" class="sgdmainmenu">Nazaj na domačo stran</a> <img src="images/defaulticon_green.gif" alt="" width="7" height="7" border="0"> <a href="../clanki.html" class="sgdmainmenu">Clanki</a> <img src="images/defaulticon_green.gif" alt="" width="7" height="7" border="0"> <a href="../koda.html" class="sgdmainmenu">Koda</a> <img src="images/defaulticon_green.gif" alt="" width="7" height="7" border="0"> <a href="../clani.html" class="sgdmainmenu">Clani</a> <img src="images/defaulticon_green.gif" alt="" width="7" height="7" border="0"> <a href="../skupine.html" class="sgdmainmenu">Skupine</a> <img src="images/defaulticon_green.gif" alt="" width="7" height="7" border="0"> <a href="../projekti.html" class="sgdmainmenu">Projekti</a> <img src="images/defaulticon_green.gif" alt="" width="7" height="7" border="0"> <a href="../povezave.html" class="sgdmainmenu">Povezave</a></td>
+				</tr>
+			</table>
+			<table width="100%" border="0" cellpadding="0" cellspacing="0">
+				<tr>
+					<td colspan="3" bgcolor="#000000">
+						<img src="images/spacer.gif" width="760" height="10" alt=""></td>
+				</tr>
+				<tr>
+					<td>
+						<a href="index.html"><img src="images/logo.gif" width="351" height="62" alt="" border="0"></a></td>
+					<td>
+						<img src="images/forum_03.gif" width="408" height="62" alt=""></td>
+					<td width="100%" bgcolor="#000000">
+						<img src="images/spacer.gif" width="1" height="1" alt=""></td>
+				</tr>
+				<tr>
+					<td colspan="3" bgcolor="#000000" align="center">
+						<a href="memberlist.html" class="sgdmainmenu"><img src="images/defaulticon_green.gif" alt="" width="7" height="7" border="0">&nbsp;Seznam članov</a>
+						<a href="index.html" class="sgdmainmenu"><img src="images/defaulticon_green.gif" alt="" width="7" height="7" border="0">&nbsp;Seznam</a></td>
+				</tr>
+				<tr>
+					<td colspan="3" bgcolor="#000000">
+						<img src="images/spacer.gif" width="760" height="5" alt=""></td>
+				</tr>
+			</table>
+
+<table width="100%" cellspacing="2" cellpadding="2" border="0">
+  <tr>
+	<td align="left" valign="bottom" colspan="2"><a class="maintitle" href="topic-2179.html">Tvoj &quot;začetek - sedanjost&quot; v izdelavi iger</a><br />
+	  <span class="gensmall"><b></b><br />
+	  &nbsp; </span></td>
+  </tr>
+</table>
+
+<table width="100%" cellspacing="2" cellpadding="2" border="0">
+  <tr>
+	<td align="left" valign="bottom" nowrap="nowrap">&nbsp;</td>
+	<td align="left" valign="middle" width="100%"><span class="nav">&nbsp;&nbsp;&nbsp;<a href="index.html" class="nav">SloGameDev.net seznam forumov</a>
+	  -> <a href="forum-53.html" class="nav">Kavarna</a></span></td>
+  </tr>
+</table>
+
+<table class="forumline" width="100%" cellspacing="1" cellpadding="3" border="0">
+	<tr align="right">
+		<td class="catHead" colspan="2" height="28"><span class="nav"><a href="topic-2175.html" class="nav">Prejšnja tema</a> :: <a href="topic-2180.html" class="nav">Naslednja tema</a> &nbsp;</span></td>
+	</tr>
+	
+	<tr>
+		<th class="thLeft" width="150" height="26" nowrap="nowrap">avtor</th>
+		<th class="thRight" nowrap="nowrap">Sporočilo</th>
+	</tr>
+	
+	<tr>
+		<td width="150" align="left" valign="top" class="row1"><span class="name"><a name="19940"></a><b>RedReaper132</b></span><br /><span class="postdetails">wannabe<br /><img src="images/ranks/sgd-2.gif" alt="wannabe" title="wannabe" border="0" /><br /><br /><br />Pridružen: 21. apr 2009 ob 16:32<br />objav: 117<br />Kraj: Središče</span><br /></td>
+		<td class="row1" width="100%" height="28" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+			<tr>
+				<td colspan="2" width="100%">
+					<table width="100%" cellpadding="0" cellspacing="0" border="0">
+						<tr>
+							<td valign="middle" align="left">
+								<a href="topic-2179.html#19940"><img src="templates/SGD2/images/icon_minipost.gif" width="12" height="9" alt="objava" title="objava" border="0" /></a>
+								<span class="postdetails">Objavljeno: pet dec 18, 2009 6:44 pm<span class="gen">&nbsp;</span>&nbsp; &nbsp;Pošlji temo: Tvoj &quot;začetek - sedanjost&quot; v izdelavi iger</span>
+							</td>
+							<td valign="middle" align="right" nowrap="nowrap">
+							</td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+			<tr>
+				<td colspan="2"><hr /></td>
+			</tr>
+			<tr>
+				<td colspan="2"><span class="postbody">Malo sem odprl to temo, da vidim če se bode kaj pisalo na forumu <img src="images/smiles/icon_biggrin.gif" alt=":D" border="0" /> upam
+<br />
+
+<br />
+No pač, bolj na kratko povej kako si se spustil v to izdelavo iger, začetki, pot in kje si zdaj. Starost ne bi škodila.
+<br />
+
+<br />
+Moja zgodba (klasika <img src="images/smiles/icon_biggrin.gif" alt=":D" border="0" />):
+<br />
+Že od nekdaj sem bil velik navdušenec iger. Doma sem nabijal SNES v mladih letih in ko sem dobil svoj prvi računalnik ( nekje pri 10. ali 11. letah ) se je navdušanje še povečalo. Vendar je na računalniku bilo toliko stvari katere so me zanimale in sem se začel zanimati kako kaj dela. Z veliko &quot;trial &amp; error&quot; sem se naučil ogromo o računalnikih in dobil tittle: computer whiz (al kak že <img src="images/smiles/icon_biggrin.gif" alt=":D" border="0" />). Ko pa sem pri 13-ih začel brati knjigo o začetku programiranje iger sem našel svojo stvar. To hočem biti. In tako je to šlo, takoj na C++, vse pomembne stvari podrobno. Nato sem začel malo grafično v SDL in se pri tem naučil C++ v potankost. OpenGL je pač bil nasljednja stopnja. Sedaj sem 16 in sledim mojim sanjam, torej obiskujem srednjo računalniško šolo <img src="images/smiles/icon_biggrin.gif" alt=":D" border="0" />. Delam igre za hobi z prej navedenim znanjem. Vedno gre na boljše: z ponga na samosvoje indie igre. Glavno navdušenje je indie scena <img src="images/smiles/icon_biggrin.gif" alt=":D" border="0" /> No to je blo na na kratko... no ne glih ampak vseeno. 
+<br />
+
+<br />
+Upam, da boste kaj napisali  <img src="images/smiles/icon_mrgreen.gif" alt=":mrgreen:" border="0" /><br />_________________<br />Moj bla, bla, bla, bljak blog: <a  target="_blank" class="postlink">http&#58;//redgamedevblog&#46;blogspot&#46;com/</a></span><span class="gensmall"></span></td>
+			</tr>
+		</table></td>
+	</tr>
+	<tr>
+		<td class="row1" width="150" align="left" valign="middle"><span class="nav"><a href="#top" class="nav">Nazaj na vrh</a></span></td>
+		<td class="row1" width="100%" height="28" valign="bottom" nowrap="nowrap"><table cellspacing="0" cellpadding="0" border="0" height="18" width="18">
+			<tr>
+				<td valign="middle" nowrap="nowrap"><a href="profile-2137.html"><img src="templates/SGD2/images/lang_slovenian/icon_profile.gif" alt="Poglej uporabnikov profil" title="Poglej uporabnikov profil" border="0" /></a> <a  target="_userwww"><img src="templates/SGD2/images/lang_slovenian/icon_www.gif" alt="Obišči avtorjevo spletno stran" title="Obišči avtorjevo spletno stran" border="0" /></a></td>
+			</tr>
+		</table></td>
+	</tr>
+	<tr>
+		<td class="spaceRow" colspan="2" height="1"><img src="templates/SGD/images/spacer.gif" alt="" width="1" height="1" /></td>
+	</tr>
+	
+	<tr>
+		<td width="150" align="left" valign="top" class="row2"><span class="name"><a name="19941"></a><b>impulse9</b></span><br /><span class="postdetails">SGD Moderator<br /><img src="images/ranks/sgd-mod.gif" alt="SGD Moderator" title="SGD Moderator" border="0" /><br /><br /><br />Pridružen: 10. jan 2003 ob 22:14<br />objav: 397<br /></span><br /></td>
+		<td class="row2" width="100%" height="28" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+			<tr>
+				<td colspan="2" width="100%">
+					<table width="100%" cellpadding="0" cellspacing="0" border="0">
+						<tr>
+							<td valign="middle" align="left">
+								<a href="topic-2179.html#19941"><img src="templates/SGD2/images/icon_minipost.gif" width="12" height="9" alt="objava" title="objava" border="0" /></a>
+								<span class="postdetails">Objavljeno: sob dec 19, 2009 10:19 pm<span class="gen">&nbsp;</span>&nbsp; &nbsp;Pošlji temo: Re: Tvoj &quot;začetek - sedanjost&quot; v izdelavi iger</span>
+							</td>
+							<td valign="middle" align="right" nowrap="nowrap">
+							</td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+			<tr>
+				<td colspan="2"><hr /></td>
+			</tr>
+			<tr>
+				<td colspan="2"><span class="postbody">No, v rani mladosti sem razvil neko posebno ljubezen do špilov (tisti ki se jih najbolj spomnim ((kronološko)) -&gt; Prince of Persia, Duke Nukem 1, Titus the Fox, Commander Keen, Hocus Pocus, C&amp;C, C&amp;C:RA, Warcraft 2, Transport Tycoon, Lucasove pustolovščine, Civilization, Wolf3D, potem itak Duke3D ampak najbolj mi je še zmer v spominu Quake 1 - po mojem mnenju najbolj legendaren špil kar jih je (to pojasni moj nick tud <img src="images/smiles/icon_razz.gif" alt=":P" border="0" />)).
+<br />
+
+<br />
+No in potem sem 1x ugotovil da se da pisat batch datoteke (.bat) in da se da tud pogledat &quot;izvorno kodo&quot; od drugih batch filov relativno preprosto. Ker so mel takrat takorekoč vsi špili vsaj en bat file ze zraven, pa še po moznosti ene dva za inštalacijo, sem jih pač preštudiral in potem sem z veseljem ugotovil, kaj naredi echo, cls, itd. Spomnim se recimo katarze, ki je sledila, ko sem pogruntal da ce das pred ukaz @ ti ne izpise ukaza, ampak samo naredi tisto kar hoces. Potem se spomnim enih varjant s Choici, tako da je uporabnik do neke mere lahko celo imel nek input. Pri bat filih sem tudi spoznal nacela IF stavkov, ceprav so v tisti &quot;kodi&quot; precej neelegantni. V glavnem najvec kar sem naredil so bile igrice v smislu &quot;pritisni 1, da gres naprej, 2 da gres nazaj itd.&quot;, ene par kvazi pustolovscin sem naredil tako ze takrat.
+<br />
+
+<br />
+Potem sem spoznal Visual Basic, prvo mislim da sem spoznal verzijo 3, ki sem jo uporabljal kar nekaj časa, preden sem naredil preskok na 5 in nato kmalu na 6. Naredu sem clo osnovo za en špil po zgledu Uplinka, samo je propadel ker sem precenil svoje zmožnosti za 10x. VB.NET nisem nikoli prevec maral niti razumel, zato se nisem ukvarjal z njim, sem pa v tem času precej dobro spoznal C, spisal v njemu vsaj 5 različnih kač in par namenskih programčkov. Zdaj že lep cajt pretežno pišem v C++, nimam sicer še nobenega takega projekta da bi se lahko hvalil z njim, delam pa na temu da se bom počasi lahko začel. Hvaliti. <img src="images/smiles/icon_biggrin.gif" alt=":D" border="0" />
+<br />
+
+<br />
+Aja pa vmes sem seveda spoznal še HTML, nekaj PHPja, Sql, pa najbrž bi se še kaj najdlo samo se ne spomnim trenutno (assembler  <img src="images/smiles/icon_redface.gif" alt=":oops:" border="0" />). <img src="images/smiles/icon_smile.gif" alt=":)" border="0" />
+<br />
+
+<br />
+To je to.<br />_________________<br /><span style="font-size: 80%; line-height: normal">What</span></span><span class="gensmall"></span></td>
+			</tr>
+		</table></td>
+	</tr>
+	<tr>
+		<td class="row2" width="150" align="left" valign="middle"><span class="nav"><a href="#top" class="nav">Nazaj na vrh</a></span></td>
+		<td class="row2" width="100%" height="28" valign="bottom" nowrap="nowrap"><table cellspacing="0" cellpadding="0" border="0" height="18" width="18">
+			<tr>
+				<td valign="middle" nowrap="nowrap"><a href="profile-17.html"><img src="templates/SGD2/images/lang_slovenian/icon_profile.gif" alt="Poglej uporabnikov profil" title="Poglej uporabnikov profil" border="0" /></a> </td>
+			</tr>
+		</table></td>
+	</tr>
+	<tr>
+		<td class="spaceRow" colspan="2" height="1"><img src="templates/SGD/images/spacer.gif" alt="" width="1" height="1" /></td>
+	</tr>
+	
+	<tr>
+		<td width="150" align="left" valign="top" class="row1"><span class="name"><a name="19943"></a><b>Blodyavenger</b></span><br /><span class="postdetails">expert<br /><img src="images/ranks/sgd-6.gif" alt="expert" title="expert" border="0" /><br /><br /><br />Pridružen: 12. sep 2008 ob 15:31<br />objav: 716<br />Kraj: Land of the Ten Hares</span><br /></td>
+		<td class="row1" width="100%" height="28" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+			<tr>
+				<td colspan="2" width="100%">
+					<table width="100%" cellpadding="0" cellspacing="0" border="0">
+						<tr>
+							<td valign="middle" align="left">
+								<a href="topic-2179.html#19943"><img src="templates/SGD2/images/icon_minipost.gif" width="12" height="9" alt="objava" title="objava" border="0" /></a>
+								<span class="postdetails">Objavljeno: ned dec 20, 2009 1:48 pm<span class="gen">&nbsp;</span>&nbsp; &nbsp;Pošlji temo: Re: Tvoj &quot;začetek - sedanjost&quot; v izdelavi iger</span>
+							</td>
+							<td valign="middle" align="right" nowrap="nowrap">
+							</td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+			<tr>
+				<td colspan="2"><hr /></td>
+			</tr>
+			<tr>
+				<td colspan="2"><span class="postbody">Moj začetek sega v čas, ko sem bil še v mali šoli (zadnji razred vrteca), ko smo dobili prvi 486 računalnik, in tako sem imel tudi prve tri igre - Pentix, Sokoban ter Humanoid (pinbal različica), kasneje pa nadeljeval s klasikami kot so Another World, Keen, Dangerous Dave,  Duke Nukem (1,2, 3D), Doom, Warcraft 2 in tako dalje.
+<br />
+Takrat sem dobil veliko željo po igranju iger (kdo pa ne <img src="images/smiles/icon_smile.gif" alt=":)" border="0" />), vedno pa sem si želel da bi tudi sam nekoč kdaj naredu kaj takega in tako začel s preprostimi koraki kot izdelovanje modov za Duke Nukem 3D, kasneje za Quake 1, 2, Half-Life, globje pa se nisem spravil v programiranje ker je bilo nekako &quot;pretežko&quot; začet iz nič. Pri koncu osnovne šole sem začel z osnovami pascala in to nadeljeval v srednji šoli (Srednja Računalniška). Ko smo v vseh 4 letnikih imeli razne seminarske sem vedno naredil kaj v smislu igre (večinoma smo programirali v delphiju, in tako sem naredil 3 u vrsto, kasneje pa preprosto arkadico (če lahko tako sploh rečem), kjer si moral pobirati padajoče sadje, ne da bi zgrešil. 
+<br />
+Ko smo se začeli učit 'C' sem naredil igro Štiri u vrsto za 2 igralca, katero se je igralo v konzoli (preprosto izmenično vnašanje št. stoplca, kamor si želel vreči svoj &quot;žeton&quot;. Pri koncu smo morali za zaključno nalogo narediti nekaj v zvezi s programiranjem ali pa podatkovnimi bazami in tako sem začel razvijat 3D Tower Defense v Delphiju s pomočjo grafične knjižnice glScene in tudi uspešno zagovoril (98%...2 procenta sm zgubu zato ker je bilo pomnilniško požrešno...jah no, pojma nism meu da je treba sproščat pomnilnik sproti <img src="images/smiles/icon_razz.gif" alt=":P" border="0" />) 
+<br />
+Za tem sem se začel ukvarjati s preprostimi ORPG pogoni (Visual Basic 6 + DirectX 7) in kmalu za tem je eden izmed teh skupnosti izdal preprost razred za dx8 in sem se začel igrat s tem. Tako sem sprogramiral zadovoljil meni za ORPG igro a kmalu sm opazu da mam premalo izkušenj na področju DirectX in tako sem prešel na C++ ter učenje DirectX 9.
+<br />
+Sedaj pa sm v drugem letniku FRI in lahko rečem da imam dokončano igro (skoraj) tipa TETRIS, katera bo objavlena tukaj v teh dneh, hkrati pa razvijam svoj 2D framework za ORPG projekt, na katerem delam zraven.
+<br />
+
+<br />
+Vsekakor je bilo vmes še veliko korakov, bistvo pa je, da imam strast do iger od malih nog. Hkrati pa sm zadovoljen, da si ustvaril to temo, saj ko pogledam za nazaj, je kar zanimiva pot bla, mogoče pa sm le malo zamorjen, ker se nism resno lotil programiranja par let nazaj. No ja, nikoli ni prepozno pravjo <img src="images/smiles/icon_smile.gif" alt=":)" border="0" />
+<br />
+
+<br />
+EDIT: No, moja glavna strast je izdelovanje iger tipa RPG/FRP, upam, pa da bom nekoč dokončal majhno ORPG, katera bo igralna ter zabavna (mogoče več v prihodnosti? Upam...)<br />_________________<br />................ <a  target="_blank" class="postlink"><span style="font-weight: bold">My personal GameDev Blog</span></a> ...................
+<br />
+<span style="font-style: italic">&quot;Don't you dare using uninitialized variables, not in C++&quot;</span></span><span class="gensmall"></span></td>
+			</tr>
+		</table></td>
+	</tr>
+	<tr>
+		<td class="row1" width="150" align="left" valign="middle"><span class="nav"><a href="#top" class="nav">Nazaj na vrh</a></span></td>
+		<td class="row1" width="100%" height="28" valign="bottom" nowrap="nowrap"><table cellspacing="0" cellpadding="0" border="0" height="18" width="18">
+			<tr>
+				<td valign="middle" nowrap="nowrap"><a href="profile-971.html"><img src="templates/SGD2/images/lang_slovenian/icon_profile.gif" alt="Poglej uporabnikov profil" title="Poglej uporabnikov profil" border="0" /></a> <a  target="_userwww"><img src="templates/SGD2/images/lang_slovenian/icon_www.gif" alt="Obišči avtorjevo spletno stran" title="Obišči avtorjevo spletno stran" border="0" /></a></td>
+			</tr>
+		</table></td>
+	</tr>
+	<tr>
+		<td class="spaceRow" colspan="2" height="1"><img src="templates/SGD/images/spacer.gif" alt="" width="1" height="1" /></td>
+	</tr>
+	
+	<tr>
+		<td width="150" align="left" valign="top" class="row2"><span class="name"><a name="19945"></a><b>impulse9</b></span><br /><span class="postdetails">SGD Moderator<br /><img src="images/ranks/sgd-mod.gif" alt="SGD Moderator" title="SGD Moderator" border="0" /><br /><br /><br />Pridružen: 10. jan 2003 ob 22:14<br />objav: 397<br /></span><br /></td>
+		<td class="row2" width="100%" height="28" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+			<tr>
+				<td colspan="2" width="100%">
+					<table width="100%" cellpadding="0" cellspacing="0" border="0">
+						<tr>
+							<td valign="middle" align="left">
+								<a href="topic-2179.html#19945"><img src="templates/SGD2/images/icon_minipost.gif" width="12" height="9" alt="objava" title="objava" border="0" /></a>
+								<span class="postdetails">Objavljeno: pon dec 21, 2009 4:25 pm<span class="gen">&nbsp;</span>&nbsp; &nbsp;Pošlji temo: Re: Tvoj &quot;začetek - sedanjost&quot; v izdelavi iger</span>
+							</td>
+							<td valign="middle" align="right" nowrap="nowrap">
+							</td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+			<tr>
+				<td colspan="2"><hr /></td>
+			</tr>
+			<tr>
+				<td colspan="2"><span class="postbody"></span>
+<br />
+<table width="90%" cellspacing="1" cellpadding="3" border="0" align="center">
+<br />
+<tr> 
+<br />
+	  <td><span class="genmed"><b>Blodyavenger je napisal:</b></span></td>
+<br />
+	</tr>
+<br />
+	<tr>
+<br />
+	  <td class="quote">EDIT: No, moja glavna strast je izdelovanje iger tipa RPG/FRP, upam, pa da bom nekoč dokončal majhno ORPG, katera bo igralna ter zabavna (mogoče več v prihodnosti? Upam...)</td>
+<br />
+	</tr>
+<br />
+</table>
+<br />
+<span class="postbody">
+<br />
+Hehe fino, upam da ti uspe.
+<br />
+
+<br />
+Jaz se bom enkrat podal v bolj enoigralske FRP vode, predvsem zato ker imam dobre ideje za štorijo hehe. <img src="images/smiles/icon_smile.gif" alt=":)" border="0" /> Programersko me pa še malo heca vse skupaj. Da ne govorimo o grafiki. <img src="images/smiles/icon_confused.gif" alt=":?" border="0" /><br />_________________<br /><span style="font-size: 80%; line-height: normal">What</span></span><span class="gensmall"></span></td>
+			</tr>
+		</table></td>
+	</tr>
+	<tr>
+		<td class="row2" width="150" align="left" valign="middle"><span class="nav"><a href="#top" class="nav">Nazaj na vrh</a></span></td>
+		<td class="row2" width="100%" height="28" valign="bottom" nowrap="nowrap"><table cellspacing="0" cellpadding="0" border="0" height="18" width="18">
+			<tr>
+				<td valign="middle" nowrap="nowrap"><a href="profile-17.html"><img src="templates/SGD2/images/lang_slovenian/icon_profile.gif" alt="Poglej uporabnikov profil" title="Poglej uporabnikov profil" border="0" /></a> </td>
+			</tr>
+		</table></td>
+	</tr>
+	<tr>
+		<td class="spaceRow" colspan="2" height="1"><img src="templates/SGD/images/spacer.gif" alt="" width="1" height="1" /></td>
+	</tr>
+	
+	<tr>
+		<td width="150" align="left" valign="top" class="row1"><span class="name"><a name="19946"></a><b>RedReaper132</b></span><br /><span class="postdetails">wannabe<br /><img src="images/ranks/sgd-2.gif" alt="wannabe" title="wannabe" border="0" /><br /><br /><br />Pridružen: 21. apr 2009 ob 16:32<br />objav: 117<br />Kraj: Središče</span><br /></td>
+		<td class="row1" width="100%" height="28" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+			<tr>
+				<td colspan="2" width="100%">
+					<table width="100%" cellpadding="0" cellspacing="0" border="0">
+						<tr>
+							<td valign="middle" align="left">
+								<a href="topic-2179.html#19946"><img src="templates/SGD2/images/icon_minipost.gif" width="12" height="9" alt="objava" title="objava" border="0" /></a>
+								<span class="postdetails">Objavljeno: pon dec 21, 2009 5:53 pm<span class="gen">&nbsp;</span>&nbsp; &nbsp;Pošlji temo: Re: Tvoj &quot;začetek - sedanjost&quot; v izdelavi iger</span>
+							</td>
+							<td valign="middle" align="right" nowrap="nowrap">
+							</td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+			<tr>
+				<td colspan="2"><hr /></td>
+			</tr>
+			<tr>
+				<td colspan="2"><span class="postbody">Hehe pešanje pri grafiki. Se mi sliši zelo znano. Imam velike probleme kar se tiče grafike. Zasilni koliko toliko dober pixel art mi še gre ko pa pride, da bi moram narisat celo animacijo (sprite) za človečeka tam pa je konec. Zato večino špilov sprobam spljati skozi z čim več &quot;zanimivih&quot; kock in trikotnikov in particle effects <img src="images/smiles/icon_biggrin.gif" alt=":D" border="0" /><br />_________________<br />Moj bla, bla, bla, bljak blog: <a  target="_blank" class="postlink">http&#58;//redgamedevblog&#46;blogspot&#46;com/</a></span><span class="gensmall"></span></td>
+			</tr>
+		</table></td>
+	</tr>
+	<tr>
+		<td class="row1" width="150" align="left" valign="middle"><span class="nav"><a href="#top" class="nav">Nazaj na vrh</a></span></td>
+		<td class="row1" width="100%" height="28" valign="bottom" nowrap="nowrap"><table cellspacing="0" cellpadding="0" border="0" height="18" width="18">
+			<tr>
+				<td valign="middle" nowrap="nowrap"><a href="profile-2137.html"><img src="templates/SGD2/images/lang_slovenian/icon_profile.gif" alt="Poglej uporabnikov profil" title="Poglej uporabnikov profil" border="0" /></a> <a  target="_userwww"><img src="templates/SGD2/images/lang_slovenian/icon_www.gif" alt="Obišči avtorjevo spletno stran" title="Obišči avtorjevo spletno stran" border="0" /></a></td>
+			</tr>
+		</table></td>
+	</tr>
+	<tr>
+		<td class="spaceRow" colspan="2" height="1"><img src="templates/SGD/images/spacer.gif" alt="" width="1" height="1" /></td>
+	</tr>
+	
+	<tr>
+		<td width="150" align="left" valign="top" class="row2"><span class="name"><a name="19947"></a><b>Blodyavenger</b></span><br /><span class="postdetails">expert<br /><img src="images/ranks/sgd-6.gif" alt="expert" title="expert" border="0" /><br /><br /><br />Pridružen: 12. sep 2008 ob 15:31<br />objav: 716<br />Kraj: Land of the Ten Hares</span><br /></td>
+		<td class="row2" width="100%" height="28" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+			<tr>
+				<td colspan="2" width="100%">
+					<table width="100%" cellpadding="0" cellspacing="0" border="0">
+						<tr>
+							<td valign="middle" align="left">
+								<a href="topic-2179.html#19947"><img src="templates/SGD2/images/icon_minipost.gif" width="12" height="9" alt="objava" title="objava" border="0" /></a>
+								<span class="postdetails">Objavljeno: pon dec 21, 2009 10:32 pm<span class="gen">&nbsp;</span>&nbsp; &nbsp;Pošlji temo: Re: Tvoj &quot;začetek - sedanjost&quot; v izdelavi iger</span>
+							</td>
+							<td valign="middle" align="right" nowrap="nowrap">
+							</td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+			<tr>
+				<td colspan="2"><hr /></td>
+			</tr>
+			<tr>
+				<td colspan="2"><span class="postbody">No no, za grafiko pa ja dobiš koga <img src="images/smiles/icon_smile.gif" alt=":)" border="0" /> Če ne druzga dobiš okoli zastonsjke osnove spritov, katere ti preprosto oblečeš (narišeš opremco pa je )
+<br />
+Če imaš dobre ideje za igre je škoda da je nebi naredu samo zarad pomankanje grafike (če rabiš kej pomoči pr temu, ti lahk tud jst pomagam, ni problema)<br />_________________<br />................ <a  target="_blank" class="postlink"><span style="font-weight: bold">My personal GameDev Blog</span></a> ...................
+<br />
+<span style="font-style: italic">&quot;Don't you dare using uninitialized variables, not in C++&quot;</span></span><span class="gensmall"></span></td>
+			</tr>
+		</table></td>
+	</tr>
+	<tr>
+		<td class="row2" width="150" align="left" valign="middle"><span class="nav"><a href="#top" class="nav">Nazaj na vrh</a></span></td>
+		<td class="row2" width="100%" height="28" valign="bottom" nowrap="nowrap"><table cellspacing="0" cellpadding="0" border="0" height="18" width="18">
+			<tr>
+				<td valign="middle" nowrap="nowrap"><a href="profile-971.html"><img src="templates/SGD2/images/lang_slovenian/icon_profile.gif" alt="Poglej uporabnikov profil" title="Poglej uporabnikov profil" border="0" /></a> <a  target="_userwww"><img src="templates/SGD2/images/lang_slovenian/icon_www.gif" alt="Obišči avtorjevo spletno stran" title="Obišči avtorjevo spletno stran" border="0" /></a></td>
+			</tr>
+		</table></td>
+	</tr>
+	<tr>
+		<td class="spaceRow" colspan="2" height="1"><img src="templates/SGD/images/spacer.gif" alt="" width="1" height="1" /></td>
+	</tr>
+	
+	<tr align="center">
+		<td class="catBottom" colspan="2" height="28">&nbsp;</td>
+	</tr>
+</table>
+
+<table width="100%" cellspacing="2" cellpadding="2" border="0" align="center">
+  <tr>
+	<td align="left" valign="middle" nowrap="nowrap">&nbsp;</td>
+	<td align="left" valign="middle" width="100%"><span class="nav">&nbsp;&nbsp;&nbsp;<a href="index.html" class="nav">SloGameDev.net seznam forumov</a>
+	  -> <a href="forum-53.html" class="nav">Kavarna</a></span></td>
+	<td align="right" valign="top" nowrap="nowrap"><span class="gensmall">Časovni pas (GMT +2:00 uri) Slovenija, poletni čas</span><br /><span class="nav"></span>
+	  </td>
+  </tr>
+  <tr>
+	<td align="left" colspan="3"><span class="nav">Stran <b>1</b> od <b>1</b></span></td>
+  </tr>
+</table>
+
+<table width="100%" cellspacing="2" border="0" align="center">
+  <tr>
+	<td width="40%" valign="top" nowrap="nowrap" align="left">&nbsp;</td>
+	<td align="right" valign="top" nowrap="nowrap">&nbsp;</td>
+  </tr>
+</table>
+
+<div align="center"><span class="copyright"><br />Arhiv &mdash; samo za branje.<br />
+<!--
+	We request you retain the full copyright notice below including the link to www.phpbb.com.
+	This not only gives respect to the large amount of time given freely by the developers
+	but also helps build interest, traffic and use of phpBB 2.0. If you cannot (for good
+	reason) retain the full copyright we request you at least leave in place the 
+	Powered by phpBB 2.0.4 line, with phpBB linked to www.phpbb.com. If you refuse
+	to include even this then support on our forums may be affected. 
+
+	The phpBB Group : 2002
+// -->
+Powered by <a  target="_phpbb" class="copyright">phpBB</a> 2.0.4 &copy; 2001, 2002 phpBB Group<br /></span></div>
+		</td>
+	</tr>
+</table>
+
+</body>
+</html>

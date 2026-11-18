@@ -276,13 +276,13 @@ input.liteoption {
   <tr>
 	<td align="left" valign="bottom" nowrap="nowrap">&nbsp;</td>
 	<td align="left" valign="middle" width="100%"><span class="nav">&nbsp;&nbsp;&nbsp;<a href="index.html" class="nav">SloGameDev.net seznam forumov</a>
-	  -> <a href="forum-1.html" class="nav">Splošno Programiranje</a></span></td>
+	  -> <a href="forum-52.html" class="nav">Izdelovanje iger</a></span></td>
   </tr>
 </table>
 
 <table class="forumline" width="100%" cellspacing="1" cellpadding="3" border="0">
 	<tr align="right">
-		<td class="catHead" colspan="2" height="28"><span class="nav"><a href="topic-779.html" class="nav">Prejšnja tema</a> :: <a href="topic-784.html" class="nav">Naslednja tema</a> &nbsp;</span></td>
+		<td class="catHead" colspan="2" height="28"><span class="nav"><a href="topic-284.html" class="nav">Prejšnja tema</a> :: <a href="topic-774.html" class="nav">Naslednja tema</a> &nbsp;</span></td>
 	</tr>
 	
 	<tr>
@@ -291,7 +291,7 @@ input.liteoption {
 	</tr>
 	
 	<tr>
-		<td width="150" align="left" valign="top" class="row1"><span class="name"><a name="9054"></a><b>AlienX</b></span><br /><span class="postdetails">wannabe<br /><img src="images/ranks/sgd-2.gif" alt="wannabe" title="wannabe" border="0" /><br /><img src="images/avatars/c14d559340c02ac14bb02.gif" alt="" border="0" /><br /><br />Pridružen: 11. jan 2003 ob 21:35<br />objav: 110<br /></span><br /></td>
+		<td width="150" align="left" valign="top" class="row1"><span class="name"><a name="9054"></a><b>AlienX</b></span><br /><span class="postdetails">wannabe<br /><img src="images/ranks/sgd-2.gif" alt="wannabe" title="wannabe" border="0" /><br /><img src="images/avatars/c14d559340c02ac14bb02.gif" alt="" border="0" /><br /><br />Pridružen: 11. jan 2003 ob 21:35<br />objav: 111<br /></span><br /></td>
 		<td class="row1" width="100%" height="28" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
 			<tr>
 				<td colspan="2" width="100%">
@@ -324,199 +324,134 @@ input.liteoption {
 	<tr>
 <br />
 	  <td class="code">
-
 <br />
-#include &lt;windows.h&gt;
-
+#include &lt;windows&#46;h&gt;
 <br />
-
 
 <br />
 int WINAPI WinMain&#40;HINSTANCE hInstance,HINSTANCE hPrevInstance,LPSTR arg,int nCmdShow&#41;;
-
 <br />
 void defineClass&#40;WNDCLASSEX * _class,WNDPROC winProc, char const * className, HINSTANCE hInst&#41;;
-
 <br />
 LRESULT CALLBACK WindowProcedure&#40;HWND hwnd, unsigned int message, WPARAM wParam, LPARAM lParam&#41;;
-
 <br />
 
-
 <br />
-
 
 <br />
 int WINAPI WinMain&#40;HINSTANCE hInstance,HINSTANCE hPrevInstance,LPSTR arg,int nCmdShow&#41;
-
 <br />
 &#123;
-
 <br />
-&nbsp; &nbsp;HWND window;
-
+	HWND window;
 <br />
-&nbsp; &nbsp;WNDCLASSEX wnd;
-
+	WNDCLASSEX wnd;
 <br />
-&nbsp; &nbsp;defineClass&#40;&amp;wnd,WindowProcedure,&quot;MyClass&quot;,hInstance&#41;;
-
+	defineClass&#40;&amp;wnd,WindowProcedure,&quot;MyClass&quot;,hInstance&#41;;
 <br />
-&nbsp; &nbsp;RegisterClassEx&#40;&amp;wnd&#41;;
-
+	RegisterClassEx&#40;&amp;wnd&#41;;
 <br />
-&nbsp; &nbsp;window = CreateWindowEx&#40;0,&quot;MyClass&quot;,&quot;Win32project&quot;,WS_OVERLAPPEDWINDOW|WS_VISIBLE|WS_SYSMENU,100,100
-
+	window = CreateWindowEx&#40;0,&quot;MyClass&quot;,&quot;Win32project&quot;,WS_OVERLAPPEDWINDOW|WS_VISIBLE|WS_SYSMENU,100,100
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;,400,400,NULL,NULL,hInstance,NULL&#41;;
-
+								,400,400,NULL,NULL,hInstance,NULL&#41;;
 <br />
 
-
 <br />
-&nbsp; &nbsp;if &#40;!window&#41;
-
+	if &#40;!window&#41;
 <br />
-&nbsp; &nbsp;&#123;
-
+	&#123;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;MessageBox&#40;NULL,&quot;napaka pri kreiranju okna&quot;,&quot;napaka&quot;,MB_OK&#41;;
-
+		MessageBox&#40;NULL,&quot;napaka pri kreiranju okna&quot;,&quot;napaka&quot;,MB_OK&#41;;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;return 0;
-
+		return 0;
 <br />
-&nbsp; &nbsp;&#125;
-
+	&#125;
 <br />
-&nbsp; &nbsp;ShowWindow&#40;window,SW_SHOW&#41;;
-
+	ShowWindow&#40;window,SW_SHOW&#41;;
 <br />
-&nbsp; &nbsp;UpdateWindow&#40;window&#41;;
-
+	UpdateWindow&#40;window&#41;;
 <br />
 
-
 <br />
-&nbsp; &nbsp;MSG&nbsp; msg;
-
+	MSG  msg;
 <br />
-&nbsp; &nbsp; int status;
-
+    int status;
 <br />
 
-
 <br />
-&nbsp; &nbsp; while &#40;&#40;status = GetMessage &#40;&amp; msg, 0, 0, 0&#41;&#41; != 0&#41;
-
+    while &#40;&#40;status = GetMessage &#40;&amp; msg, 0, 0, 0&#41;&#41; != 0&#41;
 <br />
-&nbsp; &nbsp; &#123;
-
+    &#123;
 <br />
-&nbsp; &nbsp; &nbsp; &nbsp; if &#40;status == -1&#41;
-
+        if &#40;status == -1&#41;
 <br />
-&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; return -1;
-
+            return -1;
 <br />
-&nbsp; &nbsp; &nbsp; &nbsp; DispatchMessage &#40;&amp; msg&#41;;
-
+        DispatchMessage &#40;&amp; msg&#41;;
 <br />
-&nbsp; &nbsp; &#125;
-
+    &#125;
 <br />
 
-
 <br />
- &nbsp; &nbsp;return 0;
-
+ 	return 0;
 <br />
 &#125;
-
 <br />
-
 
 <br />
 void defineClass&#40;WNDCLASSEX * windowClass,WNDPROC winProc, char const * className, HINSTANCE hInst&#41;
-
 <br />
 &#123;
-
 <br />
-&nbsp; &nbsp;windowClass-&gt;cbSize=sizeof&#40;WNDCLASSEX&#41;;
-
+	windowClass-&gt;cbSize=sizeof&#40;WNDCLASSEX&#41;;
 <br />
-&nbsp; &nbsp;windowClass-&gt;style = CS_HREDRAW | CS_VREDRAW;
-
+	windowClass-&gt;style = CS_HREDRAW | CS_VREDRAW;
 <br />
-&nbsp; &nbsp;windowClass-&gt;lpfnWndProc = winProc;
-
+	windowClass-&gt;lpfnWndProc = winProc;
 <br />
-&nbsp; &nbsp;windowClass-&gt;cbClsExtra = 0;
-
+	windowClass-&gt;cbClsExtra = 0;
 <br />
-&nbsp; &nbsp;windowClass-&gt;cbWndExtra = 0;
-
+	windowClass-&gt;cbWndExtra = 0;
 <br />
-&nbsp; &nbsp;windowClass-&gt;hInstance = hInst;
-
+	windowClass-&gt;hInstance = hInst;
 <br />
-&nbsp; &nbsp;windowClass-&gt;hIcon = LoadIcon&#40;NULL,IDI_APPLICATION&#41;;
-
+	windowClass-&gt;hIcon = LoadIcon&#40;NULL,IDI_APPLICATION&#41;;
 <br />
-&nbsp; &nbsp;windowClass-&gt;hCursor = LoadCursor&#40;NULL,IDC_ARROW&#41;;
-
+	windowClass-&gt;hCursor = LoadCursor&#40;NULL,IDC_ARROW&#41;;
 <br />
-&nbsp; &nbsp;windowClass-&gt;hbrBackground = &#40;HBRUSH&#41;GetStockObject&#40;WHITE_BRUSH&#41;;
-
+	windowClass-&gt;hbrBackground = &#40;HBRUSH&#41;GetStockObject&#40;WHITE_BRUSH&#41;;
 <br />
-&nbsp; &nbsp;windowClass-&gt;lpszMenuName = NULL;
-
+	windowClass-&gt;lpszMenuName = NULL;
 <br />
-&nbsp; &nbsp;windowClass-&gt;lpszClassName = className;
-
+	windowClass-&gt;lpszClassName = className;
 <br />
-&nbsp; &nbsp;windowClass-&gt;hIconSm = LoadIcon&#40;NULL,IDI_WINLOGO&#41;;
-
+	windowClass-&gt;hIconSm = LoadIcon&#40;NULL,IDI_WINLOGO&#41;;
 <br />
 &#125;
-
 <br />
-
 
 <br />
 LRESULT CALLBACK WindowProcedure&#40;HWND hwnd, unsigned int message, WPARAM wParam, LPARAM lParam&#41;
-
 <br />
 &#123;
-
 <br />
-&nbsp; &nbsp; switch &#40;message&#41;
-
+    switch &#40;message&#41;
 <br />
-&nbsp; &nbsp; &#123;
-
+    &#123;
 <br />
-&nbsp; &nbsp; &nbsp; &nbsp; case WM_DESTROY&#58;
-
+        case WM_DESTROY&#58;
 <br />
-&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; PostQuitMessage &#40;0&#41;;
-
+            PostQuitMessage &#40;0&#41;;
 <br />
-&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; return 0;
-
+            return 0;
 <br />
 
-
 <br />
-&nbsp; &nbsp; &#125;
-
+    &#125;
 <br />
-&nbsp; &nbsp; return DefWindowProc &#40;hwnd, message, wParam, lParam &#41;;
-
+    return DefWindowProc &#40;hwnd, message, wParam, lParam &#41;;
 <br />
 &#125;
-
 <br />
 </td>
 <br />
@@ -556,7 +491,7 @@ AlienX<br />_________________<br />with dreams to be a king, first one should be
 	</tr>
 	
 	<tr>
-		<td width="150" align="left" valign="top" class="row2"><span class="name"><a name="9058"></a><b>AlienX</b></span><br /><span class="postdetails">wannabe<br /><img src="images/ranks/sgd-2.gif" alt="wannabe" title="wannabe" border="0" /><br /><img src="images/avatars/c14d559340c02ac14bb02.gif" alt="" border="0" /><br /><br />Pridružen: 11. jan 2003 ob 21:35<br />objav: 110<br /></span><br /></td>
+		<td width="150" align="left" valign="top" class="row2"><span class="name"><a name="9058"></a><b>AlienX</b></span><br /><span class="postdetails">wannabe<br /><img src="images/ranks/sgd-2.gif" alt="wannabe" title="wannabe" border="0" /><br /><img src="images/avatars/c14d559340c02ac14bb02.gif" alt="" border="0" /><br /><br />Pridružen: 11. jan 2003 ob 21:35<br />objav: 111<br /></span><br /></td>
 		<td class="row2" width="100%" height="28" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
 			<tr>
 				<td colspan="2" width="100%">
@@ -576,7 +511,7 @@ AlienX<br />_________________<br />with dreams to be a king, first one should be
 				<td colspan="2"><hr /></td>
 			</tr>
 			<tr>
-				<td colspan="2"><span class="postbody"><img src="images/smiles/icon_eek.gif" alt="icon_eek.gif" border="0" />  <img src="images/smiles/icon_eek.gif" alt="icon_eek.gif" border="0" />  <img src="images/smiles/icon_eek.gif" alt="icon_eek.gif" border="0" /> 
+				<td colspan="2"><span class="postbody"><img src="images/smiles/icon_eek.gif" alt=":shock:" border="0" />  <img src="images/smiles/icon_eek.gif" alt=":shock:" border="0" />  <img src="images/smiles/icon_eek.gif" alt=":shock:" border="0" /> 
 
 <br />
 
@@ -617,7 +552,7 @@ AlienX<br />_________________<br />with dreams to be a king, first one should be
 	</tr>
 	
 	<tr>
-		<td width="150" align="left" valign="top" class="row1"><span class="name"><a name="9060"></a><b>GupeM</b></span><br /><span class="postdetails">wannabe<br /><img src="images/ranks/sgd-2.gif" alt="wannabe" title="wannabe" border="0" /><br /><img src="images/avatars/c14d51e34222dc2e8244d.gif" alt="" border="0" /><br /><br />Pridružen: 30. jun 2003 ob 10:13<br />objav: 136<br />Kraj: Žiri</span><br /></td>
+		<td width="150" align="left" valign="top" class="row1"><span class="name"><a name="9060"></a><b>GupeM</b></span><br /><span class="postdetails">poznavalec<br /><img src="images/ranks/sgd-3.gif" alt="poznavalec" title="poznavalec" border="0" /><br /><img src="images/avatars/c14d51e34222dc2e8244d.gif" alt="" border="0" /><br /><br />Pridružen: 30. jun 2003 ob 10:13<br />objav: 177<br />Kraj: Žiri</span><br /></td>
 		<td class="row1" width="100%" height="28" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
 			<tr>
 				<td colspan="2" width="100%">
@@ -672,7 +607,7 @@ Finis Mundi/Konec je sveta.</span><span class="gensmall"></span></td>
 		<td class="row1" width="150" align="left" valign="middle"><span class="nav"><a href="#top" class="nav">Nazaj na vrh</a></span></td>
 		<td class="row1" width="100%" height="28" valign="bottom" nowrap="nowrap"><table cellspacing="0" cellpadding="0" border="0" height="18" width="18">
 			<tr>
-				<td valign="middle" nowrap="nowrap"><a href="profile-73.html"><img src="templates/SGD2/images/lang_slovenian/icon_profile.gif" alt="Poglej uporabnikov profil" title="Poglej uporabnikov profil" border="0" /></a> <a  target="_userwww"><img src="templates/SGD2/images/lang_slovenian/icon_www.gif" alt="Obišči avtorjevo spletno stran" title="Obišči avtorjevo spletno stran" border="0" /></a></td>
+				<td valign="middle" nowrap="nowrap"><a href="profile-73.html"><img src="templates/SGD2/images/lang_slovenian/icon_profile.gif" alt="Poglej uporabnikov profil" title="Poglej uporabnikov profil" border="0" /></a> </td>
 			</tr>
 		</table></td>
 	</tr>
@@ -681,7 +616,7 @@ Finis Mundi/Konec je sveta.</span><span class="gensmall"></span></td>
 	</tr>
 	
 	<tr>
-		<td width="150" align="left" valign="top" class="row2"><span class="name"><a name="9061"></a><b>AlienX</b></span><br /><span class="postdetails">wannabe<br /><img src="images/ranks/sgd-2.gif" alt="wannabe" title="wannabe" border="0" /><br /><img src="images/avatars/c14d559340c02ac14bb02.gif" alt="" border="0" /><br /><br />Pridružen: 11. jan 2003 ob 21:35<br />objav: 110<br /></span><br /></td>
+		<td width="150" align="left" valign="top" class="row2"><span class="name"><a name="9061"></a><b>AlienX</b></span><br /><span class="postdetails">wannabe<br /><img src="images/ranks/sgd-2.gif" alt="wannabe" title="wannabe" border="0" /><br /><img src="images/avatars/c14d559340c02ac14bb02.gif" alt="" border="0" /><br /><br />Pridružen: 11. jan 2003 ob 21:35<br />objav: 111<br /></span><br /></td>
 		<td class="row2" width="100%" height="28" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
 			<tr>
 				<td colspan="2" width="100%">
@@ -726,28 +661,20 @@ se nekaj. tlele imam podoben problem kot na začetku. enostavno ne naredi combob
 	<tr>
 <br />
 	  <td class="code">
-
 <br />
-&nbsp; &nbsp;case WM_CREATE&#58;
-
+	case WM_CREATE&#58;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;combo = CreateWindow&#40;&quot;COMBOBOX&quot;,&quot;&quot;,WS_VISIBLE|WS_CHILD|CBS_DROPDOWN,10,10,100,800,window,NULL,0,NULL&#41;;
-
+			combo = CreateWindow&#40;&quot;COMBOBOX&quot;,&quot;&quot;,WS_VISIBLE|WS_CHILD|CBS_DROPDOWN,10,10,100,800,window,NULL,0,NULL&#41;;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;if &#40;!combo&#41;
-
+			if &#40;!combo&#41;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&#123;
-
+			&#123;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;MessageBox&#40;window,&quot;could not create combo&quot;,&quot;error&quot;,MB_OK&#41;;
-
+				MessageBox&#40;window,&quot;could not create combo&quot;,&quot;error&quot;,MB_OK&#41;;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&#125;
-
+			&#125;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;
-
+			
 <br />
 </td>
 <br />
@@ -783,7 +710,7 @@ se nekaj. tlele imam podoben problem kot na začetku. enostavno ne naredi combob
   <tr>
 	<td align="left" valign="middle" nowrap="nowrap">&nbsp;</td>
 	<td align="left" valign="middle" width="100%"><span class="nav">&nbsp;&nbsp;&nbsp;<a href="index.html" class="nav">SloGameDev.net seznam forumov</a>
-	  -> <a href="forum-1.html" class="nav">Splošno Programiranje</a></span></td>
+	  -> <a href="forum-52.html" class="nav">Izdelovanje iger</a></span></td>
 	<td align="right" valign="top" nowrap="nowrap"><span class="gensmall">Časovni pas (GMT +2:00 uri) Slovenija, poletni čas</span><br /><span class="nav"></span>
 	  </td>
   </tr>
@@ -799,7 +726,7 @@ se nekaj. tlele imam podoben problem kot na začetku. enostavno ne naredi combob
   </tr>
 </table>
 
-<div align="center"><span class="copyright"><br />Arhiv stanja na dan 13. 2. 2006 &mdash; samo za branje.<br />
+<div align="center"><span class="copyright"><br />Arhiv &mdash; samo za branje.<br />
 <!--
 	We request you retain the full copyright notice below including the link to www.phpbb.com.
 	This not only gives respect to the large amount of time given freely by the developers

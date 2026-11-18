@@ -1,0 +1,1343 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html dir="ltr">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta http-equiv="Content-Style-Type" content="text/css">
+<style type="text/css">
+<!--
+.style1 {color: #FFFFFF}
+-->
+</style>
+
+
+
+<title>SloGameDev.net :: 64 vs 32 bit</title>
+<!-- link rel="stylesheet" href="templates/SGD/SGD2.css" type="text/css" -->
+<style type="text/css">
+<!--
+/*
+  The SGD Theme for phpBB version 2+
+  Created by Rhuantavan
+  http://www.rhuantavan.org
+
+  NOTE: These CSS definitions are stored within the main page body so that you can use the phpBB2
+  theme administration centre. When you have finalised your style you could cut the final CSS code
+  and place it in an external file, deleting this section to save bandwidth.
+*/
+
+/* General page style. The scroll bar colours only visible in IE5.5+ */
+body {
+	background-color: #DDDDDD;
+	scrollbar-face-color: #000000;
+	scrollbar-highlight-color: #000000;
+	scrollbar-3dlight-color: #EEEEEE;
+	scrollbar-darkshadow-color: #EEEEEE;
+	scrollbar-shadow-color: #000000;
+	scrollbar-arrow-color: #55FF00;
+	scrollbar-track-color: #EEEEEE;
+}
+
+/* General font families for common tags */
+font,th,td,p { font-family: Verdana, Arial, Helvetica, sans-serif }
+a:link,a:active,a:visited { color : #338800; }
+a:hover		{ text-decoration: underline; color : #338800; }
+hr	{ height: 0px; border: solid #E9E9E9 0px; border-top-width: 1px;}
+
+/* This is the border line & background colour round the entire page */
+.bodyline	{ background-color: #EEEEEE; border-left: 1px #000000 solid; border-right: 1px #000000 solid; }
+
+/* This is the outline round the main forum tables */
+.forumline	{ background-color: #EEEEEE; border: 0px #DDDDDD solid; }
+
+/* Main table cell colours and backgrounds */
+td.row1	{ background-color: #F8F8F8; }
+td.row2	{ background-color: #F0F0F0; }
+td.row3	{ background-color: #E9E9E9; }
+
+/*
+  This is for the table cell above the Topics, Post & Last posts on the index.php page
+  By default this is the fading out gradiated silver background.
+  However, you could replace this with a bitmap specific for each forum
+*/
+td.rowpic {
+		background-color: #EEEEEE;
+		background-image: url(templates/SGD/images/cellpic3.gif);
+		background-repeat: repeat-y;
+}
+
+/* Header cells - the blue and silver gradient backgrounds */
+th	{
+	color: #66CC33; font-size: 11px; font-weight : bold;
+	background-color: #338800; height: 25px;
+	background-image: url(templates/SGD/images/cellpic2.gif);
+}
+
+td.cat,td.catHead,td.catSides,td.catLeft,td.catRight,td.catBottom {
+			background-image: url(templates/SGD/images/cellpic1.gif);
+			background-color:#E9E9E9; border: #999999; border-style: solid; height: 28px;
+}
+
+/*
+  Setting additional nice inner borders for the main table cells.
+  The names indicate which sides the border will be on.
+  Don't worry if you don't understand this, just ignore it :-)
+*/
+td.cat,td.catHead,td.catBottom {
+	height: 29px;
+	border-width: 0px 0px 0px 0px;
+}
+th.thHead,th.thSides,th.thTop,th.thLeft,th.thRight,th.thBottom,th.thCornerL,th.thCornerR {
+	font-weight: bold; border: #EEEEEE; border-style: solid; height: 28px;
+}
+td.row3Right,td.spaceRow {
+	background-color: #E9E9E9; border: #999999; border-style: solid;
+}
+
+th.thHead,td.catHead { font-size: 12px; border-width: 0px 0px 0px 0px; }
+th.thSides,td.catSides,td.spaceRow	 { border-width: 0px 0px 0px 0px; }
+th.thRight,td.catRight,td.row3Right	 { border-width: 0px 0px 0px 0px; }
+th.thLeft,td.catLeft	  { border-width: 0px 0px 0px 0px; }
+th.thBottom,td.catBottom  { border-width: 0px 0px 0px 1px; }
+th.thTop	 { border-width: 0px 0px 0px 0px; }
+th.thCornerL { border-width: 0px 0px 0px 1px; }
+th.thCornerR { border-width: 0px 0px 0px 0px; }
+
+/* The largest text used in the index page title and toptic title etc. */
+.maintitle	{
+	font-weight: bold; font-size: 18px; font-family: "Trebuchet MS",Verdana, Arial, Helvetica, sans-serif;
+	text-decoration: none; line-height : 120%; color : #666666;
+}
+
+/* General text */
+.gen { font-size : 12px; }
+.genmed { font-size : 11px; }
+.gensmall { font-size : 10px; }
+.gen,.genmed,.gensmall { color : #666666; }
+a.gen,a.genmed,a.gensmall { color: #338800; text-decoration: none; }
+a.gen:hover,a.genmed:hover,a.gensmall:hover	{ color: #338800; text-decoration: underline; }
+
+/* The register, login, search etc links at the top of the page */
+.mainmenu		{ font-size : 11px; color : #666666 }
+a.mainmenu		{ text-decoration: none; color : #338800;  }
+a.mainmenu:hover{ text-decoration: underline; color : #338800; }
+
+/* SGD main menu */
+.sgdmainmenu			{ font-size : 10px; color : #99FF33 }
+a.sgdmainmenu:link		{ text-decoration: none; color : #99FF33;  }
+a.sgdmainmenu:active	{ text-decoration: none; color : #99FF33;  }
+a.sgdmainmenu:visited	{ text-decoration: none; color : #99FF33;  }
+a.sgdmainmenu:hover		{ text-decoration: underline; color : #99FF33; }
+
+/* Forum category titles */
+.cattitle		{ font-weight: bold; font-size: 12px ; letter-spacing: 1px; color : #338800}
+a.cattitle		{ text-decoration: none; color : #338800; }
+a.cattitle:hover{ text-decoration: underline; }
+
+/* Forum title: Text and link to the forums used in: index.php */
+.forumlink		{ font-weight: bold; font-size: 12px; color : #338800; }
+a.forumlink 	{ text-decoration: none; color : #338800; }
+a.forumlink:hover{ text-decoration: underline; color : #338800; }
+
+/* Used for the navigation text, (Page 1,2,3 etc) and the navigation bar when in a forum */
+.nav			{ font-weight: bold; font-size: 11px; color : #666666;}
+a.nav			{ text-decoration: none; color : #338800; }
+a.nav:hover		{ text-decoration: underline; }
+
+/* titles for the topics: could specify viewed link colour too */
+.topictitle,h1,h2	{ font-weight: bold; font-size: 11px; color : #666666; }
+a.topictitle:link   { text-decoration: none; color : #338800; }
+a.topictitle:visited { text-decoration: none; color : #338800; }
+a.topictitle:hover	{ text-decoration: underline; color : #338800; }
+
+/* Name of poster in viewmsg.php and viewtopic.php and other places */
+.name			{ font-size : 11px; color : #000000;}
+
+/* Location, number of posts, post date etc */
+.postdetails		{ font-size : 10px; color : #666666; }
+
+/* The content of the posts (body of text) */
+.postbody { font-size : 12px; line-height: 18px; color : #000000;}
+a.postlink:link	{ text-decoration: none; color : #338800 }
+a.postlink:visited { text-decoration: none; color : #338800; }
+a.postlink:hover { text-decoration: underline; color : #338800}
+
+/* Quote & Code blocks */
+.code {
+	font-family: Courier, 'Courier New', sans-serif; font-size: 11px; color: #006600;
+	background-color: #D6D6D6; border: #E9E9E9; border-style: solid;
+	border-left-width: 1px; border-top-width: 1px; border-right-width: 1px; border-bottom-width: 1px
+}
+
+.quote {
+	font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 11px; color: #444444; line-height: 125%;
+	background-color: #BBBBBB; border: #E9E9E9; border-style: solid;
+	border-left-width: 1px; border-top-width: 1px; border-right-width: 1px; border-bottom-width: 1px
+}
+
+/* Copyright and bottom info */
+.copyright		{ font-size: 10px; font-family: Verdana, Arial, Helvetica, sans-serif; color: #444444; letter-spacing: -1px;}
+a.copyright		{ color: #444444; text-decoration: none;}
+a.copyright:hover { color: #666666; text-decoration: underline;}
+
+/* Form elements */
+input,textarea, select {
+	color : #666666;
+	font: normal 11px Verdana, Arial, Helvetica, sans-serif;
+	border-color : #666666;
+}
+
+/* The text input fields background colour */
+input.post, textarea.post, select {
+	background-color : #EEEEEE;
+}
+
+input { text-indent : 2px; }
+
+/* The buttons used for bbCode styling in message post */
+input.button {
+	background-color : #F8F8F8;
+	color : #666666;
+	font-size: 11px; font-family: Verdana, Arial, Helvetica, sans-serif;
+}
+
+/* The main submit button option */
+input.mainoption {
+	background-color : #BBBBBB;
+	font-weight : bold;
+}
+
+/* None-bold submit button */
+input.liteoption {
+	background-color : #BBBBBB;
+	font-weight : normal;
+}
+
+/* This is the line in the posting page which shows the rollover
+  help line. This is actually a text box, but if set to be the same
+  colour as the background no one will know ;)
+*/
+.helpline { background-color: #F0F0F0; border-style: none; }
+
+/* Import the fancy styles for IE only (NS4.x doesn't use the @import function) */
+@import url("templates/SGD/formIE.css");
+-->
+</style>
+</head>
+<body bgcolor="#DDDDDD" text="#666666" link="#338800" vlink="#338800" topmargin="0" />
+<a name="top"></a>
+<table width="100%" cellspacing="0" cellpadding="0" border="0" align="center" nowrap>
+	<tr>
+		<td class="bodyline">
+			<table width="100%" border="0" cellpadding="0" cellspacing="0">
+				<tr>
+					<td bgcolor="#FFFFFF">
+						<img src="images/spacer.gif" width="760" height="20" alt=""></td>
+				</tr>
+			</table>
+			<table width="100%" border="0" cellpadding="0" cellspacing="0">
+				<tr>
+					<td bgcolor="#000000">
+						<a href="../index.html"><img src="images/home.gif" width="10" height="10" alt="" border="0"></a><img src="images/spacer.gif" width="5" height="5" alt=""><a href="../index.html" class="sgdmainmenu">Nazaj na domačo stran</a> <img src="images/defaulticon_green.gif" alt="" width="7" height="7" border="0"> <a href="../clanki.html" class="sgdmainmenu">Clanki</a> <img src="images/defaulticon_green.gif" alt="" width="7" height="7" border="0"> <a href="../koda.html" class="sgdmainmenu">Koda</a> <img src="images/defaulticon_green.gif" alt="" width="7" height="7" border="0"> <a href="../clani.html" class="sgdmainmenu">Clani</a> <img src="images/defaulticon_green.gif" alt="" width="7" height="7" border="0"> <a href="../skupine.html" class="sgdmainmenu">Skupine</a> <img src="images/defaulticon_green.gif" alt="" width="7" height="7" border="0"> <a href="../projekti.html" class="sgdmainmenu">Projekti</a> <img src="images/defaulticon_green.gif" alt="" width="7" height="7" border="0"> <a href="../povezave.html" class="sgdmainmenu">Povezave</a></td>
+				</tr>
+			</table>
+			<table width="100%" border="0" cellpadding="0" cellspacing="0">
+				<tr>
+					<td colspan="3" bgcolor="#000000">
+						<img src="images/spacer.gif" width="760" height="10" alt=""></td>
+				</tr>
+				<tr>
+					<td>
+						<a href="index.html"><img src="images/logo.gif" width="351" height="62" alt="" border="0"></a></td>
+					<td>
+						<img src="images/forum_03.gif" width="408" height="62" alt=""></td>
+					<td width="100%" bgcolor="#000000">
+						<img src="images/spacer.gif" width="1" height="1" alt=""></td>
+				</tr>
+				<tr>
+					<td colspan="3" bgcolor="#000000" align="center">
+						<a href="memberlist.html" class="sgdmainmenu"><img src="images/defaulticon_green.gif" alt="" width="7" height="7" border="0">&nbsp;Seznam članov</a>
+						<a href="index.html" class="sgdmainmenu"><img src="images/defaulticon_green.gif" alt="" width="7" height="7" border="0">&nbsp;Seznam</a></td>
+				</tr>
+				<tr>
+					<td colspan="3" bgcolor="#000000">
+						<img src="images/spacer.gif" width="760" height="5" alt=""></td>
+				</tr>
+			</table>
+
+<table width="100%" cellspacing="2" cellpadding="2" border="0">
+  <tr>
+	<td align="left" valign="bottom" colspan="2"><a class="maintitle" href="topic-1416.html">64 vs 32 bit</a><br />
+	  <span class="gensmall"><b></b><br />
+	  &nbsp; </span></td>
+  </tr>
+</table>
+
+<table width="100%" cellspacing="2" cellpadding="2" border="0">
+  <tr>
+	<td align="left" valign="bottom" nowrap="nowrap">&nbsp;</td>
+	<td align="left" valign="middle" width="100%"><span class="nav">&nbsp;&nbsp;&nbsp;<a href="index.html" class="nav">SloGameDev.net seznam forumov</a>
+	  -> <a href="forum-49.html" class="nav">Začetniki</a></span></td>
+  </tr>
+</table>
+
+<table class="forumline" width="100%" cellspacing="1" cellpadding="3" border="0">
+	<tr align="right">
+		<td class="catHead" colspan="2" height="28"><span class="nav"><a href="topic-1413.html" class="nav">Prejšnja tema</a> :: <a href="topic-1423.html" class="nav">Naslednja tema</a> &nbsp;</span></td>
+	</tr>
+	
+	<tr>
+		<th class="thLeft" width="150" height="26" nowrap="nowrap">avtor</th>
+		<th class="thRight" nowrap="nowrap">Sporočilo</th>
+	</tr>
+	
+	<tr>
+		<td width="150" align="left" valign="top" class="row1"><span class="name"><a name="17294"></a><b>jan1024188</b></span><br /><span class="postdetails">wannabe<br /><img src="images/ranks/sgd-2.gif" alt="wannabe" title="wannabe" border="0" /><br /><br /><br />Pridružen: 05. jun 2007 ob 18:15<br />objav: 102<br />Kraj: skofije</span><br /></td>
+		<td class="row1" width="100%" height="28" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+			<tr>
+				<td colspan="2" width="100%">
+					<table width="100%" cellpadding="0" cellspacing="0" border="0">
+						<tr>
+							<td valign="middle" align="left">
+								<a href="topic-1416.html#17294"><img src="templates/SGD2/images/icon_minipost.gif" width="12" height="9" alt="objava" title="objava" border="0" /></a>
+								<span class="postdetails">Objavljeno: sre jul 11, 2007 12:37 pm<span class="gen">&nbsp;</span>&nbsp; &nbsp;Pošlji temo: 64 vs 32 bit</span>
+							</td>
+							<td valign="middle" align="right" nowrap="nowrap">
+							</td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+			<tr>
+				<td colspan="2"><hr /></td>
+			</tr>
+			<tr>
+				<td colspan="2"><span class="postbody">Oj,
+
+<br />
+
+
+<br />
+Mene zanima kaksna je razlika med 64 pa 32 bitno igro. Pa kje je razlika v grafiki?</span><span class="gensmall"></span></td>
+			</tr>
+		</table></td>
+	</tr>
+	<tr>
+		<td class="row1" width="150" align="left" valign="middle"><span class="nav"><a href="#top" class="nav">Nazaj na vrh</a></span></td>
+		<td class="row1" width="100%" height="28" valign="bottom" nowrap="nowrap"><table cellspacing="0" cellpadding="0" border="0" height="18" width="18">
+			<tr>
+				<td valign="middle" nowrap="nowrap"><a href="profile-778.html"><img src="templates/SGD2/images/lang_slovenian/icon_profile.gif" alt="Poglej uporabnikov profil" title="Poglej uporabnikov profil" border="0" /></a> <a  target="_userwww"><img src="templates/SGD2/images/lang_slovenian/icon_www.gif" alt="Obišči avtorjevo spletno stran" title="Obišči avtorjevo spletno stran" border="0" /></a></td>
+			</tr>
+		</table></td>
+	</tr>
+	<tr>
+		<td class="spaceRow" colspan="2" height="1"><img src="templates/SGD/images/spacer.gif" alt="" width="1" height="1" /></td>
+	</tr>
+	
+	<tr>
+		<td width="150" align="left" valign="top" class="row2"><span class="name"><a name="17295"></a><b>blan</b></span><br /><span class="postdetails">poizvedovalec<br /><img src="images/ranks/sgd-1.gif" alt="poizvedovalec" title="poizvedovalec" border="0" /><br /><br /><br />Pridružen: 18. apr 2006 ob 21:23<br />objav: 69<br /></span><br /></td>
+		<td class="row2" width="100%" height="28" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+			<tr>
+				<td colspan="2" width="100%">
+					<table width="100%" cellpadding="0" cellspacing="0" border="0">
+						<tr>
+							<td valign="middle" align="left">
+								<a href="topic-1416.html#17295"><img src="templates/SGD2/images/icon_minipost.gif" width="12" height="9" alt="objava" title="objava" border="0" /></a>
+								<span class="postdetails">Objavljeno: sre jul 11, 2007 4:15 pm<span class="gen">&nbsp;</span>&nbsp; &nbsp;Pošlji temo: </span>
+							</td>
+							<td valign="middle" align="right" nowrap="nowrap">
+							</td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+			<tr>
+				<td colspan="2"><hr /></td>
+			</tr>
+			<tr>
+				<td colspan="2"><span class="postbody">Če je procesor drug, ni nič drugače. Razlike vidne, če je igra narejena za 64 bitne procesorje. V bistvu je fora samo kako se sprogramira. Lahko se vsem barvam poveča barvni razpon (velikost ki jo porabijo), ker 64 bitni proci lažje delajo z velikimi kosi podatkov in dobiš bolj realistične barve, potem imaš cel kup for za optimizacijo, kar se pozna na hitrosti, drugače pa sprememb ni. Isto kot če imaš večjedrni procesor, če igra to možnost izkorišča je kul, drugače pa maš odvečna jedra.</span><span class="gensmall"></span></td>
+			</tr>
+		</table></td>
+	</tr>
+	<tr>
+		<td class="row2" width="150" align="left" valign="middle"><span class="nav"><a href="#top" class="nav">Nazaj na vrh</a></span></td>
+		<td class="row2" width="100%" height="28" valign="bottom" nowrap="nowrap"><table cellspacing="0" cellpadding="0" border="0" height="18" width="18">
+			<tr>
+				<td valign="middle" nowrap="nowrap"><a href="profile-277.html"><img src="templates/SGD2/images/lang_slovenian/icon_profile.gif" alt="Poglej uporabnikov profil" title="Poglej uporabnikov profil" border="0" /></a> </td>
+			</tr>
+		</table></td>
+	</tr>
+	<tr>
+		<td class="spaceRow" colspan="2" height="1"><img src="templates/SGD/images/spacer.gif" alt="" width="1" height="1" /></td>
+	</tr>
+	
+	<tr>
+		<td width="150" align="left" valign="top" class="row1"><span class="name"><a name="17296"></a><b>jan1024188</b></span><br /><span class="postdetails">wannabe<br /><img src="images/ranks/sgd-2.gif" alt="wannabe" title="wannabe" border="0" /><br /><br /><br />Pridružen: 05. jun 2007 ob 18:15<br />objav: 102<br />Kraj: skofije</span><br /></td>
+		<td class="row1" width="100%" height="28" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+			<tr>
+				<td colspan="2" width="100%">
+					<table width="100%" cellpadding="0" cellspacing="0" border="0">
+						<tr>
+							<td valign="middle" align="left">
+								<a href="topic-1416.html#17296"><img src="templates/SGD2/images/icon_minipost.gif" width="12" height="9" alt="objava" title="objava" border="0" /></a>
+								<span class="postdetails">Objavljeno: sre jul 11, 2007 5:40 pm<span class="gen">&nbsp;</span>&nbsp; &nbsp;Pošlji temo: </span>
+							</td>
+							<td valign="middle" align="right" nowrap="nowrap">
+							</td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+			<tr>
+				<td colspan="2"><hr /></td>
+			</tr>
+			<tr>
+				<td colspan="2"><span class="postbody">aha tnx, se mi je kr zdelo da je to neki v povezavi z barvo oz. color depth
+
+<br />
+
+
+<br />
+Zej sm se spomno kje sm to ze vido. Pr OpenGL k mas Pixel format pa mas PIXELFORMATDESCRIPTOR format;
+
+<br />
+pa
+
+<br />
+format.cColorBits = 32; 
+
+<br />
+
+
+<br />
+Naj me kdo poprav ce se motim...</span><span class="gensmall"></span></td>
+			</tr>
+		</table></td>
+	</tr>
+	<tr>
+		<td class="row1" width="150" align="left" valign="middle"><span class="nav"><a href="#top" class="nav">Nazaj na vrh</a></span></td>
+		<td class="row1" width="100%" height="28" valign="bottom" nowrap="nowrap"><table cellspacing="0" cellpadding="0" border="0" height="18" width="18">
+			<tr>
+				<td valign="middle" nowrap="nowrap"><a href="profile-778.html"><img src="templates/SGD2/images/lang_slovenian/icon_profile.gif" alt="Poglej uporabnikov profil" title="Poglej uporabnikov profil" border="0" /></a> <a  target="_userwww"><img src="templates/SGD2/images/lang_slovenian/icon_www.gif" alt="Obišči avtorjevo spletno stran" title="Obišči avtorjevo spletno stran" border="0" /></a></td>
+			</tr>
+		</table></td>
+	</tr>
+	<tr>
+		<td class="spaceRow" colspan="2" height="1"><img src="templates/SGD/images/spacer.gif" alt="" width="1" height="1" /></td>
+	</tr>
+	
+	<tr>
+		<td width="150" align="left" valign="top" class="row2"><span class="name"><a name="17297"></a><b>Delfi</b></span><br /><span class="postdetails">poznavalec<br /><img src="images/ranks/sgd-3.gif" alt="poznavalec" title="poznavalec" border="0" /><br /><img src="images/avatars/d9485b593fec639470dcc.gif" alt="" border="0" /><br /><br />Pridružen: 27. okt 2003 ob 19:22<br />objav: 165<br /></span><br /></td>
+		<td class="row2" width="100%" height="28" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+			<tr>
+				<td colspan="2" width="100%">
+					<table width="100%" cellpadding="0" cellspacing="0" border="0">
+						<tr>
+							<td valign="middle" align="left">
+								<a href="topic-1416.html#17297"><img src="templates/SGD2/images/icon_minipost.gif" width="12" height="9" alt="objava" title="objava" border="0" /></a>
+								<span class="postdetails">Objavljeno: sre jul 11, 2007 6:15 pm<span class="gen">&nbsp;</span>&nbsp; &nbsp;Pošlji temo: </span>
+							</td>
+							<td valign="middle" align="right" nowrap="nowrap">
+							</td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+			<tr>
+				<td colspan="2"><hr /></td>
+			</tr>
+			<tr>
+				<td colspan="2"><span class="postbody"></span>
+<br />
+<table width="90%" cellspacing="1" cellpadding="3" border="0" align="center">
+<br />
+<tr> 
+<br />
+	  <td><span class="genmed"><b>blan je napisal:</b></span></td>
+<br />
+	</tr>
+<br />
+	<tr>
+<br />
+	  <td class="quote">Če je procesor drug, ni nič drugače. Razlike vidne, če je igra narejena za 64 bitne procesorje. V bistvu je fora samo kako se sprogramira. Lahko se vsem barvam poveča barvni razpon (velikost ki jo porabijo), ker 64 bitni proci lažje delajo z velikimi kosi podatkov in dobiš bolj realistične barve, potem imaš cel kup for za optimizacijo, kar se pozna na hitrosti, drugače pa sprememb ni. Isto kot če imaš večjedrni procesor, če igra to možnost izkorišča je kul, drugače pa maš odvečna jedra.</td>
+<br />
+	</tr>
+<br />
+</table>
+<br />
+<span class="postbody"> 
+
+<br />
+ 
+
+<br />
+Pa saj na koncu itaq zaslon prikazuje samo 16777215 barv (8 bit na kanal, 0..256) - kar je 24 bitno.. oziroma polovico toliko če gre za macbook z lcdjem na dithering <img src="images/smiles/icon_biggrin.gif" alt=":D" border="0" /><br />_________________<br />Moj projekt: Top Down City
+<br />
+<a class="postlink" >http://mathpudding.com</a>
+<br />
+<a class="postlink-local" href="topic-467-90.html#12253">phpBB2/viewtopic.php?p=12253</a></span><span class="gensmall"></span></td>
+			</tr>
+		</table></td>
+	</tr>
+	<tr>
+		<td class="row2" width="150" align="left" valign="middle"><span class="nav"><a href="#top" class="nav">Nazaj na vrh</a></span></td>
+		<td class="row2" width="100%" height="28" valign="bottom" nowrap="nowrap"><table cellspacing="0" cellpadding="0" border="0" height="18" width="18">
+			<tr>
+				<td valign="middle" nowrap="nowrap"><a href="profile-118.html"><img src="templates/SGD2/images/lang_slovenian/icon_profile.gif" alt="Poglej uporabnikov profil" title="Poglej uporabnikov profil" border="0" /></a> <a  target="_userwww"><img src="templates/SGD2/images/lang_slovenian/icon_www.gif" alt="Obišči avtorjevo spletno stran" title="Obišči avtorjevo spletno stran" border="0" /></a></td>
+			</tr>
+		</table></td>
+	</tr>
+	<tr>
+		<td class="spaceRow" colspan="2" height="1"><img src="templates/SGD/images/spacer.gif" alt="" width="1" height="1" /></td>
+	</tr>
+	
+	<tr>
+		<td width="150" align="left" valign="top" class="row1"><span class="name"><a name="17298"></a><b>jan1024188</b></span><br /><span class="postdetails">wannabe<br /><img src="images/ranks/sgd-2.gif" alt="wannabe" title="wannabe" border="0" /><br /><br /><br />Pridružen: 05. jun 2007 ob 18:15<br />objav: 102<br />Kraj: skofije</span><br /></td>
+		<td class="row1" width="100%" height="28" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+			<tr>
+				<td colspan="2" width="100%">
+					<table width="100%" cellpadding="0" cellspacing="0" border="0">
+						<tr>
+							<td valign="middle" align="left">
+								<a href="topic-1416.html#17298"><img src="templates/SGD2/images/icon_minipost.gif" width="12" height="9" alt="objava" title="objava" border="0" /></a>
+								<span class="postdetails">Objavljeno: sre jul 11, 2007 6:51 pm<span class="gen">&nbsp;</span>&nbsp; &nbsp;Pošlji temo: </span>
+							</td>
+							<td valign="middle" align="right" nowrap="nowrap">
+							</td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+			<tr>
+				<td colspan="2"><hr /></td>
+			</tr>
+			<tr>
+				<td colspan="2"><span class="postbody"></span>
+<br />
+<table width="90%" cellspacing="1" cellpadding="3" border="0" align="center">
+<br />
+<tr> 
+<br />
+	  <td><span class="genmed"><b>Delfi je napisal:</b></span></td>
+<br />
+	</tr>
+<br />
+	<tr>
+<br />
+	  <td class="quote"></span>
+<br />
+<table width="90%" cellspacing="1" cellpadding="3" border="0" align="center">
+<br />
+<tr> 
+<br />
+	  <td><span class="genmed"><b>blan je napisal:</b></span></td>
+<br />
+	</tr>
+<br />
+	<tr>
+<br />
+	  <td class="quote">Èe je procesor drug, ni niè drugaèe. Razlike vidne, èe je igra narejena za 64 bitne procesorje. V bistvu je fora samo kako se sprogramira. Lahko se vsem barvam poveèa barvni razpon (velikost ki jo porabijo), ker 64 bitni proci lažje delajo z velikimi kosi podatkov in dobiš bolj realistiène barve, potem imaš cel kup for za optimizacijo, kar se pozna na hitrosti, drugaèe pa sprememb ni. Isto kot èe imaš veèjedrni procesor, èe igra to možnost izkorišèa je kul, drugaèe pa maš odveèna jedra.</td>
+<br />
+	</tr>
+<br />
+</table>
+<br />
+<span class="postbody"> 
+<br />
+ 
+<br />
+Pa saj na koncu itaq zaslon prikazuje samo 16777215 barv (8 bit na kanal, 0..256) - kar je 24 bitno.. oziroma polovico toliko èe gre za macbook z lcdjem na dithering <img src="images/smiles/icon_biggrin.gif" alt=":D" border="0" /></td>
+<br />
+	</tr>
+<br />
+</table>
+<br />
+<span class="postbody">
+
+<br />
+so whats the point?</span><span class="gensmall"></span></td>
+			</tr>
+		</table></td>
+	</tr>
+	<tr>
+		<td class="row1" width="150" align="left" valign="middle"><span class="nav"><a href="#top" class="nav">Nazaj na vrh</a></span></td>
+		<td class="row1" width="100%" height="28" valign="bottom" nowrap="nowrap"><table cellspacing="0" cellpadding="0" border="0" height="18" width="18">
+			<tr>
+				<td valign="middle" nowrap="nowrap"><a href="profile-778.html"><img src="templates/SGD2/images/lang_slovenian/icon_profile.gif" alt="Poglej uporabnikov profil" title="Poglej uporabnikov profil" border="0" /></a> <a  target="_userwww"><img src="templates/SGD2/images/lang_slovenian/icon_www.gif" alt="Obišči avtorjevo spletno stran" title="Obišči avtorjevo spletno stran" border="0" /></a></td>
+			</tr>
+		</table></td>
+	</tr>
+	<tr>
+		<td class="spaceRow" colspan="2" height="1"><img src="templates/SGD/images/spacer.gif" alt="" width="1" height="1" /></td>
+	</tr>
+	
+	<tr>
+		<td width="150" align="left" valign="top" class="row2"><span class="name"><a name="17299"></a><b>Alfa</b></span><br /><span class="postdetails">mojster<br /><img src="images/ranks/sgd-5.gif" alt="mojster" title="mojster" border="0" /><br /><img src="images/avatars/c2f90a1540823086cd155.jpg" alt="" border="0" /><br /><br />Pridružen: 04. mar 2004 ob 18:14<br />objav: 471<br />Kraj: SG</span><br /></td>
+		<td class="row2" width="100%" height="28" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+			<tr>
+				<td colspan="2" width="100%">
+					<table width="100%" cellpadding="0" cellspacing="0" border="0">
+						<tr>
+							<td valign="middle" align="left">
+								<a href="topic-1416.html#17299"><img src="templates/SGD2/images/icon_minipost.gif" width="12" height="9" alt="objava" title="objava" border="0" /></a>
+								<span class="postdetails">Objavljeno: sre jul 11, 2007 8:22 pm<span class="gen">&nbsp;</span>&nbsp; &nbsp;Pošlji temo: </span>
+							</td>
+							<td valign="middle" align="right" nowrap="nowrap">
+							</td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+			<tr>
+				<td colspan="2"><hr /></td>
+			</tr>
+			<tr>
+				<td colspan="2"><span class="postbody">Da je 64bit barv neumnost, ker jih prvič monitorji ne prikazujejo, drugič človek ne vidi takega razpona. Več kot 24 bitov barv ne potrebujemo, imamo le še dodaten 8 bitni alpha kanal, da lahko računalnik računa &quot;prozorrnost&quot; sloja (monitor nima 32 bitov barv). Vse več je neumnost. 
+
+<br />
+
+
+<br />
+Bitnost procesorja vpliva na računsko moč in nekatere druge stvari, ki pa za tebe verjetno še niso tako pomembne. 64 bitni procesor ima v teoriji enkrat večjo računsko moč kot pa 32 bitni, dopušča več max rama, ki je pri 32 bitnih manjši. Tudi velikosti spremenljivk se lahko spremenijo, se povečajo.
+
+<br />
+
+
+<br />
+Source code bi moral biti med  obema prenosljiv, bitna coda (preveden program) pa ne, ker ima 64 bitni procesor drugačne ukaze. Pri prenosu bi se lahko pokazali tudi problemi pri času (proc time) in podobnih stvareh, ki so odvisne od procesorja.<br />_________________<br />&quot;Pustimo malenkosti, pravi cesar, PeCe pa nič (več).&quot;
+
+<br />
+Goran Bervar: C++ na kolenih</span><span class="gensmall"></span></td>
+			</tr>
+		</table></td>
+	</tr>
+	<tr>
+		<td class="row2" width="150" align="left" valign="middle"><span class="nav"><a href="#top" class="nav">Nazaj na vrh</a></span></td>
+		<td class="row2" width="100%" height="28" valign="bottom" nowrap="nowrap"><table cellspacing="0" cellpadding="0" border="0" height="18" width="18">
+			<tr>
+				<td valign="middle" nowrap="nowrap"><a href="profile-162.html"><img src="templates/SGD2/images/lang_slovenian/icon_profile.gif" alt="Poglej uporabnikov profil" title="Poglej uporabnikov profil" border="0" /></a> <a  target="_userwww"><img src="templates/SGD2/images/lang_slovenian/icon_www.gif" alt="Obišči avtorjevo spletno stran" title="Obišči avtorjevo spletno stran" border="0" /></a></td>
+			</tr>
+		</table></td>
+	</tr>
+	<tr>
+		<td class="spaceRow" colspan="2" height="1"><img src="templates/SGD/images/spacer.gif" alt="" width="1" height="1" /></td>
+	</tr>
+	
+	<tr>
+		<td width="150" align="left" valign="top" class="row1"><span class="name"><a name="17300"></a><b>Acid Cool</b></span><br /><span class="postdetails">guru<br /><img src="images/ranks/sgd-8.gif" alt="guru" title="guru" border="0" /><br /><img src="images/avatars/c15ff85a40e32fec16332.gif" alt="" border="0" /><br /><br />Pridružen: 17. jun 2003 ob 07:23<br />objav: 1329<br /></span><br /></td>
+		<td class="row1" width="100%" height="28" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+			<tr>
+				<td colspan="2" width="100%">
+					<table width="100%" cellpadding="0" cellspacing="0" border="0">
+						<tr>
+							<td valign="middle" align="left">
+								<a href="topic-1416.html#17300"><img src="templates/SGD2/images/icon_minipost.gif" width="12" height="9" alt="objava" title="objava" border="0" /></a>
+								<span class="postdetails">Objavljeno: sre jul 11, 2007 9:27 pm<span class="gen">&nbsp;</span>&nbsp; &nbsp;Pošlji temo: </span>
+							</td>
+							<td valign="middle" align="right" nowrap="nowrap">
+							</td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+			<tr>
+				<td colspan="2"><hr /></td>
+			</tr>
+			<tr>
+				<td colspan="2"><span class="postbody">alfa: btw kolko pa je pol tista minimalna razlika v valovni dolžini neke barve, ki ji človek še razpozna, da je pač nek drug odtenek barve...vem da ljudje vidimo nekje od 400 do 700nm razpona samo za minimalno razliko pa še nisem čul...me pa zanima če je in kolko je...
+
+<br />
+na Wikipedii sem našel tole:
+
+<br />
+</span>
+<br />
+<table width="90%" cellspacing="1" cellpadding="3" border="0" align="center">
+<br />
+<tr> 
+<br />
+	  <td><span class="genmed"><b>Citiram:</b></span></td>
+<br />
+	</tr>
+<br />
+	<tr>
+<br />
+	  <td class="quote">It has been estimated that humans can distinguish roughly 10 million different colors.</td>
+<br />
+	</tr>
+<br />
+</table>
+<br />
+<span class="postbody">
+
+<br />
+kar bi pomenilo nekje 30 femtometra?...no je pa ziher da več kot 24bit res ne rabiš...
+
+<br />
+
+
+<br />
+ni mi pa čist jasno kak ma 64bitni proc. z npr 3GHz večjo računsko moč kot 32bitni 3GHz...ja šur je dosti večja natančnost ker imaš namesto 23bitne mantise 52 in namesto 8 bitnega eksponenta 11bitnega...samo kaj ma to veze z računsko močjo pri igrah? meni se zdi, da že 32bitni so bli kar fajn natančno...<br />_________________<br />Home page: <a  target="_blank" class="postlink">Goran Gligorin</a></span><span class="gensmall"></span></td>
+			</tr>
+		</table></td>
+	</tr>
+	<tr>
+		<td class="row1" width="150" align="left" valign="middle"><span class="nav"><a href="#top" class="nav">Nazaj na vrh</a></span></td>
+		<td class="row1" width="100%" height="28" valign="bottom" nowrap="nowrap"><table cellspacing="0" cellpadding="0" border="0" height="18" width="18">
+			<tr>
+				<td valign="middle" nowrap="nowrap"><a href="profile-68.html"><img src="templates/SGD2/images/lang_slovenian/icon_profile.gif" alt="Poglej uporabnikov profil" title="Poglej uporabnikov profil" border="0" /></a> <a  target="_userwww"><img src="templates/SGD2/images/lang_slovenian/icon_www.gif" alt="Obišči avtorjevo spletno stran" title="Obišči avtorjevo spletno stran" border="0" /></a></td>
+			</tr>
+		</table></td>
+	</tr>
+	<tr>
+		<td class="spaceRow" colspan="2" height="1"><img src="templates/SGD/images/spacer.gif" alt="" width="1" height="1" /></td>
+	</tr>
+	
+	<tr>
+		<td width="150" align="left" valign="top" class="row2"><span class="name"><a name="17301"></a><b>snake</b></span><br /><span class="postdetails">expert<br /><img src="images/ranks/sgd-6.gif" alt="expert" title="expert" border="0" /><br /><img src="images/avatars/c14dbb55415c469152089.gif" alt="" border="0" /><br /><br />Pridružen: 10. jan 2003 ob 08:28<br />objav: 782<br />Kraj: NULL</span><br /></td>
+		<td class="row2" width="100%" height="28" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+			<tr>
+				<td colspan="2" width="100%">
+					<table width="100%" cellpadding="0" cellspacing="0" border="0">
+						<tr>
+							<td valign="middle" align="left">
+								<a href="topic-1416.html#17301"><img src="templates/SGD2/images/icon_minipost.gif" width="12" height="9" alt="objava" title="objava" border="0" /></a>
+								<span class="postdetails">Objavljeno: čet jul 12, 2007 1:14 am<span class="gen">&nbsp;</span>&nbsp; &nbsp;Pošlji temo: </span>
+							</td>
+							<td valign="middle" align="right" nowrap="nowrap">
+							</td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+			<tr>
+				<td colspan="2"><hr /></td>
+			</tr>
+			<tr>
+				<td colspan="2"><span class="postbody">Se bom posvetil graficnemu delu debate (ker cpu del za igre v bistvu sploh ne igra nobene konkretne vloge;))
+
+<br />
+
+
+<br />
+Ste nardil celo znanost:P Pravi razlog pa je precej preprostejsi (a ocem bolj skrit) <img src="images/smiles/icon_smile.gif" alt=":)" border="0" /> 
+
+<br />
+
+
+<br />
+</span>
+<br />
+<table width="90%" cellspacing="1" cellpadding="3" border="0" align="center">
+<br />
+<tr> 
+<br />
+	  <td><span class="genmed"><b>Delfi je napisal:</b></span></td>
+<br />
+	</tr>
+<br />
+	<tr>
+<br />
+	  <td class="quote">Pa saj na koncu itaq zaslon prikazuje samo 16777215 barv (8 bit na kanal, 0..256) - kar je 24 bitno.. oziroma polovico toliko če gre za macbook z lcdjem na dithering <img src="images/smiles/icon_biggrin.gif" alt=":D" border="0" /></td>
+<br />
+	</tr>
+<br />
+</table>
+<br />
+<span class="postbody">
+
+<br />
+Na zaslon tudi pridejo samo piksli, pa je med raw game data in njimi (piksli) kar velika pot.
+
+<br />
+
+
+<br />
+Fora pri 64 bitnih barvah (v cg se temu s fancy frazo rece high dynamic range) ni v <span style="font-style: italic">prikazu</span> barv, ampak v operacijah nad njimi in pomnjenju le-teh. 64 bitna natancnost se recimo zelo pozna pri visoko-kontrastnih scenah (ce govorimo o igrah oz. cg). Pri tovrstnih scenah na LDR (low dynamic range - 32bit in manj globine) pride do &quot;clippinga&quot; zelo temnih delov scene na crno in zelo svetlih delov na belo (temno postane crno, svetlo pa belo) - barvne globine pod 32 biti nimajo dovolj velikega razpona, da bi pravilno shranili celotno (HD, if you wish) sliko.
+
+<br />
+
+
+<br />
+Za kaj vec pa vprasite strica googla pod keywordi High Dynamic Range Rendering.</span><span class="gensmall"></span></td>
+			</tr>
+		</table></td>
+	</tr>
+	<tr>
+		<td class="row2" width="150" align="left" valign="middle"><span class="nav"><a href="#top" class="nav">Nazaj na vrh</a></span></td>
+		<td class="row2" width="100%" height="28" valign="bottom" nowrap="nowrap"><table cellspacing="0" cellpadding="0" border="0" height="18" width="18">
+			<tr>
+				<td valign="middle" nowrap="nowrap"><a href="profile-10.html"><img src="templates/SGD2/images/lang_slovenian/icon_profile.gif" alt="Poglej uporabnikov profil" title="Poglej uporabnikov profil" border="0" /></a> </td>
+			</tr>
+		</table></td>
+	</tr>
+	<tr>
+		<td class="spaceRow" colspan="2" height="1"><img src="templates/SGD/images/spacer.gif" alt="" width="1" height="1" /></td>
+	</tr>
+	
+	<tr>
+		<td width="150" align="left" valign="top" class="row1"><span class="name"><a name="17302"></a><b>J.T.</b></span><br /><span class="postdetails">wannabe<br /><img src="images/ranks/sgd-2.gif" alt="wannabe" title="wannabe" border="0" /><br /><br /><br />Pridružen: 06. jul 2007 ob 18:37<br />objav: 82<br /></span><br /></td>
+		<td class="row1" width="100%" height="28" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+			<tr>
+				<td colspan="2" width="100%">
+					<table width="100%" cellpadding="0" cellspacing="0" border="0">
+						<tr>
+							<td valign="middle" align="left">
+								<a href="topic-1416.html#17302"><img src="templates/SGD2/images/icon_minipost.gif" width="12" height="9" alt="objava" title="objava" border="0" /></a>
+								<span class="postdetails">Objavljeno: čet jul 12, 2007 2:18 am<span class="gen">&nbsp;</span>&nbsp; &nbsp;Pošlji temo: </span>
+							</td>
+							<td valign="middle" align="right" nowrap="nowrap">
+							</td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+			<tr>
+				<td colspan="2"><hr /></td>
+			</tr>
+			<tr>
+				<td colspan="2"><span class="postbody">Zaznava barv ni point, ja. Ko pride do vprašanja dinamičnega razpona in kontrasta, je človeško oko izjemno. Nimamo še tehnologije, katere kontrast bi za človeško oko bil &quot;prevelik&quot; (v smislu, da ne razloči razlike med tem in kakšnim nižjim).</span><span class="gensmall"></span></td>
+			</tr>
+		</table></td>
+	</tr>
+	<tr>
+		<td class="row1" width="150" align="left" valign="middle"><span class="nav"><a href="#top" class="nav">Nazaj na vrh</a></span></td>
+		<td class="row1" width="100%" height="28" valign="bottom" nowrap="nowrap"><table cellspacing="0" cellpadding="0" border="0" height="18" width="18">
+			<tr>
+				<td valign="middle" nowrap="nowrap"><a href="profile-787.html"><img src="templates/SGD2/images/lang_slovenian/icon_profile.gif" alt="Poglej uporabnikov profil" title="Poglej uporabnikov profil" border="0" /></a> </td>
+			</tr>
+		</table></td>
+	</tr>
+	<tr>
+		<td class="spaceRow" colspan="2" height="1"><img src="templates/SGD/images/spacer.gif" alt="" width="1" height="1" /></td>
+	</tr>
+	
+	<tr>
+		<td width="150" align="left" valign="top" class="row2"><span class="name"><a name="17303"></a><b>Delfi</b></span><br /><span class="postdetails">poznavalec<br /><img src="images/ranks/sgd-3.gif" alt="poznavalec" title="poznavalec" border="0" /><br /><img src="images/avatars/d9485b593fec639470dcc.gif" alt="" border="0" /><br /><br />Pridružen: 27. okt 2003 ob 19:22<br />objav: 165<br /></span><br /></td>
+		<td class="row2" width="100%" height="28" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+			<tr>
+				<td colspan="2" width="100%">
+					<table width="100%" cellpadding="0" cellspacing="0" border="0">
+						<tr>
+							<td valign="middle" align="left">
+								<a href="topic-1416.html#17303"><img src="templates/SGD2/images/icon_minipost.gif" width="12" height="9" alt="objava" title="objava" border="0" /></a>
+								<span class="postdetails">Objavljeno: čet jul 12, 2007 7:51 am<span class="gen">&nbsp;</span>&nbsp; &nbsp;Pošlji temo: </span>
+							</td>
+							<td valign="middle" align="right" nowrap="nowrap">
+							</td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+			<tr>
+				<td colspan="2"><hr /></td>
+			</tr>
+			<tr>
+				<td colspan="2"><span class="postbody"></span>
+<br />
+<table width="90%" cellspacing="1" cellpadding="3" border="0" align="center">
+<br />
+<tr> 
+<br />
+	  <td><span class="genmed"><b>Acid Cool je napisal:</b></span></td>
+<br />
+	</tr>
+<br />
+	<tr>
+<br />
+	  <td class="quote">alfa: btw kolko pa je pol tista minimalna razlika v valovni dolžini neke barve, ki ji človek še razpozna, da je pač nek drug odtenek barve...vem da ljudje vidimo nekje od 400 do 700nm razpona samo za minimalno razliko pa še nisem čul...me pa zanima če je in kolko je...
+<br />
+na Wikipedii sem našel tole:
+<br />
+</span>
+<br />
+<table width="90%" cellspacing="1" cellpadding="3" border="0" align="center">
+<br />
+<tr> 
+<br />
+	  <td><span class="genmed"><b>Citiram:</b></span></td>
+<br />
+	</tr>
+<br />
+	<tr>
+<br />
+	  <td class="quote">It has been estimated that humans can distinguish roughly 10 million different colors.</td>
+<br />
+	</tr>
+<br />
+</table>
+<br />
+<span class="postbody">
+<br />
+kar bi pomenilo nekje 30 femtometra?...no je pa ziher da več kot 24bit res ne rabiš...
+<br />
+
+<br />
+</td>
+<br />
+	</tr>
+<br />
+</table>
+<br />
+<span class="postbody"> 
+
+<br />
+ 
+
+<br />
+Glej, ni važno kakšen razpon vidi človek, na koncu ti sliko kaže ekran, in če ta ne zmore več kot 16777215 barv, potem je brezveze met več barv, a ne? zaenkrat pa tudi ni monitorjev ki bi lahko kazali nad 16777215 barv.<br />_________________<br />Moj projekt: Top Down City
+<br />
+<a class="postlink" >http://mathpudding.com</a>
+<br />
+<a class="postlink-local" href="topic-467-90.html#12253">phpBB2/viewtopic.php?p=12253</a></span><span class="gensmall"></span></td>
+			</tr>
+		</table></td>
+	</tr>
+	<tr>
+		<td class="row2" width="150" align="left" valign="middle"><span class="nav"><a href="#top" class="nav">Nazaj na vrh</a></span></td>
+		<td class="row2" width="100%" height="28" valign="bottom" nowrap="nowrap"><table cellspacing="0" cellpadding="0" border="0" height="18" width="18">
+			<tr>
+				<td valign="middle" nowrap="nowrap"><a href="profile-118.html"><img src="templates/SGD2/images/lang_slovenian/icon_profile.gif" alt="Poglej uporabnikov profil" title="Poglej uporabnikov profil" border="0" /></a> <a  target="_userwww"><img src="templates/SGD2/images/lang_slovenian/icon_www.gif" alt="Obišči avtorjevo spletno stran" title="Obišči avtorjevo spletno stran" border="0" /></a></td>
+			</tr>
+		</table></td>
+	</tr>
+	<tr>
+		<td class="spaceRow" colspan="2" height="1"><img src="templates/SGD/images/spacer.gif" alt="" width="1" height="1" /></td>
+	</tr>
+	
+	<tr>
+		<td width="150" align="left" valign="top" class="row1"><span class="name"><a name="17304"></a><b>Tepkoslav</b></span><br /><span class="postdetails">wannabe<br /><img src="images/ranks/sgd-2.gif" alt="wannabe" title="wannabe" border="0" /><br /><br /><br />Pridružen: 24. jan 2007 ob 11:27<br />objav: 129<br /></span><br /></td>
+		<td class="row1" width="100%" height="28" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+			<tr>
+				<td colspan="2" width="100%">
+					<table width="100%" cellpadding="0" cellspacing="0" border="0">
+						<tr>
+							<td valign="middle" align="left">
+								<a href="topic-1416.html#17304"><img src="templates/SGD2/images/icon_minipost.gif" width="12" height="9" alt="objava" title="objava" border="0" /></a>
+								<span class="postdetails">Objavljeno: čet jul 12, 2007 8:39 am<span class="gen">&nbsp;</span>&nbsp; &nbsp;Pošlji temo: </span>
+							</td>
+							<td valign="middle" align="right" nowrap="nowrap">
+							</td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+			<tr>
+				<td colspan="2"><hr /></td>
+			</tr>
+			<tr>
+				<td colspan="2"><span class="postbody"></span>
+<br />
+<table width="90%" cellspacing="1" cellpadding="3" border="0" align="center">
+<br />
+<tr> 
+<br />
+	  <td><span class="genmed"><b>Acid Cool je napisal:</b></span></td>
+<br />
+	</tr>
+<br />
+	<tr>
+<br />
+	  <td class="quote">alfa: btw kolko pa je pol tista minimalna razlika v valovni dolžini neke barve, ki ji človek še razpozna, da je pač nek drug odtenek barve...vem da ljudje vidimo nekje od 400 do 700nm razpona samo za minimalno razliko pa še nisem čul...me pa zanima če je in kolko je...
+<br />
+na Wikipedii sem našel tole:
+<br />
+</span>
+<br />
+<table width="90%" cellspacing="1" cellpadding="3" border="0" align="center">
+<br />
+<tr> 
+<br />
+	  <td><span class="genmed"><b>Citiram:</b></span></td>
+<br />
+	</tr>
+<br />
+	<tr>
+<br />
+	  <td class="quote">It has been estimated that humans can distinguish roughly 10 million different colors.</td>
+<br />
+	</tr>
+<br />
+</table>
+<br />
+<span class="postbody">
+<br />
+kar bi pomenilo nekje 30 femtometra?...no je pa ziher da več kot 24bit res ne rabiš...
+<br />
+
+<br />
+ni mi pa čist jasno kak ma 64bitni proc. z npr 3GHz večjo računsko moč kot 32bitni 3GHz...ja šur je dosti večja natančnost ker imaš namesto 23bitne mantise 52 in namesto 8 bitnega eksponenta 11bitnega...samo kaj ma to veze z računsko močjo pri igrah? meni se zdi, da že 32bitni so bli kar fajn natančno...</td>
+<br />
+	</tr>
+<br />
+</table>
+<br />
+<span class="postbody">
+
+<br />
+
+
+<br />
+Simple. 32-bitni proc lahko v eni urini periodi prevzame iz pomnilnika en 32-bitni operand, medtem ko lahko 64-bitni proc vzame 2 32-bitna operanda. Ti ne delaš vedno z 64-bitnimi operandi. Prav tako ima 64-bitni proc širše vodilo in tudi seštevalnik je večji, kar pomeni, da lahko teoretično računaš dve 32-bitni operaciji naenkrat (paziti moraš samo pri prelivih in prenosih). To ti mora podpirat OS in BIOS ter seveda moraš imeti ustrezne mikroukaze naložene, da ti proc zna tudi v takem načinu računat. Samo za primerjavo: če imaš winXP 64, potem ti delajo za okoli 7% hitreje kot 32-bit. S tem, da imaš pri 32-bitnem 36-bitni fizični naslov, medtem ko 64-bitni proc podpira mislm da do 52-bitni naslov.  <img src="images/smiles/icon_wink.gif" alt=":wink:" border="0" /> 
+
+<br />
+Pr grafah pa pomeni širše vodilo v večini primerov hkratno računanje veš operandov oz. več vzporednih cevovodov in ALU enot. Zato imaš na grafah 128+bitno vodilo. 
+
+<br />
+
+
+<br />
+Računalnik oz sam proc lahko pohitriš na dva načina: ali povečaš frekvenco (ne najbolje ampak dokaj poceni), ali pa razširiš prenosne poti (najbolje a najdražje). Moraš pa tudi upoštevati, da ti ne pomaga 3GHz, če so povezave v računalniku potem daljše od 30cm. Elektrika gre s hitrostjo svetlobe (mogoče kak km/h +/-) in v 1ns prepotuje razdaljo 30cm (to je pri 1GHz). Že tu imaš omejitve glede frekvence in zato današnji procesorji, ki so 64-bitni in večjedrni niso na tako visokih frekvencah, ker imaš vse zabasano s povezavami, ki ne smejo biti daljše od 30cm oz. še manj, če je frekvenca višja. Zanimivo, da se nihče od navijalcev tega nikol ne spomne, ampak samo navijajo na ene frekvence, potem pa gledajo kot teleta v nova vrata, zakaj ne dela.  <img src="images/smiles/icon_rolleyes.gif" alt=":roll:" border="0" />  <img src="images/smiles/icon_lol.gif" alt=":lol:" border="0" /> 
+
+<br />
+
+
+<br />
+Aja pa še primer iz RAM-a. Če imaš 64-bitni proc, potem imaš tudi 64-bitno &quot;besedo&quot;, ki je sestavljena iz osnovnih pomnilniških besed (8-bit = 1bajt). Torej prenašaš med procom in RAM-om naenkrat lahko 8 pomnilniških besed v eni urini periodi oz 2x toliko, če imaš DDR. Ampak, če pa daš RAM v dual channel način, potem imaš pa 128-bitno &quot;besedo&quot;, kar pomeni 16 osnovnih pomnilniških besed, 2x če imaš DDR, na eno urino periodo. Torej si pohitril ram za 50% (teoretično) samo če povečaš prenosno pot med procom in RAM-om. Seveda ti mora vse to podpirati RAM manager, in seveda moraš imeti dovolj velik cache na proc-u, ker ti ga zafila 1x hitreje.<br />_________________<br />//**//</span><span class="gensmall"></span></td>
+			</tr>
+		</table></td>
+	</tr>
+	<tr>
+		<td class="row1" width="150" align="left" valign="middle"><span class="nav"><a href="#top" class="nav">Nazaj na vrh</a></span></td>
+		<td class="row1" width="100%" height="28" valign="bottom" nowrap="nowrap"><table cellspacing="0" cellpadding="0" border="0" height="18" width="18">
+			<tr>
+				<td valign="middle" nowrap="nowrap"><a href="profile-747.html"><img src="templates/SGD2/images/lang_slovenian/icon_profile.gif" alt="Poglej uporabnikov profil" title="Poglej uporabnikov profil" border="0" /></a> </td>
+			</tr>
+		</table></td>
+	</tr>
+	<tr>
+		<td class="spaceRow" colspan="2" height="1"><img src="templates/SGD/images/spacer.gif" alt="" width="1" height="1" /></td>
+	</tr>
+	
+	<tr>
+		<td width="150" align="left" valign="top" class="row2"><span class="name"><a name="17310"></a><b>Alfa</b></span><br /><span class="postdetails">mojster<br /><img src="images/ranks/sgd-5.gif" alt="mojster" title="mojster" border="0" /><br /><img src="images/avatars/c2f90a1540823086cd155.jpg" alt="" border="0" /><br /><br />Pridružen: 04. mar 2004 ob 18:14<br />objav: 471<br />Kraj: SG</span><br /></td>
+		<td class="row2" width="100%" height="28" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+			<tr>
+				<td colspan="2" width="100%">
+					<table width="100%" cellpadding="0" cellspacing="0" border="0">
+						<tr>
+							<td valign="middle" align="left">
+								<a href="topic-1416.html#17310"><img src="templates/SGD2/images/icon_minipost.gif" width="12" height="9" alt="objava" title="objava" border="0" /></a>
+								<span class="postdetails">Objavljeno: čet jul 12, 2007 10:47 pm<span class="gen">&nbsp;</span>&nbsp; &nbsp;Pošlji temo: </span>
+							</td>
+							<td valign="middle" align="right" nowrap="nowrap">
+							</td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+			<tr>
+				<td colspan="2"><hr /></td>
+			</tr>
+			<tr>
+				<td colspan="2"><span class="postbody">Snake, če sem prav razumel, so pri HDRR dodani še kanali za svetlobo (mogoče še kaj drugega?), kar je sicer zelo naraven ravoj, vendar je pri samem prikazu barv nepomemben. Kot si že povedal, stvar pride v poštev samo pri računanju, isto kot Alfa kanal. Kar pomeni da so za bitne slike klub temu še vedno čisto dovolj 24 bitov barv.<br />_________________<br />&quot;Pustimo malenkosti, pravi cesar, PeCe pa nič (več).&quot;
+
+<br />
+Goran Bervar: C++ na kolenih</span><span class="gensmall"></span></td>
+			</tr>
+		</table></td>
+	</tr>
+	<tr>
+		<td class="row2" width="150" align="left" valign="middle"><span class="nav"><a href="#top" class="nav">Nazaj na vrh</a></span></td>
+		<td class="row2" width="100%" height="28" valign="bottom" nowrap="nowrap"><table cellspacing="0" cellpadding="0" border="0" height="18" width="18">
+			<tr>
+				<td valign="middle" nowrap="nowrap"><a href="profile-162.html"><img src="templates/SGD2/images/lang_slovenian/icon_profile.gif" alt="Poglej uporabnikov profil" title="Poglej uporabnikov profil" border="0" /></a> <a  target="_userwww"><img src="templates/SGD2/images/lang_slovenian/icon_www.gif" alt="Obišči avtorjevo spletno stran" title="Obišči avtorjevo spletno stran" border="0" /></a></td>
+			</tr>
+		</table></td>
+	</tr>
+	<tr>
+		<td class="spaceRow" colspan="2" height="1"><img src="templates/SGD/images/spacer.gif" alt="" width="1" height="1" /></td>
+	</tr>
+	
+	<tr>
+		<td width="150" align="left" valign="top" class="row1"><span class="name"><a name="17335"></a><b>Senitel</b></span><br /><span class="postdetails">wannabe<br /><img src="images/ranks/sgd-2.gif" alt="wannabe" title="wannabe" border="0" /><br /><br /><br />Pridružen: 02. jul 2003 ob 17:01<br />objav: 127<br /></span><br /></td>
+		<td class="row1" width="100%" height="28" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+			<tr>
+				<td colspan="2" width="100%">
+					<table width="100%" cellpadding="0" cellspacing="0" border="0">
+						<tr>
+							<td valign="middle" align="left">
+								<a href="topic-1416.html#17335"><img src="templates/SGD2/images/icon_minipost.gif" width="12" height="9" alt="objava" title="objava" border="0" /></a>
+								<span class="postdetails">Objavljeno: sre jul 18, 2007 9:00 pm<span class="gen">&nbsp;</span>&nbsp; &nbsp;Pošlji temo: </span>
+							</td>
+							<td valign="middle" align="right" nowrap="nowrap">
+							</td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+			<tr>
+				<td colspan="2"><hr /></td>
+			</tr>
+			<tr>
+				<td colspan="2"><span class="postbody">Ojej tolk bedarij kot vam jih je pa tu ratal natrosit pe že dolgo nisem videl v eni sami temi... <img src="images/smiles/icon_rolleyes.gif" alt=":roll:" border="0" /> Tako da si kar skuhajte kakšno kavo ali tri, ker tole bo spet en hudo dolg odgovor.
+
+<br />
+
+
+<br />
+<span style="font-weight: bold">32 bit vs. 64 bit CPU</span>
+
+<br />
+Vsi sodobni CPU-ji (od prvih Pentiumov dalje) imajo 64 bitno zunanje vodilo, tu ni nikakršne razlike med 32 bitnimi in 64 bitnimi CPU-ji. To vodilo je lahko double pumped (DDR), quad pumped (DDR2),... Nosilna frekvenca je še vedno precej nizka, se pa v enem ciklu prenaša več bitov. Recimo do 1066MHz FSB prideš tako, da imaš 266MHz frekvenco in hkrati prenašaš 4 bite (x4).
+
+<br />
+Dual channel nima nikakršne veze s samim CPU-jem ampak z MCH (memory controler hub), ki ima gor dva ločena 64 bitna pomilniška kanala. Res pa je, da imajo novejši AMD-jevi procesorji MCH že vgrajen v CPU in ni del north bridge-a oz chipseta. Zakaj potrebuješ dual channel? Ker je FSB procesorja običajno kar nekaj hitrejši od najhitrejših pomnilnikov na trgu. Top of the line kar trenutno vidim je 1200MHz, novi Core 2 Duo imajo pa že 1333MHz FSB.
+
+<br />
+CPU iz rama nikoli ne bere (ali piše) posameznih bytov ampak se vedno prenese cel blok (128 byte-ov) v L2 predpomnilnik in od tam naprej v L1 predpomnilnik.
+
+<br />
+64 bitni procesorji sami po sebi niso niti pod razno 2x hitrejši od 32 bitnih. Ne moreš kar združevati dveh 32 bitnih operacij v eno 64 bitno. Seštevanje nepredznačenih števil še gre če zares dobro veš kaj počneš, se pa takoj podre pri predznačenih številih. Množenj in deljenj pa tako ali tako ne moreš naredit na tak princip. Programi prevedeni za 64 bitov so v najboljšem primeru enako dolgi kot 32 bitni, lahko pa so daljši (vsi kazalci so daljši, lahko imamo 64 bitne operande). Nabor ukazov je enak tako v 32 bitnem načinu kot 64 bitnem, s to razliko, da ima v 64 bitnem načinu procesor več registrov in nekaj variacij ukazov več (64 bitni operandi).
+
+<br />
+Floating point oziroma operacije s plavajočo vejico pa se tako ali tako na vseh x86 procesorjih izvajajo v 80 bitni natančnosti, potem pa se rezultat poreže bodisi na 64 bitov (dvojna natančnost) ali 32 bitov (enojna natančnost). Vsa hitrostna razlika je tako samo v tem kako hitro lahko CPU prenaša podatke sem ter tja. Z nižjo natančnostjo bo procesor računal samo v primeru SSE ukazov.
+
+<br />
+64 bitni procesorji imajo v bistvu samo eno prednost pred 32 bitnimi, to pa je veliko večji naslovni prostor (za kar potrebujemo tudi ustrezen operacijski sistem). 32 bitni OS dopušča do 4GB pomnilnika, ki pa nikoli ne bo v celoti na razpolago posamezni aplikaciji. V osnovi ima posamezna aplikacija v WinXP na razpolago 2GB pomnilnika, 2GB pa si je potrebno vzeti za kernel. V Win 2003 Server je ta meja 3GB + 1GB. To še vedno ne pomeni, da lahko aplikacija dejansko zasede celih 2GB ampak se v ta naslovni prostor vrine še kakšna grafična kartica... Tako se ti lahko kaj hitro zgodi, da aplikacija alocira 1GB pomnilnika, pa to že zasede ves virtualni naslovni prostor ki je na razpolago za to aplikacijo. In nekatere novejše igre že naletijo na ta problem. Recimo Supreme Commander se pri zelo velikih mapah (81x81km) in velikemu številu enot in igralcev po določenem času enostavno usuje, ker mu zmanjka rama. 64 bitni OS to reši tudi za 32 bitne aplikacije, saj se kernel umakne in ima aplikacija na razpolago 4GB pomnilnika, če seveda sporoči OS-u da zna s tako veliko količino rama tudi delat. 64 bitne aplikacije imajo mejo še višje.
+
+<br />
+Današnji 64 bitni CPU-ji so hitrejši zaradi boljše zasnove samega CPU-ja in ne zato ker so 64 bitni (in če mislite, da je assembler najnižji nivo se hudo motite).
+
+<br />
+
+
+<br />
+<span style="font-weight: bold">32 bit vs. 64 bit na GPU</span>
+
+<br />
+GPU-ji nimajo klasičnih problemov z bitnostjo tako kot CPU-ji, ampak ker se je debata začela okrog barv... Je tudi tu cel kup kiksov.
+
+<br />
+Ocena, da človeško oko razloči nekje okrog 10M barv je pravilna, ne pove pa čisto nič o tem, da bi bilo 24 bitov (16M barv) dovolj za vse večne čase. Ne moreš tudi točno določit koliko mora biti razlika v valovni dolžini, da bo človeško oko razločilo razliko. Porazdelitev namreč ni linearna, oko najbolje razloči zelene odtenke, potem rdeče, najslabše pa modre. Obenem pa je oko bistveno bolj občutljivo na svetilnost kot pa na samo barvo. Tipičen primer je opazovanje v praktično popolni temi (recimo ponoči zunaj brez luči). Ko se oko navadi na pomanjkanje svetlobe, boš še vedno lahko videl objekte, ne boš pa ločil barv. Tudi sama &quot;resulucija&quot; očesa za svetilnost je bistveno višja od tiste za barve (kar s pridom izkorišajo algoritmi za kodiranje filmov).
+
+<br />
+Dobri CRT-ji lahko prikažejo tudi 30 bitne barve, proizvajalci so naplavili cel kup LCD-jev, ki zmorejo zgolj 16 bitne barve, kar je praktično katastrofa, saj so LCD-ji zelo digitalni in bo med sosednjimi pikami takoj vidna razlika v barvi. Tudi na LCD-jih z 24 bitnimi matrikami lahko opaziš raliko med recimo 127 in 128 odtenkom sive (na CRT-ju pa se bo gladko prelilo)...
+
+<br />
+Grafične kartice danes vse renderirajo z 128 bitno (4x 32 bit floating point) in potem to pretvoriš v 32 bitov potem ni tak hud problem. Tudi če  pretvoriš na 16 bitov bo slika še vedno relativno dobra. Bo pa seveda opazna razlika med 16 biti in 32 biti. Prav tako bo opazna ralika med 32 biti in kolikor bo že pač naslednja generacija sposobna prikazati barv.
+
+<br />
+Nujno pa potrebujemo višjo natančnost za renderiranje, ker pri računanju s plavajočo vejico prihaja do zaokrožitvenih napak (tudi prve grafične kartice niso računale s celimi števili ampak v fiksni vejici). Če bi kakšno današnjo igro tudi zarenderirali na 16 bitih (in ne zarenderirali v 32 bitih ali več in potem pretvorili na 16 bitov) bi bili zelo hitro spet v 256 barvnem svetu, če ne še manj (da od 65535 razpoložljivih barv, bi jih na zaslonu pristalo zelo zelo malo).
+
+<br />
+Višja natančnost ima pa še eno prednost. V starih časih so bile barve omejene na interval [0, 1] (ali [0, 255] če že hočete), danes pa lahko gredo barve čez 1.0 in tudi v minus. Kar je zelo pomembno, če hočemo simulirati razpon osvetlitve v realnem življenju (high dynamic range). Se mi zdi da se lahko vsi strinjamo, da je osvetlitev sredi poletja ob poldne bistveno drugačna kot v eni zaprti sobici brez oken in eno svečko v sredini. To sodobne igre emulirajo, ker monitorji sami po sebi še vedno ne zmorejo kontrastnega razmerja večjega kot recimo 1:1500.
+
+<br />
+
+
+<br />
+Toliko na kratko... <img src="images/smiles/icon_twisted.gif" alt=":twisted:" border="0" /></span><span class="gensmall"></span></td>
+			</tr>
+		</table></td>
+	</tr>
+	<tr>
+		<td class="row1" width="150" align="left" valign="middle"><span class="nav"><a href="#top" class="nav">Nazaj na vrh</a></span></td>
+		<td class="row1" width="100%" height="28" valign="bottom" nowrap="nowrap"><table cellspacing="0" cellpadding="0" border="0" height="18" width="18">
+			<tr>
+				<td valign="middle" nowrap="nowrap"><a href="profile-74.html"><img src="templates/SGD2/images/lang_slovenian/icon_profile.gif" alt="Poglej uporabnikov profil" title="Poglej uporabnikov profil" border="0" /></a> </td>
+			</tr>
+		</table></td>
+	</tr>
+	<tr>
+		<td class="spaceRow" colspan="2" height="1"><img src="templates/SGD/images/spacer.gif" alt="" width="1" height="1" /></td>
+	</tr>
+	
+	<tr>
+		<td width="150" align="left" valign="top" class="row2"><span class="name"><a name="17336"></a><b>Wing</b></span><br /><span class="postdetails">SGD Admin<br /><img src="images/ranks/sgd-admin.gif" alt="SGD Admin" title="SGD Admin" border="0" /><br /><br /><br />Pridružen: 08. jan 2003 ob 21:33<br />objav: 481<br />Kraj: Kranj</span><br /></td>
+		<td class="row2" width="100%" height="28" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+			<tr>
+				<td colspan="2" width="100%">
+					<table width="100%" cellpadding="0" cellspacing="0" border="0">
+						<tr>
+							<td valign="middle" align="left">
+								<a href="topic-1416.html#17336"><img src="templates/SGD2/images/icon_minipost.gif" width="12" height="9" alt="objava" title="objava" border="0" /></a>
+								<span class="postdetails">Objavljeno: čet jul 19, 2007 12:09 am<span class="gen">&nbsp;</span>&nbsp; &nbsp;Pošlji temo: </span>
+							</td>
+							<td valign="middle" align="right" nowrap="nowrap">
+							</td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+			<tr>
+				<td colspan="2"><hr /></td>
+			</tr>
+			<tr>
+				<td colspan="2"><span class="postbody">Vau, super napisano, Senitel.  Sem sam hotel že napisati nekako 10% tega kar si zdaj povedal (torej nekatera osnovna dejstva), pa se mi je zdelo da bom kaj izpustil. Izpustil bi precej, očitno. =)
+
+<br />
+
+
+<br />
+Dej prosim povej, od kod razfakaš arhitekturo/teorijo tako v nulo? Sploh s tem ciljam na GPUje, ker sem že precej preiskal in prebral na to temo, pa takih ibr podrobnosti (to velja za praktično vse tvoje tosortne poste, ne samo za tega) nisem nikjer zasledil (ali pa kvečjem zelo raztrosene in nepovezane). Kakšni viri, vredni branja (in po možnosti javno dostopni <img src="images/smiles/icon_biggrin.gif" alt=":D" border="0" />)? 
+
+<br />
+Sorry za offtopic, ostali.</span><span class="gensmall"></span></td>
+			</tr>
+		</table></td>
+	</tr>
+	<tr>
+		<td class="row2" width="150" align="left" valign="middle"><span class="nav"><a href="#top" class="nav">Nazaj na vrh</a></span></td>
+		<td class="row2" width="100%" height="28" valign="bottom" nowrap="nowrap"><table cellspacing="0" cellpadding="0" border="0" height="18" width="18">
+			<tr>
+				<td valign="middle" nowrap="nowrap"><a href="profile-7.html"><img src="templates/SGD2/images/lang_slovenian/icon_profile.gif" alt="Poglej uporabnikov profil" title="Poglej uporabnikov profil" border="0" /></a> </td>
+			</tr>
+		</table></td>
+	</tr>
+	<tr>
+		<td class="spaceRow" colspan="2" height="1"><img src="templates/SGD/images/spacer.gif" alt="" width="1" height="1" /></td>
+	</tr>
+	
+	<tr>
+		<td width="150" align="left" valign="top" class="row1"><span class="name"><a name="17339"></a><b>Tepkoslav</b></span><br /><span class="postdetails">wannabe<br /><img src="images/ranks/sgd-2.gif" alt="wannabe" title="wannabe" border="0" /><br /><br /><br />Pridružen: 24. jan 2007 ob 11:27<br />objav: 129<br /></span><br /></td>
+		<td class="row1" width="100%" height="28" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+			<tr>
+				<td colspan="2" width="100%">
+					<table width="100%" cellpadding="0" cellspacing="0" border="0">
+						<tr>
+							<td valign="middle" align="left">
+								<a href="topic-1416.html#17339"><img src="templates/SGD2/images/icon_minipost.gif" width="12" height="9" alt="objava" title="objava" border="0" /></a>
+								<span class="postdetails">Objavljeno: čet jul 19, 2007 3:50 pm<span class="gen">&nbsp;</span>&nbsp; &nbsp;Pošlji temo: </span>
+							</td>
+							<td valign="middle" align="right" nowrap="nowrap">
+							</td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+			<tr>
+				<td colspan="2"><hr /></td>
+			</tr>
+			<tr>
+				<td colspan="2"><span class="postbody">In kaj sem ja napisal???  <img src="images/smiles/icon_rolleyes.gif" alt=":roll:" border="0" /> Samo mal si okol obrnu vse skup.<br />_________________<br />//**//</span><span class="gensmall"></span></td>
+			</tr>
+		</table></td>
+	</tr>
+	<tr>
+		<td class="row1" width="150" align="left" valign="middle"><span class="nav"><a href="#top" class="nav">Nazaj na vrh</a></span></td>
+		<td class="row1" width="100%" height="28" valign="bottom" nowrap="nowrap"><table cellspacing="0" cellpadding="0" border="0" height="18" width="18">
+			<tr>
+				<td valign="middle" nowrap="nowrap"><a href="profile-747.html"><img src="templates/SGD2/images/lang_slovenian/icon_profile.gif" alt="Poglej uporabnikov profil" title="Poglej uporabnikov profil" border="0" /></a> </td>
+			</tr>
+		</table></td>
+	</tr>
+	<tr>
+		<td class="spaceRow" colspan="2" height="1"><img src="templates/SGD/images/spacer.gif" alt="" width="1" height="1" /></td>
+	</tr>
+	
+	<tr>
+		<td width="150" align="left" valign="top" class="row2"><span class="name"><a name="17340"></a><b>Senitel</b></span><br /><span class="postdetails">wannabe<br /><img src="images/ranks/sgd-2.gif" alt="wannabe" title="wannabe" border="0" /><br /><br /><br />Pridružen: 02. jul 2003 ob 17:01<br />objav: 127<br /></span><br /></td>
+		<td class="row2" width="100%" height="28" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+			<tr>
+				<td colspan="2" width="100%">
+					<table width="100%" cellpadding="0" cellspacing="0" border="0">
+						<tr>
+							<td valign="middle" align="left">
+								<a href="topic-1416.html#17340"><img src="templates/SGD2/images/icon_minipost.gif" width="12" height="9" alt="objava" title="objava" border="0" /></a>
+								<span class="postdetails">Objavljeno: čet jul 19, 2007 8:13 pm<span class="gen">&nbsp;</span>&nbsp; &nbsp;Pošlji temo: </span>
+							</td>
+							<td valign="middle" align="right" nowrap="nowrap">
+							</td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+			<tr>
+				<td colspan="2"><hr /></td>
+			</tr>
+			<tr>
+				<td colspan="2"><span class="postbody">Wingman: Predvidevam da razne shader tutoriale itd. si že 10x predelal... <img src="images/smiles/icon_twisted.gif" alt=":twisted:" border="0" /> Najboljši vir informacij o notranjem ustorju GPU-jev pa je trenutno CUDA dokumentacija za NV in CTM dokumentacija za ATI. No še vedno moraš vedet mal kaj in kako se to potem prevede v grafični svet je pa zelo up to date (G80).
+
+<br />
+
+
+<br />
+Tepkoslav: Ja ne ni samo malo obrnjeno.. Glej kaj vse je problem:
+
+<br />
+<span style="font-style: italic">32-bitni proc lahko v eni urini periodi prevzame iz pomnilnika en 32-bitni operand, medtem ko lahko 64-bitni proc vzame 2 32-bitna operanda.</span>
+
+<br />
+We are not in Kansas any more... Core 2 Duo se hudo razlikuje od kakšne 8 bitne motorole, kjer si imel pač en cikel za inštrukcijo prebrat, drug cikel za 8 bitni operand in tretji za 16 bitni operand če je bil ukaz pač tak. Vse skupaj seveda brez kakršnih koli predpomnilnikov. Današnji CPU-ji ne berejo nič več direktno iz pomnilnika. Vse se prebere v predpomnilnike in vsakič ko CPU hoče en naslov, dobi nazaj cel blok. Iz glavnega pomnilnika v L2 in potem v L1 cache gredo 128 byteov veliki bloki, iz L1 dejansko na jedro gredo 32 bytov veliki bloki (in ker so x86 ukazi hudo različnih dolžin imaš problem). To je isto tako na Core Duo (32bit) kot Core 2 Duo (64bit). Ti CPU-ji so interno RISC in ne CISC.
+
+<br />
+<span style="font-style: italic">Prav tako ima 64-bitni proc širše vodilo in tudi seštevalnik je večji, kar pomeni, da lahko teoretično računaš dve 32-bitni operaciji naenkrat (paziti moraš samo pri prelivih in prenosih). To ti mora podpirat OS in BIOS ter seveda moraš imeti ustrezne mikroukaze naložene, da ti proc zna tudi v takem načinu računat. </span>
+
+<br />
+64 bitni proc ima vodilo ravno toliko široko kot 32 bitni kot prvo in kot drugo ne moreš tudi teoretično ne računat dveh 32 bitnih operacij naenkrat. OS in BIOS s tem nimata nič. Lahko heckaš v sami programski kodi, ampak več kot seštevanja ne moreš implementirat, pa še pri seštevanju moraš zelo pazit na obseg števil ki jih lahko dobiš (če preverjaš potem boš zapravil več časa kot si ga pridobil). Seštevalnik je že večji ni pa dvodelen. Poglej kako zgleda recimo -7 šestnajstiško potem pa razmisli kaj naredi odštevanje ali pa predznačena števila pri tlačenju dveh 32 bitnih operacij v eno 64 bitno.
+
+<br />
+<span style="font-style: italic">Moraš pa tudi upoštevati, da ti ne pomaga 3GHz, če so povezave v računalniku potem daljše od 30cm. Elektrika gre s hitrostjo svetlobe (mogoče kak km/h +/-) in v 1ns prepotuje razdaljo 30cm (to je pri 1GHz).</span>
+
+<br />
+Svetloba potuje s 300000km/s samo v vakumu. Znotraj računalnika pa je hitrost električnih signalov še bistveno manjša. Ob enem pa to ni taka huda omejitev za &quot;dolge&quot; povezave. Do pomnilnika se recimo zraven naslovov pač pošlje še urin signal in se vse uredi. Problem je znotraj procesorja, ker podatki ne pridejo več v enem ciklu iz enega konca procesorja na drugega...
+
+<br />
+<span style="font-style: italic">Če imaš 64-bitni proc, potem imaš tudi 64-bitno &quot;besedo&quot;, ki je sestavljena iz osnovnih pomnilniških besed (8-bit = 1bajt). Torej prenašaš med procom in RAM-om naenkrat lahko 8 pomnilniških besed v eni urini periodi...</span>
+
+<br />
+Dandanes bitnost procesorja pomeni praktično samo še širino splošno namenskih registrov. Koliko se prenese iz pomnilnika nima veze s tem koliko biten je procesor zaradi uporabe predpomnilnikov.
+
+<br />
+<span style="font-style: italic">...oz 2x toliko, če imaš DDR. Ampak, če pa daš RAM v dual channel način, potem imaš pa 128-bitno &quot;besedo&quot;, kar pomeni 16 osnovnih pomnilniških besed</span>
+
+<br />
+Do procesorja nimaš dveh kanalov, frekvenca FSB in frekvenca pomnilnika se lahko razlikuje. Dvokanalne rešitve probleme s propustnostjo običajno takoj odpravijo (ker je potem pomnilnik hitrejši kot CPU), so pa še grafične kartice, ki lahko požrejo direkt 8GB/s neposredno iz sistemskega rama.</span><span class="gensmall"></span></td>
+			</tr>
+		</table></td>
+	</tr>
+	<tr>
+		<td class="row2" width="150" align="left" valign="middle"><span class="nav"><a href="#top" class="nav">Nazaj na vrh</a></span></td>
+		<td class="row2" width="100%" height="28" valign="bottom" nowrap="nowrap"><table cellspacing="0" cellpadding="0" border="0" height="18" width="18">
+			<tr>
+				<td valign="middle" nowrap="nowrap"><a href="profile-74.html"><img src="templates/SGD2/images/lang_slovenian/icon_profile.gif" alt="Poglej uporabnikov profil" title="Poglej uporabnikov profil" border="0" /></a> </td>
+			</tr>
+		</table></td>
+	</tr>
+	<tr>
+		<td class="spaceRow" colspan="2" height="1"><img src="templates/SGD/images/spacer.gif" alt="" width="1" height="1" /></td>
+	</tr>
+	
+	<tr align="center">
+		<td class="catBottom" colspan="2" height="28">&nbsp;</td>
+	</tr>
+</table>
+
+<table width="100%" cellspacing="2" cellpadding="2" border="0" align="center">
+  <tr>
+	<td align="left" valign="middle" nowrap="nowrap">&nbsp;</td>
+	<td align="left" valign="middle" width="100%"><span class="nav">&nbsp;&nbsp;&nbsp;<a href="index.html" class="nav">SloGameDev.net seznam forumov</a>
+	  -> <a href="forum-49.html" class="nav">Začetniki</a></span></td>
+	<td align="right" valign="top" nowrap="nowrap"><span class="gensmall">Časovni pas (GMT +2:00 uri) Slovenija, poletni čas</span><br /><span class="nav"></span>
+	  </td>
+  </tr>
+  <tr>
+	<td align="left" colspan="3"><span class="nav">Stran <b>1</b> od <b>1</b></span></td>
+  </tr>
+</table>
+
+<table width="100%" cellspacing="2" border="0" align="center">
+  <tr>
+	<td width="40%" valign="top" nowrap="nowrap" align="left">&nbsp;</td>
+	<td align="right" valign="top" nowrap="nowrap">&nbsp;</td>
+  </tr>
+</table>
+
+<div align="center"><span class="copyright"><br />Arhiv &mdash; samo za branje.<br />
+<!--
+	We request you retain the full copyright notice below including the link to www.phpbb.com.
+	This not only gives respect to the large amount of time given freely by the developers
+	but also helps build interest, traffic and use of phpBB 2.0. If you cannot (for good
+	reason) retain the full copyright we request you at least leave in place the 
+	Powered by phpBB 2.0.4 line, with phpBB linked to www.phpbb.com. If you refuse
+	to include even this then support on our forums may be affected. 
+
+	The phpBB Group : 2002
+// -->
+Powered by <a  target="_phpbb" class="copyright">phpBB</a> 2.0.4 &copy; 2001, 2002 phpBB Group<br /></span></div>
+		</td>
+	</tr>
+</table>
+
+</body>
+</html>

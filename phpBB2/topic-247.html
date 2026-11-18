@@ -276,13 +276,13 @@ input.liteoption {
   <tr>
 	<td align="left" valign="bottom" nowrap="nowrap">&nbsp;</td>
 	<td align="left" valign="middle" width="100%"><span class="nav">&nbsp;&nbsp;&nbsp;<a href="index.html" class="nav">SloGameDev.net seznam forumov</a>
-	  -> <a href="forum-15.html" class="nav">Grafično Programiranje</a></span></td>
+	  -> <a href="forum-52.html" class="nav">Izdelovanje iger</a></span></td>
   </tr>
 </table>
 
 <table class="forumline" width="100%" cellspacing="1" cellpadding="3" border="0">
 	<tr align="right">
-		<td class="catHead" colspan="2" height="28"><span class="nav"><a href="topic-238.html" class="nav">Prejšnja tema</a> :: <a href="topic-130.html" class="nav">Naslednja tema</a> &nbsp;</span></td>
+		<td class="catHead" colspan="2" height="28"><span class="nav"><a href="topic-242.html" class="nav">Prejšnja tema</a> :: <a href="topic-241.html" class="nav">Naslednja tema</a> &nbsp;</span></td>
 	</tr>
 	
 	<tr>
@@ -337,7 +337,7 @@ O: Se ne ve.</span><span class="gensmall"></span></td>
 	</tr>
 	
 	<tr>
-		<td width="150" align="left" valign="top" class="row2"><span class="name"><a name="2346"></a><b>Kavan</b></span><br /><span class="postdetails">inštruktor<br /><img src="images/ranks/sgd-4.gif" alt="inštruktor" title="inštruktor" border="0" /><br /><br /><br />Pridružen: 10. jan 2003 ob 12:57<br />objav: 363<br />Kraj: Los Angeles</span><br /></td>
+		<td width="150" align="left" valign="top" class="row2"><span class="name"><a name="2346"></a><b>Kavan</b></span><br /><span class="postdetails">inštruktor<br /><img src="images/ranks/sgd-4.gif" alt="inštruktor" title="inštruktor" border="0" /><br /><br /><br />Pridružen: 10. jan 2003 ob 12:57<br />objav: 314<br />Kraj: Los Angeles</span><br /></td>
 		<td class="row2" width="100%" height="28" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
 			<tr>
 				<td colspan="2" width="100%">
@@ -360,7 +360,7 @@ O: Se ne ve.</span><span class="gensmall"></span></td>
 				<td colspan="2"><span class="postbody">Saj vem da to sigurno si naredil, ampak a nastaviš index buffer preden rendraš? Bomo vidli ko kodo postaš.<br />_________________<br />
 
 <br />
-<span style="font-size: 9px; line-height: normal"><a  target="_blank" class="postlink">www.3dlevel.com</a></span></span><span class="gensmall"></span></td>
+<span style="font-size: 75%; line-height: normal"><a  target="_blank" class="postlink">http&#58;//www&#46;3dlevel&#46;com</a></span></span><span class="gensmall"></span></td>
 			</tr>
 		</table></td>
 	</tr>
@@ -456,103 +456,70 @@ O: Se ne ve.</span><span class="gensmall"></span></td>
 	<tr>
 <br />
 	  <td class="code"> 
-
 <br />
 hr = m_pd3dDevice-&gt;CreateIndexBuffer&#40;sizeof&#40;WORD&#41;*&#40;lXWidth-1&#41;*&#40;lZWidth-1&#41;*6,
-
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;D3DUSAGE_DYNAMIC, 
-
+												D3DUSAGE_DYNAMIC, 
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;D3DFMT_INDEX16,
-
+												D3DFMT_INDEX16,
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;D3DPOOL_DEFAULT, 
-
+												D3DPOOL_DEFAULT, 
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&amp;m_pIB, NULL&#41;;
-
+												&amp;m_pIB, NULL&#41;;
 <br />
 if&#40;FAILED&#40;hr&#41;&#41; return hr;
-
 <br />
-
 
 <br />
 //fill the index buffer
-
 <br />
 WORD *pIndices;
-
 <br />
 hr = m_pIB-&gt;Lock&#40;0,0,&#40;void**&#41;&amp;pIndices,D3DLOCK_DISCARD&#41;; 
-
 <br />
 if&#40;FAILED&#40;hr&#41;&#41; return hr;
-
 <br />
 
-
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;for&#40; x = 0; x &lt; lXWidth-1; x++ &#41;
-
+				for&#40; x = 0; x &lt; lXWidth-1; x++ &#41;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&#123;
-
+				&#123;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;for&#40; z = 0; z &lt; lZWidth-1; z++ &#41;
-
+					for&#40; z = 0; z &lt; lZWidth-1; z++ &#41;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&#123;
-
+					&#123;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;*pIndices = &#40;WORD&#41; x+z*lXWidth; pIndices++;
-
+						*pIndices = &#40;WORD&#41; x+z*lXWidth; pIndices++;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;*pIndices = &#40;WORD&#41; x+1+z*lXWidth; pIndices++;
-
+						*pIndices = &#40;WORD&#41; x+1+z*lXWidth; pIndices++;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;*pIndices = &#40;WORD&#41; x+1+&#40;z+1&#41;*lXWidth; pIndices++;
-
+						*pIndices = &#40;WORD&#41; x+1+&#40;z+1&#41;*lXWidth; pIndices++;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;*pIndices = &#40;WORD&#41; x+z*lXWidth; pIndices++;
-
+						*pIndices = &#40;WORD&#41; x+z*lXWidth; pIndices++;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;*pIndices = &#40;WORD&#41; x+1+&#40;z+1&#41;*lXWidth; pIndices++;
-
+						*pIndices = &#40;WORD&#41; x+1+&#40;z+1&#41;*lXWidth; pIndices++;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;*pIndices = &#40;WORD&#41; x+&#40;z+1&#41;*lXWidth; pIndices++;
-
+						*pIndices = &#40;WORD&#41; x+&#40;z+1&#41;*lXWidth; pIndices++;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&#125;
-
+					&#125;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&#125;
-
+				&#125;
 <br />
-
 
 <br />
 hr = m_pIB-&gt;Unlock&#40;&#41;;
-
 <br />
 if&#40; FAILED&#40; hr &#41;&#41; return hr;
-
 <br />
-
 
 <br />
 m_pd3dDevice-&gt;SetStreamSource&#40;0, m_pVB,0, sizeof&#40;CTERRAINVERTEX&#41;&#41;;
-
 <br />
 m_pd3dDevice-&gt;SetMaterial&#40; &amp;m_Mtrl &#41;;
-
 <br />
 m_pd3dDevice-&gt;SetFVF&#40; D3DFVF_CTERRAINVERTEX &#41;;
-
 <br />
 m_pd3dDevice-&gt;SetIndices&#40; m_pIB&#41;;
-
 <br />
 m_pd3dDevice-&gt;DrawIndexedPrimitive&#40; D3DPT_TRIANGLELIST,0,0,&#40;m_lXWidth&#41;*&#40;m_lZWidth&#41;,0,&#40;m_lXWidth-1&#41;*&#40;m_lZWidth-1&#41;*6&#41;;</td>
 <br />
@@ -586,7 +553,7 @@ O: Se ne ve.</span><span class="gensmall"></span></td>
 	</tr>
 	
 	<tr>
-		<td width="150" align="left" valign="top" class="row1"><span class="name"><a name="2356"></a><b>Senitel</b></span><br /><span class="postdetails">wannabe<br /><img src="images/ranks/sgd-2.gif" alt="wannabe" title="wannabe" border="0" /><br /><br /><br />Pridružen: 02. jul 2003 ob 17:01<br />objav: 97<br /></span><br /></td>
+		<td width="150" align="left" valign="top" class="row1"><span class="name"><a name="2356"></a><b>Senitel</b></span><br /><span class="postdetails">wannabe<br /><img src="images/ranks/sgd-2.gif" alt="wannabe" title="wannabe" border="0" /><br /><br /><br />Pridružen: 02. jul 2003 ob 17:01<br />objav: 127<br /></span><br /></td>
 		<td class="row1" width="100%" height="28" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
 			<tr>
 				<td colspan="2" width="100%">
@@ -677,7 +644,7 @@ O: Se ne ve.</span><span class="gensmall"></span></td>
   <tr>
 	<td align="left" valign="middle" nowrap="nowrap">&nbsp;</td>
 	<td align="left" valign="middle" width="100%"><span class="nav">&nbsp;&nbsp;&nbsp;<a href="index.html" class="nav">SloGameDev.net seznam forumov</a>
-	  -> <a href="forum-15.html" class="nav">Grafično Programiranje</a></span></td>
+	  -> <a href="forum-52.html" class="nav">Izdelovanje iger</a></span></td>
 	<td align="right" valign="top" nowrap="nowrap"><span class="gensmall">Časovni pas (GMT +2:00 uri) Slovenija, poletni čas</span><br /><span class="nav"></span>
 	  </td>
   </tr>
@@ -693,7 +660,7 @@ O: Se ne ve.</span><span class="gensmall"></span></td>
   </tr>
 </table>
 
-<div align="center"><span class="copyright"><br />Arhiv stanja na dan 13. 2. 2006 &mdash; samo za branje.<br />
+<div align="center"><span class="copyright"><br />Arhiv &mdash; samo za branje.<br />
 <!--
 	We request you retain the full copyright notice below including the link to www.phpbb.com.
 	This not only gives respect to the large amount of time given freely by the developers

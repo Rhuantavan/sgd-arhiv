@@ -276,13 +276,13 @@ input.liteoption {
   <tr>
 	<td align="left" valign="bottom" nowrap="nowrap">&nbsp;</td>
 	<td align="left" valign="middle" width="100%"><span class="nav">&nbsp;&nbsp;&nbsp;<a href="index.html" class="nav">SloGameDev.net seznam forumov</a>
-	  -> <a href="forum-1.html" class="nav">Splošno Programiranje</a></span></td>
+	  -> <a href="forum-52.html" class="nav">Izdelovanje iger</a></span></td>
   </tr>
 </table>
 
 <table class="forumline" width="100%" cellspacing="1" cellpadding="3" border="0">
 	<tr align="right">
-		<td class="catHead" colspan="2" height="28"><span class="nav"><a href="topic-1192.html" class="nav">Prejšnja tema</a> :: <a href="topic-1196.html" class="nav">Naslednja tema</a> &nbsp;</span></td>
+		<td class="catHead" colspan="2" height="28"><span class="nav"><a href="topic-1192.html" class="nav">Prejšnja tema</a> :: <a href="topic-1012.html" class="nav">Naslednja tema</a> &nbsp;</span></td>
 	</tr>
 	
 	<tr>
@@ -351,244 +351,164 @@ evo kode za brisanje ekrana:
 	<tr>
 <br />
 	  <td class="code">
-
 <br />
 
-
 <br />
-
 
 <br />
 void CseminarskaView&#58;&#58;brisi_ekran&#40;void&#41;
-
 <br />
 &#123;
-
 <br />
-&nbsp; &nbsp;CDC*tabla=GetDC&#40;&#41;;
-
+	CDC*tabla=GetDC&#40;&#41;;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;RECT Okno;//= new RECT;
-
+		RECT Okno;//= new RECT;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;GetClientRect&#40;&amp;Okno&#41;;
-
+		GetClientRect&#40;&amp;Okno&#41;;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;CBrush copic&#40;0xffffff&#41;;
-
+		CBrush copic&#40;0xffffff&#41;;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp; &nbsp;tabla-&gt;FillRect&#40;&amp;Okno,&amp;copic&#41;;
-
+	  	tabla-&gt;FillRect&#40;&amp;Okno,&amp;copic&#41;;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;
+		
+<br />
 
 <br />
 
+<br />
+&#125;  
+<br />
 
 <br />
 
-
 <br />
-&#125;&nbsp; 
 
 <br />
 
-
 <br />
 
-
 <br />
-
-
-<br />
-
-
-<br />
-
-
-<br />
-
 
 <br />
 in koda za risanje na ekran
+<br />
 
 <br />
 
-
 <br />
-
-
-<br />
-
 
 <br />
 void CseminarskaView&#58;&#58;risi&#40;Bencinska postaja&#91;&#93;&#41;
-
 <br />
 &#123;
-
 <br />
 //tukaj moram risati sproti 
-
 <br />
 
-
 <br />
-&nbsp; &nbsp;&nbsp; CDC* tabla=GetDC&#40;&#41;;
-
+	  CDC* tabla=GetDC&#40;&#41;;
 <br />
-&nbsp; &nbsp;&nbsp; RECT ena;
-
+	  RECT ena;
 <br />
-&nbsp; &nbsp;&nbsp; ena.top=20;
-
+	  ena&#46;top=20;
 <br />
-&nbsp; &nbsp;&nbsp; ena.left=20;
-
+	  ena&#46;left=20;
 <br />
-&nbsp; &nbsp;&nbsp; ena.right=60;
-
+	  ena&#46;right=60;
 <br />
-&nbsp; &nbsp;&nbsp; ena.bottom=60;
-
+	  ena&#46;bottom=60;
 <br />
-&nbsp; &nbsp;&nbsp; int x1=0;
-
+	  int x1=0;
 <br />
-&nbsp; &nbsp;&nbsp; int x2=0;
-
+	  int x2=0;
 <br />
-&nbsp; &nbsp;&nbsp; int x3=255;
-
+	  int x3=255;
 <br />
-&nbsp; &nbsp;&nbsp; int&nbsp; &nbsp;y=25;
-
+	  int	y=25;
 <br />
-&nbsp; &nbsp;&nbsp; CString nizi;
-
+	  CString nizi;
 <br />
-&nbsp; &nbsp;&nbsp; int i ;
-
+	  int i ;
 <br />
-&nbsp; &nbsp;&nbsp; for &#40;i=0;i&lt;5;i++&#41;
-
+	  for &#40;i=0;i&lt;5;i++&#41;
 <br />
-&nbsp; &nbsp;&nbsp; &#123;
-
+	  &#123;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;CString out;
-
+			CString out;
 <br />
-&nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp;out.Format&#40;&quot;%i&quot;,i+1&#41;;
-
+    		out&#46;Format&#40;&quot;%i&quot;,i+1&#41;;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;tabla-&gt;TextOut&#40;10,y,out&#41;;
-
+			tabla-&gt;TextOut&#40;10,y,out&#41;;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;CBrush pisalo&#40;RGB&#40;x1,x2,x3&#41;&#41;; 
-
+			CBrush pisalo&#40;RGB&#40;x1,x2,x3&#41;&#41;; 
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;//CBrush*pisalo=new CBrush&#40;RGB&#40;x1,x2,x3&#41;&#41;;
-
+			//CBrush*pisalo=new CBrush&#40;RGB&#40;x1,x2,x3&#41;&#41;;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;tabla-&gt;FillRect&#40;&amp;ena,&amp;pisalo&#41;;
-
+			tabla-&gt;FillRect&#40;&amp;ena,&amp;pisalo&#41;;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;ena.top=ena.top+60;
-
+			ena&#46;top=ena&#46;top+60;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;ena.bottom=ena.bottom+60;
-
+			ena&#46;bottom=ena&#46;bottom+60;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;x1=x1+60;
-
+			x1=x1+60;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;x2=x2+60;
-
+			x2=x2+60;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;x3=x3-60;
-
+			x3=x3-60;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;y=y+60;
-
+			y=y+60;
 <br />
 
-
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;//delete pisalo;
-
+			//delete pisalo;
 <br />
-&nbsp; &nbsp;&nbsp; &#125;
-
+	  &#125;
 <br />
-&nbsp; &nbsp; y=25;
-
+	 y=25;
 <br />
-&nbsp; &nbsp;&nbsp; for&#40; i=0;i&lt;5;i++&#41;
-
+	  for&#40; i=0;i&lt;5;i++&#41;
 <br />
-&nbsp; &nbsp;&nbsp; &#123;
-
+	  &#123;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; for&#40;int j=0;j&lt;postaja&#91;i&#93;.dolzina_vrste;j++&#41;
-
+		  for&#40;int j=0;j&lt;postaja&#91;i&#93;&#46;dolzina_vrste;j++&#41;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &#123; nizi=nizi+&quot; I &quot;;
-
+		  &#123; nizi=nizi+&quot; I &quot;;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &#125;
-
+		  &#125;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; tabla-&gt;TextOut&#40;80,y,nizi&#41;;
-
+		  tabla-&gt;TextOut&#40;80,y,nizi&#41;;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp; y=y+60;
-
+		    y=y+60;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;nizi=&quot; &quot;;
-
+			nizi=&quot; &quot;;
 <br />
-&nbsp; &nbsp;&nbsp; &#125;
-
+	  &#125;
 <br />
-&nbsp; &nbsp; 
-
+	 
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;CString uu;
-
+		CString uu;
 <br />
-&nbsp; &nbsp;&nbsp; y=500;
-
+	  y=500;
 <br />
-&nbsp; &nbsp;&nbsp; for&#40;i=0;i&lt;5;i++&#41;
-
+	  for&#40;i=0;i&lt;5;i++&#41;
 <br />
-&nbsp; &nbsp;&nbsp; &#123;
-
+	  &#123;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; 
-
+		  
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; uu.Format&#40;&quot;postaja %i&#58; %f&quot;,i,postaja&#91;i&#93;.rezervar&#41;;
-
+		  uu&#46;Format&#40;&quot;postaja %i&#58; %f&quot;,i,postaja&#91;i&#93;&#46;rezervar&#41;;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; tabla-&gt;TextOut&#40;10,y,uu&#41;;
-
+		  tabla-&gt;TextOut&#40;10,y,uu&#41;;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; y=y+20;
-
+		  y=y+20;
 <br />
-&nbsp; &nbsp;&nbsp; &#125;
-
+	  &#125;
 <br />
-&nbsp; &nbsp;
-
+	
 <br />
 
-
 <br />
-&#125;//konec funkcije risi &#58;P&nbsp; 
-
+&#125;//konec funkcije risi &#58;P  
 <br />
 </td>
 <br />
@@ -666,7 +586,7 @@ kak to resit ?<br />_________________<br />///---there is no hope for you---\\\<
   <tr>
 	<td align="left" valign="middle" nowrap="nowrap">&nbsp;</td>
 	<td align="left" valign="middle" width="100%"><span class="nav">&nbsp;&nbsp;&nbsp;<a href="index.html" class="nav">SloGameDev.net seznam forumov</a>
-	  -> <a href="forum-1.html" class="nav">Splošno Programiranje</a></span></td>
+	  -> <a href="forum-52.html" class="nav">Izdelovanje iger</a></span></td>
 	<td align="right" valign="top" nowrap="nowrap"><span class="gensmall">Časovni pas (GMT +2:00 uri) Slovenija, poletni čas</span><br /><span class="nav"></span>
 	  </td>
   </tr>
@@ -682,7 +602,7 @@ kak to resit ?<br />_________________<br />///---there is no hope for you---\\\<
   </tr>
 </table>
 
-<div align="center"><span class="copyright"><br />Arhiv stanja na dan 13. 2. 2006 &mdash; samo za branje.<br />
+<div align="center"><span class="copyright"><br />Arhiv &mdash; samo za branje.<br />
 <!--
 	We request you retain the full copyright notice below including the link to www.phpbb.com.
 	This not only gives respect to the large amount of time given freely by the developers

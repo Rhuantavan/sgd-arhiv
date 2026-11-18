@@ -276,13 +276,13 @@ input.liteoption {
   <tr>
 	<td align="left" valign="bottom" nowrap="nowrap">&nbsp;</td>
 	<td align="left" valign="middle" width="100%"><span class="nav">&nbsp;&nbsp;&nbsp;<a href="index.html" class="nav">SloGameDev.net seznam forumov</a>
-	  -> <a href="forum-1.html" class="nav">Splošno Programiranje</a></span></td>
+	  -> <a href="forum-52.html" class="nav">Izdelovanje iger</a></span></td>
   </tr>
 </table>
 
 <table class="forumline" width="100%" cellspacing="1" cellpadding="3" border="0">
 	<tr align="right">
-		<td class="catHead" colspan="2" height="28"><span class="nav"><a href="topic-532.html" class="nav">Prejšnja tema</a> :: <a href="topic-541.html" class="nav">Naslednja tema</a> &nbsp;</span></td>
+		<td class="catHead" colspan="2" height="28"><span class="nav"><a href="topic-534.html" class="nav">Prejšnja tema</a> :: <a href="topic-536.html" class="nav">Naslednja tema</a> &nbsp;</span></td>
 	</tr>
 	
 	<tr>
@@ -336,151 +336,102 @@ Zanima me kako naj sortiram enosmerni seznam po priimku?
 	<tr>
 <br />
 	  <td class="code">
-
 <br />
-...
-
+&#46;&#46;&#46;
 <br />
 struct Oseba
-
 <br />
 &#123;
-
 <br />
-&nbsp; &nbsp;char *ime;
-
+	char *ime;
 <br />
-&nbsp; &nbsp;char *priimek;
-
+	char *priimek;
 <br />
-&nbsp; &nbsp;int zaposlen;
-
+	int zaposlen;
 <br />
-&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; int dejavnost;
-
+                int dejavnost;
 <br />
-&nbsp; &nbsp;char spol;
-
+	char spol;
 <br />
-&nbsp; &nbsp;int starost;
-
+	int starost;
 <br />
-&nbsp; &nbsp;Datum *dne;
-
+	Datum *dne;
 <br />
-&nbsp; &nbsp;Oseba *naslOs;
-
+	Oseba *naslOs;
 <br />
-&nbsp; &nbsp;koment komentar&#91;10&#93;;
-
+	koment komentar&#91;10&#93;;
 <br />
-&nbsp; &nbsp;int stevKomentar;
-
+	int stevKomentar;
 <br />
-&nbsp; &nbsp;void vnesi&#40;&#41;;
-
+	void vnesi&#40;&#41;;
 <br />
-&nbsp; &nbsp;void izpisi&#40;&#41;;
-
+	void izpisi&#40;&#41;;
 <br />
-&nbsp; &nbsp;void dodajKomentar&#40;&#41;;
-
+	void dodajKomentar&#40;&#41;;
 <br />
-&nbsp; &nbsp;void izpisikomentar&#40;&#41;;
-
+	void izpisikomentar&#40;&#41;;
 <br />
 &#125;;
-
 <br />
-...
-
+&#46;&#46;&#46;
 <br />
-
 
 <br />
 void po_priimku&#40;Oseba *&amp;k_cel_seznam&#41; //sortiranje podatkov po imenu
-
 <br />
 &#123;
-
 <br />
-&nbsp; &nbsp;Oseba *temp = k_cel_seznam;
-
+	Oseba *temp = k_cel_seznam;
 <br />
-&nbsp; &nbsp;char *pomozni;
-
+	char *pomozni;
 <br />
 
-
 <br />
-&nbsp; &nbsp; cout &lt;&lt; &quot;\nSoritran izpis priimkov&#58; &quot;&lt;&lt;endl;
-
+    cout &lt;&lt; &quot;\nSoritran izpis priimkov&#58; &quot;&lt;&lt;endl;
 <br />
 
-
 <br />
-&nbsp; &nbsp;  if &#40;temp != NULL&#41; // Sledi preverjanje ali je seznam poln
-
+     if &#40;temp != NULL&#41; // Sledi preverjanje ali je seznam poln
 <br />
-&nbsp; &nbsp;  &#123;
-
+     &#123;
 <br />
-&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; pomozni = temp-&gt;priimek; // Zacetna vrednost min
-
+          pomozni = temp-&gt;priimek; // Zacetna vrednost min
 <br />
-&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; temp = temp-&gt;naslOs; // Povemo kam kaze k_najmansi
-
+          temp = temp-&gt;naslOs; // Povemo kam kaze k_najmansi
 <br />
-&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 
-
+          
 <br />
-&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; while &#40;temp != NULL&#41; // S while zanke preverimo ali je kak element v seznamu nansi od min
-
+          while &#40;temp != NULL&#41; // S while zanke preverimo ali je kak element v seznamu nansi od min
 <br />
-&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  &#123;
-
+               &#123;
 <br />
-&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  if &#40;pomozni &gt; temp-&gt;priimek&#41; // Pogoj za spremembo min
-
+               if &#40;pomozni &gt; temp-&gt;priimek&#41; // Pogoj za spremembo min
 <br />
-&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  pomozni = temp-&gt;priimek; // Povemo cemu je enak min
-
+                   pomozni = temp-&gt;priimek; // Povemo cemu je enak min
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;  temp = temp-&gt;naslOs; // Povemo kam kaze k_najmansi 
-
+				   temp = temp-&gt;naslOs; // Povemo kam kaze k_najmansi 
 <br />
-&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &#125;
-
+          &#125;
 <br />
-&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; cout &lt;&lt; endl &lt;&lt; endl;
-
+          cout &lt;&lt; endl &lt;&lt; endl;
 <br />
-&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; cout&lt;&lt; pomozni &lt;&lt; endl;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 
-
+          cout&lt;&lt; pomozni &lt;&lt; endl;          
 <br />
-&nbsp; &nbsp;  &#125;
-
+     &#125;
 <br />
-&nbsp; &nbsp;  else
-
+     else
 <br />
-&nbsp; &nbsp;  &#123;
-
+     &#123;
 <br />
-&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; cout &lt;&lt; &quot;Seznam je prazen!&quot; &lt;&lt; endl;
-
+          cout &lt;&lt; &quot;Seznam je prazen!&quot; &lt;&lt; endl;
 <br />
-&nbsp; &nbsp;  &#125;
-
+     &#125;
 <br />
-&nbsp; &nbsp; cakaj&#40;enter&#41;;
-
+	 cakaj&#40;enter&#41;;
 <br />
 &#125;
-
 <br />
-...
-
+&#46;&#46;&#46;
 <br />
 </td>
 <br />
@@ -526,7 +477,7 @@ lp</span><span class="gensmall"></span></td>
 	</tr>
 	
 	<tr>
-		<td width="150" align="left" valign="top" class="row2"><span class="name"><a name="6086"></a><b>vesoljc</b></span><br /><span class="postdetails">inštruktor<br /><img src="images/ranks/sgd-4.gif" alt="inštruktor" title="inštruktor" border="0" /><br /><img src="images/avatars/c1bdb98c3fb49342927df.jpg" alt="" border="0" /><br /><br />Pridružen: 18. feb 2003 ob 22:16<br />objav: 297<br />Kraj: Brezovica, homeland of the mighty Beawer Blasters</span><br /></td>
+		<td width="150" align="left" valign="top" class="row2"><span class="name"><a name="6086"></a><b>vesoljc</b></span><br /><span class="postdetails">inštruktor<br /><img src="images/ranks/sgd-4.gif" alt="inštruktor" title="inštruktor" border="0" /><br /><img src="images/avatars/c1bdb98c3fb49342927df.jpg" alt="" border="0" /><br /><br />Pridružen: 18. feb 2003 ob 22:16<br />objav: 291<br />Kraj: Brezovica, homeland of the mighty Beawer Blasters</span><br /></td>
 		<td class="row2" width="100%" height="28" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
 			<tr>
 				<td colspan="2" width="100%">
@@ -559,10 +510,8 @@ lp</span><span class="gensmall"></span></td>
 	<tr>
 <br />
 	  <td class="code">
-
 <br />
 pomozni &gt; temp-&gt;priimek
-
 <br />
 </td>
 <br />
@@ -571,19 +520,14 @@ pomozni &gt; temp-&gt;priimek
 </table>
 <br />
 <span class="postbody">
-
 <br />
-kaj je pomozni? in kaj je priimek? to ni vrstica teksta ampak pointer na prvo črko te tekstne vrstice! in pointerje primerjat je rahlo čudno  <img src="images/smiles/icon_confused.gif" alt="icon_confused.gif" border="0" /> 
-
+kaj je pomozni? in kaj je priimek? to ni vrstica teksta ampak pointer na prvo črko te tekstne vrstice! in pointerje primerjat je rahlo čudno  <img src="images/smiles/icon_confused.gif" alt=":?" border="0" /> 
 <br />
-<a  target="_blank" class="postlink">http://www.mkssoftware.com/docs/man3/strcmp.3.asp</a> tuki maš strcmp deklaracijo
-
+<a  target="_blank" class="postlink">http&#58;//www&#46;mkssoftware&#46;com/docs/man3/strcmp&#46;3&#46;asp</a> tuki maš strcmp deklaracijo
 <br />
-
 
 <br />
 rabiš pa nekaj takega
-
 <br />
 </span>
 <br />
@@ -598,13 +542,10 @@ rabiš pa nekaj takega
 	<tr>
 <br />
 	  <td class="code">
-
 <br />
 if &#40;strcmp&#40;pomozni, temp-&gt;priimek&#41; &gt; 0&#41; 
-
 <br />
 do stuff
-
 <br />
 </td>
 <br />
@@ -613,7 +554,6 @@ do stuff
 </table>
 <br />
 <span class="postbody">
-
 <br />
 The function strcmp() returns a positive integer if string s1 is lexically greater than string s2; zero if the two strings are identical; and a negative integer if string s1 is lexically less than string s2.[/code]<br />_________________<br /><span style="font-style: italic">Abnormal behaviour of abnormal brain makes me normal...</span></span><span class="gensmall"></span></td>
 			</tr>
@@ -632,7 +572,7 @@ The function strcmp() returns a positive integer if string s1 is lexically great
 	</tr>
 	
 	<tr>
-		<td width="150" align="left" valign="top" class="row1"><span class="name"><a name="6088"></a><b>ALTF4</b></span><br /><span class="postdetails">inštruktor<br /><img src="images/ranks/sgd-4.gif" alt="inštruktor" title="inštruktor" border="0" /><br /><img src="images/avatars/563d301443ad69c6388ac.gif" alt="" border="0" /><br /><br />Pridružen: 10. jul 2003 ob 15:23<br />objav: 345<br />Kraj: Slovenska Bistrica</span><br /></td>
+		<td width="150" align="left" valign="top" class="row1"><span class="name"><a name="6088"></a><b>ALTF4</b></span><br /><span class="postdetails">guru<br /><img src="images/ranks/sgd-8.gif" alt="guru" title="guru" border="0" /><br /><img src="images/avatars/563d301443ad69c6388ac.gif" alt="" border="0" /><br /><br />Pridružen: 10. jul 2003 ob 15:23<br />objav: 1175<br />Kraj: Slovenska Bistrica</span><br /></td>
 		<td class="row1" width="100%" height="28" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
 			<tr>
 				<td colspan="2" width="100%">
@@ -652,7 +592,7 @@ The function strcmp() returns a positive integer if string s1 is lexically great
 				<td colspan="2"><hr /></td>
 			</tr>
 			<tr>
-				<td colspan="2"><span class="postbody">tu maš sortiranje + še druge stvari; kot vedno, se večino stvari da narediti na lepši način  <img src="images/smiles/icon_biggrin.gif" alt="icon_biggrin.gif" border="0" /> 
+				<td colspan="2"><span class="postbody">tu maš sortiranje + še druge stvari; kot vedno, se večino stvari da narediti na lepši način  <img src="images/smiles/icon_biggrin.gif" alt=":D" border="0" /> 
 
 <br />
 
@@ -670,1433 +610,957 @@ The function strcmp() returns a positive integer if string s1 is lexically great
 <br />
 	<tr>
 <br />
-	  <td class="code">#include &lt;iostream.h&gt;
-
+	  <td class="code">#include &lt;iostream&#46;h&gt;
 <br />
-#include &lt;string.h&gt;
-
+#include &lt;string&#46;h&gt;
 <br />
-#include &lt;stdlib.h&gt;
-
+#include &lt;stdlib&#46;h&gt;
 <br />
-#include &lt;iomanip.h&gt;
-
+#include &lt;iomanip&#46;h&gt;
 <br />
-//#include &lt;crtdbg.h&gt;
-
+//#include &lt;crtdbg&#46;h&gt;
 <br />
-
 
 <br />
 struct DatumProjekta
-
 <br />
 &#123;
-
 <br />
-&nbsp; &nbsp;int d,m,l;
-
+	int d,m,l;
 <br />
 &#125;;
-
 <br />
-
 
 <br />
 struct NaslovUdelezenca
-
 <br />
 &#123;
-
 <br />
-&nbsp; &nbsp;char *ulica;
-
+	char *ulica;
 <br />
-&nbsp; &nbsp;char *posta;
-
+	char *posta;
 <br />
 &#125;;
-
 <br />
-
 
 <br />
 struct UdelezenecProjekta
-
 <br />
 &#123;
-
 <br />
-&nbsp; &nbsp;char *ime;
-
+	char *ime;
 <br />
-&nbsp; &nbsp;char *priimek;
-
+	char *priimek;
 <br />
-&nbsp; &nbsp;NaslovUdelezenca naslov;
-
+	NaslovUdelezenca naslov;
 <br />
-&nbsp; &nbsp;UdelezenecProjekta *naslednji_udelezenec;
-
+	UdelezenecProjekta *naslednji_udelezenec;
 <br />
 &#125;;
-
 <br />
-
 
 <br />
 struct Projekt
-
 <br />
 &#123;
-
 <br />
-&nbsp; &nbsp;char *ime;
-
+	char *ime;
 <br />
-&nbsp; &nbsp;char *namen;
-
+	char *namen;
 <br />
-&nbsp; &nbsp;DatumProjekta datum;
-
+	DatumProjekta datum;
 <br />
-&nbsp; &nbsp;UdelezenecProjekta *udelezenci;
-
+	UdelezenecProjekta *udelezenci;
 <br />
-&nbsp; &nbsp;UdelezenecProjekta *konec;
-
+	UdelezenecProjekta *konec;
 <br />
-&nbsp; &nbsp;Projekt *naslednji_projekt;
-
+	Projekt *naslednji_projekt;
 <br />
 &#125;;
-
 <br />
-
 
 <br />
 void clrScr&#40;&#41;
-
 <br />
 &#123;
-
 <br />
-&nbsp; &nbsp;system&#40;&quot;cls&quot;&#41;;
-
+	system&#40;&quot;cls&quot;&#41;;
 <br />
 &#125;
-
 <br />
-
 
 <br />
 char *beriNiz&#40;&#41;
-
 <br />
 &#123;
-
 <br />
-&nbsp; &nbsp;char a&#91;100&#93;;
-
+	char a&#91;100&#93;;
 <br />
-&nbsp; &nbsp;cout.flush&#40;&#41;;
-
+	cout&#46;flush&#40;&#41;;
 <br />
-&nbsp; &nbsp;cin.eatwhite&#40;&#41;;
-
+	cin&#46;eatwhite&#40;&#41;;
 <br />
-&nbsp; &nbsp;cin.getline&#40;a,100&#41;;
-
+	cin&#46;getline&#40;a,100&#41;;
 <br />
-&nbsp; &nbsp;if &#40;cin.gcount&#40;&#41;==99&#41;
-
+	if &#40;cin&#46;gcount&#40;&#41;==99&#41;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;cin.ignore&#40;255,'\n'&#41;;
-
+		cin&#46;ignore&#40;255,'\n'&#41;;
 <br />
-&nbsp; &nbsp;return strdup&#40;a&#41;;
-
+	return strdup&#40;a&#41;;
 <br />
 &#125;
-
 <br />
-
 
 <br />
 int steviloProjektov&#40;Projekt *zacetek&#41;
-
 <br />
 &#123;
-
 <br />
-&nbsp; &nbsp;int i=0;
-
+	int i=0;
 <br />
-&nbsp; &nbsp;Projekt *vmesni=zacetek;
-
+	Projekt *vmesni=zacetek;
 <br />
-&nbsp; &nbsp;while &#40;vmesni!=NULL&#41;
-
+	while &#40;vmesni!=NULL&#41;
 <br />
-&nbsp; &nbsp;&#123;
-
+	&#123;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;i++;
-
+		i++;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;vmesni=vmesni-&gt;naslednji_projekt;
-
+		vmesni=vmesni-&gt;naslednji_projekt;
 <br />
-&nbsp; &nbsp;&#125;
-
+	&#125;
 <br />
-&nbsp; &nbsp;return i;
-
+	return i;
 <br />
 &#125;
-
 <br />
-
 
 <br />
 void dodajProjektNaZacetekSeznama&#40;Projekt *&amp;zacetek&#41;
-
 <br />
 &#123;
-
 <br />
-&nbsp; &nbsp;Projekt *novi=new Projekt;
-
+	Projekt *novi=new Projekt;
 <br />
-&nbsp; &nbsp;cout &lt;&lt; &quot;Vpisovanje podatkov o projektu.&quot; &lt;&lt; endl;
-
+	cout &lt;&lt; &quot;Vpisovanje podatkov o projektu&#46;&quot; &lt;&lt; endl;
 <br />
-&nbsp; &nbsp;cout &lt;&lt; &quot;Vpisi ime projekta&#58; &quot; &lt;&lt; endl;
-
+	cout &lt;&lt; &quot;Vpisi ime projekta&#58; &quot; &lt;&lt; endl;
 <br />
-&nbsp; &nbsp;novi-&gt;ime=beriNiz&#40;&#41;;
-
+	novi-&gt;ime=beriNiz&#40;&#41;;
 <br />
-&nbsp; &nbsp;cout &lt;&lt; &quot;Vpisi namen projekta&#58; &quot; &lt;&lt; endl;
-
+	cout &lt;&lt; &quot;Vpisi namen projekta&#58; &quot; &lt;&lt; endl;
 <br />
-&nbsp; &nbsp;novi-&gt;namen=beriNiz&#40;&#41;;
-
+	novi-&gt;namen=beriNiz&#40;&#41;;
 <br />
-&nbsp; &nbsp;cout &lt;&lt; &quot;Vpisi datum zacetka projekta &#40;dan mesec leto&#41;&#58;&quot; &lt;&lt; endl;
-
+	cout &lt;&lt; &quot;Vpisi datum zacetka projekta &#40;dan mesec leto&#41;&#58;&quot; &lt;&lt; endl;
 <br />
-&nbsp; &nbsp;cin &gt;&gt; novi-&gt;datum.d &gt;&gt; novi-&gt;datum.m &gt;&gt; novi-&gt;datum.l;
-
+	cin &gt;&gt; novi-&gt;datum&#46;d &gt;&gt; novi-&gt;datum&#46;m &gt;&gt; novi-&gt;datum&#46;l;
 <br />
-&nbsp; &nbsp;novi-&gt;naslednji_projekt=zacetek;
-
+	novi-&gt;naslednji_projekt=zacetek;
 <br />
-&nbsp; &nbsp;novi-&gt;udelezenci=NULL;
-
+	novi-&gt;udelezenci=NULL;
 <br />
-&nbsp; &nbsp;novi-&gt;konec=NULL;
-
+	novi-&gt;konec=NULL;
 <br />
-&nbsp; &nbsp;zacetek=novi;
-
+	zacetek=novi;
 <br />
 &#125;
-
 <br />
-
 
 <br />
 void dodajProjektNaKonecSeznama&#40;Projekt *&amp;konec, Projekt *zacetek&#41;
-
 <br />
 &#123;
-
 <br />
-&nbsp; &nbsp;Projekt *novi=new Projekt;
-
+	Projekt *novi=new Projekt;
 <br />
-&nbsp; &nbsp;cout &lt;&lt; &quot;Vpisovanje podatkov o projektu.&quot; &lt;&lt; endl;
-
+	cout &lt;&lt; &quot;Vpisovanje podatkov o projektu&#46;&quot; &lt;&lt; endl;
 <br />
-&nbsp; &nbsp;cout &lt;&lt; &quot;Vpisi ime projekta&#58; &quot; &lt;&lt; endl;
-
+	cout &lt;&lt; &quot;Vpisi ime projekta&#58; &quot; &lt;&lt; endl;
 <br />
-&nbsp; &nbsp;novi-&gt;ime=beriNiz&#40;&#41;;
-
+	novi-&gt;ime=beriNiz&#40;&#41;;
 <br />
-&nbsp; &nbsp;cout &lt;&lt; &quot;Vpisi namen projekta&#58; &quot; &lt;&lt; endl;
-
+	cout &lt;&lt; &quot;Vpisi namen projekta&#58; &quot; &lt;&lt; endl;
 <br />
-&nbsp; &nbsp;novi-&gt;namen=beriNiz&#40;&#41;;
-
+	novi-&gt;namen=beriNiz&#40;&#41;;
 <br />
-&nbsp; &nbsp;cout &lt;&lt; &quot;Vpisi datum zacetka projekta &#40;dan mesec leto&#41;&#58;&quot; &lt;&lt; endl;
-
+	cout &lt;&lt; &quot;Vpisi datum zacetka projekta &#40;dan mesec leto&#41;&#58;&quot; &lt;&lt; endl;
 <br />
-&nbsp; &nbsp;cin &gt;&gt; novi-&gt;datum.d &gt;&gt; novi-&gt;datum.m &gt;&gt; novi-&gt;datum.l;
-
+	cin &gt;&gt; novi-&gt;datum&#46;d &gt;&gt; novi-&gt;datum&#46;m &gt;&gt; novi-&gt;datum&#46;l;
 <br />
-&nbsp; &nbsp;novi-&gt;naslednji_projekt=NULL;
-
+	novi-&gt;naslednji_projekt=NULL;
 <br />
-&nbsp; &nbsp;novi-&gt;udelezenci=NULL;
-
+	novi-&gt;udelezenci=NULL;
 <br />
-&nbsp; &nbsp;konec-&gt;naslednji_projekt=novi;
-
+	konec-&gt;naslednji_projekt=novi;
 <br />
-&nbsp; &nbsp;konec-&gt;konec=NULL;
-
+	konec-&gt;konec=NULL;
 <br />
-&nbsp; &nbsp;konec=novi;
-
+	konec=novi;
 <br />
 &#125;
-
 <br />
-
 
 <br />
 void izpisiProjekte&#40;Projekt *zacetek&#41;
-
 <br />
 &#123;
-
 <br />
-&nbsp; &nbsp;cout &lt;&lt; &quot;Trenutno so aktivni naslednji projekti&#58;&quot; &lt;&lt; endl &lt;&lt; endl;
-
+	cout &lt;&lt; &quot;Trenutno so aktivni naslednji projekti&#58;&quot; &lt;&lt; endl &lt;&lt; endl;
 <br />
-&nbsp; &nbsp;int i=0;
-
+	int i=0;
 <br />
-&nbsp; &nbsp;Projekt *vmesni = zacetek;
-
+	Projekt *vmesni = zacetek;
 <br />
-&nbsp; &nbsp;while &#40;vmesni!=NULL&#41;
-
+	while &#40;vmesni!=NULL&#41;
 <br />
-&nbsp; &nbsp;&#123;
-
+	&#123;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;i++;
-
+		i++;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;cout &lt;&lt; &quot;Zaporedna stevilka projekta&#58; &quot; &lt;&lt; i &lt;&lt; endl;
-
+		cout &lt;&lt; &quot;Zaporedna stevilka projekta&#58; &quot; &lt;&lt; i &lt;&lt; endl;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;cout &lt;&lt; &quot;Ime projekta&#58; &quot; &lt;&lt; vmesni-&gt;ime &lt;&lt; endl;
-
+		cout &lt;&lt; &quot;Ime projekta&#58; &quot; &lt;&lt; vmesni-&gt;ime &lt;&lt; endl;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;cout &lt;&lt; &quot;Namen projekta&#58; &quot; &lt;&lt; vmesni-&gt;namen &lt;&lt; endl;
-
+		cout &lt;&lt; &quot;Namen projekta&#58; &quot; &lt;&lt; vmesni-&gt;namen &lt;&lt; endl;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;cout &lt;&lt; &quot;Datum projekta&#58; &quot; &lt;&lt; vmesni-&gt;datum.d &lt;&lt; &quot;.&quot;
-
+		cout &lt;&lt; &quot;Datum projekta&#58; &quot; &lt;&lt; vmesni-&gt;datum&#46;d &lt;&lt; &quot;&#46;&quot;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp; &lt;&lt; vmesni-&gt;datum.m &lt;&lt; &quot;.&quot; &lt;&lt; vmesni-&gt;datum.l &lt;&lt; endl;
-
+			 &lt;&lt; vmesni-&gt;datum&#46;m &lt;&lt; &quot;&#46;&quot; &lt;&lt; vmesni-&gt;datum&#46;l &lt;&lt; endl;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;cout &lt;&lt; &quot;--------------------------------------&quot; &lt;&lt; endl;
-
+		cout &lt;&lt; &quot;--------------------------------------&quot; &lt;&lt; endl;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;vmesni=vmesni-&gt;naslednji_projekt;
-
+		vmesni=vmesni-&gt;naslednji_projekt;
 <br />
-&nbsp; &nbsp;&#125;
-
+	&#125;
 <br />
-&nbsp; &nbsp;cout &lt;&lt; endl;
-
+	cout &lt;&lt; endl;
 <br />
 &#125;
-
 <br />
-
 
 <br />
 void pobrisiUdelezence&#40;Projekt *&amp;zacetek&#41;
-
 <br />
 &#123;
-
 <br />
-&nbsp; &nbsp;Projekt *vmesni_projekt=zacetek;
-
+	Projekt *vmesni_projekt=zacetek;
 <br />
-&nbsp; &nbsp;UdelezenecProjekta *vmesni_udelezenec;
-
+	UdelezenecProjekta *vmesni_udelezenec;
 <br />
-&nbsp; &nbsp;UdelezenecProjekta *delovni_udelezenec;
-
+	UdelezenecProjekta *delovni_udelezenec;
 <br />
-&nbsp; &nbsp;while &#40;vmesni_projekt!=NULL&#41;
-
+	while &#40;vmesni_projekt!=NULL&#41;
 <br />
-&nbsp; &nbsp;&#123;
-
+	&#123;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;vmesni_udelezenec=vmesni_projekt-&gt;udelezenci;
-
+		vmesni_udelezenec=vmesni_projekt-&gt;udelezenci;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;while &#40;vmesni_udelezenec!=NULL&#41;
-
+		while &#40;vmesni_udelezenec!=NULL&#41;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&#123;
-
+		&#123;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;delovni_udelezenec=vmesni_udelezenec-&gt;naslednji_udelezenec;
-
+			delovni_udelezenec=vmesni_udelezenec-&gt;naslednji_udelezenec;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;delete vmesni_udelezenec;
-
+			delete vmesni_udelezenec;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;vmesni_udelezenec=delovni_udelezenec;
-
+			vmesni_udelezenec=delovni_udelezenec;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&#125;
-
+		&#125;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;vmesni_projekt=vmesni_projekt-&gt;naslednji_projekt;
-
+		vmesni_projekt=vmesni_projekt-&gt;naslednji_projekt;
 <br />
-&nbsp; &nbsp;&#125;
-
+	&#125;
 <br />
 &#125;
-
 <br />
-
 
 <br />
 void pobrisiProjekte&#40;Projekt *&amp;zacetek&#41;
-
 <br />
 &#123;
-
 <br />
-&nbsp; &nbsp;Projekt *vmesni=zacetek;
-
+	Projekt *vmesni=zacetek;
 <br />
-&nbsp; &nbsp;Projekt *delovni;
-
+	Projekt *delovni;
 <br />
-&nbsp; &nbsp;while &#40;vmesni!=NULL&#41;
-
+	while &#40;vmesni!=NULL&#41;
 <br />
-&nbsp; &nbsp;&#123;
-
+	&#123;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;delovni=vmesni-&gt;naslednji_projekt;
-
+		delovni=vmesni-&gt;naslednji_projekt;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;delete vmesni;
-
+		delete vmesni;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;vmesni=delovni;
-
+		vmesni=delovni;
 <br />
-&nbsp; &nbsp;&#125;
-
+	&#125;
 <br />
 &#125;
-
 <br />
-
 
 <br />
 void zamenjajPrvaDvaProjekta&#40;Projekt *&amp;zacetek, Projekt *prvi, Projekt *drugi&#41;
-
 <br />
 &#123;
-
 <br />
-&nbsp; &nbsp;prvi-&gt;naslednji_projekt=drugi-&gt;naslednji_projekt;
-
+	prvi-&gt;naslednji_projekt=drugi-&gt;naslednji_projekt;
 <br />
-&nbsp; &nbsp;drugi-&gt;naslednji_projekt=prvi;
-
+	drugi-&gt;naslednji_projekt=prvi;
 <br />
-&nbsp; &nbsp;zacetek=drugi;
-
+	zacetek=drugi;
 <br />
 &#125;
-
 <br />
-
 
 <br />
 void zamenjajOstaleProjekte&#40;Projekt *pred, Projekt *prvi, Projekt *drugi, Projekt *&amp;konec&#41;
-
 <br />
 &#123;
-
 <br />
-&nbsp; &nbsp;if &#40;drugi==konec&#41; konec=prvi;
-
+	if &#40;drugi==konec&#41; konec=prvi;
 <br />
-&nbsp; &nbsp;Projekt *k_prvi=prvi;
-
+	Projekt *k_prvi=prvi;
 <br />
-&nbsp; &nbsp;pred-&gt;naslednji_projekt=drugi;
-
+	pred-&gt;naslednji_projekt=drugi;
 <br />
-&nbsp; &nbsp;prvi-&gt;naslednji_projekt=drugi-&gt;naslednji_projekt;
-
+	prvi-&gt;naslednji_projekt=drugi-&gt;naslednji_projekt;
 <br />
-&nbsp; &nbsp;drugi-&gt;naslednji_projekt=prvi;
-
+	drugi-&gt;naslednji_projekt=prvi;
 <br />
 &#125;
-
 <br />
-
 
 <br />
 void urediProjekte&#40;Projekt *&amp;zacetek, Projekt *&amp;konec&#41;
-
 <br />
 &#123;
-
 <br />
-&nbsp; &nbsp;for &#40;Projekt *trenutni=zacetek; trenutni-&gt;naslednji_projekt!=NULL; trenutni=trenutni-&gt;naslednji_projekt&#41;
-
+	for &#40;Projekt *trenutni=zacetek; trenutni-&gt;naslednji_projekt!=NULL; trenutni=trenutni-&gt;naslednji_projekt&#41;
 <br />
-&nbsp; &nbsp;&#123;
-
+	&#123;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;if &#40;strcmp&#40;zacetek-&gt;ime,zacetek-&gt;naslednji_projekt-&gt;ime&#41;&gt;0&#41; zamenjajPrvaDvaProjekta&#40;zacetek,zacetek,zacetek-&gt;naslednji_projekt&#41;;
-
+		if &#40;strcmp&#40;zacetek-&gt;ime,zacetek-&gt;naslednji_projekt-&gt;ime&#41;&gt;0&#41; zamenjajPrvaDvaProjekta&#40;zacetek,zacetek,zacetek-&gt;naslednji_projekt&#41;;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;Projekt *vmesni=zacetek;
-
+		Projekt *vmesni=zacetek;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;while &#40;vmesni-&gt;naslednji_projekt-&gt;naslednji_projekt!=NULL&#41;
-
+		while &#40;vmesni-&gt;naslednji_projekt-&gt;naslednji_projekt!=NULL&#41;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&#123;
-
+		&#123;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;if &#40;strcmp&#40;vmesni-&gt;naslednji_projekt-&gt;ime,vmesni-&gt;naslednji_projekt-&gt;naslednji_projekt-&gt;ime&#41;&gt;0&#41;
-
+			if &#40;strcmp&#40;vmesni-&gt;naslednji_projekt-&gt;ime,vmesni-&gt;naslednji_projekt-&gt;naslednji_projekt-&gt;ime&#41;&gt;0&#41;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&#123;
-
+			&#123;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;/*vmesni_udelezenec=vmesni-&gt;naslednji_projekt-&gt;naslednji_projekt-&gt;udelezenci;
-
+				/*vmesni_udelezenec=vmesni-&gt;naslednji_projekt-&gt;naslednji_projekt-&gt;udelezenci;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;vmesni-&gt;naslednji_projekt-&gt;naslednji_projekt-&gt;udelezenci=vmesni-&gt;naslednji_projekt-&gt;udelezenci;
-
+				vmesni-&gt;naslednji_projekt-&gt;naslednji_projekt-&gt;udelezenci=vmesni-&gt;naslednji_projekt-&gt;udelezenci;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;vmesni-&gt;naslednji_projekt-&gt;udelezenci=vmesni_udelezenec;*/
-
+				vmesni-&gt;naslednji_projekt-&gt;udelezenci=vmesni_udelezenec;*/
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;zamenjajOstaleProjekte&#40;vmesni,vmesni-&gt;naslednji_projekt,vmesni-&gt;naslednji_projekt-&gt;naslednji_projekt, konec&#41;;
-
+				zamenjajOstaleProjekte&#40;vmesni,vmesni-&gt;naslednji_projekt,vmesni-&gt;naslednji_projekt-&gt;naslednji_projekt, konec&#41;;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&#125;
-
+			&#125;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;vmesni=vmesni-&gt;naslednji_projekt;
-
+			vmesni=vmesni-&gt;naslednji_projekt;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&#125;
-
+		&#125;
 <br />
-&nbsp; &nbsp;&#125;
-
+	&#125;
 <br />
 &#125;
-
 <br />
-
 
 <br />
 void poisciProjekt&#40;Projekt *zacetek&#41;
-
 <br />
 &#123;
-
 <br />
-&nbsp; &nbsp;char *ime;
-
+	char *ime;
 <br />
-&nbsp; &nbsp;bool najden=false;
-
+	bool najden=false;
 <br />
-&nbsp; &nbsp;cout &lt;&lt; &quot;Vpisi ime projekta, ki ga hocete poiskati.&quot; &lt;&lt; endl;
-
+	cout &lt;&lt; &quot;Vpisi ime projekta, ki ga hocete poiskati&#46;&quot; &lt;&lt; endl;
 <br />
-&nbsp; &nbsp;ime=beriNiz&#40;&#41;;
-
+	ime=beriNiz&#40;&#41;;
 <br />
-&nbsp; &nbsp;clrScr&#40;&#41;;
-
+	clrScr&#40;&#41;;
 <br />
-&nbsp; &nbsp;cout &lt;&lt; &quot;Iskanje po nizu&#58; &quot; &lt;&lt; ime &lt;&lt; &quot;...&quot;&lt;&lt; endl &lt;&lt; endl;
-
+	cout &lt;&lt; &quot;Iskanje po nizu&#58; &quot; &lt;&lt; ime &lt;&lt; &quot;&#46;&#46;&#46;&quot;&lt;&lt; endl &lt;&lt; endl;
 <br />
-&nbsp; &nbsp;int i=0;
-
+	int i=0;
 <br />
-&nbsp; &nbsp;Projekt *vmesni=zacetek;
-
+	Projekt *vmesni=zacetek;
 <br />
-&nbsp; &nbsp;while &#40;vmesni!=NULL&#41;
-
+	while &#40;vmesni!=NULL&#41;
 <br />
-&nbsp; &nbsp;&#123;
-
+	&#123;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;i++;
-
+		i++;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;if &#40;strcmp&#40;vmesni-&gt;ime,ime&#41;==0&#41;
-
+		if &#40;strcmp&#40;vmesni-&gt;ime,ime&#41;==0&#41;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&#123;
-
+		&#123;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;cout &lt;&lt; &quot;Zaporedna stevilka projekta&#58; &quot; &lt;&lt; i &lt;&lt; endl;
-
+			cout &lt;&lt; &quot;Zaporedna stevilka projekta&#58; &quot; &lt;&lt; i &lt;&lt; endl;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;cout &lt;&lt; &quot;Ime projekta&#58; &quot; &lt;&lt; vmesni-&gt;ime &lt;&lt; endl;
-
+			cout &lt;&lt; &quot;Ime projekta&#58; &quot; &lt;&lt; vmesni-&gt;ime &lt;&lt; endl;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;cout &lt;&lt; &quot;Namen projekta&#58; &quot; &lt;&lt; vmesni-&gt;namen &lt;&lt; endl;
-
+			cout &lt;&lt; &quot;Namen projekta&#58; &quot; &lt;&lt; vmesni-&gt;namen &lt;&lt; endl;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;cout &lt;&lt; &quot;Datum projekta&#58; &quot; &lt;&lt; vmesni-&gt;datum.d &lt;&lt; &quot;.&quot;
-
+			cout &lt;&lt; &quot;Datum projekta&#58; &quot; &lt;&lt; vmesni-&gt;datum&#46;d &lt;&lt; &quot;&#46;&quot;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp; &lt;&lt; vmesni-&gt;datum.m &lt;&lt; &quot;.&quot; &lt;&lt; vmesni-&gt;datum.l &lt;&lt; endl;
-
+				 &lt;&lt; vmesni-&gt;datum&#46;m &lt;&lt; &quot;&#46;&quot; &lt;&lt; vmesni-&gt;datum&#46;l &lt;&lt; endl;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;cout &lt;&lt; &quot;--------------------------------------&quot; &lt;&lt; endl &lt;&lt; endl;
-
+			cout &lt;&lt; &quot;--------------------------------------&quot; &lt;&lt; endl &lt;&lt; endl;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;najden=true;
-
+			najden=true;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&#125;
-
+		&#125;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;vmesni=vmesni-&gt;naslednji_projekt;
-
+		vmesni=vmesni-&gt;naslednji_projekt;
 <br />
-&nbsp; &nbsp;&#125;
-
+	&#125;
 <br />
-&nbsp; &nbsp;if &#40;!najden&#41; cout &lt;&lt; &quot;Projekt s taksnim imenom ne obstaja!&quot; &lt;&lt; endl &lt;&lt; endl;
-
+	if &#40;!najden&#41; cout &lt;&lt; &quot;Projekt s taksnim imenom ne obstaja!&quot; &lt;&lt; endl &lt;&lt; endl;
 <br />
 &#125;
-
 <br />
-
 
 <br />
 void izbrisiProjekt&#40;Projekt *&amp;zacetek&#41;
-
 <br />
 &#123;
-
 <br />
-&nbsp; &nbsp;int i=0;
-
+	int i=0;
 <br />
-&nbsp; &nbsp;Projekt *vmesni=zacetek;
-
+	Projekt *vmesni=zacetek;
 <br />
-&nbsp; &nbsp;cout &lt;&lt; &quot;Izbirate lahko med naslednjimi projekti&#58; &quot; &lt;&lt; endl &lt;&lt; endl;
-
+	cout &lt;&lt; &quot;Izbirate lahko med naslednjimi projekti&#58; &quot; &lt;&lt; endl &lt;&lt; endl;
 <br />
-&nbsp; &nbsp;while &#40;vmesni!=NULL&#41;
-
+	while &#40;vmesni!=NULL&#41;
 <br />
-&nbsp; &nbsp;&#123;
-
+	&#123;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;i++;
-
+		i++;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;cout &lt;&lt; i &lt;&lt; &quot;&#58; &quot; &lt;&lt; vmesni-&gt;ime &lt;&lt; endl;
-
+		cout &lt;&lt; i &lt;&lt; &quot;&#58; &quot; &lt;&lt; vmesni-&gt;ime &lt;&lt; endl;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;vmesni=vmesni-&gt;naslednji_projekt;
-
+		vmesni=vmesni-&gt;naslednji_projekt;
 <br />
-&nbsp; &nbsp;&#125;
-
+	&#125;
 <br />
-&nbsp; &nbsp;int izbira;
-
+	int izbira;
 <br />
-&nbsp; &nbsp;cout &lt;&lt; &quot;Izberite projekt, ki ga zelite izbrisati&#58; &quot;&lt;&lt; endl;
-
+	cout &lt;&lt; &quot;Izberite projekt, ki ga zelite izbrisati&#58; &quot;&lt;&lt; endl;
 <br />
-&nbsp; &nbsp;cin &gt;&gt; izbira;
-
+	cin &gt;&gt; izbira;
 <br />
-&nbsp; &nbsp;izbira--;
-
+	izbira--;
 <br />
-&nbsp; &nbsp;if &#40;izbira==0&#41;
-
+	if &#40;izbira==0&#41;
 <br />
-&nbsp; &nbsp;&#123;
-
+	&#123;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;Projekt *vmesni=zacetek;
-
+		Projekt *vmesni=zacetek;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;zacetek=zacetek-&gt;naslednji_projekt;
-
+		zacetek=zacetek-&gt;naslednji_projekt;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;delete vmesni;
-
+		delete vmesni;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;return;
-
+		return;
 <br />
-&nbsp; &nbsp;&#125;
-
+	&#125;
 <br />
-&nbsp; &nbsp;
-
+	
 <br />
-&nbsp; &nbsp;if &#40;izbira==&#40;steviloProjektov&#40;zacetek&#41;-1&#41;&#41;
-
+	if &#40;izbira==&#40;steviloProjektov&#40;zacetek&#41;-1&#41;&#41;
 <br />
-&nbsp; &nbsp;&#123;
-
+	&#123;
 <br />
 
-
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;Projekt *vmesni=zacetek;
-
+		Projekt *vmesni=zacetek;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;for &#40;int i=0; i&lt;steviloProjektov&#40;zacetek&#41;-2; i++&#41;
-
+		for &#40;int i=0; i&lt;steviloProjektov&#40;zacetek&#41;-2; i++&#41;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;vmesni=vmesni-&gt;naslednji_projekt;
-
+			vmesni=vmesni-&gt;naslednji_projekt;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;Projekt *delovni=vmesni-&gt;naslednji_projekt;
-
+		Projekt *delovni=vmesni-&gt;naslednji_projekt;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;vmesni-&gt;naslednji_projekt=NULL;
-
+		vmesni-&gt;naslednji_projekt=NULL;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;delete delovni;
-
+		delete delovni;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;return;
-
+		return;
 <br />
-&nbsp; &nbsp;&#125;
-
+	&#125;
 <br />
 
-
 <br />
-&nbsp; &nbsp;vmesni=zacetek;
-
+	vmesni=zacetek;
 <br />
-&nbsp; &nbsp;for &#40;i=0; i&lt;izbira-1; i++&#41;
-
+	for &#40;i=0; i&lt;izbira-1; i++&#41;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;vmesni=vmesni-&gt;naslednji_projekt;
-
+		vmesni=vmesni-&gt;naslednji_projekt;
 <br />
-&nbsp; &nbsp;Projekt *delovni=vmesni-&gt;naslednji_projekt;
-
+	Projekt *delovni=vmesni-&gt;naslednji_projekt;
 <br />
-&nbsp; &nbsp;vmesni-&gt;naslednji_projekt=delovni-&gt;naslednji_projekt;
-
+	vmesni-&gt;naslednji_projekt=delovni-&gt;naslednji_projekt;
 <br />
-&nbsp; &nbsp;delete delovni;
-
+	delete delovni;
 <br />
-&nbsp; &nbsp;
-
+	
 <br />
-&nbsp; &nbsp;cout &lt;&lt; endl;
-
+	cout &lt;&lt; endl;
 <br />
 &#125;
-
 <br />
-
 
 <br />
 void dodajUdelezenca&#40;Projekt *&amp;zacetek&#41;
-
 <br />
 &#123;
-
 <br />
-&nbsp; &nbsp;int i=0;
-
+	int i=0;
 <br />
-&nbsp; &nbsp;Projekt *vmesni=zacetek;
-
+	Projekt *vmesni=zacetek;
 <br />
-&nbsp; &nbsp;cout &lt;&lt; &quot;Kateremu projektu zelite dodati udelezence/ca?&quot; &lt;&lt; endl &lt;&lt; endl;
-
+	cout &lt;&lt; &quot;Kateremu projektu zelite dodati udelezence/ca?&quot; &lt;&lt; endl &lt;&lt; endl;
 <br />
-&nbsp; &nbsp;while &#40;vmesni!=NULL&#41;
-
+	while &#40;vmesni!=NULL&#41;
 <br />
-&nbsp; &nbsp;&#123;
-
+	&#123;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;i++;
-
+		i++;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;cout &lt;&lt; i &lt;&lt; &quot;&#58; &quot; &lt;&lt; vmesni-&gt;ime &lt;&lt; endl;
-
+		cout &lt;&lt; i &lt;&lt; &quot;&#58; &quot; &lt;&lt; vmesni-&gt;ime &lt;&lt; endl;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;vmesni=vmesni-&gt;naslednji_projekt;
-
+		vmesni=vmesni-&gt;naslednji_projekt;
 <br />
-&nbsp; &nbsp;&#125;
-
+	&#125;
 <br />
-&nbsp; &nbsp;int izbira=0;
-
+	int izbira=0;
 <br />
-&nbsp; &nbsp;cin &gt;&gt; izbira;
-
+	cin &gt;&gt; izbira;
 <br />
-&nbsp; &nbsp;izbira--;
-
+	izbira--;
 <br />
 
-
 <br />
-&nbsp; &nbsp;vmesni=zacetek;
-
+	vmesni=zacetek;
 <br />
-&nbsp; &nbsp;for &#40;i=0; i&lt;izbira; i++&#41;
-
+	for &#40;i=0; i&lt;izbira; i++&#41;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;vmesni=vmesni-&gt;naslednji_projekt;
-
+		vmesni=vmesni-&gt;naslednji_projekt;
 <br />
 
-
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;
-
+		
 <br />
-&nbsp; &nbsp;UdelezenecProjekta *udelezenec = new UdelezenecProjekta;
-
+	UdelezenecProjekta *udelezenec = new UdelezenecProjekta;
 <br />
-&nbsp; &nbsp;if &#40;vmesni-&gt;udelezenci==NULL&#41;
-
+	if &#40;vmesni-&gt;udelezenci==NULL&#41;
 <br />
-&nbsp; &nbsp;&#123;
-
+	&#123;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;udelezenec-&gt;naslednji_udelezenec=NULL;
-
+		udelezenec-&gt;naslednji_udelezenec=NULL;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;cout &lt;&lt; &quot;Novi udelezenec&quot; &lt;&lt; endl;
-
+		cout &lt;&lt; &quot;Novi udelezenec&quot; &lt;&lt; endl;
 <br />
-&nbsp; &nbsp;&#125;
-
+	&#125;
 <br />
-&nbsp; &nbsp;cout &lt;&lt; &quot;Vpisi ime&#58; &quot; &lt;&lt; endl;
-
+	cout &lt;&lt; &quot;Vpisi ime&#58; &quot; &lt;&lt; endl;
 <br />
-&nbsp; &nbsp;udelezenec-&gt;ime=beriNiz&#40;&#41;;
-
+	udelezenec-&gt;ime=beriNiz&#40;&#41;;
 <br />
-&nbsp; &nbsp;cout &lt;&lt; &quot;Vpisi priimek&#58; &quot; &lt;&lt; endl;
-
+	cout &lt;&lt; &quot;Vpisi priimek&#58; &quot; &lt;&lt; endl;
 <br />
-&nbsp; &nbsp;udelezenec-&gt;priimek=beriNiz&#40;&#41;;
-
+	udelezenec-&gt;priimek=beriNiz&#40;&#41;;
 <br />
-&nbsp; &nbsp;cout &lt;&lt; &quot;Vpisi ulico&#58; &quot; &lt;&lt; endl;
-
+	cout &lt;&lt; &quot;Vpisi ulico&#58; &quot; &lt;&lt; endl;
 <br />
-&nbsp; &nbsp;udelezenec-&gt;naslov.ulica=beriNiz&#40;&#41;;
-
+	udelezenec-&gt;naslov&#46;ulica=beriNiz&#40;&#41;;
 <br />
-&nbsp; &nbsp;cout &lt;&lt; &quot;Vpisi posto&#58; &quot; &lt;&lt; endl;
-
+	cout &lt;&lt; &quot;Vpisi posto&#58; &quot; &lt;&lt; endl;
 <br />
-&nbsp; &nbsp;udelezenec-&gt;naslov.posta=beriNiz&#40;&#41;;
-
+	udelezenec-&gt;naslov&#46;posta=beriNiz&#40;&#41;;
 <br />
-&nbsp; &nbsp;udelezenec-&gt;naslednji_udelezenec=vmesni-&gt;udelezenci;
-
+	udelezenec-&gt;naslednji_udelezenec=vmesni-&gt;udelezenci;
 <br />
-&nbsp; &nbsp;vmesni-&gt;udelezenci=udelezenec;
-
+	vmesni-&gt;udelezenci=udelezenec;
 <br />
 &#125;
-
 <br />
-
 
 <br />
 void izpisiUdelezence&#40;Projekt *zacetek&#41;
-
 <br />
 &#123;
-
 <br />
-&nbsp; &nbsp;UdelezenecProjekta *vmesni_udelezenec;
-
+	UdelezenecProjekta *vmesni_udelezenec;
 <br />
-&nbsp; &nbsp;int st_u=0;
-
+	int st_u=0;
 <br />
-&nbsp; &nbsp;for &#40;Projekt *vmesni_projekt=zacetek; vmesni_projekt!=NULL; vmesni_projekt=vmesni_projekt-&gt;naslednji_projekt&#41;
-
+	for &#40;Projekt *vmesni_projekt=zacetek; vmesni_projekt!=NULL; vmesni_projekt=vmesni_projekt-&gt;naslednji_projekt&#41;
 <br />
-&nbsp; &nbsp;&#123;
-
+	&#123;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;st_u=0;
-
+		st_u=0;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;cout &lt;&lt; &quot;Udelezenci projekta&#58; &quot; &lt;&lt; vmesni_projekt-&gt;ime &lt;&lt; endl;
-
+		cout &lt;&lt; &quot;Udelezenci projekta&#58; &quot; &lt;&lt; vmesni_projekt-&gt;ime &lt;&lt; endl;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;vmesni_udelezenec=vmesni_projekt-&gt;udelezenci;
-
+		vmesni_udelezenec=vmesni_projekt-&gt;udelezenci;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;while &#40;vmesni_udelezenec!=NULL&#41;
-
+		while &#40;vmesni_udelezenec!=NULL&#41;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&#123;
-
+		&#123;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;st_u++;
-
+			st_u++;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;cout &lt;&lt; &quot;Zaporedna stevilka&#58; &quot; &lt;&lt; st_u &lt;&lt; endl;
-
+			cout &lt;&lt; &quot;Zaporedna stevilka&#58; &quot; &lt;&lt; st_u &lt;&lt; endl;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;cout &lt;&lt; &quot;Ime in priimek&#58; &quot; &lt;&lt; vmesni_udelezenec-&gt;ime &lt;&lt; &quot; &quot; &lt;&lt; vmesni_udelezenec-&gt;priimek &lt;&lt; endl;
-
+			cout &lt;&lt; &quot;Ime in priimek&#58; &quot; &lt;&lt; vmesni_udelezenec-&gt;ime &lt;&lt; &quot; &quot; &lt;&lt; vmesni_udelezenec-&gt;priimek &lt;&lt; endl;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;cout &lt;&lt; &quot;Ulica&#58; &quot; &lt;&lt; vmesni_udelezenec-&gt;naslov.ulica &lt;&lt; endl;
-
+			cout &lt;&lt; &quot;Ulica&#58; &quot; &lt;&lt; vmesni_udelezenec-&gt;naslov&#46;ulica &lt;&lt; endl;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;cout &lt;&lt; &quot;Posta&#58; &quot; &lt;&lt; vmesni_udelezenec-&gt;naslov.posta &lt;&lt; endl;
-
+			cout &lt;&lt; &quot;Posta&#58; &quot; &lt;&lt; vmesni_udelezenec-&gt;naslov&#46;posta &lt;&lt; endl;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;cout &lt;&lt; &quot;--------------------------------------&quot; &lt;&lt; endl &lt;&lt; endl;
-
+			cout &lt;&lt; &quot;--------------------------------------&quot; &lt;&lt; endl &lt;&lt; endl;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;vmesni_udelezenec=vmesni_udelezenec-&gt;naslednji_udelezenec;
-
+			vmesni_udelezenec=vmesni_udelezenec-&gt;naslednji_udelezenec;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&#125;
-
+		&#125;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;cout &lt;&lt; endl &lt;&lt; endl;
-
+		cout &lt;&lt; endl &lt;&lt; endl;
 <br />
-&nbsp; &nbsp;&#125;
-
+	&#125;
 <br />
 &#125;
-
 <br />
-
 
 <br />
 void poisciUdelezenca&#40;Projekt *zacetek&#41;
-
 <br />
 &#123;
-
 <br />
-&nbsp; &nbsp;char *ime;
-
+	char *ime;
 <br />
-&nbsp; &nbsp;cout &lt;&lt; &quot;Vpisi ime udelezenca&#58;&quot; &lt;&lt; endl;
-
+	cout &lt;&lt; &quot;Vpisi ime udelezenca&#58;&quot; &lt;&lt; endl;
 <br />
-&nbsp; &nbsp;ime=beriNiz&#40;&#41;;
-
+	ime=beriNiz&#40;&#41;;
 <br />
-&nbsp; &nbsp;UdelezenecProjekta *vmesni_udelezenec;
-
+	UdelezenecProjekta *vmesni_udelezenec;
 <br />
-&nbsp; &nbsp;bool najden=false;
-
+	bool najden=false;
 <br />
 
-
 <br />
-&nbsp; &nbsp;for &#40;Projekt *vmesni_projekt=zacetek; vmesni_projekt!=NULL; vmesni_projekt=vmesni_projekt-&gt;naslednji_projekt&#41;
-
+	for &#40;Projekt *vmesni_projekt=zacetek; vmesni_projekt!=NULL; vmesni_projekt=vmesni_projekt-&gt;naslednji_projekt&#41;
 <br />
-&nbsp; &nbsp;&#123;
-
+	&#123;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;vmesni_udelezenec=vmesni_projekt-&gt;udelezenci;
-
+		vmesni_udelezenec=vmesni_projekt-&gt;udelezenci;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;while &#40;vmesni_udelezenec!=NULL&#41;
-
+		while &#40;vmesni_udelezenec!=NULL&#41;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&#123;
-
+		&#123;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;if &#40;strcmp&#40;ime,vmesni_udelezenec-&gt;ime&#41;==0&#41;
-
+			if &#40;strcmp&#40;ime,vmesni_udelezenec-&gt;ime&#41;==0&#41;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&#123;
-
+			&#123;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;najden=true;
-
+				najden=true;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;cout &lt;&lt; &quot;Udelezenec je bil najden v projektu&#58; &quot; &lt;&lt; vmesni_projekt-&gt;ime &lt;&lt; endl;
-
+				cout &lt;&lt; &quot;Udelezenec je bil najden v projektu&#58; &quot; &lt;&lt; vmesni_projekt-&gt;ime &lt;&lt; endl;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;cout &lt;&lt; &quot;Ime in priimek&#58; &quot; &lt;&lt; vmesni_udelezenec-&gt;ime &lt;&lt; &quot; &quot; &lt;&lt; vmesni_udelezenec-&gt;priimek &lt;&lt; endl;
-
+				cout &lt;&lt; &quot;Ime in priimek&#58; &quot; &lt;&lt; vmesni_udelezenec-&gt;ime &lt;&lt; &quot; &quot; &lt;&lt; vmesni_udelezenec-&gt;priimek &lt;&lt; endl;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;cout &lt;&lt; &quot;Ulica&#58; &quot; &lt;&lt; vmesni_udelezenec-&gt;naslov.ulica &lt;&lt; endl;
-
+				cout &lt;&lt; &quot;Ulica&#58; &quot; &lt;&lt; vmesni_udelezenec-&gt;naslov&#46;ulica &lt;&lt; endl;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;cout &lt;&lt; &quot;Posta&#58; &quot; &lt;&lt; vmesni_udelezenec-&gt;naslov.posta &lt;&lt; endl;
-
+				cout &lt;&lt; &quot;Posta&#58; &quot; &lt;&lt; vmesni_udelezenec-&gt;naslov&#46;posta &lt;&lt; endl;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;cout &lt;&lt; &quot;--------------------------------------&quot; &lt;&lt; endl &lt;&lt; endl;
-
+				cout &lt;&lt; &quot;--------------------------------------&quot; &lt;&lt; endl &lt;&lt; endl;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&#125;
-
+			&#125;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;vmesni_udelezenec=vmesni_udelezenec-&gt;naslednji_udelezenec;
-
+			vmesni_udelezenec=vmesni_udelezenec-&gt;naslednji_udelezenec;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&#125;
-
+		&#125;
 <br />
-&nbsp; &nbsp;&#125;
-
+	&#125;
 <br />
-&nbsp; &nbsp;if &#40;!najden&#41; cout &lt;&lt; &quot;Udelezenca ni bilo moc najti!&quot; &lt;&lt; endl;
-
+	if &#40;!najden&#41; cout &lt;&lt; &quot;Udelezenca ni bilo moc najti!&quot; &lt;&lt; endl;
 <br />
 &#125;
-
 <br />
-
 
 <br />
 void izpisiMeni&#40;Projekt *&amp;zacetek, Projekt *&amp;konec&#41;
-
 <br />
 &#123;
-
 <br />
-&nbsp; &nbsp;int izbira=0;
-
+	int izbira=0;
 <br />
-&nbsp; &nbsp;do
-
+	do
 <br />
-&nbsp; &nbsp;&#123;
-
+	&#123;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;clrScr&#40;&#41;;
-
+		clrScr&#40;&#41;;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;cout &lt;&lt; &quot; ----------------------------------------------&quot; &lt;&lt; endl;
-
+		cout &lt;&lt; &quot; ----------------------------------------------&quot; &lt;&lt; endl;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;cout &lt;&lt; &quot;| 1 - Dodaj projekt na zacetek.&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; |&quot; &lt;&lt; endl;
-
+		cout &lt;&lt; &quot;| 1 - Dodaj projekt na zacetek&#46;                |&quot; &lt;&lt; endl;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;cout &lt;&lt; &quot;|----------------------------------------------|&quot; &lt;&lt; endl;
-
+		cout &lt;&lt; &quot;|----------------------------------------------|&quot; &lt;&lt; endl;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;cout &lt;&lt; &quot;| 2 - Dodaj projekt na konec.&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; |&quot; &lt;&lt; endl;
-
+		cout &lt;&lt; &quot;| 2 - Dodaj projekt na konec&#46;                  |&quot; &lt;&lt; endl;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;cout &lt;&lt; &quot;|----------------------------------------------|&quot; &lt;&lt; endl;
-
+		cout &lt;&lt; &quot;|----------------------------------------------|&quot; &lt;&lt; endl;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;cout &lt;&lt; &quot;| 3 - Izpisi projekte.&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  |&quot; &lt;&lt; endl; 
-
+		cout &lt;&lt; &quot;| 3 - Izpisi projekte&#46;                         |&quot; &lt;&lt; endl; 
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;cout &lt;&lt; &quot;|----------------------------------------------|&quot; &lt;&lt; endl;
-
+		cout &lt;&lt; &quot;|----------------------------------------------|&quot; &lt;&lt; endl;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;cout &lt;&lt; &quot;| 4 - Uredi projekte pa imenu.&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  |&quot; &lt;&lt; endl;
-
+		cout &lt;&lt; &quot;| 4 - Uredi projekte pa imenu&#46;                 |&quot; &lt;&lt; endl;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;cout &lt;&lt; &quot;|----------------------------------------------|&quot; &lt;&lt; endl;
-
+		cout &lt;&lt; &quot;|----------------------------------------------|&quot; &lt;&lt; endl;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;cout &lt;&lt; &quot;| 5 - Poisci projekt.&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; |&quot; &lt;&lt; endl;
-
+		cout &lt;&lt; &quot;| 5 - Poisci projekt&#46;                          |&quot; &lt;&lt; endl;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;cout &lt;&lt; &quot;|----------------------------------------------|&quot; &lt;&lt; endl;
-
+		cout &lt;&lt; &quot;|----------------------------------------------|&quot; &lt;&lt; endl;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;cout &lt;&lt; &quot;| 6 - Izbrisi dolocen projekt.&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  |&quot; &lt;&lt; endl;
-
+		cout &lt;&lt; &quot;| 6 - Izbrisi dolocen projekt&#46;                 |&quot; &lt;&lt; endl;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;cout &lt;&lt; &quot;|----------------------------------------------|&quot; &lt;&lt; endl;
-
+		cout &lt;&lt; &quot;|----------------------------------------------|&quot; &lt;&lt; endl;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;cout &lt;&lt; &quot;| 7 - Dodaj udelezenca.&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; |&quot; &lt;&lt; endl;
-
+		cout &lt;&lt; &quot;| 7 - Dodaj udelezenca&#46;                        |&quot; &lt;&lt; endl;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;cout &lt;&lt; &quot;|----------------------------------------------|&quot; &lt;&lt; endl;
-
+		cout &lt;&lt; &quot;|----------------------------------------------|&quot; &lt;&lt; endl;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;cout &lt;&lt; &quot;| 8 - Izpisi udelezence.&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  |&quot; &lt;&lt; endl;
-
+		cout &lt;&lt; &quot;| 8 - Izpisi udelezence&#46;                       |&quot; &lt;&lt; endl;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;cout &lt;&lt; &quot;|----------------------------------------------|&quot; &lt;&lt; endl;
-
+		cout &lt;&lt; &quot;|----------------------------------------------|&quot; &lt;&lt; endl;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;cout &lt;&lt; &quot;| 9 - Poisci udelezenca.&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  |&quot; &lt;&lt; endl;
-
+		cout &lt;&lt; &quot;| 9 - Poisci udelezenca&#46;                       |&quot; &lt;&lt; endl;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;cout &lt;&lt; &quot;|----------------------------------------------|&quot; &lt;&lt; endl;
-
+		cout &lt;&lt; &quot;|----------------------------------------------|&quot; &lt;&lt; endl;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;cout &lt;&lt; &quot;| 10 - Izpis stevila projektov.&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; |&quot; &lt;&lt; endl;
-
+		cout &lt;&lt; &quot;| 10 - Izpis stevila projektov&#46;                |&quot; &lt;&lt; endl;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;cout &lt;&lt; &quot;|----------------------------------------------|&quot; &lt;&lt; endl;
-
+		cout &lt;&lt; &quot;|----------------------------------------------|&quot; &lt;&lt; endl;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;cout &lt;&lt; &quot;| 0 - Konec.&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  |&quot; &lt;&lt; endl;
-
+		cout &lt;&lt; &quot;| 0 - Konec&#46;                                   |&quot; &lt;&lt; endl;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;cout &lt;&lt; &quot;|----------------------------------------------&quot; &lt;&lt; endl;
-
+		cout &lt;&lt; &quot;|----------------------------------------------&quot; &lt;&lt; endl;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;cout &lt;&lt; &quot;| IZBIRA&#58; &quot;;
-
+		cout &lt;&lt; &quot;| IZBIRA&#58; &quot;;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;cin &gt;&gt; izbira;
-
+		cin &gt;&gt; izbira;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;switch &#40;izbira&#41;
-
+		switch &#40;izbira&#41;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&#123;
-
+		&#123;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;case 1&#58; 
-
+			case 1&#58; 
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&#123;
-
+				&#123;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;clrScr&#40;&#41;; 
-
+					clrScr&#40;&#41;; 
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;dodajProjektNaZacetekSeznama&#40;zacetek&#41;; 
-
+					dodajProjektNaZacetekSeznama&#40;zacetek&#41;; 
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;break;
-
+					break;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&#125;
-
+				&#125;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;case 2&#58; 
-
+			case 2&#58; 
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&#123;
-
+				&#123;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;clrScr&#40;&#41;; 
-
+					clrScr&#40;&#41;; 
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;dodajProjektNaKonecSeznama&#40;konec,zacetek&#41;;
-
+					dodajProjektNaKonecSeznama&#40;konec,zacetek&#41;;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;break;
-
+					break;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&#125;
-
+				&#125;
 <br />
 
-
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;case 3&#58; 
-
+			case 3&#58; 
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&#123;
-
+				&#123;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;clrScr&#40;&#41;; 
-
+					clrScr&#40;&#41;; 
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;izpisiProjekte&#40;zacetek&#41;;
-
+					izpisiProjekte&#40;zacetek&#41;;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;break;
-
+					break;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&#125;
-
+				&#125;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;case 4&#58; 
-
+			case 4&#58; 
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&#123;
-
+				&#123;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;clrScr&#40;&#41;; 
-
+					clrScr&#40;&#41;; 
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;urediProjekte&#40;zacetek,konec&#41;;
-
+					urediProjekte&#40;zacetek,konec&#41;;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;break;
-
+					break;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&#125;
-
+				&#125;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;case 5&#58; 
-
+			case 5&#58; 
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&#123;
-
+				&#123;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;clrScr&#40;&#41;; 
-
+					clrScr&#40;&#41;; 
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;poisciProjekt&#40;zacetek&#41;;
-
+					poisciProjekt&#40;zacetek&#41;;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;break;
-
+					break;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&#125;
-
+				&#125;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;case 6&#58; 
-
+			case 6&#58; 
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&#123;
-
+				&#123;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;clrScr&#40;&#41;; 
-
+					clrScr&#40;&#41;; 
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;izbrisiProjekt&#40;zacetek&#41;;
-
+					izbrisiProjekt&#40;zacetek&#41;;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;break;
-
+					break;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&#125;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;
-
+				&#125;				
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;case 7&#58; 
-
+			case 7&#58; 
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&#123;
-
+				&#123;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;clrScr&#40;&#41;; 
-
+					clrScr&#40;&#41;; 
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;dodajUdelezenca&#40;zacetek&#41;;
-
+					dodajUdelezenca&#40;zacetek&#41;;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;break;
-
+					break;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&#125;
-
+				&#125;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;case 8&#58; 
-
+			case 8&#58; 
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&#123;
-
+				&#123;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;clrScr&#40;&#41;; 
-
+					clrScr&#40;&#41;; 
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;izpisiUdelezence&#40;zacetek&#41;;
-
+					izpisiUdelezence&#40;zacetek&#41;;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;break;
-
+					break;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&#125;
-
+				&#125;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;case 9&#58; 
-
+			case 9&#58; 
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&#123;
-
+				&#123;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;clrScr&#40;&#41;; 
-
+					clrScr&#40;&#41;; 
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;poisciUdelezenca&#40;zacetek&#41;;
-
+					poisciUdelezenca&#40;zacetek&#41;;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;break;
-
+					break;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&#125;
-
+				&#125;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;case 10&#58; 
-
+			case 10&#58; 
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&#123;
-
+				&#123;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;clrScr&#40;&#41;; 
-
+					clrScr&#40;&#41;; 
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;cout &lt;&lt; &quot;Trenutno je aktivnih &quot; &lt;&lt; steviloProjektov&#40;zacetek&#41; &lt;&lt; &quot; projektov.&quot; &lt;&lt; endl;
-
+					cout &lt;&lt; &quot;Trenutno je aktivnih &quot; &lt;&lt; steviloProjektov&#40;zacetek&#41; &lt;&lt; &quot; projektov&#46;&quot; &lt;&lt; endl;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;break;
-
+					break;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&#125;
-
+				&#125;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&#125;
-
+		&#125;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;
-
+		
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;if &#40;izbira!=0&#41;
-
+		if &#40;izbira!=0&#41;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&#123;
-
+		&#123;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;cout &lt;&lt; &quot;1 - Nadaljevanje | 0 - Izhod&quot; &lt;&lt; endl;
-
+			cout &lt;&lt; &quot;1 - Nadaljevanje | 0 - Izhod&quot; &lt;&lt; endl;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;cin &gt;&gt; izbira;
-
+			cin &gt;&gt; izbira;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&#125;
-
+		&#125;
 <br />
-&nbsp; &nbsp;&#125;while &#40;izbira!=0&#41;;
-
+	&#125;while &#40;izbira!=0&#41;;
 <br />
 &#125;
-
 <br />
-
 
 <br />
 int main&#40;&#41;
-
 <br />
 &#123;
-
 <br />
-&nbsp; &nbsp;Projekt *zacetek_p = new Projekt;
-
+	Projekt *zacetek_p = new Projekt;
 <br />
-&nbsp; &nbsp;zacetek_p-&gt;datum.d=1;
-
+	zacetek_p-&gt;datum&#46;d=1;
 <br />
-&nbsp; &nbsp;zacetek_p-&gt;datum.m=2;
-
+	zacetek_p-&gt;datum&#46;m=2;
 <br />
-&nbsp; &nbsp;zacetek_p-&gt;datum.l=3;
-
+	zacetek_p-&gt;datum&#46;l=3;
 <br />
-&nbsp; &nbsp;zacetek_p-&gt;ime=&quot;testni projekt&quot;;
-
+	zacetek_p-&gt;ime=&quot;testni projekt&quot;;
 <br />
-&nbsp; &nbsp;zacetek_p-&gt;namen=&quot;test&quot;;
-
+	zacetek_p-&gt;namen=&quot;test&quot;;
 <br />
-&nbsp; &nbsp;zacetek_p-&gt;naslednji_projekt=NULL;
-
+	zacetek_p-&gt;naslednji_projekt=NULL;
 <br />
-&nbsp; &nbsp;zacetek_p-&gt;udelezenci=NULL;
-
+	zacetek_p-&gt;udelezenci=NULL;
 <br />
 
-
 <br />
-&nbsp; &nbsp;Projekt *konec_p=zacetek_p;
-
+	Projekt *konec_p=zacetek_p;
 <br />
 
-
 <br />
-&nbsp; &nbsp;UdelezenecProjekta *zacetek_u = new UdelezenecProjekta;
-
+	UdelezenecProjekta *zacetek_u = new UdelezenecProjekta;
 <br />
-&nbsp; &nbsp;UdelezenecProjekta *konec_u;
-
+	UdelezenecProjekta *konec_u;
 <br />
-&nbsp; &nbsp;zacetek_u-&gt;ime=&quot;testni&quot;;
-
+	zacetek_u-&gt;ime=&quot;testni&quot;;
 <br />
-&nbsp; &nbsp;zacetek_u-&gt;priimek=&quot;udelezenec&quot;;
-
+	zacetek_u-&gt;priimek=&quot;udelezenec&quot;;
 <br />
-&nbsp; &nbsp;zacetek_u-&gt;naslov.posta=&quot;posta&quot;;
-
+	zacetek_u-&gt;naslov&#46;posta=&quot;posta&quot;;
 <br />
-&nbsp; &nbsp;zacetek_u-&gt;naslov.ulica=&quot;ulica&quot;;
-
+	zacetek_u-&gt;naslov&#46;ulica=&quot;ulica&quot;;
 <br />
-&nbsp; &nbsp;zacetek_u-&gt;naslednji_udelezenec=NULL;
-
+	zacetek_u-&gt;naslednji_udelezenec=NULL;
 <br />
 
-
 <br />
-&nbsp; &nbsp;zacetek_p-&gt;udelezenci=zacetek_u;
-
+	zacetek_p-&gt;udelezenci=zacetek_u;
 <br />
-&nbsp; &nbsp;zacetek_p-&gt;konec=zacetek_u;
-
+	zacetek_p-&gt;konec=zacetek_u;
 <br />
-&nbsp; &nbsp;konec_u=zacetek_u;
-
+	konec_u=zacetek_u;
 <br />
 
-
 <br />
-&nbsp; &nbsp;izpisiMeni&#40;zacetek_p,konec_p&#41;;
-
+	izpisiMeni&#40;zacetek_p,konec_p&#41;;
 <br />
-&nbsp; &nbsp;pobrisiUdelezence&#40;zacetek_p&#41;;
-
+	pobrisiUdelezence&#40;zacetek_p&#41;;
 <br />
-&nbsp; &nbsp;pobrisiProjekte&#40;zacetek_p&#41;;
-
+	pobrisiProjekte&#40;zacetek_p&#41;;
 <br />
-&nbsp; &nbsp;return 0;
-
+	return 0;
 <br />
 &#125;</td>
 <br />
@@ -2129,7 +1593,7 @@ int main&#40;&#41;
   <tr>
 	<td align="left" valign="middle" nowrap="nowrap">&nbsp;</td>
 	<td align="left" valign="middle" width="100%"><span class="nav">&nbsp;&nbsp;&nbsp;<a href="index.html" class="nav">SloGameDev.net seznam forumov</a>
-	  -> <a href="forum-1.html" class="nav">Splošno Programiranje</a></span></td>
+	  -> <a href="forum-52.html" class="nav">Izdelovanje iger</a></span></td>
 	<td align="right" valign="top" nowrap="nowrap"><span class="gensmall">Časovni pas (GMT +2:00 uri) Slovenija, poletni čas</span><br /><span class="nav"></span>
 	  </td>
   </tr>
@@ -2145,7 +1609,7 @@ int main&#40;&#41;
   </tr>
 </table>
 
-<div align="center"><span class="copyright"><br />Arhiv stanja na dan 13. 2. 2006 &mdash; samo za branje.<br />
+<div align="center"><span class="copyright"><br />Arhiv &mdash; samo za branje.<br />
 <!--
 	We request you retain the full copyright notice below including the link to www.phpbb.com.
 	This not only gives respect to the large amount of time given freely by the developers

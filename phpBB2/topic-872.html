@@ -276,13 +276,13 @@ input.liteoption {
   <tr>
 	<td align="left" valign="bottom" nowrap="nowrap">&nbsp;</td>
 	<td align="left" valign="middle" width="100%"><span class="nav">&nbsp;&nbsp;&nbsp;<a href="index.html" class="nav">SloGameDev.net seznam forumov</a>
-	  -> <a href="forum-1.html" class="nav">Splošno Programiranje</a></span></td>
+	  -> <a href="forum-52.html" class="nav">Izdelovanje iger</a></span></td>
   </tr>
 </table>
 
 <table class="forumline" width="100%" cellspacing="1" cellpadding="3" border="0">
 	<tr align="right">
-		<td class="catHead" colspan="2" height="28"><span class="nav"><a href="topic-865.html" class="nav">Prejšnja tema</a> :: <a href="topic-862.html" class="nav">Naslednja tema</a> &nbsp;</span></td>
+		<td class="catHead" colspan="2" height="28"><span class="nav"><a href="topic-141.html" class="nav">Prejšnja tema</a> :: <a href="topic-862.html" class="nav">Naslednja tema</a> &nbsp;</span></td>
 	</tr>
 	
 	<tr>
@@ -344,142 +344,97 @@ Koda je tukaj:
 <br />
 	<tr>
 <br />
-	  <td class="code">private void btnOpen_Click&#40;object sender, System.EventArgs e&#41;
-
+	  <td class="code">private void btnOpen_Click&#40;object sender, System&#46;EventArgs e&#41;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&#123;
-
+		&#123;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;try
-
+			try
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&#123;
-
+			&#123;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;Stream myStream;
-
+				Stream myStream;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;OpenFileDialog openFileDialog1 = new OpenFileDialog&#40;&#41;;
-
+				OpenFileDialog openFileDialog1 = new OpenFileDialog&#40;&#41;;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;// set up file dialog properties
-
+				// set up file dialog properties
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;openFileDialog1.InitialDirectory = &quot;E&#58;\\&quot; ;
-
+				openFileDialog1&#46;InitialDirectory = &quot;E&#58;\\&quot; ;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;openFileDialog1.Filter = &quot;txt files &#40;*.txt&#41;|*.txt|All files &#40;*.*&#41;|*.*&quot; ;
-
+				openFileDialog1&#46;Filter = &quot;txt files &#40;*&#46;txt&#41;|*&#46;txt|All files &#40;*&#46;*&#41;|*&#46;*&quot; ;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;openFileDialog1.FilterIndex = 2 ;
-
+				openFileDialog1&#46;FilterIndex = 2 ;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;openFileDialog1.RestoreDirectory = true ;
-
+				openFileDialog1&#46;RestoreDirectory = true ;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;openFileDialog1.Multiselect = true;
-
+				openFileDialog1&#46;Multiselect = true;
 <br />
 
-
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;if&#40;openFileDialog1.ShowDialog&#40;&#41; == DialogResult.OK&#41;
-
+				if&#40;openFileDialog1&#46;ShowDialog&#40;&#41; == DialogResult&#46;OK&#41;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&#123;
-
+				&#123;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;if&#40;&#40;myStream = openFileDialog1.OpenFile&#40;&#41;&#41;!= null&#41;
-
+					if&#40;&#40;myStream = openFileDialog1&#46;OpenFile&#40;&#41;&#41;!= null&#41;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&#123;
-
+					&#123;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;// Insert code to read the stream here.
-
+						// Insert code to read the stream here&#46;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;//&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;string strFileName = openFileDialog1.FileName;
-
+						//					string strFileName = openFileDialog1&#46;FileName;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;DataSet ds = new DataSet&#40;&#41;;
-
+						DataSet ds = new DataSet&#40;&#41;;
 <br />
 
-
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;foreach &#40;string strFileName in openFileDialog1.FileNames&#41;
-
+						foreach &#40;string strFileName in openFileDialog1&#46;FileNames&#41;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&#123;
-
+						&#123;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;
-
+			
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;string connStr = 
-
+							string connStr = 
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;@&quot;Driver=&#123;Microsoft Excel Driver &#40;*.xls&#41;&#125;;DBQ=&quot; + strFileName;
-
+								@&quot;Driver=&#123;Microsoft Excel Driver &#40;*&#46;xls&#41;&#125;;DBQ=&quot; + strFileName;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;
-
+							
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;string sql = &quot;SELECT * FROM &#91;Sheet1$&#93;&quot;;
-
+							string sql = &quot;SELECT * FROM &#91;Sheet1$&#93;&quot;;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;OdbcDataAdapter adapter = new OdbcDataAdapter&#40;sql,connStr&#41;;
-
+							OdbcDataAdapter adapter = new OdbcDataAdapter&#40;sql,connStr&#41;;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;adapter.Fill&#40;ds,&quot;&#91;Sheet1$&#93;&quot;&#41;;
-
+							adapter&#46;Fill&#40;ds,&quot;&#91;Sheet1$&#93;&quot;&#41;;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;
-
+							
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&#125;
-
+						&#125;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;gridPorocila.DataMember = &quot;&#91;Sheet1$&#93;&quot;;
-
+						gridPorocila&#46;DataMember = &quot;&#91;Sheet1$&#93;&quot;;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;gridPorocila.DataSource = ds.DefaultViewManager;
-
+						gridPorocila&#46;DataSource = ds&#46;DefaultViewManager;
 <br />
 
-
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;myStream.Close&#40;&#41;;
-
+						myStream&#46;Close&#40;&#41;;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&#125;
-
+					&#125;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&#125;
-
+				&#125;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;
-
+				
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&#125;
-
+			&#125;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;catch &#40;Exception ex&#41;
-
+			catch &#40;Exception ex&#41;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&#123;
-
+			&#123;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;MessageBox.Show&#40;ex.Message.ToString&#40;&#41;&#41;;
-
+				MessageBox&#46;Show&#40;ex&#46;Message&#46;ToString&#40;&#41;&#41;;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&#125;
-
+			&#125;
 <br />
 
-
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&#125;</td>
+		&#125;</td>
 <br />
 	</tr>
 <br />
@@ -510,7 +465,7 @@ Koda je tukaj:
   <tr>
 	<td align="left" valign="middle" nowrap="nowrap">&nbsp;</td>
 	<td align="left" valign="middle" width="100%"><span class="nav">&nbsp;&nbsp;&nbsp;<a href="index.html" class="nav">SloGameDev.net seznam forumov</a>
-	  -> <a href="forum-1.html" class="nav">Splošno Programiranje</a></span></td>
+	  -> <a href="forum-52.html" class="nav">Izdelovanje iger</a></span></td>
 	<td align="right" valign="top" nowrap="nowrap"><span class="gensmall">Časovni pas (GMT +2:00 uri) Slovenija, poletni čas</span><br /><span class="nav"></span>
 	  </td>
   </tr>
@@ -526,7 +481,7 @@ Koda je tukaj:
   </tr>
 </table>
 
-<div align="center"><span class="copyright"><br />Arhiv stanja na dan 13. 2. 2006 &mdash; samo za branje.<br />
+<div align="center"><span class="copyright"><br />Arhiv &mdash; samo za branje.<br />
 <!--
 	We request you retain the full copyright notice below including the link to www.phpbb.com.
 	This not only gives respect to the large amount of time given freely by the developers

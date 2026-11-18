@@ -276,13 +276,13 @@ input.liteoption {
   <tr>
 	<td align="left" valign="bottom" nowrap="nowrap">&nbsp;</td>
 	<td align="left" valign="middle" width="100%"><span class="nav">&nbsp;&nbsp;&nbsp;<a href="index.html" class="nav">SloGameDev.net seznam forumov</a>
-	  -> <a href="forum-20.html" class="nav">Softverski Inženiring</a></span></td>
+	  -> <a href="forum-52.html" class="nav">Izdelovanje iger</a></span></td>
   </tr>
 </table>
 
 <table class="forumline" width="100%" cellspacing="1" cellpadding="3" border="0">
 	<tr align="right">
-		<td class="catHead" colspan="2" height="28"><span class="nav"><a href="topic-736.html" class="nav">Prejšnja tema</a> :: <a href="topic-441.html" class="nav">Naslednja tema</a> &nbsp;</span></td>
+		<td class="catHead" colspan="2" height="28"><span class="nav"><a href="topic-779.html" class="nav">Prejšnja tema</a> :: <a href="topic-284.html" class="nav">Naslednja tema</a> &nbsp;</span></td>
 	</tr>
 	
 	<tr>
@@ -291,7 +291,7 @@ input.liteoption {
 	</tr>
 	
 	<tr>
-		<td width="150" align="left" valign="top" class="row1"><span class="name"><a name="6866"></a><b>vesoljc</b></span><br /><span class="postdetails">inštruktor<br /><img src="images/ranks/sgd-4.gif" alt="inštruktor" title="inštruktor" border="0" /><br /><img src="images/avatars/c1bdb98c3fb49342927df.jpg" alt="" border="0" /><br /><br />Pridružen: 18. feb 2003 ob 22:16<br />objav: 297<br />Kraj: Brezovica, homeland of the mighty Beawer Blasters</span><br /></td>
+		<td width="150" align="left" valign="top" class="row1"><span class="name"><a name="6866"></a><b>vesoljc</b></span><br /><span class="postdetails">inštruktor<br /><img src="images/ranks/sgd-4.gif" alt="inštruktor" title="inštruktor" border="0" /><br /><img src="images/avatars/c1bdb98c3fb49342927df.jpg" alt="" border="0" /><br /><br />Pridružen: 18. feb 2003 ob 22:16<br />objav: 291<br />Kraj: Brezovica, homeland of the mighty Beawer Blasters</span><br /></td>
 		<td class="row1" width="100%" height="28" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
 			<tr>
 				<td colspan="2" width="100%">
@@ -311,10 +311,10 @@ input.liteoption {
 				<td colspan="2"><hr /></td>
 			</tr>
 			<tr>
-				<td colspan="2"><span class="postbody">tale tema leti predvsem na kake C++ eksperte  <img src="images/smiles/icon_wink.gif" alt="icon_wink.gif" border="0" /> 
+				<td colspan="2"><span class="postbody">tale tema leti predvsem na kake C++ eksperte  <img src="images/smiles/icon_wink.gif" alt=":wink:" border="0" /> 
 
 <br />
-če mamo tuki kake <img src="images/smiles/icon_twisted.gif" alt="icon_twisted.gif" border="0" /> 
+če mamo tuki kake <img src="images/smiles/icon_twisted.gif" alt=":twisted:" border="0" /> 
 
 <br />
 
@@ -345,58 +345,40 @@ tole rabimo:
 	<tr>
 <br />
 	  <td class="code">
-
 <br />
 class Mutexable
-
 <br />
 &#123;
-
 <br />
 public&#58;
-
 <br />
-&nbsp; &nbsp; void&nbsp;  SetMutex&#40;&#41;;
-
+    void   SetMutex&#40;&#41;;
 <br />
-&nbsp; &nbsp;  void&nbsp; FreeMutex&#40;&#41;;
-
+     void  FreeMutex&#40;&#41;;
 <br />
 private&#58;
-
 <br />
-&nbsp; &nbsp;  Mutex&nbsp; &nbsp; mMutex;
-
+     Mutex    mMutex;
 <br />
 &#125;;
-
 <br />
-
 
 <br />
 // tako imenovani scoped locker, ki v konstruktorju pokliče SetMutex nad podanim objektom ter FreeMutex v destruktorju
-
 <br />
 template &lt;class TYPE&gt;
-
 <br />
 class TLock
-
 <br />
 &#123;
-
 <br />
 public&#58;
-
 <br />
-&nbsp; &nbsp; &nbsp; &nbsp;  Lock&#40;const Mutexable&amp;&#41;;&nbsp;  
-
+         Lock&#40;const Mutexable&amp;&#41;;   
 <br />
-&nbsp; &nbsp; &nbsp; &nbsp;  virtual ~Lock&#40;&#41;;
-
+         virtual ~Lock&#40;&#41;;
 <br />
 &#125;;
-
 <br />
 </td>
 <br />
@@ -405,13 +387,10 @@ public&#58;
 </table>
 <br />
 <span class="postbody">
-
 <br />
-
 
 <br />
 tako izgleda interno zaklepanje:
-
 <br />
 </span>
 <br />
@@ -426,67 +405,46 @@ tako izgleda interno zaklepanje:
 	<tr>
 <br />
 	  <td class="code">
-
 <br />
 class account&#58; public Mutexable
-
 <br />
 &#123;
-
 <br />
 public&#58;
-
 <br />
-&nbsp; &nbsp;  void add&#40;int val&#41;;
-
+     void add&#40;int val&#41;;
 <br />
-&nbsp; &nbsp;  void sub&#40;int val&#41;;
-
+     void sub&#40;int val&#41;;
 <br />
 private&#58;
-
 <br />
-&nbsp; &nbsp; &nbsp; int&nbsp; &nbsp;  mVal;
-
+      int     mVal;
 <br />
 &#125;;
-
 <br />
-
 
 <br />
 void account&#58;&#58;add&#40;int val&#41;
-
 <br />
 &#123;
-
 <br />
-&nbsp; &nbsp;  TLock&lt;account&gt;&nbsp; &nbsp; &nbsp; guard&#40;*this&#41;;&nbsp; &nbsp; &nbsp; &nbsp; // zaklenemo, ko pade ven, se avtomatsko odklene
-
+     TLock&lt;account&gt;      guard&#40;*this&#41;;        // zaklenemo, ko pade ven, se avtomatsko odklene
 <br />
-&nbsp; &nbsp;  mVal += val;
-
+     mVal += val;
 <br />
 &#125;
-
 <br />
-
 
 <br />
 void account&#58;&#58;sub&#40;int val&#41;
-
 <br />
 &#123;
-
 <br />
-&nbsp; &nbsp;  TLock&lt;account&gt;&nbsp; &nbsp; &nbsp; guard&#40;*this&#41;;&nbsp; &nbsp; &nbsp; &nbsp; // zaklenemo, ko pade ven, se avtomatsko odklene
-
+     TLock&lt;account&gt;      guard&#40;*this&#41;;        // zaklenemo, ko pade ven, se avtomatsko odklene
 <br />
-&nbsp; &nbsp;  mVal -= val;
-
+     mVal -= val;
 <br />
 &#125;
-
 <br />
 </td>
 <br />
@@ -495,13 +453,10 @@ void account&#58;&#58;sub&#40;int val&#41;
 </table>
 <br />
 <span class="postbody">
-
 <br />
-
 
 <br />
 eksterno:
-
 <br />
 </span>
 <br />
@@ -516,61 +471,42 @@ eksterno:
 	<tr>
 <br />
 	  <td class="code">
-
 <br />
 class account&#58; public Mutexable
-
 <br />
 &#123;
-
 <br />
 public&#58;
-
 <br />
-&nbsp; &nbsp;  void add&#40;int val, const TLock&lt;account&gt;&amp;&#41;;
-
+     void add&#40;int val, const TLock&lt;account&gt;&amp;&#41;;
 <br />
-&nbsp; &nbsp;  void sub&#40;int val, const TLock&lt;account&gt;&amp;&#41;;
-
+     void sub&#40;int val, const TLock&lt;account&gt;&amp;&#41;;
 <br />
 private&#58;
-
 <br />
-&nbsp; &nbsp; &nbsp; int&nbsp; &nbsp;  mVal;
-
+      int     mVal;
 <br />
 &#125;;
-
 <br />
 
-
 <br />
-void account&#58;&#58;add&#40;int val, const TLock&lt;account&gt;&amp;&nbsp;  lguard&#41;
-
+void account&#58;&#58;add&#40;int val, const TLock&lt;account&gt;&amp;   lguard&#41;
 <br />
 &#123;
-
 <br />
-&nbsp; &nbsp;  mVal += val;
-
+     mVal += val;
 <br />
 &#125;
-
 <br />
-
 
 <br />
 void account&#58;&#58;sub&#40;int val, const TLock&lt;account&gt;&amp; lguard&#41;;
-
 <br />
 &#123;
-
 <br />
-&nbsp; &nbsp;  mVal -= val;
-
+     mVal -= val;
 <br />
 &#125;
-
 <br />
 </td>
 <br />
@@ -579,19 +515,14 @@ void account&#58;&#58;sub&#40;int val, const TLock&lt;account&gt;&amp; lguard&#4
 </table>
 <br />
 <span class="postbody">
-
 <br />
 hmm, zakaj parameter, če pa ga ne uporabimo? s tem prisilimo klicatelja, naj on zaklene!!!
-
 <br />
 
-
 <br />
-
 
 <br />
 uporaba internega zaklepanja je preprosta, a v nekaterih primerih potratna:
-
 <br />
 </span>
 <br />
@@ -606,34 +537,24 @@ uporaba internega zaklepanja je preprosta, a v nekaterih primerih potratna:
 	<tr>
 <br />
 	  <td class="code">
-
 <br />
-account&nbsp; &nbsp; ena;
-
+account    ena;
 <br />
 
-
 <br />
-void&nbsp; blak&#40;&#41;
-
+void  blak&#40;&#41;
 <br />
 &#123;
-
 <br />
-&nbsp; &nbsp; &nbsp; ena.add&#40;100&#41;;
-
+      ena&#46;add&#40;100&#41;;
 <br />
-&nbsp; &nbsp; &nbsp; ena.add&#40;100&#41;;
-
+      ena&#46;add&#40;100&#41;;
 <br />
-&nbsp; &nbsp; &nbsp; ena.add&#40;100&#41;;
-
+      ena&#46;add&#40;100&#41;;
 <br />
-&nbsp; &nbsp; &nbsp; ena.add&#40;100&#41;;
-
+      ena&#46;add&#40;100&#41;;
 <br />
 &#125;
-
 <br />
 </td>
 <br />
@@ -642,10 +563,8 @@ void&nbsp; blak&#40;&#41;
 </table>
 <br />
 <span class="postbody">
-
 <br />
 v zgornjem primeru se bo zgodilo toliko zaklepov, kolikorkrat kličemo posamezno funkcijo. tukaj vstopi eksterno zaklepanje:
-
 <br />
 </span>
 <br />
@@ -660,37 +579,26 @@ v zgornjem primeru se bo zgodilo toliko zaklepov, kolikorkrat kličemo posamezno
 	<tr>
 <br />
 	  <td class="code">
-
 <br />
 account ena;
-
 <br />
-
 
 <br />
 void blak&#40;&#41;
-
 <br />
 &#123;
-
 <br />
-&nbsp; &nbsp;  TLock&lt;account&gt;&nbsp; &nbsp;  guard&#40;ena&#41;;
-
+     TLock&lt;account&gt;     guard&#40;ena&#41;;
 <br />
-&nbsp; &nbsp; &nbsp; ena.add&#40;100,guard&#41;;
-
+      ena&#46;add&#40;100,guard&#41;;
 <br />
-&nbsp; &nbsp; &nbsp; ena.add&#40;100,guard&#41;;
-
+      ena&#46;add&#40;100,guard&#41;;
 <br />
-&nbsp; &nbsp; &nbsp; ena.add&#40;100,guard&#41;;
-
+      ena&#46;add&#40;100,guard&#41;;
 <br />
-&nbsp; &nbsp; &nbsp; ena.add&#40;100,guard&#41;;
-
+      ena&#46;add&#40;100,guard&#41;;
 <br />
 &#125;
-
 <br />
 </td>
 <br />
@@ -736,7 +644,7 @@ kaka ideja?
 	</tr>
 	
 	<tr>
-		<td width="150" align="left" valign="top" class="row2"><span class="name"><a name="6867"></a><b>vesoljc</b></span><br /><span class="postdetails">inštruktor<br /><img src="images/ranks/sgd-4.gif" alt="inštruktor" title="inštruktor" border="0" /><br /><img src="images/avatars/c1bdb98c3fb49342927df.jpg" alt="" border="0" /><br /><br />Pridružen: 18. feb 2003 ob 22:16<br />objav: 297<br />Kraj: Brezovica, homeland of the mighty Beawer Blasters</span><br /></td>
+		<td width="150" align="left" valign="top" class="row2"><span class="name"><a name="6867"></a><b>vesoljc</b></span><br /><span class="postdetails">inštruktor<br /><img src="images/ranks/sgd-4.gif" alt="inštruktor" title="inštruktor" border="0" /><br /><img src="images/avatars/c1bdb98c3fb49342927df.jpg" alt="" border="0" /><br /><br />Pridružen: 18. feb 2003 ob 22:16<br />objav: 291<br />Kraj: Brezovica, homeland of the mighty Beawer Blasters</span><br /></td>
 		<td class="row2" width="100%" height="28" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
 			<tr>
 				<td colspan="2" width="100%">
@@ -756,7 +664,7 @@ kaka ideja?
 				<td colspan="2"><hr /></td>
 			</tr>
 			<tr>
-				<td colspan="2"><span class="postbody">še to, objekti lahko podiprajo oba načina zaklepanja, interno ter eksterno... ampak to pomeni dvojne funkcije -&gt; več  tipkanja...  <img src="images/smiles/icon_confused.gif" alt="icon_confused.gif" border="0" /><br />_________________<br /><span style="font-style: italic">Abnormal behaviour of abnormal brain makes me normal...</span></span><span class="gensmall"></span></td>
+				<td colspan="2"><span class="postbody">še to, objekti lahko podiprajo oba načina zaklepanja, interno ter eksterno... ampak to pomeni dvojne funkcije -&gt; več  tipkanja...  <img src="images/smiles/icon_confused.gif" alt=":?" border="0" /><br />_________________<br /><span style="font-style: italic">Abnormal behaviour of abnormal brain makes me normal...</span></span><span class="gensmall"></span></td>
 			</tr>
 		</table></td>
 	</tr>
@@ -773,7 +681,7 @@ kaka ideja?
 	</tr>
 	
 	<tr>
-		<td width="150" align="left" valign="top" class="row1"><span class="name"><a name="6868"></a><b>DarkWIng</b></span><br /><span class="postdetails">poizvedovalec<br /><img src="images/ranks/sgd-1.gif" alt="poizvedovalec" title="poizvedovalec" border="0" /><br /><img src="images/avatars/c14d6626402243c0e76d2.jpg" alt="" border="0" /><br /><br />Pridružen: 19. jan 2004 ob 20:18<br />objav: 41<br />Kraj: Naklo</span><br /></td>
+		<td width="150" align="left" valign="top" class="row1"><span class="name"><a name="6868"></a><b>DarkWIng</b></span><br /><span class="postdetails">poizvedovalec<br /><img src="images/ranks/sgd-1.gif" alt="poizvedovalec" title="poizvedovalec" border="0" /><br /><img src="images/avatars/c14d6626402243c0e76d2.jpg" alt="" border="0" /><br /><br />Pridružen: 19. jan 2004 ob 20:18<br />objav: 42<br />Kraj: Naklo</span><br /></td>
 		<td class="row1" width="100%" height="28" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
 			<tr>
 				<td colspan="2" width="100%">
@@ -810,7 +718,7 @@ kaka ideja?
 	</tr>
 	
 	<tr>
-		<td width="150" align="left" valign="top" class="row2"><span class="name"><a name="9006"></a><b>Mitja</b></span><br /><span class="postdetails">novinec<br /><img src="images/ranks/sgd-0.gif" alt="novinec" title="novinec" border="0" /><br /><img src="images/avatars/a4086c8c42d34ff76440c.gif" alt="" border="0" /><br /><br />Pridružen: 22. sep 2003 ob 08:28<br />objav: 19<br /></span><br /></td>
+		<td width="150" align="left" valign="top" class="row2"><span class="name"><a name="9006"></a><b>Mitja</b></span><br /><span class="postdetails">novinec<br /><img src="images/ranks/sgd-0.gif" alt="novinec" title="novinec" border="0" /><br /><img src="images/avatars/a4086c8c42d34ff76440c.gif" alt="" border="0" /><br /><br />Pridružen: 22. sep 2003 ob 08:28<br />objav: 20<br /></span><br /></td>
 		<td class="row2" width="100%" height="28" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
 			<tr>
 				<td colspan="2" width="100%">
@@ -830,10 +738,10 @@ kaka ideja?
 				<td colspan="2"><hr /></td>
 			</tr>
 			<tr>
-				<td colspan="2"><span class="postbody"><a  target="_blank">http://www.informit.com/articles/article.asp?p=31529&amp;seqNum=13</a>
+				<td colspan="2"><span class="postbody"><a class="postlink" >http://www.informit.com/articles/articl ... &amp;seqNum=13</a>
 
 <br />
-<a  target="_blank">http://www.informit.com/content/images/0201704315/sourcecode/loki.zip</a></span><span class="gensmall"></span></td>
+<a class="postlink" >http://www.informit.com/content/images/ ... e/loki.zip</a></span><span class="gensmall"></span></td>
 			</tr>
 		</table></td>
 	</tr>
@@ -841,7 +749,7 @@ kaka ideja?
 		<td class="row2" width="150" align="left" valign="middle"><span class="nav"><a href="#top" class="nav">Nazaj na vrh</a></span></td>
 		<td class="row2" width="100%" height="28" valign="bottom" nowrap="nowrap"><table cellspacing="0" cellpadding="0" border="0" height="18" width="18">
 			<tr>
-				<td valign="middle" nowrap="nowrap"><a href="profile-104.html"><img src="templates/SGD2/images/lang_slovenian/icon_profile.gif" alt="Poglej uporabnikov profil" title="Poglej uporabnikov profil" border="0" /></a> <a  target="_userwww"><img src="templates/SGD2/images/lang_slovenian/icon_www.gif" alt="Obišči avtorjevo spletno stran" title="Obišči avtorjevo spletno stran" border="0" /></a></td>
+				<td valign="middle" nowrap="nowrap"><a href="profile-104.html"><img src="templates/SGD2/images/lang_slovenian/icon_profile.gif" alt="Poglej uporabnikov profil" title="Poglej uporabnikov profil" border="0" /></a> </td>
 			</tr>
 		</table></td>
 	</tr>
@@ -850,7 +758,7 @@ kaka ideja?
 	</tr>
 	
 	<tr>
-		<td width="150" align="left" valign="top" class="row1"><span class="name"><a name="9007"></a><b>vesoljc</b></span><br /><span class="postdetails">inštruktor<br /><img src="images/ranks/sgd-4.gif" alt="inštruktor" title="inštruktor" border="0" /><br /><img src="images/avatars/c1bdb98c3fb49342927df.jpg" alt="" border="0" /><br /><br />Pridružen: 18. feb 2003 ob 22:16<br />objav: 297<br />Kraj: Brezovica, homeland of the mighty Beawer Blasters</span><br /></td>
+		<td width="150" align="left" valign="top" class="row1"><span class="name"><a name="9007"></a><b>vesoljc</b></span><br /><span class="postdetails">inštruktor<br /><img src="images/ranks/sgd-4.gif" alt="inštruktor" title="inštruktor" border="0" /><br /><img src="images/avatars/c1bdb98c3fb49342927df.jpg" alt="" border="0" /><br /><br />Pridružen: 18. feb 2003 ob 22:16<br />objav: 291<br />Kraj: Brezovica, homeland of the mighty Beawer Blasters</span><br /></td>
 		<td class="row1" width="100%" height="28" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
 			<tr>
 				<td colspan="2" width="100%">
@@ -870,7 +778,7 @@ kaka ideja?
 				<td colspan="2"><hr /></td>
 			</tr>
 			<tr>
-				<td colspan="2"><span class="postbody">been there, done that  <img src="images/smiles/icon_wink.gif" alt="icon_wink.gif" border="0" /> 
+				<td colspan="2"><span class="postbody">been there, done that  <img src="images/smiles/icon_wink.gif" alt=":wink:" border="0" /> 
 
 <br />
 
@@ -879,7 +787,7 @@ kaka ideja?
 drgac pa ja, modern c++ design je lustna zadeva...
 
 <br />
-polični dizajn za template je hudo dobr  <img src="images/smiles/icon_biggrin.gif" alt="icon_biggrin.gif" border="0" /><br />_________________<br /><span style="font-style: italic">Abnormal behaviour of abnormal brain makes me normal...</span></span><span class="gensmall"></span></td>
+polični dizajn za template je hudo dobr  <img src="images/smiles/icon_biggrin.gif" alt=":D" border="0" /><br />_________________<br /><span style="font-style: italic">Abnormal behaviour of abnormal brain makes me normal...</span></span><span class="gensmall"></span></td>
 			</tr>
 		</table></td>
 	</tr>
@@ -904,7 +812,7 @@ polični dizajn za template je hudo dobr  <img src="images/smiles/icon_biggrin.g
   <tr>
 	<td align="left" valign="middle" nowrap="nowrap">&nbsp;</td>
 	<td align="left" valign="middle" width="100%"><span class="nav">&nbsp;&nbsp;&nbsp;<a href="index.html" class="nav">SloGameDev.net seznam forumov</a>
-	  -> <a href="forum-20.html" class="nav">Softverski Inženiring</a></span></td>
+	  -> <a href="forum-52.html" class="nav">Izdelovanje iger</a></span></td>
 	<td align="right" valign="top" nowrap="nowrap"><span class="gensmall">Časovni pas (GMT +2:00 uri) Slovenija, poletni čas</span><br /><span class="nav"></span>
 	  </td>
   </tr>
@@ -920,7 +828,7 @@ polični dizajn za template je hudo dobr  <img src="images/smiles/icon_biggrin.g
   </tr>
 </table>
 
-<div align="center"><span class="copyright"><br />Arhiv stanja na dan 13. 2. 2006 &mdash; samo za branje.<br />
+<div align="center"><span class="copyright"><br />Arhiv &mdash; samo za branje.<br />
 <!--
 	We request you retain the full copyright notice below including the link to www.phpbb.com.
 	This not only gives respect to the large amount of time given freely by the developers

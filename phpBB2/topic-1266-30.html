@@ -1,0 +1,2924 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html dir="ltr">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta http-equiv="Content-Style-Type" content="text/css">
+<style type="text/css">
+<!--
+.style1 {color: #FFFFFF}
+-->
+</style>
+
+
+
+<title>SloGameDev.net :: Začetek v C++</title>
+<!-- link rel="stylesheet" href="templates/SGD/SGD2.css" type="text/css" -->
+<style type="text/css">
+<!--
+/*
+  The SGD Theme for phpBB version 2+
+  Created by Rhuantavan
+  http://www.rhuantavan.org
+
+  NOTE: These CSS definitions are stored within the main page body so that you can use the phpBB2
+  theme administration centre. When you have finalised your style you could cut the final CSS code
+  and place it in an external file, deleting this section to save bandwidth.
+*/
+
+/* General page style. The scroll bar colours only visible in IE5.5+ */
+body {
+	background-color: #DDDDDD;
+	scrollbar-face-color: #000000;
+	scrollbar-highlight-color: #000000;
+	scrollbar-3dlight-color: #EEEEEE;
+	scrollbar-darkshadow-color: #EEEEEE;
+	scrollbar-shadow-color: #000000;
+	scrollbar-arrow-color: #55FF00;
+	scrollbar-track-color: #EEEEEE;
+}
+
+/* General font families for common tags */
+font,th,td,p { font-family: Verdana, Arial, Helvetica, sans-serif }
+a:link,a:active,a:visited { color : #338800; }
+a:hover		{ text-decoration: underline; color : #338800; }
+hr	{ height: 0px; border: solid #E9E9E9 0px; border-top-width: 1px;}
+
+/* This is the border line & background colour round the entire page */
+.bodyline	{ background-color: #EEEEEE; border-left: 1px #000000 solid; border-right: 1px #000000 solid; }
+
+/* This is the outline round the main forum tables */
+.forumline	{ background-color: #EEEEEE; border: 0px #DDDDDD solid; }
+
+/* Main table cell colours and backgrounds */
+td.row1	{ background-color: #F8F8F8; }
+td.row2	{ background-color: #F0F0F0; }
+td.row3	{ background-color: #E9E9E9; }
+
+/*
+  This is for the table cell above the Topics, Post & Last posts on the index.php page
+  By default this is the fading out gradiated silver background.
+  However, you could replace this with a bitmap specific for each forum
+*/
+td.rowpic {
+		background-color: #EEEEEE;
+		background-image: url(templates/SGD/images/cellpic3.gif);
+		background-repeat: repeat-y;
+}
+
+/* Header cells - the blue and silver gradient backgrounds */
+th	{
+	color: #66CC33; font-size: 11px; font-weight : bold;
+	background-color: #338800; height: 25px;
+	background-image: url(templates/SGD/images/cellpic2.gif);
+}
+
+td.cat,td.catHead,td.catSides,td.catLeft,td.catRight,td.catBottom {
+			background-image: url(templates/SGD/images/cellpic1.gif);
+			background-color:#E9E9E9; border: #999999; border-style: solid; height: 28px;
+}
+
+/*
+  Setting additional nice inner borders for the main table cells.
+  The names indicate which sides the border will be on.
+  Don't worry if you don't understand this, just ignore it :-)
+*/
+td.cat,td.catHead,td.catBottom {
+	height: 29px;
+	border-width: 0px 0px 0px 0px;
+}
+th.thHead,th.thSides,th.thTop,th.thLeft,th.thRight,th.thBottom,th.thCornerL,th.thCornerR {
+	font-weight: bold; border: #EEEEEE; border-style: solid; height: 28px;
+}
+td.row3Right,td.spaceRow {
+	background-color: #E9E9E9; border: #999999; border-style: solid;
+}
+
+th.thHead,td.catHead { font-size: 12px; border-width: 0px 0px 0px 0px; }
+th.thSides,td.catSides,td.spaceRow	 { border-width: 0px 0px 0px 0px; }
+th.thRight,td.catRight,td.row3Right	 { border-width: 0px 0px 0px 0px; }
+th.thLeft,td.catLeft	  { border-width: 0px 0px 0px 0px; }
+th.thBottom,td.catBottom  { border-width: 0px 0px 0px 1px; }
+th.thTop	 { border-width: 0px 0px 0px 0px; }
+th.thCornerL { border-width: 0px 0px 0px 1px; }
+th.thCornerR { border-width: 0px 0px 0px 0px; }
+
+/* The largest text used in the index page title and toptic title etc. */
+.maintitle	{
+	font-weight: bold; font-size: 18px; font-family: "Trebuchet MS",Verdana, Arial, Helvetica, sans-serif;
+	text-decoration: none; line-height : 120%; color : #666666;
+}
+
+/* General text */
+.gen { font-size : 12px; }
+.genmed { font-size : 11px; }
+.gensmall { font-size : 10px; }
+.gen,.genmed,.gensmall { color : #666666; }
+a.gen,a.genmed,a.gensmall { color: #338800; text-decoration: none; }
+a.gen:hover,a.genmed:hover,a.gensmall:hover	{ color: #338800; text-decoration: underline; }
+
+/* The register, login, search etc links at the top of the page */
+.mainmenu		{ font-size : 11px; color : #666666 }
+a.mainmenu		{ text-decoration: none; color : #338800;  }
+a.mainmenu:hover{ text-decoration: underline; color : #338800; }
+
+/* SGD main menu */
+.sgdmainmenu			{ font-size : 10px; color : #99FF33 }
+a.sgdmainmenu:link		{ text-decoration: none; color : #99FF33;  }
+a.sgdmainmenu:active	{ text-decoration: none; color : #99FF33;  }
+a.sgdmainmenu:visited	{ text-decoration: none; color : #99FF33;  }
+a.sgdmainmenu:hover		{ text-decoration: underline; color : #99FF33; }
+
+/* Forum category titles */
+.cattitle		{ font-weight: bold; font-size: 12px ; letter-spacing: 1px; color : #338800}
+a.cattitle		{ text-decoration: none; color : #338800; }
+a.cattitle:hover{ text-decoration: underline; }
+
+/* Forum title: Text and link to the forums used in: index.php */
+.forumlink		{ font-weight: bold; font-size: 12px; color : #338800; }
+a.forumlink 	{ text-decoration: none; color : #338800; }
+a.forumlink:hover{ text-decoration: underline; color : #338800; }
+
+/* Used for the navigation text, (Page 1,2,3 etc) and the navigation bar when in a forum */
+.nav			{ font-weight: bold; font-size: 11px; color : #666666;}
+a.nav			{ text-decoration: none; color : #338800; }
+a.nav:hover		{ text-decoration: underline; }
+
+/* titles for the topics: could specify viewed link colour too */
+.topictitle,h1,h2	{ font-weight: bold; font-size: 11px; color : #666666; }
+a.topictitle:link   { text-decoration: none; color : #338800; }
+a.topictitle:visited { text-decoration: none; color : #338800; }
+a.topictitle:hover	{ text-decoration: underline; color : #338800; }
+
+/* Name of poster in viewmsg.php and viewtopic.php and other places */
+.name			{ font-size : 11px; color : #000000;}
+
+/* Location, number of posts, post date etc */
+.postdetails		{ font-size : 10px; color : #666666; }
+
+/* The content of the posts (body of text) */
+.postbody { font-size : 12px; line-height: 18px; color : #000000;}
+a.postlink:link	{ text-decoration: none; color : #338800 }
+a.postlink:visited { text-decoration: none; color : #338800; }
+a.postlink:hover { text-decoration: underline; color : #338800}
+
+/* Quote & Code blocks */
+.code {
+	font-family: Courier, 'Courier New', sans-serif; font-size: 11px; color: #006600;
+	background-color: #D6D6D6; border: #E9E9E9; border-style: solid;
+	border-left-width: 1px; border-top-width: 1px; border-right-width: 1px; border-bottom-width: 1px
+}
+
+.quote {
+	font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 11px; color: #444444; line-height: 125%;
+	background-color: #BBBBBB; border: #E9E9E9; border-style: solid;
+	border-left-width: 1px; border-top-width: 1px; border-right-width: 1px; border-bottom-width: 1px
+}
+
+/* Copyright and bottom info */
+.copyright		{ font-size: 10px; font-family: Verdana, Arial, Helvetica, sans-serif; color: #444444; letter-spacing: -1px;}
+a.copyright		{ color: #444444; text-decoration: none;}
+a.copyright:hover { color: #666666; text-decoration: underline;}
+
+/* Form elements */
+input,textarea, select {
+	color : #666666;
+	font: normal 11px Verdana, Arial, Helvetica, sans-serif;
+	border-color : #666666;
+}
+
+/* The text input fields background colour */
+input.post, textarea.post, select {
+	background-color : #EEEEEE;
+}
+
+input { text-indent : 2px; }
+
+/* The buttons used for bbCode styling in message post */
+input.button {
+	background-color : #F8F8F8;
+	color : #666666;
+	font-size: 11px; font-family: Verdana, Arial, Helvetica, sans-serif;
+}
+
+/* The main submit button option */
+input.mainoption {
+	background-color : #BBBBBB;
+	font-weight : bold;
+}
+
+/* None-bold submit button */
+input.liteoption {
+	background-color : #BBBBBB;
+	font-weight : normal;
+}
+
+/* This is the line in the posting page which shows the rollover
+  help line. This is actually a text box, but if set to be the same
+  colour as the background no one will know ;)
+*/
+.helpline { background-color: #F0F0F0; border-style: none; }
+
+/* Import the fancy styles for IE only (NS4.x doesn't use the @import function) */
+@import url("templates/SGD/formIE.css");
+-->
+</style>
+</head>
+<body bgcolor="#DDDDDD" text="#666666" link="#338800" vlink="#338800" topmargin="0" />
+<a name="top"></a>
+<table width="100%" cellspacing="0" cellpadding="0" border="0" align="center" nowrap>
+	<tr>
+		<td class="bodyline">
+			<table width="100%" border="0" cellpadding="0" cellspacing="0">
+				<tr>
+					<td bgcolor="#FFFFFF">
+						<img src="images/spacer.gif" width="760" height="20" alt=""></td>
+				</tr>
+			</table>
+			<table width="100%" border="0" cellpadding="0" cellspacing="0">
+				<tr>
+					<td bgcolor="#000000">
+						<a href="../index.html"><img src="images/home.gif" width="10" height="10" alt="" border="0"></a><img src="images/spacer.gif" width="5" height="5" alt=""><a href="../index.html" class="sgdmainmenu">Nazaj na domačo stran</a> <img src="images/defaulticon_green.gif" alt="" width="7" height="7" border="0"> <a href="../clanki.html" class="sgdmainmenu">Clanki</a> <img src="images/defaulticon_green.gif" alt="" width="7" height="7" border="0"> <a href="../koda.html" class="sgdmainmenu">Koda</a> <img src="images/defaulticon_green.gif" alt="" width="7" height="7" border="0"> <a href="../clani.html" class="sgdmainmenu">Clani</a> <img src="images/defaulticon_green.gif" alt="" width="7" height="7" border="0"> <a href="../skupine.html" class="sgdmainmenu">Skupine</a> <img src="images/defaulticon_green.gif" alt="" width="7" height="7" border="0"> <a href="../projekti.html" class="sgdmainmenu">Projekti</a> <img src="images/defaulticon_green.gif" alt="" width="7" height="7" border="0"> <a href="../povezave.html" class="sgdmainmenu">Povezave</a></td>
+				</tr>
+			</table>
+			<table width="100%" border="0" cellpadding="0" cellspacing="0">
+				<tr>
+					<td colspan="3" bgcolor="#000000">
+						<img src="images/spacer.gif" width="760" height="10" alt=""></td>
+				</tr>
+				<tr>
+					<td>
+						<a href="index.html"><img src="images/logo.gif" width="351" height="62" alt="" border="0"></a></td>
+					<td>
+						<img src="images/forum_03.gif" width="408" height="62" alt=""></td>
+					<td width="100%" bgcolor="#000000">
+						<img src="images/spacer.gif" width="1" height="1" alt=""></td>
+				</tr>
+				<tr>
+					<td colspan="3" bgcolor="#000000" align="center">
+						<a href="memberlist.html" class="sgdmainmenu"><img src="images/defaulticon_green.gif" alt="" width="7" height="7" border="0">&nbsp;Seznam članov</a>
+						<a href="index.html" class="sgdmainmenu"><img src="images/defaulticon_green.gif" alt="" width="7" height="7" border="0">&nbsp;Seznam</a></td>
+				</tr>
+				<tr>
+					<td colspan="3" bgcolor="#000000">
+						<img src="images/spacer.gif" width="760" height="5" alt=""></td>
+				</tr>
+			</table>
+
+<table width="100%" cellspacing="2" cellpadding="2" border="0">
+  <tr>
+	<td align="left" valign="bottom" colspan="2"><a class="maintitle" href="topic-1266.html">Začetek v C++</a><br />
+	  <span class="gensmall"><b>Pojdi na stran  <a href="topic-1266.html">Prejšnji</a>&nbsp;&nbsp;<a href="topic-1266.html">1</a>, <b>2</b>, <a href="topic-1266-60.html">3</a>&nbsp;&nbsp;<a href="topic-1266-60.html">Naslednji</a></b><br />
+	  &nbsp; </span></td>
+  </tr>
+</table>
+
+<table width="100%" cellspacing="2" cellpadding="2" border="0">
+  <tr>
+	<td align="left" valign="bottom" nowrap="nowrap">&nbsp;</td>
+	<td align="left" valign="middle" width="100%"><span class="nav">&nbsp;&nbsp;&nbsp;<a href="index.html" class="nav">SloGameDev.net seznam forumov</a>
+	  -> <a href="forum-49.html" class="nav">Začetniki</a></span></td>
+  </tr>
+</table>
+
+<table class="forumline" width="100%" cellspacing="1" cellpadding="3" border="0">
+	<tr align="right">
+		<td class="catHead" colspan="2" height="28"><span class="nav"><a href="topic-1390.html" class="nav">Prejšnja tema</a> :: <a href="topic-1413.html" class="nav">Naslednja tema</a> &nbsp;</span></td>
+	</tr>
+	
+	<tr>
+		<th class="thLeft" width="150" height="26" nowrap="nowrap">avtor</th>
+		<th class="thRight" nowrap="nowrap">Sporočilo</th>
+	</tr>
+	
+	<tr>
+		<td width="150" align="left" valign="top" class="row1"><span class="name"><a name="15133"></a><b>ALTF4</b></span><br /><span class="postdetails">guru<br /><img src="images/ranks/sgd-8.gif" alt="guru" title="guru" border="0" /><br /><img src="images/avatars/563d301443ad69c6388ac.gif" alt="" border="0" /><br /><br />Pridružen: 10. jul 2003 ob 15:23<br />objav: 1175<br />Kraj: Slovenska Bistrica</span><br /></td>
+		<td class="row1" width="100%" height="28" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+			<tr>
+				<td colspan="2" width="100%">
+					<table width="100%" cellpadding="0" cellspacing="0" border="0">
+						<tr>
+							<td valign="middle" align="left">
+								<a href="topic-1266-30.html#15133"><img src="templates/SGD2/images/icon_minipost.gif" width="12" height="9" alt="objava" title="objava" border="0" /></a>
+								<span class="postdetails">Objavljeno: sre avg 02, 2006 5:57 pm<span class="gen">&nbsp;</span>&nbsp; &nbsp;Pošlji temo: </span>
+							</td>
+							<td valign="middle" align="right" nowrap="nowrap">
+							</td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+			<tr>
+				<td colspan="2"><hr /></td>
+			</tr>
+			<tr>
+				<td colspan="2"><span class="postbody">vedno poskušaj narediti "trotl ziher" program. še en bug, če vneseš predolg niz se izpisovanje na zaslon sploh ne neha.<br />_________________<br />LP!</span><span class="gensmall"></span></td>
+			</tr>
+		</table></td>
+	</tr>
+	<tr>
+		<td class="row1" width="150" align="left" valign="middle"><span class="nav"><a href="#top" class="nav">Nazaj na vrh</a></span></td>
+		<td class="row1" width="100%" height="28" valign="bottom" nowrap="nowrap"><table cellspacing="0" cellpadding="0" border="0" height="18" width="18">
+			<tr>
+				<td valign="middle" nowrap="nowrap"><a href="profile-80.html"><img src="templates/SGD2/images/lang_slovenian/icon_profile.gif" alt="Poglej uporabnikov profil" title="Poglej uporabnikov profil" border="0" /></a> </td>
+			</tr>
+		</table></td>
+	</tr>
+	<tr>
+		<td class="spaceRow" colspan="2" height="1"><img src="templates/SGD/images/spacer.gif" alt="" width="1" height="1" /></td>
+	</tr>
+	
+	<tr>
+		<td width="150" align="left" valign="top" class="row2"><span class="name"><a name="15140"></a><b>Iason</b></span><br /><span class="postdetails">inštruktor<br /><img src="images/ranks/sgd-4.gif" alt="inštruktor" title="inštruktor" border="0" /><br /><br /><br />Pridružen: 21. sep 2004 ob 22:57<br />objav: 329<br />Kraj: Kranj</span><br /></td>
+		<td class="row2" width="100%" height="28" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+			<tr>
+				<td colspan="2" width="100%">
+					<table width="100%" cellpadding="0" cellspacing="0" border="0">
+						<tr>
+							<td valign="middle" align="left">
+								<a href="topic-1266-30.html#15140"><img src="templates/SGD2/images/icon_minipost.gif" width="12" height="9" alt="objava" title="objava" border="0" /></a>
+								<span class="postdetails">Objavljeno: sre avg 02, 2006 11:00 pm<span class="gen">&nbsp;</span>&nbsp; &nbsp;Pošlji temo: </span>
+							</td>
+							<td valign="middle" align="right" nowrap="nowrap">
+							</td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+			<tr>
+				<td colspan="2"><hr /></td>
+			</tr>
+			<tr>
+				<td colspan="2"><span class="postbody">Namesto tebele charov raje uporabljaj stringe <img src="images/smiles/icon_smile.gif" alt=":)" border="0" />
+
+<br />
+
+
+<br />
+</span>
+<br />
+<table width="90%" cellspacing="1" cellpadding="3" border="0" align="center">
+<br />
+<tr> 
+<br />
+	  <td><span class="genmed"><b>Koda:</b></span></td>
+<br />
+	</tr>
+<br />
+	<tr>
+<br />
+	  <td class="code">
+<br />
+#include &lt;string&gt;
+<br />
+using std&#58;&#58;string;
+<br />
+string s;
+<br />
+&#46;&#46;&#46;
+<br />
+cin &gt;&gt; s;
+<br />
+cout &lt;&lt; s;
+<br />
+</td>
+<br />
+	</tr>
+<br />
+</table>
+<br />
+<span class="postbody">
+
+<br />
+Na tej strani imaš še ostalo o stringu:
+
+<br />
+<a  target="_blank" class="postlink">http&#58;//www&#46;cppreference&#46;com/cppstring/index&#46;html</a></span><span class="gensmall"></span></td>
+			</tr>
+		</table></td>
+	</tr>
+	<tr>
+		<td class="row2" width="150" align="left" valign="middle"><span class="nav"><a href="#top" class="nav">Nazaj na vrh</a></span></td>
+		<td class="row2" width="100%" height="28" valign="bottom" nowrap="nowrap"><table cellspacing="0" cellpadding="0" border="0" height="18" width="18">
+			<tr>
+				<td valign="middle" nowrap="nowrap"><a href="profile-202.html"><img src="templates/SGD2/images/lang_slovenian/icon_profile.gif" alt="Poglej uporabnikov profil" title="Poglej uporabnikov profil" border="0" /></a> </td>
+			</tr>
+		</table></td>
+	</tr>
+	<tr>
+		<td class="spaceRow" colspan="2" height="1"><img src="templates/SGD/images/spacer.gif" alt="" width="1" height="1" /></td>
+	</tr>
+	
+	<tr>
+		<td width="150" align="left" valign="top" class="row1"><span class="name"><a name="15163"></a><b>blan</b></span><br /><span class="postdetails">poizvedovalec<br /><img src="images/ranks/sgd-1.gif" alt="poizvedovalec" title="poizvedovalec" border="0" /><br /><br /><br />Pridružen: 18. apr 2006 ob 21:23<br />objav: 69<br /></span><br /></td>
+		<td class="row1" width="100%" height="28" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+			<tr>
+				<td colspan="2" width="100%">
+					<table width="100%" cellpadding="0" cellspacing="0" border="0">
+						<tr>
+							<td valign="middle" align="left">
+								<a href="topic-1266-30.html#15163"><img src="templates/SGD2/images/icon_minipost.gif" width="12" height="9" alt="objava" title="objava" border="0" /></a>
+								<span class="postdetails">Objavljeno: sob avg 05, 2006 10:24 am<span class="gen">&nbsp;</span>&nbsp; &nbsp;Pošlji temo: </span>
+							</td>
+							<td valign="middle" align="right" nowrap="nowrap">
+							</td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+			<tr>
+				<td colspan="2"><hr /></td>
+			</tr>
+			<tr>
+				<td colspan="2"><span class="postbody">Zanima me s katerimi funkcijami ali kako bi se pisalo  v konzolo, piše se tekst. Imel sem okoli 30x30 znakov veliko površino, izpisovanje je bilo črka za črko, nato pa se je pobrisalo z system("cls"), ni važno kašna je bila pavza med pisanjem (in še nekaj kode) na zaslon, "slika" je vedno utripala. Računalnik pa ni čakal na pritiske tipk. Kako bi se postavilo tako sliko da bi bilo videti tekoče gibanje.</span><span class="gensmall"></span></td>
+			</tr>
+		</table></td>
+	</tr>
+	<tr>
+		<td class="row1" width="150" align="left" valign="middle"><span class="nav"><a href="#top" class="nav">Nazaj na vrh</a></span></td>
+		<td class="row1" width="100%" height="28" valign="bottom" nowrap="nowrap"><table cellspacing="0" cellpadding="0" border="0" height="18" width="18">
+			<tr>
+				<td valign="middle" nowrap="nowrap"><a href="profile-277.html"><img src="templates/SGD2/images/lang_slovenian/icon_profile.gif" alt="Poglej uporabnikov profil" title="Poglej uporabnikov profil" border="0" /></a> </td>
+			</tr>
+		</table></td>
+	</tr>
+	<tr>
+		<td class="spaceRow" colspan="2" height="1"><img src="templates/SGD/images/spacer.gif" alt="" width="1" height="1" /></td>
+	</tr>
+	
+	<tr>
+		<td width="150" align="left" valign="top" class="row2"><span class="name"><a name="15164"></a><b>Alfa</b></span><br /><span class="postdetails">mojster<br /><img src="images/ranks/sgd-5.gif" alt="mojster" title="mojster" border="0" /><br /><img src="images/avatars/c2f90a1540823086cd155.jpg" alt="" border="0" /><br /><br />Pridružen: 04. mar 2004 ob 18:14<br />objav: 471<br />Kraj: SG</span><br /></td>
+		<td class="row2" width="100%" height="28" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+			<tr>
+				<td colspan="2" width="100%">
+					<table width="100%" cellpadding="0" cellspacing="0" border="0">
+						<tr>
+							<td valign="middle" align="left">
+								<a href="topic-1266-30.html#15164"><img src="templates/SGD2/images/icon_minipost.gif" width="12" height="9" alt="objava" title="objava" border="0" /></a>
+								<span class="postdetails">Objavljeno: sob avg 05, 2006 11:26 am<span class="gen">&nbsp;</span>&nbsp; &nbsp;Pošlji temo: </span>
+							</td>
+							<td valign="middle" align="right" nowrap="nowrap">
+							</td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+			<tr>
+				<td colspan="2"><hr /></td>
+			</tr>
+			<tr>
+				<td colspan="2"><span class="postbody">Hitrost  <img src="images/smiles/icon_razz.gif" alt=":P" border="0" />  <img src="images/smiles/icon_twisted.gif" alt=":twisted:" border="0" /> 
+
+<br />
+Po resnici povedano, če hočeš da slika ne utripa, moraš uporabiti naprednejše funkcije. Dvomim da je cls zasnovan da pobriše zaslon 60 na sekundo.  <img src="images/smiles/icon_twisted.gif" alt=":twisted:" border="0" /> Lahko pa poskusiš drugače. Saj ti ni treba pobrisati zaslona. Samo čez napiši, namesto vrivanja nastaviš prepisovanje, tam kjer hočeš prazno pa daš presledek. Stvar bi morala delovati. Lahko pa tudi poskusiš nastepati eno stran presledkov za pobris. Mogoče bo hitrejše.  <img src="images/smiles/icon_rolleyes.gif" alt=":roll:" border="0" /><br />_________________<br />&quot;Pustimo malenkosti, pravi cesar, PeCe pa nič (več).&quot;
+
+<br />
+Goran Bervar: C++ na kolenih</span><span class="gensmall"></span></td>
+			</tr>
+		</table></td>
+	</tr>
+	<tr>
+		<td class="row2" width="150" align="left" valign="middle"><span class="nav"><a href="#top" class="nav">Nazaj na vrh</a></span></td>
+		<td class="row2" width="100%" height="28" valign="bottom" nowrap="nowrap"><table cellspacing="0" cellpadding="0" border="0" height="18" width="18">
+			<tr>
+				<td valign="middle" nowrap="nowrap"><a href="profile-162.html"><img src="templates/SGD2/images/lang_slovenian/icon_profile.gif" alt="Poglej uporabnikov profil" title="Poglej uporabnikov profil" border="0" /></a> <a  target="_userwww"><img src="templates/SGD2/images/lang_slovenian/icon_www.gif" alt="Obišči avtorjevo spletno stran" title="Obišči avtorjevo spletno stran" border="0" /></a></td>
+			</tr>
+		</table></td>
+	</tr>
+	<tr>
+		<td class="spaceRow" colspan="2" height="1"><img src="templates/SGD/images/spacer.gif" alt="" width="1" height="1" /></td>
+	</tr>
+	
+	<tr>
+		<td width="150" align="left" valign="top" class="row1"><span class="name"><a name="15168"></a><b>Shinobi</b></span><br /><span class="postdetails">mojster<br /><img src="images/ranks/sgd-5.gif" alt="mojster" title="mojster" border="0" /><br /><img src="images/avatars/d5fd66913fcf278e24a0c.gif" alt="" border="0" /><br /><br />Pridružen: 15. maj 2003 ob 18:04<br />objav: 491<br />Kraj: Maribor</span><br /></td>
+		<td class="row1" width="100%" height="28" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+			<tr>
+				<td colspan="2" width="100%">
+					<table width="100%" cellpadding="0" cellspacing="0" border="0">
+						<tr>
+							<td valign="middle" align="left">
+								<a href="topic-1266-30.html#15168"><img src="templates/SGD2/images/icon_minipost.gif" width="12" height="9" alt="objava" title="objava" border="0" /></a>
+								<span class="postdetails">Objavljeno: sob avg 05, 2006 5:03 pm<span class="gen">&nbsp;</span>&nbsp; &nbsp;Pošlji temo: </span>
+							</td>
+							<td valign="middle" align="right" nowrap="nowrap">
+							</td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+			<tr>
+				<td colspan="2"><hr /></td>
+			</tr>
+			<tr>
+				<td colspan="2"><span class="postbody">Bodi g33k pa napisi tic tac toe unix style program. Ko se odlocis kam bos pokno kriz, se pac zirse spodaj nova runda in te ponovno vprasa. Grafiko na tak nacin itak lahko pozabis. Pol bos presaltal na OpenGL ali DirectX.
+
+<br />
+
+
+<br />
+Tu je spet ena smesna stvar glede OpenGL. Vsak bo rekel da je bolj portable ceprav ga nebo nikoli realno sprobal na linuxu. Ce ne druga ga bo zajebaval zvok ali joysticki. Folk ogromno naklada, ce je dan dolg.
+
+<br />
+
+
+<br />
+Keep it simple. Ko vprasa kam bos poknil krizec, kar naj spodaj ponovno narise pa je. Ne rabis nobenga clearscreena.</span><span class="gensmall"></span></td>
+			</tr>
+		</table></td>
+	</tr>
+	<tr>
+		<td class="row1" width="150" align="left" valign="middle"><span class="nav"><a href="#top" class="nav">Nazaj na vrh</a></span></td>
+		<td class="row1" width="100%" height="28" valign="bottom" nowrap="nowrap"><table cellspacing="0" cellpadding="0" border="0" height="18" width="18">
+			<tr>
+				<td valign="middle" nowrap="nowrap"><a href="profile-62.html"><img src="templates/SGD2/images/lang_slovenian/icon_profile.gif" alt="Poglej uporabnikov profil" title="Poglej uporabnikov profil" border="0" /></a> </td>
+			</tr>
+		</table></td>
+	</tr>
+	<tr>
+		<td class="spaceRow" colspan="2" height="1"><img src="templates/SGD/images/spacer.gif" alt="" width="1" height="1" /></td>
+	</tr>
+	
+	<tr>
+		<td width="150" align="left" valign="top" class="row2"><span class="name"><a name="15169"></a><b>Alfa</b></span><br /><span class="postdetails">mojster<br /><img src="images/ranks/sgd-5.gif" alt="mojster" title="mojster" border="0" /><br /><img src="images/avatars/c2f90a1540823086cd155.jpg" alt="" border="0" /><br /><br />Pridružen: 04. mar 2004 ob 18:14<br />objav: 471<br />Kraj: SG</span><br /></td>
+		<td class="row2" width="100%" height="28" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+			<tr>
+				<td colspan="2" width="100%">
+					<table width="100%" cellpadding="0" cellspacing="0" border="0">
+						<tr>
+							<td valign="middle" align="left">
+								<a href="topic-1266-30.html#15169"><img src="templates/SGD2/images/icon_minipost.gif" width="12" height="9" alt="objava" title="objava" border="0" /></a>
+								<span class="postdetails">Objavljeno: sob avg 05, 2006 7:03 pm<span class="gen">&nbsp;</span>&nbsp; &nbsp;Pošlji temo: </span>
+							</td>
+							<td valign="middle" align="right" nowrap="nowrap">
+							</td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+			<tr>
+				<td colspan="2"><hr /></td>
+			</tr>
+			<tr>
+				<td colspan="2"><span class="postbody">offtopic:
+
+<br />
+Srry Shinobi, sn šel naprej sn sem moral prit nazaj. Prvič vsak, tut tist ko nima blage veze za kaj se gre, lah reče da je OpenGL bol portabil, že zato ker DirectX sam po sebi sploh ni portabilen. Dela le na win sistemih. Drugič pa: OpenGl je samo grafika. Knjižnice za zvok, yojstike in ostale stvari rabiš druge in če tiste niso portabilne ni OpenGL zato nič kriv.<br />_________________<br />&quot;Pustimo malenkosti, pravi cesar, PeCe pa nič (več).&quot;
+
+<br />
+Goran Bervar: C++ na kolenih</span><span class="gensmall"></span></td>
+			</tr>
+		</table></td>
+	</tr>
+	<tr>
+		<td class="row2" width="150" align="left" valign="middle"><span class="nav"><a href="#top" class="nav">Nazaj na vrh</a></span></td>
+		<td class="row2" width="100%" height="28" valign="bottom" nowrap="nowrap"><table cellspacing="0" cellpadding="0" border="0" height="18" width="18">
+			<tr>
+				<td valign="middle" nowrap="nowrap"><a href="profile-162.html"><img src="templates/SGD2/images/lang_slovenian/icon_profile.gif" alt="Poglej uporabnikov profil" title="Poglej uporabnikov profil" border="0" /></a> <a  target="_userwww"><img src="templates/SGD2/images/lang_slovenian/icon_www.gif" alt="Obišči avtorjevo spletno stran" title="Obišči avtorjevo spletno stran" border="0" /></a></td>
+			</tr>
+		</table></td>
+	</tr>
+	<tr>
+		<td class="spaceRow" colspan="2" height="1"><img src="templates/SGD/images/spacer.gif" alt="" width="1" height="1" /></td>
+	</tr>
+	
+	<tr>
+		<td width="150" align="left" valign="top" class="row1"><span class="name"><a name="15171"></a><b>Shinobi</b></span><br /><span class="postdetails">mojster<br /><img src="images/ranks/sgd-5.gif" alt="mojster" title="mojster" border="0" /><br /><img src="images/avatars/d5fd66913fcf278e24a0c.gif" alt="" border="0" /><br /><br />Pridružen: 15. maj 2003 ob 18:04<br />objav: 491<br />Kraj: Maribor</span><br /></td>
+		<td class="row1" width="100%" height="28" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+			<tr>
+				<td colspan="2" width="100%">
+					<table width="100%" cellpadding="0" cellspacing="0" border="0">
+						<tr>
+							<td valign="middle" align="left">
+								<a href="topic-1266-30.html#15171"><img src="templates/SGD2/images/icon_minipost.gif" width="12" height="9" alt="objava" title="objava" border="0" /></a>
+								<span class="postdetails">Objavljeno: sob avg 05, 2006 11:18 pm<span class="gen">&nbsp;</span>&nbsp; &nbsp;Pošlji temo: </span>
+							</td>
+							<td valign="middle" align="right" nowrap="nowrap">
+							</td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+			<tr>
+				<td colspan="2"><hr /></td>
+			</tr>
+			<tr>
+				<td colspan="2"><span class="postbody">Ja, to je res. Ceprav pricakovat real time flicker free resitev v text modu je malo tezko, ceprav ni receno da ni mozno. Tudi v text modu lahko movas block memorije direktno na screen. V grafiki je menda 0xA000 za text mode pa menda, to nisem ziher 0xB000. Poleg tega je vsak character v text modu dolg 2 byta in sicer je en za barvo, drugi pa ASCII znak.
+
+<br />
+
+
+<br />
+Teoreticno: 80x25x2 bytov potrbujes, ki jih lahko flipas v memoriji ampak za zacetnika bo to zelo tezko.
+
+<br />
+
+
+<br />
+Ce bi rad igrice v Cju delal, nujno sporbaj SDL! Res, ful ti bo pomagalo.
+
+<br />
+
+
+<br />
+Glede graficnih knjizic pa je tako, ce ti lezi C se daj na OpenGL, ce pa C++ pa DirectX. Nikakor ne mesaj C in C++. Bos videl. C folk ponavadi DirectX totalno preobremeni in pustijo se preden en sam tutorial sprobajo (btw. tutoriali so kar zraven in so zelo simple. App v DirectX9 startas dosti prej kot v OpenGL).
+
+<br />
+
+
+<br />
+Je pa res da tako OpenGL in DirectX imata svoje dobre in slabe strani. Oba.</span><span class="gensmall"></span></td>
+			</tr>
+		</table></td>
+	</tr>
+	<tr>
+		<td class="row1" width="150" align="left" valign="middle"><span class="nav"><a href="#top" class="nav">Nazaj na vrh</a></span></td>
+		<td class="row1" width="100%" height="28" valign="bottom" nowrap="nowrap"><table cellspacing="0" cellpadding="0" border="0" height="18" width="18">
+			<tr>
+				<td valign="middle" nowrap="nowrap"><a href="profile-62.html"><img src="templates/SGD2/images/lang_slovenian/icon_profile.gif" alt="Poglej uporabnikov profil" title="Poglej uporabnikov profil" border="0" /></a> </td>
+			</tr>
+		</table></td>
+	</tr>
+	<tr>
+		<td class="spaceRow" colspan="2" height="1"><img src="templates/SGD/images/spacer.gif" alt="" width="1" height="1" /></td>
+	</tr>
+	
+	<tr>
+		<td width="150" align="left" valign="top" class="row2"><span class="name"><a name="15172"></a><b>ALTF4</b></span><br /><span class="postdetails">guru<br /><img src="images/ranks/sgd-8.gif" alt="guru" title="guru" border="0" /><br /><img src="images/avatars/563d301443ad69c6388ac.gif" alt="" border="0" /><br /><br />Pridružen: 10. jul 2003 ob 15:23<br />objav: 1175<br />Kraj: Slovenska Bistrica</span><br /></td>
+		<td class="row2" width="100%" height="28" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+			<tr>
+				<td colspan="2" width="100%">
+					<table width="100%" cellpadding="0" cellspacing="0" border="0">
+						<tr>
+							<td valign="middle" align="left">
+								<a href="topic-1266-30.html#15172"><img src="templates/SGD2/images/icon_minipost.gif" width="12" height="9" alt="objava" title="objava" border="0" /></a>
+								<span class="postdetails">Objavljeno: sob avg 05, 2006 11:39 pm<span class="gen">&nbsp;</span>&nbsp; &nbsp;Pošlji temo: </span>
+							</td>
+							<td valign="middle" align="right" nowrap="nowrap">
+							</td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+			<tr>
+				<td colspan="2"><hr /></td>
+			</tr>
+			<tr>
+				<td colspan="2"><span class="postbody">eno vprašanje. zakaj mešanje c in c++ ni dobro?<br />_________________<br />LP!</span><span class="gensmall"></span></td>
+			</tr>
+		</table></td>
+	</tr>
+	<tr>
+		<td class="row2" width="150" align="left" valign="middle"><span class="nav"><a href="#top" class="nav">Nazaj na vrh</a></span></td>
+		<td class="row2" width="100%" height="28" valign="bottom" nowrap="nowrap"><table cellspacing="0" cellpadding="0" border="0" height="18" width="18">
+			<tr>
+				<td valign="middle" nowrap="nowrap"><a href="profile-80.html"><img src="templates/SGD2/images/lang_slovenian/icon_profile.gif" alt="Poglej uporabnikov profil" title="Poglej uporabnikov profil" border="0" /></a> </td>
+			</tr>
+		</table></td>
+	</tr>
+	<tr>
+		<td class="spaceRow" colspan="2" height="1"><img src="templates/SGD/images/spacer.gif" alt="" width="1" height="1" /></td>
+	</tr>
+	
+	<tr>
+		<td width="150" align="left" valign="top" class="row1"><span class="name"><a name="15173"></a><b>Shinobi</b></span><br /><span class="postdetails">mojster<br /><img src="images/ranks/sgd-5.gif" alt="mojster" title="mojster" border="0" /><br /><img src="images/avatars/d5fd66913fcf278e24a0c.gif" alt="" border="0" /><br /><br />Pridružen: 15. maj 2003 ob 18:04<br />objav: 491<br />Kraj: Maribor</span><br /></td>
+		<td class="row1" width="100%" height="28" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+			<tr>
+				<td colspan="2" width="100%">
+					<table width="100%" cellpadding="0" cellspacing="0" border="0">
+						<tr>
+							<td valign="middle" align="left">
+								<a href="topic-1266-30.html#15173"><img src="templates/SGD2/images/icon_minipost.gif" width="12" height="9" alt="objava" title="objava" border="0" /></a>
+								<span class="postdetails">Objavljeno: sob avg 05, 2006 11:53 pm<span class="gen">&nbsp;</span>&nbsp; &nbsp;Pošlji temo: </span>
+							</td>
+							<td valign="middle" align="right" nowrap="nowrap">
+							</td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+			<tr>
+				<td colspan="2"><hr /></td>
+			</tr>
+			<tr>
+				<td colspan="2"><span class="postbody">C++ lahko dela vse kar dela C, c pa ne more deat kaj dela C++.
+
+<br />
+
+
+<br />
+Mešaš lahko kolko hočeš, samo precej hitro se zna zgodit, da nekdo ki dela bolj ali manj samo s Cjem misli, da obvlada C++. Templati in ostale napredne funkcije so dolga zgodba. Ceprav se da hitro zaobvladat!
+
+<br />
+
+
+<br />
+Sem pa poiskal link: <a class="postlink" >http://www.libsdl.org</a>
+
+<br />
+
+
+<br />
+Stvari se rece: Simple Direct Media Layer.
+
+<br />
+
+
+<br />
+Bos videl, tvoji krizec-krozec bodo takoj graficni! Le sprobaj. Nebo treba dosti truda. So tutorial + vse kar potrebujes! poleg tega se bos se OpenGL naucil.</span><span class="gensmall"></span></td>
+			</tr>
+		</table></td>
+	</tr>
+	<tr>
+		<td class="row1" width="150" align="left" valign="middle"><span class="nav"><a href="#top" class="nav">Nazaj na vrh</a></span></td>
+		<td class="row1" width="100%" height="28" valign="bottom" nowrap="nowrap"><table cellspacing="0" cellpadding="0" border="0" height="18" width="18">
+			<tr>
+				<td valign="middle" nowrap="nowrap"><a href="profile-62.html"><img src="templates/SGD2/images/lang_slovenian/icon_profile.gif" alt="Poglej uporabnikov profil" title="Poglej uporabnikov profil" border="0" /></a> </td>
+			</tr>
+		</table></td>
+	</tr>
+	<tr>
+		<td class="spaceRow" colspan="2" height="1"><img src="templates/SGD/images/spacer.gif" alt="" width="1" height="1" /></td>
+	</tr>
+	
+	<tr>
+		<td width="150" align="left" valign="top" class="row2"><span class="name"><a name="15174"></a><b>Alfa</b></span><br /><span class="postdetails">mojster<br /><img src="images/ranks/sgd-5.gif" alt="mojster" title="mojster" border="0" /><br /><img src="images/avatars/c2f90a1540823086cd155.jpg" alt="" border="0" /><br /><br />Pridružen: 04. mar 2004 ob 18:14<br />objav: 471<br />Kraj: SG</span><br /></td>
+		<td class="row2" width="100%" height="28" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+			<tr>
+				<td colspan="2" width="100%">
+					<table width="100%" cellpadding="0" cellspacing="0" border="0">
+						<tr>
+							<td valign="middle" align="left">
+								<a href="topic-1266-30.html#15174"><img src="templates/SGD2/images/icon_minipost.gif" width="12" height="9" alt="objava" title="objava" border="0" /></a>
+								<span class="postdetails">Objavljeno: ned avg 06, 2006 6:58 am<span class="gen">&nbsp;</span>&nbsp; &nbsp;Pošlji temo: </span>
+							</td>
+							<td valign="middle" align="right" nowrap="nowrap">
+							</td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+			<tr>
+				<td colspan="2"><hr /></td>
+			</tr>
+			<tr>
+				<td colspan="2"><span class="postbody">Kaj pa C nima? A ma razrede? Strukture? Kazalce? 
+
+<br />
+
+
+<br />
+A sploh uporabljam kaj, kar je res c++? <img src="images/smiles/icon_eek.gif" alt=":shock:" border="0" /><br />_________________<br />&quot;Pustimo malenkosti, pravi cesar, PeCe pa nič (več).&quot;
+
+<br />
+Goran Bervar: C++ na kolenih</span><span class="gensmall"></span></td>
+			</tr>
+		</table></td>
+	</tr>
+	<tr>
+		<td class="row2" width="150" align="left" valign="middle"><span class="nav"><a href="#top" class="nav">Nazaj na vrh</a></span></td>
+		<td class="row2" width="100%" height="28" valign="bottom" nowrap="nowrap"><table cellspacing="0" cellpadding="0" border="0" height="18" width="18">
+			<tr>
+				<td valign="middle" nowrap="nowrap"><a href="profile-162.html"><img src="templates/SGD2/images/lang_slovenian/icon_profile.gif" alt="Poglej uporabnikov profil" title="Poglej uporabnikov profil" border="0" /></a> <a  target="_userwww"><img src="templates/SGD2/images/lang_slovenian/icon_www.gif" alt="Obišči avtorjevo spletno stran" title="Obišči avtorjevo spletno stran" border="0" /></a></td>
+			</tr>
+		</table></td>
+	</tr>
+	<tr>
+		<td class="spaceRow" colspan="2" height="1"><img src="templates/SGD/images/spacer.gif" alt="" width="1" height="1" /></td>
+	</tr>
+	
+	<tr>
+		<td width="150" align="left" valign="top" class="row1"><span class="name"><a name="15175"></a><b>Shinobi</b></span><br /><span class="postdetails">mojster<br /><img src="images/ranks/sgd-5.gif" alt="mojster" title="mojster" border="0" /><br /><img src="images/avatars/d5fd66913fcf278e24a0c.gif" alt="" border="0" /><br /><br />Pridružen: 15. maj 2003 ob 18:04<br />objav: 491<br />Kraj: Maribor</span><br /></td>
+		<td class="row1" width="100%" height="28" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+			<tr>
+				<td colspan="2" width="100%">
+					<table width="100%" cellpadding="0" cellspacing="0" border="0">
+						<tr>
+							<td valign="middle" align="left">
+								<a href="topic-1266-30.html#15175"><img src="templates/SGD2/images/icon_minipost.gif" width="12" height="9" alt="objava" title="objava" border="0" /></a>
+								<span class="postdetails">Objavljeno: ned avg 06, 2006 9:24 am<span class="gen">&nbsp;</span>&nbsp; &nbsp;Pošlji temo: </span>
+							</td>
+							<td valign="middle" align="right" nowrap="nowrap">
+							</td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+			<tr>
+				<td colspan="2"><hr /></td>
+			</tr>
+			<tr>
+				<td colspan="2"><span class="postbody">Hm, v vecini primerov se res uporablja zgolj in samo C in ne C++. Je pa res, ce tvoj program bolj izgleda kot Java, potem je ziher C++ drugace, ce pa je bolj podoben PASCALu pa C. Ceprav so finte, recimo:
+
+<br />
+
+
+<br />
+void vprasaj(int integer);
+
+<br />
+void vprasaj(string ime);
+
+<br />
+
+
+<br />
+To v Cju ni mozno. Templati, virtualne metode, operator overiding, exceptioni in podobne jajce pa spadajo v C++ kategorijo. Recimo zivi primer je matematicna knjizica v directx. Kjer lahkoreces MatrixC = MatrixA * MatrixB pa je vsaka matrika razred. Se pravi class * class. Pol so tukaj se Friendly operatorji kot je VectorC = VectorA * floatScalar; se pravi class vector * skalar tipa float in podobno. Ogromno je taksnih stvari.
+
+<br />
+
+
+<br />
+Ne vem ce ste ze opazili: extern c deklaracijo v nekaterih open source projektih in headerjih. To dejansko pospesi kodo, ker pove, da ni nobenih C++ featuresov not kot so exceptioni. Exceptioni dejansko zelo povecajo obseg kode, ker prinesejo ogromno preverjanja. Ce ves da tega ne uporabljas lahko compilerju poves, da se s tem ne rabi ubadat in compiliranje bo hitrejse in koda tudi hitreje izvedljiva.</span><span class="gensmall"></span></td>
+			</tr>
+		</table></td>
+	</tr>
+	<tr>
+		<td class="row1" width="150" align="left" valign="middle"><span class="nav"><a href="#top" class="nav">Nazaj na vrh</a></span></td>
+		<td class="row1" width="100%" height="28" valign="bottom" nowrap="nowrap"><table cellspacing="0" cellpadding="0" border="0" height="18" width="18">
+			<tr>
+				<td valign="middle" nowrap="nowrap"><a href="profile-62.html"><img src="templates/SGD2/images/lang_slovenian/icon_profile.gif" alt="Poglej uporabnikov profil" title="Poglej uporabnikov profil" border="0" /></a> </td>
+			</tr>
+		</table></td>
+	</tr>
+	<tr>
+		<td class="spaceRow" colspan="2" height="1"><img src="templates/SGD/images/spacer.gif" alt="" width="1" height="1" /></td>
+	</tr>
+	
+	<tr>
+		<td width="150" align="left" valign="top" class="row2"><span class="name"><a name="15192"></a><b>Alfa</b></span><br /><span class="postdetails">mojster<br /><img src="images/ranks/sgd-5.gif" alt="mojster" title="mojster" border="0" /><br /><img src="images/avatars/c2f90a1540823086cd155.jpg" alt="" border="0" /><br /><br />Pridružen: 04. mar 2004 ob 18:14<br />objav: 471<br />Kraj: SG</span><br /></td>
+		<td class="row2" width="100%" height="28" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+			<tr>
+				<td colspan="2" width="100%">
+					<table width="100%" cellpadding="0" cellspacing="0" border="0">
+						<tr>
+							<td valign="middle" align="left">
+								<a href="topic-1266-30.html#15192"><img src="templates/SGD2/images/icon_minipost.gif" width="12" height="9" alt="objava" title="objava" border="0" /></a>
+								<span class="postdetails">Objavljeno: pon avg 07, 2006 12:57 am<span class="gen">&nbsp;</span>&nbsp; &nbsp;Pošlji temo: </span>
+							</td>
+							<td valign="middle" align="right" nowrap="nowrap">
+							</td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+			<tr>
+				<td colspan="2"><hr /></td>
+			</tr>
+			<tr>
+				<td colspan="2"><span class="postbody">Izjeme? To je ono ko neki mečeš pa pl nekje ddrugje loviš. Sn ka če pa knjižnica, ki jo uporabljaš uporablja tudi izjeme, da poroča o napakah. Ka pa če tej kličeš extern c?<br />_________________<br />&quot;Pustimo malenkosti, pravi cesar, PeCe pa nič (več).&quot;
+
+<br />
+Goran Bervar: C++ na kolenih</span><span class="gensmall"></span></td>
+			</tr>
+		</table></td>
+	</tr>
+	<tr>
+		<td class="row2" width="150" align="left" valign="middle"><span class="nav"><a href="#top" class="nav">Nazaj na vrh</a></span></td>
+		<td class="row2" width="100%" height="28" valign="bottom" nowrap="nowrap"><table cellspacing="0" cellpadding="0" border="0" height="18" width="18">
+			<tr>
+				<td valign="middle" nowrap="nowrap"><a href="profile-162.html"><img src="templates/SGD2/images/lang_slovenian/icon_profile.gif" alt="Poglej uporabnikov profil" title="Poglej uporabnikov profil" border="0" /></a> <a  target="_userwww"><img src="templates/SGD2/images/lang_slovenian/icon_www.gif" alt="Obišči avtorjevo spletno stran" title="Obišči avtorjevo spletno stran" border="0" /></a></td>
+			</tr>
+		</table></td>
+	</tr>
+	<tr>
+		<td class="spaceRow" colspan="2" height="1"><img src="templates/SGD/images/spacer.gif" alt="" width="1" height="1" /></td>
+	</tr>
+	
+	<tr>
+		<td width="150" align="left" valign="top" class="row1"><span class="name"><a name="15193"></a><b>Shinobi</b></span><br /><span class="postdetails">mojster<br /><img src="images/ranks/sgd-5.gif" alt="mojster" title="mojster" border="0" /><br /><img src="images/avatars/d5fd66913fcf278e24a0c.gif" alt="" border="0" /><br /><br />Pridružen: 15. maj 2003 ob 18:04<br />objav: 491<br />Kraj: Maribor</span><br /></td>
+		<td class="row1" width="100%" height="28" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+			<tr>
+				<td colspan="2" width="100%">
+					<table width="100%" cellpadding="0" cellspacing="0" border="0">
+						<tr>
+							<td valign="middle" align="left">
+								<a href="topic-1266-30.html#15193"><img src="templates/SGD2/images/icon_minipost.gif" width="12" height="9" alt="objava" title="objava" border="0" /></a>
+								<span class="postdetails">Objavljeno: pon avg 07, 2006 7:20 am<span class="gen">&nbsp;</span>&nbsp; &nbsp;Pošlji temo: </span>
+							</td>
+							<td valign="middle" align="right" nowrap="nowrap">
+							</td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+			<tr>
+				<td colspan="2"><hr /></td>
+			</tr>
+			<tr>
+				<td colspan="2"><span class="postbody">extern c ponavadi u porabljas zgolj in samo za tvoje metode. Ce-le te uporabljajo tretje metode, morajo tuje metode zagotoviti, ce mecejo exceptione ali ne. Recimo lep primer je "new" operator. Odvisno od nastavitev in paketa lahko new tudi vrze izjemo.
+
+<br />
+
+
+<br />
+Eni delajo tako (bolj C style, dasiravno uporabljamo new):
+
+<br />
+CTexture* pTexture = new CTexture("test.tga");
+
+<br />
+if( pTexture == NULL ) return E_OUTOFMEMORY;
+
+<br />
+
+
+<br />
+lahko pa tudi tako (C++):
+
+<br />
+try
+
+<br />
+{
+
+<br />
+CTexture* pTexture = new CTexture("test.tga");
+
+<br />
+}
+
+<br />
+catch(...)
+
+<br />
+{
+
+<br />
+return E_OUTOFMEMORY;
+
+<br />
+}
+
+<br />
+
+
+<br />
+Oba primera ne gresta. Ali vrne NULL ali pa exception. Vse je odvisno od nastavitev ne. Kako pa izgleda, ce je zgornja funkcija pod extern C? Hm, to pa nebi vedel. Vem pa, da v 2005 so exceptioni po defaultu ENABLANi, tudi ce jih ne uporabljate. V slednjem primeru je bolje da jih disejblas.</span><span class="gensmall"></span></td>
+			</tr>
+		</table></td>
+	</tr>
+	<tr>
+		<td class="row1" width="150" align="left" valign="middle"><span class="nav"><a href="#top" class="nav">Nazaj na vrh</a></span></td>
+		<td class="row1" width="100%" height="28" valign="bottom" nowrap="nowrap"><table cellspacing="0" cellpadding="0" border="0" height="18" width="18">
+			<tr>
+				<td valign="middle" nowrap="nowrap"><a href="profile-62.html"><img src="templates/SGD2/images/lang_slovenian/icon_profile.gif" alt="Poglej uporabnikov profil" title="Poglej uporabnikov profil" border="0" /></a> </td>
+			</tr>
+		</table></td>
+	</tr>
+	<tr>
+		<td class="spaceRow" colspan="2" height="1"><img src="templates/SGD/images/spacer.gif" alt="" width="1" height="1" /></td>
+	</tr>
+	
+	<tr>
+		<td width="150" align="left" valign="top" class="row2"><span class="name"><a name="15194"></a><b>Alfa</b></span><br /><span class="postdetails">mojster<br /><img src="images/ranks/sgd-5.gif" alt="mojster" title="mojster" border="0" /><br /><img src="images/avatars/c2f90a1540823086cd155.jpg" alt="" border="0" /><br /><br />Pridružen: 04. mar 2004 ob 18:14<br />objav: 471<br />Kraj: SG</span><br /></td>
+		<td class="row2" width="100%" height="28" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+			<tr>
+				<td colspan="2" width="100%">
+					<table width="100%" cellpadding="0" cellspacing="0" border="0">
+						<tr>
+							<td valign="middle" align="left">
+								<a href="topic-1266-30.html#15194"><img src="templates/SGD2/images/icon_minipost.gif" width="12" height="9" alt="objava" title="objava" border="0" /></a>
+								<span class="postdetails">Objavljeno: pon avg 07, 2006 12:18 pm<span class="gen">&nbsp;</span>&nbsp; &nbsp;Pošlji temo: </span>
+							</td>
+							<td valign="middle" align="right" nowrap="nowrap">
+							</td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+			<tr>
+				<td colspan="2"><hr /></td>
+			</tr>
+			<tr>
+				<td colspan="2"><span class="postbody"></span>
+<br />
+<table width="90%" cellspacing="1" cellpadding="3" border="0" align="center">
+<br />
+<tr> 
+<br />
+	  <td><span class="genmed"><b>Citiram:</b></span></td>
+<br />
+	</tr>
+<br />
+	<tr>
+<br />
+	  <td class="quote">bolj C style, dasiravno uporabljamo new</td>
+<br />
+	</tr>
+<br />
+</table>
+<br />
+<span class="postbody">
+
+<br />
+ <img src="images/smiles/icon_confused.gif" alt=":?" border="0" /> C nima new in delete? auč
+
+<br />
+
+
+<br />
+Neki me pa res zanima v zvezi z new pa delete. V moji knjigi (c++ na kolenih) piše da je način opozarjanja, da je zmankalo kopice odvisen od prevajalnika. Jaz sem mislil da se program prevede v strojni jezik, kako je potem možno da je način opozarjanja odvisen od prevajalnika?<br />_________________<br />&quot;Pustimo malenkosti, pravi cesar, PeCe pa nič (več).&quot;
+
+<br />
+Goran Bervar: C++ na kolenih</span><span class="gensmall"></span></td>
+			</tr>
+		</table></td>
+	</tr>
+	<tr>
+		<td class="row2" width="150" align="left" valign="middle"><span class="nav"><a href="#top" class="nav">Nazaj na vrh</a></span></td>
+		<td class="row2" width="100%" height="28" valign="bottom" nowrap="nowrap"><table cellspacing="0" cellpadding="0" border="0" height="18" width="18">
+			<tr>
+				<td valign="middle" nowrap="nowrap"><a href="profile-162.html"><img src="templates/SGD2/images/lang_slovenian/icon_profile.gif" alt="Poglej uporabnikov profil" title="Poglej uporabnikov profil" border="0" /></a> <a  target="_userwww"><img src="templates/SGD2/images/lang_slovenian/icon_www.gif" alt="Obišči avtorjevo spletno stran" title="Obišči avtorjevo spletno stran" border="0" /></a></td>
+			</tr>
+		</table></td>
+	</tr>
+	<tr>
+		<td class="spaceRow" colspan="2" height="1"><img src="templates/SGD/images/spacer.gif" alt="" width="1" height="1" /></td>
+	</tr>
+	
+	<tr>
+		<td width="150" align="left" valign="top" class="row1"><span class="name"><a name="15195"></a><b>Shinobi</b></span><br /><span class="postdetails">mojster<br /><img src="images/ranks/sgd-5.gif" alt="mojster" title="mojster" border="0" /><br /><img src="images/avatars/d5fd66913fcf278e24a0c.gif" alt="" border="0" /><br /><br />Pridružen: 15. maj 2003 ob 18:04<br />objav: 491<br />Kraj: Maribor</span><br /></td>
+		<td class="row1" width="100%" height="28" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+			<tr>
+				<td colspan="2" width="100%">
+					<table width="100%" cellpadding="0" cellspacing="0" border="0">
+						<tr>
+							<td valign="middle" align="left">
+								<a href="topic-1266-30.html#15195"><img src="templates/SGD2/images/icon_minipost.gif" width="12" height="9" alt="objava" title="objava" border="0" /></a>
+								<span class="postdetails">Objavljeno: pon avg 07, 2006 12:38 pm<span class="gen">&nbsp;</span>&nbsp; &nbsp;Pošlji temo: </span>
+							</td>
+							<td valign="middle" align="right" nowrap="nowrap">
+							</td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+			<tr>
+				<td colspan="2"><hr /></td>
+			</tr>
+			<tr>
+				<td colspan="2"><span class="postbody">V prevajalniku lahko nastavis, ali bo new vrgel exception ali pa NULL. Sam ves koliko settingsov ima Visual Studio C++ Property Window. Da te znas napamet si bog. Ampak tu se lahko odlocis kako naj se new in nekatere funkcije obnasajo.
+
+<br />
+
+
+<br />
+Pomoje ima dve razlicni knjizici. Eno ki mece exceptione in ene ki jih ne. In tu je verjetno, da kompilerji, ki to mogoce drugace opravljajo ali pa podpirajo ali samo exception ali pa samo NULL ter tako pride do razlik.
+
+<br />
+
+
+<br />
+Marsikaj je drugace. Tudi to, da vs2005 crt funkcije vsprintf in podobne oznaci kot ostarele in zeli pripono _s. Dvomim, da kateri koli drugi C++ prevajalnik dela taki teater okoli tega.
+
+<br />
+
+
+<br />
+Glede New in Delete pa je tako, da je bolj c style ce uporabis malloc ali calloc in podobne jajce.</span><span class="gensmall"></span></td>
+			</tr>
+		</table></td>
+	</tr>
+	<tr>
+		<td class="row1" width="150" align="left" valign="middle"><span class="nav"><a href="#top" class="nav">Nazaj na vrh</a></span></td>
+		<td class="row1" width="100%" height="28" valign="bottom" nowrap="nowrap"><table cellspacing="0" cellpadding="0" border="0" height="18" width="18">
+			<tr>
+				<td valign="middle" nowrap="nowrap"><a href="profile-62.html"><img src="templates/SGD2/images/lang_slovenian/icon_profile.gif" alt="Poglej uporabnikov profil" title="Poglej uporabnikov profil" border="0" /></a> </td>
+			</tr>
+		</table></td>
+	</tr>
+	<tr>
+		<td class="spaceRow" colspan="2" height="1"><img src="templates/SGD/images/spacer.gif" alt="" width="1" height="1" /></td>
+	</tr>
+	
+	<tr>
+		<td width="150" align="left" valign="top" class="row2"><span class="name"><a name="15521"></a><b>eleanor</b></span><br /><span class="postdetails">novinec<br /><img src="images/ranks/sgd-0.gif" alt="novinec" title="novinec" border="0" /><br /><br /><br />Pridružen: 12. sep 2006 ob 04:19<br />objav: 6<br /></span><br /></td>
+		<td class="row2" width="100%" height="28" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+			<tr>
+				<td colspan="2" width="100%">
+					<table width="100%" cellpadding="0" cellspacing="0" border="0">
+						<tr>
+							<td valign="middle" align="left">
+								<a href="topic-1266-30.html#15521"><img src="templates/SGD2/images/icon_minipost.gif" width="12" height="9" alt="objava" title="objava" border="0" /></a>
+								<span class="postdetails">Objavljeno: ned sep 17, 2006 7:53 am<span class="gen">&nbsp;</span>&nbsp; &nbsp;Pošlji temo: </span>
+							</td>
+							<td valign="middle" align="right" nowrap="nowrap">
+							</td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+			<tr>
+				<td colspan="2"><hr /></td>
+			</tr>
+			<tr>
+				<td colspan="2"><span class="postbody">Ali be se dalo narditi tole igrco takole:
+
+<br />
+
+
+<br />
+</span>
+<br />
+<table width="90%" cellspacing="1" cellpadding="3" border="0" align="center">
+<br />
+<tr> 
+<br />
+	  <td><span class="genmed"><b>Citiram:</b></span></td>
+<br />
+	</tr>
+<br />
+	<tr>
+<br />
+	  <td class="quote">#include &lt;iostream.h&gt;
+<br />
+#include &lt;time.h&gt;
+<br />
+#include &lt;stdlib.h&gt;
+<br />
+
+<br />
+void navodila()
+<br />
+{
+<br />
+cout &lt;&lt; "------------------------------------" &lt;&lt; endl;
+<br />
+cout &lt;&lt; "---------KRIZCI--IN--KROZCI---------" &lt;&lt; endl;
+<br />
+cout &lt;&lt; "------------------------------------" &lt;&lt; endl;
+<br />
+cout &lt;&lt; "Vnesite crke od a-i kamor hocete postaviti svoj znak!" &lt;&lt; endl;
+<br />
+}
+<br />
+
+<br />
+void stevilcnica()
+<br />
+{
+<br />
+cout &lt;&lt; "-----------------" &lt;&lt; endl;
+<br />
+cout &lt;&lt; "[ a ] [ b ] [ c ]" &lt;&lt; endl;
+<br />
+cout &lt;&lt; "[ d ] [ e ] [ f ]" &lt;&lt; endl;
+<br />
+cout &lt;&lt; "[ g ] [ h ] [ i ]" &lt;&lt; endl;
+<br />
+cout &lt;&lt; "-----------------" &lt;&lt; endl;
+<br />
+}
+<br />
+
+<br />
+int main()
+<br />
+{
+<br />
+int player=0;
+<br />
+int p1,p2;
+<br />
+float l;
+<br />
+char ime[10];
+<br />
+char ime2[10];
+<br />
+char polje[2][2];
+<br />
+char a='a',b='b',c='c',d='d',e='e',f='f',g='g',h='h',i='i';
+<br />
+char k1,k2;
+<br />
+
+<br />
+cout &lt;&lt; "Ime prvega igralca: ";
+<br />
+cin &gt;&gt; ime;
+<br />
+cout &lt;&lt; "Ime drugega igralca: ";
+<br />
+cin &gt;&gt; ime2;
+<br />
+cout &lt;&lt; "Pozdravljena " &lt;&lt; ime &lt;&lt; " in " &lt;&lt; ime2 &lt;&lt; "!" &lt;&lt; endl;
+<br />
+
+<br />
+for(int j=0;j&lt;9;j++)
+<br />
+{
+<br />
+        l = player % 2;
+<br />
+
+<br />
+        if (l==0) {
+<br />
+        cout &lt;&lt; "Na vrsti je: " &lt;&lt; ime &lt;&lt; endl;
+<br />
+        }
+<br />
+
+<br />
+        else if (l==1) {
+<br />
+        cout &lt;&lt; "Na vrsti je: " &lt;&lt; ime2 &lt;&lt; endl;
+<br />
+        }
+<br />
+
+<br />
+        if(l==0) {
+<br />
+        cout &lt;&lt; "Vnesi polje: ";
+<br />
+        cin &gt;&gt; k1;
+<br />
+        player++;
+<br />
+        }
+<br />
+        else if(l==1) {
+<br />
+        cout &lt;&lt; "Vnesi polje: ";
+<br />
+        cin &gt;&gt; k2;
+<br />
+        player++;
+<br />
+        }
+<br />
+
+<br />
+switch(k1) {
+<br />
+case 'a':
+<br />
+        cout &lt;&lt; "Izbrali ste polje[0][0]" &lt;&lt; endl;
+<br />
+case 'b':
+<br />
+        cout &lt;&lt; "Izbrali ste polje[0][1]" &lt;&lt; endl;
+<br />
+case 'c':
+<br />
+        cout &lt;&lt; "Izbrali ste polje[0][2]" &lt;&lt; endl;
+<br />
+case 'd':
+<br />
+        cout &lt;&lt; "Izbrali ste polje[1][0]" &lt;&lt; endl;
+<br />
+case 'e':
+<br />
+        cout &lt;&lt; "Izbrali ste polje[1][1]" &lt;&lt; endl;
+<br />
+case 'f':
+<br />
+        cout &lt;&lt; "Izbrali ste polje[1][2]" &lt;&lt; endl;
+<br />
+case 'g':
+<br />
+        cout &lt;&lt; "Izbrali ste polje[2][0]" &lt;&lt; endl;
+<br />
+case 'h':
+<br />
+        cout &lt;&lt; "Izbrali ste polje[2][1]" &lt;&lt; endl;
+<br />
+case 'i':
+<br />
+        cout &lt;&lt; "Izbrali ste polje[2][2]" &lt;&lt; endl;
+<br />
+
+<br />
+
+<br />
+} // konec switch stavka
+<br />
+} // konec for stavka
+<br />
+
+<br />
+} // konec main funkcije</td>
+<br />
+	</tr>
+<br />
+</table>
+<br />
+<span class="postbody">
+
+<br />
+
+
+<br />
+Seveda sem jo šele začeu pisati, tako da moram vedeti, če sem na pravi poti. Trenutno se skompajla, toda ima zelo "nenavaden" rezultat. Prosim pomagajte mi in mi svetujte kako naj nadaljujem (po možnosti v tej smeri...ne da bi mogu čist eno novo smer ubrat). Hvala
+
+<br />
+
+
+<br />
+LP</span><span class="gensmall"></span></td>
+			</tr>
+		</table></td>
+	</tr>
+	<tr>
+		<td class="row2" width="150" align="left" valign="middle"><span class="nav"><a href="#top" class="nav">Nazaj na vrh</a></span></td>
+		<td class="row2" width="100%" height="28" valign="bottom" nowrap="nowrap"><table cellspacing="0" cellpadding="0" border="0" height="18" width="18">
+			<tr>
+				<td valign="middle" nowrap="nowrap"><a href="profile-291.html"><img src="templates/SGD2/images/lang_slovenian/icon_profile.gif" alt="Poglej uporabnikov profil" title="Poglej uporabnikov profil" border="0" /></a> </td>
+			</tr>
+		</table></td>
+	</tr>
+	<tr>
+		<td class="spaceRow" colspan="2" height="1"><img src="templates/SGD/images/spacer.gif" alt="" width="1" height="1" /></td>
+	</tr>
+	
+	<tr>
+		<td width="150" align="left" valign="top" class="row1"><span class="name"><a name="15522"></a><b>ArYeS</b></span><br /><span class="postdetails">expert<br /><img src="images/ranks/sgd-6.gif" alt="expert" title="expert" border="0" /><br /><img src="images/avatars/c14d4e41428ef6735091f.gif" alt="" border="0" /><br /><br />Pridružen: 18. jan 2004 ob 21:21<br />objav: 717<br />Kraj: Miren</span><br /></td>
+		<td class="row1" width="100%" height="28" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+			<tr>
+				<td colspan="2" width="100%">
+					<table width="100%" cellpadding="0" cellspacing="0" border="0">
+						<tr>
+							<td valign="middle" align="left">
+								<a href="topic-1266-30.html#15522"><img src="templates/SGD2/images/icon_minipost.gif" width="12" height="9" alt="objava" title="objava" border="0" /></a>
+								<span class="postdetails">Objavljeno: ned sep 17, 2006 3:54 pm<span class="gen">&nbsp;</span>&nbsp; &nbsp;Pošlji temo: </span>
+							</td>
+							<td valign="middle" align="right" nowrap="nowrap">
+							</td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+			<tr>
+				<td colspan="2"><hr /></td>
+			</tr>
+			<tr>
+				<td colspan="2"><span class="postbody">Bolje bi bilo če bi povedal kakšen čuden efekt dobiš...
+
+<br />
+Drugače ni ravno najboljša pot, a moja prva igra so bili tudi križci krožci in sem podobno pot šel kot ti.<br />_________________<br /><a class="postlink" >http://www.inverse-gravity.net</a></span><span class="gensmall"></span></td>
+			</tr>
+		</table></td>
+	</tr>
+	<tr>
+		<td class="row1" width="150" align="left" valign="middle"><span class="nav"><a href="#top" class="nav">Nazaj na vrh</a></span></td>
+		<td class="row1" width="100%" height="28" valign="bottom" nowrap="nowrap"><table cellspacing="0" cellpadding="0" border="0" height="18" width="18">
+			<tr>
+				<td valign="middle" nowrap="nowrap"><a href="profile-145.html"><img src="templates/SGD2/images/lang_slovenian/icon_profile.gif" alt="Poglej uporabnikov profil" title="Poglej uporabnikov profil" border="0" /></a> <a  target="_userwww"><img src="templates/SGD2/images/lang_slovenian/icon_www.gif" alt="Obišči avtorjevo spletno stran" title="Obišči avtorjevo spletno stran" border="0" /></a></td>
+			</tr>
+		</table></td>
+	</tr>
+	<tr>
+		<td class="spaceRow" colspan="2" height="1"><img src="templates/SGD/images/spacer.gif" alt="" width="1" height="1" /></td>
+	</tr>
+	
+	<tr>
+		<td width="150" align="left" valign="top" class="row2"><span class="name"><a name="15526"></a><b>eleanor</b></span><br /><span class="postdetails">novinec<br /><img src="images/ranks/sgd-0.gif" alt="novinec" title="novinec" border="0" /><br /><br /><br />Pridružen: 12. sep 2006 ob 04:19<br />objav: 6<br /></span><br /></td>
+		<td class="row2" width="100%" height="28" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+			<tr>
+				<td colspan="2" width="100%">
+					<table width="100%" cellpadding="0" cellspacing="0" border="0">
+						<tr>
+							<td valign="middle" align="left">
+								<a href="topic-1266-30.html#15526"><img src="templates/SGD2/images/icon_minipost.gif" width="12" height="9" alt="objava" title="objava" border="0" /></a>
+								<span class="postdetails">Objavljeno: ned sep 17, 2006 6:39 pm<span class="gen">&nbsp;</span>&nbsp; &nbsp;Pošlji temo: </span>
+							</td>
+							<td valign="middle" align="right" nowrap="nowrap">
+							</td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+			<tr>
+				<td colspan="2"><hr /></td>
+			</tr>
+			<tr>
+				<td colspan="2"><span class="postbody">Anyway, zdej sem tkole naredu:
+
+<br />
+
+
+<br />
+</span>
+<br />
+<table width="90%" cellspacing="1" cellpadding="3" border="0" align="center">
+<br />
+<tr> 
+<br />
+	  <td><span class="genmed"><b>Koda:</b></span></td>
+<br />
+	</tr>
+<br />
+	<tr>
+<br />
+	  <td class="code">#include &lt;iostream&#46;h&gt;
+<br />
+#include &lt;time&#46;h&gt;
+<br />
+#include &lt;stdlib&#46;h&gt;
+<br />
+
+<br />
+void navodila&#40;&#41;
+<br />
+&#123;
+<br />
+cout &lt;&lt; &quot;------------------------------------&quot; &lt;&lt; endl;
+<br />
+cout &lt;&lt; &quot;---------KRIZCI--IN--KROZCI---------&quot; &lt;&lt; endl;
+<br />
+cout &lt;&lt; &quot;------------------------------------&quot; &lt;&lt; endl;
+<br />
+cout &lt;&lt; &quot;Vnesite crke od a-i kamor hocete postaviti svoj znak!&quot; &lt;&lt; endl;
+<br />
+&#125;
+<br />
+
+<br />
+void stevilcnica&#40;&#41;
+<br />
+&#123;
+<br />
+cout &lt;&lt; &quot;-----------------&quot; &lt;&lt; endl;
+<br />
+cout &lt;&lt; &quot;&#91; a &#93; &#91; b &#93; &#91; c &#93;&quot; &lt;&lt; endl;
+<br />
+cout &lt;&lt; &quot;&#91; d &#93; &#91; e &#93; &#91; f &#93;&quot; &lt;&lt; endl;
+<br />
+cout &lt;&lt; &quot;&#91; g &#93; &#91; h &#93; &#91; i &#93;&quot; &lt;&lt; endl;
+<br />
+cout &lt;&lt; &quot;-----------------&quot; &lt;&lt; endl;
+<br />
+&#125;
+<br />
+
+<br />
+int main&#40;&#41;
+<br />
+&#123;
+<br />
+int player=0;
+<br />
+int p1,p2;
+<br />
+float l;
+<br />
+char ime&#91;10&#93;;
+<br />
+char ime2&#91;10&#93;;
+<br />
+char polje&#91;2&#93;&#91;2&#93;;
+<br />
+char a='a',b='b',c='c',d='d',e='e',f='f',g='g',h='h',i='i';
+<br />
+char k1,k2;
+<br />
+
+<br />
+navodila&#40;&#41;;
+<br />
+stevilcnica&#40;&#41;;
+<br />
+cout &lt;&lt; &quot;Ime prvega igralca&#58; &quot;;
+<br />
+cin &gt;&gt; ime;
+<br />
+cout &lt;&lt; &quot;Ime drugega igralca&#58; &quot;;
+<br />
+cin &gt;&gt; ime2;
+<br />
+cout &lt;&lt; ime &lt;&lt; &quot; proti &quot; &lt;&lt; ime2 &lt;&lt; &quot;&#58;&quot; &lt;&lt; endl;
+<br />
+
+<br />
+for&#40;int j=0;j&lt;9;j++&#41;
+<br />
+&#123;
+<br />
+        l = player % 2;
+<br />
+
+<br />
+        if &#40;l==0&#41; &#123;
+<br />
+        cout &lt;&lt; ime;
+<br />
+        &#125;
+<br />
+
+<br />
+        else if &#40;l==1&#41; &#123;
+<br />
+        cout &lt;&lt; ime2;
+<br />
+        &#125;
+<br />
+
+<br />
+        if&#40;l==0&#41; &#123;
+<br />
+        cout &lt;&lt; &quot;,vnesi polje&#58; &quot;;
+<br />
+        cin &gt;&gt; k1;
+<br />
+        player++;
+<br />
+        &#125;
+<br />
+
+<br />
+        if&#40;l==1&#41; &#123;
+<br />
+        cout &lt;&lt; &quot;,vnesi polje&#58; &quot;;
+<br />
+        cin &gt;&gt; k2;
+<br />
+        player++;
+<br />
+        &#125;
+<br />
+switch&#40;k1&#41; &#123;
+<br />
+case 'a'&#58; a='X'; break;
+<br />
+case 'b'&#58; b='X'; break;
+<br />
+case 'c'&#58; c='X'; break;
+<br />
+case 'd'&#58; d='X'; break;
+<br />
+case 'e'&#58; e='X'; break;
+<br />
+case 'f'&#58; f='X'; break;
+<br />
+case 'g'&#58; g='X'; break;
+<br />
+case 'h'&#58; h='X'; break;
+<br />
+case 'i'&#58; i='X'; break;
+<br />
+&#125;
+<br />
+
+<br />
+switch&#40;k2&#41; &#123;
+<br />
+case 'a'&#58; a='0'; break;
+<br />
+case 'b'&#58; b='0'; break;
+<br />
+case 'c'&#58; c='0'; break;
+<br />
+case 'd'&#58; d='0'; break;
+<br />
+case 'e'&#58; e='0'; break;
+<br />
+case 'f'&#58; f='0'; break;
+<br />
+case 'g'&#58; g='0'; break;
+<br />
+case 'h'&#58; h='0'; break;
+<br />
+case 'i'&#58; i='0'; break;
+<br />
+&#125;
+<br />
+
+<br />
+if&#40;&#40;a=='X' &amp;&amp; b=='X' &amp;&amp; c=='X'&#41; || &#40;a=='X' &amp;&amp; d=='X' &amp;&amp; g=='X'&#41; ||
+<br />
+&#40;a=='X' &amp;&amp; e=='X' &amp;&amp; i=='X'&#41; || &#40;b=='X' &amp;&amp; e=='X' &amp;&amp; h=='X'&#41; || &#40;c=='X'
+<br />
+&amp;&amp; f=='X' &amp;&amp; i=='X'&#41; || &#40;c=='X' &amp;&amp; e=='X' &amp;&amp; g=='X'&#41; || &#40;a=='X' &amp;&amp;
+<br />
+b=='X' &amp;&amp; c=='X'&#41; || &#40;d=='X' &amp;&amp; e=='X' &amp;&amp; f=='X'&#41; || &#40;g=='X' &amp;&amp; h=='X'
+<br />
+&amp;&amp; i=='X'&#41;&#41; &#123;
+<br />
+cout &lt;&lt; &quot;Zmagal je &quot; &lt;&lt; ime &lt;&lt; endl;
+<br />
+&#125;
+<br />
+
+<br />
+if&#40;&#40;a=='0' &amp;&amp; b=='0' &amp;&amp; c=='0'&#41; || &#40;a=='0' &amp;&amp; d=='0' &amp;&amp; g=='0'&#41; ||
+<br />
+&#40;a=='0' &amp;&amp; e=='0' &amp;&amp; i=='0'&#41; || &#40;b=='0' &amp;&amp; e=='0' &amp;&amp; h=='0'&#41; || &#40;c=='0'
+<br />
+&amp;&amp; f=='0' &amp;&amp; i=='0'&#41; || &#40;c=='0' &amp;&amp; e=='0' &amp;&amp; g=='0'&#41; || &#40;a=='0' &amp;&amp;
+<br />
+b=='0' &amp;&amp; c=='0'&#41; || &#40;d=='0' &amp;&amp; e=='0' &amp;&amp; f=='0'&#41; || &#40;g=='0' &amp;&amp; h=='0'
+<br />
+&amp;&amp; i=='0'&#41;&#41;
+<br />
+&#123;
+<br />
+cout &lt;&lt; &quot;Zmagal je &quot; &lt;&lt; ime2 &lt;&lt; endl;
+<br />
+&#125;
+<br />
+
+<br />
+&#125; // konec for stavka
+<br />
+
+<br />
+&#125; // konec main funkcije</td>
+<br />
+	</tr>
+<br />
+</table>
+<br />
+<span class="postbody">
+
+<br />
+
+
+<br />
+zdaj bi pa rad, da se mi v številčnici: 
+
+<br />
+</span>
+<br />
+<table width="90%" cellspacing="1" cellpadding="3" border="0" align="center">
+<br />
+<tr> 
+<br />
+	  <td><span class="genmed"><b>Citiram:</b></span></td>
+<br />
+	</tr>
+<br />
+	<tr>
+<br />
+	  <td class="quote">-----------------
+<br />
+[ a ] [ b ] [ c ]
+<br />
+[ d ] [ e ] [ f ]
+<br />
+[ g ] [ h ] [ i ]
+<br />
+-----------------</td>
+<br />
+	</tr>
+<br />
+</table>
+<br />
+<span class="postbody">
+
+<br />
+namesto a-i črk delajo krizci in krozci---&gt; kako je to izvedljivo?</span><span class="gensmall"></span></td>
+			</tr>
+		</table></td>
+	</tr>
+	<tr>
+		<td class="row2" width="150" align="left" valign="middle"><span class="nav"><a href="#top" class="nav">Nazaj na vrh</a></span></td>
+		<td class="row2" width="100%" height="28" valign="bottom" nowrap="nowrap"><table cellspacing="0" cellpadding="0" border="0" height="18" width="18">
+			<tr>
+				<td valign="middle" nowrap="nowrap"><a href="profile-291.html"><img src="templates/SGD2/images/lang_slovenian/icon_profile.gif" alt="Poglej uporabnikov profil" title="Poglej uporabnikov profil" border="0" /></a> </td>
+			</tr>
+		</table></td>
+	</tr>
+	<tr>
+		<td class="spaceRow" colspan="2" height="1"><img src="templates/SGD/images/spacer.gif" alt="" width="1" height="1" /></td>
+	</tr>
+	
+	<tr>
+		<td width="150" align="left" valign="top" class="row1"><span class="name"><a name="15528"></a><b>GupeM</b></span><br /><span class="postdetails">poznavalec<br /><img src="images/ranks/sgd-3.gif" alt="poznavalec" title="poznavalec" border="0" /><br /><img src="images/avatars/c14d51e34222dc2e8244d.gif" alt="" border="0" /><br /><br />Pridružen: 30. jun 2003 ob 10:13<br />objav: 177<br />Kraj: Žiri</span><br /></td>
+		<td class="row1" width="100%" height="28" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+			<tr>
+				<td colspan="2" width="100%">
+					<table width="100%" cellpadding="0" cellspacing="0" border="0">
+						<tr>
+							<td valign="middle" align="left">
+								<a href="topic-1266-30.html#15528"><img src="templates/SGD2/images/icon_minipost.gif" width="12" height="9" alt="objava" title="objava" border="0" /></a>
+								<span class="postdetails">Objavljeno: ned sep 17, 2006 10:29 pm<span class="gen">&nbsp;</span>&nbsp; &nbsp;Pošlji temo: </span>
+							</td>
+							<td valign="middle" align="right" nowrap="nowrap">
+							</td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+			<tr>
+				<td colspan="2"><hr /></td>
+			</tr>
+			<tr>
+				<td colspan="2"><span class="postbody"></span>
+<br />
+<table width="90%" cellspacing="1" cellpadding="3" border="0" align="center">
+<br />
+<tr> 
+<br />
+	  <td><span class="genmed"><b>Koda:</b></span></td>
+<br />
+	</tr>
+<br />
+	<tr>
+<br />
+	  <td class="code">void stevilcnica&#40;&#41;
+<br />
+&#123;
+<br />
+cout &lt;&lt; &quot;-----------------&quot; &lt;&lt; endl;
+<br />
+cout &lt;&lt; &quot;&#91; a &#93; &#91; b &#93; &#91; c &#93;&quot; &lt;&lt; endl;
+<br />
+cout &lt;&lt; &quot;&#91; d &#93; &#91; e &#93; &#91; f &#93;&quot; &lt;&lt; endl;
+<br />
+cout &lt;&lt; &quot;&#91; g &#93; &#91; h &#93; &#91; i &#93;&quot; &lt;&lt; endl;
+<br />
+cout &lt;&lt; &quot;-----------------&quot; &lt;&lt; endl;
+<br />
+&#125; </td>
+<br />
+	</tr>
+<br />
+</table>
+<br />
+<span class="postbody">
+<br />
+
+<br />
+Tole naredi tako:
+<br />
+
+<br />
+</span>
+<br />
+<table width="90%" cellspacing="1" cellpadding="3" border="0" align="center">
+<br />
+<tr> 
+<br />
+	  <td><span class="genmed"><b>Koda:</b></span></td>
+<br />
+	</tr>
+<br />
+	<tr>
+<br />
+	  <td class="code">void stevilcnica&#40;&#41;
+<br />
+&#123;
+<br />
+char a='a',b='b',c='c',d='d',e='e',f='f',g='g',h='h',i='i'; 
+<br />
+cout &lt;&lt; &quot;-----------------&quot; &lt;&lt; endl;
+<br />
+cout &lt;&lt; &quot;&#91; &quot;&lt;&lt; a &lt;&lt;&quot; &#93; &#91; &quot;&lt;&lt; b &lt;&lt;&quot;&#93; &#91; &quot;&lt;&lt; c &lt;&lt; &quot;&#93;&quot; &lt;&lt; endl;
+<br />
+&#46;
+<br />
+&#46;
+<br />
+&#46;//za vsako vrstico posebej
+<br />
+cout &lt;&lt; &quot;-----------------&quot; &lt;&lt; endl;
+<br />
+&#125; </td>
+<br />
+	</tr>
+<br />
+</table>
+<br />
+<span class="postbody">
+
+<br />
+
+
+<br />
+Pol pa sam vrednost spremenljivke spremeniš v X ali O.
+
+<br />
+
+
+<br />
+Pomoje bi blo v redu.<br />_________________<br />Se naenkrat roke dvignejo, vrata se odpro in v zraku vidim deklico, ki na prsih nosi.
+
+<br />
+Finis Mundi/Konec je sveta.</span><span class="gensmall"></span></td>
+			</tr>
+		</table></td>
+	</tr>
+	<tr>
+		<td class="row1" width="150" align="left" valign="middle"><span class="nav"><a href="#top" class="nav">Nazaj na vrh</a></span></td>
+		<td class="row1" width="100%" height="28" valign="bottom" nowrap="nowrap"><table cellspacing="0" cellpadding="0" border="0" height="18" width="18">
+			<tr>
+				<td valign="middle" nowrap="nowrap"><a href="profile-73.html"><img src="templates/SGD2/images/lang_slovenian/icon_profile.gif" alt="Poglej uporabnikov profil" title="Poglej uporabnikov profil" border="0" /></a> </td>
+			</tr>
+		</table></td>
+	</tr>
+	<tr>
+		<td class="spaceRow" colspan="2" height="1"><img src="templates/SGD/images/spacer.gif" alt="" width="1" height="1" /></td>
+	</tr>
+	
+	<tr>
+		<td width="150" align="left" valign="top" class="row2"><span class="name"><a name="15529"></a><b>eleanor</b></span><br /><span class="postdetails">novinec<br /><img src="images/ranks/sgd-0.gif" alt="novinec" title="novinec" border="0" /><br /><br /><br />Pridružen: 12. sep 2006 ob 04:19<br />objav: 6<br /></span><br /></td>
+		<td class="row2" width="100%" height="28" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+			<tr>
+				<td colspan="2" width="100%">
+					<table width="100%" cellpadding="0" cellspacing="0" border="0">
+						<tr>
+							<td valign="middle" align="left">
+								<a href="topic-1266-30.html#15529"><img src="templates/SGD2/images/icon_minipost.gif" width="12" height="9" alt="objava" title="objava" border="0" /></a>
+								<span class="postdetails">Objavljeno: ned sep 17, 2006 11:48 pm<span class="gen">&nbsp;</span>&nbsp; &nbsp;Pošlji temo: </span>
+							</td>
+							<td valign="middle" align="right" nowrap="nowrap">
+							</td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+			<tr>
+				<td colspan="2"><hr /></td>
+			</tr>
+			<tr>
+				<td colspan="2"><span class="postbody">Switch stavke sem sedaj spremenil v tole:
+
+<br />
+
+
+<br />
+</span>
+<br />
+<table width="90%" cellspacing="1" cellpadding="3" border="0" align="center">
+<br />
+<tr> 
+<br />
+	  <td><span class="genmed"><b>Koda:</b></span></td>
+<br />
+	</tr>
+<br />
+	<tr>
+<br />
+	  <td class="code">while&#40;k1=='a' || k1=='b' || k1=='c' || k1=='d' || k1=='e' || k1=='f' || k1=='g' || k1=='h' || k1=='i'&#41; &#123;
+<br />
+switch&#40;k1&#41; &#123; 
+<br />
+case 'a'&#58; if&#40;a!='X' &amp;&amp; a!='O'&#41;&#123;a='X';&#125; else if&#40;a=='X'&#41;&#123;cout&lt;&lt;&quot;Used&#58;X&#46;&#46;&#46;Choose another field&#58; &quot;; cin&gt;&gt;k1;&#125; else if&#40;a=='O'&#41;&#123;cout&lt;&lt;&quot;Used&#58;0&#46;&#46;&#46;Choose another field&#58; &quot;; cin&gt;&gt;k1;&#125;break; 
+<br />
+case 'b'&#58; if&#40;b!='X' &amp;&amp; b!='O'&#41;&#123;b='X';&#125; else if&#40;b=='X'&#41;&#123;cout&lt;&lt;&quot;Used&#58;X&#46;&#46;&#46;Choose another field&#58; &quot;; cin&gt;&gt;k1;&#125; else if&#40;a=='O'&#41;&#123;cout&lt;&lt;&quot;Used&#58;0&#46;&#46;&#46;Choose another field&#58; &quot;; cin&gt;&gt;k1;&#125;break;
+<br />
+case 'c'&#58; if&#40;c!='X' &amp;&amp; c!='O'&#41;&#123;c='X';&#125; else if&#40;c=='X'&#41;&#123;cout&lt;&lt;&quot;Used&#58;X&#46;&#46;&#46;Choose another field&#58; &quot;; cin&gt;&gt;k1;&#125; else if&#40;a=='O'&#41;&#123;cout&lt;&lt;&quot;Used&#58;0&#46;&#46;&#46;Choose another field&#58; &quot;; cin&gt;&gt;k1;&#125;break;
+<br />
+case 'd'&#58; if&#40;d!='X' &amp;&amp; d!='O'&#41;&#123;d='X';&#125; else if&#40;d=='X'&#41;&#123;cout&lt;&lt;&quot;Used&#58;X&#46;&#46;&#46;Choose another field&#58; &quot;; cin&gt;&gt;k1;&#125; else if&#40;a=='O'&#41;&#123;cout&lt;&lt;&quot;Used&#58;0&#46;&#46;&#46;Choose another field&#58; &quot;; cin&gt;&gt;k1;&#125;break;
+<br />
+case 'e'&#58; if&#40;e!='X' &amp;&amp; e!='O'&#41;&#123;e='X';&#125; else if&#40;e=='X'&#41;&#123;cout&lt;&lt;&quot;Used&#58;X&#46;&#46;&#46;Choose another field&#58; &quot;; cin&gt;&gt;k1;&#125; else if&#40;a=='O'&#41;&#123;cout&lt;&lt;&quot;Used&#58;0&#46;&#46;&#46;Choose another field&#58; &quot;; cin&gt;&gt;k1;&#125;break;
+<br />
+case 'f'&#58; if&#40;f!='X' &amp;&amp; f!='O'&#41;&#123;f='X';&#125; else if&#40;f=='X'&#41;&#123;cout&lt;&lt;&quot;Used&#58;X&#46;&#46;&#46;Choose another field&#58; &quot;; cin&gt;&gt;k1;&#125; else if&#40;a=='O'&#41;&#123;cout&lt;&lt;&quot;Used&#58;0&#46;&#46;&#46;Choose another field&#58; &quot;; cin&gt;&gt;k1;&#125;break;
+<br />
+case 'g'&#58; if&#40;g!='X' &amp;&amp; g!='O'&#41;&#123;g='X';&#125; else if&#40;g=='X'&#41;&#123;cout&lt;&lt;&quot;Used&#58;X&#46;&#46;&#46;Choose another field&#58; &quot;; cin&gt;&gt;k1;&#125; else if&#40;a=='O'&#41;&#123;cout&lt;&lt;&quot;Used&#58;0&#46;&#46;&#46;Choose another field&#58; &quot;; cin&gt;&gt;k1;&#125;break;
+<br />
+case 'h'&#58; if&#40;h!='X' &amp;&amp; h!='O'&#41;&#123;h='X';&#125; else if&#40;h=='X'&#41;&#123;cout&lt;&lt;&quot;Used&#58;X&#46;&#46;&#46;Choose another field&#58; &quot;; cin&gt;&gt;k1;&#125; else if&#40;a=='O'&#41;&#123;cout&lt;&lt;&quot;Used&#58;0&#46;&#46;&#46;Choose another field&#58; &quot;; cin&gt;&gt;k1;&#125;break;
+<br />
+case 'i'&#58; if&#40;i!='X' &amp;&amp; i!='O'&#41;&#123;i='X';&#125; else if&#40;i=='X'&#41;&#123;cout&lt;&lt;&quot;Used&#58;X&#46;&#46;&#46;Choose another field&#58; &quot;; cin&gt;&gt;k1;&#125; else if&#40;a=='O'&#41;&#123;cout&lt;&lt;&quot;Used&#58;0&#46;&#46;&#46;Choose another field&#58; &quot;; cin&gt;&gt;k1;&#125;break;
+<br />
+&#125; 
+<br />
+&#125;;
+<br />
+
+<br />
+while&#40;k2=='a' || k2=='b' || k2=='c' || k2=='d' || k2=='e' || k2=='f' || k2=='g' || k2=='h' || k2=='i'&#41; &#123;
+<br />
+switch&#40;k2&#41; &#123; 
+<br />
+case 'a'&#58; if&#40;a!='X' &amp;&amp; a!='O'&#41;&#123;a='O';&#125; else if&#40;a=='X'&#41;&#123;cout&lt;&lt;&quot;Used&#58;X&#46;&#46;&#46;Choose another field&#58; &quot;; cin&gt;&gt;k2;&#125; else if&#40;a=='O'&#41;&#123;cout&lt;&lt;&quot;Used&#58;0&#46;&#46;&#46;Choose another field&#58; &quot;; cin&gt;&gt;k2;&#125;break; 
+<br />
+case 'b'&#58; if&#40;b!='X' &amp;&amp; b!='O'&#41;&#123;b='O';&#125; else if&#40;b=='X'&#41;&#123;cout&lt;&lt;&quot;Used&#58;X&#46;&#46;&#46;Choose another field&#58; &quot;; cin&gt;&gt;k2;&#125; else if&#40;a=='O'&#41;&#123;cout&lt;&lt;&quot;Used&#58;0&#46;&#46;&#46;Choose another field&#58; &quot;; cin&gt;&gt;k2;&#125;break;
+<br />
+case 'c'&#58; if&#40;c!='X' &amp;&amp; c!='O'&#41;&#123;c='O';&#125; else if&#40;c=='X'&#41;&#123;cout&lt;&lt;&quot;Used&#58;X&#46;&#46;&#46;Choose another field&#58; &quot;; cin&gt;&gt;k2;&#125; else if&#40;a=='O'&#41;&#123;cout&lt;&lt;&quot;Used&#58;0&#46;&#46;&#46;Choose another field&#58; &quot;; cin&gt;&gt;k2;&#125;break;
+<br />
+case 'd'&#58; if&#40;d!='X' &amp;&amp; d!='O'&#41;&#123;d='O';&#125; else if&#40;d=='X'&#41;&#123;cout&lt;&lt;&quot;Used&#58;X&#46;&#46;&#46;Choose another field&#58; &quot;; cin&gt;&gt;k2;&#125; else if&#40;a=='O'&#41;&#123;cout&lt;&lt;&quot;Used&#58;0&#46;&#46;&#46;Choose another field&#58; &quot;; cin&gt;&gt;k2;&#125;break;
+<br />
+case 'e'&#58; if&#40;e!='X' &amp;&amp; e!='O'&#41;&#123;e='O';&#125; else if&#40;e=='X'&#41;&#123;cout&lt;&lt;&quot;Used&#58;X&#46;&#46;&#46;Choose another field&#58; &quot;; cin&gt;&gt;k2;&#125; else if&#40;a=='O'&#41;&#123;cout&lt;&lt;&quot;Used&#58;0&#46;&#46;&#46;Choose another field&#58; &quot;; cin&gt;&gt;k2;&#125;break;
+<br />
+case 'f'&#58; if&#40;f!='X' &amp;&amp; f!='O'&#41;&#123;f='O';&#125; else if&#40;f=='X'&#41;&#123;cout&lt;&lt;&quot;Used&#58;X&#46;&#46;&#46;Choose another field&#58; &quot;; cin&gt;&gt;k2;&#125; else if&#40;a=='O'&#41;&#123;cout&lt;&lt;&quot;Used&#58;0&#46;&#46;&#46;Choose another field&#58; &quot;; cin&gt;&gt;k2;&#125;break;
+<br />
+case 'g'&#58; if&#40;g!='X' &amp;&amp; g!='O'&#41;&#123;g='O';&#125; else if&#40;g=='X'&#41;&#123;cout&lt;&lt;&quot;Used&#58;X&#46;&#46;&#46;Choose another field&#58; &quot;; cin&gt;&gt;k2;&#125; else if&#40;a=='O'&#41;&#123;cout&lt;&lt;&quot;Used&#58;0&#46;&#46;&#46;Choose another field&#58; &quot;; cin&gt;&gt;k2;&#125;break;
+<br />
+case 'h'&#58; if&#40;h!='X' &amp;&amp; h!='O'&#41;&#123;h='O';&#125; else if&#40;h=='X'&#41;&#123;cout&lt;&lt;&quot;Used&#58;X&#46;&#46;&#46;Choose another field&#58; &quot;; cin&gt;&gt;k2;&#125; else if&#40;a=='O'&#41;&#123;cout&lt;&lt;&quot;Used&#58;0&#46;&#46;&#46;Choose another field&#58; &quot;; cin&gt;&gt;k2;&#125;break;
+<br />
+case 'i'&#58; if&#40;i!='X' &amp;&amp; i!='O'&#41;&#123;i='O';&#125; else if&#40;i=='X'&#41;&#123;cout&lt;&lt;&quot;Used&#58;X&#46;&#46;&#46;Choose another field&#58; &quot;; cin&gt;&gt;k2;&#125; else if&#40;a=='O'&#41;&#123;cout&lt;&lt;&quot;Used&#58;0&#46;&#46;&#46;Choose another field&#58; &quot;; cin&gt;&gt;k2;&#125;break;
+<br />
+&#125;
+<br />
+&#125;;</td>
+<br />
+	</tr>
+<br />
+</table>
+<br />
+<span class="postbody">
+
+<br />
+
+
+<br />
+toda, ne dela kot bi moglo. Tukaj je output:
+
+<br />
+
+
+<br />
+</span>
+<br />
+<table width="90%" cellspacing="1" cellpadding="3" border="0" align="center">
+<br />
+<tr> 
+<br />
+	  <td><span class="genmed"><b>Citiram:</b></span></td>
+<br />
+	</tr>
+<br />
+	<tr>
+<br />
+	  <td class="quote">Name of the first player: one
+<br />
+Name of the second player: two
+<br />
+one against two:
+<br />
+one,enter the field: a
+<br />
+two,enter the field: b
+<br />
+Used:X...Choose another field: b
+<br />
+one,enter the field: c
+<br />
+two,enter the field: d
+<br />
+Used:X...Choose another field: d
+<br />
+one,enter the field: e
+<br />
+two,enter the field: f
+<br />
+Used:X...Choose another field: f
+<br />
+one,enter the field: g
+<br />
+User one won!
+<br />
+two,enter the field: h
+<br />
+Used:X...Choose another field: h
+<br />
+User one won!
+<br />
+one,enter the field: i
+<br />
+User one won!
+<br />
+-----------------
+<br />
+[X] [O] [X]
+<br />
+[O] [X] [O]
+<br />
+[X] [O] [X]
+<br />
+-----------------</td>
+<br />
+	</tr>
+<br />
+</table>
+<br />
+<span class="postbody">
+
+<br />
+
+
+<br />
+Kaj naj naredim, da bo delovalo. Im kaj naj naredim, da mi en bo samo na koncu izpisalo številčnico, ampak ob vsakem vnosu?</span><span class="gensmall"></span></td>
+			</tr>
+		</table></td>
+	</tr>
+	<tr>
+		<td class="row2" width="150" align="left" valign="middle"><span class="nav"><a href="#top" class="nav">Nazaj na vrh</a></span></td>
+		<td class="row2" width="100%" height="28" valign="bottom" nowrap="nowrap"><table cellspacing="0" cellpadding="0" border="0" height="18" width="18">
+			<tr>
+				<td valign="middle" nowrap="nowrap"><a href="profile-291.html"><img src="templates/SGD2/images/lang_slovenian/icon_profile.gif" alt="Poglej uporabnikov profil" title="Poglej uporabnikov profil" border="0" /></a> </td>
+			</tr>
+		</table></td>
+	</tr>
+	<tr>
+		<td class="spaceRow" colspan="2" height="1"><img src="templates/SGD/images/spacer.gif" alt="" width="1" height="1" /></td>
+	</tr>
+	
+	<tr>
+		<td width="150" align="left" valign="top" class="row1"><span class="name"><a name="15530"></a><b>eleanor</b></span><br /><span class="postdetails">novinec<br /><img src="images/ranks/sgd-0.gif" alt="novinec" title="novinec" border="0" /><br /><br /><br />Pridružen: 12. sep 2006 ob 04:19<br />objav: 6<br /></span><br /></td>
+		<td class="row1" width="100%" height="28" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+			<tr>
+				<td colspan="2" width="100%">
+					<table width="100%" cellpadding="0" cellspacing="0" border="0">
+						<tr>
+							<td valign="middle" align="left">
+								<a href="topic-1266-30.html#15530"><img src="templates/SGD2/images/icon_minipost.gif" width="12" height="9" alt="objava" title="objava" border="0" /></a>
+								<span class="postdetails">Objavljeno: pon sep 18, 2006 5:31 am<span class="gen">&nbsp;</span>&nbsp; &nbsp;Pošlji temo: </span>
+							</td>
+							<td valign="middle" align="right" nowrap="nowrap">
+							</td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+			<tr>
+				<td colspan="2"><hr /></td>
+			</tr>
+			<tr>
+				<td colspan="2"><span class="postbody">Sedaj sem se lotil naloge z druge strani in mi je uspelo spraviti skupaj eno "zmerno" igrco. Povejte kako se vam zdi in če je kaksen bug notri:
+
+<br />
+
+
+<br />
+</span>
+<br />
+<table width="90%" cellspacing="1" cellpadding="3" border="0" align="center">
+<br />
+<tr> 
+<br />
+	  <td><span class="genmed"><b>Koda:</b></span></td>
+<br />
+	</tr>
+<br />
+	<tr>
+<br />
+	  <td class="code">#include &lt;iostream&#46;h&gt;
+<br />
+#include &lt;time&#46;h&gt;
+<br />
+#include &lt;stdlib&#46;h&gt;
+<br />
+
+<br />
+int dovoljenaPoteza&#40;char &#91;&#93;, char &#91;&#93;&#41;;
+<br />
+void pokaziStevilcnica&#40;char &#91;&#93;&#41;;
+<br />
+int zmagovalec&#40;char &#91;&#93;&#41;;
+<br />
+
+<br />
+int main&#40;&#41;
+<br />
+&#123;
+<br />
+	cout &lt;&lt; &quot;------------------------------------&quot; &lt;&lt; endl; 
+<br />
+	cout &lt;&lt; &quot;---------KRIZCI--IN--KROZCI---------&quot; &lt;&lt; endl; 
+<br />
+	cout &lt;&lt; &quot;------------------------------------&quot; &lt;&lt; endl;
+<br />
+	
+<br />
+	int konecIgre=0, pzmagovalec=0, poteza=0,  vsePoteza=0, trenutniIgralec=1;
+<br />
+	char stevilcnica&#91;10&#93;;
+<br />
+	char igralec1&#91;10&#93;, igralec2&#91;10&#93;;	
+<br />
+
+<br />
+	cout &lt;&lt; &quot;Vpisi ime igralca X&#58; &quot;;
+<br />
+	cin &gt;&gt; igralec1;
+<br />
+	cout &lt;&lt; &quot;Vpisi ime igralca X&#58; &quot;;
+<br />
+	cin &gt;&gt; igralec2;
+<br />
+
+<br />
+	for&#40;int x=0; x&lt;10; x++&#41; &#123;
+<br />
+		stevilcnica&#91;x&#93;=' ';
+<br />
+	&#125;
+<br />
+
+<br />
+
+<br />
+	while&#40;&#40;konecIgre == 0&#41; &amp;&amp; &#40;poteza &lt; 9&#41;&#41; &#123;
+<br />
+		
+<br />
+		if&#40;trenutniIgralec == 1&#41; &#123;
+<br />
+			poteza = dovoljenaPoteza&#40;igralec1, stevilcnica&#41;;
+<br />
+			stevilcnica&#91;poteza&#93; = 'X';
+<br />
+		&#125;
+<br />
+		else &#123;
+<br />
+			poteza = dovoljenaPoteza&#40;igralec2, stevilcnica&#41;;
+<br />
+			stevilcnica&#91;poteza&#93; = 'O';
+<br />
+		&#125;
+<br />
+	
+<br />
+		pzmagovalec = zmagovalec&#40;stevilcnica&#41;;
+<br />
+		if&#40;pzmagovalec == 1&#41;
+<br />
+			konecIgre = 1;
+<br />
+
+<br />
+		trenutniIgralec *= -1;
+<br />
+		vsePoteza++;
+<br />
+	&#125;
+<br />
+	if&#40;pzmagovalec == 1&#41; &#123;
+<br />
+		pokaziStevilcnica&#40;stevilcnica&#41;;
+<br />
+		if&#40;trenutniIgralec == 1&#41;
+<br />
+			cout &lt;&lt; igralec2 &lt;&lt; &quot; je zmagal igro&#46;&quot; &lt;&lt; endl;
+<br />
+		else
+<br />
+			cout &lt;&lt; igralec1 &lt;&lt; &quot; je zmagal igro&#46;&quot; &lt;&lt; endl;
+<br />
+		&#125;
+<br />
+	else &#123;
+<br />
+		pokaziStevilcnica&#40;stevilcnica&#41;;
+<br />
+		cout &lt;&lt; &quot;Igra je neodlocena&#46;&quot; &lt;&lt; endl;
+<br />
+	&#125;
+<br />
+&#125;
+<br />
+
+<br />
+
+<br />
+
+<br />
+void pokaziStevilcnica&#40;char polje&#91;&#93;&#41; &#123;
+<br />
+	cout &lt;&lt; endl;
+<br />
+	cout &lt;&lt; &quot;Trenutna stevilcnica je&#58; &quot; &lt;&lt; endl;
+<br />
+	cout &lt;&lt; &quot;-------------------------&quot; &lt;&lt; endl;
+<br />
+	cout &lt;&lt; &quot;&#91; &quot; &lt;&lt; polje&#91;1&#93; &lt;&lt; &quot; &#93;  &#91; &quot; &lt;&lt; polje&#91;2&#93; &lt;&lt; &quot; &#93;  &#91; &quot; &lt;&lt; polje&#91;3&#93; &lt;&lt; &quot; &#93;&quot; &lt;&lt; endl;
+<br />
+	cout &lt;&lt; &quot;&#91; &quot; &lt;&lt; polje&#91;4&#93; &lt;&lt; &quot; &#93;  &#91; &quot; &lt;&lt; polje&#91;5&#93; &lt;&lt; &quot; &#93;  &#91; &quot; &lt;&lt; polje&#91;6&#93; &lt;&lt; &quot; &#93;&quot; &lt;&lt; endl;
+<br />
+	cout &lt;&lt; &quot;&#91; &quot; &lt;&lt; polje&#91;7&#93; &lt;&lt; &quot; &#93;  &#91; &quot; &lt;&lt; polje&#91;8&#93; &lt;&lt; &quot; &#93;  &#91; &quot; &lt;&lt; polje&#91;9&#93; &lt;&lt; &quot; &#93;&quot; &lt;&lt; endl;
+<br />
+	cout &lt;&lt; &quot;-------------------------&quot; &lt;&lt; endl;
+<br />
+&#125;
+<br />
+
+<br />
+
+<br />
+int dovoljenaPoteza&#40;char *igralec, char polje&#91;&#93;&#41; &#123;
+<br />
+
+<br />
+	int dobraPoteza = 0, trenutnaPoteza = 0;
+<br />
+
+<br />
+	while&#40;dobraPoteza==0&#41; &#123;
+<br />
+	
+<br />
+		pokaziStevilcnica&#40;polje&#41;;
+<br />
+
+<br />
+		cout &lt;&lt; &quot;-----------------&quot; &lt;&lt; endl; 
+<br />
+		cout &lt;&lt; &quot;&#91; 1 &#93; &#91; 2 &#93; &#91; 3 &#93;&quot; &lt;&lt; endl; 
+<br />
+		cout &lt;&lt; &quot;&#91; 4 &#93; &#91; 5 &#93; &#91; 6 &#93;&quot; &lt;&lt; endl; 
+<br />
+		cout &lt;&lt; &quot;&#91; 7 &#93; &#91; 8 &#93; &#91; 9 &#93;&quot; &lt;&lt; endl; 
+<br />
+		cout &lt;&lt; &quot;-----------------&quot; &lt;&lt; endl;
+<br />
+
+<br />
+		cout &lt;&lt; igralec &lt;&lt; &quot;vpisi svojo potezo&#58; &quot;;
+<br />
+		cin &gt;&gt; trenutnaPoteza;
+<br />
+
+<br />
+		if&#40;polje&#91;trenutnaPoteza&#93; == ' ' &amp;&amp; trenutnaPoteza &gt; 0 &amp;&amp; trenutnaPoteza &lt; 10&#41; &#123;
+<br />
+			dobraPoteza = trenutnaPoteza;
+<br />
+		&#125;
+<br />
+		else &#123;
+<br />
+			cout &lt;&lt; &quot;Ta poteza ni dovoljena, poskusi znova&#46;&quot; &lt;&lt; endl;
+<br />
+		&#125;
+<br />
+	 &#125;
+<br />
+	
+<br />
+	return dobraPoteza;
+<br />
+&#125;
+<br />
+
+<br />
+
+<br />
+int zmagovalec&#40;char polje&#91;&#93;&#41; &#123;
+<br />
+	int zmaga = 0;
+<br />
+
+<br />
+	if&#40;&#40;polje&#91;1&#93; != ' '&#41; &amp;&amp; &#40;polje&#91;1&#93; == polje&#91;2&#93;&#41; &amp;&amp; &#40;polje&#91;2&#93; == polje&#91;3&#93;&#41;&#41; &#123;
+<br />
+	zmaga = 1;
+<br />
+	&#125;
+<br />
+
+<br />
+	if&#40;&#40;polje&#91;4&#93; != ' '&#41; &amp;&amp; &#40;polje&#91;4&#93; == polje&#91;5&#93;&#41; &amp;&amp; &#40;polje&#91;5&#93; == polje&#91;6&#93;&#41;&#41; &#123;
+<br />
+	zmaga = 1;
+<br />
+	&#125;
+<br />
+
+<br />
+	if&#40;&#40;polje&#91;7&#93; != ' '&#41; &amp;&amp; &#40;polje&#91;7&#93; == polje&#91;8&#93;&#41; &amp;&amp; &#40;polje&#91;8&#93; == polje&#91;9&#93;&#41;&#41; &#123;
+<br />
+	zmaga = 1;
+<br />
+	&#125;
+<br />
+
+<br />
+	if&#40;&#40;polje&#91;1&#93; != ' '&#41; &amp;&amp; &#40;polje&#91;1&#93; == polje&#91;4&#93;&#41; &amp;&amp; &#40;polje&#91;4&#93; == polje&#91;7&#93;&#41;&#41; &#123;
+<br />
+	zmaga = 1;
+<br />
+	&#125;
+<br />
+	
+<br />
+	if&#40;&#40;polje&#91;2&#93; != ' '&#41; &amp;&amp; &#40;polje&#91;2&#93; == polje&#91;5&#93;&#41; &amp;&amp; &#40;polje&#91;5&#93; == polje&#91;8&#93;&#41;&#41; &#123;
+<br />
+	zmaga = 1;
+<br />
+	&#125;
+<br />
+
+<br />
+	if&#40;&#40;polje&#91;3&#93; != ' '&#41; &amp;&amp; &#40;polje&#91;3&#93; == polje&#91;6&#93;&#41; &amp;&amp; &#40;polje&#91;6&#93; == polje&#91;9&#93;&#41;&#41; &#123;
+<br />
+	zmaga = 1;
+<br />
+	&#125;
+<br />
+
+<br />
+	if&#40;&#40;polje&#91;1&#93; != ' '&#41; &amp;&amp; &#40;polje&#91;1&#93; == polje&#91;5&#93;&#41; &amp;&amp; &#40;polje&#91;5&#93; == polje&#91;9&#93;&#41;&#41; &#123;
+<br />
+	zmaga = 1;
+<br />
+	&#125;
+<br />
+
+<br />
+	if&#40;&#40;polje&#91;3&#93; != ' '&#41; &amp;&amp; &#40;polje&#91;3&#93; == polje&#91;5&#93;&#41; &amp;&amp; &#40;polje&#91;5&#93; == polje&#91;7&#93;&#41;&#41; &#123;
+<br />
+	zmaga = 1;
+<br />
+	&#125;
+<br />
+
+<br />
+	return zmaga;
+<br />
+&#125;</td>
+<br />
+	</tr>
+<br />
+</table>
+<br />
+<span class="postbody"></span><span class="gensmall"></span></td>
+			</tr>
+		</table></td>
+	</tr>
+	<tr>
+		<td class="row1" width="150" align="left" valign="middle"><span class="nav"><a href="#top" class="nav">Nazaj na vrh</a></span></td>
+		<td class="row1" width="100%" height="28" valign="bottom" nowrap="nowrap"><table cellspacing="0" cellpadding="0" border="0" height="18" width="18">
+			<tr>
+				<td valign="middle" nowrap="nowrap"><a href="profile-291.html"><img src="templates/SGD2/images/lang_slovenian/icon_profile.gif" alt="Poglej uporabnikov profil" title="Poglej uporabnikov profil" border="0" /></a> </td>
+			</tr>
+		</table></td>
+	</tr>
+	<tr>
+		<td class="spaceRow" colspan="2" height="1"><img src="templates/SGD/images/spacer.gif" alt="" width="1" height="1" /></td>
+	</tr>
+	
+	<tr>
+		<td width="150" align="left" valign="top" class="row2"><span class="name"><a name="15653"></a><b>LionKnight</b></span><br /><span class="postdetails">novinec<br /><img src="images/ranks/sgd-0.gif" alt="novinec" title="novinec" border="0" /><br /><br /><br />Pridružen: 05. okt 2006 ob 19:35<br />objav: 10<br /></span><br /></td>
+		<td class="row2" width="100%" height="28" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+			<tr>
+				<td colspan="2" width="100%">
+					<table width="100%" cellpadding="0" cellspacing="0" border="0">
+						<tr>
+							<td valign="middle" align="left">
+								<a href="topic-1266-30.html#15653"><img src="templates/SGD2/images/icon_minipost.gif" width="12" height="9" alt="objava" title="objava" border="0" /></a>
+								<span class="postdetails">Objavljeno: čet okt 05, 2006 8:38 pm<span class="gen">&nbsp;</span>&nbsp; &nbsp;Pošlji temo: </span>
+							</td>
+							<td valign="middle" align="right" nowrap="nowrap">
+							</td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+			<tr>
+				<td colspan="2"><hr /></td>
+			</tr>
+			<tr>
+				<td colspan="2"><span class="postbody">Nisem hotel odpirati nove teme, zato bom vprašanja zastavil kar tukaj.
+
+<br />
+Kateri programski jezik od teh dveh mi priporočate C++ ali C#? 
+
+<br />
+Ali ima C# sploh kaj prihodnosti v igrah, ter kako se v igrah obnese zdaj?
+
+<br />
+Ali je Visual C++/C# Express dobro razvojno okolje?
+
+<br />
+Na področju programiranja sem še začetnik, zato bi vprašal, če se je C# res tako lažje naučit, kot C++. Zanima me tudi vaše mnenje o obeh.
+
+<br />
+
+
+<br />
+Za vse odgovore se vam v naprej zahvaljujem.</span><span class="gensmall"></span></td>
+			</tr>
+		</table></td>
+	</tr>
+	<tr>
+		<td class="row2" width="150" align="left" valign="middle"><span class="nav"><a href="#top" class="nav">Nazaj na vrh</a></span></td>
+		<td class="row2" width="100%" height="28" valign="bottom" nowrap="nowrap"><table cellspacing="0" cellpadding="0" border="0" height="18" width="18">
+			<tr>
+				<td valign="middle" nowrap="nowrap"><a href="profile-295.html"><img src="templates/SGD2/images/lang_slovenian/icon_profile.gif" alt="Poglej uporabnikov profil" title="Poglej uporabnikov profil" border="0" /></a> </td>
+			</tr>
+		</table></td>
+	</tr>
+	<tr>
+		<td class="spaceRow" colspan="2" height="1"><img src="templates/SGD/images/spacer.gif" alt="" width="1" height="1" /></td>
+	</tr>
+	
+	<tr>
+		<td width="150" align="left" valign="top" class="row1"><span class="name"><a name="15654"></a><b>Acid Cool</b></span><br /><span class="postdetails">guru<br /><img src="images/ranks/sgd-8.gif" alt="guru" title="guru" border="0" /><br /><img src="images/avatars/c15ff85a40e32fec16332.gif" alt="" border="0" /><br /><br />Pridružen: 17. jun 2003 ob 07:23<br />objav: 1329<br /></span><br /></td>
+		<td class="row1" width="100%" height="28" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+			<tr>
+				<td colspan="2" width="100%">
+					<table width="100%" cellpadding="0" cellspacing="0" border="0">
+						<tr>
+							<td valign="middle" align="left">
+								<a href="topic-1266-30.html#15654"><img src="templates/SGD2/images/icon_minipost.gif" width="12" height="9" alt="objava" title="objava" border="0" /></a>
+								<span class="postdetails">Objavljeno: pet okt 06, 2006 6:21 am<span class="gen">&nbsp;</span>&nbsp; &nbsp;Pošlji temo: </span>
+							</td>
+							<td valign="middle" align="right" nowrap="nowrap">
+							</td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+			<tr>
+				<td colspan="2"><hr /></td>
+			</tr>
+			<tr>
+				<td colspan="2"><span class="postbody">C# ti je za zečetek dost lažji, saj .Net framework marsikatero stvari postori zate...po moje je tut dober začetek, če hočeš pol kaj delat z igram...prvo imaš GDI, za 2D risanje...kasneje pa imaš tu Managed DirectX, ki se zelo zelo dobro kosa z navadim DirectXom...poleg tega zdaj prihaja XNA, ki bo naredil programiranje za XBOX360 in PC praktično enotno...kolko sem do zdaj videl bo več ali manj ista koda, le kompajler bo drugi...razen kodo za kontrole boš moral posebej pisat...
+
+<br />
+
+
+<br />
+visual C# express je dobro orodje...je malce okrnjena verzija Visual Studiota 2005...za C# boš na netu našel ogromno tutorialov, člankov, kode in vseka in svašta...če le ti angleščina ne predstavlja pregrade...
+
+<br />
+
+
+<br />
+jaz delam v C# in vb.net in moram ti rečt, da sploh me ne mika it na C++ ali kaj takega...nekega pomanjkanja moči al nekaj sploh ne čutim...ker vem da jih ogromno reče C++ über alles, ker pač mislijo da so vsi višji jeziki kot neke igrače...<br />_________________<br />Home page: <a  target="_blank" class="postlink">Goran Gligorin</a></span><span class="gensmall"></span></td>
+			</tr>
+		</table></td>
+	</tr>
+	<tr>
+		<td class="row1" width="150" align="left" valign="middle"><span class="nav"><a href="#top" class="nav">Nazaj na vrh</a></span></td>
+		<td class="row1" width="100%" height="28" valign="bottom" nowrap="nowrap"><table cellspacing="0" cellpadding="0" border="0" height="18" width="18">
+			<tr>
+				<td valign="middle" nowrap="nowrap"><a href="profile-68.html"><img src="templates/SGD2/images/lang_slovenian/icon_profile.gif" alt="Poglej uporabnikov profil" title="Poglej uporabnikov profil" border="0" /></a> <a  target="_userwww"><img src="templates/SGD2/images/lang_slovenian/icon_www.gif" alt="Obišči avtorjevo spletno stran" title="Obišči avtorjevo spletno stran" border="0" /></a></td>
+			</tr>
+		</table></td>
+	</tr>
+	<tr>
+		<td class="spaceRow" colspan="2" height="1"><img src="templates/SGD/images/spacer.gif" alt="" width="1" height="1" /></td>
+	</tr>
+	
+	<tr>
+		<td width="150" align="left" valign="top" class="row2"><span class="name"><a name="15655"></a><b>ALTF4</b></span><br /><span class="postdetails">guru<br /><img src="images/ranks/sgd-8.gif" alt="guru" title="guru" border="0" /><br /><img src="images/avatars/563d301443ad69c6388ac.gif" alt="" border="0" /><br /><br />Pridružen: 10. jul 2003 ob 15:23<br />objav: 1175<br />Kraj: Slovenska Bistrica</span><br /></td>
+		<td class="row2" width="100%" height="28" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+			<tr>
+				<td colspan="2" width="100%">
+					<table width="100%" cellpadding="0" cellspacing="0" border="0">
+						<tr>
+							<td valign="middle" align="left">
+								<a href="topic-1266-30.html#15655"><img src="templates/SGD2/images/icon_minipost.gif" width="12" height="9" alt="objava" title="objava" border="0" /></a>
+								<span class="postdetails">Objavljeno: pet okt 06, 2006 8:25 am<span class="gen">&nbsp;</span>&nbsp; &nbsp;Pošlji temo: </span>
+							</td>
+							<td valign="middle" align="right" nowrap="nowrap">
+							</td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+			<tr>
+				<td colspan="2"><hr /></td>
+			</tr>
+			<tr>
+				<td colspan="2"><span class="postbody">Moje izkušnje so malce drugačne. Delal sem z C# ampak vseeno se mi veliko bolj dopade C++. Pač oseba preferenca. Ampak za začetnika bi verjetno res bil boljši C#.<br />_________________<br />LP!</span><span class="gensmall"></span></td>
+			</tr>
+		</table></td>
+	</tr>
+	<tr>
+		<td class="row2" width="150" align="left" valign="middle"><span class="nav"><a href="#top" class="nav">Nazaj na vrh</a></span></td>
+		<td class="row2" width="100%" height="28" valign="bottom" nowrap="nowrap"><table cellspacing="0" cellpadding="0" border="0" height="18" width="18">
+			<tr>
+				<td valign="middle" nowrap="nowrap"><a href="profile-80.html"><img src="templates/SGD2/images/lang_slovenian/icon_profile.gif" alt="Poglej uporabnikov profil" title="Poglej uporabnikov profil" border="0" /></a> </td>
+			</tr>
+		</table></td>
+	</tr>
+	<tr>
+		<td class="spaceRow" colspan="2" height="1"><img src="templates/SGD/images/spacer.gif" alt="" width="1" height="1" /></td>
+	</tr>
+	
+	<tr>
+		<td width="150" align="left" valign="top" class="row1"><span class="name"><a name="15656"></a><b>Iason</b></span><br /><span class="postdetails">inštruktor<br /><img src="images/ranks/sgd-4.gif" alt="inštruktor" title="inštruktor" border="0" /><br /><br /><br />Pridružen: 21. sep 2004 ob 22:57<br />objav: 329<br />Kraj: Kranj</span><br /></td>
+		<td class="row1" width="100%" height="28" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+			<tr>
+				<td colspan="2" width="100%">
+					<table width="100%" cellpadding="0" cellspacing="0" border="0">
+						<tr>
+							<td valign="middle" align="left">
+								<a href="topic-1266-30.html#15656"><img src="templates/SGD2/images/icon_minipost.gif" width="12" height="9" alt="objava" title="objava" border="0" /></a>
+								<span class="postdetails">Objavljeno: pet okt 06, 2006 11:44 pm<span class="gen">&nbsp;</span>&nbsp; &nbsp;Pošlji temo: </span>
+							</td>
+							<td valign="middle" align="right" nowrap="nowrap">
+							</td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+			<tr>
+				<td colspan="2"><hr /></td>
+			</tr>
+			<tr>
+				<td colspan="2"><span class="postbody">Sicer C# ne poznam ampak verjetno je bolje začet z njim.
+
+<br />
+Pa saj ni tolk pomembno s čim začneš, ko enkrat znaš programirat lahko hitro na drug jezik prešaltaš.
+
+<br />
+Jaz sem začel s pascalom v šoli, še isto leto sem šel na delphi (temelji na pascalu). 
+
+<br />
+Čez ene 2 leti sem šel na C++ in sploh ni bilo problemov. <img src="images/smiles/icon_smile.gif" alt=":)" border="0" /></span><span class="gensmall"></span></td>
+			</tr>
+		</table></td>
+	</tr>
+	<tr>
+		<td class="row1" width="150" align="left" valign="middle"><span class="nav"><a href="#top" class="nav">Nazaj na vrh</a></span></td>
+		<td class="row1" width="100%" height="28" valign="bottom" nowrap="nowrap"><table cellspacing="0" cellpadding="0" border="0" height="18" width="18">
+			<tr>
+				<td valign="middle" nowrap="nowrap"><a href="profile-202.html"><img src="templates/SGD2/images/lang_slovenian/icon_profile.gif" alt="Poglej uporabnikov profil" title="Poglej uporabnikov profil" border="0" /></a> </td>
+			</tr>
+		</table></td>
+	</tr>
+	<tr>
+		<td class="spaceRow" colspan="2" height="1"><img src="templates/SGD/images/spacer.gif" alt="" width="1" height="1" /></td>
+	</tr>
+	
+	<tr>
+		<td width="150" align="left" valign="top" class="row2"><span class="name"><a name="15657"></a><b>Retro</b></span><br /><span class="postdetails">SGD Admin<br /><img src="images/ranks/sgd-admin.gif" alt="SGD Admin" title="SGD Admin" border="0" /><br /><br /><br />Pridružen: 04. sep 2003 ob 22:14<br />objav: 1008<br />Kraj: ZX Spectrum 48k+</span><br /></td>
+		<td class="row2" width="100%" height="28" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+			<tr>
+				<td colspan="2" width="100%">
+					<table width="100%" cellpadding="0" cellspacing="0" border="0">
+						<tr>
+							<td valign="middle" align="left">
+								<a href="topic-1266-30.html#15657"><img src="templates/SGD2/images/icon_minipost.gif" width="12" height="9" alt="objava" title="objava" border="0" /></a>
+								<span class="postdetails">Objavljeno: sob okt 07, 2006 12:38 pm<span class="gen">&nbsp;</span>&nbsp; &nbsp;Pošlji temo: </span>
+							</td>
+							<td valign="middle" align="right" nowrap="nowrap">
+							</td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+			<tr>
+				<td colspan="2"><hr /></td>
+			</tr>
+			<tr>
+				<td colspan="2"><span class="postbody">Jaz sem casovno sel nekako takole:
+
+<br />
+
+
+<br />
+(osnovna sola)
+
+<br />
+Sinclair BASIC, QBasic, Visual Basic
+
+<br />
+
+
+<br />
+(prisel v tehnisko gimnazijo)
+
+<br />
+Pascal, Visual Basic.NET
+
+<br />
+
+
+<br />
+(prisel na FRI)
+
+<br />
+Java, C++, C#, ActionScript, assembler
+
+<br />
+
+
+<br />
+Na koncu se vedno najraje in najvec delam v VBju, ker mi je sintaksa dalec najbolj vsec If...Then...End If, prav tako recimo lastnost Visual Studija, da VB kodo sproti prevaja in ti ze med pisanjem takoj podcrta napake (v C#u recimo moras stisnit build, dobis napake, popravis napake, stisnis build, nove napake, popravis, build, ... , OK), pa da ni case sensitive, ima optional parametre in se recimo, da spet VS avtomatsko lepsa kodo (vstavlja tabe in presledke, da je vse lepo indentano). 
+
+<br />
+
+
+<br />
+Ce ne bi bilo zgornjih par stvari bi 100% delal v C#u, ki je v programirnju cisto enak VBju (samo druga sintaksa minus omenjeni bomboncki) ima pa se unmanaged dostop, ki veliko prav pride ravno pri optimiziranju se posebej pri gamedevu (hiter dostop do arrayev itd).
+
+<br />
+
+
+<br />
+V Cju sem delal samo v drugi polovici prvega letnika na faksu, toliko da poznam pointerje ceprav se dalec, da bi bil v delu z njimi cisto sproscen. Tako da o C++ vem zelo malo in tezko komentiram. Mi pa kar sem delal ni prevec disalo. Letos bo spet treba nekaj na faksu delat in bom pomoje se enkrat probla C++ in naredil kak mini spil z Allegrom. Ker do zdaj sem vse skupaj naredil le en linked list v par verzijah.
+
+<br />
+
+
+<br />
+Java na koncu je spet ista fora kot .NET nacin dela (oz raje receno obratno  <img src="images/smiles/icon_wink.gif" alt=":wink:" border="0" /> ) samo da mi razni IDEjih (poskusal sem ene dva, na koncu pristal na Eclipse) niso niti blizu vsec kot VisualStudio. Isto je v Flashu (ActionScript), kjer je z osnovnim editorjem debagiranje nocna mora. Imata pa tako Java kot Flash zelo lepo lastnost, da jih 95% ljudi lahko poganja direktno iz browserja, kar je za casual game spile super, vsaj za narest trial verzijo.
+
+<br />
+
+
+<br />
+Letos sem se naucil se malo kako se dela v assemblerju. Nic direktno uporabnega, je blo pa zelo fino, sami spomini na proceduralne case ala Sinclair Basic.
+
+<br />
+
+
+<br />
+Zakljucek je, da ja najbolje bit odprt za vse jezike, ker jih bos prej al slej, vsaj ce bos studiral, moral uporabljat. Hkrati kot je rekel Iason ni tako vazno kje zacnes. Ko bos enkrat znal priblizno enega, tudi drugi ne bo problem. Se boljse je ce znas izkoristit dobre strani enega in drugega. V .NETu gre to celo tako dalec, da lahko razlicne dele programa spises v razlicnih jezikih. Tako jaz pisem vecino v VBju, ce pa rabim unmanaged dostop preklopim na C#.
+
+<br />
+
+
+<br />
+Po drugi strani je mogoce najbolje zaceti tam, kjer najdes kak dober pejdz ali knjigo s katero se bos cimvec naucil. Vcasih smo imel sreco, da smo na vsakem koraku nasli BASIC listinge in smo se naucili programirat instiktivno z neskoncnim pretipkovanjem ze spisanih programov, danes bos moral malo bolj tehnicen pristop vzet in se naucit lepo po vrsti kako se programira.
+
+<br />
+
+
+<br />
+Pobrski mal po netu, najdi en dober pejdz/v knjiznici sposodi knjigo, ki je napisana tebi razumljivo, vsecno in zabavno in se loti. Cimprej tembolje.
+
+<br />
+
+
+<br />
+Se to: C# ima veliko prihodnost v igrah. Hvala bogu (MSju? <img src="images/smiles/icon_biggrin.gif" alt=":D" border="0" /> ) za XNA. Kaj je to XNA, pa si bos lahko prebral v naslednji stevilki Jokerja.<br />_________________<br /><a  target="_blank" class="postlink"><span style="font-weight: bold">Dawn of Play</span></a> // <a  target="_blank" class="postlink"><span style="font-weight: bold">Retronator</span></a></span><span class="gensmall"></span></td>
+			</tr>
+		</table></td>
+	</tr>
+	<tr>
+		<td class="row2" width="150" align="left" valign="middle"><span class="nav"><a href="#top" class="nav">Nazaj na vrh</a></span></td>
+		<td class="row2" width="100%" height="28" valign="bottom" nowrap="nowrap"><table cellspacing="0" cellpadding="0" border="0" height="18" width="18">
+			<tr>
+				<td valign="middle" nowrap="nowrap"><a href="profile-100.html"><img src="templates/SGD2/images/lang_slovenian/icon_profile.gif" alt="Poglej uporabnikov profil" title="Poglej uporabnikov profil" border="0" /></a> <a  target="_userwww"><img src="templates/SGD2/images/lang_slovenian/icon_www.gif" alt="Obišči avtorjevo spletno stran" title="Obišči avtorjevo spletno stran" border="0" /></a></td>
+			</tr>
+		</table></td>
+	</tr>
+	<tr>
+		<td class="spaceRow" colspan="2" height="1"><img src="templates/SGD/images/spacer.gif" alt="" width="1" height="1" /></td>
+	</tr>
+	
+	<tr>
+		<td width="150" align="left" valign="top" class="row1"><span class="name"><a name="15659"></a><b>Tepko</b></span><br /><span class="postdetails">poznavalec<br /><img src="images/ranks/sgd-3.gif" alt="poznavalec" title="poznavalec" border="0" /><br /><br /><br />Pridružen: 24. maj 2005 ob 10:37<br />objav: 249<br /></span><br /></td>
+		<td class="row1" width="100%" height="28" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+			<tr>
+				<td colspan="2" width="100%">
+					<table width="100%" cellpadding="0" cellspacing="0" border="0">
+						<tr>
+							<td valign="middle" align="left">
+								<a href="topic-1266-30.html#15659"><img src="templates/SGD2/images/icon_minipost.gif" width="12" height="9" alt="objava" title="objava" border="0" /></a>
+								<span class="postdetails">Objavljeno: ned okt 08, 2006 10:15 am<span class="gen">&nbsp;</span>&nbsp; &nbsp;Pošlji temo: </span>
+							</td>
+							<td valign="middle" align="right" nowrap="nowrap">
+							</td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+			<tr>
+				<td colspan="2"><hr /></td>
+			</tr>
+			<tr>
+				<td colspan="2"><span class="postbody">Retro, zelo lepo napisano, samo Java ima tudi velik potencial, podobno kot C#. Še posebej ME in EE verzije. Da ne omenjam appletov. Drgač pa eclipse 3.2 najbolj rox-a. Edino kar me moti, je to, da ni več tistga, ko si imel kurzor na eno spremenljivki ali objektu, ti je barvno obarvalo vse pojavitve v programu, sedaj moraš ročno iskati kot nor.  <img src="images/smiles/icon_rolleyes.gif" alt=":roll:" border="0" /></span><span class="gensmall"></span></td>
+			</tr>
+		</table></td>
+	</tr>
+	<tr>
+		<td class="row1" width="150" align="left" valign="middle"><span class="nav"><a href="#top" class="nav">Nazaj na vrh</a></span></td>
+		<td class="row1" width="100%" height="28" valign="bottom" nowrap="nowrap"><table cellspacing="0" cellpadding="0" border="0" height="18" width="18">
+			<tr>
+				<td valign="middle" nowrap="nowrap"><a href="profile-236.html"><img src="templates/SGD2/images/lang_slovenian/icon_profile.gif" alt="Poglej uporabnikov profil" title="Poglej uporabnikov profil" border="0" /></a> </td>
+			</tr>
+		</table></td>
+	</tr>
+	<tr>
+		<td class="spaceRow" colspan="2" height="1"><img src="templates/SGD/images/spacer.gif" alt="" width="1" height="1" /></td>
+	</tr>
+	
+	<tr>
+		<td width="150" align="left" valign="top" class="row2"><span class="name"><a name="17062"></a><b>blan</b></span><br /><span class="postdetails">poizvedovalec<br /><img src="images/ranks/sgd-1.gif" alt="poizvedovalec" title="poizvedovalec" border="0" /><br /><br /><br />Pridružen: 18. apr 2006 ob 21:23<br />objav: 69<br /></span><br /></td>
+		<td class="row2" width="100%" height="28" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+			<tr>
+				<td colspan="2" width="100%">
+					<table width="100%" cellpadding="0" cellspacing="0" border="0">
+						<tr>
+							<td valign="middle" align="left">
+								<a href="topic-1266-30.html#17062"><img src="templates/SGD2/images/icon_minipost.gif" width="12" height="9" alt="objava" title="objava" border="0" /></a>
+								<span class="postdetails">Objavljeno: čet maj 24, 2007 7:11 pm<span class="gen">&nbsp;</span>&nbsp; &nbsp;Pošlji temo: </span>
+							</td>
+							<td valign="middle" align="right" nowrap="nowrap">
+							</td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+			<tr>
+				<td colspan="2"><hr /></td>
+			</tr>
+			<tr>
+				<td colspan="2"><span class="postbody">Trenutno nekako zaklučujem z spoznavanjem C++a ( 2 leti sem se učil). Naredil sem tudi dva kratka programčka (win32 + OpenGL), prvi je tetris, drugi pa je nekakšen 3D demo, bom tudi objavil povezavo, takoj ko dobim ustrezen prostor kamor bi lahko uplovdal zadeve. Sedaj pa me zanima kam v kje naj nadaljujem. Predvsem to, kako zgledajo pravi profesionalni game engines. Pa ne vem točno, če bi začel z modanjem  + s katerim SDKjem če bi začel s tem. Tukaj se mi zdi da se ne vidi arhitekture igre. Ali bi začel gledat kašen open source, kot je Delta3D, ali pa mogoče Quake 3, sam ne vem če ni tisto že malo zastarelo. Ali pa je bolje vzeti kakšno knjigo?
+
+<br />
+
+
+<br />
+Hvala</span><span class="gensmall"></span></td>
+			</tr>
+		</table></td>
+	</tr>
+	<tr>
+		<td class="row2" width="150" align="left" valign="middle"><span class="nav"><a href="#top" class="nav">Nazaj na vrh</a></span></td>
+		<td class="row2" width="100%" height="28" valign="bottom" nowrap="nowrap"><table cellspacing="0" cellpadding="0" border="0" height="18" width="18">
+			<tr>
+				<td valign="middle" nowrap="nowrap"><a href="profile-277.html"><img src="templates/SGD2/images/lang_slovenian/icon_profile.gif" alt="Poglej uporabnikov profil" title="Poglej uporabnikov profil" border="0" /></a> </td>
+			</tr>
+		</table></td>
+	</tr>
+	<tr>
+		<td class="spaceRow" colspan="2" height="1"><img src="templates/SGD/images/spacer.gif" alt="" width="1" height="1" /></td>
+	</tr>
+	
+	<tr>
+		<td width="150" align="left" valign="top" class="row1"><span class="name"><a name="17103"></a><b>XPX</b></span><br /><span class="postdetails">wannabe<br /><img src="images/ranks/sgd-2.gif" alt="wannabe" title="wannabe" border="0" /><br /><br /><br />Pridružen: 03. apr 2007 ob 13:59<br />objav: 77<br /></span><br /></td>
+		<td class="row1" width="100%" height="28" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+			<tr>
+				<td colspan="2" width="100%">
+					<table width="100%" cellpadding="0" cellspacing="0" border="0">
+						<tr>
+							<td valign="middle" align="left">
+								<a href="topic-1266-30.html#17103"><img src="templates/SGD2/images/icon_minipost.gif" width="12" height="9" alt="objava" title="objava" border="0" /></a>
+								<span class="postdetails">Objavljeno: tor maj 29, 2007 2:50 pm<span class="gen">&nbsp;</span>&nbsp; &nbsp;Pošlji temo: amazon.com</span>
+							</td>
+							<td valign="middle" align="right" nowrap="nowrap">
+							</td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+			<tr>
+				<td colspan="2"><hr /></td>
+			</tr>
+			<tr>
+				<td colspan="2"><span class="postbody">Hooj! (sam upam da ta knjiga paše tvojemu vprašanju)
+
+<br />
+
+
+<br />
+Jst ti priporočam knjigo na Amazon.com <a class="postlink" >http://www.amazon.com/3D-Game-Engine-Pr ... 1592003516</a>
+
+<br />
+Ampak jo je treba seveda plačat pa še ne veš če je taprava knjiga
+
+<br />
+
+
+<br />
+Ti bom jst zloadu pdf kjnigo. Ima 240 mb in mislm da gre za isto knijgo.(sam mal bo treba počakat)
+
+<br />
+
+
+<br />
+Naslov knjige je
+
+<br />
+
+
+<br />
+3d game engine programing (pa na amazon če je to ta knjiga piše da se uporablja jezik c ali c++)
+
+<br />
+
+
+<br />
+(WARNING I´M NOT PIRAT) KDOR LOADA VSEBINO NI PIRAT, TODA KDOR JO LOADA IN PRODAJA ZA !!CENO!!, JE PIRAT</span><span class="gensmall"></span></td>
+			</tr>
+		</table></td>
+	</tr>
+	<tr>
+		<td class="row1" width="150" align="left" valign="middle"><span class="nav"><a href="#top" class="nav">Nazaj na vrh</a></span></td>
+		<td class="row1" width="100%" height="28" valign="bottom" nowrap="nowrap"><table cellspacing="0" cellpadding="0" border="0" height="18" width="18">
+			<tr>
+				<td valign="middle" nowrap="nowrap"><a href="profile-765.html"><img src="templates/SGD2/images/lang_slovenian/icon_profile.gif" alt="Poglej uporabnikov profil" title="Poglej uporabnikov profil" border="0" /></a> </td>
+			</tr>
+		</table></td>
+	</tr>
+	<tr>
+		<td class="spaceRow" colspan="2" height="1"><img src="templates/SGD/images/spacer.gif" alt="" width="1" height="1" /></td>
+	</tr>
+	
+	<tr>
+		<td width="150" align="left" valign="top" class="row2"><span class="name"><a name="17107"></a><b>ArYeS</b></span><br /><span class="postdetails">expert<br /><img src="images/ranks/sgd-6.gif" alt="expert" title="expert" border="0" /><br /><img src="images/avatars/c14d4e41428ef6735091f.gif" alt="" border="0" /><br /><br />Pridružen: 18. jan 2004 ob 21:21<br />objav: 717<br />Kraj: Miren</span><br /></td>
+		<td class="row2" width="100%" height="28" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+			<tr>
+				<td colspan="2" width="100%">
+					<table width="100%" cellpadding="0" cellspacing="0" border="0">
+						<tr>
+							<td valign="middle" align="left">
+								<a href="topic-1266-30.html#17107"><img src="templates/SGD2/images/icon_minipost.gif" width="12" height="9" alt="objava" title="objava" border="0" /></a>
+								<span class="postdetails">Objavljeno: tor maj 29, 2007 5:49 pm<span class="gen">&nbsp;</span>&nbsp; &nbsp;Pošlji temo: Re: amazon.com</span>
+							</td>
+							<td valign="middle" align="right" nowrap="nowrap">
+							</td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+			<tr>
+				<td colspan="2"><hr /></td>
+			</tr>
+			<tr>
+				<td colspan="2"><span class="postbody"></span>
+<br />
+<table width="90%" cellspacing="1" cellpadding="3" border="0" align="center">
+<br />
+<tr> 
+<br />
+	  <td><span class="genmed"><b>NoName je napisal:</b></span></td>
+<br />
+	</tr>
+<br />
+	<tr>
+<br />
+	  <td class="quote">(WARNING I´M NOT PIRAT) KDOR LOADA VSEBINO NI PIRAT, TODA KDOR JO LOADA IN PRODAJA ZA !!CENO!!, JE PIRAT</td>
+<br />
+	</tr>
+<br />
+</table>
+<br />
+<span class="postbody">
+
+<br />
+
+
+<br />
+Eni ste malce preveč verjeli tisti novici na 24ur, da je kao piratstvo dovoljeno.
+
+<br />
+
+
+<br />
+1. V tistem zakonu ne piše da pobiranje datotek z interneta legalno.
+
+<br />
+2. V tistem zakonu piše, da downloadanje datotek ni več preganjano, (recimo kot težji zločini), ampak se obravnava le kazensko (tako kot recimo kazni za prometne prekrške).
+
+<br />
+3. Če malce bolje pogledaš zakon, boš videl, da kakršnokoli distribuiranje datotek je ŠE VEDNO preganjano. Distribucija, pa še ne pomeni prodaja. Torej, v prekršku si takoj ko ti 1kb uploada datoteko preko torrenta ali imaš datoteko v Sharing folderju v emule ali DC.
+
+<br />
+4. Pirat si vedno, ko dototeko downlaodaš, za katero se drugače plača, saj pirat ni nek uradni &quot;naziv&quot;, ampak se gleda na to iz moralnega stališča.
+
+<br />
+
+
+<br />
+Eh, kaj čemo otroci, mislijo da bodo kmalu vse dobili zastonj.<br />_________________<br /><a class="postlink" >http://www.inverse-gravity.net</a></span><span class="gensmall"></span></td>
+			</tr>
+		</table></td>
+	</tr>
+	<tr>
+		<td class="row2" width="150" align="left" valign="middle"><span class="nav"><a href="#top" class="nav">Nazaj na vrh</a></span></td>
+		<td class="row2" width="100%" height="28" valign="bottom" nowrap="nowrap"><table cellspacing="0" cellpadding="0" border="0" height="18" width="18">
+			<tr>
+				<td valign="middle" nowrap="nowrap"><a href="profile-145.html"><img src="templates/SGD2/images/lang_slovenian/icon_profile.gif" alt="Poglej uporabnikov profil" title="Poglej uporabnikov profil" border="0" /></a> <a  target="_userwww"><img src="templates/SGD2/images/lang_slovenian/icon_www.gif" alt="Obišči avtorjevo spletno stran" title="Obišči avtorjevo spletno stran" border="0" /></a></td>
+			</tr>
+		</table></td>
+	</tr>
+	<tr>
+		<td class="spaceRow" colspan="2" height="1"><img src="templates/SGD/images/spacer.gif" alt="" width="1" height="1" /></td>
+	</tr>
+	
+	<tr align="center">
+		<td class="catBottom" colspan="2" height="28">&nbsp;</td>
+	</tr>
+</table>
+
+<table width="100%" cellspacing="2" cellpadding="2" border="0" align="center">
+  <tr>
+	<td align="left" valign="middle" nowrap="nowrap">&nbsp;</td>
+	<td align="left" valign="middle" width="100%"><span class="nav">&nbsp;&nbsp;&nbsp;<a href="index.html" class="nav">SloGameDev.net seznam forumov</a>
+	  -> <a href="forum-49.html" class="nav">Začetniki</a></span></td>
+	<td align="right" valign="top" nowrap="nowrap"><span class="gensmall">Časovni pas (GMT +2:00 uri) Slovenija, poletni čas</span><br /><span class="nav">Pojdi na stran  <a href="topic-1266.html">Prejšnji</a>&nbsp;&nbsp;<a href="topic-1266.html">1</a>, <b>2</b>, <a href="topic-1266-60.html">3</a>&nbsp;&nbsp;<a href="topic-1266-60.html">Naslednji</a></span>
+	  </td>
+  </tr>
+  <tr>
+	<td align="left" colspan="3"><span class="nav">Stran <b>2</b> od <b>3</b></span></td>
+  </tr>
+</table>
+
+<table width="100%" cellspacing="2" border="0" align="center">
+  <tr>
+	<td width="40%" valign="top" nowrap="nowrap" align="left">&nbsp;</td>
+	<td align="right" valign="top" nowrap="nowrap">&nbsp;</td>
+  </tr>
+</table>
+
+<div align="center"><span class="copyright"><br />Arhiv &mdash; samo za branje.<br />
+<!--
+	We request you retain the full copyright notice below including the link to www.phpbb.com.
+	This not only gives respect to the large amount of time given freely by the developers
+	but also helps build interest, traffic and use of phpBB 2.0. If you cannot (for good
+	reason) retain the full copyright we request you at least leave in place the 
+	Powered by phpBB 2.0.4 line, with phpBB linked to www.phpbb.com. If you refuse
+	to include even this then support on our forums may be affected. 
+
+	The phpBB Group : 2002
+// -->
+Powered by <a  target="_phpbb" class="copyright">phpBB</a> 2.0.4 &copy; 2001, 2002 phpBB Group<br /></span></div>
+		</td>
+	</tr>
+</table>
+
+</body>
+</html>

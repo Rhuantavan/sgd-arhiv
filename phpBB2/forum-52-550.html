@@ -1,0 +1,850 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html dir="ltr">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta http-equiv="Content-Style-Type" content="text/css">
+<style type="text/css">
+<!--
+.style1 {color: #FFFFFF}
+-->
+</style>
+
+
+
+<title>SloGameDev.net :: Izdelovanje iger</title>
+<!-- link rel="stylesheet" href="templates/SGD/SGD2.css" type="text/css" -->
+<style type="text/css">
+<!--
+/*
+  The SGD Theme for phpBB version 2+
+  Created by Rhuantavan
+  http://www.rhuantavan.org
+
+  NOTE: These CSS definitions are stored within the main page body so that you can use the phpBB2
+  theme administration centre. When you have finalised your style you could cut the final CSS code
+  and place it in an external file, deleting this section to save bandwidth.
+*/
+
+/* General page style. The scroll bar colours only visible in IE5.5+ */
+body {
+	background-color: #DDDDDD;
+	scrollbar-face-color: #000000;
+	scrollbar-highlight-color: #000000;
+	scrollbar-3dlight-color: #EEEEEE;
+	scrollbar-darkshadow-color: #EEEEEE;
+	scrollbar-shadow-color: #000000;
+	scrollbar-arrow-color: #55FF00;
+	scrollbar-track-color: #EEEEEE;
+}
+
+/* General font families for common tags */
+font,th,td,p { font-family: Verdana, Arial, Helvetica, sans-serif }
+a:link,a:active,a:visited { color : #338800; }
+a:hover		{ text-decoration: underline; color : #338800; }
+hr	{ height: 0px; border: solid #E9E9E9 0px; border-top-width: 1px;}
+
+/* This is the border line & background colour round the entire page */
+.bodyline	{ background-color: #EEEEEE; border-left: 1px #000000 solid; border-right: 1px #000000 solid; }
+
+/* This is the outline round the main forum tables */
+.forumline	{ background-color: #EEEEEE; border: 0px #DDDDDD solid; }
+
+/* Main table cell colours and backgrounds */
+td.row1	{ background-color: #F8F8F8; }
+td.row2	{ background-color: #F0F0F0; }
+td.row3	{ background-color: #E9E9E9; }
+
+/*
+  This is for the table cell above the Topics, Post & Last posts on the index.php page
+  By default this is the fading out gradiated silver background.
+  However, you could replace this with a bitmap specific for each forum
+*/
+td.rowpic {
+		background-color: #EEEEEE;
+		background-image: url(templates/SGD/images/cellpic3.gif);
+		background-repeat: repeat-y;
+}
+
+/* Header cells - the blue and silver gradient backgrounds */
+th	{
+	color: #66CC33; font-size: 11px; font-weight : bold;
+	background-color: #338800; height: 25px;
+	background-image: url(templates/SGD/images/cellpic2.gif);
+}
+
+td.cat,td.catHead,td.catSides,td.catLeft,td.catRight,td.catBottom {
+			background-image: url(templates/SGD/images/cellpic1.gif);
+			background-color:#E9E9E9; border: #999999; border-style: solid; height: 28px;
+}
+
+/*
+  Setting additional nice inner borders for the main table cells.
+  The names indicate which sides the border will be on.
+  Don't worry if you don't understand this, just ignore it :-)
+*/
+td.cat,td.catHead,td.catBottom {
+	height: 29px;
+	border-width: 0px 0px 0px 0px;
+}
+th.thHead,th.thSides,th.thTop,th.thLeft,th.thRight,th.thBottom,th.thCornerL,th.thCornerR {
+	font-weight: bold; border: #EEEEEE; border-style: solid; height: 28px;
+}
+td.row3Right,td.spaceRow {
+	background-color: #E9E9E9; border: #999999; border-style: solid;
+}
+
+th.thHead,td.catHead { font-size: 12px; border-width: 0px 0px 0px 0px; }
+th.thSides,td.catSides,td.spaceRow	 { border-width: 0px 0px 0px 0px; }
+th.thRight,td.catRight,td.row3Right	 { border-width: 0px 0px 0px 0px; }
+th.thLeft,td.catLeft	  { border-width: 0px 0px 0px 0px; }
+th.thBottom,td.catBottom  { border-width: 0px 0px 0px 1px; }
+th.thTop	 { border-width: 0px 0px 0px 0px; }
+th.thCornerL { border-width: 0px 0px 0px 1px; }
+th.thCornerR { border-width: 0px 0px 0px 0px; }
+
+/* The largest text used in the index page title and toptic title etc. */
+.maintitle	{
+	font-weight: bold; font-size: 18px; font-family: "Trebuchet MS",Verdana, Arial, Helvetica, sans-serif;
+	text-decoration: none; line-height : 120%; color : #666666;
+}
+
+/* General text */
+.gen { font-size : 12px; }
+.genmed { font-size : 11px; }
+.gensmall { font-size : 10px; }
+.gen,.genmed,.gensmall { color : #666666; }
+a.gen,a.genmed,a.gensmall { color: #338800; text-decoration: none; }
+a.gen:hover,a.genmed:hover,a.gensmall:hover	{ color: #338800; text-decoration: underline; }
+
+/* The register, login, search etc links at the top of the page */
+.mainmenu		{ font-size : 11px; color : #666666 }
+a.mainmenu		{ text-decoration: none; color : #338800;  }
+a.mainmenu:hover{ text-decoration: underline; color : #338800; }
+
+/* SGD main menu */
+.sgdmainmenu			{ font-size : 10px; color : #99FF33 }
+a.sgdmainmenu:link		{ text-decoration: none; color : #99FF33;  }
+a.sgdmainmenu:active	{ text-decoration: none; color : #99FF33;  }
+a.sgdmainmenu:visited	{ text-decoration: none; color : #99FF33;  }
+a.sgdmainmenu:hover		{ text-decoration: underline; color : #99FF33; }
+
+/* Forum category titles */
+.cattitle		{ font-weight: bold; font-size: 12px ; letter-spacing: 1px; color : #338800}
+a.cattitle		{ text-decoration: none; color : #338800; }
+a.cattitle:hover{ text-decoration: underline; }
+
+/* Forum title: Text and link to the forums used in: index.php */
+.forumlink		{ font-weight: bold; font-size: 12px; color : #338800; }
+a.forumlink 	{ text-decoration: none; color : #338800; }
+a.forumlink:hover{ text-decoration: underline; color : #338800; }
+
+/* Used for the navigation text, (Page 1,2,3 etc) and the navigation bar when in a forum */
+.nav			{ font-weight: bold; font-size: 11px; color : #666666;}
+a.nav			{ text-decoration: none; color : #338800; }
+a.nav:hover		{ text-decoration: underline; }
+
+/* titles for the topics: could specify viewed link colour too */
+.topictitle,h1,h2	{ font-weight: bold; font-size: 11px; color : #666666; }
+a.topictitle:link   { text-decoration: none; color : #338800; }
+a.topictitle:visited { text-decoration: none; color : #338800; }
+a.topictitle:hover	{ text-decoration: underline; color : #338800; }
+
+/* Name of poster in viewmsg.php and viewtopic.php and other places */
+.name			{ font-size : 11px; color : #000000;}
+
+/* Location, number of posts, post date etc */
+.postdetails		{ font-size : 10px; color : #666666; }
+
+/* The content of the posts (body of text) */
+.postbody { font-size : 12px; line-height: 18px; color : #000000;}
+a.postlink:link	{ text-decoration: none; color : #338800 }
+a.postlink:visited { text-decoration: none; color : #338800; }
+a.postlink:hover { text-decoration: underline; color : #338800}
+
+/* Quote & Code blocks */
+.code {
+	font-family: Courier, 'Courier New', sans-serif; font-size: 11px; color: #006600;
+	background-color: #D6D6D6; border: #E9E9E9; border-style: solid;
+	border-left-width: 1px; border-top-width: 1px; border-right-width: 1px; border-bottom-width: 1px
+}
+
+.quote {
+	font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 11px; color: #444444; line-height: 125%;
+	background-color: #BBBBBB; border: #E9E9E9; border-style: solid;
+	border-left-width: 1px; border-top-width: 1px; border-right-width: 1px; border-bottom-width: 1px
+}
+
+/* Copyright and bottom info */
+.copyright		{ font-size: 10px; font-family: Verdana, Arial, Helvetica, sans-serif; color: #444444; letter-spacing: -1px;}
+a.copyright		{ color: #444444; text-decoration: none;}
+a.copyright:hover { color: #666666; text-decoration: underline;}
+
+/* Form elements */
+input,textarea, select {
+	color : #666666;
+	font: normal 11px Verdana, Arial, Helvetica, sans-serif;
+	border-color : #666666;
+}
+
+/* The text input fields background colour */
+input.post, textarea.post, select {
+	background-color : #EEEEEE;
+}
+
+input { text-indent : 2px; }
+
+/* The buttons used for bbCode styling in message post */
+input.button {
+	background-color : #F8F8F8;
+	color : #666666;
+	font-size: 11px; font-family: Verdana, Arial, Helvetica, sans-serif;
+}
+
+/* The main submit button option */
+input.mainoption {
+	background-color : #BBBBBB;
+	font-weight : bold;
+}
+
+/* None-bold submit button */
+input.liteoption {
+	background-color : #BBBBBB;
+	font-weight : normal;
+}
+
+/* This is the line in the posting page which shows the rollover
+  help line. This is actually a text box, but if set to be the same
+  colour as the background no one will know ;)
+*/
+.helpline { background-color: #F0F0F0; border-style: none; }
+
+/* Import the fancy styles for IE only (NS4.x doesn't use the @import function) */
+@import url("templates/SGD/formIE.css");
+-->
+</style>
+</head>
+<body bgcolor="#DDDDDD" text="#666666" link="#338800" vlink="#338800" topmargin="0" />
+<a name="top"></a>
+<table width="100%" cellspacing="0" cellpadding="0" border="0" align="center" nowrap>
+	<tr>
+		<td class="bodyline">
+			<table width="100%" border="0" cellpadding="0" cellspacing="0">
+				<tr>
+					<td bgcolor="#FFFFFF">
+						<img src="images/spacer.gif" width="760" height="20" alt=""></td>
+				</tr>
+			</table>
+			<table width="100%" border="0" cellpadding="0" cellspacing="0">
+				<tr>
+					<td bgcolor="#000000">
+						<a href="../index.html"><img src="images/home.gif" width="10" height="10" alt="" border="0"></a><img src="images/spacer.gif" width="5" height="5" alt=""><a href="../index.html" class="sgdmainmenu">Nazaj na domačo stran</a> <img src="images/defaulticon_green.gif" alt="" width="7" height="7" border="0"> <a href="../clanki.html" class="sgdmainmenu">Clanki</a> <img src="images/defaulticon_green.gif" alt="" width="7" height="7" border="0"> <a href="../koda.html" class="sgdmainmenu">Koda</a> <img src="images/defaulticon_green.gif" alt="" width="7" height="7" border="0"> <a href="../clani.html" class="sgdmainmenu">Clani</a> <img src="images/defaulticon_green.gif" alt="" width="7" height="7" border="0"> <a href="../skupine.html" class="sgdmainmenu">Skupine</a> <img src="images/defaulticon_green.gif" alt="" width="7" height="7" border="0"> <a href="../projekti.html" class="sgdmainmenu">Projekti</a> <img src="images/defaulticon_green.gif" alt="" width="7" height="7" border="0"> <a href="../povezave.html" class="sgdmainmenu">Povezave</a></td>
+				</tr>
+			</table>
+			<table width="100%" border="0" cellpadding="0" cellspacing="0">
+				<tr>
+					<td colspan="3" bgcolor="#000000">
+						<img src="images/spacer.gif" width="760" height="10" alt=""></td>
+				</tr>
+				<tr>
+					<td>
+						<a href="index.html"><img src="images/logo.gif" width="351" height="62" alt="" border="0"></a></td>
+					<td>
+						<img src="images/forum_03.gif" width="408" height="62" alt=""></td>
+					<td width="100%" bgcolor="#000000">
+						<img src="images/spacer.gif" width="1" height="1" alt=""></td>
+				</tr>
+				<tr>
+					<td colspan="3" bgcolor="#000000" align="center">
+						<a href="memberlist.html" class="sgdmainmenu"><img src="images/defaulticon_green.gif" alt="" width="7" height="7" border="0">&nbsp;Seznam članov</a>
+						<a href="index.html" class="sgdmainmenu"><img src="images/defaulticon_green.gif" alt="" width="7" height="7" border="0">&nbsp;Seznam</a></td>
+				</tr>
+				<tr>
+					<td colspan="3" bgcolor="#000000">
+						<img src="images/spacer.gif" width="760" height="5" alt=""></td>
+				</tr>
+			</table>
+
+  <table width="100%" cellspacing="2" cellpadding="2" border="0" align="center">
+	<tr> 
+	  <td align="left" valign="bottom" colspan="2"><a class="maintitle" href="forum-52.html">Izdelovanje iger</a><br /><span class="gensmall"><b>Moderatorji: nihče</b></span></td>
+	  <td align="right" valign="bottom" nowrap="nowrap"><span class="gensmall"><b>Pojdi na stran  <a href="forum-52-500.html">Prejšnji</a>&nbsp;&nbsp;<a href="forum-52.html">1</a>, <a href="forum-52-50.html">2</a>, <a href="forum-52-100.html">3</a> ... <a href="forum-52-500.html">11</a>, <b>12</b>, <a href="forum-52-600.html">13</a>, <a href="forum-52-650.html">14</a>&nbsp;&nbsp;<a href="forum-52-600.html">Naslednji</a></b></span></td>
+	</tr>
+	<tr> 
+	  <td align="left" valign="middle" width="50">&nbsp;</td>
+	  <td align="left" valign="middle" class="nav" width="100%"><span class="nav">&nbsp;&nbsp;&nbsp;<a href="index.html" class="nav">SloGameDev.net seznam forumov</a> -> <a class="nav" href="forum-52.html">Izdelovanje iger</a></span></td>
+	  <td align="right" valign="bottom" class="nav" nowrap="nowrap"><span class="gensmall"></span></td>
+	</tr>
+  </table>
+
+  <table border="0" cellpadding="4" cellspacing="1" width="100%" class="forumline">
+	<tr> 
+	  <th colspan="2" align="center" height="25" class="thCornerL" nowrap="nowrap">&nbsp;teme&nbsp;</th>
+	  <th width="50" align="center" class="thTop" nowrap="nowrap">&nbsp;odgovorov&nbsp;</th>
+	  <th width="100" align="center" class="thTop" nowrap="nowrap">&nbsp;avtor&nbsp;</th>
+	  <th width="50" align="center" class="thTop" nowrap="nowrap">&nbsp;ogledov&nbsp;</th>
+	  <th align="center" class="thCornerR" nowrap="nowrap">&nbsp;zadnja objava&nbsp;</th>
+	</tr>
+	
+	<tr> 
+	  <td class="row1" align="center" valign="middle" width="20"><img src="templates/SGD2/images/folder.gif" width="19" height="18" alt="Ni novih objav" title="Ni novih objav" /></td>
+	  <td class="row1" width="100%"><span class="topictitle"><a href="topic-260.html" class="topictitle">DX SDK</a></span><span class="gensmall"><br />
+		</span></td>
+	  <td class="row2" align="center" valign="middle"><span class="postdetails">13</span></td>
+	  <td class="row3" align="center" valign="middle"><span class="name"><a href="profile-61.html">CWIZO</a></span></td>
+	  <td class="row2" align="center" valign="middle"><span class="postdetails">4542</span></td>
+	  <td class="row3Right" align="center" valign="middle" nowrap="nowrap"><span class="postdetails">pon jul 28, 2003 7:10 am<br /><a href="profile-61.html">CWIZO</a> <a href="topic-260.html#3031"><img src="templates/SGD2/images/icon_latest_reply.gif" border="0" alt="Preglej zadnje objave" title="Preglej zadnje objave" /></a></span></td>
+	</tr>
+	
+	<tr> 
+	  <td class="row1" align="center" valign="middle" width="20"><img src="templates/SGD2/images/folder.gif" width="19" height="18" alt="Ni novih objav" title="Ni novih objav" /></td>
+	  <td class="row1" width="100%"><span class="topictitle"><b>[ Anketa ]</b> <a href="topic-289.html" class="topictitle">Nov Logo Wetsoftwera</a></span><span class="gensmall"><br />
+		</span></td>
+	  <td class="row2" align="center" valign="middle"><span class="postdetails">18</span></td>
+	  <td class="row3" align="center" valign="middle"><span class="name"><a href="profile-31.html">DeadKid</a></span></td>
+	  <td class="row2" align="center" valign="middle"><span class="postdetails">6325</span></td>
+	  <td class="row3Right" align="center" valign="middle" nowrap="nowrap"><span class="postdetails">ned jul 27, 2003 2:11 pm<br /><a href="profile-22.html">Person</a> <a href="topic-289.html#2997"><img src="templates/SGD2/images/icon_latest_reply.gif" border="0" alt="Preglej zadnje objave" title="Preglej zadnje objave" /></a></span></td>
+	</tr>
+	
+	<tr> 
+	  <td class="row1" align="center" valign="middle" width="20"><img src="templates/SGD2/images/folder.gif" width="19" height="18" alt="Ni novih objav" title="Ni novih objav" /></td>
+	  <td class="row1" width="100%"><span class="topictitle"><a href="topic-303.html" class="topictitle">file creator</a></span><span class="gensmall"><br />
+		</span></td>
+	  <td class="row2" align="center" valign="middle"><span class="postdetails">4</span></td>
+	  <td class="row3" align="center" valign="middle"><span class="name"><a href="profile-47.html">vesoljc</a></span></td>
+	  <td class="row2" align="center" valign="middle"><span class="postdetails">2481</span></td>
+	  <td class="row3Right" align="center" valign="middle" nowrap="nowrap"><span class="postdetails">sob jul 26, 2003 2:44 pm<br /><a href="profile-47.html">vesoljc</a> <a href="topic-303.html#2974"><img src="templates/SGD2/images/icon_latest_reply.gif" border="0" alt="Preglej zadnje objave" title="Preglej zadnje objave" /></a></span></td>
+	</tr>
+	
+	<tr> 
+	  <td class="row1" align="center" valign="middle" width="20"><img src="templates/SGD2/images/folder_hot.gif" width="19" height="18" alt="Ni novih objav [vroče]" title="Ni novih objav [vroče]" /></td>
+	  <td class="row1" width="100%"><span class="topictitle"><a href="topic-226.html" class="topictitle">pisanje svojega lastnega rasterizatorja</a></span><span class="gensmall"><br />
+		[ <img src="templates/SGD2/images/icon_minipost.gif" alt="Pojdi na stran" title="Pojdi na stran" />Pojdi na stran: <a href="topic-226.html">1</a>, <a href="topic-226-30.html">2</a> ]</span></td>
+	  <td class="row2" align="center" valign="middle"><span class="postdetails">32</span></td>
+	  <td class="row3" align="center" valign="middle"><span class="name"><a href="profile-23.html">AlienX</a></span></td>
+	  <td class="row2" align="center" valign="middle"><span class="postdetails">19112</span></td>
+	  <td class="row3Right" align="center" valign="middle" nowrap="nowrap"><span class="postdetails">pet jul 25, 2003 9:23 pm<br /><a href="profile-10.html">snake</a> <a href="topic-226-30.html#2963"><img src="templates/SGD2/images/icon_latest_reply.gif" border="0" alt="Preglej zadnje objave" title="Preglej zadnje objave" /></a></span></td>
+	</tr>
+	
+	<tr> 
+	  <td class="row1" align="center" valign="middle" width="20"><img src="templates/SGD2/images/folder.gif" width="19" height="18" alt="Ni novih objav" title="Ni novih objav" /></td>
+	  <td class="row1" width="100%"><span class="topictitle"><a href="topic-302.html" class="topictitle">Matrice</a></span><span class="gensmall"><br />
+		</span></td>
+	  <td class="row2" align="center" valign="middle"><span class="postdetails">8</span></td>
+	  <td class="row3" align="center" valign="middle"><span class="name"><a href="profile-61.html">CWIZO</a></span></td>
+	  <td class="row2" align="center" valign="middle"><span class="postdetails">3252</span></td>
+	  <td class="row3Right" align="center" valign="middle" nowrap="nowrap"><span class="postdetails">pet jul 25, 2003 12:49 pm<br /><a href="profile-10.html">snake</a> <a href="topic-302.html#2946"><img src="templates/SGD2/images/icon_latest_reply.gif" border="0" alt="Preglej zadnje objave" title="Preglej zadnje objave" /></a></span></td>
+	</tr>
+	
+	<tr> 
+	  <td class="row1" align="center" valign="middle" width="20"><img src="templates/SGD2/images/folder.gif" width="19" height="18" alt="Ni novih objav" title="Ni novih objav" /></td>
+	  <td class="row1" width="100%"><span class="topictitle"><a href="topic-290.html" class="topictitle">Problem s spremenljivkami</a></span><span class="gensmall"><br />
+		</span></td>
+	  <td class="row2" align="center" valign="middle"><span class="postdetails">3</span></td>
+	  <td class="row3" align="center" valign="middle"><span class="name"><a href="profile-73.html">GupeM</a></span></td>
+	  <td class="row2" align="center" valign="middle"><span class="postdetails">2168</span></td>
+	  <td class="row3Right" align="center" valign="middle" nowrap="nowrap"><span class="postdetails">pet jul 25, 2003 12:45 pm<br /><a href="profile-61.html">CWIZO</a> <a href="topic-290.html#2944"><img src="templates/SGD2/images/icon_latest_reply.gif" border="0" alt="Preglej zadnje objave" title="Preglej zadnje objave" /></a></span></td>
+	</tr>
+	
+	<tr> 
+	  <td class="row1" align="center" valign="middle" width="20"><img src="templates/SGD2/images/folder.gif" width="19" height="18" alt="Ni novih objav" title="Ni novih objav" /></td>
+	  <td class="row1" width="100%"><span class="topictitle"><a href="topic-304.html" class="topictitle">operiranje z števili</a></span><span class="gensmall"><br />
+		</span></td>
+	  <td class="row2" align="center" valign="middle"><span class="postdetails">3</span></td>
+	  <td class="row3" align="center" valign="middle"><span class="name"><a href="profile-83.html">Meridian</a></span></td>
+	  <td class="row2" align="center" valign="middle"><span class="postdetails">2192</span></td>
+	  <td class="row3Right" align="center" valign="middle" nowrap="nowrap"><span class="postdetails">pet jul 25, 2003 10:45 am<br /><a href="profile-83.html">Meridian</a> <a href="topic-304.html#2934"><img src="templates/SGD2/images/icon_latest_reply.gif" border="0" alt="Preglej zadnje objave" title="Preglej zadnje objave" /></a></span></td>
+	</tr>
+	
+	<tr> 
+	  <td class="row1" align="center" valign="middle" width="20"><img src="templates/SGD2/images/folder.gif" width="19" height="18" alt="Ni novih objav" title="Ni novih objav" /></td>
+	  <td class="row1" width="100%"><span class="topictitle"><a href="topic-295.html" class="topictitle">[VB.NEt] Direct3D</a></span><span class="gensmall"><br />
+		</span></td>
+	  <td class="row2" align="center" valign="middle"><span class="postdetails">8</span></td>
+	  <td class="row3" align="center" valign="middle"><span class="name"><a href="profile-68.html">Acid Cool</a></span></td>
+	  <td class="row2" align="center" valign="middle"><span class="postdetails">2790</span></td>
+	  <td class="row3Right" align="center" valign="middle" nowrap="nowrap"><span class="postdetails">sre jul 23, 2003 1:57 pm<br /><a href="profile-11.html">Kavan</a> <a href="topic-295.html#2866"><img src="templates/SGD2/images/icon_latest_reply.gif" border="0" alt="Preglej zadnje objave" title="Preglej zadnje objave" /></a></span></td>
+	</tr>
+	
+	<tr> 
+	  <td class="row1" align="center" valign="middle" width="20"><img src="templates/SGD2/images/folder.gif" width="19" height="18" alt="Ni novih objav" title="Ni novih objav" /></td>
+	  <td class="row1" width="100%"><span class="topictitle"><a href="topic-179.html" class="topictitle">*slin* wow!</a></span><span class="gensmall"><br />
+		</span></td>
+	  <td class="row2" align="center" valign="middle"><span class="postdetails">6</span></td>
+	  <td class="row3" align="center" valign="middle"><span class="name"><a href="profile-10.html">snake</a></span></td>
+	  <td class="row2" align="center" valign="middle"><span class="postdetails">2900</span></td>
+	  <td class="row3Right" align="center" valign="middle" nowrap="nowrap"><span class="postdetails">ned jul 20, 2003 11:38 am<br /><a href="profile-31.html">DeadKid</a> <a href="topic-179.html#2763"><img src="templates/SGD2/images/icon_latest_reply.gif" border="0" alt="Preglej zadnje objave" title="Preglej zadnje objave" /></a></span></td>
+	</tr>
+	
+	<tr> 
+	  <td class="row1" align="center" valign="middle" width="20"><img src="templates/SGD2/images/folder.gif" width="19" height="18" alt="Ni novih objav" title="Ni novih objav" /></td>
+	  <td class="row1" width="100%"><span class="topictitle"><a href="topic-288.html" class="topictitle">Listview component za console app v delphiju</a></span><span class="gensmall"><br />
+		</span></td>
+	  <td class="row2" align="center" valign="middle"><span class="postdetails">0</span></td>
+	  <td class="row3" align="center" valign="middle"><span class="name"><a href="profile-85.html">Brdaws</a></span></td>
+	  <td class="row2" align="center" valign="middle"><span class="postdetails">1355</span></td>
+	  <td class="row3Right" align="center" valign="middle" nowrap="nowrap"><span class="postdetails">sob jul 19, 2003 10:10 pm<br /><a href="profile-85.html">Brdaws</a> <a href="topic-288.html#2759"><img src="templates/SGD2/images/icon_latest_reply.gif" border="0" alt="Preglej zadnje objave" title="Preglej zadnje objave" /></a></span></td>
+	</tr>
+	
+	<tr> 
+	  <td class="row1" align="center" valign="middle" width="20"><img src="templates/SGD2/images/folder.gif" width="19" height="18" alt="Ni novih objav" title="Ni novih objav" /></td>
+	  <td class="row1" width="100%"><span class="topictitle"><a href="topic-161.html" class="topictitle">bmp in pascal</a></span><span class="gensmall"><br />
+		</span></td>
+	  <td class="row2" align="center" valign="middle"><span class="postdetails">2</span></td>
+	  <td class="row3" align="center" valign="middle"><span class="name"><a href="profile-58.html">GD</a></span></td>
+	  <td class="row2" align="center" valign="middle"><span class="postdetails">2717</span></td>
+	  <td class="row3Right" align="center" valign="middle" nowrap="nowrap"><span class="postdetails">sob jul 19, 2003 9:55 pm<br /><a href="profile-85.html">Brdaws</a> <a href="topic-161.html#2756"><img src="templates/SGD2/images/icon_latest_reply.gif" border="0" alt="Preglej zadnje objave" title="Preglej zadnje objave" /></a></span></td>
+	</tr>
+	
+	<tr> 
+	  <td class="row1" align="center" valign="middle" width="20"><img src="templates/SGD2/images/folder.gif" width="19" height="18" alt="Ni novih objav" title="Ni novih objav" /></td>
+	  <td class="row1" width="100%"><span class="topictitle"><a href="topic-287.html" class="topictitle">Zastonjsko .net razvijalno okolje</a></span><span class="gensmall"><br />
+		</span></td>
+	  <td class="row2" align="center" valign="middle"><span class="postdetails">2</span></td>
+	  <td class="row3" align="center" valign="middle"><span class="name"><a href="profile-54.html">pohištvo</a></span></td>
+	  <td class="row2" align="center" valign="middle"><span class="postdetails">2015</span></td>
+	  <td class="row3Right" align="center" valign="middle" nowrap="nowrap"><span class="postdetails">sob jul 19, 2003 8:39 pm<br /><a href="profile-22.html">Person</a> <a href="topic-287.html#2755"><img src="templates/SGD2/images/icon_latest_reply.gif" border="0" alt="Preglej zadnje objave" title="Preglej zadnje objave" /></a></span></td>
+	</tr>
+	
+	<tr> 
+	  <td class="row1" align="center" valign="middle" width="20"><img src="templates/SGD2/images/folder.gif" width="19" height="18" alt="Ni novih objav" title="Ni novih objav" /></td>
+	  <td class="row1" width="100%"><span class="topictitle"><a href="topic-286.html" class="topictitle">[.NET]Razlika med debug in realese?</a></span><span class="gensmall"><br />
+		</span></td>
+	  <td class="row2" align="center" valign="middle"><span class="postdetails">3</span></td>
+	  <td class="row3" align="center" valign="middle"><span class="name"><a href="profile-61.html">CWIZO</a></span></td>
+	  <td class="row2" align="center" valign="middle"><span class="postdetails">2032</span></td>
+	  <td class="row3Right" align="center" valign="middle" nowrap="nowrap"><span class="postdetails">sob jul 19, 2003 2:18 pm<br /><a href="profile-53.html">Death</a> <a href="topic-286.html#2747"><img src="templates/SGD2/images/icon_latest_reply.gif" border="0" alt="Preglej zadnje objave" title="Preglej zadnje objave" /></a></span></td>
+	</tr>
+	
+	<tr> 
+	  <td class="row1" align="center" valign="middle" width="20"><img src="templates/SGD2/images/folder.gif" width="19" height="18" alt="Ni novih objav" title="Ni novih objav" /></td>
+	  <td class="row1" width="100%"><span class="topictitle"><a href="topic-283.html" class="topictitle">Uporabniski vmesnik?</a></span><span class="gensmall"><br />
+		</span></td>
+	  <td class="row2" align="center" valign="middle"><span class="postdetails">3</span></td>
+	  <td class="row3" align="center" valign="middle"><span class="name"><a href="profile-53.html">Death</a></span></td>
+	  <td class="row2" align="center" valign="middle"><span class="postdetails">2156</span></td>
+	  <td class="row3Right" align="center" valign="middle" nowrap="nowrap"><span class="postdetails">pet jul 18, 2003 5:42 pm<br /><a href="profile-10.html">snake</a> <a href="topic-283.html#2732"><img src="templates/SGD2/images/icon_latest_reply.gif" border="0" alt="Preglej zadnje objave" title="Preglej zadnje objave" /></a></span></td>
+	</tr>
+	
+	<tr> 
+	  <td class="row1" align="center" valign="middle" width="20"><img src="templates/SGD2/images/folder.gif" width="19" height="18" alt="Ni novih objav" title="Ni novih objav" /></td>
+	  <td class="row1" width="100%"><span class="topictitle"><a href="topic-20.html" class="topictitle">Managed DX</a></span><span class="gensmall"><br />
+		</span></td>
+	  <td class="row2" align="center" valign="middle"><span class="postdetails">8</span></td>
+	  <td class="row3" align="center" valign="middle"><span class="name"><a href="profile-11.html">Kavan</a></span></td>
+	  <td class="row2" align="center" valign="middle"><span class="postdetails">3461</span></td>
+	  <td class="row3Right" align="center" valign="middle" nowrap="nowrap"><span class="postdetails">pet jul 18, 2003 1:46 pm<br /><a href="profile-54.html">pohištvo</a> <a href="topic-20.html#2721"><img src="templates/SGD2/images/icon_latest_reply.gif" border="0" alt="Preglej zadnje objave" title="Preglej zadnje objave" /></a></span></td>
+	</tr>
+	
+	<tr> 
+	  <td class="row1" align="center" valign="middle" width="20"><img src="templates/SGD2/images/folder.gif" width="19" height="18" alt="Ni novih objav" title="Ni novih objav" /></td>
+	  <td class="row1" width="100%"><span class="topictitle"><a href="topic-259.html" class="topictitle">Optimizacija v 3D pogonih</a></span><span class="gensmall"><br />
+		</span></td>
+	  <td class="row2" align="center" valign="middle"><span class="postdetails">7</span></td>
+	  <td class="row3" align="center" valign="middle"><span class="name"><a href="profile-24.html">hugoboss</a></span></td>
+	  <td class="row2" align="center" valign="middle"><span class="postdetails">3130</span></td>
+	  <td class="row3Right" align="center" valign="middle" nowrap="nowrap"><span class="postdetails">čet jul 17, 2003 8:33 pm<br /><a href="profile-10.html">snake</a> <a href="topic-259.html#2702"><img src="templates/SGD2/images/icon_latest_reply.gif" border="0" alt="Preglej zadnje objave" title="Preglej zadnje objave" /></a></span></td>
+	</tr>
+	
+	<tr> 
+	  <td class="row1" align="center" valign="middle" width="20"><img src="templates/SGD2/images/folder.gif" width="19" height="18" alt="Ni novih objav" title="Ni novih objav" /></td>
+	  <td class="row1" width="100%"><span class="topictitle"><a href="topic-266.html" class="topictitle">[C#]Attributes</a></span><span class="gensmall"><br />
+		</span></td>
+	  <td class="row2" align="center" valign="middle"><span class="postdetails">3</span></td>
+	  <td class="row3" align="center" valign="middle"><span class="name"><a href="profile-61.html">CWIZO</a></span></td>
+	  <td class="row2" align="center" valign="middle"><span class="postdetails">2072</span></td>
+	  <td class="row3Right" align="center" valign="middle" nowrap="nowrap"><span class="postdetails">pon jul 14, 2003 12:02 pm<br /><a href="profile-11.html">Kavan</a> <a href="topic-266.html#2606"><img src="templates/SGD2/images/icon_latest_reply.gif" border="0" alt="Preglej zadnje objave" title="Preglej zadnje objave" /></a></span></td>
+	</tr>
+	
+	<tr> 
+	  <td class="row1" align="center" valign="middle" width="20"><img src="templates/SGD2/images/folder.gif" width="19" height="18" alt="Ni novih objav" title="Ni novih objav" /></td>
+	  <td class="row1" width="100%"><span class="topictitle"><a href="topic-255.html" class="topictitle">address-of on static data in DLLs</a></span><span class="gensmall"><br />
+		</span></td>
+	  <td class="row2" align="center" valign="middle"><span class="postdetails">3</span></td>
+	  <td class="row3" align="center" valign="middle"><span class="name"><a href="profile-20.html">BAADC0DE</a></span></td>
+	  <td class="row2" align="center" valign="middle"><span class="postdetails">1953</span></td>
+	  <td class="row3Right" align="center" valign="middle" nowrap="nowrap"><span class="postdetails">ned jul 13, 2003 12:23 pm<br /><a href="profile-24.html">hugoboss</a> <a href="topic-255.html#2600"><img src="templates/SGD2/images/icon_latest_reply.gif" border="0" alt="Preglej zadnje objave" title="Preglej zadnje objave" /></a></span></td>
+	</tr>
+	
+	<tr> 
+	  <td class="row1" align="center" valign="middle" width="20"><img src="templates/SGD2/images/folder.gif" width="19" height="18" alt="Ni novih objav" title="Ni novih objav" /></td>
+	  <td class="row1" width="100%"><span class="topictitle"><a href="topic-264.html" class="topictitle">[VB6] Problem z ListView...</a></span><span class="gensmall"><br />
+		</span></td>
+	  <td class="row2" align="center" valign="middle"><span class="postdetails">0</span></td>
+	  <td class="row3" align="center" valign="middle"><span class="name"><a href="profile-68.html">Acid Cool</a></span></td>
+	  <td class="row2" align="center" valign="middle"><span class="postdetails">1418</span></td>
+	  <td class="row3Right" align="center" valign="middle" nowrap="nowrap"><span class="postdetails">čet jul 10, 2003 8:08 pm<br /><a href="profile-68.html">Acid Cool</a> <a href="topic-264.html#2557"><img src="templates/SGD2/images/icon_latest_reply.gif" border="0" alt="Preglej zadnje objave" title="Preglej zadnje objave" /></a></span></td>
+	</tr>
+	
+	<tr> 
+	  <td class="row1" align="center" valign="middle" width="20"><img src="templates/SGD2/images/folder.gif" width="19" height="18" alt="Ni novih objav" title="Ni novih objav" /></td>
+	  <td class="row1" width="100%"><span class="topictitle"><a href="topic-256.html" class="topictitle">vb.net pomoč</a></span><span class="gensmall"><br />
+		</span></td>
+	  <td class="row2" align="center" valign="middle"><span class="postdetails">4</span></td>
+	  <td class="row3" align="center" valign="middle"><span class="name"><a href="profile-75.html">StilRcA</a></span></td>
+	  <td class="row2" align="center" valign="middle"><span class="postdetails">3042</span></td>
+	  <td class="row3Right" align="center" valign="middle" nowrap="nowrap"><span class="postdetails">tor jul 08, 2003 8:11 am<br /><a href="profile-75.html">StilRcA</a> <a href="topic-256.html#2495"><img src="templates/SGD2/images/icon_latest_reply.gif" border="0" alt="Preglej zadnje objave" title="Preglej zadnje objave" /></a></span></td>
+	</tr>
+	
+	<tr> 
+	  <td class="row1" align="center" valign="middle" width="20"><img src="templates/SGD2/images/folder.gif" width="19" height="18" alt="Ni novih objav" title="Ni novih objav" /></td>
+	  <td class="row1" width="100%"><span class="topictitle"><a href="topic-257.html" class="topictitle">bot contest</a></span><span class="gensmall"><br />
+		</span></td>
+	  <td class="row2" align="center" valign="middle"><span class="postdetails">0</span></td>
+	  <td class="row3" align="center" valign="middle"><span class="name"><a href="profile-47.html">vesoljc</a></span></td>
+	  <td class="row2" align="center" valign="middle"><span class="postdetails">1290</span></td>
+	  <td class="row3Right" align="center" valign="middle" nowrap="nowrap"><span class="postdetails">pon jul 07, 2003 10:40 pm<br /><a href="profile-47.html">vesoljc</a> <a href="topic-257.html#2486"><img src="templates/SGD2/images/icon_latest_reply.gif" border="0" alt="Preglej zadnje objave" title="Preglej zadnje objave" /></a></span></td>
+	</tr>
+	
+	<tr> 
+	  <td class="row1" align="center" valign="middle" width="20"><img src="templates/SGD2/images/folder.gif" width="19" height="18" alt="Ni novih objav" title="Ni novih objav" /></td>
+	  <td class="row1" width="100%"><span class="topictitle"><a href="topic-130.html" class="topictitle">VB 6.0 + DX 8</a></span><span class="gensmall"><br />
+		</span></td>
+	  <td class="row2" align="center" valign="middle"><span class="postdetails">9</span></td>
+	  <td class="row3" align="center" valign="middle"><span class="name"><a href="profile-6.html">delfy</a></span></td>
+	  <td class="row2" align="center" valign="middle"><span class="postdetails">3422</span></td>
+	  <td class="row3Right" align="center" valign="middle" nowrap="nowrap"><span class="postdetails">pon jul 07, 2003 3:30 pm<br /><a href="profile-68.html">Acid Cool</a> <a href="topic-130.html#2480"><img src="templates/SGD2/images/icon_latest_reply.gif" border="0" alt="Preglej zadnje objave" title="Preglej zadnje objave" /></a></span></td>
+	</tr>
+	
+	<tr> 
+	  <td class="row1" align="center" valign="middle" width="20"><img src="templates/SGD2/images/folder.gif" width="19" height="18" alt="Ni novih objav" title="Ni novih objav" /></td>
+	  <td class="row1" width="100%"><span class="topictitle"><a href="topic-254.html" class="topictitle">Kompenziranje zamikov</a></span><span class="gensmall"><br />
+		</span></td>
+	  <td class="row2" align="center" valign="middle"><span class="postdetails">1</span></td>
+	  <td class="row3" align="center" valign="middle"><span class="name"><a href="profile-11.html">Kavan</a></span></td>
+	  <td class="row2" align="center" valign="middle"><span class="postdetails">1579</span></td>
+	  <td class="row3Right" align="center" valign="middle" nowrap="nowrap"><span class="postdetails">ned jul 06, 2003 6:39 pm<br /><a href="profile-20.html">BAADC0DE</a> <a href="topic-254.html#2463"><img src="templates/SGD2/images/icon_latest_reply.gif" border="0" alt="Preglej zadnje objave" title="Preglej zadnje objave" /></a></span></td>
+	</tr>
+	
+	<tr> 
+	  <td class="row1" align="center" valign="middle" width="20"><img src="templates/SGD2/images/folder.gif" width="19" height="18" alt="Ni novih objav" title="Ni novih objav" /></td>
+	  <td class="row1" width="100%"><span class="topictitle"><a href="topic-172.html" class="topictitle">[ VB ] Kako zapolniti lik z določeno barvo?</a></span><span class="gensmall"><br />
+		</span></td>
+	  <td class="row2" align="center" valign="middle"><span class="postdetails">4</span></td>
+	  <td class="row3" align="center" valign="middle"><span class="name"><a href="profile-17.html">impulse9</a></span></td>
+	  <td class="row2" align="center" valign="middle"><span class="postdetails">2134</span></td>
+	  <td class="row3Right" align="center" valign="middle" nowrap="nowrap"><span class="postdetails">sob jul 05, 2003 6:42 pm<br /><a href="profile-68.html">Acid Cool</a> <a href="topic-172.html#2433"><img src="templates/SGD2/images/icon_latest_reply.gif" border="0" alt="Preglej zadnje objave" title="Preglej zadnje objave" /></a></span></td>
+	</tr>
+	
+	<tr> 
+	  <td class="row1" align="center" valign="middle" width="20"><img src="templates/SGD2/images/folder.gif" width="19" height="18" alt="Ni novih objav" title="Ni novih objav" /></td>
+	  <td class="row1" width="100%"><span class="topictitle"><a href="topic-249.html" class="topictitle">Kaj je to UML ?</a></span><span class="gensmall"><br />
+		</span></td>
+	  <td class="row2" align="center" valign="middle"><span class="postdetails">4</span></td>
+	  <td class="row3" align="center" valign="middle"><span class="name"><a href="profile-61.html">CWIZO</a></span></td>
+	  <td class="row2" align="center" valign="middle"><span class="postdetails">3693</span></td>
+	  <td class="row3Right" align="center" valign="middle" nowrap="nowrap"><span class="postdetails">pet jul 04, 2003 4:04 pm<br /><a href="profile-30.html">Firestar</a> <a href="topic-249.html#2412"><img src="templates/SGD2/images/icon_latest_reply.gif" border="0" alt="Preglej zadnje objave" title="Preglej zadnje objave" /></a></span></td>
+	</tr>
+	
+	<tr> 
+	  <td class="row1" align="center" valign="middle" width="20"><img src="templates/SGD2/images/folder.gif" width="19" height="18" alt="Ni novih objav" title="Ni novih objav" /></td>
+	  <td class="row1" width="100%"><span class="topictitle"><a href="topic-237.html" class="topictitle">Premikanje kvadrata v SDL</a></span><span class="gensmall"><br />
+		</span></td>
+	  <td class="row2" align="center" valign="middle"><span class="postdetails">9</span></td>
+	  <td class="row3" align="center" valign="middle"><span class="name"><a href="profile-61.html">CWIZO</a></span></td>
+	  <td class="row2" align="center" valign="middle"><span class="postdetails">3561</span></td>
+	  <td class="row3Right" align="center" valign="middle" nowrap="nowrap"><span class="postdetails">čet jul 03, 2003 10:06 pm<br /><a href="profile-20.html">BAADC0DE</a> <a href="topic-237.html#2398"><img src="templates/SGD2/images/icon_latest_reply.gif" border="0" alt="Preglej zadnje objave" title="Preglej zadnje objave" /></a></span></td>
+	</tr>
+	
+	<tr> 
+	  <td class="row1" align="center" valign="middle" width="20"><img src="templates/SGD2/images/folder.gif" width="19" height="18" alt="Ni novih objav" title="Ni novih objav" /></td>
+	  <td class="row1" width="100%"><span class="topictitle"><a href="topic-241.html" class="topictitle">n-dimenzionalna dinamična polja</a></span><span class="gensmall"><br />
+		</span></td>
+	  <td class="row2" align="center" valign="middle"><span class="postdetails">9</span></td>
+	  <td class="row3" align="center" valign="middle"><span class="name"><a href="profile-10.html">snake</a></span></td>
+	  <td class="row2" align="center" valign="middle"><span class="postdetails">3576</span></td>
+	  <td class="row3Right" align="center" valign="middle" nowrap="nowrap"><span class="postdetails">sre jul 02, 2003 7:20 pm<br /><a href="profile-30.html">Firestar</a> <a href="topic-241.html#2361"><img src="templates/SGD2/images/icon_latest_reply.gif" border="0" alt="Preglej zadnje objave" title="Preglej zadnje objave" /></a></span></td>
+	</tr>
+	
+	<tr> 
+	  <td class="row1" align="center" valign="middle" width="20"><img src="templates/SGD2/images/folder.gif" width="19" height="18" alt="Ni novih objav" title="Ni novih objav" /></td>
+	  <td class="row1" width="100%"><span class="topictitle"><a href="topic-247.html" class="topictitle">Index buffer v dx9 - koji?</a></span><span class="gensmall"><br />
+		</span></td>
+	  <td class="row2" align="center" valign="middle"><span class="postdetails">5</span></td>
+	  <td class="row3" align="center" valign="middle"><span class="name"><a href="profile-54.html">pohištvo</a></span></td>
+	  <td class="row2" align="center" valign="middle"><span class="postdetails">2750</span></td>
+	  <td class="row3Right" align="center" valign="middle" nowrap="nowrap"><span class="postdetails">sre jul 02, 2003 5:06 pm<br /><a href="profile-54.html">pohištvo</a> <a href="topic-247.html#2357"><img src="templates/SGD2/images/icon_latest_reply.gif" border="0" alt="Preglej zadnje objave" title="Preglej zadnje objave" /></a></span></td>
+	</tr>
+	
+	<tr> 
+	  <td class="row1" align="center" valign="middle" width="20"><img src="templates/SGD2/images/folder.gif" width="19" height="18" alt="Ni novih objav" title="Ni novih objav" /></td>
+	  <td class="row1" width="100%"><span class="topictitle"><a href="topic-242.html" class="topictitle">Potence in podobno v c++</a></span><span class="gensmall"><br />
+		</span></td>
+	  <td class="row2" align="center" valign="middle"><span class="postdetails">13</span></td>
+	  <td class="row3" align="center" valign="middle"><span class="name"><a href="profile-73.html">GupeM</a></span></td>
+	  <td class="row2" align="center" valign="middle"><span class="postdetails">8316</span></td>
+	  <td class="row3Right" align="center" valign="middle" nowrap="nowrap"><span class="postdetails">tor jul 01, 2003 7:54 pm<br /><a href="profile-73.html">GupeM</a> <a href="topic-242.html#2335"><img src="templates/SGD2/images/icon_latest_reply.gif" border="0" alt="Preglej zadnje objave" title="Preglej zadnje objave" /></a></span></td>
+	</tr>
+	
+	<tr> 
+	  <td class="row1" align="center" valign="middle" width="20"><img src="templates/SGD2/images/folder.gif" width="19" height="18" alt="Ni novih objav" title="Ni novih objav" /></td>
+	  <td class="row1" width="100%"><span class="topictitle"><b>[ Anketa ]</b> <a href="topic-238.html" class="topictitle">2d grafika v c++</a></span><span class="gensmall"><br />
+		</span></td>
+	  <td class="row2" align="center" valign="middle"><span class="postdetails">6</span></td>
+	  <td class="row3" align="center" valign="middle"><span class="name"><a href="profile-59.html">Jason</a></span></td>
+	  <td class="row2" align="center" valign="middle"><span class="postdetails">4673</span></td>
+	  <td class="row3Right" align="center" valign="middle" nowrap="nowrap"><span class="postdetails">tor jul 01, 2003 1:11 pm<br /><a href="profile-59.html">Jason</a> <a href="topic-238.html#2314"><img src="templates/SGD2/images/icon_latest_reply.gif" border="0" alt="Preglej zadnje objave" title="Preglej zadnje objave" /></a></span></td>
+	</tr>
+	
+	<tr> 
+	  <td class="row1" align="center" valign="middle" width="20"><img src="templates/SGD2/images/folder.gif" width="19" height="18" alt="Ni novih objav" title="Ni novih objav" /></td>
+	  <td class="row1" width="100%"><span class="topictitle"><a href="topic-220.html" class="topictitle">[C++] Nedela.Zakaj ne?</a></span><span class="gensmall"><br />
+		</span></td>
+	  <td class="row2" align="center" valign="middle"><span class="postdetails">4</span></td>
+	  <td class="row3" align="center" valign="middle"><span class="name"><a href="profile-12.html">Celebi</a></span></td>
+	  <td class="row2" align="center" valign="middle"><span class="postdetails">2956</span></td>
+	  <td class="row3Right" align="center" valign="middle" nowrap="nowrap"><span class="postdetails">ned jun 29, 2003 6:22 pm<br /><a href="profile-20.html">BAADC0DE</a> <a href="topic-220.html#2271"><img src="templates/SGD2/images/icon_latest_reply.gif" border="0" alt="Preglej zadnje objave" title="Preglej zadnje objave" /></a></span></td>
+	</tr>
+	
+	<tr> 
+	  <td class="row1" align="center" valign="middle" width="20"><img src="templates/SGD2/images/folder.gif" width="19" height="18" alt="Ni novih objav" title="Ni novih objav" /></td>
+	  <td class="row1" width="100%"><span class="topictitle"><a href="topic-234.html" class="topictitle">[c++]Rand</a></span><span class="gensmall"><br />
+		</span></td>
+	  <td class="row2" align="center" valign="middle"><span class="postdetails">17</span></td>
+	  <td class="row3" align="center" valign="middle"><span class="name"><a href="profile-61.html">CWIZO</a></span></td>
+	  <td class="row2" align="center" valign="middle"><span class="postdetails">6098</span></td>
+	  <td class="row3Right" align="center" valign="middle" nowrap="nowrap"><span class="postdetails">sob jun 28, 2003 11:24 am<br /><a href="profile-61.html">CWIZO</a> <a href="topic-234.html#2239"><img src="templates/SGD2/images/icon_latest_reply.gif" border="0" alt="Preglej zadnje objave" title="Preglej zadnje objave" /></a></span></td>
+	</tr>
+	
+	<tr> 
+	  <td class="row1" align="center" valign="middle" width="20"><img src="templates/SGD2/images/folder.gif" width="19" height="18" alt="Ni novih objav" title="Ni novih objav" /></td>
+	  <td class="row1" width="100%"><span class="topictitle"><a href="topic-229.html" class="topictitle">Multi Tree</a></span><span class="gensmall"><br />
+		</span></td>
+	  <td class="row2" align="center" valign="middle"><span class="postdetails">1</span></td>
+	  <td class="row3" align="center" valign="middle"><span class="name"><a href="profile-47.html">vesoljc</a></span></td>
+	  <td class="row2" align="center" valign="middle"><span class="postdetails">1779</span></td>
+	  <td class="row3Right" align="center" valign="middle" nowrap="nowrap"><span class="postdetails">sre jun 18, 2003 12:55 am<br /><a href="profile-11.html">Kavan</a> <a href="topic-229.html#2175"><img src="templates/SGD2/images/icon_latest_reply.gif" border="0" alt="Preglej zadnje objave" title="Preglej zadnje objave" /></a></span></td>
+	</tr>
+	
+	<tr> 
+	  <td class="row1" align="center" valign="middle" width="20"><img src="templates/SGD2/images/folder.gif" width="19" height="18" alt="Ni novih objav" title="Ni novih objav" /></td>
+	  <td class="row1" width="100%"><span class="topictitle"><a href="topic-227.html" class="topictitle">Direct3D in MFC *DX9</a></span><span class="gensmall"><br />
+		</span></td>
+	  <td class="row2" align="center" valign="middle"><span class="postdetails">0</span></td>
+	  <td class="row3" align="center" valign="middle"><span class="name"><a href="profile-62.html">Shinobi</a></span></td>
+	  <td class="row2" align="center" valign="middle"><span class="postdetails">1411</span></td>
+	  <td class="row3Right" align="center" valign="middle" nowrap="nowrap"><span class="postdetails">čet jun 12, 2003 10:28 am<br /><a href="profile-62.html">Shinobi</a> <a href="topic-227.html#2133"><img src="templates/SGD2/images/icon_latest_reply.gif" border="0" alt="Preglej zadnje objave" title="Preglej zadnje objave" /></a></span></td>
+	</tr>
+	
+	<tr> 
+	  <td class="row1" align="center" valign="middle" width="20"><img src="templates/SGD2/images/folder.gif" width="19" height="18" alt="Ni novih objav" title="Ni novih objav" /></td>
+	  <td class="row1" width="100%"><span class="topictitle"><a href="topic-222.html" class="topictitle">Kateri program za hip-hop style</a></span><span class="gensmall"><br />
+		</span></td>
+	  <td class="row2" align="center" valign="middle"><span class="postdetails">6</span></td>
+	  <td class="row3" align="center" valign="middle"><span class="name"><a href="profile-14.html">cime</a></span></td>
+	  <td class="row2" align="center" valign="middle"><span class="postdetails">5107</span></td>
+	  <td class="row3Right" align="center" valign="middle" nowrap="nowrap"><span class="postdetails">tor jun 03, 2003 7:01 pm<br /><a href="profile-14.html">cime</a> <a href="topic-222.html#2077"><img src="templates/SGD2/images/icon_latest_reply.gif" border="0" alt="Preglej zadnje objave" title="Preglej zadnje objave" /></a></span></td>
+	</tr>
+	
+	<tr> 
+	  <td class="row1" align="center" valign="middle" width="20"><img src="templates/SGD2/images/folder.gif" width="19" height="18" alt="Ni novih objav" title="Ni novih objav" /></td>
+	  <td class="row1" width="100%"><span class="topictitle"><a href="topic-218.html" class="topictitle">C++ in Class-i</a></span><span class="gensmall"><br />
+		</span></td>
+	  <td class="row2" align="center" valign="middle"><span class="postdetails">25</span></td>
+	  <td class="row3" align="center" valign="middle"><span class="name"><a href="profile-63.html">matjazvn</a></span></td>
+	  <td class="row2" align="center" valign="middle"><span class="postdetails">9819</span></td>
+	  <td class="row3Right" align="center" valign="middle" nowrap="nowrap"><span class="postdetails">ned jun 01, 2003 6:47 pm<br /><a href="profile-22.html">Person</a> <a href="topic-218.html#2044"><img src="templates/SGD2/images/icon_latest_reply.gif" border="0" alt="Preglej zadnje objave" title="Preglej zadnje objave" /></a></span></td>
+	</tr>
+	
+	<tr> 
+	  <td class="row1" align="center" valign="middle" width="20"><img src="templates/SGD2/images/folder.gif" width="19" height="18" alt="Ni novih objav" title="Ni novih objav" /></td>
+	  <td class="row1" width="100%"><span class="topictitle"><a href="topic-211.html" class="topictitle">random izbrano število</a></span><span class="gensmall"><br />
+		</span></td>
+	  <td class="row2" align="center" valign="middle"><span class="postdetails">15</span></td>
+	  <td class="row3" align="center" valign="middle"><span class="name"><a href="profile-64.html">sinek</a></span></td>
+	  <td class="row2" align="center" valign="middle"><span class="postdetails">5404</span></td>
+	  <td class="row3Right" align="center" valign="middle" nowrap="nowrap"><span class="postdetails">čet maj 29, 2003 1:30 pm<br /><a href="profile-22.html">Person</a> <a href="topic-211.html#2015"><img src="templates/SGD2/images/icon_latest_reply.gif" border="0" alt="Preglej zadnje objave" title="Preglej zadnje objave" /></a></span></td>
+	</tr>
+	
+	<tr> 
+	  <td class="row1" align="center" valign="middle" width="20"><img src="templates/SGD2/images/folder.gif" width="19" height="18" alt="Ni novih objav" title="Ni novih objav" /></td>
+	  <td class="row1" width="100%"><span class="topictitle"><a href="topic-212.html" class="topictitle">Barve v dosu?</a></span><span class="gensmall"><br />
+		</span></td>
+	  <td class="row2" align="center" valign="middle"><span class="postdetails">8</span></td>
+	  <td class="row3" align="center" valign="middle"><span class="name"><a href="profile-64.html">sinek</a></span></td>
+	  <td class="row2" align="center" valign="middle"><span class="postdetails">3829</span></td>
+	  <td class="row3Right" align="center" valign="middle" nowrap="nowrap"><span class="postdetails">čet maj 29, 2003 10:02 am<br /><a href="profile-17.html">impulse9</a> <a href="topic-212.html#2013"><img src="templates/SGD2/images/icon_latest_reply.gif" border="0" alt="Preglej zadnje objave" title="Preglej zadnje objave" /></a></span></td>
+	</tr>
+	
+	<tr> 
+	  <td class="row1" align="center" valign="middle" width="20"><img src="templates/SGD2/images/folder.gif" width="19" height="18" alt="Ni novih objav" title="Ni novih objav" /></td>
+	  <td class="row1" width="100%"><span class="topictitle"><a href="topic-210.html" class="topictitle">clrscr()</a></span><span class="gensmall"><br />
+		</span></td>
+	  <td class="row2" align="center" valign="middle"><span class="postdetails">9</span></td>
+	  <td class="row3" align="center" valign="middle"><span class="name"><a href="profile-64.html">sinek</a></span></td>
+	  <td class="row2" align="center" valign="middle"><span class="postdetails">3646</span></td>
+	  <td class="row3Right" align="center" valign="middle" nowrap="nowrap"><span class="postdetails">čet maj 29, 2003 9:51 am<br /><a href="profile-17.html">impulse9</a> <a href="topic-210.html#2012"><img src="templates/SGD2/images/icon_latest_reply.gif" border="0" alt="Preglej zadnje objave" title="Preglej zadnje objave" /></a></span></td>
+	</tr>
+	
+	<tr> 
+	  <td class="row1" align="center" valign="middle" width="20"><img src="templates/SGD2/images/folder.gif" width="19" height="18" alt="Ni novih objav" title="Ni novih objav" /></td>
+	  <td class="row1" width="100%"><span class="topictitle"><a href="topic-213.html" class="topictitle">Low-level programiranje</a></span><span class="gensmall"><br />
+		</span></td>
+	  <td class="row2" align="center" valign="middle"><span class="postdetails">5</span></td>
+	  <td class="row3" align="center" valign="middle"><span class="name"><a href="profile-53.html">Death</a></span></td>
+	  <td class="row2" align="center" valign="middle"><span class="postdetails">2901</span></td>
+	  <td class="row3Right" align="center" valign="middle" nowrap="nowrap"><span class="postdetails">sre maj 28, 2003 8:50 pm<br /><a href="profile-10.html">snake</a> <a href="topic-213.html#2002"><img src="templates/SGD2/images/icon_latest_reply.gif" border="0" alt="Preglej zadnje objave" title="Preglej zadnje objave" /></a></span></td>
+	</tr>
+	
+	<tr> 
+	  <td class="row1" align="center" valign="middle" width="20"><img src="templates/SGD2/images/folder.gif" width="19" height="18" alt="Ni novih objav" title="Ni novih objav" /></td>
+	  <td class="row1" width="100%"><span class="topictitle"><a href="topic-214.html" class="topictitle">ddraw</a></span><span class="gensmall"><br />
+		</span></td>
+	  <td class="row2" align="center" valign="middle"><span class="postdetails">12</span></td>
+	  <td class="row3" align="center" valign="middle"><span class="name"><a href="profile-63.html">matjazvn</a></span></td>
+	  <td class="row2" align="center" valign="middle"><span class="postdetails">4228</span></td>
+	  <td class="row3Right" align="center" valign="middle" nowrap="nowrap"><span class="postdetails">tor maj 27, 2003 2:40 pm<br /><a href="profile-22.html">Person</a> <a href="topic-214.html#1989"><img src="templates/SGD2/images/icon_latest_reply.gif" border="0" alt="Preglej zadnje objave" title="Preglej zadnje objave" /></a></span></td>
+	</tr>
+	
+	<tr> 
+	  <td class="row1" align="center" valign="middle" width="20"><img src="templates/SGD2/images/folder.gif" width="19" height="18" alt="Ni novih objav" title="Ni novih objav" /></td>
+	  <td class="row1" width="100%"><span class="topictitle"><a href="topic-217.html" class="topictitle">napaka!!!!!</a></span><span class="gensmall"><br />
+		</span></td>
+	  <td class="row2" align="center" valign="middle"><span class="postdetails">3</span></td>
+	  <td class="row3" align="center" valign="middle"><span class="name"><a href="profile-64.html">sinek</a></span></td>
+	  <td class="row2" align="center" valign="middle"><span class="postdetails">2125</span></td>
+	  <td class="row3Right" align="center" valign="middle" nowrap="nowrap"><span class="postdetails">tor maj 27, 2003 10:45 am<br /><a href="profile-47.html">vesoljc</a> <a href="topic-217.html#1985"><img src="templates/SGD2/images/icon_latest_reply.gif" border="0" alt="Preglej zadnje objave" title="Preglej zadnje objave" /></a></span></td>
+	</tr>
+	
+	<tr> 
+	  <td class="row1" align="center" valign="middle" width="20"><img src="templates/SGD2/images/folder.gif" width="19" height="18" alt="Ni novih objav" title="Ni novih objav" /></td>
+	  <td class="row1" width="100%"><span class="topictitle"><a href="topic-216.html" class="topictitle">Level editor</a></span><span class="gensmall"><br />
+		</span></td>
+	  <td class="row2" align="center" valign="middle"><span class="postdetails">2</span></td>
+	  <td class="row3" align="center" valign="middle"><span class="name"><a href="profile-6.html">delfy</a></span></td>
+	  <td class="row2" align="center" valign="middle"><span class="postdetails">3051</span></td>
+	  <td class="row3Right" align="center" valign="middle" nowrap="nowrap"><span class="postdetails">pon maj 26, 2003 9:00 pm<br /><a href="profile-4.html">rabely</a> <a href="topic-216.html#1979"><img src="templates/SGD2/images/icon_latest_reply.gif" border="0" alt="Preglej zadnje objave" title="Preglej zadnje objave" /></a></span></td>
+	</tr>
+	
+	<tr> 
+	  <td class="row1" align="center" valign="middle" width="20"><img src="templates/SGD2/images/folder.gif" width="19" height="18" alt="Ni novih objav" title="Ni novih objav" /></td>
+	  <td class="row1" width="100%"><span class="topictitle"><a href="topic-203.html" class="topictitle">shell?</a></span><span class="gensmall"><br />
+		</span></td>
+	  <td class="row2" align="center" valign="middle"><span class="postdetails">1</span></td>
+	  <td class="row3" align="center" valign="middle"><span class="name"><a href="profile-47.html">vesoljc</a></span></td>
+	  <td class="row2" align="center" valign="middle"><span class="postdetails">2550</span></td>
+	  <td class="row3Right" align="center" valign="middle" nowrap="nowrap"><span class="postdetails">pet maj 23, 2003 10:09 pm<br /><a href="profile-47.html">vesoljc</a> <a href="topic-203.html#1953"><img src="templates/SGD2/images/icon_latest_reply.gif" border="0" alt="Preglej zadnje objave" title="Preglej zadnje objave" /></a></span></td>
+	</tr>
+	
+	<tr> 
+	  <td class="row1" align="center" valign="middle" width="20"><img src="templates/SGD2/images/folder.gif" width="19" height="18" alt="Ni novih objav" title="Ni novih objav" /></td>
+	  <td class="row1" width="100%"><span class="topictitle"><a href="topic-208.html" class="topictitle">domača naloga :)</a></span><span class="gensmall"><br />
+		</span></td>
+	  <td class="row2" align="center" valign="middle"><span class="postdetails">2</span></td>
+	  <td class="row3" align="center" valign="middle"><span class="name"><a href="profile-64.html">sinek</a></span></td>
+	  <td class="row2" align="center" valign="middle"><span class="postdetails">1904</span></td>
+	  <td class="row3Right" align="center" valign="middle" nowrap="nowrap"><span class="postdetails">čet maj 22, 2003 2:06 pm<br /><a href="profile-22.html">Person</a> <a href="topic-208.html#1910"><img src="templates/SGD2/images/icon_latest_reply.gif" border="0" alt="Preglej zadnje objave" title="Preglej zadnje objave" /></a></span></td>
+	</tr>
+	
+	<tr> 
+	  <td class="row1" align="center" valign="middle" width="20"><img src="templates/SGD2/images/folder.gif" width="19" height="18" alt="Ni novih objav" title="Ni novih objav" /></td>
+	  <td class="row1" width="100%"><span class="topictitle"><a href="topic-206.html" class="topictitle">OnResize Resetirat kompletni device?</a></span><span class="gensmall"><br />
+		</span></td>
+	  <td class="row2" align="center" valign="middle"><span class="postdetails">1</span></td>
+	  <td class="row3" align="center" valign="middle"><span class="name"><a href="profile-62.html">Shinobi</a></span></td>
+	  <td class="row2" align="center" valign="middle"><span class="postdetails">1540</span></td>
+	  <td class="row3Right" align="center" valign="middle" nowrap="nowrap"><span class="postdetails">čet maj 22, 2003 12:10 pm<br /><a href="profile-11.html">Kavan</a> <a href="topic-206.html#1903"><img src="templates/SGD2/images/icon_latest_reply.gif" border="0" alt="Preglej zadnje objave" title="Preglej zadnje objave" /></a></span></td>
+	</tr>
+	
+	<tr> 
+	  <td class="row1" align="center" valign="middle" width="20"><img src="templates/SGD2/images/folder.gif" width="19" height="18" alt="Ni novih objav" title="Ni novih objav" /></td>
+	  <td class="row1" width="100%"><span class="topictitle"><a href="topic-201.html" class="topictitle">Kazalci</a></span><span class="gensmall"><br />
+		</span></td>
+	  <td class="row2" align="center" valign="middle"><span class="postdetails">9</span></td>
+	  <td class="row3" align="center" valign="middle"><span class="name"><a href="profile-63.html">matjazvn</a></span></td>
+	  <td class="row2" align="center" valign="middle"><span class="postdetails">3427</span></td>
+	  <td class="row3Right" align="center" valign="middle" nowrap="nowrap"><span class="postdetails">sre maj 21, 2003 3:31 pm<br /><a href="profile-22.html">Person</a> <a href="topic-201.html#1887"><img src="templates/SGD2/images/icon_latest_reply.gif" border="0" alt="Preglej zadnje objave" title="Preglej zadnje objave" /></a></span></td>
+	</tr>
+	
+	<tr> 
+	  <td class="row1" align="center" valign="middle" width="20"><img src="templates/SGD2/images/folder.gif" width="19" height="18" alt="Ni novih objav" title="Ni novih objav" /></td>
+	  <td class="row1" width="100%"><span class="topictitle"><a href="topic-199.html" class="topictitle">Game Unified Process</a></span><span class="gensmall"><br />
+		</span></td>
+	  <td class="row2" align="center" valign="middle"><span class="postdetails">0</span></td>
+	  <td class="row3" align="center" valign="middle"><span class="name"><a href="profile-11.html">Kavan</a></span></td>
+	  <td class="row2" align="center" valign="middle"><span class="postdetails">2417</span></td>
+	  <td class="row3Right" align="center" valign="middle" nowrap="nowrap"><span class="postdetails">pon maj 19, 2003 8:14 pm<br /><a href="profile-11.html">Kavan</a> <a href="topic-199.html#1833"><img src="templates/SGD2/images/icon_latest_reply.gif" border="0" alt="Preglej zadnje objave" title="Preglej zadnje objave" /></a></span></td>
+	</tr>
+	
+	<tr> 
+	  <td class="row1" align="center" valign="middle" width="20"><img src="templates/SGD2/images/folder.gif" width="19" height="18" alt="Ni novih objav" title="Ni novih objav" /></td>
+	  <td class="row1" width="100%"><span class="topictitle"><a href="topic-196.html" class="topictitle">[C++] Windows Background</a></span><span class="gensmall"><br />
+		</span></td>
+	  <td class="row2" align="center" valign="middle"><span class="postdetails">8</span></td>
+	  <td class="row3" align="center" valign="middle"><span class="name"><a href="profile-22.html">Person</a></span></td>
+	  <td class="row2" align="center" valign="middle"><span class="postdetails">3662</span></td>
+	  <td class="row3Right" align="center" valign="middle" nowrap="nowrap"><span class="postdetails">ned maj 18, 2003 8:05 pm<br /><a href="profile-22.html">Person</a> <a href="topic-196.html#1825"><img src="templates/SGD2/images/icon_latest_reply.gif" border="0" alt="Preglej zadnje objave" title="Preglej zadnje objave" /></a></span></td>
+	</tr>
+	
+	<tr> 
+	  <td class="row1" align="center" valign="middle" width="20"><img src="templates/SGD2/images/folder_hot.gif" width="19" height="18" alt="Ni novih objav [vroče]" title="Ni novih objav [vroče]" /></td>
+	  <td class="row1" width="100%"><span class="topictitle"><a href="topic-184.html" class="topictitle">[c++]Problemi</a></span><span class="gensmall"><br />
+		[ <img src="templates/SGD2/images/icon_minipost.gif" alt="Pojdi na stran" title="Pojdi na stran" />Pojdi na stran: <a href="topic-184.html">1</a>, <a href="topic-184-30.html">2</a> ]</span></td>
+	  <td class="row2" align="center" valign="middle"><span class="postdetails">38</span></td>
+	  <td class="row3" align="center" valign="middle"><span class="name"><a href="profile-61.html">CWIZO</a></span></td>
+	  <td class="row2" align="center" valign="middle"><span class="postdetails">15335</span></td>
+	  <td class="row3Right" align="center" valign="middle" nowrap="nowrap"><span class="postdetails">sob maj 17, 2003 9:30 pm<br /><a href="profile-63.html">matjazvn</a> <a href="topic-184-30.html#1809"><img src="templates/SGD2/images/icon_latest_reply.gif" border="0" alt="Preglej zadnje objave" title="Preglej zadnje objave" /></a></span></td>
+	</tr>
+	
+	
+	<tr> 
+	  <td class="catBottom" align="center" valign="middle" colspan="6" height="28">&nbsp;</td>
+	</tr>
+  </table>
+
+  <table width="100%" cellspacing="2" border="0" align="center" cellpadding="2">
+	<tr> 
+	  <td align="left" valign="middle" width="50">&nbsp;</td>
+	  <td align="left" valign="middle" width="100%"><span class="nav">&nbsp;&nbsp;&nbsp;<a href="index.html" class="nav">SloGameDev.net seznam forumov</a> -> <a class="nav" href="forum-52.html">Izdelovanje iger</a></span></td>
+	  <td align="right" valign="middle" nowrap="nowrap"><span class="gensmall">Časovni pas (GMT +2:00 uri) Slovenija, poletni čas</span><br /><span class="nav">Pojdi na stran  <a href="forum-52-500.html">Prejšnji</a>&nbsp;&nbsp;<a href="forum-52.html">1</a>, <a href="forum-52-50.html">2</a>, <a href="forum-52-100.html">3</a> ... <a href="forum-52-500.html">11</a>, <b>12</b>, <a href="forum-52-600.html">13</a>, <a href="forum-52-650.html">14</a>&nbsp;&nbsp;<a href="forum-52-600.html">Naslednji</a></span> 
+		</td>
+	</tr>
+	<tr>
+	  <td align="left" colspan="3"><span class="nav">Stran <b>12</b> od <b>14</b></span></td>
+	</tr>
+  </table>
+
+
+<table width="100%" cellspacing="0" border="0" align="center" cellpadding="0">
+	<tr>
+		<td align="left" valign="top"><table cellspacing="3" cellpadding="0" border="0">
+			<tr>
+				<td width="20" align="center"><img src="templates/SGD2/images/folder.gif" alt="Ni novih objav" width="19" height="18" /></td>
+				<td class="gensmall">Ni novih objav</td>
+				<td>&nbsp;&nbsp;</td>
+				<td width="20" align="center"><img src="templates/SGD2/images/folder_announce.gif" alt="Obvestilo" width="19" height="18" /></td>
+				<td class="gensmall">Obvestilo</td>
+			</tr>
+			<tr> 
+				<td width="20" align="center"><img src="templates/SGD2/images/folder_hot.gif" alt="Ni novih objav [vroče]" width="19" height="18" /></td>
+				<td class="gensmall">Ni novih objav [vroče]</td>
+				<td>&nbsp;&nbsp;</td>
+				<td width="20" align="center"><img src="templates/SGD2/images/folder_sticky.gif" alt="Sticky" width="19" height="18" /></td>
+				<td class="gensmall">Sticky</td>
+			</tr>
+			<tr>
+				<td class="gensmall"><img src="templates/SGD2/images/folder_lock.gif" alt="Ni novih objav [zakljenene]" width="19" height="18" /></td>
+				<td class="gensmall">Ni novih objav [zakljenene]</td>
+			</tr>
+		</table></td>
+		<td align="right"></td>
+	</tr>
+</table>
+
+<div align="center"><span class="copyright"><br />Arhiv &mdash; samo za branje.<br />
+<!--
+	We request you retain the full copyright notice below including the link to www.phpbb.com.
+	This not only gives respect to the large amount of time given freely by the developers
+	but also helps build interest, traffic and use of phpBB 2.0. If you cannot (for good
+	reason) retain the full copyright we request you at least leave in place the 
+	Powered by phpBB 2.0.4 line, with phpBB linked to www.phpbb.com. If you refuse
+	to include even this then support on our forums may be affected. 
+
+	The phpBB Group : 2002
+// -->
+Powered by <a  target="_phpbb" class="copyright">phpBB</a> 2.0.4 &copy; 2001, 2002 phpBB Group<br /></span></div>
+		</td>
+	</tr>
+</table>
+
+</body>
+</html>

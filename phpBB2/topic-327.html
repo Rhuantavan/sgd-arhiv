@@ -276,13 +276,13 @@ input.liteoption {
   <tr>
 	<td align="left" valign="bottom" nowrap="nowrap">&nbsp;</td>
 	<td align="left" valign="middle" width="100%"><span class="nav">&nbsp;&nbsp;&nbsp;<a href="index.html" class="nav">SloGameDev.net seznam forumov</a>
-	  -> <a href="forum-15.html" class="nav">Grafično Programiranje</a></span></td>
+	  -> <a href="forum-52.html" class="nav">Izdelovanje iger</a></span></td>
   </tr>
 </table>
 
 <table class="forumline" width="100%" cellspacing="1" cellpadding="3" border="0">
 	<tr align="right">
-		<td class="catHead" colspan="2" height="28"><span class="nav"><a href="topic-376.html" class="nav">Prejšnja tema</a> :: <a href="topic-428.html" class="nav">Naslednja tema</a> &nbsp;</span></td>
+		<td class="catHead" colspan="2" height="28"><span class="nav"><a href="topic-389.html" class="nav">Prejšnja tema</a> :: <a href="topic-395.html" class="nav">Naslednja tema</a> &nbsp;</span></td>
 	</tr>
 	
 	<tr>
@@ -291,7 +291,7 @@ input.liteoption {
 	</tr>
 	
 	<tr>
-		<td width="150" align="left" valign="top" class="row1"><span class="name"><a name="3245"></a><b>Wingman</b></span><br /><span class="postdetails">SGD Moderator<br /><img src="images/ranks/sgd-mod.gif" alt="SGD Moderator" title="SGD Moderator" border="0" /><br /><img src="images/avatars/c14d9fca410a4a42927d3.jpg" alt="" border="0" /><br /><br />Pridružen: 08. jan 2003 ob 21:33<br />objav: 293<br />Kraj: Kranj</span><br /></td>
+		<td width="150" align="left" valign="top" class="row1"><span class="name"><a name="3245"></a><b>Wing</b></span><br /><span class="postdetails">SGD Admin<br /><img src="images/ranks/sgd-admin.gif" alt="SGD Admin" title="SGD Admin" border="0" /><br /><br /><br />Pridružen: 08. jan 2003 ob 21:33<br />objav: 481<br />Kraj: Kranj</span><br /></td>
 		<td class="row1" width="100%" height="28" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
 			<tr>
 				<td colspan="2" width="100%">
@@ -339,52 +339,36 @@ Tole nariše površino, kamor se senca projecira:
 	<tr>
 <br />
 	  <td class="code">
-
 <br />
 ///// rSurface &#40;&#41; /////
-
 <br />
 void str_Render&#58;&#58;rSurface &#40;const float pos &#91;3&#93;, const float size &#91;3&#93;, const float rot &#91;3&#93;, float deg&#41;
-
 <br />
 &#123;
-
 <br />
-&nbsp; &nbsp;glBindTexture &#40;GL_TEXTURE_2D, floor_tex-&gt;Tex&#41;;
-
+	glBindTexture &#40;GL_TEXTURE_2D, floor_tex-&gt;Tex&#41;;
 <br />
 
-
 <br />
-&nbsp; &nbsp;glPushMatrix &#40;&#41;;
-
+	glPushMatrix &#40;&#41;;
 <br />
 
-
 <br />
-&nbsp; &nbsp;glTranslatef &#40;pos &#91;0&#93;, pos &#91;1&#93;, pos &#91;2&#93;&#41;;
-
+	glTranslatef &#40;pos &#91;0&#93;, pos &#91;1&#93;, pos &#91;2&#93;&#41;;
 <br />
-&nbsp; &nbsp;glRotatef&nbsp; &nbsp; &#40;deg, rot &#91;0&#93;, rot &#91;1&#93;, rot &#91;2&#93;&#41;;
-
+	glRotatef	 &#40;deg, rot &#91;0&#93;, rot &#91;1&#93;, rot &#91;2&#93;&#41;;
 <br />
-&nbsp; &nbsp;glScalef&nbsp; &nbsp; &#40;size &#91;0&#93;, size &#91;1&#93;, size &#91;2&#93;&#41;;
-
+	glScalef	 &#40;size &#91;0&#93;, size &#91;1&#93;, size &#91;2&#93;&#41;;
 <br />
 
-
 <br />
-&nbsp; &nbsp;... // nariše površino
-
+	&#46;&#46;&#46; // nariše površino
 <br />
-&nbsp; &nbsp;
-
+	
 <br />
-&nbsp; &nbsp;glPopMatrix &#40;&#41;;
-
+	glPopMatrix &#40;&#41;;
 <br />
 &#125;
-
 <br />
 </td>
 <br />
@@ -393,13 +377,10 @@ void str_Render&#58;&#58;rSurface &#40;const float pos &#91;3&#93;, const float 
 </table>
 <br />
 <span class="postbody">
-
 <br />
-
 
 <br />
 Takole izgleda koda, ki nariše predmet, ki meče senco (ta del kode je pomemben, saj lahko vpliva na pravilnost sence):
-
 <br />
 </span>
 <br />
@@ -414,127 +395,86 @@ Takole izgleda koda, ki nariše predmet, ki meče senco (ta del kode je pomemben
 	<tr>
 <br />
 	  <td class="code">
-
 <br />
 ///// rObject &#40;&#41; /////
-
 <br />
 /* pozornost usmerite na zadnji parameter &quot;shadow&quot; - ko narišemo &quot;pravi&quot; predmet, ima vrednost false, ko pa rišemo senco, je true - s tem množimo shadow-projection matrix
-
 <br />
 */
-
 <br />
 void str_Render&#58;&#58;rObject &#40;const float pos &#91;3&#93;, const float size &#91;3&#93;, float rot &#91;3&#93;, float deg, bool shadow&#41;
-
 <br />
 &#123;
-
 <br />
-&nbsp; &nbsp;glBindTexture &#40;GL_TEXTURE_2D, obj_tex-&gt;Tex&#41;;
-
+	glBindTexture &#40;GL_TEXTURE_2D, obj_tex-&gt;Tex&#41;;
 <br />
 
-
 <br />
-&nbsp; &nbsp; &nbsp;  // ko bomo narisali senco...
-
+       // ko bomo narisali senco&#46;&#46;&#46;
 <br />
-&nbsp; &nbsp;if &#40;shadow&#41;
-
+	if &#40;shadow&#41;
 <br />
-&nbsp; &nbsp;&#123;
-
+	&#123;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;glPushMatrix &#40;&#41;;
-
+		glPushMatrix &#40;&#41;;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;glMultMatrixf &#40;shd_matrix&#41;;
-
+		glMultMatrixf &#40;shd_matrix&#41;;
 <br />
-&nbsp; &nbsp;&#125;
-
+	&#125;
 <br />
-&nbsp; &nbsp;
-
+	
 <br />
 
-
 <br />
-&nbsp; &nbsp;glPushMatrix &#40;&#41;;
-
+	glPushMatrix &#40;&#41;;
 <br />
 
-
 <br />
-&nbsp; &nbsp;if &#40;shadow&#41;
-
+	if &#40;shadow&#41;
 <br />
-&nbsp; &nbsp;&#123;
-
+	&#123;
 <br />
-&nbsp; &nbsp; &nbsp; // pozor pri glScalef - 0.0f za y je zato, da je senca 2D
-
+      // pozor pri glScalef - 0&#46;0f za y je zato, da je senca 2D
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;glTranslatef &#40;pos &#91;0&#93;, pos &#91;1&#93;, pos &#91;2&#93;&#41;;
-
+		glTranslatef &#40;pos &#91;0&#93;, pos &#91;1&#93;, pos &#91;2&#93;&#41;;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;glRotatef&nbsp; &nbsp; &#40;deg, rot &#91;0&#93;, rot &#91;1&#93;, rot &#91;2&#93;&#41;;
-
+		glRotatef	 &#40;deg, rot &#91;0&#93;, rot &#91;1&#93;, rot &#91;2&#93;&#41;;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;glScalef&nbsp; &nbsp; &#40;size &#91;0&#93;, 0.0f, size &#91;2&#93;&#41;;
-
+		glScalef	 &#40;size &#91;0&#93;, 0&#46;0f, size &#91;2&#93;&#41;;
 <br />
-&nbsp; &nbsp;&#125;
-
+	&#125;
 <br />
-&nbsp; &nbsp;else
-
+	else
 <br />
-&nbsp; &nbsp;&#123;
-
+	&#123;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;glTranslatef &#40;pos &#91;0&#93;, pos &#91;1&#93;, pos &#91;2&#93;&#41;;
-
+		glTranslatef &#40;pos &#91;0&#93;, pos &#91;1&#93;, pos &#91;2&#93;&#41;;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;glRotatef&nbsp; &nbsp; &#40;deg, rot &#91;0&#93;, rot &#91;1&#93;, rot &#91;2&#93;&#41;;
-
+		glRotatef	 &#40;deg, rot &#91;0&#93;, rot &#91;1&#93;, rot &#91;2&#93;&#41;;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;glScalef&nbsp; &nbsp; &#40;size &#91;0&#93;,size &#91;1&#93;, size &#91;2&#93;&#41;;&nbsp; &nbsp;
-
+		glScalef	 &#40;size &#91;0&#93;,size &#91;1&#93;, size &#91;2&#93;&#41;;	
 <br />
-&nbsp; &nbsp;&#125;
-
+	&#125;
 <br />
 
-
 <br />
-&nbsp; &nbsp;... // nariše kocko
-
+	&#46;&#46;&#46; // nariše kocko
 <br />
 
-
 <br />
-&nbsp; &nbsp;glPopMatrix &#40;&#41;;
-
+	glPopMatrix &#40;&#41;;
 <br />
 
-
 <br />
-&nbsp; &nbsp;if &#40;shadow&#41;
-
+	if &#40;shadow&#41;
 <br />
-&nbsp; &nbsp;&#123;
-
+	&#123;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;glPopMatrix &#40;&#41;;
-
+		glPopMatrix &#40;&#41;;
 <br />
-&nbsp; &nbsp;&#125;
-
+	&#125;
 <br />
 &#125;
-
 <br />
 </td>
 <br />
@@ -543,22 +483,16 @@ void str_Render&#58;&#58;rObject &#40;const float pos &#91;3&#93;, const float s
 </table>
 <br />
 <span class="postbody">
-
 <br />
-
 
 <br />
 Transformacije vsekakor vplivajo na videz sence, saj v primeru, da ne bi klical "glScalef" s parametrom 0 za y velikost, senca sploh ne bi zgledala kot senca ampak kot razpotegnjena 3D kocka v tleh. No, sej sedaj tud ne zgleda kot senca, samo boljše je pa že. 
-
 <br />
 Upam, da je ta del pravilen.
-
 <br />
-
 
 <br />
 Naprej - koda, ki izriše vse skupaj:
-
 <br />
 </span>
 <br />
@@ -573,133 +507,90 @@ Naprej - koda, ki izriše vse skupaj:
 	<tr>
 <br />
 	  <td class="code">
-
 <br />
-///// Izrisovanje scene. /////
-
+///// Izrisovanje scene&#46; /////
 <br />
 void fncRender &#40;&#41;
-
 <br />
 &#123;
-
 <br />
-&nbsp;  glClear &#40;GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT | GL_STENCIL_BUFFER_BIT&#41;;
-
+   glClear &#40;GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT | GL_STENCIL_BUFFER_BIT&#41;;
 <br />
-&nbsp; &nbsp;glLoadIdentity &#40;&#41;;
-
+	glLoadIdentity &#40;&#41;;
 <br />
 
-
 <br />
-&nbsp; &nbsp;gluLookAt &#40;x_p, y_p, z_p, x_l, y_l, z_l, 0.0f, 1.0f, 0.0f&#41;;
-
+	gluLookAt &#40;x_p, y_p, z_p, x_l, y_l, z_l, 0&#46;0f, 1&#46;0f, 0&#46;0f&#41;;
 <br />
 
-
 <br />
-&nbsp; &nbsp;glEnable &#40;GL_STENCIL_TEST&#41;;
-
+	glEnable &#40;GL_STENCIL_TEST&#41;;
 <br />
 
-
 <br />
-&nbsp; &nbsp;glStencilFunc &#40;GL_ALWAYS, 1, 1&#41;;
-
+	glStencilFunc &#40;GL_ALWAYS, 1, 1&#41;;
 <br />
-&nbsp; &nbsp;glStencilOp &#40;GL_KEEP, GL_KEEP, GL_REPLACE&#41;;
-
+	glStencilOp &#40;GL_KEEP, GL_KEEP, GL_REPLACE&#41;;
 <br />
-&nbsp; &nbsp;
-
+	
 <br />
-&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  // nariše tla v stencil buffer &#40;področje izrisovanja&#41; in color buffer
-
+               // nariše tla v stencil buffer &#40;področje izrisovanja&#41; in color buffer
 <br />
-&nbsp; &nbsp;Render.rSurface &#40;floor_pos, floor_size, floor_rot, 90.0f&#41;;
-
+	Render&#46;rSurface &#40;floor_pos, floor_size, floor_rot, 90&#46;0f&#41;;
 <br />
 
-
 <br />
-&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; // nastavitve za izris sence
-
+                // nastavitve za izris sence
 <br />
-&nbsp; &nbsp;glEnable &#40;GL_BLEND&#41;;
-
+	glEnable &#40;GL_BLEND&#41;;
 <br />
-&nbsp; &nbsp;glBlendFunc &#40;GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA&#41;;
-
+	glBlendFunc &#40;GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA&#41;;
 <br />
-&nbsp; &nbsp;glDisable &#40;GL_DEPTH_TEST&#41;;
-
+	glDisable &#40;GL_DEPTH_TEST&#41;;
 <br />
-&nbsp; &nbsp;glDisable &#40;GL_TEXTURE_2D&#41;;
-
+	glDisable &#40;GL_TEXTURE_2D&#41;;
 <br />
-&nbsp; &nbsp;glColor4f &#40;0.0f, 0.0f, 0.0f, 0.5f&#41;;
-
+	glColor4f &#40;0&#46;0f, 0&#46;0f, 0&#46;0f, 0&#46;5f&#41;;
 <br />
-&nbsp; &nbsp;
-
+	
 <br />
-&nbsp; &nbsp;glStencilFunc &#40;GL_EQUAL, 1, 1&#41;;
-
+	glStencilFunc &#40;GL_EQUAL, 1, 1&#41;;
 <br />
-&nbsp; &nbsp;glStencilOp &#40;GL_KEEP, GL_KEEP, GL_INCR&#41;;&nbsp; &nbsp;
-
+	glStencilOp &#40;GL_KEEP, GL_KEEP, GL_INCR&#41;;	
 <br />
-&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 
-
+                
 <br />
-&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; // izračuna projekcijsko matriko in nariše senco
-
+                // izračuna projekcijsko matriko in nariše senco
 <br />
-&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; // &#40;pozorni bodite na zadnji parameter, ki je true
-
+                // &#40;pozorni bodite na zadnji parameter, ki je true
 <br />
-&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; // - glejte funkcijo rObject &#40;&#41;;
-
+                // - glejte funkcijo rObject &#40;&#41;;
 <br />
-&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; fncShadowMatrix &#40;shd_matrix, plane, light_pos&#41;;
-
+                fncShadowMatrix &#40;shd_matrix, plane, light_pos&#41;;
 <br />
-&nbsp; &nbsp;Render.rObject &#40;cube_pos,&nbsp; cube_size,&nbsp; cube_rot, cube_degrot, true&#41;;
-
+	Render&#46;rObject &#40;cube_pos,  cube_size,  cube_rot, cube_degrot, true&#41;;
 <br />
 
-
 <br />
-&nbsp; &nbsp;glColor3f &#40;1.0f, 1.0f, 1.0f&#41;;
-
+	glColor3f &#40;1&#46;0f, 1&#46;0f, 1&#46;0f&#41;;
 <br />
-&nbsp; &nbsp;glDisable &#40;GL_BLEND&#41;;
-
+	glDisable &#40;GL_BLEND&#41;;
 <br />
-&nbsp; &nbsp;glEnable &#40;GL_DEPTH_TEST&#41;;
-
+	glEnable &#40;GL_DEPTH_TEST&#41;;
 <br />
-&nbsp; &nbsp;glEnable &#40;GL_TEXTURE_2D&#41;;
-
+	glEnable &#40;GL_TEXTURE_2D&#41;;
 <br />
-&nbsp; &nbsp;
-
+	
 <br />
-&nbsp; &nbsp;glDisable &#40;GL_STENCIL_TEST&#41;;
-
+	glDisable &#40;GL_STENCIL_TEST&#41;;
 <br />
 
-
 <br />
-&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; // nariše pravi predmet - shadow = false
-
+                // nariše pravi predmet - shadow = false
 <br />
-&nbsp; &nbsp;Render.rObject&nbsp; &#40;cube_pos,&nbsp; cube_size,&nbsp; cube_rot, cube_degrot, false&#41;;
-
+	Render&#46;rObject  &#40;cube_pos,  cube_size,  cube_rot, cube_degrot, false&#41;;
 <br />
 &#125;
-
 <br />
 </td>
 <br />
@@ -708,21 +599,15 @@ void fncRender &#40;&#41;
 </table>
 <br />
 <span class="postbody">
-
 <br />
-
 
 <br />
 Kot sem omenil, senca izgleda čisto napačna. Pri prejšnjih primerih je delalo, saj nisem uporabljal glScale/Rotate/Translate, ki senco čisto razsujejo. Je mogoče tukaj kaj narobe?
-
 <br />
-
 
 <br />
 Še ena možnost je, da je treba zaradi transformacij drugače izračunat matriko ali kaj podobnega. Zaenkrat izgleda takole (torej običajna in pravilna):
-
 <br />
-
 
 <br />
 </span>
@@ -738,82 +623,56 @@ Kot sem omenil, senca izgleda čisto napačna. Pri prejšnjih primerih je delalo
 	<tr>
 <br />
 	  <td class="code">void fncShadowMatrix &#40;float shd_matrix &#91;16&#93;, float plane &#91;4&#93;, float light_pos &#91;4&#93;&#41;
-
 <br />
 &#123;
-
 <br />
-&nbsp; &nbsp;float dot;
-
+	float dot;
 <br />
-&nbsp; &nbsp;dot =&nbsp; &nbsp;plane &#91;0&#93; * light_pos &#91;0&#93; + plane &#91;1&#93; * light_pos &#91;1&#93; + 
-
+	dot =	plane &#91;0&#93; * light_pos &#91;0&#93; + plane &#91;1&#93; * light_pos &#91;1&#93; + 
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;plane &#91;1&#93; * light_pos &#91;2&#93; + plane &#91;3&#93; * light_pos &#91;3&#93;;
+			plane &#91;1&#93; * light_pos &#91;2&#93; + plane &#91;3&#93; * light_pos &#91;3&#93;;
+<br />
 
 <br />
 
-
+<br />
+	shd_matrix &#91;0&#93;  = dot  - light_pos &#91;0&#93; * plane &#91;0&#93;;
+<br />
+	shd_matrix &#91;4&#93;  = 0&#46;0f - light_pos &#91;0&#93; * plane &#91;1&#93;;
+<br />
+	shd_matrix &#91;8&#93;  = 0&#46;0f - light_pos &#91;0&#93; * plane &#91;2&#93;;
+<br />
+	shd_matrix &#91;12&#93; = 0&#46;0f - light_pos &#91;0&#93; * plane &#91;3&#93;;
 <br />
 
-
 <br />
-&nbsp; &nbsp;shd_matrix &#91;0&#93;&nbsp; = dot&nbsp; - light_pos &#91;0&#93; * plane &#91;0&#93;;
-
+	shd_matrix &#91;1&#93;  = 0&#46;0f - light_pos &#91;1&#93; * plane &#91;0&#93;;
 <br />
-&nbsp; &nbsp;shd_matrix &#91;4&#93;&nbsp; = 0.0f - light_pos &#91;0&#93; * plane &#91;1&#93;;
-
+	shd_matrix &#91;5&#93;  = dot  - light_pos &#91;1&#93; * plane &#91;1&#93;;
 <br />
-&nbsp; &nbsp;shd_matrix &#91;8&#93;&nbsp; = 0.0f - light_pos &#91;0&#93; * plane &#91;2&#93;;
-
+	shd_matrix &#91;9&#93;  = 0&#46;0f - light_pos &#91;1&#93; * plane &#91;2&#93;;
 <br />
-&nbsp; &nbsp;shd_matrix &#91;12&#93; = 0.0f - light_pos &#91;0&#93; * plane &#91;3&#93;;
-
+	shd_matrix &#91;13&#93; = 0&#46;0f - light_pos &#91;1&#93; * plane &#91;3&#93;;
 <br />
 
-
 <br />
-&nbsp; &nbsp;shd_matrix &#91;1&#93;&nbsp; = 0.0f - light_pos &#91;1&#93; * plane &#91;0&#93;;
-
+	shd_matrix &#91;2&#93;  = 0&#46;0f - light_pos &#91;2&#93; * plane &#91;0&#93;;
 <br />
-&nbsp; &nbsp;shd_matrix &#91;5&#93;&nbsp; = dot&nbsp; - light_pos &#91;1&#93; * plane &#91;1&#93;;
-
+	shd_matrix &#91;6&#93;  = 0&#46;0f - light_pos &#91;2&#93; * plane &#91;1&#93;;
 <br />
-&nbsp; &nbsp;shd_matrix &#91;9&#93;&nbsp; = 0.0f - light_pos &#91;1&#93; * plane &#91;2&#93;;
-
+	shd_matrix &#91;10&#93; = dot  - light_pos &#91;2&#93; * plane &#91;2&#93;;
 <br />
-&nbsp; &nbsp;shd_matrix &#91;13&#93; = 0.0f - light_pos &#91;1&#93; * plane &#91;3&#93;;
-
+	shd_matrix &#91;14&#93; = 0&#46;0f - light_pos &#91;2&#93; * plane &#91;3&#93;;
 <br />
 
-
 <br />
-&nbsp; &nbsp;shd_matrix &#91;2&#93;&nbsp; = 0.0f - light_pos &#91;2&#93; * plane &#91;0&#93;;
-
+	shd_matrix &#91;3&#93;  = 0&#46;0f - light_pos &#91;3&#93; * plane &#91;0&#93;;
 <br />
-&nbsp; &nbsp;shd_matrix &#91;6&#93;&nbsp; = 0.0f - light_pos &#91;2&#93; * plane &#91;1&#93;;
-
+	shd_matrix &#91;7&#93;  = 0&#46;0f - light_pos &#91;3&#93; * plane &#91;1&#93;;
 <br />
-&nbsp; &nbsp;shd_matrix &#91;10&#93; = dot&nbsp; - light_pos &#91;2&#93; * plane &#91;2&#93;;
-
+	shd_matrix &#91;11&#93; = 0&#46;0f - light_pos &#91;3&#93; * plane &#91;2&#93;;
 <br />
-&nbsp; &nbsp;shd_matrix &#91;14&#93; = 0.0f - light_pos &#91;2&#93; * plane &#91;3&#93;;
-
-<br />
-
-
-<br />
-&nbsp; &nbsp;shd_matrix &#91;3&#93;&nbsp; = 0.0f - light_pos &#91;3&#93; * plane &#91;0&#93;;
-
-<br />
-&nbsp; &nbsp;shd_matrix &#91;7&#93;&nbsp; = 0.0f - light_pos &#91;3&#93; * plane &#91;1&#93;;
-
-<br />
-&nbsp; &nbsp;shd_matrix &#91;11&#93; = 0.0f - light_pos &#91;3&#93; * plane &#91;2&#93;;
-
-<br />
-&nbsp; &nbsp;shd_matrix &#91;15&#93; = dot&nbsp; - light_pos &#91;3&#93; * plane &#91;3&#93;;
-
+	shd_matrix &#91;15&#93; = dot  - light_pos &#91;3&#93; * plane &#91;3&#93;;
 <br />
 &#125;</td>
 <br />
@@ -822,13 +681,10 @@ Kot sem omenil, senca izgleda čisto napačna. Pri prejšnjih primerih je delalo
 </table>
 <br />
 <span class="postbody">
-
 <br />
-
 
 <br />
 Tole pa izračuna d vrednost (iz enačbe za površino) za "plane" parameter:
-
 <br />
 </span>
 <br />
@@ -843,37 +699,26 @@ Tole pa izračuna d vrednost (iz enačbe za površino) za "plane" parameter:
 	<tr>
 <br />
 	  <td class="code">///// fncCalcDValue &#40;&#41; /////
-
 <br />
 float fncCalcDValue &#40;float floor_normal &#91;3&#93;, const float floor_pos &#91;3&#93;&#41;
-
 <br />
 &#123;
-
 <br />
-&nbsp; &nbsp;// A*x + B*y + C*z + D = 0;
-
+	// A*x + B*y + C*z + D = 0;
 <br />
 
-
 <br />
-&nbsp; &nbsp;float D;
-
+	float D;
 <br />
-&nbsp; &nbsp;D =&nbsp; floor_normal &#91;0&#93; * floor_pos &#91;0&#93; + 
-
+	D =  floor_normal &#91;0&#93; * floor_pos &#91;0&#93; + 
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp; &nbsp;  floor_normal &#91;1&#93; * floor_pos &#91;1&#93; + 
-
+	       floor_normal &#91;1&#93; * floor_pos &#91;1&#93; + 
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp; &nbsp;  floor_normal &#91;2&#93; * floor_pos &#91;2&#93;;
-
+	       floor_normal &#91;2&#93; * floor_pos &#91;2&#93;;
 <br />
 
-
 <br />
-&nbsp; &nbsp;return -D;
-
+	return -D;
 <br />
 &#125;</td>
 <br />
@@ -904,7 +749,7 @@ Mazilim podplate tistemu, ki reši tole tako, da bo senca pravilna (sem že spra
 	</tr>
 	
 	<tr>
-		<td width="150" align="left" valign="top" class="row2"><span class="name"><a name="3246"></a><b>Senitel</b></span><br /><span class="postdetails">wannabe<br /><img src="images/ranks/sgd-2.gif" alt="wannabe" title="wannabe" border="0" /><br /><br /><br />Pridružen: 02. jul 2003 ob 17:01<br />objav: 97<br /></span><br /></td>
+		<td width="150" align="left" valign="top" class="row2"><span class="name"><a name="3246"></a><b>Senitel</b></span><br /><span class="postdetails">wannabe<br /><img src="images/ranks/sgd-2.gif" alt="wannabe" title="wannabe" border="0" /><br /><br /><br />Pridružen: 02. jul 2003 ob 17:01<br />objav: 127<br /></span><br /></td>
 		<td class="row2" width="100%" height="28" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
 			<tr>
 				<td colspan="2" width="100%">
@@ -941,7 +786,7 @@ Mazilim podplate tistemu, ki reši tole tako, da bo senca pravilna (sem že spra
 	</tr>
 	
 	<tr>
-		<td width="150" align="left" valign="top" class="row1"><span class="name"><a name="3250"></a><b>Wingman</b></span><br /><span class="postdetails">SGD Moderator<br /><img src="images/ranks/sgd-mod.gif" alt="SGD Moderator" title="SGD Moderator" border="0" /><br /><img src="images/avatars/c14d9fca410a4a42927d3.jpg" alt="" border="0" /><br /><br />Pridružen: 08. jan 2003 ob 21:33<br />objav: 293<br />Kraj: Kranj</span><br /></td>
+		<td width="150" align="left" valign="top" class="row1"><span class="name"><a name="3250"></a><b>Wing</b></span><br /><span class="postdetails">SGD Admin<br /><img src="images/ranks/sgd-admin.gif" alt="SGD Admin" title="SGD Admin" border="0" /><br /><br /><br />Pridružen: 08. jan 2003 ob 21:33<br />objav: 481<br />Kraj: Kranj</span><br /></td>
 		<td class="row1" width="100%" height="28" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
 			<tr>
 				<td colspan="2" width="100%">
@@ -961,7 +806,7 @@ Mazilim podplate tistemu, ki reši tole tako, da bo senca pravilna (sem že spra
 				<td colspan="2"><hr /></td>
 			</tr>
 			<tr>
-				<td colspan="2"><span class="postbody">Hahaaaaaaaaaa problem rešen. <img src="images/smiles/icon_smile.gif" alt="icon_smile.gif" border="0" />
+				<td colspan="2"><span class="postbody">Hahaaaaaaaaaa problem rešen. <img src="images/smiles/icon_smile.gif" alt=":)" border="0" />
 
 <br />
 
@@ -984,7 +829,7 @@ Pozneje napišem več.</span><span class="gensmall"></span></td>
 	</tr>
 	
 	<tr>
-		<td width="150" align="left" valign="top" class="row2"><span class="name"><a name="3251"></a><b>GupeM</b></span><br /><span class="postdetails">wannabe<br /><img src="images/ranks/sgd-2.gif" alt="wannabe" title="wannabe" border="0" /><br /><img src="images/avatars/c14d51e34222dc2e8244d.gif" alt="" border="0" /><br /><br />Pridružen: 30. jun 2003 ob 10:13<br />objav: 136<br />Kraj: Žiri</span><br /></td>
+		<td width="150" align="left" valign="top" class="row2"><span class="name"><a name="3251"></a><b>GupeM</b></span><br /><span class="postdetails">poznavalec<br /><img src="images/ranks/sgd-3.gif" alt="poznavalec" title="poznavalec" border="0" /><br /><img src="images/avatars/c14d51e34222dc2e8244d.gif" alt="" border="0" /><br /><br />Pridružen: 30. jun 2003 ob 10:13<br />objav: 177<br />Kraj: Žiri</span><br /></td>
 		<td class="row2" width="100%" height="28" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
 			<tr>
 				<td colspan="2" width="100%">
@@ -1004,7 +849,7 @@ Pozneje napišem več.</span><span class="gensmall"></span></td>
 				<td colspan="2"><hr /></td>
 			</tr>
 			<tr>
-				<td colspan="2"><span class="postbody">Sam sebi boš podplate mazilil. <img src="images/smiles/icon_biggrin.gif" alt="icon_biggrin.gif" border="0" />  <img src="images/smiles/icon_biggrin.gif" alt="icon_biggrin.gif" border="0" /> <img src="images/smiles/icon_mrgreen.gif" alt="icon_mrgreen.gif" border="0" />  <img src="images/smiles/icon_mrgreen.gif" alt="icon_mrgreen.gif" border="0" /><br />_________________<br />Se naenkrat roke dvignejo, vrata se odpro in v zraku vidim deklico, ki na prsih nosi.
+				<td colspan="2"><span class="postbody">Sam sebi boš podplate mazilil. <img src="images/smiles/icon_biggrin.gif" alt=":D" border="0" />  <img src="images/smiles/icon_biggrin.gif" alt=":D" border="0" /> <img src="images/smiles/icon_mrgreen.gif" alt=":mrgreen:" border="0" />  <img src="images/smiles/icon_mrgreen.gif" alt=":mrgreen:" border="0" /><br />_________________<br />Se naenkrat roke dvignejo, vrata se odpro in v zraku vidim deklico, ki na prsih nosi.
 
 <br />
 Finis Mundi/Konec je sveta.</span><span class="gensmall"></span></td>
@@ -1015,7 +860,7 @@ Finis Mundi/Konec je sveta.</span><span class="gensmall"></span></td>
 		<td class="row2" width="150" align="left" valign="middle"><span class="nav"><a href="#top" class="nav">Nazaj na vrh</a></span></td>
 		<td class="row2" width="100%" height="28" valign="bottom" nowrap="nowrap"><table cellspacing="0" cellpadding="0" border="0" height="18" width="18">
 			<tr>
-				<td valign="middle" nowrap="nowrap"><a href="profile-73.html"><img src="templates/SGD2/images/lang_slovenian/icon_profile.gif" alt="Poglej uporabnikov profil" title="Poglej uporabnikov profil" border="0" /></a> <a  target="_userwww"><img src="templates/SGD2/images/lang_slovenian/icon_www.gif" alt="Obišči avtorjevo spletno stran" title="Obišči avtorjevo spletno stran" border="0" /></a></td>
+				<td valign="middle" nowrap="nowrap"><a href="profile-73.html"><img src="templates/SGD2/images/lang_slovenian/icon_profile.gif" alt="Poglej uporabnikov profil" title="Poglej uporabnikov profil" border="0" /></a> </td>
 			</tr>
 		</table></td>
 	</tr>
@@ -1024,7 +869,7 @@ Finis Mundi/Konec je sveta.</span><span class="gensmall"></span></td>
 	</tr>
 	
 	<tr>
-		<td width="150" align="left" valign="top" class="row1"><span class="name"><a name="3252"></a><b>Wingman</b></span><br /><span class="postdetails">SGD Moderator<br /><img src="images/ranks/sgd-mod.gif" alt="SGD Moderator" title="SGD Moderator" border="0" /><br /><img src="images/avatars/c14d9fca410a4a42927d3.jpg" alt="" border="0" /><br /><br />Pridružen: 08. jan 2003 ob 21:33<br />objav: 293<br />Kraj: Kranj</span><br /></td>
+		<td width="150" align="left" valign="top" class="row1"><span class="name"><a name="3252"></a><b>Wing</b></span><br /><span class="postdetails">SGD Admin<br /><img src="images/ranks/sgd-admin.gif" alt="SGD Admin" title="SGD Admin" border="0" /><br /><br /><br />Pridružen: 08. jan 2003 ob 21:33<br />objav: 481<br />Kraj: Kranj</span><br /></td>
 		<td class="row1" width="100%" height="28" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
 			<tr>
 				<td colspan="2" width="100%">
@@ -1044,7 +889,7 @@ Finis Mundi/Konec je sveta.</span><span class="gensmall"></span></td>
 				<td colspan="2"><hr /></td>
 			</tr>
 			<tr>
-				<td colspan="2"><span class="postbody">Heh ja  <img src="images/smiles/icon_smile.gif" alt="icon_smile.gif" border="0" />.. v bistvu je bil edini problem v normalah. Tla so narisana najprej na XY osi in nato za 90 zavrtena, da ležijo na XZ. Normalo sem jim določil (0, 0, 1), ker sem pač pozabil, da na "false" normale (če jih lahko tako imenujem), ki se uporabijo pri sencah (niso določene z glNormal), rotacija ne deluje. 
+				<td colspan="2"><span class="postbody">Heh ja  <img src="images/smiles/icon_smile.gif" alt=":)" border="0" />.. v bistvu je bil edini problem v normalah. Tla so narisana najprej na XY osi in nato za 90 zavrtena, da ležijo na XZ. Normalo sem jim določil (0, 0, 1), ker sem pač pozabil, da na "false" normale (če jih lahko tako imenujem), ki se uporabijo pri sencah (niso določene z glNormal), rotacija ne deluje. 
 
 <br />
 
@@ -1155,7 +1000,7 @@ torej: Pri katerih vrednostih so sence najlepse??
 	</tr>
 	
 	<tr>
-		<td width="150" align="left" valign="top" class="row1"><span class="name"><a name="3791"></a><b>Wingman</b></span><br /><span class="postdetails">SGD Moderator<br /><img src="images/ranks/sgd-mod.gif" alt="SGD Moderator" title="SGD Moderator" border="0" /><br /><img src="images/avatars/c14d9fca410a4a42927d3.jpg" alt="" border="0" /><br /><br />Pridružen: 08. jan 2003 ob 21:33<br />objav: 293<br />Kraj: Kranj</span><br /></td>
+		<td width="150" align="left" valign="top" class="row1"><span class="name"><a name="3791"></a><b>Wing</b></span><br /><span class="postdetails">SGD Admin<br /><img src="images/ranks/sgd-admin.gif" alt="SGD Admin" title="SGD Admin" border="0" /><br /><br /><br />Pridružen: 08. jan 2003 ob 21:33<br />objav: 481<br />Kraj: Kranj</span><br /></td>
 		<td class="row1" width="100%" height="28" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
 			<tr>
 				<td colspan="2" width="100%">
@@ -1236,7 +1081,7 @@ btw, če imaš floate, to funkciji tudi povej, zato piši 1.1f namesto 1.1.</spa
 
 
 <br />
-Wingman -&gt; nikoli ni prepozno <img src="images/smiles/icon_smile.gif" alt="icon_smile.gif" border="0" />
+Wingman -&gt; nikoli ni prepozno <img src="images/smiles/icon_smile.gif" alt=":)" border="0" />
 
 <br />
 
@@ -1265,7 +1110,7 @@ ok pol pa se neki: a si se kej ukvarju z DOT3 BumpMapping-om???</span><span clas
 	</tr>
 	
 	<tr>
-		<td width="150" align="left" valign="top" class="row1"><span class="name"><a name="3849"></a><b>Wingman</b></span><br /><span class="postdetails">SGD Moderator<br /><img src="images/ranks/sgd-mod.gif" alt="SGD Moderator" title="SGD Moderator" border="0" /><br /><img src="images/avatars/c14d9fca410a4a42927d3.jpg" alt="" border="0" /><br /><br />Pridružen: 08. jan 2003 ob 21:33<br />objav: 293<br />Kraj: Kranj</span><br /></td>
+		<td width="150" align="left" valign="top" class="row1"><span class="name"><a name="3849"></a><b>Wing</b></span><br /><span class="postdetails">SGD Admin<br /><img src="images/ranks/sgd-admin.gif" alt="SGD Admin" title="SGD Admin" border="0" /><br /><br /><br />Pridružen: 08. jan 2003 ob 21:33<br />objav: 481<br />Kraj: Kranj</span><br /></td>
 		<td class="row1" width="100%" height="28" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
 			<tr>
 				<td colspan="2" width="100%">
@@ -1447,7 +1292,7 @@ L (stored as the PRIMARY_COLOR) -&gt; normaliziran light vector (za vsak trikotn
 	</tr>
 	
 	<tr>
-		<td width="150" align="left" valign="top" class="row1"><span class="name"><a name="3919"></a><b>Wingman</b></span><br /><span class="postdetails">SGD Moderator<br /><img src="images/ranks/sgd-mod.gif" alt="SGD Moderator" title="SGD Moderator" border="0" /><br /><img src="images/avatars/c14d9fca410a4a42927d3.jpg" alt="" border="0" /><br /><br />Pridružen: 08. jan 2003 ob 21:33<br />objav: 293<br />Kraj: Kranj</span><br /></td>
+		<td width="150" align="left" valign="top" class="row1"><span class="name"><a name="3919"></a><b>Wing</b></span><br /><span class="postdetails">SGD Admin<br /><img src="images/ranks/sgd-admin.gif" alt="SGD Admin" title="SGD Admin" border="0" /><br /><br /><br />Pridružen: 08. jan 2003 ob 21:33<br />objav: 481<br />Kraj: Kranj</span><br /></td>
 		<td class="row1" width="100%" height="28" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
 			<tr>
 				<td colspan="2" width="100%">
@@ -1473,7 +1318,7 @@ L (stored as the PRIMARY_COLOR) -&gt; normaliziran light vector (za vsak trikotn
 No ja, tudi Cg, če se že bom učil, dela povsod..bomo videli, kako bo z glslangom, potem se bom dokončno odločil.
 
 <br />
-Tnx za tale dot3, si bom natančneje ogledal, ko pač bom  <img src="images/smiles/icon_smile.gif" alt="icon_smile.gif" border="0" /> ..</span><span class="gensmall"></span></td>
+Tnx za tale dot3, si bom natančneje ogledal, ko pač bom  <img src="images/smiles/icon_smile.gif" alt=":)" border="0" /> ..</span><span class="gensmall"></span></td>
 			</tr>
 		</table></td>
 	</tr>
@@ -1498,7 +1343,7 @@ Tnx za tale dot3, si bom natančneje ogledal, ko pač bom  <img src="images/smil
   <tr>
 	<td align="left" valign="middle" nowrap="nowrap">&nbsp;</td>
 	<td align="left" valign="middle" width="100%"><span class="nav">&nbsp;&nbsp;&nbsp;<a href="index.html" class="nav">SloGameDev.net seznam forumov</a>
-	  -> <a href="forum-15.html" class="nav">Grafično Programiranje</a></span></td>
+	  -> <a href="forum-52.html" class="nav">Izdelovanje iger</a></span></td>
 	<td align="right" valign="top" nowrap="nowrap"><span class="gensmall">Časovni pas (GMT +2:00 uri) Slovenija, poletni čas</span><br /><span class="nav"></span>
 	  </td>
   </tr>
@@ -1514,7 +1359,7 @@ Tnx za tale dot3, si bom natančneje ogledal, ko pač bom  <img src="images/smil
   </tr>
 </table>
 
-<div align="center"><span class="copyright"><br />Arhiv stanja na dan 13. 2. 2006 &mdash; samo za branje.<br />
+<div align="center"><span class="copyright"><br />Arhiv &mdash; samo za branje.<br />
 <!--
 	We request you retain the full copyright notice below including the link to www.phpbb.com.
 	This not only gives respect to the large amount of time given freely by the developers

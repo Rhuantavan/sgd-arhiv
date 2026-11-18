@@ -276,13 +276,13 @@ input.liteoption {
   <tr>
 	<td align="left" valign="bottom" nowrap="nowrap">&nbsp;</td>
 	<td align="left" valign="middle" width="100%"><span class="nav">&nbsp;&nbsp;&nbsp;<a href="index.html" class="nav">SloGameDev.net seznam forumov</a>
-	  -> <a href="forum-1.html" class="nav">Splošno Programiranje</a></span></td>
+	  -> <a href="forum-52.html" class="nav">Izdelovanje iger</a></span></td>
   </tr>
 </table>
 
 <table class="forumline" width="100%" cellspacing="1" cellpadding="3" border="0">
 	<tr align="right">
-		<td class="catHead" colspan="2" height="28"><span class="nav"><a href="topic-122.html" class="nav">Prejšnja tema</a> :: <a href="topic-137.html" class="nav">Naslednja tema</a> &nbsp;</span></td>
+		<td class="catHead" colspan="2" height="28"><span class="nav"><a href="topic-133.html" class="nav">Prejšnja tema</a> :: <a href="topic-137.html" class="nav">Naslednja tema</a> &nbsp;</span></td>
 	</tr>
 	
 	<tr>
@@ -291,7 +291,7 @@ input.liteoption {
 	</tr>
 	
 	<tr>
-		<td width="150" align="left" valign="top" class="row1"><span class="name"><a name="1181"></a><b>snake</b></span><br /><span class="postdetails">expert<br /><img src="images/ranks/sgd-6.gif" alt="expert" title="expert" border="0" /><br /><img src="images/avatars/c14dbb55415c469152089.gif" alt="" border="0" /><br /><br />Pridružen: 10. jan 2003 ob 08:28<br />objav: 795<br />Kraj: NULL</span><br /></td>
+		<td width="150" align="left" valign="top" class="row1"><span class="name"><a name="1181"></a><b>snake</b></span><br /><span class="postdetails">expert<br /><img src="images/ranks/sgd-6.gif" alt="expert" title="expert" border="0" /><br /><img src="images/avatars/c14dbb55415c469152089.gif" alt="" border="0" /><br /><br />Pridružen: 10. jan 2003 ob 08:28<br />objav: 782<br />Kraj: NULL</span><br /></td>
 		<td class="row1" width="100%" height="28" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
 			<tr>
 				<td colspan="2" width="100%">
@@ -342,49 +342,34 @@ Vrednosti <span style="font-style: italic">header</span> (pri dani texturi -v zi
 	<tr>
 <br />
 	  <td class="quote">id_length = 0
-
 <br />
-
 
 <br />
 colormap_type = 0
-
 <br />
 image_type = 2
-
 <br />
-
 
 <br />
 colormap_origin = 0
-
 <br />
 colormap_length = 0
-
 <br />
 colormap_size = 0
-
 <br />
-
 
 <br />
 x_origin = 0
-
 <br />
 y_origin = 0
-
 <br />
 width = 128 
-
 <br />
 height = 64 
-
 <br />
-
 
 <br />
 pixel_size = 24 (mislim da. Ali pa 32. Ena od teh dveh) 
-
 <br />
 attributes = ne vem točno, mislim da je 0.</td>
 <br />
@@ -407,7 +392,7 @@ Da boste lažje ugotovili, da res nekam izgineta, dajte v fopen(...) namesto "te
 
 
 <br />
-<a  target="_blank" class="postlink">???4k velik zip s problematično kodo (in texturo zastonj)  dobiš tukaj </a>
+<a  target="_blank" class="postlink">???4k velik zip s problematično kodo (in texturo zastonj)  dobiš tukaj</a>
 
 <br />
 
@@ -437,149 +422,101 @@ Sama koda je pa takšna:
 <br />
 	<tr>
 <br />
-	  <td class="code">#include &lt;stdio.h&gt;
-
+	  <td class="code">#include &lt;stdio&#46;h&gt;
 <br />
 
-
 <br />
-
 
 <br />
 typedef struct
-
 <br />
 &#123;
-
 <br />
-&nbsp; &nbsp;unsigned char id_length;
-
+	unsigned char id_length;
 <br />
 
-
 <br />
-&nbsp; &nbsp;unsigned char colormap_type;
-
+	unsigned char colormap_type;
 <br />
-&nbsp; &nbsp;unsigned char image_type;
-
+	unsigned char image_type;
 <br />
 
-
 <br />
-&nbsp; &nbsp;short int colormap_origin;
-
+	short int colormap_origin;
 <br />
-&nbsp; &nbsp;short int colormap_length;
-
+	short int colormap_length;
 <br />
-&nbsp; &nbsp;short int colormap_size;
-
+	short int colormap_size;
 <br />
 
-
 <br />
-&nbsp; &nbsp;short int x_origin;
-
+	short int x_origin;
 <br />
-&nbsp; &nbsp;short int y_origin;
-
+	short int y_origin;
 <br />
-&nbsp; &nbsp;short int width;
-
+	short int width;
 <br />
-&nbsp; &nbsp;short int height;
-
+	short int height;
 <br />
 
-
 <br />
-&nbsp; &nbsp;unsigned char pixel_size;
-
+	unsigned char pixel_size;
 <br />
-&nbsp; &nbsp;unsigned char attributes;
-
+	unsigned char attributes;
 <br />
 &#125; tga_header_t;
-
 <br />
 
-
 <br />
-
 
 <br />
 void main&#40;&#41;
-
 <br />
 &#123;
-
 <br />
-&nbsp; &nbsp;char* data;
-
+	char* data;
 <br />
 
-
 <br />
-&nbsp; &nbsp;FILE *f;
-
+	FILE *f;
 <br />
-&nbsp; &nbsp;f= fopen&#40;&quot;tex.tga&quot;, &quot;rb&quot;&#41;;
-
+	f= fopen&#40;&quot;tex&#46;tga&quot;, &quot;rb&quot;&#41;;
 <br />
 
-
 <br />
-&nbsp; &nbsp;fseek&#40;f, 0L, SEEK_END&#41;;
-
+	fseek&#40;f, 0L, SEEK_END&#41;;
 <br />
-&nbsp; &nbsp;int size = ftell&#40;f&#41;;
-
+	int size = ftell&#40;f&#41;;
 <br />
-&nbsp; &nbsp;rewind&#40;f&#41;;
-
+	rewind&#40;f&#41;;
 <br />
 
+<br />
+	// allocate memory
+<br />
+	data = new char&#91;size&#93;;
+<br />
 
 <br />
-&nbsp; &nbsp;// allocate memory
-
+	fread&#40;data, size, sizeof&#40;char&#41;, f&#41;;
 <br />
-&nbsp; &nbsp;data = new char&#91;size&#93;;
+	fclose&#40;f&#41;;
+<br />
 
 <br />
 
-
 <br />
-&nbsp; &nbsp;fread&#40;data, size, sizeof&#40;char&#41;, f&#41;;
-
-<br />
-&nbsp; &nbsp;fclose&#40;f&#41;;
-
+	tga_header_t *header;
 <br />
 
-
+<br />
+	header = &#40;tga_header_t *&#41; data;
 <br />
 
-
 <br />
-&nbsp; &nbsp;tga_header_t *header;
-
-<br />
-
-
-<br />
-&nbsp; &nbsp;header = &#40;tga_header_t *&#41; data;
-
-<br />
-
-
-<br />
-
 
 <br />
 &#125;
-
 <br />
 </td>
 <br />
@@ -607,7 +544,7 @@ Hvala!</span><span class="gensmall"></span></td>
 		<td class="row1" width="150" align="left" valign="middle"><span class="nav"><a href="#top" class="nav">Nazaj na vrh</a></span></td>
 		<td class="row1" width="100%" height="28" valign="bottom" nowrap="nowrap"><table cellspacing="0" cellpadding="0" border="0" height="18" width="18">
 			<tr>
-				<td valign="middle" nowrap="nowrap"><a href="profile-10.html"><img src="templates/SGD2/images/lang_slovenian/icon_profile.gif" alt="Poglej uporabnikov profil" title="Poglej uporabnikov profil" border="0" /></a> <a  target="_userwww"><img src="templates/SGD2/images/lang_slovenian/icon_www.gif" alt="Obišči avtorjevo spletno stran" title="Obišči avtorjevo spletno stran" border="0" /></a></td>
+				<td valign="middle" nowrap="nowrap"><a href="profile-10.html"><img src="templates/SGD2/images/lang_slovenian/icon_profile.gif" alt="Poglej uporabnikov profil" title="Poglej uporabnikov profil" border="0" /></a> </td>
 			</tr>
 		</table></td>
 	</tr>
@@ -653,7 +590,7 @@ Hvala!</span><span class="gensmall"></span></td>
 	</tr>
 	
 	<tr>
-		<td width="150" align="left" valign="top" class="row1"><span class="name"><a name="1183"></a><b>snake</b></span><br /><span class="postdetails">expert<br /><img src="images/ranks/sgd-6.gif" alt="expert" title="expert" border="0" /><br /><img src="images/avatars/c14dbb55415c469152089.gif" alt="" border="0" /><br /><br />Pridružen: 10. jan 2003 ob 08:28<br />objav: 795<br />Kraj: NULL</span><br /></td>
+		<td width="150" align="left" valign="top" class="row1"><span class="name"><a name="1183"></a><b>snake</b></span><br /><span class="postdetails">expert<br /><img src="images/ranks/sgd-6.gif" alt="expert" title="expert" border="0" /><br /><img src="images/avatars/c14dbb55415c469152089.gif" alt="" border="0" /><br /><br />Pridružen: 10. jan 2003 ob 08:28<br />objav: 782<br />Kraj: NULL</span><br /></td>
 		<td class="row1" width="100%" height="28" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
 			<tr>
 				<td colspan="2" width="100%">
@@ -673,7 +610,7 @@ Hvala!</span><span class="gensmall"></span></td>
 				<td colspan="2"><hr /></td>
 			</tr>
 			<tr>
-				<td colspan="2"><span class="postbody">Hja, sej sem jih tut sam že kar nekaj napisal (za mnogo različnih formatov), tega pa sem si zamislil nekoliko drugače. 100% bi moralo delat, ampak sem verjetno naredil kakšno neumno napako! <img src="images/smiles/icon_confused.gif" alt="icon_confused.gif" border="0" /></span><span class="gensmall"></span></td>
+				<td colspan="2"><span class="postbody">Hja, sej sem jih tut sam že kar nekaj napisal (za mnogo različnih formatov), tega pa sem si zamislil nekoliko drugače. 100% bi moralo delat, ampak sem verjetno naredil kakšno neumno napako! <img src="images/smiles/icon_confused.gif" alt=":?" border="0" /></span><span class="gensmall"></span></td>
 			</tr>
 		</table></td>
 	</tr>
@@ -681,7 +618,7 @@ Hvala!</span><span class="gensmall"></span></td>
 		<td class="row1" width="150" align="left" valign="middle"><span class="nav"><a href="#top" class="nav">Nazaj na vrh</a></span></td>
 		<td class="row1" width="100%" height="28" valign="bottom" nowrap="nowrap"><table cellspacing="0" cellpadding="0" border="0" height="18" width="18">
 			<tr>
-				<td valign="middle" nowrap="nowrap"><a href="profile-10.html"><img src="templates/SGD2/images/lang_slovenian/icon_profile.gif" alt="Poglej uporabnikov profil" title="Poglej uporabnikov profil" border="0" /></a> <a  target="_userwww"><img src="templates/SGD2/images/lang_slovenian/icon_www.gif" alt="Obišči avtorjevo spletno stran" title="Obišči avtorjevo spletno stran" border="0" /></a></td>
+				<td valign="middle" nowrap="nowrap"><a href="profile-10.html"><img src="templates/SGD2/images/lang_slovenian/icon_profile.gif" alt="Poglej uporabnikov profil" title="Poglej uporabnikov profil" border="0" /></a> </td>
 			</tr>
 		</table></td>
 	</tr>
@@ -690,7 +627,7 @@ Hvala!</span><span class="gensmall"></span></td>
 	</tr>
 	
 	<tr>
-		<td width="150" align="left" valign="top" class="row2"><span class="name"><a name="1185"></a><b>Firestar</b></span><br /><span class="postdetails">poznavalec<br /><img src="images/ranks/sgd-3.gif" alt="poznavalec" title="poznavalec" border="0" /><br /><img src="images/avatars/c2f929273ec2afe163bdf.gif" alt="" border="0" /><br /><br />Pridružen: 17. jan 2003 ob 11:24<br />objav: 181<br />Kraj: Maribor</span><br /></td>
+		<td width="150" align="left" valign="top" class="row2"><span class="name"><a name="1185"></a><b>Firestar</b></span><br /><span class="postdetails">poznavalec<br /><img src="images/ranks/sgd-3.gif" alt="poznavalec" title="poznavalec" border="0" /><br /><img src="images/avatars/c2f929273ec2afe163bdf.gif" alt="" border="0" /><br /><br />Pridružen: 17. jan 2003 ob 11:24<br />objav: 173<br />Kraj: Maribor</span><br /></td>
 		<td class="row2" width="100%" height="28" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
 			<tr>
 				<td colspan="2" width="100%">
@@ -738,10 +675,8 @@ namesto
 </table>
 <br />
 <span class="postbody">
-
 <br />
 napisi
-
 <br />
 </span>
 <br />
@@ -762,10 +697,8 @@ napisi
 </table>
 <br />
 <span class="postbody">
-
 <br />
 3.) C++ po defaultu grupira strukture po 2 al 4 byte (ne vem tocno, ker nimam helpa pri roki), zato mu moras dodati direktivo, da ti grupira po en byte, to pa naredis tako, da nekje na zacetku datoteke, kjer imas definirano strukturo dodas tole vrstico:
-
 <br />
 </span>
 <br />
@@ -817,7 +750,7 @@ Uzivaj
 	</tr>
 	
 	<tr>
-		<td width="150" align="left" valign="top" class="row1"><span class="name"><a name="1186"></a><b>snake</b></span><br /><span class="postdetails">expert<br /><img src="images/ranks/sgd-6.gif" alt="expert" title="expert" border="0" /><br /><img src="images/avatars/c14dbb55415c469152089.gif" alt="" border="0" /><br /><br />Pridružen: 10. jan 2003 ob 08:28<br />objav: 795<br />Kraj: NULL</span><br /></td>
+		<td width="150" align="left" valign="top" class="row1"><span class="name"><a name="1186"></a><b>snake</b></span><br /><span class="postdetails">expert<br /><img src="images/ranks/sgd-6.gif" alt="expert" title="expert" border="0" /><br /><img src="images/avatars/c14dbb55415c469152089.gif" alt="" border="0" /><br /><br />Pridružen: 10. jan 2003 ob 08:28<br />objav: 782<br />Kraj: NULL</span><br /></td>
 		<td class="row1" width="100%" height="28" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
 			<tr>
 				<td colspan="2" width="100%">
@@ -837,13 +770,13 @@ Uzivaj
 				<td colspan="2"><hr /></td>
 			</tr>
 			<tr>
-				<td colspan="2"><span class="postbody">Uf. Ja, prva in druga točka sta posledica hitenja, pa sem mal prehitro zazipu, tko da to je ql. <img src="images/smiles/icon_smile.gif" alt="icon_smile.gif" border="0" /> Tiste unsigned char in pa short int sem pa vseskozi premetaval, da bi našel kakšno napako <img src="images/smiles/icon_smile.gif" alt="icon_smile.gif" border="0" />
+				<td colspan="2"><span class="postbody">Uf. Ja, prva in druga točka sta posledica hitenja, pa sem mal prehitro zazipu, tko da to je ql. <img src="images/smiles/icon_smile.gif" alt=":)" border="0" /> Tiste unsigned char in pa short int sem pa vseskozi premetaval, da bi našel kakšno napako <img src="images/smiles/icon_smile.gif" alt=":)" border="0" />
 
 <br />
 
 
 <br />
-Tretja točka pa... Kaj vse človek pogrunta  <img src="images/smiles/icon_cool.gif" alt="icon_cool.gif" border="0" />  Hvala! <img src="images/smiles/icon_biggrin.gif" alt="icon_biggrin.gif" border="0" /> 
+Tretja točka pa... Kaj vse človek pogrunta  <img src="images/smiles/icon_cool.gif" alt="8)" border="0" />  Hvala! <img src="images/smiles/icon_biggrin.gif" alt=":D" border="0" /> 
 
 <br />
 
@@ -852,7 +785,7 @@ Tretja točka pa... Kaj vse človek pogrunta  <img src="images/smiles/icon_cool.
 
 
 <br />
-<span style="font-size: 9px; line-height: normal"><span style="font-style: italic">Sedaj bi moral parser dokončno delovat... Firestar, tvojega q3 shader parserja nisem rabil, sem nekako uspel nardit svojega. Na žalost ni za v javnost (razen če bo v2 GPL,kar se pa še ne ve). Vseeno hvala, si na dobri poti <img src="images/smiles/icon_smile.gif" alt="icon_smile.gif" border="0" /> .</span></span></span><span class="gensmall"></span></td>
+<span style="font-size: 75%; line-height: normal"><span style="font-style: italic">Sedaj bi moral parser dokončno delovat... Firestar, tvojega q3 shader parserja nisem rabil, sem nekako uspel nardit svojega. Na žalost ni za v javnost (razen če bo v2 GPL,kar se pa še ne ve). Vseeno hvala, si na dobri poti <img src="images/smiles/icon_smile.gif" alt=":)" border="0" /> .</span></span></span><span class="gensmall"></span></td>
 			</tr>
 		</table></td>
 	</tr>
@@ -860,7 +793,7 @@ Tretja točka pa... Kaj vse človek pogrunta  <img src="images/smiles/icon_cool.
 		<td class="row1" width="150" align="left" valign="middle"><span class="nav"><a href="#top" class="nav">Nazaj na vrh</a></span></td>
 		<td class="row1" width="100%" height="28" valign="bottom" nowrap="nowrap"><table cellspacing="0" cellpadding="0" border="0" height="18" width="18">
 			<tr>
-				<td valign="middle" nowrap="nowrap"><a href="profile-10.html"><img src="templates/SGD2/images/lang_slovenian/icon_profile.gif" alt="Poglej uporabnikov profil" title="Poglej uporabnikov profil" border="0" /></a> <a  target="_userwww"><img src="templates/SGD2/images/lang_slovenian/icon_www.gif" alt="Obišči avtorjevo spletno stran" title="Obišči avtorjevo spletno stran" border="0" /></a></td>
+				<td valign="middle" nowrap="nowrap"><a href="profile-10.html"><img src="templates/SGD2/images/lang_slovenian/icon_profile.gif" alt="Poglej uporabnikov profil" title="Poglej uporabnikov profil" border="0" /></a> </td>
 			</tr>
 		</table></td>
 	</tr>
@@ -869,7 +802,7 @@ Tretja točka pa... Kaj vse človek pogrunta  <img src="images/smiles/icon_cool.
 	</tr>
 	
 	<tr>
-		<td width="150" align="left" valign="top" class="row2"><span class="name"><a name="1188"></a><b>Firestar</b></span><br /><span class="postdetails">poznavalec<br /><img src="images/ranks/sgd-3.gif" alt="poznavalec" title="poznavalec" border="0" /><br /><img src="images/avatars/c2f929273ec2afe163bdf.gif" alt="" border="0" /><br /><br />Pridružen: 17. jan 2003 ob 11:24<br />objav: 181<br />Kraj: Maribor</span><br /></td>
+		<td width="150" align="left" valign="top" class="row2"><span class="name"><a name="1188"></a><b>Firestar</b></span><br /><span class="postdetails">poznavalec<br /><img src="images/ranks/sgd-3.gif" alt="poznavalec" title="poznavalec" border="0" /><br /><img src="images/avatars/c2f929273ec2afe163bdf.gif" alt="" border="0" /><br /><br />Pridružen: 17. jan 2003 ob 11:24<br />objav: 173<br />Kraj: Maribor</span><br /></td>
 		<td class="row2" width="100%" height="28" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
 			<tr>
 				<td colspan="2" width="100%">
@@ -889,10 +822,10 @@ Tretja točka pa... Kaj vse človek pogrunta  <img src="images/smiles/icon_cool.
 				<td colspan="2"><hr /></td>
 			</tr>
 			<tr>
-				<td colspan="2"><span class="postbody">Snake: kako to mislis, da sem na dobri poti <img src="images/smiles/icon_wink.gif" alt="icon_wink.gif" border="0" />
+				<td colspan="2"><span class="postbody">Snake: kako to mislis, da sem na dobri poti <img src="images/smiles/icon_wink.gif" alt=";-)" border="0" />
 
 <br />
-kam? <img src="images/smiles/icon_wink.gif" alt="icon_wink.gif" border="0" /></span><span class="gensmall"></span></td>
+kam? <img src="images/smiles/icon_wink.gif" alt=";-)" border="0" /></span><span class="gensmall"></span></td>
 			</tr>
 		</table></td>
 	</tr>
@@ -909,7 +842,7 @@ kam? <img src="images/smiles/icon_wink.gif" alt="icon_wink.gif" border="0" /></s
 	</tr>
 	
 	<tr>
-		<td width="150" align="left" valign="top" class="row1"><span class="name"><a name="1190"></a><b>snake</b></span><br /><span class="postdetails">expert<br /><img src="images/ranks/sgd-6.gif" alt="expert" title="expert" border="0" /><br /><img src="images/avatars/c14dbb55415c469152089.gif" alt="" border="0" /><br /><br />Pridružen: 10. jan 2003 ob 08:28<br />objav: 795<br />Kraj: NULL</span><br /></td>
+		<td width="150" align="left" valign="top" class="row1"><span class="name"><a name="1190"></a><b>snake</b></span><br /><span class="postdetails">expert<br /><img src="images/ranks/sgd-6.gif" alt="expert" title="expert" border="0" /><br /><img src="images/avatars/c14dbb55415c469152089.gif" alt="" border="0" /><br /><br />Pridružen: 10. jan 2003 ob 08:28<br />objav: 782<br />Kraj: NULL</span><br /></td>
 		<td class="row1" width="100%" height="28" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
 			<tr>
 				<td colspan="2" width="100%">
@@ -929,7 +862,7 @@ kam? <img src="images/smiles/icon_wink.gif" alt="icon_wink.gif" border="0" /></s
 				<td colspan="2"><hr /></td>
 			</tr>
 			<tr>
-				<td colspan="2"><span class="postbody">Hja, kam... to ti je vprašanje, na katerega obstaja veliko različnih razlag! Vsekakor je najbolj bistveno, da naprej, saj si nazadovanja nekako ne želimo! <img src="images/smiles/icon_biggrin.gif" alt="icon_biggrin.gif" border="0" /> 
+				<td colspan="2"><span class="postbody">Hja, kam... to ti je vprašanje, na katerega obstaja veliko različnih razlag! Vsekakor je najbolj bistveno, da naprej, saj si nazadovanja nekako ne želimo! <img src="images/smiles/icon_biggrin.gif" alt=":D" border="0" /> 
 
 <br />
 
@@ -944,7 +877,7 @@ kam? <img src="images/smiles/icon_wink.gif" alt="icon_wink.gif" border="0" /></s
 
 
 <br />
-Drugače pa nisem prevzel Carmackovih besed za različne prehode (pass), ki so pri shaderjih, ampak (tvoje firestar) layer <img src="images/smiles/icon_wink.gif" alt="icon_wink.gif" border="0" /></span><span class="gensmall"></span></td>
+Drugače pa nisem prevzel Carmackovih besed za različne prehode (pass), ki so pri shaderjih, ampak (tvoje firestar) layer <img src="images/smiles/icon_wink.gif" alt=";)" border="0" /></span><span class="gensmall"></span></td>
 			</tr>
 		</table></td>
 	</tr>
@@ -952,7 +885,7 @@ Drugače pa nisem prevzel Carmackovih besed za različne prehode (pass), ki so p
 		<td class="row1" width="150" align="left" valign="middle"><span class="nav"><a href="#top" class="nav">Nazaj na vrh</a></span></td>
 		<td class="row1" width="100%" height="28" valign="bottom" nowrap="nowrap"><table cellspacing="0" cellpadding="0" border="0" height="18" width="18">
 			<tr>
-				<td valign="middle" nowrap="nowrap"><a href="profile-10.html"><img src="templates/SGD2/images/lang_slovenian/icon_profile.gif" alt="Poglej uporabnikov profil" title="Poglej uporabnikov profil" border="0" /></a> <a  target="_userwww"><img src="templates/SGD2/images/lang_slovenian/icon_www.gif" alt="Obišči avtorjevo spletno stran" title="Obišči avtorjevo spletno stran" border="0" /></a></td>
+				<td valign="middle" nowrap="nowrap"><a href="profile-10.html"><img src="templates/SGD2/images/lang_slovenian/icon_profile.gif" alt="Poglej uporabnikov profil" title="Poglej uporabnikov profil" border="0" /></a> </td>
 			</tr>
 		</table></td>
 	</tr>
@@ -961,7 +894,7 @@ Drugače pa nisem prevzel Carmackovih besed za različne prehode (pass), ki so p
 	</tr>
 	
 	<tr>
-		<td width="150" align="left" valign="top" class="row2"><span class="name"><a name="1191"></a><b>Firestar</b></span><br /><span class="postdetails">poznavalec<br /><img src="images/ranks/sgd-3.gif" alt="poznavalec" title="poznavalec" border="0" /><br /><img src="images/avatars/c2f929273ec2afe163bdf.gif" alt="" border="0" /><br /><br />Pridružen: 17. jan 2003 ob 11:24<br />objav: 181<br />Kraj: Maribor</span><br /></td>
+		<td width="150" align="left" valign="top" class="row2"><span class="name"><a name="1191"></a><b>Firestar</b></span><br /><span class="postdetails">poznavalec<br /><img src="images/ranks/sgd-3.gif" alt="poznavalec" title="poznavalec" border="0" /><br /><img src="images/avatars/c2f929273ec2afe163bdf.gif" alt="" border="0" /><br /><br />Pridružen: 17. jan 2003 ob 11:24<br />objav: 173<br />Kraj: Maribor</span><br /></td>
 		<td class="row2" width="100%" height="28" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
 			<tr>
 				<td colspan="2" width="100%">
@@ -981,25 +914,25 @@ Drugače pa nisem prevzel Carmackovih besed za različne prehode (pass), ki so p
 				<td colspan="2"><hr /></td>
 			</tr>
 			<tr>
-				<td colspan="2"><span class="postbody">Don't immitate, just innovate <img src="images/smiles/icon_smile.gif" alt="icon_smile.gif" border="0" />
+				<td colspan="2"><span class="postbody">Don't immitate, just innovate <img src="images/smiles/icon_smile.gif" alt=":-)" border="0" />
 
 <br />
-Tudi ni vse alfa in omega, kar JC pravi <img src="images/smiles/icon_smile.gif" alt="icon_smile.gif" border="0" />
+Tudi ni vse alfa in omega, kar JC pravi <img src="images/smiles/icon_smile.gif" alt=":-)" border="0" />
 
 <br />
-Verjetno si se premlad, da bi vedel, samo meni osebno so dosti vecji asi ljudje, ki so zaceli z open-sourci...ze v dobrih starih casih bbs-ov, ko sem komaj cakal na novo stevilko swag-a...ahhh...kje je ze to <img src="images/smiles/icon_smile.gif" alt="icon_smile.gif" border="0" />
+Verjetno si se premlad, da bi vedel, samo meni osebno so dosti vecji asi ljudje, ki so zaceli z open-sourci...ze v dobrih starih casih bbs-ov, ko sem komaj cakal na novo stevilko swag-a...ahhh...kje je ze to <img src="images/smiles/icon_smile.gif" alt=":-)" border="0" />
 
 <br />
-Zdaj pa se sam neki per-pixel lighting, pa dx9 pa shaderji gor pa dol, pa kr neki... <img src="images/smiles/icon_smile.gif" alt="icon_smile.gif" border="0" />
+Zdaj pa se sam neki per-pixel lighting, pa dx9 pa shaderji gor pa dol, pa kr neki... <img src="images/smiles/icon_smile.gif" alt=":-)" border="0" />
 
 <br />
-Vcasih je bilo dovolj, da si znal copy-paste naredit za formulo za rotacijo tocke (fixed point seveda <img src="images/smiles/icon_wink.gif" alt="icon_wink.gif" border="0" />), zdaj pa moras biti ze napol dohtarja matematike, ce zelis vso teorijo za racunalnisko grafiko razumet <img src="images/smiles/icon_smile.gif" alt="icon_smile.gif" border="0" />
+Vcasih je bilo dovolj, da si znal copy-paste naredit za formulo za rotacijo tocke (fixed point seveda <img src="images/smiles/icon_wink.gif" alt=";-)" border="0" />), zdaj pa moras biti ze napol dohtarja matematike, ce zelis vso teorijo za racunalnisko grafiko razumet <img src="images/smiles/icon_smile.gif" alt=":-)" border="0" />
 
 <br />
-Kje so dobri stari casi modplayerjev, pascala, real-mode programov <img src="images/smiles/icon_smile.gif" alt="icon_smile.gif" border="0" />
+Kje so dobri stari casi modplayerjev, pascala, real-mode programov <img src="images/smiles/icon_smile.gif" alt=":-)" border="0" />
 
 <br />
-Shit...spet me nostalgija daje <img src="images/smiles/icon_biggrin.gif" alt="icon_biggrin.gif" border="0" /></span><span class="gensmall"></span></td>
+Shit...spet me nostalgija daje <img src="images/smiles/icon_biggrin.gif" alt=":-D" border="0" /></span><span class="gensmall"></span></td>
 			</tr>
 		</table></td>
 	</tr>
@@ -1016,7 +949,7 @@ Shit...spet me nostalgija daje <img src="images/smiles/icon_biggrin.gif" alt="ic
 	</tr>
 	
 	<tr>
-		<td width="150" align="left" valign="top" class="row1"><span class="name"><a name="1192"></a><b>snake</b></span><br /><span class="postdetails">expert<br /><img src="images/ranks/sgd-6.gif" alt="expert" title="expert" border="0" /><br /><img src="images/avatars/c14dbb55415c469152089.gif" alt="" border="0" /><br /><br />Pridružen: 10. jan 2003 ob 08:28<br />objav: 795<br />Kraj: NULL</span><br /></td>
+		<td width="150" align="left" valign="top" class="row1"><span class="name"><a name="1192"></a><b>snake</b></span><br /><span class="postdetails">expert<br /><img src="images/ranks/sgd-6.gif" alt="expert" title="expert" border="0" /><br /><img src="images/avatars/c14dbb55415c469152089.gif" alt="" border="0" /><br /><br />Pridružen: 10. jan 2003 ob 08:28<br />objav: 782<br />Kraj: NULL</span><br /></td>
 		<td class="row1" width="100%" height="28" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
 			<tr>
 				<td colspan="2" width="100%">
@@ -1036,7 +969,7 @@ Shit...spet me nostalgija daje <img src="images/smiles/icon_biggrin.gif" alt="ic
 				<td colspan="2"><hr /></td>
 			</tr>
 			<tr>
-				<td colspan="2"><span class="postbody">Hehe, jst sm se pa rodil v teh fajnih cajtih... vsakmu svoje <img src="images/smiles/icon_smile.gif" alt="icon_smile.gif" border="0" /></span><span class="gensmall"></span></td>
+				<td colspan="2"><span class="postbody">Hehe, jst sm se pa rodil v teh fajnih cajtih... vsakmu svoje <img src="images/smiles/icon_smile.gif" alt=":)" border="0" /></span><span class="gensmall"></span></td>
 			</tr>
 		</table></td>
 	</tr>
@@ -1044,7 +977,7 @@ Shit...spet me nostalgija daje <img src="images/smiles/icon_biggrin.gif" alt="ic
 		<td class="row1" width="150" align="left" valign="middle"><span class="nav"><a href="#top" class="nav">Nazaj na vrh</a></span></td>
 		<td class="row1" width="100%" height="28" valign="bottom" nowrap="nowrap"><table cellspacing="0" cellpadding="0" border="0" height="18" width="18">
 			<tr>
-				<td valign="middle" nowrap="nowrap"><a href="profile-10.html"><img src="templates/SGD2/images/lang_slovenian/icon_profile.gif" alt="Poglej uporabnikov profil" title="Poglej uporabnikov profil" border="0" /></a> <a  target="_userwww"><img src="templates/SGD2/images/lang_slovenian/icon_www.gif" alt="Obišči avtorjevo spletno stran" title="Obišči avtorjevo spletno stran" border="0" /></a></td>
+				<td valign="middle" nowrap="nowrap"><a href="profile-10.html"><img src="templates/SGD2/images/lang_slovenian/icon_profile.gif" alt="Poglej uporabnikov profil" title="Poglej uporabnikov profil" border="0" /></a> </td>
 			</tr>
 		</table></td>
 	</tr>
@@ -1053,7 +986,7 @@ Shit...spet me nostalgija daje <img src="images/smiles/icon_biggrin.gif" alt="ic
 	</tr>
 	
 	<tr>
-		<td width="150" align="left" valign="top" class="row2"><span class="name"><a name="1194"></a><b>Firestar</b></span><br /><span class="postdetails">poznavalec<br /><img src="images/ranks/sgd-3.gif" alt="poznavalec" title="poznavalec" border="0" /><br /><img src="images/avatars/c2f929273ec2afe163bdf.gif" alt="" border="0" /><br /><br />Pridružen: 17. jan 2003 ob 11:24<br />objav: 181<br />Kraj: Maribor</span><br /></td>
+		<td width="150" align="left" valign="top" class="row2"><span class="name"><a name="1194"></a><b>Firestar</b></span><br /><span class="postdetails">poznavalec<br /><img src="images/ranks/sgd-3.gif" alt="poznavalec" title="poznavalec" border="0" /><br /><img src="images/avatars/c2f929273ec2afe163bdf.gif" alt="" border="0" /><br /><br />Pridružen: 17. jan 2003 ob 11:24<br />objav: 173<br />Kraj: Maribor</span><br /></td>
 		<td class="row2" width="100%" height="28" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
 			<tr>
 				<td colspan="2" width="100%">
@@ -1073,7 +1006,7 @@ Shit...spet me nostalgija daje <img src="images/smiles/icon_biggrin.gif" alt="ic
 				<td colspan="2"><hr /></td>
 			</tr>
 			<tr>
-				<td colspan="2"><span class="postbody">da me ne bos narobe razumel...ti casi so mi prav tako fajn...naravnost uzivam v tem, da lahko kaj novega naredim...uzivam, ko gledam nove demote, ki prihajajo ven, uzivam ob gledanju demotov, ki prikazujejo nove zmoznosti graficnih kartic, uzivam ob prebiranju raznih matematik...saj so lepi casi, edino kar me jezi je to, da vse prevec ljudi kopira od drugih in ne inovira <img src="images/smiles/icon_smile.gif" alt="icon_smile.gif" border="0" /></span><span class="gensmall"></span></td>
+				<td colspan="2"><span class="postbody">da me ne bos narobe razumel...ti casi so mi prav tako fajn...naravnost uzivam v tem, da lahko kaj novega naredim...uzivam, ko gledam nove demote, ki prihajajo ven, uzivam ob gledanju demotov, ki prikazujejo nove zmoznosti graficnih kartic, uzivam ob prebiranju raznih matematik...saj so lepi casi, edino kar me jezi je to, da vse prevec ljudi kopira od drugih in ne inovira <img src="images/smiles/icon_smile.gif" alt=":-)" border="0" /></span><span class="gensmall"></span></td>
 			</tr>
 		</table></td>
 	</tr>
@@ -1098,7 +1031,7 @@ Shit...spet me nostalgija daje <img src="images/smiles/icon_biggrin.gif" alt="ic
   <tr>
 	<td align="left" valign="middle" nowrap="nowrap">&nbsp;</td>
 	<td align="left" valign="middle" width="100%"><span class="nav">&nbsp;&nbsp;&nbsp;<a href="index.html" class="nav">SloGameDev.net seznam forumov</a>
-	  -> <a href="forum-1.html" class="nav">Splošno Programiranje</a></span></td>
+	  -> <a href="forum-52.html" class="nav">Izdelovanje iger</a></span></td>
 	<td align="right" valign="top" nowrap="nowrap"><span class="gensmall">Časovni pas (GMT +2:00 uri) Slovenija, poletni čas</span><br /><span class="nav"></span>
 	  </td>
   </tr>
@@ -1114,7 +1047,7 @@ Shit...spet me nostalgija daje <img src="images/smiles/icon_biggrin.gif" alt="ic
   </tr>
 </table>
 
-<div align="center"><span class="copyright"><br />Arhiv stanja na dan 13. 2. 2006 &mdash; samo za branje.<br />
+<div align="center"><span class="copyright"><br />Arhiv &mdash; samo za branje.<br />
 <!--
 	We request you retain the full copyright notice below including the link to www.phpbb.com.
 	This not only gives respect to the large amount of time given freely by the developers

@@ -276,7 +276,7 @@ input.liteoption {
   <tr>
 	<td align="left" valign="bottom" nowrap="nowrap">&nbsp;</td>
 	<td align="left" valign="middle" width="100%"><span class="nav">&nbsp;&nbsp;&nbsp;<a href="index.html" class="nav">SloGameDev.net seznam forumov</a>
-	  -> <a href="forum-10.html" class="nav">Za Začetnike</a></span></td>
+	  -> <a href="forum-49.html" class="nav">Začetniki</a></span></td>
   </tr>
 </table>
 
@@ -291,7 +291,7 @@ input.liteoption {
 	</tr>
 	
 	<tr>
-		<td width="150" align="left" valign="top" class="row1"><span class="name"><a name="2579"></a><b>CWIZO</b></span><br /><span class="postdetails">SGD Admin<br /><img src="images/ranks/sgd-admin.gif" alt="SGD Admin" title="SGD Admin" border="0" /><br /><img src="images/avatars/c2f9c6313f016e6cd131f.gif" alt="" border="0" /><br /><br />Pridružen: 05. maj 2003 ob 20:36<br />objav: 955<br />Kraj: WriteLine(CWIZO.Location);</span><br /></td>
+		<td width="150" align="left" valign="top" class="row1"><span class="name"><a name="2579"></a><b>CWIZO</b></span><br /><span class="postdetails">SGD Moderator<br /><img src="images/ranks/sgd-mod.gif" alt="SGD Moderator" title="SGD Moderator" border="0" /><br /><img src="images/avatars/c2f9c6313f016e6cd131f.gif" alt="" border="0" /><br /><br />Pridružen: 05. maj 2003 ob 20:36<br />objav: 914<br />Kraj: WriteLine(CWIZO.Location);</span><br /></td>
 		<td class="row1" width="100%" height="28" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
 			<tr>
 				<td colspan="2" width="100%">
@@ -342,490 +342,328 @@ Ker bi pol rad predelal (kot sem že rekel) da bo delovala za n kock (ok glih mi
 	<tr>
 <br />
 	  <td class="code">
-
 <br />
 using System;
-
 <br />
-using System.Drawing;
-
+using System&#46;Drawing;
 <br />
-using System.Collections;
-
+using System&#46;Collections;
 <br />
-using System.ComponentModel;
-
+using System&#46;ComponentModel;
 <br />
-using System.Windows.Forms;
-
+using System&#46;Windows&#46;Forms;
 <br />
-using System.Data;
-
+using System&#46;Data;
 <br />
-
 
 <br />
 namespace Cllision
-
 <br />
 &#123;
-
 <br />
-&nbsp; &nbsp;/// &lt;summary&gt;
-
+	/// &lt;summary&gt;
 <br />
-&nbsp; &nbsp;/// Summary description for Form1.
-
+	/// Summary description for Form1&#46;
 <br />
-&nbsp; &nbsp;/// &lt;/summary&gt;
-
+	/// &lt;/summary&gt;
 <br />
-&nbsp; &nbsp;public class Form1 &#58; System.Windows.Forms.Form
-
+	public class Form1 &#58; System&#46;Windows&#46;Forms&#46;Form
 <br />
-&nbsp; &nbsp;&#123;
-
+	&#123;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;private System.Windows.Forms.PictureBox dve;
-
+		private System&#46;Windows&#46;Forms&#46;PictureBox dve;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;private System.Windows.Forms.PictureBox ena;
-
+		private System&#46;Windows&#46;Forms&#46;PictureBox ena;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;private System.Windows.Forms.Timer timer1;
-
+		private System&#46;Windows&#46;Forms&#46;Timer timer1;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;private System.ComponentModel.IContainer components;
-
+		private System&#46;ComponentModel&#46;IContainer components;
 <br />
-
 
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;public Form1&#40;&#41;
-
+		public Form1&#40;&#41;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&#123;
-
+		&#123;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;//
-
+			//
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;// Required for Windows Form Designer support
-
+			// Required for Windows Form Designer support
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;//
-
+			//
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;InitializeComponent&#40;&#41;;
-
+			InitializeComponent&#40;&#41;;
 <br />
 
-
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;//
-
+			//
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;// TODO&#58; Add any constructor code after InitializeComponent call
-
+			// TODO&#58; Add any constructor code after InitializeComponent call
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;//
-
+			//
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&#125;
-
+		&#125;
 <br />
-
 
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;/// &lt;summary&gt;
-
+		/// &lt;summary&gt;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;/// Clean up any resources being used.
-
+		/// Clean up any resources being used&#46;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;/// &lt;/summary&gt;
-
+		/// &lt;/summary&gt;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;protected override void Dispose&#40; bool disposing &#41;
-
+		protected override void Dispose&#40; bool disposing &#41;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&#123;
-
+		&#123;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;if&#40; disposing &#41;
-
+			if&#40; disposing &#41;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&#123;
-
+			&#123;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;if &#40;components != null&#41; 
-
+				if &#40;components != null&#41; 
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&#123;
-
+				&#123;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;components.Dispose&#40;&#41;;
-
+					components&#46;Dispose&#40;&#41;;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&#125;
-
+				&#125;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&#125;
-
+			&#125;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;base.Dispose&#40; disposing &#41;;
-
+			base&#46;Dispose&#40; disposing &#41;;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&#125;
-
+		&#125;
 <br />
-
 
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;#region Windows Form Designer generated code
-
+		#region Windows Form Designer generated code
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;/// &lt;summary&gt;
-
+		/// &lt;summary&gt;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;/// Required method for Designer support - do not modify
-
+		/// Required method for Designer support - do not modify
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;/// the contents of this method with the code editor.
-
+		/// the contents of this method with the code editor&#46;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;/// &lt;/summary&gt;
-
+		/// &lt;/summary&gt;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;private void InitializeComponent&#40;&#41;
-
+		private void InitializeComponent&#40;&#41;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&#123;
-
+		&#123;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;this.components = new System.ComponentModel.Container&#40;&#41;;
-
+			this&#46;components = new System&#46;ComponentModel&#46;Container&#40;&#41;;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;System.Resources.ResourceManager resources = new System.Resources.ResourceManager&#40;typeof&#40;Form1&#41;&#41;;
-
+			System&#46;Resources&#46;ResourceManager resources = new System&#46;Resources&#46;ResourceManager&#40;typeof&#40;Form1&#41;&#41;;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;this.dve = new System.Windows.Forms.PictureBox&#40;&#41;;
-
+			this&#46;dve = new System&#46;Windows&#46;Forms&#46;PictureBox&#40;&#41;;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;this.ena = new System.Windows.Forms.PictureBox&#40;&#41;;
-
+			this&#46;ena = new System&#46;Windows&#46;Forms&#46;PictureBox&#40;&#41;;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;this.timer1 = new System.Windows.Forms.Timer&#40;this.components&#41;;
-
+			this&#46;timer1 = new System&#46;Windows&#46;Forms&#46;Timer&#40;this&#46;components&#41;;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;this.SuspendLayout&#40;&#41;;
-
+			this&#46;SuspendLayout&#40;&#41;;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;// 
-
+			// 
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;// dve
-
+			// dve
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;// 
-
+			// 
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;this.dve.Image = &#40;&#40;System.Drawing.Bitmap&#41;&#40;resources.GetObject&#40;&quot;dve.Image&quot;&#41;&#41;&#41;;
-
+			this&#46;dve&#46;Image = &#40;&#40;System&#46;Drawing&#46;Bitmap&#41;&#40;resources&#46;GetObject&#40;&quot;dve&#46;Image&quot;&#41;&#41;&#41;;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;this.dve.Location = new System.Drawing.Point&#40;128, 16&#41;;
-
+			this&#46;dve&#46;Location = new System&#46;Drawing&#46;Point&#40;128, 16&#41;;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;this.dve.Name = &quot;dve&quot;;
-
+			this&#46;dve&#46;Name = &quot;dve&quot;;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;this.dve.Size = new System.Drawing.Size&#40;50, 50&#41;;
-
+			this&#46;dve&#46;Size = new System&#46;Drawing&#46;Size&#40;50, 50&#41;;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;this.dve.TabIndex = 0;
-
+			this&#46;dve&#46;TabIndex = 0;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;this.dve.TabStop = false;
-
+			this&#46;dve&#46;TabStop = false;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;// 
-
+			// 
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;// ena
-
+			// ena
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;// 
-
+			// 
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;this.ena.Image = &#40;&#40;System.Drawing.Bitmap&#41;&#40;resources.GetObject&#40;&quot;ena.Image&quot;&#41;&#41;&#41;;
-
+			this&#46;ena&#46;Image = &#40;&#40;System&#46;Drawing&#46;Bitmap&#41;&#40;resources&#46;GetObject&#40;&quot;ena&#46;Image&quot;&#41;&#41;&#41;;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;this.ena.Location = new System.Drawing.Point&#40;96, 88&#41;;
-
+			this&#46;ena&#46;Location = new System&#46;Drawing&#46;Point&#40;96, 88&#41;;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;this.ena.Name = &quot;ena&quot;;
-
+			this&#46;ena&#46;Name = &quot;ena&quot;;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;this.ena.Size = new System.Drawing.Size&#40;50, 50&#41;;
-
+			this&#46;ena&#46;Size = new System&#46;Drawing&#46;Size&#40;50, 50&#41;;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;this.ena.TabIndex = 1;
-
+			this&#46;ena&#46;TabIndex = 1;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;this.ena.TabStop = false;
-
+			this&#46;ena&#46;TabStop = false;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;// 
-
+			// 
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;// timer1
-
+			// timer1
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;// 
-
+			// 
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;this.timer1.Enabled = true;
-
+			this&#46;timer1&#46;Enabled = true;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;this.timer1.Interval = 10;
-
+			this&#46;timer1&#46;Interval = 10;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;this.timer1.Tick += new System.EventHandler&#40;this.timer1_Tick&#41;;
-
+			this&#46;timer1&#46;Tick += new System&#46;EventHandler&#40;this&#46;timer1_Tick&#41;;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;// 
-
+			// 
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;// Form1
-
+			// Form1
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;// 
-
+			// 
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;this.AutoScaleBaseSize = new System.Drawing.Size&#40;5, 13&#41;;
-
+			this&#46;AutoScaleBaseSize = new System&#46;Drawing&#46;Size&#40;5, 13&#41;;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;this.ClientSize = new System.Drawing.Size&#40;248, 273&#41;;
-
+			this&#46;ClientSize = new System&#46;Drawing&#46;Size&#40;248, 273&#41;;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;this.Controls.AddRange&#40;new System.Windows.Forms.Control&#91;&#93; &#123;
-
+			this&#46;Controls&#46;AddRange&#40;new System&#46;Windows&#46;Forms&#46;Control&#91;&#93; &#123;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; this.ena,
-
+																		  this&#46;ena,
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; this.dve&#125;&#41;;
-
+																		  this&#46;dve&#125;&#41;;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;this.Name = &quot;Form1&quot;;
-
+			this&#46;Name = &quot;Form1&quot;;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;this.Text = &quot;Form1&quot;;
-
+			this&#46;Text = &quot;Form1&quot;;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;this.ResumeLayout&#40;false&#41;;
-
+			this&#46;ResumeLayout&#40;false&#41;;
 <br />
-
 
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&#125;
-
+		&#125;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;#endregion
-
+		#endregion
 <br />
-
 
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;/// &lt;summary&gt;
-
+		/// &lt;summary&gt;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;/// The main entry point for the application.
-
+		/// The main entry point for the application&#46;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;/// &lt;/summary&gt;
-
+		/// &lt;/summary&gt;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&#91;STAThread&#93;
-
+		&#91;STAThread&#93;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;static void Main&#40;&#41; 
-
+		static void Main&#40;&#41; 
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&#123;
-
+		&#123;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;Application.Run&#40;new Form1&#40;&#41;&#41;;
-
+			Application&#46;Run&#40;new Form1&#40;&#41;&#41;;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&#125;
-
+		&#125;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;
-
+		
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;int d1x = 1;
-
+		int d1x = 1;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;int d1y = 1;
-
+		int d1y = 1;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;int d2x = 1;
-
+		int d2x = 1;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;int d2y = 1;
-
+		int d2y = 1;
 <br />
-&nbsp; &nbsp;
-
+	
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;private void timer1_Tick&#40;object sender, System.EventArgs e&#41;
-
+		private void timer1_Tick&#40;object sender, System&#46;EventArgs e&#41;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&#123;
-
+		&#123;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;ena.Left += d1x;
-
+			ena&#46;Left += d1x;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;dve.Left += d2x;
-
+			dve&#46;Left += d2x;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;ena.Top += d1y;
-
+			ena&#46;Top += d1y;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;dve.Top += d2y;
-
+			dve&#46;Top += d2y;
 <br />
-
 
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;if &#40; ena.Left == 0 || ena.Left + ena.Width == Form1.ActiveForm.ClientSize.Width &#41; d1x = - d1x;
-
+			if &#40; ena&#46;Left == 0 || ena&#46;Left + ena&#46;Width == Form1&#46;ActiveForm&#46;ClientSize&#46;Width &#41; d1x = - d1x;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;if &#40; dve.Left == 0 || dve.Left + dve.Width == Form1.ActiveForm.ClientSize.Width &#41; d2x = - d2x;
-
+			if &#40; dve&#46;Left == 0 || dve&#46;Left + dve&#46;Width == Form1&#46;ActiveForm&#46;ClientSize&#46;Width &#41; d2x = - d2x;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;if &#40; ena.Top&nbsp; == 0 || ena.Top&nbsp; + ena.Height == Form1.ActiveForm.ClientSize.Height &#41; d1y = - d1y;
-
+			if &#40; ena&#46;Top  == 0 || ena&#46;Top  + ena&#46;Height == Form1&#46;ActiveForm&#46;ClientSize&#46;Height &#41; d1y = - d1y;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;if &#40; dve.Top&nbsp; == 0 || dve.Top&nbsp; + dve.Height == Form1.ActiveForm.ClientSize.Height &#41; d2y = - d2y;
-
+			if &#40; dve&#46;Top  == 0 || dve&#46;Top  + dve&#46;Height == Form1&#46;ActiveForm&#46;ClientSize&#46;Height &#41; d2y = - d2y;
 <br />
-
 
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;if &#40;ena.Top == &#40; dve.Top + dve.Height &#41; &#41; 
-
+			if &#40;ena&#46;Top == &#40; dve&#46;Top + dve&#46;Height &#41; &#41; 
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&#123; 
-
+			&#123; 
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;if &#40; &#40; ena.Left &lt;= dve.Left &#41; &amp;&amp; &#40; &#40; ena.Left + ena.Width &#41; &gt;= dve.Left &#41; &#41; 
-
+				if &#40; &#40; ena&#46;Left &lt;= dve&#46;Left &#41; &amp;&amp; &#40; &#40; ena&#46;Left + ena&#46;Width &#41; &gt;= dve&#46;Left &#41; &#41; 
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&#123;
-
+				&#123;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;d1y = - d1y;
-
+					d1y = - d1y;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;d2y = - d2y;
-
+					d2y = - d2y;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&#125;
-
+				&#125;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&#125;
-
+			&#125;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;else if &#40; dve.Top == &#40; ena.Top + ena.Height &#41; &#41; 
-
+			else if &#40; dve&#46;Top == &#40; ena&#46;Top + ena&#46;Height &#41; &#41; 
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&#123;
-
+			&#123;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;if &#40; &#40; dve.Left &lt;= ena.Left &#41; &amp;&amp; &#40; &#40; dve.Left + dve.Width &#41; &gt;= ena.Left &#41; &#41; 
-
+				if &#40; &#40; dve&#46;Left &lt;= ena&#46;Left &#41; &amp;&amp; &#40; &#40; dve&#46;Left + dve&#46;Width &#41; &gt;= ena&#46;Left &#41; &#41; 
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&#123;
-
+				&#123;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;d1y = - d1y;
-
+					d1y = - d1y;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;d2y = - d2y;
-
+					d2y = - d2y;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&#125;
-
+				&#125;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&#125;
-
+			&#125;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;else if &#40; ena.Left == &#40; dve.Left + dve.Width &#41; &#41; 
-
+			else if &#40; ena&#46;Left == &#40; dve&#46;Left + dve&#46;Width &#41; &#41; 
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&#123;
-
+			&#123;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;if &#40; &#40; ena.Top &lt;= dve.Top &#41; &amp;&amp; &#40; &#40; ena.Top + ena.Height &#41; &gt;= dve.Top &#41; &#41; 
-
+				if &#40; &#40; ena&#46;Top &lt;= dve&#46;Top &#41; &amp;&amp; &#40; &#40; ena&#46;Top + ena&#46;Height &#41; &gt;= dve&#46;Top &#41; &#41; 
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&#123;
-
+				&#123;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;d1x = - d1x;
-
+					d1x = - d1x;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;d2x = - d2x;
-
+					d2x = - d2x;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&#125;
-
+				&#125;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&#125;
-
+			&#125;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;else if &#40; dve.Left == &#40; ena.Left + ena.Width &#41; &#41; 
-
+			else if &#40; dve&#46;Left == &#40; ena&#46;Left + ena&#46;Width &#41; &#41; 
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&#123;
-
+			&#123;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;if &#40; &#40; dve.Top &lt;= ena.Top &#41; &amp;&amp; &#40; &#40; dve.Top + dve.Height &#41; &gt;= ena.Top &#41; &#41; 
-
+				if &#40; &#40; dve&#46;Top &lt;= ena&#46;Top &#41; &amp;&amp; &#40; &#40; dve&#46;Top + dve&#46;Height &#41; &gt;= ena&#46;Top &#41; &#41; 
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&#123;
-
+				&#123;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;d1x = - d1x;
-
+					d1x = - d1x;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;d2x = - d2x;
-
+					d2x = - d2x;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&#125;
-
+				&#125;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&#125;
-
+			&#125;
 <br />
-
 
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;
-
+		
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&#125;
-
+		&#125;
 <br />
-&nbsp; &nbsp;&#125;
-
+	&#125;
 <br />
 &#125;
-
 <br />
 </td>
 <br />
@@ -839,7 +677,7 @@ namespace Cllision
 
 
 <br />
-PS: Kak članek na to temo bi bil dobrodošel od vas mojstrov <img src="images/smiles/icon_rolleyes.gif" alt="icon_rolleyes.gif" border="0" /><br />_________________<br /><a  target="_blank" class="postlink">CWIZO.SloGameDev.net</a>
+PS: Kak članek na to temo bi bil dobrodošel od vas mojstrov <img src="images/smiles/icon_rolleyes.gif" alt=":roll:" border="0" /><br />_________________<br /><a  target="_blank" class="postlink">Jan Hančič</a>
 
 <br />
 ------
@@ -865,7 +703,7 @@ Kaj reče podedovan razred v C#u svojemu staršu?
 	</tr>
 	
 	<tr>
-		<td width="150" align="left" valign="top" class="row2"><span class="name"><a name="2581"></a><b>Kavan</b></span><br /><span class="postdetails">inštruktor<br /><img src="images/ranks/sgd-4.gif" alt="inštruktor" title="inštruktor" border="0" /><br /><br /><br />Pridružen: 10. jan 2003 ob 12:57<br />objav: 363<br />Kraj: Los Angeles</span><br /></td>
+		<td width="150" align="left" valign="top" class="row2"><span class="name"><a name="2581"></a><b>Kavan</b></span><br /><span class="postdetails">inštruktor<br /><img src="images/ranks/sgd-4.gif" alt="inštruktor" title="inštruktor" border="0" /><br /><br /><br />Pridružen: 10. jan 2003 ob 12:57<br />objav: 314<br />Kraj: Los Angeles</span><br /></td>
 		<td class="row2" width="100%" height="28" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
 			<tr>
 				<td colspan="2" width="100%">
@@ -888,7 +726,7 @@ Kaj reče podedovan razred v C#u svojemu staršu?
 				<td colspan="2"><span class="postbody">Kar sem na hitro pogledal se mi zdi da je problem ker ti zahtevaš točno enakost na robu. Ker pa se obe kocki premikata s hitrostjo 1 bosta npr. vedno na lihi oddaljenosti in ne bosta nikoli robova točno na istem mestu. Tako da tiste enačaje spremeni v ustrezne neenačaje, pa bi v osnovi že lahko bilo to kar si hotel.<br />_________________<br />
 
 <br />
-<span style="font-size: 9px; line-height: normal"><a  target="_blank" class="postlink">www.3dlevel.com</a></span></span><span class="gensmall"></span></td>
+<span style="font-size: 75%; line-height: normal"><a  target="_blank" class="postlink">http&#58;//www&#46;3dlevel&#46;com</a></span></span><span class="gensmall"></span></td>
 			</tr>
 		</table></td>
 	</tr>
@@ -905,7 +743,7 @@ Kaj reče podedovan razred v C#u svojemu staršu?
 	</tr>
 	
 	<tr>
-		<td width="150" align="left" valign="top" class="row1"><span class="name"><a name="2582"></a><b>CWIZO</b></span><br /><span class="postdetails">SGD Admin<br /><img src="images/ranks/sgd-admin.gif" alt="SGD Admin" title="SGD Admin" border="0" /><br /><img src="images/avatars/c2f9c6313f016e6cd131f.gif" alt="" border="0" /><br /><br />Pridružen: 05. maj 2003 ob 20:36<br />objav: 955<br />Kraj: WriteLine(CWIZO.Location);</span><br /></td>
+		<td width="150" align="left" valign="top" class="row1"><span class="name"><a name="2582"></a><b>CWIZO</b></span><br /><span class="postdetails">SGD Moderator<br /><img src="images/ranks/sgd-mod.gif" alt="SGD Moderator" title="SGD Moderator" border="0" /><br /><img src="images/avatars/c2f9c6313f016e6cd131f.gif" alt="" border="0" /><br /><br />Pridružen: 05. maj 2003 ob 20:36<br />objav: 914<br />Kraj: WriteLine(CWIZO.Location);</span><br /></td>
 		<td class="row1" width="100%" height="28" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
 			<tr>
 				<td colspan="2" width="100%">
@@ -943,7 +781,7 @@ Kaj reče podedovan razred v C#u svojemu staršu?
 <br />
 	<tr>
 <br />
-	  <td class="code">if &#40;ena.Top == &#40; dve.Top + dve.Height &#41; &#41; </td>
+	  <td class="code">if &#40;ena&#46;Top == &#40; dve&#46;Top + dve&#46;Height &#41; &#41; </td>
 <br />
 	</tr>
 <br />
@@ -961,7 +799,7 @@ No sej to me zanima recmo če narediš da se kocke ne premikajo za en piksel pol
 
 
 <br />
-Sej v bisvu se odbija, recmo če kocke postavim v pravo lego in omogočim premikanje samo po x osi recimo se lepo odbija ... (probej da boš videl kako sploh deluje).<br />_________________<br /><a  target="_blank" class="postlink">CWIZO.SloGameDev.net</a>
+Sej v bisvu se odbija, recmo če kocke postavim v pravo lego in omogočim premikanje samo po x osi recimo se lepo odbija ... (probej da boš videl kako sploh deluje).<br />_________________<br /><a  target="_blank" class="postlink">Jan Hančič</a>
 
 <br />
 ------
@@ -987,7 +825,7 @@ Kaj reče podedovan razred v C#u svojemu staršu?
 	</tr>
 	
 	<tr>
-		<td width="150" align="left" valign="top" class="row2"><span class="name"><a name="2583"></a><b>Kavan</b></span><br /><span class="postdetails">inštruktor<br /><img src="images/ranks/sgd-4.gif" alt="inštruktor" title="inštruktor" border="0" /><br /><br /><br />Pridružen: 10. jan 2003 ob 12:57<br />objav: 363<br />Kraj: Los Angeles</span><br /></td>
+		<td width="150" align="left" valign="top" class="row2"><span class="name"><a name="2583"></a><b>Kavan</b></span><br /><span class="postdetails">inštruktor<br /><img src="images/ranks/sgd-4.gif" alt="inštruktor" title="inštruktor" border="0" /><br /><br /><br />Pridružen: 10. jan 2003 ob 12:57<br />objav: 314<br />Kraj: Los Angeles</span><br /></td>
 		<td class="row2" width="100%" height="28" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
 			<tr>
 				<td colspan="2" width="100%">
@@ -1010,7 +848,7 @@ Kaj reče podedovan razred v C#u svojemu staršu?
 				<td colspan="2"><span class="postbody">To se ponavadi tako reši da pogledaš kako je bilo prej in kako potem. Če je stvar prešla mejo (t.j. se je spremenil predznak ko gledaš razliko) je prišlo do trka.<br />_________________<br />
 
 <br />
-<span style="font-size: 9px; line-height: normal"><a  target="_blank" class="postlink">www.3dlevel.com</a></span></span><span class="gensmall"></span></td>
+<span style="font-size: 75%; line-height: normal"><a  target="_blank" class="postlink">http&#58;//www&#46;3dlevel&#46;com</a></span></span><span class="gensmall"></span></td>
 			</tr>
 		</table></td>
 	</tr>
@@ -1027,7 +865,7 @@ Kaj reče podedovan razred v C#u svojemu staršu?
 	</tr>
 	
 	<tr>
-		<td width="150" align="left" valign="top" class="row1"><span class="name"><a name="2584"></a><b>CWIZO</b></span><br /><span class="postdetails">SGD Admin<br /><img src="images/ranks/sgd-admin.gif" alt="SGD Admin" title="SGD Admin" border="0" /><br /><img src="images/avatars/c2f9c6313f016e6cd131f.gif" alt="" border="0" /><br /><br />Pridružen: 05. maj 2003 ob 20:36<br />objav: 955<br />Kraj: WriteLine(CWIZO.Location);</span><br /></td>
+		<td width="150" align="left" valign="top" class="row1"><span class="name"><a name="2584"></a><b>CWIZO</b></span><br /><span class="postdetails">SGD Moderator<br /><img src="images/ranks/sgd-mod.gif" alt="SGD Moderator" title="SGD Moderator" border="0" /><br /><img src="images/avatars/c2f9c6313f016e6cd131f.gif" alt="" border="0" /><br /><br />Pridružen: 05. maj 2003 ob 20:36<br />objav: 914<br />Kraj: WriteLine(CWIZO.Location);</span><br /></td>
 		<td class="row1" width="100%" height="28" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
 			<tr>
 				<td colspan="2" width="100%">
@@ -1053,13 +891,13 @@ Kaj reče podedovan razred v C#u svojemu staršu?
 
 
 <br />
-Huh complicated <img src="images/smiles/icon_rolleyes.gif" alt="icon_rolleyes.gif" border="0" /> 
+Huh complicated <img src="images/smiles/icon_rolleyes.gif" alt=":roll:" border="0" /> 
 
 <br />
 
 
 <br />
-Kavan mogoče ti veš za kak "osnovni" tut za collision? Na gamdev.net majo sam take za 3d ...<br />_________________<br /><a  target="_blank" class="postlink">CWIZO.SloGameDev.net</a>
+Kavan mogoče ti veš za kak "osnovni" tut za collision? Na gamdev.net majo sam take za 3d ...<br />_________________<br /><a  target="_blank" class="postlink">Jan Hančič</a>
 
 <br />
 ------
@@ -1085,7 +923,7 @@ Kaj reče podedovan razred v C#u svojemu staršu?
 	</tr>
 	
 	<tr>
-		<td width="150" align="left" valign="top" class="row2"><span class="name"><a name="2585"></a><b>Kavan</b></span><br /><span class="postdetails">inštruktor<br /><img src="images/ranks/sgd-4.gif" alt="inštruktor" title="inštruktor" border="0" /><br /><br /><br />Pridružen: 10. jan 2003 ob 12:57<br />objav: 363<br />Kraj: Los Angeles</span><br /></td>
+		<td width="150" align="left" valign="top" class="row2"><span class="name"><a name="2585"></a><b>Kavan</b></span><br /><span class="postdetails">inštruktor<br /><img src="images/ranks/sgd-4.gif" alt="inštruktor" title="inštruktor" border="0" /><br /><br /><br />Pridružen: 10. jan 2003 ob 12:57<br />objav: 314<br />Kraj: Los Angeles</span><br /></td>
 		<td class="row2" width="100%" height="28" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
 			<tr>
 				<td colspan="2" width="100%">
@@ -1105,7 +943,7 @@ Kaj reče podedovan razred v C#u svojemu staršu?
 				<td colspan="2"><hr /></td>
 			</tr>
 			<tr>
-				<td colspan="2"><span class="postbody">Mogoče tole: <a  target="_blank" class="postlink">http://www.gamasutra.com/features/20000330/bobic_01.htm</a>
+				<td colspan="2"><span class="postbody">Mogoče tole: <a  target="_blank" class="postlink">http&#58;//www&#46;gamasutra&#46;com/features/20000330/bobic_01&#46;htm</a>
 
 <br />
 
@@ -1114,7 +952,7 @@ Kaj reče podedovan razred v C#u svojemu staršu?
 Predvsem prvi trije linki na začetku članka.<br />_________________<br />
 
 <br />
-<span style="font-size: 9px; line-height: normal"><a  target="_blank" class="postlink">www.3dlevel.com</a></span></span><span class="gensmall"></span></td>
+<span style="font-size: 75%; line-height: normal"><a  target="_blank" class="postlink">http&#58;//www&#46;3dlevel&#46;com</a></span></span><span class="gensmall"></span></td>
 			</tr>
 		</table></td>
 	</tr>
@@ -1131,7 +969,7 @@ Predvsem prvi trije linki na začetku članka.<br />_________________<br />
 	</tr>
 	
 	<tr>
-		<td width="150" align="left" valign="top" class="row1"><span class="name"><a name="2588"></a><b>CWIZO</b></span><br /><span class="postdetails">SGD Admin<br /><img src="images/ranks/sgd-admin.gif" alt="SGD Admin" title="SGD Admin" border="0" /><br /><img src="images/avatars/c2f9c6313f016e6cd131f.gif" alt="" border="0" /><br /><br />Pridružen: 05. maj 2003 ob 20:36<br />objav: 955<br />Kraj: WriteLine(CWIZO.Location);</span><br /></td>
+		<td width="150" align="left" valign="top" class="row1"><span class="name"><a name="2588"></a><b>CWIZO</b></span><br /><span class="postdetails">SGD Moderator<br /><img src="images/ranks/sgd-mod.gif" alt="SGD Moderator" title="SGD Moderator" border="0" /><br /><img src="images/avatars/c2f9c6313f016e6cd131f.gif" alt="" border="0" /><br /><br />Pridružen: 05. maj 2003 ob 20:36<br />objav: 914<br />Kraj: WriteLine(CWIZO.Location);</span><br /></td>
 		<td class="row1" width="100%" height="28" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
 			<tr>
 				<td colspan="2" width="100%">
@@ -1151,7 +989,7 @@ Predvsem prvi trije linki na začetku članka.<br />_________________<br />
 				<td colspan="2"><hr /></td>
 			</tr>
 			<tr>
-				<td colspan="2"><span class="postbody">Bom prebral tole jest pa pol naprej spraševal <img src="images/smiles/icon_cool.gif" alt="icon_cool.gif" border="0" /><br />_________________<br /><a  target="_blank" class="postlink">CWIZO.SloGameDev.net</a>
+				<td colspan="2"><span class="postbody">Bom prebral tole jest pa pol naprej spraševal <img src="images/smiles/icon_cool.gif" alt="8)" border="0" /><br />_________________<br /><a  target="_blank" class="postlink">Jan Hančič</a>
 
 <br />
 ------
@@ -1185,7 +1023,7 @@ Kaj reče podedovan razred v C#u svojemu staršu?
   <tr>
 	<td align="left" valign="middle" nowrap="nowrap">&nbsp;</td>
 	<td align="left" valign="middle" width="100%"><span class="nav">&nbsp;&nbsp;&nbsp;<a href="index.html" class="nav">SloGameDev.net seznam forumov</a>
-	  -> <a href="forum-10.html" class="nav">Za Začetnike</a></span></td>
+	  -> <a href="forum-49.html" class="nav">Začetniki</a></span></td>
 	<td align="right" valign="top" nowrap="nowrap"><span class="gensmall">Časovni pas (GMT +2:00 uri) Slovenija, poletni čas</span><br /><span class="nav"></span>
 	  </td>
   </tr>
@@ -1201,7 +1039,7 @@ Kaj reče podedovan razred v C#u svojemu staršu?
   </tr>
 </table>
 
-<div align="center"><span class="copyright"><br />Arhiv stanja na dan 13. 2. 2006 &mdash; samo za branje.<br />
+<div align="center"><span class="copyright"><br />Arhiv &mdash; samo za branje.<br />
 <!--
 	We request you retain the full copyright notice below including the link to www.phpbb.com.
 	This not only gives respect to the large amount of time given freely by the developers

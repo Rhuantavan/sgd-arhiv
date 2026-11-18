@@ -276,13 +276,13 @@ input.liteoption {
   <tr>
 	<td align="left" valign="bottom" nowrap="nowrap">&nbsp;</td>
 	<td align="left" valign="middle" width="100%"><span class="nav">&nbsp;&nbsp;&nbsp;<a href="index.html" class="nav">SloGameDev.net seznam forumov</a>
-	  -> <a href="forum-17.html" class="nav">Matematika in Fizika</a></span></td>
+	  -> <a href="forum-52.html" class="nav">Izdelovanje iger</a></span></td>
   </tr>
 </table>
 
 <table class="forumline" width="100%" cellspacing="1" cellpadding="3" border="0">
 	<tr align="right">
-		<td class="catHead" colspan="2" height="28"><span class="nav"><a href="topic-26.html" class="nav">Prejšnja tema</a> :: <a href="topic-343.html" class="nav">Naslednja tema</a> &nbsp;</span></td>
+		<td class="catHead" colspan="2" height="28"><span class="nav"><a href="topic-84.html" class="nav">Prejšnja tema</a> :: <a href="topic-129.html" class="nav">Naslednja tema</a> &nbsp;</span></td>
 	</tr>
 	
 	<tr>
@@ -291,7 +291,7 @@ input.liteoption {
 	</tr>
 	
 	<tr>
-		<td width="150" align="left" valign="top" class="row1"><span class="name"><a name="130"></a><b>Kavan</b></span><br /><span class="postdetails">inštruktor<br /><img src="images/ranks/sgd-4.gif" alt="inštruktor" title="inštruktor" border="0" /><br /><br /><br />Pridružen: 10. jan 2003 ob 12:57<br />objav: 363<br />Kraj: Los Angeles</span><br /></td>
+		<td width="150" align="left" valign="top" class="row1"><span class="name"><a name="130"></a><b>Kavan</b></span><br /><span class="postdetails">inštruktor<br /><img src="images/ranks/sgd-4.gif" alt="inštruktor" title="inštruktor" border="0" /><br /><br /><br />Pridružen: 10. jan 2003 ob 12:57<br />objav: 314<br />Kraj: Los Angeles</span><br /></td>
 		<td class="row1" width="100%" height="28" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
 			<tr>
 				<td colspan="2" width="100%">
@@ -356,166 +356,113 @@ Nism nič pisal preveč kako dela, za tiste ki poznate zadevo je stvar narejena 
 <br />
 	<tr>
 <br />
-	  <td class="code">&nbsp; &nbsp; Private Function GaussTriDiag&#40;ByVal A&#40;,&#41; As Single, ByVal b&#40;&#41; As Single&#41; As Single&#40;&#41;
-
+	  <td class="code">    Private Function GaussTriDiag&#40;ByVal A&#40;,&#41; As Single, ByVal b&#40;&#41; As Single&#41; As Single&#40;&#41;
 <br />
-&nbsp; &nbsp; &nbsp; &nbsp; 'VB-zation from my matlab code
-
+        'VB-zation from my matlab code
 <br />
-&nbsp; &nbsp; &nbsp; &nbsp; Dim last As Integer = 0
-
+        Dim last As Integer = 0
 <br />
-&nbsp; &nbsp; &nbsp; &nbsp; Dim l As Integer
-
+        Dim l As Integer
 <br />
-&nbsp; &nbsp; &nbsp; &nbsp; Dim n As Integer = A.GetLength&#40;0&#41;
-
+        Dim n As Integer = A&#46;GetLength&#40;0&#41;
 <br />
-&nbsp; &nbsp; &nbsp; &nbsp; Dim d&#40;n - 2&#41; As Integer 'lokacije pivotiranja
-
+        Dim d&#40;n - 2&#41; As Integer 'lokacije pivotiranja
 <br />
-&nbsp; &nbsp; &nbsp; &nbsp; Dim i, j As Integer
-
+        Dim i, j As Integer
 <br />
-&nbsp; &nbsp; &nbsp; &nbsp; Dim x&#40;n - 1&#41; As Single 'rezultat
-
+        Dim x&#40;n - 1&#41; As Single 'rezultat
 <br />
-&nbsp; &nbsp; &nbsp; &nbsp; Dim tmp As Single
-
+        Dim tmp As Single
 <br />
 
-
 <br />
-&nbsp; &nbsp; &nbsp; &nbsp; For i = 0 To n - 2
-
+        For i = 0 To n - 2
 <br />
-&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; l = 1 'ni pivotiranja
-
+            l = 1 'ni pivotiranja
 <br />
-&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; If Abs&#40;A&#40;i + 1, i&#41;&#41; &gt; Abs&#40;A&#40;i, i&#41;&#41; Then
-
+            If Abs&#40;A&#40;i + 1, i&#41;&#41; &gt; Abs&#40;A&#40;i, i&#41;&#41; Then
 <br />
-&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; l = 2 'pivotiramo
-
+                l = 2 'pivotiramo
 <br />
-&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; If i + l &gt;= n - 1 Then
-
+                If i + l &gt;= n - 1 Then
 <br />
-&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; l = 1
-
+                    l = 1
 <br />
-&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; End If
-
+                End If
 <br />
-&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; d&#40;i&#41; = l
-
+                d&#40;i&#41; = l
 <br />
-&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; For j = 0 To n - 1
-
+                For j = 0 To n - 1
 <br />
-&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; tmp = A&#40;i, j&#41;
-
+                    tmp = A&#40;i, j&#41;
 <br />
-&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; A&#40;i, j&#41; = A&#40;i + 1, j&#41;
-
+                    A&#40;i, j&#41; = A&#40;i + 1, j&#41;
 <br />
-&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; A&#40;i + 1, j&#41; = tmp
-
+                    A&#40;i + 1, j&#41; = tmp
 <br />
-&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Next
-
+                Next
 <br />
-&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; tmp = b&#40;i&#41;
-
+                tmp = b&#40;i&#41;
 <br />
-&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; b&#40;i&#41; = b&#40;i + 1&#41;
-
+                b&#40;i&#41; = b&#40;i + 1&#41;
 <br />
-&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; b&#40;i + 1&#41; = tmp
-
+                b&#40;i + 1&#41; = tmp
 <br />
-&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; End If
-
+            End If
 <br />
-&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; A&#40;i + 1, i&#41; /= A&#40;i, i&#41;
-
+            A&#40;i + 1, i&#41; /= A&#40;i, i&#41;
 <br />
-&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; A&#40;i + 1, i + 1&#41; = A&#40;i + 1, i + 1&#41; - A&#40;i + 1, i&#41; * A&#40;i, i + 1&#41;
-
+            A&#40;i + 1, i + 1&#41; = A&#40;i + 1, i + 1&#41; - A&#40;i + 1, i&#41; * A&#40;i, i + 1&#41;
 <br />
-&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; If l = 2 Then A&#40;i + 1, i + 2&#41; = A&#40;i + 1, i + 2&#41; - A&#40;i + 1, i&#41; * A&#40;i, i + 2&#41;
-
+            If l = 2 Then A&#40;i + 1, i + 2&#41; = A&#40;i + 1, i + 2&#41; - A&#40;i + 1, i&#41; * A&#40;i, i + 2&#41;
 <br />
 
-
 <br />
-&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; If i &gt; 0 AndAlso l = 1 Then
-
+            If i &gt; 0 AndAlso l = 1 Then
 <br />
-&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; x&#40;i&#41; = b&#40;i&#41;
-
+                x&#40;i&#41; = b&#40;i&#41;
 <br />
-&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; For j = last To i - 1
-
+                For j = last To i - 1
 <br />
-&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; x&#40;i&#41; -= A&#40;i, j&#41; * x&#40;j&#41;
-
+                    x&#40;i&#41; -= A&#40;i, j&#41; * x&#40;j&#41;
 <br />
-&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Next
-
+                Next
 <br />
-&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; last = i
-
+                last = i
 <br />
-&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Else
-
+            Else
 <br />
-&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; x&#40;i&#41; = b&#40;i&#41;
-
+                x&#40;i&#41; = b&#40;i&#41;
 <br />
-&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; End If
-
+            End If
 <br />
-&nbsp; &nbsp; &nbsp; &nbsp; Next
-
+        Next
 <br />
-&nbsp; &nbsp; &nbsp; &nbsp; x&#40;n - 1&#41; = b&#40;n - 1&#41;
-
+        x&#40;n - 1&#41; = b&#40;n - 1&#41;
 <br />
-&nbsp; &nbsp; &nbsp; &nbsp; For j = last To n - 2
-
+        For j = last To n - 2
 <br />
-&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; x&#40;n - 1&#41; -= A&#40;n - 1, j&#41; * x&#40;j&#41;
-
+            x&#40;n - 1&#41; -= A&#40;n - 1, j&#41; * x&#40;j&#41;
 <br />
-&nbsp; &nbsp; &nbsp; &nbsp; Next
-
+        Next
 <br />
-&nbsp; &nbsp; &nbsp; &nbsp; x&#40;n - 1&#41; /= A&#40;n - 1, n - 1&#41;
-
+        x&#40;n - 1&#41; /= A&#40;n - 1, n - 1&#41;
 <br />
-&nbsp; &nbsp; &nbsp; &nbsp; For i = n - 2 To 0 Step -1
-
+        For i = n - 2 To 0 Step -1
 <br />
-&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; For j = i + 1 To i + d&#40;i&#41;
-
+            For j = i + 1 To i + d&#40;i&#41;
 <br />
-&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; x&#40;i&#41; -= A&#40;i, j&#41; * x&#40;j&#41;
-
+                x&#40;i&#41; -= A&#40;i, j&#41; * x&#40;j&#41;
 <br />
-&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Next
-
+            Next
 <br />
-&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; x&#40;i&#41; /= A&#40;i, i&#41;
-
+            x&#40;i&#41; /= A&#40;i, i&#41;
 <br />
-&nbsp; &nbsp; &nbsp; &nbsp; Next
-
+        Next
 <br />
-&nbsp; &nbsp; &nbsp; &nbsp; Return x
-
+        Return x
 <br />
-&nbsp; &nbsp; End Function</td>
+    End Function</td>
 <br />
 	</tr>
 <br />
@@ -530,7 +477,7 @@ Nism nič pisal preveč kako dela, za tiste ki poznate zadevo je stvar narejena 
 Za zdaj naj bo stvar tukaj, potem pa ko bo section koda narjen se pa lahko tja da.<br />_________________<br />
 
 <br />
-<span style="font-size: 9px; line-height: normal"><a  target="_blank" class="postlink">www.3dlevel.com</a></span></span><span class="gensmall"></span></td>
+<span style="font-size: 75%; line-height: normal"><a  target="_blank" class="postlink">http&#58;//www&#46;3dlevel&#46;com</a></span></span><span class="gensmall"></span></td>
 			</tr>
 		</table></td>
 	</tr>
@@ -547,7 +494,7 @@ Za zdaj naj bo stvar tukaj, potem pa ko bo section koda narjen se pa lahko tja d
 	</tr>
 	
 	<tr>
-		<td width="150" align="left" valign="top" class="row2"><span class="name"><a name="378"></a><b>P_Nut</b></span><br /><span class="postdetails">poizvedovalec<br /><img src="images/ranks/sgd-1.gif" alt="poizvedovalec" title="poizvedovalec" border="0" /><br /><img src="images/avatars/d9485b7e3e749493d8283.jpg" alt="" border="0" /><br /><br />Pridružen: 11. jan 2003 ob 21:16<br />objav: 62<br />Kraj: Verdun 18</span><br /></td>
+		<td width="150" align="left" valign="top" class="row2"><span class="name"><a name="378"></a><b>P_Nut</b></span><br /><span class="postdetails">poizvedovalec<br /><img src="images/ranks/sgd-1.gif" alt="poizvedovalec" title="poizvedovalec" border="0" /><br /><img src="images/avatars/d9485b7e3e749493d8283.jpg" alt="" border="0" /><br /><br />Pridružen: 11. jan 2003 ob 21:16<br />objav: 61<br />Kraj: Verdun 18</span><br /></td>
 		<td class="row2" width="100%" height="28" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
 			<tr>
 				<td colspan="2" width="100%">
@@ -567,7 +514,7 @@ Za zdaj naj bo stvar tukaj, potem pa ko bo section koda narjen se pa lahko tja d
 				<td colspan="2"><hr /></td>
 			</tr>
 			<tr>
-				<td colspan="2"><span class="postbody">ja kot da kdo kaj ve z kaj se gre.  <img src="images/smiles/icon_biggrin.gif" alt="icon_biggrin.gif" border="0" /><br />_________________<br />Potreben je zelo neobičajen um, da se loti analize očitnega.</span><span class="gensmall"></span></td>
+				<td colspan="2"><span class="postbody">ja kot da kdo kaj ve z kaj se gre.  <img src="images/smiles/icon_biggrin.gif" alt=":D" border="0" /><br />_________________<br />Potreben je zelo neobičajen um, da se loti analize očitnega.</span><span class="gensmall"></span></td>
 			</tr>
 		</table></td>
 	</tr>
@@ -584,7 +531,7 @@ Za zdaj naj bo stvar tukaj, potem pa ko bo section koda narjen se pa lahko tja d
 	</tr>
 	
 	<tr>
-		<td width="150" align="left" valign="top" class="row1"><span class="name"><a name="379"></a><b>Trayrd</b></span><br /><span class="postdetails">SGD Moderator<br /><img src="images/ranks/sgd-mod.gif" alt="SGD Moderator" title="SGD Moderator" border="0" /><br /><img src="images/avatars/d5fa0d6c4122a73233818.gif" alt="" border="0" /><br /><br />Pridružen: 10. jan 2003 ob 22:14<br />objav: 95<br />Kraj: Polna luna</span><br /></td>
+		<td width="150" align="left" valign="top" class="row1"><span class="name"><a name="379"></a><b>impulse9</b></span><br /><span class="postdetails">SGD Moderator<br /><img src="images/ranks/sgd-mod.gif" alt="SGD Moderator" title="SGD Moderator" border="0" /><br /><br /><br />Pridružen: 10. jan 2003 ob 22:14<br />objav: 397<br /></span><br /></td>
 		<td class="row1" width="100%" height="28" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
 			<tr>
 				<td colspan="2" width="100%">
@@ -633,7 +580,7 @@ Lol, same here :)).</span><span class="gensmall"></span></td>
 		<td class="row1" width="150" align="left" valign="middle"><span class="nav"><a href="#top" class="nav">Nazaj na vrh</a></span></td>
 		<td class="row1" width="100%" height="28" valign="bottom" nowrap="nowrap"><table cellspacing="0" cellpadding="0" border="0" height="18" width="18">
 			<tr>
-				<td valign="middle" nowrap="nowrap"><a href="profile-17.html"><img src="templates/SGD2/images/lang_slovenian/icon_profile.gif" alt="Poglej uporabnikov profil" title="Poglej uporabnikov profil" border="0" /></a> <a  target="_userwww"><img src="templates/SGD2/images/lang_slovenian/icon_www.gif" alt="Obišči avtorjevo spletno stran" title="Obišči avtorjevo spletno stran" border="0" /></a></td>
+				<td valign="middle" nowrap="nowrap"><a href="profile-17.html"><img src="templates/SGD2/images/lang_slovenian/icon_profile.gif" alt="Poglej uporabnikov profil" title="Poglej uporabnikov profil" border="0" /></a> </td>
 			</tr>
 		</table></td>
 	</tr>
@@ -642,7 +589,7 @@ Lol, same here :)).</span><span class="gensmall"></span></td>
 	</tr>
 	
 	<tr>
-		<td width="150" align="left" valign="top" class="row2"><span class="name"><a name="382"></a><b>Kavan</b></span><br /><span class="postdetails">inštruktor<br /><img src="images/ranks/sgd-4.gif" alt="inštruktor" title="inštruktor" border="0" /><br /><br /><br />Pridružen: 10. jan 2003 ob 12:57<br />objav: 363<br />Kraj: Los Angeles</span><br /></td>
+		<td width="150" align="left" valign="top" class="row2"><span class="name"><a name="382"></a><b>Kavan</b></span><br /><span class="postdetails">inštruktor<br /><img src="images/ranks/sgd-4.gif" alt="inštruktor" title="inštruktor" border="0" /><br /><br /><br />Pridružen: 10. jan 2003 ob 12:57<br />objav: 314<br />Kraj: Los Angeles</span><br /></td>
 		<td class="row2" width="100%" height="28" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
 			<tr>
 				<td colspan="2" width="100%">
@@ -695,7 +642,7 @@ Treba je ugotoviti kakšno vrednost morajo imeti x,y in z da bodo vse enačbe iz
 Aha, pa splača se omenit, da dobi zgornja funkcija predstavljen sistem v matrični obliki: Ax=b. Poznamo matriko A (koeficienti) in b (desne strani enačb), iščemo pa spremenljivke x(0) do x(n-1).<br />_________________<br />
 
 <br />
-<span style="font-size: 9px; line-height: normal"><a  target="_blank" class="postlink">www.3dlevel.com</a></span></span><span class="gensmall"></span></td>
+<span style="font-size: 75%; line-height: normal"><a  target="_blank" class="postlink">http&#58;//www&#46;3dlevel&#46;com</a></span></span><span class="gensmall"></span></td>
 			</tr>
 		</table></td>
 	</tr>
@@ -712,7 +659,7 @@ Aha, pa splača se omenit, da dobi zgornja funkcija predstavljen sistem v matri�
 	</tr>
 	
 	<tr>
-		<td width="150" align="left" valign="top" class="row1"><span class="name"><a name="434"></a><b>P_Nut</b></span><br /><span class="postdetails">poizvedovalec<br /><img src="images/ranks/sgd-1.gif" alt="poizvedovalec" title="poizvedovalec" border="0" /><br /><img src="images/avatars/d9485b7e3e749493d8283.jpg" alt="" border="0" /><br /><br />Pridružen: 11. jan 2003 ob 21:16<br />objav: 62<br />Kraj: Verdun 18</span><br /></td>
+		<td width="150" align="left" valign="top" class="row1"><span class="name"><a name="434"></a><b>P_Nut</b></span><br /><span class="postdetails">poizvedovalec<br /><img src="images/ranks/sgd-1.gif" alt="poizvedovalec" title="poizvedovalec" border="0" /><br /><img src="images/avatars/d9485b7e3e749493d8283.jpg" alt="" border="0" /><br /><br />Pridružen: 11. jan 2003 ob 21:16<br />objav: 61<br />Kraj: Verdun 18</span><br /></td>
 		<td class="row1" width="100%" height="28" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
 			<tr>
 				<td colspan="2" width="100%">
@@ -778,7 +725,7 @@ Dej, ko boš dodajal v oddelek "koda" proooosim še kak komentar zravn.
 Je pa zadeva zanimiva. Sam sem zdele še tolk na začetku ("Hello world!":)), da se s takalimi zadevami še ne morem ukvajrat, čeprou pa vem zakaj gre.<br />_________________<br /><span style="font-weight: bold">Quidquid latine dictum sit, altum sonatur</span>
 
 <br />
-c++ beginer...be gentle :)</span><span class="gensmall"></span></td>
+c++ beginer...be gentle <img src="images/smiles/icon_smile.gif" alt=":)" border="0" /></span><span class="gensmall"></span></td>
 			</tr>
 		</table></td>
 	</tr>
@@ -795,7 +742,7 @@ c++ beginer...be gentle :)</span><span class="gensmall"></span></td>
 	</tr>
 	
 	<tr>
-		<td width="150" align="left" valign="top" class="row1"><span class="name"><a name="1094"></a><b>Wingman</b></span><br /><span class="postdetails">SGD Moderator<br /><img src="images/ranks/sgd-mod.gif" alt="SGD Moderator" title="SGD Moderator" border="0" /><br /><img src="images/avatars/c14d9fca410a4a42927d3.jpg" alt="" border="0" /><br /><br />Pridružen: 08. jan 2003 ob 21:33<br />objav: 293<br />Kraj: Kranj</span><br /></td>
+		<td width="150" align="left" valign="top" class="row1"><span class="name"><a name="1094"></a><b>Wing</b></span><br /><span class="postdetails">SGD Admin<br /><img src="images/ranks/sgd-admin.gif" alt="SGD Admin" title="SGD Admin" border="0" /><br /><br /><br />Pridružen: 08. jan 2003 ob 21:33<br />objav: 481<br />Kraj: Kranj</span><br /></td>
 		<td class="row1" width="100%" height="28" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
 			<tr>
 				<td colspan="2" width="100%">
@@ -857,7 +804,7 @@ Potem pa vrstice menjamo, množimo in to, da dobimo 0 v obliki trikotnika na kon
 
 
 <br />
-Je s štirimi (in več) enačbami isti način? Bi mi namreč trenutno prav prišlo.  <img src="images/smiles/icon_smile.gif" alt="icon_smile.gif" border="0" /><br />_________________<br />In Soviet Russia, if your program doesn't execute, they execute YOU!</span><span class="gensmall"></span></td>
+Je s štirimi (in več) enačbami isti način? Bi mi namreč trenutno prav prišlo.  <img src="images/smiles/icon_smile.gif" alt=":)" border="0" /></span><span class="gensmall"></span></td>
 			</tr>
 		</table></td>
 	</tr>
@@ -874,7 +821,7 @@ Je s štirimi (in več) enačbami isti način? Bi mi namreč trenutno prav priš
 	</tr>
 	
 	<tr>
-		<td width="150" align="left" valign="top" class="row2"><span class="name"><a name="1095"></a><b>Kavan</b></span><br /><span class="postdetails">inštruktor<br /><img src="images/ranks/sgd-4.gif" alt="inštruktor" title="inštruktor" border="0" /><br /><br /><br />Pridružen: 10. jan 2003 ob 12:57<br />objav: 363<br />Kraj: Los Angeles</span><br /></td>
+		<td width="150" align="left" valign="top" class="row2"><span class="name"><a name="1095"></a><b>Kavan</b></span><br /><span class="postdetails">inštruktor<br /><img src="images/ranks/sgd-4.gif" alt="inštruktor" title="inštruktor" border="0" /><br /><br /><br />Pridružen: 10. jan 2003 ob 12:57<br />objav: 314<br />Kraj: Los Angeles</span><br /></td>
 		<td class="row2" width="100%" height="28" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
 			<tr>
 				<td colspan="2" width="100%">
@@ -897,7 +844,7 @@ Je s štirimi (in več) enačbami isti način? Bi mi namreč trenutno prav priš
 				<td colspan="2"><span class="postbody">V osnovi je ista ideja ja. Samo se potem optimizira zadeve kar se tiče hitrosti in kar se tiče računskih napak zaradi zaokroževanja.<br />_________________<br />
 
 <br />
-<span style="font-size: 9px; line-height: normal"><a  target="_blank" class="postlink">www.3dlevel.com</a></span></span><span class="gensmall"></span></td>
+<span style="font-size: 75%; line-height: normal"><a  target="_blank" class="postlink">http&#58;//www&#46;3dlevel&#46;com</a></span></span><span class="gensmall"></span></td>
 			</tr>
 		</table></td>
 	</tr>
@@ -914,7 +861,7 @@ Je s štirimi (in več) enačbami isti način? Bi mi namreč trenutno prav priš
 	</tr>
 	
 	<tr>
-		<td width="150" align="left" valign="top" class="row1"><span class="name"><a name="1097"></a><b>Wingman</b></span><br /><span class="postdetails">SGD Moderator<br /><img src="images/ranks/sgd-mod.gif" alt="SGD Moderator" title="SGD Moderator" border="0" /><br /><img src="images/avatars/c14d9fca410a4a42927d3.jpg" alt="" border="0" /><br /><br />Pridružen: 08. jan 2003 ob 21:33<br />objav: 293<br />Kraj: Kranj</span><br /></td>
+		<td width="150" align="left" valign="top" class="row1"><span class="name"><a name="1097"></a><b>Wing</b></span><br /><span class="postdetails">SGD Admin<br /><img src="images/ranks/sgd-admin.gif" alt="SGD Admin" title="SGD Admin" border="0" /><br /><br /><br />Pridružen: 08. jan 2003 ob 21:33<br />objav: 481<br />Kraj: Kranj</span><br /></td>
 		<td class="row1" width="100%" height="28" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
 			<tr>
 				<td colspan="2" width="100%">
@@ -934,7 +881,7 @@ Je s štirimi (in več) enačbami isti način? Bi mi namreč trenutno prav priš
 				<td colspan="2"><hr /></td>
 			</tr>
 			<tr>
-				<td colspan="2"><span class="postbody">Ok tnx.<br />_________________<br />In Soviet Russia, if your program doesn't execute, they execute YOU!</span><span class="gensmall"></span></td>
+				<td colspan="2"><span class="postbody">Ok tnx.</span><span class="gensmall"></span></td>
 			</tr>
 		</table></td>
 	</tr>
@@ -951,7 +898,7 @@ Je s štirimi (in več) enačbami isti način? Bi mi namreč trenutno prav priš
 	</tr>
 	
 	<tr>
-		<td width="150" align="left" valign="top" class="row2"><span class="name"><a name="1102"></a><b>Person</b></span><br /><span class="postdetails">expert<br /><img src="images/ranks/sgd-6.gif" alt="expert" title="expert" border="0" /><br /><img src="images/avatars/d5fa111d422d913c2ca73.gif" alt="" border="0" /><br /><br />Pridružen: 11. jan 2003 ob 21:25<br />objav: 643<br /></span><br /></td>
+		<td width="150" align="left" valign="top" class="row2"><span class="name"><a name="1102"></a><b>Person</b></span><br /><span class="postdetails">igralec<br /><img src="images/ranks/sgd-7.gif" alt="igralec" title="igralec" border="0" /><br /><img src="images/avatars/d5fa111d422d913c2ca73.gif" alt="" border="0" /><br /><br />Pridružen: 11. jan 2003 ob 21:25<br />objav: 810<br /></span><br /></td>
 		<td class="row2" width="100%" height="28" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
 			<tr>
 				<td colspan="2" width="100%">
@@ -977,13 +924,13 @@ Je s štirimi (in več) enačbami isti način? Bi mi namreč trenutno prav priš
 No, saj tk smo mi v prvem letniku temu rekli.
 
 <br />
-(Tisti dobri časi <img src="images/smiles/icon_biggrin.gif" alt="icon_biggrin.gif" border="0" />  <img src="images/smiles/icon_arrow.gif" alt="icon_arrow.gif" border="0" />  Šala <img src="images/smiles/icon_wink.gif" alt="icon_wink.gif" border="0" /> )
+(Tisti dobri časi <img src="images/smiles/icon_biggrin.gif" alt=":D" border="0" />  <img src="images/smiles/icon_arrow.gif" alt=":arrow:" border="0" />  Šala <img src="images/smiles/icon_wink.gif" alt=":wink:" border="0" /> )
 
 <br />
 
 
 <br />
-Sam, da smo mi to peš računali.<br />_________________<br /><a  target="_blank" class="postlink">ACenterMedia.unimatrix-one.com</a></span><span class="gensmall"></span></td>
+Sam, da smo mi to peš računali.</span><span class="gensmall"></span></td>
 			</tr>
 		</table></td>
 	</tr>
@@ -1008,7 +955,7 @@ Sam, da smo mi to peš računali.<br />_________________<br /><a  target="_blank
   <tr>
 	<td align="left" valign="middle" nowrap="nowrap">&nbsp;</td>
 	<td align="left" valign="middle" width="100%"><span class="nav">&nbsp;&nbsp;&nbsp;<a href="index.html" class="nav">SloGameDev.net seznam forumov</a>
-	  -> <a href="forum-17.html" class="nav">Matematika in Fizika</a></span></td>
+	  -> <a href="forum-52.html" class="nav">Izdelovanje iger</a></span></td>
 	<td align="right" valign="top" nowrap="nowrap"><span class="gensmall">Časovni pas (GMT +2:00 uri) Slovenija, poletni čas</span><br /><span class="nav"></span>
 	  </td>
   </tr>
@@ -1024,7 +971,7 @@ Sam, da smo mi to peš računali.<br />_________________<br /><a  target="_blank
   </tr>
 </table>
 
-<div align="center"><span class="copyright"><br />Arhiv stanja na dan 13. 2. 2006 &mdash; samo za branje.<br />
+<div align="center"><span class="copyright"><br />Arhiv &mdash; samo za branje.<br />
 <!--
 	We request you retain the full copyright notice below including the link to www.phpbb.com.
 	This not only gives respect to the large amount of time given freely by the developers

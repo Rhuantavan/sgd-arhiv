@@ -276,13 +276,13 @@ input.liteoption {
   <tr>
 	<td align="left" valign="bottom" nowrap="nowrap">&nbsp;</td>
 	<td align="left" valign="middle" width="100%"><span class="nav">&nbsp;&nbsp;&nbsp;<a href="index.html" class="nav">SloGameDev.net seznam forumov</a>
-	  -> <a href="forum-1.html" class="nav">Splošno Programiranje</a></span></td>
+	  -> <a href="forum-52.html" class="nav">Izdelovanje iger</a></span></td>
   </tr>
 </table>
 
 <table class="forumline" width="100%" cellspacing="1" cellpadding="3" border="0">
 	<tr align="right">
-		<td class="catHead" colspan="2" height="28"><span class="nav"><a href="topic-751.html" class="nav">Prejšnja tema</a> :: <a href="topic-638.html" class="nav">Naslednja tema</a> &nbsp;</span></td>
+		<td class="catHead" colspan="2" height="28"><span class="nav"><a href="topic-646.html" class="nav">Prejšnja tema</a> :: <a href="topic-638.html" class="nav">Naslednja tema</a> &nbsp;</span></td>
 	</tr>
 	
 	<tr>
@@ -291,7 +291,7 @@ input.liteoption {
 	</tr>
 	
 	<tr>
-		<td width="150" align="left" valign="top" class="row1"><span class="name"><a name="8823"></a><b>Acid Cool</b></span><br /><span class="postdetails">guru<br /><img src="images/ranks/sgd-8.gif" alt="guru" title="guru" border="0" /><br /><img src="images/avatars/c15ff85a40e32fec16332.gif" alt="" border="0" /><br /><br />Pridružen: 17. jun 2003 ob 07:23<br />objav: 1199<br />Kraj: Behind an orange skull!</span><br /></td>
+		<td width="150" align="left" valign="top" class="row1"><span class="name"><a name="8823"></a><b>Acid Cool</b></span><br /><span class="postdetails">guru<br /><img src="images/ranks/sgd-8.gif" alt="guru" title="guru" border="0" /><br /><img src="images/avatars/c15ff85a40e32fec16332.gif" alt="" border="0" /><br /><br />Pridružen: 17. jun 2003 ob 07:23<br />objav: 1329<br /></span><br /></td>
 		<td class="row1" width="100%" height="28" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
 			<tr>
 				<td colspan="2" width="100%">
@@ -329,86 +329,59 @@ OK, najprej koda, ki jo mam dozdaj:
 <br />
 	<tr>
 <br />
-	  <td class="code">Imports System.IO
-
+	  <td class="code">Imports System&#46;IO
 <br />
-Imports System.Xml.Serialization
-
+Imports System&#46;Xml&#46;Serialization
 <br />
-
 
 <br />
 Public Class Form1
-
 <br />
-&nbsp; &nbsp; Inherits System.Windows.Forms.Form
-
+    Inherits System&#46;Windows&#46;Forms&#46;Form
 <br />
 
-
 <br />
-&nbsp; &nbsp; Private Sub Form1_Load&#40;ByVal sender As System.Object, ByVal e As System.EventArgs&#41; Handles MyBase.Load
-
+    Private Sub Form1_Load&#40;ByVal sender As System&#46;Object, ByVal e As System&#46;EventArgs&#41; Handles MyBase&#46;Load
 <br />
-&nbsp; &nbsp; &nbsp; &nbsp; Dim p As New clsProduct
-
+        Dim p As New clsProduct
 <br />
-&nbsp; &nbsp; &nbsp; &nbsp; p.Identity.Name = &quot;Acid&quot;
-
+        p&#46;Identity&#46;Name = &quot;Acid&quot;
 <br />
-&nbsp; &nbsp; &nbsp; &nbsp; p.Identity.Surname = &quot;Cool&quot;
-
+        p&#46;Identity&#46;Surname = &quot;Cool&quot;
 <br />
-&nbsp; &nbsp; &nbsp; &nbsp; p.Description = &quot;Faster, betterm, cheaper&quot;
-
+        p&#46;Description = &quot;Faster, betterm, cheaper&quot;
 <br />
-&nbsp; &nbsp; &nbsp; &nbsp; p.Qty = 5
-
+        p&#46;Qty = 5
 <br />
 
-
 <br />
-&nbsp; &nbsp; &nbsp; &nbsp; Dim objStreamWriter As New StreamWriter&#40;Application.StartupPath &amp; &quot;\Product.xml&quot;&#41;
-
+        Dim objStreamWriter As New StreamWriter&#40;Application&#46;StartupPath &amp; &quot;\Product&#46;xml&quot;&#41;
 <br />
-&nbsp; &nbsp; &nbsp; &nbsp; Dim x As New XmlSerializer&#40;p.GetType&#41;
-
+        Dim x As New XmlSerializer&#40;p&#46;GetType&#41;
 <br />
-&nbsp; &nbsp; &nbsp; &nbsp; x.Serialize&#40;objStreamWriter, p&#41;
-
+        x&#46;Serialize&#40;objStreamWriter, p&#41;
 <br />
-&nbsp; &nbsp; &nbsp; &nbsp; objStreamWriter.Close&#40;&#41;
-
+        objStreamWriter&#46;Close&#40;&#41;
 <br />
 
-
 <br />
-&nbsp; &nbsp; &nbsp; &nbsp; Dim objStreamReader As New StreamReader&#40;Application.StartupPath &amp; &quot;\Product.xml&quot;&#41;
-
+        Dim objStreamReader As New StreamReader&#40;Application&#46;StartupPath &amp; &quot;\Product&#46;xml&quot;&#41;
 <br />
-&nbsp; &nbsp; &nbsp; &nbsp; Dim p2 As New clsProduct
-
+        Dim p2 As New clsProduct
 <br />
-&nbsp; &nbsp; &nbsp; &nbsp; p2 = x.Deserialize&#40;objStreamReader&#41;
-
+        p2 = x&#46;Deserialize&#40;objStreamReader&#41;
 <br />
-&nbsp; &nbsp; &nbsp; &nbsp; objStreamReader.Close&#40;&#41;
-
+        objStreamReader&#46;Close&#40;&#41;
 <br />
 
-
 <br />
-&nbsp; &nbsp; &nbsp; &nbsp; TextBox1.Text = p2.Identity.Name &amp; &quot; &quot; &amp; p2.Identity.Surname
-
+        TextBox1&#46;Text = p2&#46;Identity&#46;Name &amp; &quot; &quot; &amp; p2&#46;Identity&#46;Surname
 <br />
-&nbsp; &nbsp; &nbsp; &nbsp; TextBox1.Text &amp;= &quot;; &quot; &amp; p2.Description
-
+        TextBox1&#46;Text &amp;= &quot;; &quot; &amp; p2&#46;Description
 <br />
-&nbsp; &nbsp; &nbsp; &nbsp; TextBox1.Text &amp;= &quot;; &quot; &amp; p2.Qty
-
+        TextBox1&#46;Text &amp;= &quot;; &quot; &amp; p2&#46;Qty
 <br />
-&nbsp; &nbsp; End Sub
-
+    End Sub
 <br />
 End Class</td>
 <br />
@@ -417,9 +390,7 @@ End Class</td>
 </table>
 <br />
 <span class="postbody">
-
 <br />
-
 
 <br />
 </span>
@@ -434,160 +405,108 @@ End Class</td>
 <br />
 	<tr>
 <br />
-	  <td class="code">Imports System.Xml.Serialization
-
+	  <td class="code">Imports System&#46;Xml&#46;Serialization
 <br />
-
 
 <br />
 Public Class clsProduct
-
 <br />
 
-
 <br />
-&nbsp; &nbsp; Private mstrDescription As String
-
+    Private mstrDescription As String
 <br />
-&nbsp; &nbsp; Private mintQty As Integer
-
+    Private mintQty As Integer
 <br />
 
-
 <br />
-&nbsp; &nbsp; Public Identity As New Ident
-
+    Public Identity As New Ident
 <br />
 
-
 <br />
-&nbsp; &nbsp; Public Property Description&#40;&#41; As String
-
+    Public Property Description&#40;&#41; As String
 <br />
-&nbsp; &nbsp; &nbsp; &nbsp; Get
-
+        Get
 <br />
-&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Description = mstrDescription
-
+            Description = mstrDescription
 <br />
-&nbsp; &nbsp; &nbsp; &nbsp; End Get
-
+        End Get
 <br />
-&nbsp; &nbsp; &nbsp; &nbsp; Set&#40;ByVal Value As String&#41;
-
+        Set&#40;ByVal Value As String&#41;
 <br />
-&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; mstrDescription = Value
-
+            mstrDescription = Value
 <br />
-&nbsp; &nbsp; &nbsp; &nbsp; End Set
-
+        End Set
 <br />
-&nbsp; &nbsp; End Property
-
+    End Property
 <br />
 
-
 <br />
-&nbsp; &nbsp; &lt;XmlElementAttribute&#40;ElementName&#58;=&quot;Quantity&quot;&#41;&gt; _
-
+    &lt;XmlElementAttribute&#40;ElementName&#58;=&quot;Quantity&quot;&#41;&gt; _
 <br />
-&nbsp; &nbsp; Public Property Qty&#40;&#41; As Integer
-
+    Public Property Qty&#40;&#41; As Integer
 <br />
-&nbsp; &nbsp; &nbsp; &nbsp; Get
-
+        Get
 <br />
-&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Qty = mintQty
-
+            Qty = mintQty
 <br />
-&nbsp; &nbsp; &nbsp; &nbsp; End Get
-
+        End Get
 <br />
-&nbsp; &nbsp; &nbsp; &nbsp; Set&#40;ByVal Value As Integer&#41;
-
+        Set&#40;ByVal Value As Integer&#41;
 <br />
-&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; mintQty = Value
-
+            mintQty = Value
 <br />
-&nbsp; &nbsp; &nbsp; &nbsp; End Set
-
+        End Set
 <br />
-&nbsp; &nbsp; End Property
-
+    End Property
 <br />
-
 
 <br />
 End Class
-
 <br />
-
 
 <br />
 Public Class Ident
-
 <br />
 
-
 <br />
-&nbsp; &nbsp; Dim idName As String
-
+    Dim idName As String
 <br />
-&nbsp; &nbsp; Dim idSurname As String
-
+    Dim idSurname As String
 <br />
 
-
 <br />
-&nbsp; &nbsp; Public Property Name&#40;&#41; As String
-
+    Public Property Name&#40;&#41; As String
 <br />
-&nbsp; &nbsp; &nbsp; &nbsp; Get
-
+        Get
 <br />
-&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Name = idName
-
+            Name = idName
 <br />
-&nbsp; &nbsp; &nbsp; &nbsp; End Get
-
+        End Get
 <br />
-&nbsp; &nbsp; &nbsp; &nbsp; Set&#40;ByVal Value As String&#41;
-
+        Set&#40;ByVal Value As String&#41;
 <br />
-&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; idName = Value
-
+            idName = Value
 <br />
-&nbsp; &nbsp; &nbsp; &nbsp; End Set
-
+        End Set
 <br />
-&nbsp; &nbsp; End Property
-
+    End Property
 <br />
-&nbsp; &nbsp; Public Property Surname&#40;&#41; As String
-
+    Public Property Surname&#40;&#41; As String
 <br />
-&nbsp; &nbsp; &nbsp; &nbsp; Get
-
+        Get
 <br />
-&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Surname = idSurname
-
+            Surname = idSurname
 <br />
-&nbsp; &nbsp; &nbsp; &nbsp; End Get
-
+        End Get
 <br />
-&nbsp; &nbsp; &nbsp; &nbsp; Set&#40;ByVal Value As String&#41;
-
+        Set&#40;ByVal Value As String&#41;
 <br />
-&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; idSurname = Value
-
+            idSurname = Value
 <br />
-&nbsp; &nbsp; &nbsp; &nbsp; End Set
-
+        End Set
 <br />
-&nbsp; &nbsp; End Property
-
+    End Property
 <br />
-
 
 <br />
 End Class</td>
@@ -597,13 +516,10 @@ End Class</td>
 </table>
 <br />
 <span class="postbody">
-
 <br />
-
 
 <br />
 tale koda mi naredi tole:
-
 <br />
 </span>
 <br />
@@ -617,29 +533,21 @@ tale koda mi naredi tole:
 <br />
 	<tr>
 <br />
-	  <td class="code">&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;
-
+	  <td class="code">&lt;?xml version=&quot;1&#46;0&quot; encoding=&quot;utf-8&quot;?&gt;
 <br />
-&lt;clsProduct xmlns&#58;xsd=&quot;http&#58;//www.w3.org/2001/XMLSchema&quot; xmlns&#58;xsi=&quot;http&#58;//www.w3.org/2001/XMLSchema-instance&quot;&gt;
-
+&lt;clsProduct xmlns&#58;xsd=&quot;http&#58;//www&#46;w3&#46;org/2001/XMLSchema&quot; xmlns&#58;xsi=&quot;http&#58;//www&#46;w3&#46;org/2001/XMLSchema-instance&quot;&gt;
 <br />
-&nbsp; &lt;Identity&gt;
-
+  &lt;Identity&gt;
 <br />
-&nbsp; &nbsp; &lt;Name&gt;Goran2&lt;/Name&gt;
-
+    &lt;Name&gt;Goran2&lt;/Name&gt;
 <br />
-&nbsp; &nbsp; &lt;Surname&gt;Gligorin2&lt;/Surname&gt;
-
+    &lt;Surname&gt;Gligorin2&lt;/Surname&gt;
 <br />
-&nbsp; &lt;/Identity&gt;
-
+  &lt;/Identity&gt;
 <br />
-&nbsp; &lt;Description&gt;Faster, betterm, cheaper&lt;/Description&gt;
-
+  &lt;Description&gt;Faster, betterm, cheaper&lt;/Description&gt;
 <br />
-&nbsp; &lt;Quantity&gt;5&lt;/Quantity&gt;
-
+  &lt;Quantity&gt;5&lt;/Quantity&gt;
 <br />
 &lt;/clsProduct&gt;</td>
 <br />
@@ -648,28 +556,20 @@ tale koda mi naredi tole:
 </table>
 <br />
 <span class="postbody">
-
 <br />
-
 
 <br />
 no ja ok...samo meni to ni dovolj...jaz bi rad da bi mel to kot neko bazo podatkov in bi si želel da lahko naprimer vnesem več identityjev, pa notri različna imena...nekaj sem skakal na msdn-ju pa mi ni blo kaj dosti jasno...mislim da je fora v neki nodih al nekaj...
-
 <br />
-
 
 <br />
 zna kdo kaj oa tem?
-
 <br />
 dajte plz kaki link al kodo al neki...pa če date kodo dajte plz tut xml fajl, da vidim kak zgleda le-ta...
-
 <br />
-
 
 <br />
 edit: takole naj bi zgledal približno xml i bi ga jaz hotel:
-
 <br />
 </span>
 <br />
@@ -683,83 +583,57 @@ edit: takole naj bi zgledal približno xml i bi ga jaz hotel:
 <br />
 	<tr>
 <br />
-	  <td class="code">&lt;?xml version='1.0'?&gt;
-
+	  <td class="code">&lt;?xml version='1&#46;0'?&gt;
 <br />
 &lt;!-- This file represents a fragment of a book store inventory database --&gt;
-
 <br />
 &lt;bookstore&gt;
-
 <br />
-&nbsp; &lt;book genre=&quot;autobiography&quot; publicationdate=&quot;1981&quot; ISBN=&quot;1-861003-11-0&quot;&gt;
-
+  &lt;book genre=&quot;autobiography&quot; publicationdate=&quot;1981&quot; ISBN=&quot;1-861003-11-0&quot;&gt;
 <br />
-&nbsp; &nbsp; &nbsp; &lt;title&gt;The Autobiography of Benjamin Franklin&lt;/title&gt;
-
+      &lt;title&gt;The Autobiography of Benjamin Franklin&lt;/title&gt;
 <br />
-&nbsp; &nbsp; &lt;author size=&quot;25&quot;&gt;
-
+    &lt;author size=&quot;25&quot;&gt;
 <br />
-&nbsp; &nbsp; &nbsp; &lt;first-name age=&quot;25&quot;&gt;Benjamin&lt;/first-name&gt;
-
+      &lt;first-name age=&quot;25&quot;&gt;Benjamin&lt;/first-name&gt;
 <br />
-&nbsp; &nbsp; &nbsp; &lt;last-name&gt;Franklin&lt;/last-name&gt;
-
+      &lt;last-name&gt;Franklin&lt;/last-name&gt;
 <br />
-&nbsp; &nbsp; &lt;/author&gt;
-
+    &lt;/author&gt;
 <br />
-&nbsp; &nbsp; &lt;price&gt;8.99&lt;/price&gt;
-
+    &lt;price&gt;8&#46;99&lt;/price&gt;
 <br />
-&nbsp; &lt;/book&gt;
-
+  &lt;/book&gt;
 <br />
-&nbsp; &lt;book genre=&quot;novel&quot; publicationdate=&quot;1967&quot; ISBN=&quot;0-201-63361-2&quot;&gt;
-
+  &lt;book genre=&quot;novel&quot; publicationdate=&quot;1967&quot; ISBN=&quot;0-201-63361-2&quot;&gt;
 <br />
-&nbsp; &nbsp; &lt;title&gt;The Confidence Man&lt;/title&gt;
-
+    &lt;title&gt;The Confidence Man&lt;/title&gt;
 <br />
-&nbsp; &nbsp; &lt;author&gt;
-
+    &lt;author&gt;
 <br />
-&nbsp; &nbsp; &nbsp; &lt;first-name&gt;Herman&lt;/first-name&gt;
-
+      &lt;first-name&gt;Herman&lt;/first-name&gt;
 <br />
-&nbsp; &nbsp; &nbsp; &lt;last-name&gt;Melville&lt;/last-name&gt;
-
+      &lt;last-name&gt;Melville&lt;/last-name&gt;
 <br />
-&nbsp; &nbsp; &lt;/author&gt;
-
+    &lt;/author&gt;
 <br />
-&nbsp; &nbsp; &lt;price&gt;11.99&lt;/price&gt;
-
+    &lt;price&gt;11&#46;99&lt;/price&gt;
 <br />
-&nbsp; &lt;/book&gt;
-
+  &lt;/book&gt;
 <br />
-&nbsp; &lt;book genre=&quot;philosophy&quot; publicationdate=&quot;1991&quot; ISBN=&quot;1-861001-57-6&quot;&gt;
-
+  &lt;book genre=&quot;philosophy&quot; publicationdate=&quot;1991&quot; ISBN=&quot;1-861001-57-6&quot;&gt;
 <br />
-&nbsp; &nbsp; &lt;title&gt;The Gorgias&lt;/title&gt;
-
+    &lt;title&gt;The Gorgias&lt;/title&gt;
 <br />
-&nbsp; &nbsp; &lt;author&gt;
-
+    &lt;author&gt;
 <br />
-&nbsp; &nbsp; &nbsp; &lt;name&gt;Plato&lt;/name&gt;
-
+      &lt;name&gt;Plato&lt;/name&gt;
 <br />
-&nbsp; &nbsp; &lt;/author&gt;
-
+    &lt;/author&gt;
 <br />
-&nbsp; &nbsp; &lt;price&gt;9.99&lt;/price&gt;
-
+    &lt;price&gt;9&#46;99&lt;/price&gt;
 <br />
-&nbsp; &lt;/book&gt;
-
+  &lt;/book&gt;
 <br />
 &lt;/bookstore&gt;</td>
 <br />
@@ -767,10 +641,7 @@ edit: takole naj bi zgledal približno xml i bi ga jaz hotel:
 <br />
 </table>
 <br />
-<span class="postbody"><br />_________________<br /><span style="font-size: 10px; line-height: normal">my msn space::</span>
-
-<br />
-<span style="font-weight: bold"><a  target="_blank" class="postlink">24 Orange Street :: Acid Cool</a></span></span><span class="gensmall"></span></td>
+<span class="postbody"><br />_________________<br />Home page: <a  target="_blank" class="postlink">Goran Gligorin</a></span><span class="gensmall"></span></td>
 			</tr>
 		</table></td>
 	</tr>
@@ -787,7 +658,7 @@ edit: takole naj bi zgledal približno xml i bi ga jaz hotel:
 	</tr>
 	
 	<tr>
-		<td width="150" align="left" valign="top" class="row2"><span class="name"><a name="8826"></a><b>Kavan</b></span><br /><span class="postdetails">inštruktor<br /><img src="images/ranks/sgd-4.gif" alt="inštruktor" title="inštruktor" border="0" /><br /><br /><br />Pridružen: 10. jan 2003 ob 12:57<br />objav: 363<br />Kraj: Los Angeles</span><br /></td>
+		<td width="150" align="left" valign="top" class="row2"><span class="name"><a name="8826"></a><b>Kavan</b></span><br /><span class="postdetails">inštruktor<br /><img src="images/ranks/sgd-4.gif" alt="inštruktor" title="inštruktor" border="0" /><br /><br /><br />Pridružen: 10. jan 2003 ob 12:57<br />objav: 314<br />Kraj: Los Angeles</span><br /></td>
 		<td class="row2" width="100%" height="28" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
 			<tr>
 				<td colspan="2" width="100%">
@@ -807,7 +678,7 @@ edit: takole naj bi zgledal približno xml i bi ga jaz hotel:
 				<td colspan="2"><hr /></td>
 			</tr>
 			<tr>
-				<td colspan="2"><span class="postbody">Najprej bom malo pokomentiral tvojo kodo (bom malo bolj zahteven, ker vidim da že zelo dobro obvladaš stvari <img src="images/smiles/icon_smile.gif" alt="icon_smile.gif" border="0" /> ).
+				<td colspan="2"><span class="postbody">Najprej bom malo pokomentiral tvojo kodo (bom malo bolj zahteven, ker vidim da že zelo dobro obvladaš stvari <img src="images/smiles/icon_smile.gif" alt=":)" border="0" /> ).
 
 <br />
 
@@ -832,27 +703,19 @@ edit: takole naj bi zgledal približno xml i bi ga jaz hotel:
 </table>
 <br />
 <span class="postbody">
-
 <br />
-
 
 <br />
 Preden deserializiraš ni potrebe ustvariti nov objekt. Pri deserializaciji se bo objekt tako ali tako ustvaril.
-
 <br />
-
 
 <br />
 Pri imenih spremenljivk se pa poskušaj izognit poimenovanju, ki vsebuje kot predpono tip spremenljivke. Malo si preberi design guidelines, ki jih najdeš v MSDN. Mogoče si tudi poglej <a  target="_blank" class="postlink">FxCop</a>.
-
 <br />
-
 
 <br />
 No zdaj pa odgovor. Sicer si to že videl se mi zdi, pa ne bo škodilo če še kdo drug vidi.
-
 <br />
-
 
 <br />
 </span>
@@ -867,239 +730,161 @@ No zdaj pa odgovor. Sicer si to že videl se mi zdi, pa ne bo škodilo če še k
 <br />
 	<tr>
 <br />
-	  <td class="code">Imports System.Xml.Serialization
-
+	  <td class="code">Imports System&#46;Xml&#46;Serialization
 <br />
-Imports InterstellarLaw.SettingsTypes
-
+Imports InterstellarLaw&#46;SettingsTypes
 <br />
-Imports System.IO
-
+Imports System&#46;IO
 <br />
-Imports System.Collections.Specialized
-
+Imports System&#46;Collections&#46;Specialized
 <br />
 
-
 <br />
-&lt;System.Xml.Serialization.XmlTypeAttribute&#40;&quot;Settings&quot;, &#91;Namespace&#93;&#58;=&quot;http&#58;//www.3dlevel.com/InterstellarLaw/Settings.xsd&quot;&#41;, _
-
+&lt;System&#46;Xml&#46;Serialization&#46;XmlTypeAttribute&#40;&quot;Settings&quot;, &#91;Namespace&#93;&#58;=&quot;http&#58;//www&#46;3dlevel&#46;com/InterstellarLaw/Settings&#46;xsd&quot;&#41;, _
 <br />
- System.Xml.Serialization.XmlRootAttribute&#40;&#91;Namespace&#93;&#58;=&quot;http&#58;//www.3dlevel.com/InterstellarLaw/Settings.xsd&quot;, IsNullable&#58;=False&#41;&gt; _
-
+ System&#46;Xml&#46;Serialization&#46;XmlRootAttribute&#40;&#91;Namespace&#93;&#58;=&quot;http&#58;//www&#46;3dlevel&#46;com/InterstellarLaw/Settings&#46;xsd&quot;, IsNullable&#58;=False&#41;&gt; _
 <br />
 Public Class GameSettings
-
 <br />
-&nbsp; &nbsp; Public Audio As New Audio
-
+    Public Audio As New Audio
 <br />
-&nbsp; &nbsp; Public Display As New Display
-
+    Public Display As New Display
 <br />
 
-
 <br />
-&nbsp; &nbsp; &lt;XmlIgnore&#40;&#41;&gt; _
-
+    &lt;XmlIgnore&#40;&#41;&gt; _
 <br />
-&nbsp; &nbsp; Public Shared Serializer As New XmlSerializer&#40;GetType&#40;GameSettings&#41;&#41;
-
+    Public Shared Serializer As New XmlSerializer&#40;GetType&#40;GameSettings&#41;&#41;
 <br />
 
-
 <br />
-&nbsp; &nbsp; Public Shared Function Load&#40;ByVal fileName As String&#41; As GameSettings
-
+    Public Shared Function Load&#40;ByVal fileName As String&#41; As GameSettings
 <br />
-&nbsp; &nbsp; &nbsp; &nbsp; Dim fs As New FileStream&#40;fileName, FileMode.Open&#41;
-
+        Dim fs As New FileStream&#40;fileName, FileMode&#46;Open&#41;
 <br />
-&nbsp; &nbsp; &nbsp; &nbsp; Dim ret As GameSettings = DirectCast&#40;Serializer.Deserialize&#40;fs&#41;, GameSettings&#41;
-
+        Dim ret As GameSettings = DirectCast&#40;Serializer&#46;Deserialize&#40;fs&#41;, GameSettings&#41;
 <br />
-&nbsp; &nbsp; &nbsp; &nbsp; fs.Close&#40;&#41;
-
+        fs&#46;Close&#40;&#41;
 <br />
-&nbsp; &nbsp; &nbsp; &nbsp; Return ret
-
+        Return ret
 <br />
-&nbsp; &nbsp; End Function
-
+    End Function
 <br />
 
-
 <br />
-&nbsp; &nbsp; Public Sub Save&#40;ByVal fileName As String&#41;
-
+    Public Sub Save&#40;ByVal fileName As String&#41;
 <br />
-&nbsp; &nbsp; &nbsp; &nbsp; Dim fs As New FileStream&#40;fileName, FileMode.Create&#41;
-
+        Dim fs As New FileStream&#40;fileName, FileMode&#46;Create&#41;
 <br />
-&nbsp; &nbsp; &nbsp; &nbsp; Serializer.Serialize&#40;fs, Me&#41;
-
+        Serializer&#46;Serialize&#40;fs, Me&#41;
 <br />
-&nbsp; &nbsp; &nbsp; &nbsp; fs.Close&#40;&#41;
-
+        fs&#46;Close&#40;&#41;
 <br />
-&nbsp; &nbsp; End Sub
-
+    End Sub
 <br />
 End Class
-
 <br />
-
 
 <br />
 Namespace SettingsTypes
-
 <br />
-&nbsp; &nbsp; Public Class Audio
-
+    Public Class Audio
 <br />
-&nbsp; &nbsp; &nbsp; &nbsp; &lt;XmlArrayItem&#40;&quot;Song&quot;, Type&#58;=GetType&#40;String&#41;&#41;&gt; _
-
+        &lt;XmlArrayItem&#40;&quot;Song&quot;, Type&#58;=GetType&#40;String&#41;&#41;&gt; _
 <br />
-&nbsp; &nbsp; &nbsp; &nbsp; Public CustomPlayList As New StringCollection
-
+        Public CustomPlayList As New StringCollection
 <br />
-&nbsp; &nbsp; &nbsp; &nbsp; Public PlayStyle As MusicPlayer.PlayerPlayStyle
-
+        Public PlayStyle As MusicPlayer&#46;PlayerPlayStyle
 <br />
 
-
 <br />
-&nbsp; &nbsp; &nbsp; &nbsp; Private mMusicVolume As Integer
-
+        Private mMusicVolume As Integer
 <br />
-&nbsp; &nbsp; &nbsp; &nbsp; Public Property MusicVolume&#40;&#41; As Integer
-
+        Public Property MusicVolume&#40;&#41; As Integer
 <br />
-&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Get
-
+            Get
 <br />
-&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Return mMusicVolume
-
+                Return mMusicVolume
 <br />
-&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; End Get
-
+            End Get
 <br />
-&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Set&#40;ByVal Value As Integer&#41;
-
+            Set&#40;ByVal Value As Integer&#41;
 <br />
-&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; mMusicVolume = Value
-
+                mMusicVolume = Value
 <br />
-&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Music.SetVolume&#40;Value&#41;
-
+                Music&#46;SetVolume&#40;Value&#41;
 <br />
-&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; End Set
-
+            End Set
 <br />
-&nbsp; &nbsp; &nbsp; &nbsp; End Property
-
+        End Property
 <br />
 
-
 <br />
-&nbsp; &nbsp; &nbsp; &nbsp; Private mSoundVolume As Integer
-
+        Private mSoundVolume As Integer
 <br />
-&nbsp; &nbsp; &nbsp; &nbsp; Public Property SoundVolume&#40;&#41; As Integer
-
+        Public Property SoundVolume&#40;&#41; As Integer
 <br />
-&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Get
-
+            Get
 <br />
-&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Return mSoundVolume
-
+                Return mSoundVolume
 <br />
-&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; End Get
-
+            End Get
 <br />
-&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Set&#40;ByVal Value As Integer&#41;
-
+            Set&#40;ByVal Value As Integer&#41;
 <br />
-&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; mSoundVolume = Value
-
+                mSoundVolume = Value
 <br />
-&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Sound.SetVolume&#40;Value&#41;
-
+                Sound&#46;SetVolume&#40;Value&#41;
 <br />
-&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; End Set
-
+            End Set
 <br />
-&nbsp; &nbsp; &nbsp; &nbsp; End Property
-
+        End Property
 <br />
-&nbsp; &nbsp; End Class
-
+    End Class
 <br />
 
-
 <br />
-&nbsp; &nbsp; Public Class Display
-
+    Public Class Display
 <br />
-&nbsp; &nbsp; &nbsp; &nbsp; Private mFullScreen As Boolean
-
+        Private mFullScreen As Boolean
 <br />
-&nbsp; &nbsp; &nbsp; &nbsp; Property FullScreen&#40;&#41; As Boolean
-
+        Property FullScreen&#40;&#41; As Boolean
 <br />
-&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Get
-
+            Get
 <br />
-&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Return mFullScreen
-
+                Return mFullScreen
 <br />
-&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; End Get
-
+            End Get
 <br />
-&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Set&#40;ByVal Value As Boolean&#41;
-
+            Set&#40;ByVal Value As Boolean&#41;
 <br />
-&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; If mFullScreen &lt;&gt; Value Then
-
+                If mFullScreen &lt;&gt; Value Then
 <br />
-&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; mFullScreen = Value
-
+                    mFullScreen = Value
 <br />
-&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; If mFullScreen Then
-
+                    If mFullScreen Then
 <br />
-&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; ChangeResolution&#40;800, 600&#41;
-
+                        ChangeResolution&#40;800, 600&#41;
 <br />
-&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; GameForm.Form.FormBorderStyle = FormBorderStyle.None
-
+                        GameForm&#46;Form&#46;FormBorderStyle = FormBorderStyle&#46;None
 <br />
-&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; GameForm.Form.Location = New Point&#40;0, 0&#41;
-
+                        GameForm&#46;Form&#46;Location = New Point&#40;0, 0&#41;
 <br />
-&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Else
-
+                    Else
 <br />
-&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; RestoreResolution&#40;&#41;
-
+                        RestoreResolution&#40;&#41;
 <br />
-&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; GameForm.Form.FormBorderStyle = FormBorderStyle.FixedToolWindow
-
+                        GameForm&#46;Form&#46;FormBorderStyle = FormBorderStyle&#46;FixedToolWindow
 <br />
-&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; End If
-
+                    End If
 <br />
-&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; End If
-
+                End If
 <br />
-&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; End Set
-
+            End Set
 <br />
-&nbsp; &nbsp; &nbsp; &nbsp; End Property
-
+        End Property
 <br />
-&nbsp; &nbsp; End Class
-
+    End Class
 <br />
 End Namespace</td>
 <br />
@@ -1108,15 +893,11 @@ End Namespace</td>
 </table>
 <br />
 <span class="postbody">
-
 <br />
-
 
 <br />
 Primer xml-ja, ki nastane s tem:
-
 <br />
-
 
 <br />
 </span>
@@ -1131,53 +912,37 @@ Primer xml-ja, ki nastane s tem:
 <br />
 	<tr>
 <br />
-	  <td class="code">&lt;?xml version=&quot;1.0&quot;?&gt;
-
+	  <td class="code">&lt;?xml version=&quot;1&#46;0&quot;?&gt;
 <br />
-&lt;Settings xmlns&#58;xsd=&quot;http&#58;//www.w3.org/2001/XMLSchema&quot; xmlns&#58;xsi=&quot;http&#58;//www.w3.org/2001/XMLSchema-instance&quot; xmlns=&quot;http&#58;//www.3dlevel.com/InterstellarLaw/Settings.xsd&quot;&gt;
-
+&lt;Settings xmlns&#58;xsd=&quot;http&#58;//www&#46;w3&#46;org/2001/XMLSchema&quot; xmlns&#58;xsi=&quot;http&#58;//www&#46;w3&#46;org/2001/XMLSchema-instance&quot; xmlns=&quot;http&#58;//www&#46;3dlevel&#46;com/InterstellarLaw/Settings&#46;xsd&quot;&gt;
 <br />
-&nbsp; &lt;Audio&gt;
-
+  &lt;Audio&gt;
 <br />
-&nbsp; &nbsp; &lt;CustomPlayList&gt;
-
+    &lt;CustomPlayList&gt;
 <br />
-&nbsp; &nbsp; &nbsp; &lt;Song&gt;Song1&lt;/Song&gt;
-
+      &lt;Song&gt;Song1&lt;/Song&gt;
 <br />
-&nbsp; &nbsp; &nbsp; &lt;Song&gt;Song2&lt;/Song&gt;
-
+      &lt;Song&gt;Song2&lt;/Song&gt;
 <br />
-&nbsp; &nbsp; &nbsp; &lt;Song&gt;Song3&lt;/Song&gt;
-
+      &lt;Song&gt;Song3&lt;/Song&gt;
 <br />
-&nbsp; &nbsp; &nbsp; &lt;Song&gt;Song4&lt;/Song&gt;
-
+      &lt;Song&gt;Song4&lt;/Song&gt;
 <br />
-&nbsp; &nbsp; &lt;/CustomPlayList&gt;
-
+    &lt;/CustomPlayList&gt;
 <br />
-&nbsp; &nbsp; &lt;PlayStyle&gt;Continuous&lt;/PlayStyle&gt;
-
+    &lt;PlayStyle&gt;Continuous&lt;/PlayStyle&gt;
 <br />
-&nbsp; &nbsp; &lt;MusicVolume&gt;80&lt;/MusicVolume&gt;
-
+    &lt;MusicVolume&gt;80&lt;/MusicVolume&gt;
 <br />
-&nbsp; &nbsp; &lt;SoundVolume&gt;100&lt;/SoundVolume&gt;
-
+    &lt;SoundVolume&gt;100&lt;/SoundVolume&gt;
 <br />
-&nbsp; &lt;/Audio&gt;
-
+  &lt;/Audio&gt;
 <br />
-&nbsp; &lt;Display&gt;
-
+  &lt;Display&gt;
 <br />
-&nbsp; &nbsp; &lt;FullScreen&gt;false&lt;/FullScreen&gt;
-
+    &lt;FullScreen&gt;false&lt;/FullScreen&gt;
 <br />
-&nbsp; &lt;/Display&gt;
-
+  &lt;/Display&gt;
 <br />
 &lt;/Settings&gt;</td>
 <br />
@@ -1194,7 +959,7 @@ Primer xml-ja, ki nastane s tem:
 Da še svojo kodo pokomentiram, ker ni najlepša. Ni namreč lepo, da so fieldi public. Potrebno bi bilo dodati ustrezne propertije, tudi če ne naredijo drugega kot preberejo/spremenijo private spremenljivko.<br />_________________<br />
 
 <br />
-<span style="font-size: 9px; line-height: normal"><a  target="_blank" class="postlink">www.3dlevel.com</a></span></span><span class="gensmall"></span></td>
+<span style="font-size: 75%; line-height: normal"><a  target="_blank" class="postlink">http&#58;//www&#46;3dlevel&#46;com</a></span></span><span class="gensmall"></span></td>
 			</tr>
 		</table></td>
 	</tr>
@@ -1211,7 +976,7 @@ Da še svojo kodo pokomentiram, ker ni najlepša. Ni namreč lepo, da so fieldi 
 	</tr>
 	
 	<tr>
-		<td width="150" align="left" valign="top" class="row1"><span class="name"><a name="8828"></a><b>Acid Cool</b></span><br /><span class="postdetails">guru<br /><img src="images/ranks/sgd-8.gif" alt="guru" title="guru" border="0" /><br /><img src="images/avatars/c15ff85a40e32fec16332.gif" alt="" border="0" /><br /><br />Pridružen: 17. jun 2003 ob 07:23<br />objav: 1199<br />Kraj: Behind an orange skull!</span><br /></td>
+		<td width="150" align="left" valign="top" class="row1"><span class="name"><a name="8828"></a><b>Acid Cool</b></span><br /><span class="postdetails">guru<br /><img src="images/ranks/sgd-8.gif" alt="guru" title="guru" border="0" /><br /><img src="images/avatars/c15ff85a40e32fec16332.gif" alt="" border="0" /><br /><br />Pridružen: 17. jun 2003 ob 07:23<br />objav: 1329<br /></span><br /></td>
 		<td class="row1" width="100%" height="28" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
 			<tr>
 				<td colspan="2" width="100%">
@@ -1243,7 +1008,7 @@ Da še svojo kodo pokomentiram, ker ni najlepša. Ni namreč lepo, da so fieldi 
 <br />
 	<tr>
 <br />
-	  <td class="quote">... ker vidim da že zelo dobro obvladaš stvari <img src="images/smiles/icon_smile.gif" alt="icon_smile.gif" border="0" /></td>
+	  <td class="quote">... ker vidim da že zelo dobro obvladaš stvari <img src="images/smiles/icon_smile.gif" alt=":)" border="0" /></td>
 <br />
 	</tr>
 <br />
@@ -1255,7 +1020,7 @@ Da še svojo kodo pokomentiram, ker ni najlepša. Ni namreč lepo, da so fieldi 
 
 
 <br />
-no ja sicer sem jaz tole kodo našel v nekem tutorialu v msdn, pa jo malo nadgradil (un identity pa class indent), razumem pa vse kaj se tu dogaja <img src="images/smiles/icon_smile.gif" alt="icon_smile.gif" border="0" />
+no ja sicer sem jaz tole kodo našel v nekem tutorialu v msdn, pa jo malo nadgradil (un identity pa class indent), razumem pa vse kaj se tu dogaja <img src="images/smiles/icon_smile.gif" alt=":)" border="0" />
 
 <br />
 tak da tudi glede poimenovanja spremenljivk je to kar je blo v tutorialu, tak da to ni moj stil...jaz ne dajem predpon ala obj pa str pa int pa take...
@@ -1277,7 +1042,6 @@ tak da tudi glede poimenovanja spremenljivk je to kar je blo v tutorialu, tak da
 	<tr>
 <br />
 	  <td class="code">&lt;XmlArrayItem&#40;&quot;Song&quot;, Type&#58;=GetType&#40;String&#41;&#41;&gt; _
-
 <br />
 Public CustomPlayList As New StringCollection</td>
 <br />
@@ -1291,13 +1055,13 @@ Public CustomPlayList As New StringCollection</td>
 
 
 <br />
-ta stvar mi je bla potrebna,tale array nisem vedu kak se naredi <img src="images/smiles/icon_smile.gif" alt="icon_smile.gif" border="0" />
+ta stvar mi je bla potrebna,tale array nisem vedu kak se naredi <img src="images/smiles/icon_smile.gif" alt=":)" border="0" />
 
 <br />
 ej, pa kaj je uni type? čemu to pripomore al kaj?
 
 <br />
-aja, pa če jaz to dobro kapiram pol samo jaz deklariram neko spremenljivko pa z njo delam kot z kakim naprimer textboxom pa takimi ane? (btw, classov jaz neobvladam lih dobro...samo mi se je lih zdaj začelo svitat kak pa kaj <img src="images/smiles/icon_biggrin.gif" alt="icon_biggrin.gif" border="0" />)
+aja, pa če jaz to dobro kapiram pol samo jaz deklariram neko spremenljivko pa z njo delam kot z kakim naprimer textboxom pa takimi ane? (btw, classov jaz neobvladam lih dobro...samo mi se je lih zdaj začelo svitat kak pa kaj <img src="images/smiles/icon_biggrin.gif" alt=":D" border="0" />)
 
 <br />
 
@@ -1306,10 +1070,7 @@ aja, pa če jaz to dobro kapiram pol samo jaz deklariram neko spremenljivko pa z
 BTW: ja sem že videl tole kodo...sicer jo zdaj dosti bolj razumem, ampak sem zgubil tale class na compu...oz niti ne vem kam sem dal tisto kar si mi sendal...med kakimi 80gb fajlov ni tak lahko iskat...no ja saj bo...
 
 <br />
-pa thnx...z dodatnimi vprašanji bom pa ziher še gnajvil <img src="images/smiles/icon_biggrin.gif" alt="icon_biggrin.gif" border="0" /> pa verjetno dal kaki primerček gor ko bom naredil kaj...mogoče kaki phone book al kaj takega...ker je nekaj v tem stilu lih kaj jaz rabim <img src="images/smiles/icon_biggrin.gif" alt="icon_biggrin.gif" border="0" /><br />_________________<br /><span style="font-size: 10px; line-height: normal">my msn space::</span>
-
-<br />
-<span style="font-weight: bold"><a  target="_blank" class="postlink">24 Orange Street :: Acid Cool</a></span></span><span class="gensmall"></span></td>
+pa thnx...z dodatnimi vprašanji bom pa ziher še gnajvil <img src="images/smiles/icon_biggrin.gif" alt=":D" border="0" /> pa verjetno dal kaki primerček gor ko bom naredil kaj...mogoče kaki phone book al kaj takega...ker je nekaj v tem stilu lih kaj jaz rabim <img src="images/smiles/icon_biggrin.gif" alt=":D" border="0" /><br />_________________<br />Home page: <a  target="_blank" class="postlink">Goran Gligorin</a></span><span class="gensmall"></span></td>
 			</tr>
 		</table></td>
 	</tr>
@@ -1326,7 +1087,7 @@ pa thnx...z dodatnimi vprašanji bom pa ziher še gnajvil <img src="images/smile
 	</tr>
 	
 	<tr>
-		<td width="150" align="left" valign="top" class="row2"><span class="name"><a name="8831"></a><b>Acid Cool</b></span><br /><span class="postdetails">guru<br /><img src="images/ranks/sgd-8.gif" alt="guru" title="guru" border="0" /><br /><img src="images/avatars/c15ff85a40e32fec16332.gif" alt="" border="0" /><br /><br />Pridružen: 17. jun 2003 ob 07:23<br />objav: 1199<br />Kraj: Behind an orange skull!</span><br /></td>
+		<td width="150" align="left" valign="top" class="row2"><span class="name"><a name="8831"></a><b>Acid Cool</b></span><br /><span class="postdetails">guru<br /><img src="images/ranks/sgd-8.gif" alt="guru" title="guru" border="0" /><br /><img src="images/avatars/c15ff85a40e32fec16332.gif" alt="" border="0" /><br /><br />Pridružen: 17. jun 2003 ob 07:23<br />objav: 1329<br /></span><br /></td>
 		<td class="row2" width="100%" height="28" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
 			<tr>
 				<td colspan="2" width="100%">
@@ -1359,7 +1120,6 @@ pa thnx...z dodatnimi vprašanji bom pa ziher še gnajvil <img src="images/smile
 	<tr>
 <br />
 	  <td class="code">&lt;XmlArrayItem&#40;&quot;Song&quot;, Type&#58;=GetType&#40;String&#41;&#41;&gt; _
-
 <br />
 Public CustomPlayList As New StringCollection</td>
 <br />
@@ -1373,10 +1133,7 @@ Public CustomPlayList As New StringCollection</td>
 
 
 <br />
-ej, se nekaj sem se mislil tu...ko maš ti ta stringcollection lahko jaz z kako for zanko naredim to pa mi on pol naredi tolko pač teh polj kolko jaz pač stvari not dam?če to sploh gre al pa se to dela na keri drugi način, ali kak enostavneje?<br />_________________<br /><span style="font-size: 10px; line-height: normal">my msn space::</span>
-
-<br />
-<span style="font-weight: bold"><a  target="_blank" class="postlink">24 Orange Street :: Acid Cool</a></span></span><span class="gensmall"></span></td>
+ej, se nekaj sem se mislil tu...ko maš ti ta stringcollection lahko jaz z kako for zanko naredim to pa mi on pol naredi tolko pač teh polj kolko jaz pač stvari not dam?če to sploh gre al pa se to dela na keri drugi način, ali kak enostavneje?<br />_________________<br />Home page: <a  target="_blank" class="postlink">Goran Gligorin</a></span><span class="gensmall"></span></td>
 			</tr>
 		</table></td>
 	</tr>
@@ -1393,7 +1150,7 @@ ej, se nekaj sem se mislil tu...ko maš ti ta stringcollection lahko jaz z kako 
 	</tr>
 	
 	<tr>
-		<td width="150" align="left" valign="top" class="row1"><span class="name"><a name="8857"></a><b>Acid Cool</b></span><br /><span class="postdetails">guru<br /><img src="images/ranks/sgd-8.gif" alt="guru" title="guru" border="0" /><br /><img src="images/avatars/c15ff85a40e32fec16332.gif" alt="" border="0" /><br /><br />Pridružen: 17. jun 2003 ob 07:23<br />objav: 1199<br />Kraj: Behind an orange skull!</span><br /></td>
+		<td width="150" align="left" valign="top" class="row1"><span class="name"><a name="8857"></a><b>Acid Cool</b></span><br /><span class="postdetails">guru<br /><img src="images/ranks/sgd-8.gif" alt="guru" title="guru" border="0" /><br /><img src="images/avatars/c15ff85a40e32fec16332.gif" alt="" border="0" /><br /><br />Pridružen: 17. jun 2003 ob 07:23<br />objav: 1329<br /></span><br /></td>
 		<td class="row1" width="100%" height="28" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
 			<tr>
 				<td colspan="2" width="100%">
@@ -1437,143 +1194,97 @@ evo da nečete i vi ostali ostati u tami...ovdje imate rješenje moj problema ko
 <br />
 	<tr>
 <br />
-	  <td class="code">Imports System.IO
-
+	  <td class="code">Imports System&#46;IO
 <br />
-Imports System.Xml.Serialization
-
+Imports System&#46;Xml&#46;Serialization
 <br />
-Imports System.Collections.Specialized
-
+Imports System&#46;Collections&#46;Specialized
 <br />
-
 
 <br />
 Public Class Form1
-
 <br />
-&nbsp; &nbsp; Inherits System.Windows.Forms.Form
-
+    Inherits System&#46;Windows&#46;Forms&#46;Form
 <br />
 
-
 <br />
-&nbsp; &nbsp; Private Sub Form1_Load&#40;ByVal sender As System.Object, ByVal e As System.EventArgs&#41; Handles MyBase.Load
-
+    Private Sub Form1_Load&#40;ByVal sender As System&#46;Object, ByVal e As System&#46;EventArgs&#41; Handles MyBase&#46;Load
 <br />
-&nbsp; &nbsp; &nbsp; &nbsp; Dim p As New clsProduct
-
+        Dim p As New clsProduct
 <br />
-&nbsp; &nbsp; &nbsp; &nbsp; p.Identity.Name = &quot;Acid&quot;
-
+        p&#46;Identity&#46;Name = &quot;Acid&quot;
 <br />
-&nbsp; &nbsp; &nbsp; &nbsp; p.Identity.Surname = &quot;Cool&quot;
-
+        p&#46;Identity&#46;Surname = &quot;Cool&quot;
 <br />
-&nbsp; &nbsp; &nbsp; &nbsp; p.Description = &quot;Faster, betterm, cheaper&quot;
-
+        p&#46;Description = &quot;Faster, betterm, cheaper&quot;
 <br />
-&nbsp; &nbsp; &nbsp; &nbsp; p.Qty = 5
-
+        p&#46;Qty = 5
 <br />
 
-
 <br />
-&nbsp; &nbsp; &nbsp; &nbsp; &#91;b&#93;Dim i As Integer
-
+        &#91;b&#93;Dim i As Integer
 <br />
-&nbsp; &nbsp; &nbsp; &nbsp; Dim st As New StringCollection
-
+        Dim st As New StringCollection
 <br />
-&nbsp; &nbsp; &nbsp; &nbsp; For i = 0 To 10
-
+        For i = 0 To 10
 <br />
-&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; st.Add&#40;i.ToString&#41;
-
+            st&#46;Add&#40;i&#46;ToString&#41;
 <br />
-&nbsp; &nbsp; &nbsp; &nbsp; Next
-
+        Next
 <br />
-&nbsp; &nbsp; &nbsp; &nbsp; p.brojevi = st
-
+        p&#46;brojevi = st
 <br />
-&nbsp; &nbsp; &nbsp; &nbsp; Dim st2 As New StringCollection
-
+        Dim st2 As New StringCollection
 <br />
-&nbsp; &nbsp; &nbsp; &nbsp; For i = 0 To 10
-
+        For i = 0 To 10
 <br />
-&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; st2.Add&#40;&#40;i * 2&#41;.ToString&#41;
-
+            st2&#46;Add&#40;&#40;i * 2&#41;&#46;ToString&#41;
 <br />
-&nbsp; &nbsp; &nbsp; &nbsp; Next
-
+        Next
 <br />
-&nbsp; &nbsp; &nbsp; &nbsp; p.brojevi2 = st2&#91;/b&#93;
-
+        p&#46;brojevi2 = st2&#91;/b&#93;
 <br />
 
-
 <br />
-&nbsp; &nbsp; &nbsp; &nbsp; Dim objStreamWriter As New StreamWriter&#40;Application.StartupPath &amp; &quot;\Product.xml&quot;&#41;
-
+        Dim objStreamWriter As New StreamWriter&#40;Application&#46;StartupPath &amp; &quot;\Product&#46;xml&quot;&#41;
 <br />
-&nbsp; &nbsp; &nbsp; &nbsp; Dim x As New XmlSerializer&#40;p.GetType&#41;
-
+        Dim x As New XmlSerializer&#40;p&#46;GetType&#41;
 <br />
-&nbsp; &nbsp; &nbsp; &nbsp; x.Serialize&#40;objStreamWriter, p&#41;
-
+        x&#46;Serialize&#40;objStreamWriter, p&#41;
 <br />
-&nbsp; &nbsp; &nbsp; &nbsp; objStreamWriter.Close&#40;&#41;
-
+        objStreamWriter&#46;Close&#40;&#41;
 <br />
 
-
 <br />
-&nbsp; &nbsp; &nbsp; &nbsp; Dim objStreamReader As New StreamReader&#40;Application.StartupPath &amp; &quot;\Product.xml&quot;&#41;
-
+        Dim objStreamReader As New StreamReader&#40;Application&#46;StartupPath &amp; &quot;\Product&#46;xml&quot;&#41;
 <br />
-&nbsp; &nbsp; &nbsp; &nbsp; Dim p2 As New clsProduct
-
+        Dim p2 As New clsProduct
 <br />
-&nbsp; &nbsp; &nbsp; &nbsp; p2 = x.Deserialize&#40;objStreamReader&#41;
-
+        p2 = x&#46;Deserialize&#40;objStreamReader&#41;
 <br />
-&nbsp; &nbsp; &nbsp; &nbsp; objStreamReader.Close&#40;&#41;
-
+        objStreamReader&#46;Close&#40;&#41;
 <br />
 
-
 <br />
-&nbsp; &nbsp; &nbsp; &nbsp; TextBox1.Text = p2.Identity.Name &amp; &quot; &quot; &amp; p2.Identity.Surname
-
+        TextBox1&#46;Text = p2&#46;Identity&#46;Name &amp; &quot; &quot; &amp; p2&#46;Identity&#46;Surname
 <br />
-&nbsp; &nbsp; &nbsp; &nbsp; TextBox1.Text &amp;= &quot;; &quot; &amp; p2.Description
-
+        TextBox1&#46;Text &amp;= &quot;; &quot; &amp; p2&#46;Description
 <br />
-&nbsp; &nbsp; &nbsp; &nbsp; TextBox1.Text &amp;= &quot;; &quot; &amp; p2.Qty &amp; &quot;; &quot;
-
+        TextBox1&#46;Text &amp;= &quot;; &quot; &amp; p2&#46;Qty &amp; &quot;; &quot;
 <br />
-&nbsp; &nbsp; &nbsp; &nbsp; &#91;b&#93;For i = 0 To p2.brojevi.Count - 1
-
+        &#91;b&#93;For i = 0 To p2&#46;brojevi&#46;Count - 1
 <br />
-&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; TextBox1.Text &amp;= p2.brojevi&#40;i&#41; &amp; &quot;,&quot;
-
+            TextBox1&#46;Text &amp;= p2&#46;brojevi&#40;i&#41; &amp; &quot;,&quot;
 <br />
-&nbsp; &nbsp; &nbsp; &nbsp; Next
-
+        Next
 <br />
-&nbsp; &nbsp; &nbsp; &nbsp; TextBox1.Text &amp;= &quot;; &quot;
-
+        TextBox1&#46;Text &amp;= &quot;; &quot;
 <br />
-&nbsp; &nbsp; &nbsp; &nbsp; For i = 0 To p2.brojevi2.Count - 1
-
+        For i = 0 To p2&#46;brojevi2&#46;Count - 1
 <br />
-&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; TextBox1.Text &amp;= p2.brojevi2&#40;i&#41; &amp; &quot;,&quot;
-
+            TextBox1&#46;Text &amp;= p2&#46;brojevi2&#40;i&#41; &amp; &quot;,&quot;
 <br />
-&nbsp; &nbsp; &nbsp; &nbsp; Next&#91;/b&#93;&nbsp; &nbsp; End Sub
-
+        Next&#91;/b&#93;    End Sub
 <br />
 End Class</td>
 <br />
@@ -1582,9 +1293,7 @@ End Class</td>
 </table>
 <br />
 <span class="postbody">
-
 <br />
-
 
 <br />
 </span>
@@ -1599,181 +1308,122 @@ End Class</td>
 <br />
 	<tr>
 <br />
-	  <td class="code">Imports System.Xml.Serialization
-
+	  <td class="code">Imports System&#46;Xml&#46;Serialization
 <br />
-Imports System.Collections.Specialized
-
+Imports System&#46;Collections&#46;Specialized
 <br />
-
 
 <br />
 Public Class clsProduct
-
 <br />
 
-
 <br />
-&nbsp; &nbsp; Private mstrDescription As String
-
+    Private mstrDescription As String
 <br />
-&nbsp; &nbsp; Private mintQty As Integer
-
+    Private mintQty As Integer
 <br />
 
-
 <br />
-&nbsp; &nbsp; Public Identity As New Ident
-
+    Public Identity As New Ident
 <br />
 
-
 <br />
-&nbsp; &nbsp; Public Property Description&#40;&#41; As String
-
+    Public Property Description&#40;&#41; As String
 <br />
-&nbsp; &nbsp; &nbsp; &nbsp; Get
-
+        Get
 <br />
-&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Description = mstrDescription
-
+            Description = mstrDescription
 <br />
-&nbsp; &nbsp; &nbsp; &nbsp; End Get
-
+        End Get
 <br />
-&nbsp; &nbsp; &nbsp; &nbsp; Set&#40;ByVal Value As String&#41;
-
+        Set&#40;ByVal Value As String&#41;
 <br />
-&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; mstrDescription = Value
-
+            mstrDescription = Value
 <br />
-&nbsp; &nbsp; &nbsp; &nbsp; End Set
-
+        End Set
 <br />
-&nbsp; &nbsp; End Property
-
+    End Property
 <br />
 
-
 <br />
-&nbsp; &nbsp; &lt;XmlElementAttribute&#40;ElementName&#58;=&quot;Quantity&quot;&#41;&gt; _
-
+    &lt;XmlElementAttribute&#40;ElementName&#58;=&quot;Quantity&quot;&#41;&gt; _
 <br />
-&nbsp; &nbsp; Public Property Qty&#40;&#41; As Integer
-
+    Public Property Qty&#40;&#41; As Integer
 <br />
-&nbsp; &nbsp; &nbsp; &nbsp; Get
-
+        Get
 <br />
-&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Qty = mintQty
-
+            Qty = mintQty
 <br />
-&nbsp; &nbsp; &nbsp; &nbsp; End Get
-
+        End Get
 <br />
-&nbsp; &nbsp; &nbsp; &nbsp; Set&#40;ByVal Value As Integer&#41;
-
+        Set&#40;ByVal Value As Integer&#41;
 <br />
-&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; mintQty = Value
-
+            mintQty = Value
 <br />
-&nbsp; &nbsp; &nbsp; &nbsp; End Set
-
+        End Set
 <br />
-&nbsp; &nbsp; End Property
-
+    End Property
 <br />
 
-
 <br />
-&nbsp; &nbsp; &#91;b&#93;&lt;XmlArrayItem&#40;&quot;stevila&quot;, Type&#58;=GetType&#40;String&#41;&#41;&gt; _
-
+    &#91;b&#93;&lt;XmlArrayItem&#40;&quot;stevila&quot;, Type&#58;=GetType&#40;String&#41;&#41;&gt; _
 <br />
-&nbsp; &nbsp; Public brojevi As New StringCollection
-
+    Public brojevi As New StringCollection
 <br />
 
-
 <br />
-&nbsp; &nbsp; &lt;XmlArrayItem&#40;&quot;stevila2&quot;, Type&#58;=GetType&#40;String&#41;&#41;&gt; _
-
+    &lt;XmlArrayItem&#40;&quot;stevila2&quot;, Type&#58;=GetType&#40;String&#41;&#41;&gt; _
 <br />
-&nbsp; &nbsp; Public brojevi2 As New StringCollection&#91;/b&#93;
-
+    Public brojevi2 As New StringCollection&#91;/b&#93;
 <br />
-
 
 <br />
 End Class
-
 <br />
-
 
 <br />
 Public Class Ident
-
 <br />
 
-
 <br />
-&nbsp; &nbsp; Dim idName As String
-
+    Dim idName As String
 <br />
-&nbsp; &nbsp; Dim idSurname As String
-
+    Dim idSurname As String
 <br />
 
-
 <br />
-&nbsp; &nbsp; Public Property Name&#40;&#41; As String
-
+    Public Property Name&#40;&#41; As String
 <br />
-&nbsp; &nbsp; &nbsp; &nbsp; Get
-
+        Get
 <br />
-&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Name = idName
-
+            Name = idName
 <br />
-&nbsp; &nbsp; &nbsp; &nbsp; End Get
-
+        End Get
 <br />
-&nbsp; &nbsp; &nbsp; &nbsp; Set&#40;ByVal Value As String&#41;
-
+        Set&#40;ByVal Value As String&#41;
 <br />
-&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; idName = Value
-
+            idName = Value
 <br />
-&nbsp; &nbsp; &nbsp; &nbsp; End Set
-
+        End Set
 <br />
-&nbsp; &nbsp; End Property
-
+    End Property
 <br />
-&nbsp; &nbsp; Public Property Surname&#40;&#41; As String
-
+    Public Property Surname&#40;&#41; As String
 <br />
-&nbsp; &nbsp; &nbsp; &nbsp; Get
-
+        Get
 <br />
-&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Surname = idSurname
-
+            Surname = idSurname
 <br />
-&nbsp; &nbsp; &nbsp; &nbsp; End Get
-
+        End Get
 <br />
-&nbsp; &nbsp; &nbsp; &nbsp; Set&#40;ByVal Value As String&#41;
-
+        Set&#40;ByVal Value As String&#41;
 <br />
-&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; idSurname = Value
-
+            idSurname = Value
 <br />
-&nbsp; &nbsp; &nbsp; &nbsp; End Set
-
+        End Set
 <br />
-&nbsp; &nbsp; End Property
-
+    End Property
 <br />
-
 
 <br />
 End Class</td>
@@ -1783,19 +1433,14 @@ End Class</td>
 </table>
 <br />
 <span class="postbody">
-
 <br />
-
 
 <br />
 drugovi obratite pažnju na markirane djelove koda, zar oni su novi i glavni djelovi...
-
 <br />
-
 
 <br />
 evo i šta ova koda uobšte izbaci kad je startujemo:
-
 <br />
 </span>
 <br />
@@ -1809,107 +1454,73 @@ evo i šta ova koda uobšte izbaci kad je startujemo:
 <br />
 	<tr>
 <br />
-	  <td class="code">&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;
-
+	  <td class="code">&lt;?xml version=&quot;1&#46;0&quot; encoding=&quot;utf-8&quot;?&gt;
 <br />
-&lt;clsProduct xmlns&#58;xsd=&quot;http&#58;//www.w3.org/2001/XMLSchema&quot; xmlns&#58;xsi=&quot;http&#58;//www.w3.org/2001/XMLSchema-instance&quot;&gt;
-
+&lt;clsProduct xmlns&#58;xsd=&quot;http&#58;//www&#46;w3&#46;org/2001/XMLSchema&quot; xmlns&#58;xsi=&quot;http&#58;//www&#46;w3&#46;org/2001/XMLSchema-instance&quot;&gt;
 <br />
-&nbsp; &lt;Identity&gt;
-
+  &lt;Identity&gt;
 <br />
-&nbsp; &nbsp; &lt;Name&gt;Acid&lt;/Name&gt;
-
+    &lt;Name&gt;Acid&lt;/Name&gt;
 <br />
-&nbsp; &nbsp; &lt;Surname&gt;Cool&lt;/Surname&gt;
-
+    &lt;Surname&gt;Cool&lt;/Surname&gt;
 <br />
-&nbsp; &lt;/Identity&gt;
-
+  &lt;/Identity&gt;
 <br />
-&nbsp; &lt;brojevi&gt;
-
+  &lt;brojevi&gt;
 <br />
-&nbsp; &nbsp; &lt;stevila&gt;0&lt;/stevila&gt;
-
+    &lt;stevila&gt;0&lt;/stevila&gt;
 <br />
-&nbsp; &nbsp; &lt;stevila&gt;1&lt;/stevila&gt;
-
+    &lt;stevila&gt;1&lt;/stevila&gt;
 <br />
-&nbsp; &nbsp; &lt;stevila&gt;2&lt;/stevila&gt;
-
+    &lt;stevila&gt;2&lt;/stevila&gt;
 <br />
-&nbsp; &nbsp; &lt;stevila&gt;3&lt;/stevila&gt;
-
+    &lt;stevila&gt;3&lt;/stevila&gt;
 <br />
-&nbsp; &nbsp; &lt;stevila&gt;4&lt;/stevila&gt;
-
+    &lt;stevila&gt;4&lt;/stevila&gt;
 <br />
-&nbsp; &nbsp; &lt;stevila&gt;5&lt;/stevila&gt;
-
+    &lt;stevila&gt;5&lt;/stevila&gt;
 <br />
-&nbsp; &nbsp; &lt;stevila&gt;6&lt;/stevila&gt;
-
+    &lt;stevila&gt;6&lt;/stevila&gt;
 <br />
-&nbsp; &nbsp; &lt;stevila&gt;7&lt;/stevila&gt;
-
+    &lt;stevila&gt;7&lt;/stevila&gt;
 <br />
-&nbsp; &nbsp; &lt;stevila&gt;8&lt;/stevila&gt;
-
+    &lt;stevila&gt;8&lt;/stevila&gt;
 <br />
-&nbsp; &nbsp; &lt;stevila&gt;9&lt;/stevila&gt;
-
+    &lt;stevila&gt;9&lt;/stevila&gt;
 <br />
-&nbsp; &nbsp; &lt;stevila&gt;10&lt;/stevila&gt;
-
+    &lt;stevila&gt;10&lt;/stevila&gt;
 <br />
-&nbsp; &lt;/brojevi&gt;
-
+  &lt;/brojevi&gt;
 <br />
-&nbsp; &lt;brojevi2&gt;
-
+  &lt;brojevi2&gt;
 <br />
-&nbsp; &nbsp; &lt;stevila2&gt;0&lt;/stevila2&gt;
-
+    &lt;stevila2&gt;0&lt;/stevila2&gt;
 <br />
-&nbsp; &nbsp; &lt;stevila2&gt;2&lt;/stevila2&gt;
-
+    &lt;stevila2&gt;2&lt;/stevila2&gt;
 <br />
-&nbsp; &nbsp; &lt;stevila2&gt;4&lt;/stevila2&gt;
-
+    &lt;stevila2&gt;4&lt;/stevila2&gt;
 <br />
-&nbsp; &nbsp; &lt;stevila2&gt;6&lt;/stevila2&gt;
-
+    &lt;stevila2&gt;6&lt;/stevila2&gt;
 <br />
-&nbsp; &nbsp; &lt;stevila2&gt;8&lt;/stevila2&gt;
-
+    &lt;stevila2&gt;8&lt;/stevila2&gt;
 <br />
-&nbsp; &nbsp; &lt;stevila2&gt;10&lt;/stevila2&gt;
-
+    &lt;stevila2&gt;10&lt;/stevila2&gt;
 <br />
-&nbsp; &nbsp; &lt;stevila2&gt;12&lt;/stevila2&gt;
-
+    &lt;stevila2&gt;12&lt;/stevila2&gt;
 <br />
-&nbsp; &nbsp; &lt;stevila2&gt;14&lt;/stevila2&gt;
-
+    &lt;stevila2&gt;14&lt;/stevila2&gt;
 <br />
-&nbsp; &nbsp; &lt;stevila2&gt;16&lt;/stevila2&gt;
-
+    &lt;stevila2&gt;16&lt;/stevila2&gt;
 <br />
-&nbsp; &nbsp; &lt;stevila2&gt;18&lt;/stevila2&gt;
-
+    &lt;stevila2&gt;18&lt;/stevila2&gt;
 <br />
-&nbsp; &nbsp; &lt;stevila2&gt;20&lt;/stevila2&gt;
-
+    &lt;stevila2&gt;20&lt;/stevila2&gt;
 <br />
-&nbsp; &lt;/brojevi2&gt;
-
+  &lt;/brojevi2&gt;
 <br />
-&nbsp; &lt;Description&gt;Faster, betterm, cheaper&lt;/Description&gt;
-
+  &lt;Description&gt;Faster, betterm, cheaper&lt;/Description&gt;
 <br />
-&nbsp; &lt;Quantity&gt;5&lt;/Quantity&gt;
-
+  &lt;Quantity&gt;5&lt;/Quantity&gt;
 <br />
 &lt;/clsProduct&gt;</td>
 <br />
@@ -1918,13 +1529,10 @@ evo i šta ova koda uobšte izbaci kad je startujemo:
 </table>
 <br />
 <span class="postbody">
-
 <br />
-
 
 <br />
 a u TextBox1-u se izpiše ovo:
-
 <br />
 </span>
 <br />
@@ -1950,16 +1558,13 @@ a u TextBox1-u se izpiše ovo:
 
 
 <br />
-P.S. Kavan kako se več glasi ono čudo koje ti kreiše novu liniju u textboxu...ja to uvjek zaboravim...daj me malo podsjeti molim te <img src="images/smiles/icon_biggrin.gif" alt="icon_biggrin.gif" border="0" />
+P.S. Kavan kako se več glasi ono čudo koje ti kreiše novu liniju u textboxu...ja to uvjek zaboravim...daj me malo podsjeti molim te <img src="images/smiles/icon_biggrin.gif" alt=":D" border="0" />
 
 <br />
 
 
 <br />
-<span style="font-size: 7px; line-height: normal">malo zajebancije ob uspehu</span><br />_________________<br /><span style="font-size: 10px; line-height: normal">my msn space::</span>
-
-<br />
-<span style="font-weight: bold"><a  target="_blank" class="postlink">24 Orange Street :: Acid Cool</a></span></span><span class="gensmall"></span></td>
+<span style="font-size: 59%; line-height: normal">malo zajebancije ob uspehu</span><br />_________________<br />Home page: <a  target="_blank" class="postlink">Goran Gligorin</a></span><span class="gensmall"></span></td>
 			</tr>
 		</table></td>
 	</tr>
@@ -1976,7 +1581,7 @@ P.S. Kavan kako se več glasi ono čudo koje ti kreiše novu liniju u textboxu..
 	</tr>
 	
 	<tr>
-		<td width="150" align="left" valign="top" class="row2"><span class="name"><a name="8864"></a><b>snake</b></span><br /><span class="postdetails">expert<br /><img src="images/ranks/sgd-6.gif" alt="expert" title="expert" border="0" /><br /><img src="images/avatars/c14dbb55415c469152089.gif" alt="" border="0" /><br /><br />Pridružen: 10. jan 2003 ob 08:28<br />objav: 795<br />Kraj: NULL</span><br /></td>
+		<td width="150" align="left" valign="top" class="row2"><span class="name"><a name="8864"></a><b>snake</b></span><br /><span class="postdetails">expert<br /><img src="images/ranks/sgd-6.gif" alt="expert" title="expert" border="0" /><br /><img src="images/avatars/c14dbb55415c469152089.gif" alt="" border="0" /><br /><br />Pridružen: 10. jan 2003 ob 08:28<br />objav: 782<br />Kraj: NULL</span><br /></td>
 		<td class="row2" width="100%" height="28" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
 			<tr>
 				<td colspan="2" width="100%">
@@ -2007,7 +1612,7 @@ Environment.NewLine</span><span class="gensmall"></span></td>
 		<td class="row2" width="150" align="left" valign="middle"><span class="nav"><a href="#top" class="nav">Nazaj na vrh</a></span></td>
 		<td class="row2" width="100%" height="28" valign="bottom" nowrap="nowrap"><table cellspacing="0" cellpadding="0" border="0" height="18" width="18">
 			<tr>
-				<td valign="middle" nowrap="nowrap"><a href="profile-10.html"><img src="templates/SGD2/images/lang_slovenian/icon_profile.gif" alt="Poglej uporabnikov profil" title="Poglej uporabnikov profil" border="0" /></a> <a  target="_userwww"><img src="templates/SGD2/images/lang_slovenian/icon_www.gif" alt="Obišči avtorjevo spletno stran" title="Obišči avtorjevo spletno stran" border="0" /></a></td>
+				<td valign="middle" nowrap="nowrap"><a href="profile-10.html"><img src="templates/SGD2/images/lang_slovenian/icon_profile.gif" alt="Poglej uporabnikov profil" title="Poglej uporabnikov profil" border="0" /></a> </td>
 			</tr>
 		</table></td>
 	</tr>
@@ -2016,7 +1621,7 @@ Environment.NewLine</span><span class="gensmall"></span></td>
 	</tr>
 	
 	<tr>
-		<td width="150" align="left" valign="top" class="row1"><span class="name"><a name="8868"></a><b>maverick</b></span><br /><span class="postdetails">SGD Moderator<br /><img src="images/ranks/sgd-mod.gif" alt="SGD Moderator" title="SGD Moderator" border="0" /><br /><img src="images/avatars/c14d5dba3fdc712804eb2.gif" alt="" border="0" /><br /><br />Pridružen: 10. sep 2003 ob 19:44<br />objav: 1225<br />Kraj: Slovenija</span><br /></td>
+		<td width="150" align="left" valign="top" class="row1"><span class="name"><a name="8868"></a><b>maverick</b></span><br /><span class="postdetails">SGD Moderator<br /><img src="images/ranks/sgd-mod.gif" alt="SGD Moderator" title="SGD Moderator" border="0" /><br /><img src="images/avatars/c14d5dba3fdc712804eb2.gif" alt="" border="0" /><br /><br />Pridružen: 10. sep 2003 ob 19:44<br />objav: 1050<br />Kraj: Slovenija</span><br /></td>
 		<td class="row1" width="100%" height="28" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
 			<tr>
 				<td colspan="2" width="100%">
@@ -2036,16 +1641,16 @@ Environment.NewLine</span><span class="gensmall"></span></td>
 				<td colspan="2"><hr /></td>
 			</tr>
 			<tr>
-				<td colspan="2"><span class="postbody">Hehe... a acid, hitro na crogamedev.net  <img src="images/smiles/icon_smile.gif" alt="icon_smile.gif" border="0" /> 
+				<td colspan="2"><span class="postbody">Hehe... a acid, hitro na crogamedev.net  <img src="images/smiles/icon_smile.gif" alt=":)" border="0" /> 
 
 <br />
 
 
 <br />
-Joke!  <img src="images/smiles/icon_wink.gif" alt="icon_wink.gif" border="0" />  <img src="images/smiles/icon_biggrin.gif" alt="icon_biggrin.gif" border="0" /><br />_________________<br /><span style="font-size: 9px; line-height: normal"><span style="font-weight: bold"><span style="color: black"><a  target="_blank" class="postlink">http://www.BojZGames.net</a></span></span></span><span style="color: black"></span>
+Joke!  <img src="images/smiles/icon_wink.gif" alt=":wink:" border="0" />  <img src="images/smiles/icon_biggrin.gif" alt=":D" border="0" /><br />_________________<br /><span style="font-size: 75%; line-height: normal"><span style="font-weight: bold"><span style="color: black"><a  target="_blank" class="postlink">http&#58;//www&#46;BojZGames&#46;net</a></span></span></span>
 
 <br />
-<span style="font-size: 8px; line-height: normal"><span style="font-weight: bold"><span style="color: black"><a  target="_blank" class="postlink">http://brunsek.blogspot.com</a></span></span></span><span style="color: black"></span></span><span class="gensmall"></span></td>
+<span style="font-size: 67%; line-height: normal"><span style="font-weight: bold"><span style="color: black"><a  target="_blank" class="postlink">http&#58;//brunsek&#46;blogspot&#46;com</a></span></span></span></span><span class="gensmall"></span></td>
 			</tr>
 		</table></td>
 	</tr>
@@ -2062,7 +1667,7 @@ Joke!  <img src="images/smiles/icon_wink.gif" alt="icon_wink.gif" border="0" /> 
 	</tr>
 	
 	<tr>
-		<td width="150" align="left" valign="top" class="row2"><span class="name"><a name="8880"></a><b>Kavan</b></span><br /><span class="postdetails">inštruktor<br /><img src="images/ranks/sgd-4.gif" alt="inštruktor" title="inštruktor" border="0" /><br /><br /><br />Pridružen: 10. jan 2003 ob 12:57<br />objav: 363<br />Kraj: Los Angeles</span><br /></td>
+		<td width="150" align="left" valign="top" class="row2"><span class="name"><a name="8880"></a><b>Kavan</b></span><br /><span class="postdetails">inštruktor<br /><img src="images/ranks/sgd-4.gif" alt="inštruktor" title="inštruktor" border="0" /><br /><br /><br />Pridružen: 10. jan 2003 ob 12:57<br />objav: 314<br />Kraj: Los Angeles</span><br /></td>
 		<td class="row2" width="100%" height="28" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
 			<tr>
 				<td colspan="2" width="100%">
@@ -2107,7 +1712,6 @@ Joke!  <img src="images/smiles/icon_wink.gif" alt="icon_wink.gif" border="0" /> 
 	<tr>
 <br />
 	  <td class="code">&lt;XmlArrayItem&#40;&quot;Song&quot;, Type&#58;=GetType&#40;String&#41;&#41;&gt; _
-
 <br />
 Public CustomPlayList As New StringCollection</td>
 <br />
@@ -2116,9 +1720,7 @@ Public CustomPlayList As New StringCollection</td>
 </table>
 <br />
 <span class="postbody">
-
 <br />
-
 
 <br />
 ej, se nekaj sem se mislil tu...ko maš ti ta stringcollection lahko jaz z kako for zanko naredim to pa mi on pol naredi tolko pač teh polj kolko jaz pač stvari not dam?če to sploh gre al pa se to dela na keri drugi način, ali kak enostavneje?</td>
@@ -2133,10 +1735,10 @@ ej, se nekaj sem se mislil tu...ko maš ti ta stringcollection lahko jaz z kako 
 
 
 <br />
-Da malo pojasnim kaj se tu dogaja. StringCollection ni drugega kot collection stringov. Ti lahko za tak namen uporabiš katerokoli stvar, ki implementira ICollection. Torej tipično ArrayList. Ker pa ima recimo ArrayList za elemente vedno objekte (čeprav veš da ima nek konkreten tip), pa dodaš atribut ki serializerju pove kakšen tip naj pričakuje. Tako bi lahko imel tudi collection podatkov o kontaktih  <img src="images/smiles/icon_idea.gif" alt="icon_idea.gif" border="0" /><br />_________________<br />
+Da malo pojasnim kaj se tu dogaja. StringCollection ni drugega kot collection stringov. Ti lahko za tak namen uporabiš katerokoli stvar, ki implementira ICollection. Torej tipično ArrayList. Ker pa ima recimo ArrayList za elemente vedno objekte (čeprav veš da ima nek konkreten tip), pa dodaš atribut ki serializerju pove kakšen tip naj pričakuje. Tako bi lahko imel tudi collection podatkov o kontaktih  <img src="images/smiles/icon_idea.gif" alt=":idea:" border="0" /><br />_________________<br />
 
 <br />
-<span style="font-size: 9px; line-height: normal"><a  target="_blank" class="postlink">www.3dlevel.com</a></span></span><span class="gensmall"></span></td>
+<span style="font-size: 75%; line-height: normal"><a  target="_blank" class="postlink">http&#58;//www&#46;3dlevel&#46;com</a></span></span><span class="gensmall"></span></td>
 			</tr>
 		</table></td>
 	</tr>
@@ -2153,7 +1755,7 @@ Da malo pojasnim kaj se tu dogaja. StringCollection ni drugega kot collection st
 	</tr>
 	
 	<tr>
-		<td width="150" align="left" valign="top" class="row1"><span class="name"><a name="8883"></a><b>Acid Cool</b></span><br /><span class="postdetails">guru<br /><img src="images/ranks/sgd-8.gif" alt="guru" title="guru" border="0" /><br /><img src="images/avatars/c15ff85a40e32fec16332.gif" alt="" border="0" /><br /><br />Pridružen: 17. jun 2003 ob 07:23<br />objav: 1199<br />Kraj: Behind an orange skull!</span><br /></td>
+		<td width="150" align="left" valign="top" class="row1"><span class="name"><a name="8883"></a><b>Acid Cool</b></span><br /><span class="postdetails">guru<br /><img src="images/ranks/sgd-8.gif" alt="guru" title="guru" border="0" /><br /><img src="images/avatars/c15ff85a40e32fec16332.gif" alt="" border="0" /><br /><br />Pridružen: 17. jun 2003 ob 07:23<br />objav: 1329<br /></span><br /></td>
 		<td class="row1" width="100%" height="28" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
 			<tr>
 				<td colspan="2" width="100%">
@@ -2210,7 +1812,6 @@ Da malo pojasnim kaj se tu dogaja. StringCollection ni drugega kot collection st
 	<tr>
 <br />
 	  <td class="code">&lt;XmlArrayItem&#40;&quot;Song&quot;, Type&#58;=GetType&#40;String&#41;&#41;&gt; _
-
 <br />
 Public CustomPlayList As New StringCollection</td>
 <br />
@@ -2219,9 +1820,7 @@ Public CustomPlayList As New StringCollection</td>
 </table>
 <br />
 <span class="postbody">
-
 <br />
-
 
 <br />
 ej, se nekaj sem se mislil tu...ko maš ti ta stringcollection lahko jaz z kako for zanko naredim to pa mi on pol naredi tolko pač teh polj kolko jaz pač stvari not dam?če to sploh gre al pa se to dela na keri drugi način, ali kak enostavneje?</td>
@@ -2231,12 +1830,10 @@ ej, se nekaj sem se mislil tu...ko maš ti ta stringcollection lahko jaz z kako 
 </table>
 <br />
 <span class="postbody">
-
 <br />
 
-
 <br />
-Da malo pojasnim kaj se tu dogaja. StringCollection ni drugega kot collection stringov. Ti lahko za tak namen uporabiš katerokoli stvar, ki implementira ICollection. Torej tipično ArrayList. Ker pa ima recimo ArrayList za elemente vedno objekte (čeprav veš da ima nek konkreten tip), pa dodaš atribut ki serializerju pove kakšen tip naj pričakuje. Tako bi lahko imel tudi collection podatkov o kontaktih  <img src="images/smiles/icon_idea.gif" alt="icon_idea.gif" border="0" /></td>
+Da malo pojasnim kaj se tu dogaja. StringCollection ni drugega kot collection stringov. Ti lahko za tak namen uporabiš katerokoli stvar, ki implementira ICollection. Torej tipično ArrayList. Ker pa ima recimo ArrayList za elemente vedno objekte (čeprav veš da ima nek konkreten tip), pa dodaš atribut ki serializerju pove kakšen tip naj pričakuje. Tako bi lahko imel tudi collection podatkov o kontaktih  <img src="images/smiles/icon_idea.gif" alt=":idea:" border="0" /></td>
 <br />
 	</tr>
 <br />
@@ -2245,16 +1842,13 @@ Da malo pojasnim kaj se tu dogaja. StringCollection ni drugega kot collection st
 <span class="postbody">
 
 <br />
-kot vidiš se malo to že skapiral, samo v one ICollection se še moram not spustit...za zdaj mam to kaj rabim, ko bom pa in need bom pa se že oglasil al pa sam naštudiral <img src="images/smiles/icon_smile.gif" alt="icon_smile.gif" border="0" />
+kot vidiš se malo to že skapiral, samo v one ICollection se še moram not spustit...za zdaj mam to kaj rabim, ko bom pa in need bom pa se že oglasil al pa sam naštudiral <img src="images/smiles/icon_smile.gif" alt=":)" border="0" />
 
 <br />
 
 
 <br />
-maverick: ne crogamedev.net ampak yugamedev.net , ker sem pisal v srbščini...in believe me ni isto kot hrvaščina <img src="images/smiles/icon_biggrin.gif" alt="icon_biggrin.gif" border="0" /><br />_________________<br /><span style="font-size: 10px; line-height: normal">my msn space::</span>
-
-<br />
-<span style="font-weight: bold"><a  target="_blank" class="postlink">24 Orange Street :: Acid Cool</a></span></span><span class="gensmall"></span></td>
+maverick: ne crogamedev.net ampak yugamedev.net , ker sem pisal v srbščini...in believe me ni isto kot hrvaščina <img src="images/smiles/icon_biggrin.gif" alt=":D" border="0" /><br />_________________<br />Home page: <a  target="_blank" class="postlink">Goran Gligorin</a></span><span class="gensmall"></span></td>
 			</tr>
 		</table></td>
 	</tr>
@@ -2271,7 +1865,7 @@ maverick: ne crogamedev.net ampak yugamedev.net , ker sem pisal v srbščini...i
 	</tr>
 	
 	<tr>
-		<td width="150" align="left" valign="top" class="row2"><span class="name"><a name="8892"></a><b>maverick</b></span><br /><span class="postdetails">SGD Moderator<br /><img src="images/ranks/sgd-mod.gif" alt="SGD Moderator" title="SGD Moderator" border="0" /><br /><img src="images/avatars/c14d5dba3fdc712804eb2.gif" alt="" border="0" /><br /><br />Pridružen: 10. sep 2003 ob 19:44<br />objav: 1225<br />Kraj: Slovenija</span><br /></td>
+		<td width="150" align="left" valign="top" class="row2"><span class="name"><a name="8892"></a><b>maverick</b></span><br /><span class="postdetails">SGD Moderator<br /><img src="images/ranks/sgd-mod.gif" alt="SGD Moderator" title="SGD Moderator" border="0" /><br /><img src="images/avatars/c14d5dba3fdc712804eb2.gif" alt="" border="0" /><br /><br />Pridružen: 10. sep 2003 ob 19:44<br />objav: 1050<br />Kraj: Slovenija</span><br /></td>
 		<td class="row2" width="100%" height="28" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
 			<tr>
 				<td colspan="2" width="100%">
@@ -2294,16 +1888,16 @@ maverick: ne crogamedev.net ampak yugamedev.net , ker sem pisal v srbščini...i
 				<td colspan="2"><span class="postbody">Mnja, ne znam ne hrvašk, ne srbsk, ker mam zadost 3 tuje jezike + domovinski.
 
 <br />
-Plus tega nism bil nikol privrženec tega jezika, zato da bi izpadu frajer kot to poskušajo nekatri ki jih poznam.  <img src="images/smiles/icon_smile.gif" alt="icon_smile.gif" border="0" /> 
+Plus tega nism bil nikol privrženec tega jezika, zato da bi izpadu frajer kot to poskušajo nekatri ki jih poznam.  <img src="images/smiles/icon_smile.gif" alt=":)" border="0" /> 
 
 <br />
 
 
 <br />
-PS: Sam res! A obstaja še kak YuGameDev al pa JapGameDev?  <img src="images/smiles/icon_biggrin.gif" alt="icon_biggrin.gif" border="0" /><br />_________________<br /><span style="font-size: 9px; line-height: normal"><span style="font-weight: bold"><span style="color: black"><a  target="_blank" class="postlink">http://www.BojZGames.net</a></span></span></span><span style="color: black"></span>
+PS: Sam res! A obstaja še kak YuGameDev al pa JapGameDev?  <img src="images/smiles/icon_biggrin.gif" alt=":D" border="0" /><br />_________________<br /><span style="font-size: 75%; line-height: normal"><span style="font-weight: bold"><span style="color: black"><a  target="_blank" class="postlink">http&#58;//www&#46;BojZGames&#46;net</a></span></span></span>
 
 <br />
-<span style="font-size: 8px; line-height: normal"><span style="font-weight: bold"><span style="color: black"><a  target="_blank" class="postlink">http://brunsek.blogspot.com</a></span></span></span><span style="color: black"></span></span><span class="gensmall"></span></td>
+<span style="font-size: 67%; line-height: normal"><span style="font-weight: bold"><span style="color: black"><a  target="_blank" class="postlink">http&#58;//brunsek&#46;blogspot&#46;com</a></span></span></span></span><span class="gensmall"></span></td>
 			</tr>
 		</table></td>
 	</tr>
@@ -2320,7 +1914,7 @@ PS: Sam res! A obstaja še kak YuGameDev al pa JapGameDev?  <img src="images/smi
 	</tr>
 	
 	<tr>
-		<td width="150" align="left" valign="top" class="row1"><span class="name"><a name="8893"></a><b>Acid Cool</b></span><br /><span class="postdetails">guru<br /><img src="images/ranks/sgd-8.gif" alt="guru" title="guru" border="0" /><br /><img src="images/avatars/c15ff85a40e32fec16332.gif" alt="" border="0" /><br /><br />Pridružen: 17. jun 2003 ob 07:23<br />objav: 1199<br />Kraj: Behind an orange skull!</span><br /></td>
+		<td width="150" align="left" valign="top" class="row1"><span class="name"><a name="8893"></a><b>Acid Cool</b></span><br /><span class="postdetails">guru<br /><img src="images/ranks/sgd-8.gif" alt="guru" title="guru" border="0" /><br /><img src="images/avatars/c15ff85a40e32fec16332.gif" alt="" border="0" /><br /><br />Pridružen: 17. jun 2003 ob 07:23<br />objav: 1329<br /></span><br /></td>
 		<td class="row1" width="100%" height="28" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
 			<tr>
 				<td colspan="2" width="100%">
@@ -2343,10 +1937,7 @@ PS: Sam res! A obstaja še kak YuGameDev al pa JapGameDev?  <img src="images/smi
 				<td colspan="2"><span class="postbody">no saj jaz se s tem ne delam važnega al kaj...samo tak za foro, k sem pred tem gledal neki v eno yu knjigi...drugače pa mam jaz sorodnike (prek fotra) tam doli v srbiji in zato vem take fore...tu poleg pa je blizu hr meja pa tak slišim razliko...
 
 <br />
-za yugamedev pa domim da je kaj ker niso še na takem nivoju...vsi k so malo boljši progamreji pa to grejo v tujino delat...to sem slišal iz prva roke...japonci pa majo ziher kaj...<br />_________________<br /><span style="font-size: 10px; line-height: normal">my msn space::</span>
-
-<br />
-<span style="font-weight: bold"><a  target="_blank" class="postlink">24 Orange Street :: Acid Cool</a></span></span><span class="gensmall"></span></td>
+za yugamedev pa domim da je kaj ker niso še na takem nivoju...vsi k so malo boljši progamreji pa to grejo v tujino delat...to sem slišal iz prva roke...japonci pa majo ziher kaj...<br />_________________<br />Home page: <a  target="_blank" class="postlink">Goran Gligorin</a></span><span class="gensmall"></span></td>
 			</tr>
 		</table></td>
 	</tr>
@@ -2363,7 +1954,7 @@ za yugamedev pa domim da je kaj ker niso še na takem nivoju...vsi k so malo bol
 	</tr>
 	
 	<tr>
-		<td width="150" align="left" valign="top" class="row2"><span class="name"><a name="8894"></a><b>maverick</b></span><br /><span class="postdetails">SGD Moderator<br /><img src="images/ranks/sgd-mod.gif" alt="SGD Moderator" title="SGD Moderator" border="0" /><br /><img src="images/avatars/c14d5dba3fdc712804eb2.gif" alt="" border="0" /><br /><br />Pridružen: 10. sep 2003 ob 19:44<br />objav: 1225<br />Kraj: Slovenija</span><br /></td>
+		<td width="150" align="left" valign="top" class="row2"><span class="name"><a name="8894"></a><b>maverick</b></span><br /><span class="postdetails">SGD Moderator<br /><img src="images/ranks/sgd-mod.gif" alt="SGD Moderator" title="SGD Moderator" border="0" /><br /><img src="images/avatars/c14d5dba3fdc712804eb2.gif" alt="" border="0" /><br /><br />Pridružen: 10. sep 2003 ob 19:44<br />objav: 1050<br />Kraj: Slovenija</span><br /></td>
 		<td class="row2" width="100%" height="28" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
 			<tr>
 				<td colspan="2" width="100%">
@@ -2383,19 +1974,19 @@ za yugamedev pa domim da je kaj ker niso še na takem nivoju...vsi k so malo bol
 				<td colspan="2"><hr /></td>
 			</tr>
 			<tr>
-				<td colspan="2"><span class="postbody">Ja, sej nism reku, da si ti to hotu, sam poznam tak folk.  <img src="images/smiles/icon_wink.gif" alt="icon_wink.gif" border="0" /> 
+				<td colspan="2"><span class="postbody">Ja, sej nism reku, da si ti to hotu, sam poznam tak folk.  <img src="images/smiles/icon_wink.gif" alt=":wink:" border="0" /> 
 
 <br />
 
 
 <br />
-Acid, a znaš madžarsk tud kej? <img src="images/smiles/icon_smile.gif" alt="icon_smile.gif" border="0" /> 
+Acid, a znaš madžarsk tud kej? <img src="images/smiles/icon_smile.gif" alt=":)" border="0" /> 
 
 <br />
-To je verjetno še bolj zanimivo.  <img src="images/smiles/icon_razz.gif" alt="icon_razz.gif" border="0" /><br />_________________<br /><span style="font-size: 9px; line-height: normal"><span style="font-weight: bold"><span style="color: black"><a  target="_blank" class="postlink">http://www.BojZGames.net</a></span></span></span><span style="color: black"></span>
+To je verjetno še bolj zanimivo.  <img src="images/smiles/icon_razz.gif" alt=":P" border="0" /><br />_________________<br /><span style="font-size: 75%; line-height: normal"><span style="font-weight: bold"><span style="color: black"><a  target="_blank" class="postlink">http&#58;//www&#46;BojZGames&#46;net</a></span></span></span>
 
 <br />
-<span style="font-size: 8px; line-height: normal"><span style="font-weight: bold"><span style="color: black"><a  target="_blank" class="postlink">http://brunsek.blogspot.com</a></span></span></span><span style="color: black"></span></span><span class="gensmall"></span></td>
+<span style="font-size: 67%; line-height: normal"><span style="font-weight: bold"><span style="color: black"><a  target="_blank" class="postlink">http&#58;//brunsek&#46;blogspot&#46;com</a></span></span></span></span><span class="gensmall"></span></td>
 			</tr>
 		</table></td>
 	</tr>
@@ -2412,7 +2003,7 @@ To je verjetno še bolj zanimivo.  <img src="images/smiles/icon_razz.gif" alt="i
 	</tr>
 	
 	<tr>
-		<td width="150" align="left" valign="top" class="row1"><span class="name"><a name="8895"></a><b>Acid Cool</b></span><br /><span class="postdetails">guru<br /><img src="images/ranks/sgd-8.gif" alt="guru" title="guru" border="0" /><br /><img src="images/avatars/c15ff85a40e32fec16332.gif" alt="" border="0" /><br /><br />Pridružen: 17. jun 2003 ob 07:23<br />objav: 1199<br />Kraj: Behind an orange skull!</span><br /></td>
+		<td width="150" align="left" valign="top" class="row1"><span class="name"><a name="8895"></a><b>Acid Cool</b></span><br /><span class="postdetails">guru<br /><img src="images/ranks/sgd-8.gif" alt="guru" title="guru" border="0" /><br /><img src="images/avatars/c15ff85a40e32fec16332.gif" alt="" border="0" /><br /><br />Pridružen: 17. jun 2003 ob 07:23<br />objav: 1329<br /></span><br /></td>
 		<td class="row1" width="100%" height="28" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
 			<tr>
 				<td colspan="2" width="100%">
@@ -2432,13 +2023,10 @@ To je verjetno še bolj zanimivo.  <img src="images/smiles/icon_razz.gif" alt="i
 				<td colspan="2"><hr /></td>
 			</tr>
 			<tr>
-				<td colspan="2"><span class="postbody">ja znam samo ne preveč dobro, tak da ne bi lih kaj dosti skup spravil...tolko znam HU kot DE...no mogoče malo več, k se moram z babico po hu pogovarjat...to pomeni da se  babico bl malo pogovarjam <img src="images/smiles/icon_wink.gif" alt="icon_wink.gif" border="0" />
+				<td colspan="2"><span class="postbody">ja znam samo ne preveč dobro, tak da ne bi lih kaj dosti skup spravil...tolko znam HU kot DE...no mogoče malo več, k se moram z babico po hu pogovarjat...to pomeni da se  babico bl malo pogovarjam <img src="images/smiles/icon_wink.gif" alt=";)" border="0" />
 
 <br />
-ok sam to je ze off topic<br />_________________<br /><span style="font-size: 10px; line-height: normal">my msn space::</span>
-
-<br />
-<span style="font-weight: bold"><a  target="_blank" class="postlink">24 Orange Street :: Acid Cool</a></span></span><span class="gensmall"></span></td>
+ok sam to je ze off topic<br />_________________<br />Home page: <a  target="_blank" class="postlink">Goran Gligorin</a></span><span class="gensmall"></span></td>
 			</tr>
 		</table></td>
 	</tr>
@@ -2463,7 +2051,7 @@ ok sam to je ze off topic<br />_________________<br /><span style="font-size: 10
   <tr>
 	<td align="left" valign="middle" nowrap="nowrap">&nbsp;</td>
 	<td align="left" valign="middle" width="100%"><span class="nav">&nbsp;&nbsp;&nbsp;<a href="index.html" class="nav">SloGameDev.net seznam forumov</a>
-	  -> <a href="forum-1.html" class="nav">Splošno Programiranje</a></span></td>
+	  -> <a href="forum-52.html" class="nav">Izdelovanje iger</a></span></td>
 	<td align="right" valign="top" nowrap="nowrap"><span class="gensmall">Časovni pas (GMT +2:00 uri) Slovenija, poletni čas</span><br /><span class="nav"></span>
 	  </td>
   </tr>
@@ -2479,7 +2067,7 @@ ok sam to je ze off topic<br />_________________<br /><span style="font-size: 10
   </tr>
 </table>
 
-<div align="center"><span class="copyright"><br />Arhiv stanja na dan 13. 2. 2006 &mdash; samo za branje.<br />
+<div align="center"><span class="copyright"><br />Arhiv &mdash; samo za branje.<br />
 <!--
 	We request you retain the full copyright notice below including the link to www.phpbb.com.
 	This not only gives respect to the large amount of time given freely by the developers

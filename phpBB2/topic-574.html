@@ -276,7 +276,7 @@ input.liteoption {
   <tr>
 	<td align="left" valign="bottom" nowrap="nowrap">&nbsp;</td>
 	<td align="left" valign="middle" width="100%"><span class="nav">&nbsp;&nbsp;&nbsp;<a href="index.html" class="nav">SloGameDev.net seznam forumov</a>
-	  -> <a href="forum-1.html" class="nav">Splošno Programiranje</a></span></td>
+	  -> <a href="forum-52.html" class="nav">Izdelovanje iger</a></span></td>
   </tr>
 </table>
 
@@ -351,151 +351,102 @@ naloga:
 	<tr>
 <br />
 	  <td class="code">
-
 <br />
 struct element
-
 <br />
 &#123;
-
 <br />
-&nbsp; &nbsp; &nbsp; int invent_st;
-
+      int invent_st;
 <br />
-&nbsp; &nbsp; &nbsp; char *ime;
-
+      char *ime;
 <br />
-&nbsp; &nbsp; &nbsp; int amo_vsota;
-
+      int amo_vsota;
 <br />
-&nbsp; &nbsp; &nbsp; int starost_ele;
-
+      int starost_ele;
 <br />
-&nbsp; &nbsp; &nbsp; int st_prostora;
-
+      int st_prostora;
 <br />
-&nbsp; &nbsp; &nbsp; 
-
+      
 <br />
-&nbsp; &nbsp; &nbsp; element *nasl_ele;
-
+      element *nasl_ele;
 <br />
-&nbsp; &nbsp; &nbsp; 
-
+      
 <br />
-&nbsp; &nbsp;  void vnesi&#40;int i,int j&#41;;
-
+     void vnesi&#40;int i,int j&#41;;
 <br />
-&nbsp; &nbsp; &nbsp; void izpisi&#40;&#41;;
-
+      void izpisi&#40;&#41;;
 <br />
 &#125;;
-
 <br />
-
 
 <br />
 struct prostor
-
 <br />
 &#123;
-
 <br />
-&nbsp; &nbsp;  element *elementa;
-
+     element *elementa;
 <br />
-&nbsp; &nbsp;  prostor *prostora;
-
+     prostor *prostora;
 <br />
 &#125;;
-
 <br />
 
-
 <br />
-...
-
+&#46;&#46;&#46;
 <br />
-
 
 <br />
 void vpis_prostora&#40;prostor *&amp;dodaj&#41;
-
 <br />
 &#123;
-
 <br />
-&nbsp; &nbsp;  prostor *dodajanje;
-
+     prostor *dodajanje;
 <br />
 
-
 <br />
-&nbsp; &nbsp;  int kol_prost=0;
-
+     int kol_prost=0;
 <br />
-&nbsp; &nbsp;  if &#40;dodajanje!=NULL&#41;
-
+     if &#40;dodajanje!=NULL&#41;
 <br />
-&nbsp; &nbsp;  &#123;
-
+     &#123;
 <br />
-&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; cout&lt;&lt;&quot;KOLIKO prostorov&#58; &quot;; cin&gt;&gt;kol_prost;
-
+          cout&lt;&lt;&quot;KOLIKO prostorov&#58; &quot;; cin&gt;&gt;kol_prost;
 <br />
-&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; for&#40;int i=0; i&lt;kol_prost; i++&#41;
-
+          for&#40;int i=0; i&lt;kol_prost; i++&#41;
 <br />
-&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &#123;
-
+          &#123;
 <br />
-&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  int kol_elem=0;
-
+               int kol_elem=0;
 <br />
-&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  cout&lt;&lt;&quot;KOLIKO predmetov&#58; &quot;; cin &gt;&gt; kol_elem;
-
+               cout&lt;&lt;&quot;KOLIKO predmetov&#58; &quot;; cin &gt;&gt; kol_elem;
 <br />
-&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  dodajanje = new prostor;
-
+               dodajanje = new prostor;
 <br />
-&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  for &#40;int j=0; j&lt;kol_elem; j++&#41;
-
+               for &#40;int j=0; j&lt;kol_elem; j++&#41;
 <br />
-&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  &#123;
-
+               &#123;
 <br />
-&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; dodajanje-&gt;elementa=new element;
-
+                    dodajanje-&gt;elementa=new element;
 <br />
-&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; dodajanje-&gt;elementa-&gt;vnesi&#40;i,j&#41;;
-
+                    dodajanje-&gt;elementa-&gt;vnesi&#40;i,j&#41;;
 <br />
-&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 
-
+                    
 <br />
-&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; dodajanje-&gt;elementa-&gt;nasl_ele=dodaj-&gt;elementa; &lt;--------- v tej vrstici je napaka
-
+                    dodajanje-&gt;elementa-&gt;nasl_ele=dodaj-&gt;elementa; &lt;--------- v tej vrstici je napaka
 <br />
-&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; dodaj-&gt;elementa=dodajanje-&gt;elementa; &lt;--------- v tej vrstici je napaka
-
+                    dodaj-&gt;elementa=dodajanje-&gt;elementa; &lt;--------- v tej vrstici je napaka
 <br />
-&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  &#125;
-
+               &#125;
 <br />
-&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  dodajanje-&gt;prostora = dodaj;
-
+               dodajanje-&gt;prostora = dodaj;
 <br />
-&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  dodaj=dodajanje;
-
+               dodaj=dodajanje;
 <br />
-&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &#125;
-
+          &#125;
 <br />
-&nbsp; &nbsp;  &#125;
-
+     &#125;
 <br />
 &#125;
-
 <br />
 </td>
 <br />
@@ -532,7 +483,7 @@ lp<br />_________________<br />// Play Music Loud &amp; Proud //</span><span cla
 	</tr>
 	
 	<tr>
-		<td width="150" align="left" valign="top" class="row2"><span class="name"><a name="6446"></a><b>Senitel</b></span><br /><span class="postdetails">wannabe<br /><img src="images/ranks/sgd-2.gif" alt="wannabe" title="wannabe" border="0" /><br /><br /><br />Pridružen: 02. jul 2003 ob 17:01<br />objav: 97<br /></span><br /></td>
+		<td width="150" align="left" valign="top" class="row2"><span class="name"><a name="6446"></a><b>Senitel</b></span><br /><span class="postdetails">wannabe<br /><img src="images/ranks/sgd-2.gif" alt="wannabe" title="wannabe" border="0" /><br /><br /><br />Pridružen: 02. jul 2003 ob 17:01<br />objav: 127<br /></span><br /></td>
 		<td class="row2" width="100%" height="28" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
 			<tr>
 				<td colspan="2" width="100%">
@@ -633,7 +584,7 @@ lp<br />_________________<br />// Play Music Loud &amp; Proud //</span><span cla
 	</tr>
 	
 	<tr>
-		<td width="150" align="left" valign="top" class="row2"><span class="name"><a name="6450"></a><b>Ozzy</b></span><br /><span class="postdetails">wannabe<br /><img src="images/ranks/sgd-2.gif" alt="wannabe" title="wannabe" border="0" /><br /><img src="images/avatars/a4081333430d8da37ef5c.gif" alt="" border="0" /><br /><br />Pridružen: 19. jan 2003 ob 22:17<br />objav: 125<br /></span><br /></td>
+		<td width="150" align="left" valign="top" class="row2"><span class="name"><a name="6450"></a><b>Ozzy</b></span><br /><span class="postdetails">poznavalec<br /><img src="images/ranks/sgd-3.gif" alt="poznavalec" title="poznavalec" border="0" /><br /><img src="images/avatars/a4081333430d8da37ef5c.gif" alt="" border="0" /><br /><br />Pridružen: 19. jan 2003 ob 22:17<br />objav: 172<br /></span><br /></td>
 		<td class="row2" width="100%" height="28" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
 			<tr>
 				<td colspan="2" width="100%">
@@ -662,7 +613,7 @@ lp<br />_________________<br />// Play Music Loud &amp; Proud //</span><span cla
 Tule imas eno stran, kjer so stvari preprosto razlozene:
 
 <br />
-<a  target="_blank" class="postlink">http://www.inversereality.org/tutorials/c++/linkedlists.html</a>
+<a  target="_blank" class="postlink">http&#58;//www&#46;inversereality&#46;org/tutorials/c++/linkedlists&#46;html</a>
 
 <br />
 
@@ -699,117 +650,80 @@ Tule imas delno popravljeno kodo, da bos priblizno videl kako gre:
 	<tr>
 <br />
 	  <td class="code">void vpis_prostora&#40;prostor *dodaj&#41; 
-
 <br />
 &#123; 
-
 <br />
-&nbsp; &nbsp;  prostor *dodajanje = new prostor;&nbsp; &nbsp;  // seznam v katerega shranjujemo, ustvarimo si zacetni kazalec
-
+     prostor *dodajanje = new prostor;     // seznam v katerega shranjujemo, ustvarimo si zacetni kazalec
 <br />
 
-
 <br />
-&nbsp; &nbsp;  dodaj = dodajanje;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  // shranimo si ta kazalec, da bo kazal na zacetno spremenlivko seznama
-
+     dodaj = dodajanje;                   // shranimo si ta kazalec, da bo kazal na zacetno spremenlivko seznama
 <br />
 
-
 <br />
-&nbsp; &nbsp;  int kol_prost=0; 
-
+     int kol_prost=0; 
 <br />
-&nbsp; &nbsp;  if &#40;dodajanje!=NULL&#41; 
-
+     if &#40;dodajanje!=NULL&#41; 
 <br />
-&nbsp; &nbsp;  &#123; 
-
+     &#123; 
 <br />
-&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; cout&lt;&lt;&quot;KOLIKO prostorov&#58; &quot;; 
-
+          cout&lt;&lt;&quot;KOLIKO prostorov&#58; &quot;; 
 <br />
-&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; cin&gt;&gt;kol_prost; 
-
+          cin&gt;&gt;kol_prost; 
 <br />
-&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 
-
+          
 <br />
-&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; for&#40;int i=0; i&lt;kol_prost; i++&#41; 
-
+          for&#40;int i=0; i&lt;kol_prost; i++&#41; 
 <br />
-&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &#123; 
-
+          &#123; 
 <br />
-&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  int kol_elem=0; 
-
+               int kol_elem=0; 
 <br />
-&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  cout&lt;&lt;&quot;KOLIKO predmetov&#58; &quot;; 
-
+               cout&lt;&lt;&quot;KOLIKO predmetov&#58; &quot;; 
 <br />
-&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  cin &gt;&gt; kol_elem; 
-
+               cin &gt;&gt; kol_elem; 
 <br />
-&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  
-
+               
 <br />
-&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  //**********************************************
-
+               //**********************************************
 <br />
-&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  // !!!! s tole notranjo zanko se pa se sam malo pomuci !!!!!
-
+               // !!!! s tole notranjo zanko se pa se sam malo pomuci !!!!!
 <br />
-&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  for &#40;int j=0; j&lt;kol_elem; j++&#41; 
-
+               for &#40;int j=0; j&lt;kol_elem; j++&#41; 
 <br />
-&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  &#123; 
-
+               &#123; 
 <br />
-&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; dodajanje-&gt;elementa=new element; 
-
+                    dodajanje-&gt;elementa=new element; 
 <br />
-&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; dodajanje-&gt;elementa-&gt;vnesi&#40;i,j&#41;; 
-
+                    dodajanje-&gt;elementa-&gt;vnesi&#40;i,j&#41;; 
 <br />
-&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 
-
+                    
 <br />
-&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; dodajanje-&gt;elementa-&gt;nasl_ele=dodaj-&gt;elementa; &lt;--------- v tej vrstici je napaka 
-
+                    dodajanje-&gt;elementa-&gt;nasl_ele=dodaj-&gt;elementa; &lt;--------- v tej vrstici je napaka 
 <br />
-&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; dodaj-&gt;elementa=dodajanje-&gt;elementa; &lt;--------- v tej vrstici je napaka 
-
+                    dodaj-&gt;elementa=dodajanje-&gt;elementa; &lt;--------- v tej vrstici je napaka 
 <br />
-&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  &#125; 
-
+               &#125; 
 <br />
-&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  // ******************************************************
-
+               // ******************************************************
 <br />
-&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  
-
+               
 <br />
-&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  dodajanje-&gt;prostora = new prostor;&nbsp;  // rezerviramo pomnilnik za naslednji element
-
+               dodajanje-&gt;prostora = new prostor;   // rezerviramo pomnilnik za naslednji element
 <br />
-&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  dodajanje = dodajanje-&gt;prostora;&nbsp; &nbsp;  // kazalec pomaknemo na nov element
-
+               dodajanje = dodajanje-&gt;prostora;     // kazalec pomaknemo na nov element
 <br />
-&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  dodajanje-&gt;prostora = NULL;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; // kot naslednji element si shranimo vrednost null &#40;konec seznama&#41;, da ne pride do napake
-
+               dodajanje-&gt;prostora = NULL;          // kot naslednji element si shranimo vrednost null &#40;konec seznama&#41;, da ne pride do napake
 <br />
-&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  
-
+               
 <br />
-&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &#125; 
-
+          &#125; 
 <br />
-&nbsp; &nbsp;  &#125;
-
+     &#125;
 <br />
 &#125; 
-
 <br />
-&nbsp; </td>
+  </td>
 <br />
 	</tr>
 <br />
@@ -832,7 +746,7 @@ Tule imas delno popravljeno kodo, da bos priblizno videl kako gre:
 	</tr>
 	
 	<tr>
-		<td width="150" align="left" valign="top" class="row1"><span class="name"><a name="6451"></a><b>Ozzy</b></span><br /><span class="postdetails">wannabe<br /><img src="images/ranks/sgd-2.gif" alt="wannabe" title="wannabe" border="0" /><br /><img src="images/avatars/a4081333430d8da37ef5c.gif" alt="" border="0" /><br /><br />Pridružen: 19. jan 2003 ob 22:17<br />objav: 125<br /></span><br /></td>
+		<td width="150" align="left" valign="top" class="row1"><span class="name"><a name="6451"></a><b>Ozzy</b></span><br /><span class="postdetails">poznavalec<br /><img src="images/ranks/sgd-3.gif" alt="poznavalec" title="poznavalec" border="0" /><br /><img src="images/avatars/a4081333430d8da37ef5c.gif" alt="" border="0" /><br /><br />Pridružen: 19. jan 2003 ob 22:17<br />objav: 172<br /></span><br /></td>
 		<td class="row1" width="100%" height="28" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
 			<tr>
 				<td colspan="2" width="100%">
@@ -877,102 +791,69 @@ Tule imas delno popravljeno kodo, da bos priblizno videl kako gre:
 	<tr>
 <br />
 	  <td class="code">void vpis_elementa&#40;element* dodajElement&#41;
-
 <br />
 &#123;
-
 <br />
-&nbsp; dodajElement-&gt;elementa = new Element;&nbsp;  // rezerviramo si pomnilnik za nov element
-
+  dodajElement-&gt;elementa = new Element;   // rezerviramo si pomnilnik za nov element
 <br />
-&nbsp; dodajElement-&gt;vnesi&#40;i,j&#41;;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  // preberemo vrednosti elementa 
-
+  dodajElement-&gt;vnesi&#40;i,j&#41;;               // preberemo vrednosti elementa 
 <br />
-&nbsp; dodajElement = dodajElement-&gt;elementa;&nbsp; // premaknemo kazalec na naslednji element
-
+  dodajElement = dodajElement-&gt;elementa;  // premaknemo kazalec na naslednji element
 <br />
-&nbsp; dodalElement-&gt;elementa = NULL;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; // kazalec na naslednji element postavimo na NULL &#40;ni potrebno ce imas to v konstruktorju&#41;
-
+  dodalElement-&gt;elementa = NULL;          // kazalec na naslednji element postavimo na NULL &#40;ni potrebno ce imas to v konstruktorju&#41;
 <br />
-
 
 <br />
 &#125;
-
 <br />
 
-
 <br />
-
 
 <br />
 void vpis_prostora&#40;prostor *dodaj&#41;
-
 <br />
 &#123;
-
 <br />
-&nbsp;  dodaj-&gt;prostora = new prostor;&nbsp;  // rezerviramo pomnilnik za naslednji element v seznamu
-
+   dodaj-&gt;prostora = new prostor;   // rezerviramo pomnilnik za naslednji element v seznamu
 <br />
-&nbsp;  dodaj-&gt;elementa = NULL;
-
+   dodaj-&gt;elementa = NULL;
 <br />
-&nbsp;  element *tmpElement;
-
+   element *tmpElement;
 <br />
-&nbsp;  
-
+   
 <br />
-&nbsp;  
-
+   
 <br />
-&nbsp;  int kol_elem=0; 
-
+   int kol_elem=0; 
 <br />
-&nbsp;  cout&lt;&lt;&quot;KOLIKO predmetov&#58; &quot;; 
-
+   cout&lt;&lt;&quot;KOLIKO predmetov&#58; &quot;; 
 <br />
-&nbsp;  cin &gt;&gt; kol_elem; 
-
+   cin &gt;&gt; kol_elem; 
 <br />
-&nbsp;  
-
+   
 <br />
-&nbsp;  for &#40;int j=0; j&lt;kol_elem; j++&#41; 
-
+   for &#40;int j=0; j&lt;kol_elem; j++&#41; 
 <br />
-&nbsp;  &#123; 
-
+   &#123; 
 <br />
-&nbsp; &nbsp;  
-
+     
 <br />
-&nbsp; &nbsp;  vpisElementa&#40; tmpElement&#41;; // preko pomoznega kazalca dodamo nov element v seznam elementov
-
+     vpisElementa&#40; tmpElement&#41;; // preko pomoznega kazalca dodamo nov element v seznam elementov
 <br />
-&nbsp; &nbsp;  if &#40;j == 0&#41;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; // ce je to prvi element, ki ga vstavljamo 
-
+     if &#40;j == 0&#41;                // ce je to prvi element, ki ga vstavljamo 
 <br />
-&nbsp; &nbsp; &nbsp;  dodaj-&gt;elementa = tmpElement;&nbsp; // potem si shranimo ta kazalec, da povezemo seznama
-
+       dodaj-&gt;elementa = tmpElement;  // potem si shranimo ta kazalec, da povezemo seznama
 <br />
-&nbsp; &nbsp;  
-
+     
 <br />
-&nbsp;  &#125;
-
+   &#125;
 <br />
-&nbsp;  
-
+   
 <br />
-&nbsp;  dodaj = dodaj-&gt;prostora;&nbsp; // premaknemo kazalec na naslednji element
-
+   dodaj = dodaj-&gt;prostora;  // premaknemo kazalec na naslednji element
 <br />
-&nbsp;  dodaj-&gt;prostora = NULL;&nbsp;  // kazalec na naslednji element postavimo na null
-
+   dodaj-&gt;prostora = NULL;   // kazalec na naslednji element postavimo na null
 <br />
-
 
 <br />
 &#125;</td>
@@ -998,7 +879,7 @@ void vpis_prostora&#40;prostor *dodaj&#41;
 	</tr>
 	
 	<tr>
-		<td width="150" align="left" valign="top" class="row2"><span class="name"><a name="6484"></a><b>Shinobi</b></span><br /><span class="postdetails">inštruktor<br /><img src="images/ranks/sgd-4.gif" alt="inštruktor" title="inštruktor" border="0" /><br /><img src="images/avatars/d5fd66913fcf278e24a0c.gif" alt="" border="0" /><br /><br />Pridružen: 15. maj 2003 ob 18:04<br />objav: 257<br />Kraj: Maribor</span><br /></td>
+		<td width="150" align="left" valign="top" class="row2"><span class="name"><a name="6484"></a><b>Shinobi</b></span><br /><span class="postdetails">mojster<br /><img src="images/ranks/sgd-5.gif" alt="mojster" title="mojster" border="0" /><br /><img src="images/avatars/d5fd66913fcf278e24a0c.gif" alt="" border="0" /><br /><br />Pridružen: 15. maj 2003 ob 18:04<br />objav: 491<br />Kraj: Maribor</span><br /></td>
 		<td class="row2" width="100%" height="28" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
 			<tr>
 				<td colspan="2" width="100%">
@@ -1056,7 +937,7 @@ Ales</span><span class="gensmall"></span></td>
 	</tr>
 	
 	<tr>
-		<td width="150" align="left" valign="top" class="row1"><span class="name"><a name="6490"></a><b>Ozzy</b></span><br /><span class="postdetails">wannabe<br /><img src="images/ranks/sgd-2.gif" alt="wannabe" title="wannabe" border="0" /><br /><img src="images/avatars/a4081333430d8da37ef5c.gif" alt="" border="0" /><br /><br />Pridružen: 19. jan 2003 ob 22:17<br />objav: 125<br /></span><br /></td>
+		<td width="150" align="left" valign="top" class="row1"><span class="name"><a name="6490"></a><b>Ozzy</b></span><br /><span class="postdetails">poznavalec<br /><img src="images/ranks/sgd-3.gif" alt="poznavalec" title="poznavalec" border="0" /><br /><img src="images/avatars/a4081333430d8da37ef5c.gif" alt="" border="0" /><br /><br />Pridružen: 19. jan 2003 ob 22:17<br />objav: 172<br /></span><br /></td>
 		<td class="row1" width="100%" height="28" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
 			<tr>
 				<td colspan="2" width="100%">
@@ -1089,25 +970,18 @@ Ales</span><span class="gensmall"></span></td>
 	<tr>
 <br />
 	  <td class="quote">Em.
-
 <br />
 Seznami.
-
 <br />
-
 
 <br />
 Uporabi STL pa "vector" ali pa "list". Zadeva resena.
-
 <br />
 Poglej si malo STL.
-
 <br />
-
 
 <br />
 Mfg
-
 <br />
 Ales</td>
 <br />
@@ -1144,7 +1018,7 @@ Sicer se strinjam s tabo, da se take stvari uporablja STL, samo vseeno naj se č
 	</tr>
 	
 	<tr>
-		<td width="150" align="left" valign="top" class="row2"><span class="name"><a name="6491"></a><b>Shinobi</b></span><br /><span class="postdetails">inštruktor<br /><img src="images/ranks/sgd-4.gif" alt="inštruktor" title="inštruktor" border="0" /><br /><img src="images/avatars/d5fd66913fcf278e24a0c.gif" alt="" border="0" /><br /><br />Pridružen: 15. maj 2003 ob 18:04<br />objav: 257<br />Kraj: Maribor</span><br /></td>
+		<td width="150" align="left" valign="top" class="row2"><span class="name"><a name="6491"></a><b>Shinobi</b></span><br /><span class="postdetails">mojster<br /><img src="images/ranks/sgd-5.gif" alt="mojster" title="mojster" border="0" /><br /><img src="images/avatars/d5fd66913fcf278e24a0c.gif" alt="" border="0" /><br /><br />Pridružen: 15. maj 2003 ob 18:04<br />objav: 491<br />Kraj: Maribor</span><br /></td>
 		<td class="row2" width="100%" height="28" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
 			<tr>
 				<td colspan="2" width="100%">
@@ -1192,22 +1066,16 @@ se že od prej navadil HALF-LIFE strukture:
 	<tr>
 <br />
 	  <td class="code">
-
 <br />
 typedef struct &#123;
-
 <br />
  node_t* parent;
-
 <br />
- char&nbsp; &nbsp; &nbsp; szName&#91;32&#93;;
-
+ char      szName&#91;32&#93;;
 <br />
- .. bla bla.
-
+ &#46;&#46; bla bla&#46;
 <br />
 &#125;node_t;
-
 <br />
 </td>
 <br />
@@ -1216,15 +1084,11 @@ typedef struct &#123;
 </table>
 <br />
 <span class="postbody">
-
 <br />
-
 
 <br />
 Takšni nodi sicer niso slabi, ampak zahtevajo rekurzijo, kar pa mi ni všeč. Sem pa po naključju naletel na D3DXFRAME structuro, ki niti ni tako blesava, kot sem najprej mislil:
-
 <br />
-
 
 <br />
 </span>
@@ -1240,25 +1104,18 @@ Takšni nodi sicer niso slabi, ampak zahtevajo rekurzijo, kar pa mi ni všeč. S
 	<tr>
 <br />
 	  <td class="code">
-
 <br />
 struct _D3DXFRAME &#123;
-
 <br />
  _D3DXFRAME* pFirstChild;
-
 <br />
  _D3DXFRAME* pSibling;
-
 <br />
  char szName&#91;32&#93;;
-
 <br />
- bla...
-
+ bla&#46;&#46;&#46;
 <br />
 &#125;D3DXFRAME;
-
 <br />
 </td>
 <br />
@@ -1318,7 +1175,7 @@ Aleš</span><span class="gensmall"></span></td>
   <tr>
 	<td align="left" valign="middle" nowrap="nowrap">&nbsp;</td>
 	<td align="left" valign="middle" width="100%"><span class="nav">&nbsp;&nbsp;&nbsp;<a href="index.html" class="nav">SloGameDev.net seznam forumov</a>
-	  -> <a href="forum-1.html" class="nav">Splošno Programiranje</a></span></td>
+	  -> <a href="forum-52.html" class="nav">Izdelovanje iger</a></span></td>
 	<td align="right" valign="top" nowrap="nowrap"><span class="gensmall">Časovni pas (GMT +2:00 uri) Slovenija, poletni čas</span><br /><span class="nav"></span>
 	  </td>
   </tr>
@@ -1334,7 +1191,7 @@ Aleš</span><span class="gensmall"></span></td>
   </tr>
 </table>
 
-<div align="center"><span class="copyright"><br />Arhiv stanja na dan 13. 2. 2006 &mdash; samo za branje.<br />
+<div align="center"><span class="copyright"><br />Arhiv &mdash; samo za branje.<br />
 <!--
 	We request you retain the full copyright notice below including the link to www.phpbb.com.
 	This not only gives respect to the large amount of time given freely by the developers

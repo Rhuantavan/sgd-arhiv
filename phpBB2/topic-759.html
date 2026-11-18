@@ -276,13 +276,13 @@ input.liteoption {
   <tr>
 	<td align="left" valign="bottom" nowrap="nowrap">&nbsp;</td>
 	<td align="left" valign="middle" width="100%"><span class="nav">&nbsp;&nbsp;&nbsp;<a href="index.html" class="nav">SloGameDev.net seznam forumov</a>
-	  -> <a href="forum-1.html" class="nav">Splošno Programiranje</a></span></td>
+	  -> <a href="forum-52.html" class="nav">Izdelovanje iger</a></span></td>
   </tr>
 </table>
 
 <table class="forumline" width="100%" cellspacing="1" cellpadding="3" border="0">
 	<tr align="right">
-		<td class="catHead" colspan="2" height="28"><span class="nav"><a href="topic-752.html" class="nav">Prejšnja tema</a> :: <a href="topic-746.html" class="nav">Naslednja tema</a> &nbsp;</span></td>
+		<td class="catHead" colspan="2" height="28"><span class="nav"><a href="topic-752.html" class="nav">Prejšnja tema</a> :: <a href="topic-765.html" class="nav">Naslednja tema</a> &nbsp;</span></td>
 	</tr>
 	
 	<tr>
@@ -291,7 +291,7 @@ input.liteoption {
 	</tr>
 	
 	<tr>
-		<td width="150" align="left" valign="top" class="row1"><span class="name"><a name="8699"></a><b>Rhuantavan</b></span><br /><span class="postdetails">SGD Admin<br /><img src="images/ranks/sgd-admin.gif" alt="SGD Admin" title="SGD Admin" border="0" /><br /><img src="images/avatars/c14db2394124b99a07556.gif" alt="" border="0" /><br /><br />Pridružen: 26. okt 2002 ob 14:16<br />objav: 644<br />Kraj: Renče (NG), Slovenia</span><br /></td>
+		<td width="150" align="left" valign="top" class="row1"><span class="name"><a name="8699"></a><b>Rhuantavan</b></span><br /><span class="postdetails">SGD Admin<br /><img src="images/ranks/sgd-admin.gif" alt="SGD Admin" title="SGD Admin" border="0" /><br /><img src="images/avatars/c14db2394124b99a07556.gif" alt="" border="0" /><br /><br />Pridružen: 26. okt 2002 ob 14:16<br />objav: 632<br />Kraj: Renče, Slovenia</span><br /></td>
 		<td class="row1" width="100%" height="28" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
 			<tr>
 				<td colspan="2" width="100%">
@@ -324,286 +324,192 @@ input.liteoption {
 	<tr>
 <br />
 	  <td class="code">
-
 <br />
 #include &lt;iostream&gt;
-
 <br />
-
 
 <br />
 class CNode &#123;
-
 <br />
 public&#58;
-
 <br />
-&nbsp; &nbsp;CNode* next;
-
+	CNode* next;
 <br />
-&nbsp; &nbsp;
-
+	
 <br />
-&nbsp; &nbsp;CNode&#40;&#41; &#58; next&#40;0&#41; &#123;&#125;
-
+	CNode&#40;&#41; &#58; next&#40;0&#41; &#123;&#125;
 <br />
-&nbsp; &nbsp;virtual ~CNode&#40;&#41; &#123;
-
+	virtual ~CNode&#40;&#41; &#123;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;if &#40;next&#41; delete next;
-
+		if &#40;next&#41; delete next;
 <br />
-&nbsp; &nbsp;&#125;
-
+	&#125;
 <br />
 
-
 <br />
-&nbsp; &nbsp;virtual void Print&#40;&#41; = 0;
-
+	virtual void Print&#40;&#41; = 0;
 <br />
 &#125;;
-
 <br />
 
-
 <br />
-
 
 <br />
 class CNodeLong &#58; public CNode &#123;
-
 <br />
-&nbsp; &nbsp;long data;
-
+	long data;
 <br />
 public&#58;
-
 <br />
-&nbsp; &nbsp;CNodeLong&#40;long newData&#41; &#58; data&#40;newData&#41; &#123;&#125;
-
+	CNodeLong&#40;long newData&#41; &#58; data&#40;newData&#41; &#123;&#125;
 <br />
-&nbsp; &nbsp;void Print&#40;&#41; &#123;
-
+	void Print&#40;&#41; &#123;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;std&#58;&#58;cout &lt;&lt; data;
-
+		std&#58;&#58;cout &lt;&lt; data;
 <br />
-&nbsp; &nbsp;&#125;
-
+	&#125;
 <br />
 &#125;;
-
 <br />
 
-
 <br />
-
 
 <br />
 class CNodeString &#58; public CNode &#123;
-
 <br />
-&nbsp; &nbsp;char* data;
-
+	char* data;
 <br />
 public&#58;
-
 <br />
-&nbsp; &nbsp;CNodeString&#40;char* newData&#41; &#58; data&#40;newData&#41; &#123;&#125;
-
+	CNodeString&#40;char* newData&#41; &#58; data&#40;newData&#41; &#123;&#125;
 <br />
-&nbsp; &nbsp;void Print&#40;&#41; &#123;
-
+	void Print&#40;&#41; &#123;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;std&#58;&#58;cout &lt;&lt; data;
-
+		std&#58;&#58;cout &lt;&lt; data;
 <br />
-&nbsp; &nbsp;&#125;
-
+	&#125;
 <br />
 &#125;;
-
 <br />
 
-
 <br />
-
 
 <br />
 class CLinearList &#123;
-
 <br />
-&nbsp; &nbsp;CNode* top;
-
+	CNode* top;
 <br />
 public&#58;
-
 <br />
-&nbsp; &nbsp;CLinearList&#40;&#41; &#58; top&#40;0&#41; &#123;&#125;
-
+	CLinearList&#40;&#41; &#58; top&#40;0&#41; &#123;&#125;
 <br />
-&nbsp; &nbsp;~CLinearList&#40;&#41; &#123; Clean&#40;&#41;; &#125;
-
+	~CLinearList&#40;&#41; &#123; Clean&#40;&#41;; &#125;
 <br />
-&nbsp; &nbsp;
-
+	
 <br />
-&nbsp; &nbsp;void Add&#40;CNode* newNode&#41; &#123;
-
+	void Add&#40;CNode* newNode&#41; &#123;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;CNode *p = top;
-
+		CNode *p = top;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;while &#40;p&#41; &#123;
-
+		while &#40;p&#41; &#123;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;p = p-&gt;next;
-
+			p = p-&gt;next;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&#125;
-
+		&#125;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;p = newNode;
-
+		p = newNode;
 <br />
-&nbsp; &nbsp;&#125;
-
+	&#125;
 <br />
 
-
 <br />
-&nbsp; &nbsp;CNode* Get&#40;&#41; &#123;
-
+	CNode* Get&#40;&#41; &#123;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;if&#40;top == 0&#41; return 0;
-
+		if&#40;top == 0&#41; return 0;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;CNode* p = top;
-
+		CNode* p = top;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;CNode* p2 = top;
-
+		CNode* p2 = top;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;top = top-&gt;next;
-
+		top = top-&gt;next;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;delete p;
-
+		delete p;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;return p2;
-
+		return p2;
 <br />
-&nbsp; &nbsp;&#125;
-
+	&#125;
 <br />
-&nbsp; &nbsp;
-
+	
 <br />
-&nbsp; &nbsp;void Print&#40;&#41; &#123;
-
+	void Print&#40;&#41; &#123;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;CNode *p = top;
-
+		CNode *p = top;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;while &#40;p&#41; &#123;
-
+		while &#40;p&#41; &#123;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;p-&gt;Print&#40;&#41;;
-
+			p-&gt;Print&#40;&#41;;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;std&#58;&#58;cout &lt;&lt; &quot; &quot;;
-
+			std&#58;&#58;cout &lt;&lt; &quot; &quot;;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;p = p-&gt;next;
-
+			p = p-&gt;next;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&#125;
-
+		&#125;
 <br />
-&nbsp; &nbsp;&#125;
-
+	&#125;
 <br />
-
 
 <br />
 private&#58;
-
 <br />
-&nbsp; &nbsp;void Clean&#40;&#41; &#123;
-
+	void Clean&#40;&#41; &#123;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;CNode *p = top;
-
+		CNode *p = top;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;while &#40;p&#41; &#123;
-
+		while &#40;p&#41; &#123;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;top = top-&gt;next;
-
+			top = top-&gt;next;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;delete p;
-
+			delete p;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;p = top;
-
+			p = top;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&#125;
-
+		&#125;
 <br />
-&nbsp; &nbsp;&#125;
-
+	&#125;
 <br />
 &#125;;
-
 <br />
 
-
 <br />
-
 
 <br />
 int main&#40;&#41; &#123;
-
 <br />
-&nbsp; &nbsp;CNodeLong *nlong = new CNodeLong&#40;1323421&#41;;
-
+	CNodeLong *nlong = new CNodeLong&#40;1323421&#41;;
 <br />
-&nbsp; &nbsp;CNodeString *nstring = new CNodeString&#40;&quot;sfasfas&quot;&#41;;
-
+	CNodeString *nstring = new CNodeString&#40;&quot;sfasfas&quot;&#41;;
 <br />
-&nbsp; &nbsp;CNodeString *nstring2 = new CNodeString&#40;&quot;gpsijgd&quot;&#41;;
-
+	CNodeString *nstring2 = new CNodeString&#40;&quot;gpsijgd&quot;&#41;;
 <br />
 
-
 <br />
-&nbsp; &nbsp;CLinearList list;
-
+	CLinearList list;
 <br />
-&nbsp; &nbsp;list.Add&#40;nlong&#41;;
-
+	list&#46;Add&#40;nlong&#41;;
 <br />
-&nbsp; &nbsp;list.Add&#40;nstring&#41;;
-
+	list&#46;Add&#40;nstring&#41;;
 <br />
-&nbsp; &nbsp;list.Add&#40;nstring2&#41;;
-
+	list&#46;Add&#40;nstring2&#41;;
 <br />
-&nbsp; &nbsp;list.Print&#40;&#41;;
-
+	list&#46;Print&#40;&#41;;
 <br />
-&nbsp; &nbsp;list.Get&#40;&#41;;
-
+	list&#46;Get&#40;&#41;;
 <br />
-&nbsp; &nbsp;list.Print&#40;&#41;;
-
+	list&#46;Print&#40;&#41;;
 <br />
-&nbsp; &nbsp;return 0;
-
+	return 0;
 <br />
 &#125;
-
 <br />
 </td>
 <br />
@@ -623,10 +529,7 @@ Dolgo se nisem s C++ ukvarjal in stvari že malo pozabljam. Je komu jasno kako n
 
 
 <br />
-Tnx <img src="images/smiles/icon_smile.gif" alt="icon_smile.gif" border="0" /><br />_________________<br /><span style="font-size: 10px; line-height: normal">Where's the fun?</span>
-
-<br />
-<span style="font-size: 10px; line-height: normal"><a  target="_blank" class="postlink">http://dw.slogamedev.net</a></span></span><span class="gensmall"><br /><br />Popravil je Rhuantavan dne, ned apr 25, 2004 9:52 pm, popravljal je 1 krat</span></td>
+Tnx <img src="images/smiles/icon_smile.gif" alt=":)" border="0" /><br />_________________<br /><a class="postlink" >http://www.damjanmozetic.si</a></span><span class="gensmall"><br /><br />Popravil je Rhuantavan dne, ned apr 25, 2004 9:52 pm, popravljal je 1 krat</span></td>
 			</tr>
 		</table></td>
 	</tr>
@@ -643,7 +546,7 @@ Tnx <img src="images/smiles/icon_smile.gif" alt="icon_smile.gif" border="0" /><b
 	</tr>
 	
 	<tr>
-		<td width="150" align="left" valign="top" class="row2"><span class="name"><a name="8700"></a><b>Kavan</b></span><br /><span class="postdetails">inštruktor<br /><img src="images/ranks/sgd-4.gif" alt="inštruktor" title="inštruktor" border="0" /><br /><br /><br />Pridružen: 10. jan 2003 ob 12:57<br />objav: 363<br />Kraj: Los Angeles</span><br /></td>
+		<td width="150" align="left" valign="top" class="row2"><span class="name"><a name="8700"></a><b>Kavan</b></span><br /><span class="postdetails">inštruktor<br /><img src="images/ranks/sgd-4.gif" alt="inštruktor" title="inštruktor" border="0" /><br /><br /><br />Pridružen: 10. jan 2003 ob 12:57<br />objav: 314<br />Kraj: Los Angeles</span><br /></td>
 		<td class="row2" width="100%" height="28" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
 			<tr>
 				<td colspan="2" width="100%">
@@ -663,10 +566,10 @@ Tnx <img src="images/smiles/icon_smile.gif" alt="icon_smile.gif" border="0" /><b
 				<td colspan="2"><hr /></td>
 			</tr>
 			<tr>
-				<td colspan="2"><span class="postbody">Mogoče kakšen virtualen destruktor na CNode ne bi škodil  <img src="images/smiles/icon_wink.gif" alt="icon_wink.gif" border="0" /> Pa razmisli kdo bo kaj ownal. Več pa ne povem ker vem za kaj se gre.<br />_________________<br />
+				<td colspan="2"><span class="postbody">Mogoče kakšen virtualen destruktor na CNode ne bi škodil  <img src="images/smiles/icon_wink.gif" alt=":wink:" border="0" /> Pa razmisli kdo bo kaj ownal. Več pa ne povem ker vem za kaj se gre.<br />_________________<br />
 
 <br />
-<span style="font-size: 9px; line-height: normal"><a  target="_blank" class="postlink">www.3dlevel.com</a></span></span><span class="gensmall"></span></td>
+<span style="font-size: 75%; line-height: normal"><a  target="_blank" class="postlink">http&#58;//www&#46;3dlevel&#46;com</a></span></span><span class="gensmall"></span></td>
 			</tr>
 		</table></td>
 	</tr>
@@ -683,7 +586,7 @@ Tnx <img src="images/smiles/icon_smile.gif" alt="icon_smile.gif" border="0" /><b
 	</tr>
 	
 	<tr>
-		<td width="150" align="left" valign="top" class="row1"><span class="name"><a name="8701"></a><b>DarkWIng</b></span><br /><span class="postdetails">poizvedovalec<br /><img src="images/ranks/sgd-1.gif" alt="poizvedovalec" title="poizvedovalec" border="0" /><br /><img src="images/avatars/c14d6626402243c0e76d2.jpg" alt="" border="0" /><br /><br />Pridružen: 19. jan 2004 ob 20:18<br />objav: 41<br />Kraj: Naklo</span><br /></td>
+		<td width="150" align="left" valign="top" class="row1"><span class="name"><a name="8701"></a><b>DarkWIng</b></span><br /><span class="postdetails">poizvedovalec<br /><img src="images/ranks/sgd-1.gif" alt="poizvedovalec" title="poizvedovalec" border="0" /><br /><img src="images/avatars/c14d6626402243c0e76d2.jpg" alt="" border="0" /><br /><br />Pridružen: 19. jan 2004 ob 20:18<br />objav: 42<br />Kraj: Naklo</span><br /></td>
 		<td class="row1" width="100%" height="28" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
 			<tr>
 				<td colspan="2" width="100%">
@@ -720,7 +623,7 @@ Tnx <img src="images/smiles/icon_smile.gif" alt="icon_smile.gif" border="0" /><b
 	</tr>
 	
 	<tr>
-		<td width="150" align="left" valign="top" class="row2"><span class="name"><a name="8702"></a><b>Rhuantavan</b></span><br /><span class="postdetails">SGD Admin<br /><img src="images/ranks/sgd-admin.gif" alt="SGD Admin" title="SGD Admin" border="0" /><br /><img src="images/avatars/c14db2394124b99a07556.gif" alt="" border="0" /><br /><br />Pridružen: 26. okt 2002 ob 14:16<br />objav: 644<br />Kraj: Renče (NG), Slovenia</span><br /></td>
+		<td width="150" align="left" valign="top" class="row2"><span class="name"><a name="8702"></a><b>Rhuantavan</b></span><br /><span class="postdetails">SGD Admin<br /><img src="images/ranks/sgd-admin.gif" alt="SGD Admin" title="SGD Admin" border="0" /><br /><img src="images/avatars/c14db2394124b99a07556.gif" alt="" border="0" /><br /><br />Pridružen: 26. okt 2002 ob 14:16<br />objav: 632<br />Kraj: Renče, Slovenia</span><br /></td>
 		<td class="row2" width="100%" height="28" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
 			<tr>
 				<td colspan="2" width="100%">
@@ -740,10 +643,7 @@ Tnx <img src="images/smiles/icon_smile.gif" alt="icon_smile.gif" border="0" /><b
 				<td colspan="2"><hr /></td>
 			</tr>
 			<tr>
-				<td colspan="2"><span class="postbody">To je neka vrsta domače naloge, ja <img src="images/smiles/icon_smile.gif" alt="icon_smile.gif" border="0" /><br />_________________<br /><span style="font-size: 10px; line-height: normal">Where's the fun?</span>
-
-<br />
-<span style="font-size: 10px; line-height: normal"><a  target="_blank" class="postlink">http://dw.slogamedev.net</a></span></span><span class="gensmall"></span></td>
+				<td colspan="2"><span class="postbody">To je neka vrsta domače naloge, ja <img src="images/smiles/icon_smile.gif" alt=":)" border="0" /><br />_________________<br /><a class="postlink" >http://www.damjanmozetic.si</a></span><span class="gensmall"></span></td>
 			</tr>
 		</table></td>
 	</tr>
@@ -760,7 +660,7 @@ Tnx <img src="images/smiles/icon_smile.gif" alt="icon_smile.gif" border="0" /><b
 	</tr>
 	
 	<tr>
-		<td width="150" align="left" valign="top" class="row1"><span class="name"><a name="8703"></a><b>snake</b></span><br /><span class="postdetails">expert<br /><img src="images/ranks/sgd-6.gif" alt="expert" title="expert" border="0" /><br /><img src="images/avatars/c14dbb55415c469152089.gif" alt="" border="0" /><br /><br />Pridružen: 10. jan 2003 ob 08:28<br />objav: 795<br />Kraj: NULL</span><br /></td>
+		<td width="150" align="left" valign="top" class="row1"><span class="name"><a name="8703"></a><b>snake</b></span><br /><span class="postdetails">expert<br /><img src="images/ranks/sgd-6.gif" alt="expert" title="expert" border="0" /><br /><img src="images/avatars/c14dbb55415c469152089.gif" alt="" border="0" /><br /><br />Pridružen: 10. jan 2003 ob 08:28<br />objav: 782<br />Kraj: NULL</span><br /></td>
 		<td class="row1" width="100%" height="28" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
 			<tr>
 				<td colspan="2" width="100%">
@@ -780,7 +680,7 @@ Tnx <img src="images/smiles/icon_smile.gif" alt="icon_smile.gif" border="0" /><b
 				<td colspan="2"><hr /></td>
 			</tr>
 			<tr>
-				<td colspan="2"><span class="postbody">Hehe... ne povem <img src="images/smiles/icon_razz.gif" alt="icon_razz.gif" border="0" />
+				<td colspan="2"><span class="postbody">Hehe... ne povem <img src="images/smiles/icon_razz.gif" alt=":P" border="0" />
 
 <br />
 Jst sm te zadeve naredu v C# (ampak je itak isto).</span><span class="gensmall"></span></td>
@@ -791,7 +691,7 @@ Jst sm te zadeve naredu v C# (ampak je itak isto).</span><span class="gensmall">
 		<td class="row1" width="150" align="left" valign="middle"><span class="nav"><a href="#top" class="nav">Nazaj na vrh</a></span></td>
 		<td class="row1" width="100%" height="28" valign="bottom" nowrap="nowrap"><table cellspacing="0" cellpadding="0" border="0" height="18" width="18">
 			<tr>
-				<td valign="middle" nowrap="nowrap"><a href="profile-10.html"><img src="templates/SGD2/images/lang_slovenian/icon_profile.gif" alt="Poglej uporabnikov profil" title="Poglej uporabnikov profil" border="0" /></a> <a  target="_userwww"><img src="templates/SGD2/images/lang_slovenian/icon_www.gif" alt="Obišči avtorjevo spletno stran" title="Obišči avtorjevo spletno stran" border="0" /></a></td>
+				<td valign="middle" nowrap="nowrap"><a href="profile-10.html"><img src="templates/SGD2/images/lang_slovenian/icon_profile.gif" alt="Poglej uporabnikov profil" title="Poglej uporabnikov profil" border="0" /></a> </td>
 			</tr>
 		</table></td>
 	</tr>
@@ -800,7 +700,7 @@ Jst sm te zadeve naredu v C# (ampak je itak isto).</span><span class="gensmall">
 	</tr>
 	
 	<tr>
-		<td width="150" align="left" valign="top" class="row2"><span class="name"><a name="8704"></a><b>Rhuantavan</b></span><br /><span class="postdetails">SGD Admin<br /><img src="images/ranks/sgd-admin.gif" alt="SGD Admin" title="SGD Admin" border="0" /><br /><img src="images/avatars/c14db2394124b99a07556.gif" alt="" border="0" /><br /><br />Pridružen: 26. okt 2002 ob 14:16<br />objav: 644<br />Kraj: Renče (NG), Slovenia</span><br /></td>
+		<td width="150" align="left" valign="top" class="row2"><span class="name"><a name="8704"></a><b>Rhuantavan</b></span><br /><span class="postdetails">SGD Admin<br /><img src="images/ranks/sgd-admin.gif" alt="SGD Admin" title="SGD Admin" border="0" /><br /><img src="images/avatars/c14db2394124b99a07556.gif" alt="" border="0" /><br /><br />Pridružen: 26. okt 2002 ob 14:16<br />objav: 632<br />Kraj: Renče, Slovenia</span><br /></td>
 		<td class="row2" width="100%" height="28" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
 			<tr>
 				<td colspan="2" width="100%">
@@ -820,10 +720,7 @@ Jst sm te zadeve naredu v C# (ampak je itak isto).</span><span class="gensmall">
 				<td colspan="2"><hr /></td>
 			</tr>
 			<tr>
-				<td colspan="2"><span class="postbody">Mooo! Zdej sem komej vidu kake neumne sem delu! <img src="images/smiles/icon_redface.gif" alt="icon_redface.gif" border="0" />  <img src="images/smiles/icon_redface.gif" alt="icon_redface.gif" border="0" />  <img src="images/smiles/icon_redface.gif" alt="icon_redface.gif" border="0" /><br />_________________<br /><span style="font-size: 10px; line-height: normal">Where's the fun?</span>
-
-<br />
-<span style="font-size: 10px; line-height: normal"><a  target="_blank" class="postlink">http://dw.slogamedev.net</a></span></span><span class="gensmall"></span></td>
+				<td colspan="2"><span class="postbody">Mooo! Zdej sem komej vidu kake neumne sem delu! <img src="images/smiles/icon_redface.gif" alt=":oops:" border="0" />  <img src="images/smiles/icon_redface.gif" alt=":oops:" border="0" />  <img src="images/smiles/icon_redface.gif" alt=":oops:" border="0" /><br />_________________<br /><a class="postlink" >http://www.damjanmozetic.si</a></span><span class="gensmall"></span></td>
 			</tr>
 		</table></td>
 	</tr>
@@ -848,7 +745,7 @@ Jst sm te zadeve naredu v C# (ampak je itak isto).</span><span class="gensmall">
   <tr>
 	<td align="left" valign="middle" nowrap="nowrap">&nbsp;</td>
 	<td align="left" valign="middle" width="100%"><span class="nav">&nbsp;&nbsp;&nbsp;<a href="index.html" class="nav">SloGameDev.net seznam forumov</a>
-	  -> <a href="forum-1.html" class="nav">Splošno Programiranje</a></span></td>
+	  -> <a href="forum-52.html" class="nav">Izdelovanje iger</a></span></td>
 	<td align="right" valign="top" nowrap="nowrap"><span class="gensmall">Časovni pas (GMT +2:00 uri) Slovenija, poletni čas</span><br /><span class="nav"></span>
 	  </td>
   </tr>
@@ -864,7 +761,7 @@ Jst sm te zadeve naredu v C# (ampak je itak isto).</span><span class="gensmall">
   </tr>
 </table>
 
-<div align="center"><span class="copyright"><br />Arhiv stanja na dan 13. 2. 2006 &mdash; samo za branje.<br />
+<div align="center"><span class="copyright"><br />Arhiv &mdash; samo za branje.<br />
 <!--
 	We request you retain the full copyright notice below including the link to www.phpbb.com.
 	This not only gives respect to the large amount of time given freely by the developers

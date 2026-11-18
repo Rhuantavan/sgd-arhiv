@@ -276,7 +276,7 @@ input.liteoption {
   <tr>
 	<td align="left" valign="bottom" nowrap="nowrap">&nbsp;</td>
 	<td align="left" valign="middle" width="100%"><span class="nav">&nbsp;&nbsp;&nbsp;<a href="index.html" class="nav">SloGameDev.net seznam forumov</a>
-	  -> <a href="forum-10.html" class="nav">Za Začetnike</a></span></td>
+	  -> <a href="forum-49.html" class="nav">Začetniki</a></span></td>
   </tr>
 </table>
 
@@ -291,7 +291,7 @@ input.liteoption {
 	</tr>
 	
 	<tr>
-		<td width="150" align="left" valign="top" class="row1"><span class="name"><a name="5111"></a><b>_t3ch_</b></span><br /><span class="postdetails">wannabe<br /><img src="images/ranks/sgd-2.gif" alt="wannabe" title="wannabe" border="0" /><br /><img src="images/avatars/c2f922b13f93ced57f936.gif" alt="" border="0" /><br /><br />Pridružen: 09. okt 2003 ob 16:04<br />objav: 75<br />Kraj: Mafia SoftWare IT</span><br /></td>
+		<td width="150" align="left" valign="top" class="row1"><span class="name"><a name="5111"></a><b>_t3ch_</b></span><br /><span class="postdetails">wannabe<br /><img src="images/ranks/sgd-2.gif" alt="wannabe" title="wannabe" border="0" /><br /><img src="images/avatars/c2f922b13f93ced57f936.gif" alt="" border="0" /><br /><br />Pridružen: 09. okt 2003 ob 16:04<br />objav: 77<br />Kraj: Mafia SoftWare IT</span><br /></td>
 		<td class="row1" width="100%" height="28" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
 			<tr>
 				<td colspan="2" width="100%">
@@ -342,160 +342,108 @@ error C2731: 'WinMain' : function cannot be overloaded
 	<tr>
 <br />
 	  <td class="code">
-
 <br />
-#include &lt;windows.h&gt;
-
+#include &lt;windows&#46;h&gt;
 <br />
-
 
 <br />
 LRESULT CALLBACK WindowProc &#40; HWND hwnd, UINT message, WPARAM wparam, LPARAM lparam&#41;
-
 <br />
-
 
 <br />
 &#123;
-
 <br />
-&nbsp; &nbsp;switch&#40;message&#41;
-
+	switch&#40;message&#41;
 <br />
-&nbsp; &nbsp;&#123;
-
+	&#123;
 <br />
-&nbsp; &nbsp;case WM_DESTROY&#58;
-
+	case WM_DESTROY&#58;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&#123;
-
+		&#123;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;PostQuitMessage&#40;0&#41;;
-
+			PostQuitMessage&#40;0&#41;;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;break;
-
+			break;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&#125;
-
+		&#125;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;return 0;
-
+		return 0;
 <br />
-&nbsp; &nbsp;&#125;
-
+	&#125;
 <br />
-&nbsp; &nbsp;return &#40;DefWindowProc &#40;hwnd, message, wparam, lparam&#41;&#41;;
-
+	return &#40;DefWindowProc &#40;hwnd, message, wparam, lparam&#41;&#41;;
 <br />
 &#125;
-
 <br />
- /* error --&gt;int */ WINAPI WinMain &#40;HINSTANCE hInstance, HINSTANCE, hPrevInstance,&nbsp; 
-
+ /* error --&gt;int */ WINAPI WinMain &#40;HINSTANCE hInstance, HINSTANCE, hPrevInstance,  
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;LPSTR szCmdLine, int iCmdShow&#41;
-
+					LPSTR szCmdLine, int iCmdShow&#41;
 <br />
 /* tudi --&gt;*/ &#123;
-
 <br />
-&nbsp; &nbsp;WNDCLASSEX winclass;
-
+	WNDCLASSEX winclass;
 <br />
-&nbsp; &nbsp;const char AppName&#91;&#93; = &quot;myClass&quot;;
-
+	const char AppName&#91;&#93; = &quot;myClass&quot;;
 <br />
 
-
 <br />
-&nbsp; &nbsp;winclass.cbSize = sizeof&#40;WNDCLASSEX&#41;;
-
+	winclass&#46;cbSize = sizeof&#40;WNDCLASSEX&#41;;
 <br />
-&nbsp; &nbsp;winclass.style = CS_HREDRAW;
-
+	winclass&#46;style = CS_HREDRAW;
 <br />
-&nbsp; &nbsp;winclass.lpfnWndProc = WindowProc;
-
+	winclass&#46;lpfnWndProc = WindowProc;
 <br />
-&nbsp; &nbsp;winclass.cbClsExtra = 0;
-
+	winclass&#46;cbClsExtra = 0;
 <br />
-&nbsp; &nbsp;winclass.cbWndExtra = 0;
-
+	winclass&#46;cbWndExtra = 0;
 <br />
-&nbsp; &nbsp;winclass.hInstance = hInstance;
-
+	winclass&#46;hInstance = hInstance;
 <br />
-&nbsp; &nbsp;winclass.hIcon = LoadIcon &#40;NULL, IDI_APPLICATION&#41;;
-
+	winclass&#46;hIcon = LoadIcon &#40;NULL, IDI_APPLICATION&#41;;
 <br />
-&nbsp; &nbsp;winclass.hCursor = LoadCursor &#40; NULL, IDC_CROSS&#41;;
-
+	winclass&#46;hCursor = LoadCursor &#40; NULL, IDC_CROSS&#41;;
 <br />
-&nbsp; &nbsp;winclass.hbrBackground = &#40;HBRUSH&#41; GetStockObject &#40;WHITE_BRUSH&#41;;
-
+	winclass&#46;hbrBackground = &#40;HBRUSH&#41; GetStockObject &#40;WHITE_BRUSH&#41;;
 <br />
-&nbsp; &nbsp;winclass.lpszMenuName = NULL;
-
+	winclass&#46;lpszMenuName = NULL;
 <br />
-&nbsp; &nbsp;winclass.lpszClassName = AppName;
-
+	winclass&#46;lpszClassName = AppName;
 <br />
-&nbsp; &nbsp;winclass.hIconSm = LoadIcon &#40;NULL, IDI_APPLICATION&#41;;
-
+	winclass&#46;hIconSm = LoadIcon &#40;NULL, IDI_APPLICATION&#41;;
 <br />
 
-
 <br />
-&nbsp; &nbsp;if &#40;!&#40;RegisterClassEx &#40;&amp;winclass&#41;&#41;&#41;
-
+	if &#40;!&#40;RegisterClassEx &#40;&amp;winclass&#41;&#41;&#41;
 <br />
-&nbsp; &nbsp;&#123;
-
+	&#123;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;return 0;
-
+		return 0;
 <br />
-&nbsp; &nbsp;&#125;
-
+	&#125;
 <br />
 
-
 <br />
-&nbsp; &nbsp;CreateWindowEx &#40;NULL, AppName, &quot;Moje prvo Okno&quot;, WS_OVERLAPPEDWINDOW | WS_VISIBLE,
-
+	CreateWindowEx &#40;NULL, AppName, &quot;Moje prvo Okno&quot;, WS_OVERLAPPEDWINDOW | WS_VISIBLE,
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;0, 0, 400, 300, NULL, NULL, hInstance, NULL&#41;;
-
+		0, 0, 400, 300, NULL, NULL, hInstance, NULL&#41;;
 <br />
 
-
 <br />
-&nbsp; &nbsp;MSG message;
-
+	MSG message;
 <br />
-&nbsp; &nbsp;while &#40;GetMessage&#40;&amp;message, NULL, 0, 0&#41;&#41;
-
+	while &#40;GetMessage&#40;&amp;message, NULL, 0, 0&#41;&#41;
 <br />
-&nbsp; &nbsp;&#123;
-
+	&#123;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;TranslateMessage &#40;&amp;message&#41;;
-
+		TranslateMessage &#40;&amp;message&#41;;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;DispatchMessage &#40;&amp;message&#41;;
-
+		DispatchMessage &#40;&amp;message&#41;;
 <br />
-&nbsp; &nbsp;&#125;
-
+	&#125;
 <br />
-&nbsp; &nbsp;return 0;
-
+	return 0;
 <br />
 &#125;
-
 <br />
 </td>
 <br />
@@ -506,7 +454,7 @@ LRESULT CALLBACK WindowProc &#40; HWND hwnd, UINT message, WPARAM wparam, LPARAM
 <span class="postbody">
 
 <br />
-<span style="font-weight: bold"> Mi lahko prosim gdo razlozi kje pa kaj je narobe ?  <img src="images/smiles/icon_rolleyes.gif" alt="icon_rolleyes.gif" border="0" />  ? TnX </span></span><span class="gensmall"></span></td>
+<span style="font-weight: bold"> Mi lahko prosim gdo razlozi kje pa kaj je narobe ?  <img src="images/smiles/icon_rolleyes.gif" alt=":roll:" border="0" />  ? TnX </span></span><span class="gensmall"></span></td>
 			</tr>
 		</table></td>
 	</tr>
@@ -523,7 +471,7 @@ LRESULT CALLBACK WindowProc &#40; HWND hwnd, UINT message, WPARAM wparam, LPARAM
 	</tr>
 	
 	<tr>
-		<td width="150" align="left" valign="top" class="row2"><span class="name"><a name="5112"></a><b>maverick</b></span><br /><span class="postdetails">SGD Moderator<br /><img src="images/ranks/sgd-mod.gif" alt="SGD Moderator" title="SGD Moderator" border="0" /><br /><img src="images/avatars/c14d5dba3fdc712804eb2.gif" alt="" border="0" /><br /><br />Pridružen: 10. sep 2003 ob 19:44<br />objav: 1225<br />Kraj: Slovenija</span><br /></td>
+		<td width="150" align="left" valign="top" class="row2"><span class="name"><a name="5112"></a><b>maverick</b></span><br /><span class="postdetails">SGD Moderator<br /><img src="images/ranks/sgd-mod.gif" alt="SGD Moderator" title="SGD Moderator" border="0" /><br /><img src="images/avatars/c14d5dba3fdc712804eb2.gif" alt="" border="0" /><br /><br />Pridružen: 10. sep 2003 ob 19:44<br />objav: 1050<br />Kraj: Slovenija</span><br /></td>
 		<td class="row2" width="100%" height="28" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
 			<tr>
 				<td colspan="2" width="100%">
@@ -567,10 +515,10 @@ Obstajajo pa samo tri možnosti:
 Najbrž ti nisem dal kakšnih hudih rešitev....
 
 <br />
-....Pa tudi na te misli si že najbrž sam prišel, ane? <img src="images/smiles/icon_biggrin.gif" alt="icon_biggrin.gif" border="0" />  <img src="images/smiles/icon_wink.gif" alt="icon_wink.gif" border="0" /><br />_________________<br /><span style="font-size: 9px; line-height: normal"><span style="font-weight: bold"><span style="color: black"><a  target="_blank" class="postlink">http://www.BojZGames.net</a></span></span></span><span style="color: black"></span>
+....Pa tudi na te misli si že najbrž sam prišel, ane? <img src="images/smiles/icon_biggrin.gif" alt=":D" border="0" />  <img src="images/smiles/icon_wink.gif" alt=":wink:" border="0" /><br />_________________<br /><span style="font-size: 75%; line-height: normal"><span style="font-weight: bold"><span style="color: black"><a  target="_blank" class="postlink">http&#58;//www&#46;BojZGames&#46;net</a></span></span></span>
 
 <br />
-<span style="font-size: 8px; line-height: normal"><span style="font-weight: bold"><span style="color: black"><a  target="_blank" class="postlink">http://brunsek.blogspot.com</a></span></span></span><span style="color: black"></span></span><span class="gensmall"></span></td>
+<span style="font-size: 67%; line-height: normal"><span style="font-weight: bold"><span style="color: black"><a  target="_blank" class="postlink">http&#58;//brunsek&#46;blogspot&#46;com</a></span></span></span></span><span class="gensmall"></span></td>
 			</tr>
 		</table></td>
 	</tr>
@@ -587,7 +535,7 @@ Najbrž ti nisem dal kakšnih hudih rešitev....
 	</tr>
 	
 	<tr>
-		<td width="150" align="left" valign="top" class="row1"><span class="name"><a name="5113"></a><b>Ozzy</b></span><br /><span class="postdetails">wannabe<br /><img src="images/ranks/sgd-2.gif" alt="wannabe" title="wannabe" border="0" /><br /><img src="images/avatars/a4081333430d8da37ef5c.gif" alt="" border="0" /><br /><br />Pridružen: 19. jan 2003 ob 22:17<br />objav: 125<br /></span><br /></td>
+		<td width="150" align="left" valign="top" class="row1"><span class="name"><a name="5113"></a><b>Ozzy</b></span><br /><span class="postdetails">poznavalec<br /><img src="images/ranks/sgd-3.gif" alt="poznavalec" title="poznavalec" border="0" /><br /><img src="images/avatars/a4081333430d8da37ef5c.gif" alt="" border="0" /><br /><br />Pridružen: 19. jan 2003 ob 22:17<br />objav: 172<br /></span><br /></td>
 		<td class="row1" width="100%" height="28" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
 			<tr>
 				<td colspan="2" width="100%">
@@ -648,7 +596,7 @@ Med HINSTANCE in hPrevInstance zbriši vejico....</span><span class="gensmall"><
 	</tr>
 	
 	<tr>
-		<td width="150" align="left" valign="top" class="row2"><span class="name"><a name="5114"></a><b>maverick</b></span><br /><span class="postdetails">SGD Moderator<br /><img src="images/ranks/sgd-mod.gif" alt="SGD Moderator" title="SGD Moderator" border="0" /><br /><img src="images/avatars/c14d5dba3fdc712804eb2.gif" alt="" border="0" /><br /><br />Pridružen: 10. sep 2003 ob 19:44<br />objav: 1225<br />Kraj: Slovenija</span><br /></td>
+		<td width="150" align="left" valign="top" class="row2"><span class="name"><a name="5114"></a><b>maverick</b></span><br /><span class="postdetails">SGD Moderator<br /><img src="images/ranks/sgd-mod.gif" alt="SGD Moderator" title="SGD Moderator" border="0" /><br /><img src="images/avatars/c14d5dba3fdc712804eb2.gif" alt="" border="0" /><br /><br />Pridružen: 10. sep 2003 ob 19:44<br />objav: 1050<br />Kraj: Slovenija</span><br /></td>
 		<td class="row2" width="100%" height="28" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
 			<tr>
 				<td colspan="2" width="100%">
@@ -668,10 +616,10 @@ Med HINSTANCE in hPrevInstance zbriši vejico....</span><span class="gensmall"><
 				<td colspan="2"><hr /></td>
 			</tr>
 			<tr>
-				<td colspan="2"><span class="postbody">Ozzy, naenkrat oba pritisnila, a... <img src="images/smiles/icon_mrgreen.gif" alt="icon_mrgreen.gif" border="0" /><br />_________________<br /><span style="font-size: 9px; line-height: normal"><span style="font-weight: bold"><span style="color: black"><a  target="_blank" class="postlink">http://www.BojZGames.net</a></span></span></span><span style="color: black"></span>
+				<td colspan="2"><span class="postbody">Ozzy, naenkrat oba pritisnila, a... <img src="images/smiles/icon_mrgreen.gif" alt=":mrgreen:" border="0" /><br />_________________<br /><span style="font-size: 75%; line-height: normal"><span style="font-weight: bold"><span style="color: black"><a  target="_blank" class="postlink">http&#58;//www&#46;BojZGames&#46;net</a></span></span></span>
 
 <br />
-<span style="font-size: 8px; line-height: normal"><span style="font-weight: bold"><span style="color: black"><a  target="_blank" class="postlink">http://brunsek.blogspot.com</a></span></span></span><span style="color: black"></span></span><span class="gensmall"></span></td>
+<span style="font-size: 67%; line-height: normal"><span style="font-weight: bold"><span style="color: black"><a  target="_blank" class="postlink">http&#58;//brunsek&#46;blogspot&#46;com</a></span></span></span></span><span class="gensmall"></span></td>
 			</tr>
 		</table></td>
 	</tr>
@@ -688,7 +636,7 @@ Med HINSTANCE in hPrevInstance zbriši vejico....</span><span class="gensmall"><
 	</tr>
 	
 	<tr>
-		<td width="150" align="left" valign="top" class="row1"><span class="name"><a name="5116"></a><b>_t3ch_</b></span><br /><span class="postdetails">wannabe<br /><img src="images/ranks/sgd-2.gif" alt="wannabe" title="wannabe" border="0" /><br /><img src="images/avatars/c2f922b13f93ced57f936.gif" alt="" border="0" /><br /><br />Pridružen: 09. okt 2003 ob 16:04<br />objav: 75<br />Kraj: Mafia SoftWare IT</span><br /></td>
+		<td width="150" align="left" valign="top" class="row1"><span class="name"><a name="5116"></a><b>_t3ch_</b></span><br /><span class="postdetails">wannabe<br /><img src="images/ranks/sgd-2.gif" alt="wannabe" title="wannabe" border="0" /><br /><img src="images/avatars/c2f922b13f93ced57f936.gif" alt="" border="0" /><br /><br />Pridružen: 09. okt 2003 ob 16:04<br />objav: 77<br />Kraj: Mafia SoftWare IT</span><br /></td>
 		<td class="row1" width="100%" height="28" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
 			<tr>
 				<td colspan="2" width="100%">
@@ -711,13 +659,13 @@ Med HINSTANCE in hPrevInstance zbriši vejico....</span><span class="gensmall"><
 				<td colspan="2"><span class="postbody">Mater samo res ne kak te tega nisem vido em 
 
 <br />
-najlepsa vama hvala za pomoc <img src="images/smiles/icon_smile.gif" alt="icon_smile.gif" border="0" />
+najlepsa vama hvala za pomoc <img src="images/smiles/icon_smile.gif" alt=":)" border="0" />
 
 <br />
 
 
 <br />
-se se cujemo  <img src="images/smiles/icon_razz.gif" alt="icon_razz.gif" border="0" /> 
+se se cujemo  <img src="images/smiles/icon_razz.gif" alt=":P" border="0" /> 
 
 <br />
 
@@ -729,7 +677,7 @@ tnX
 
 
 <br />
-Jaoo zaj pa najde nova errora in niti ne prikaze kje sta  <img src="images/smiles/icon_confused.gif" alt="icon_confused.gif" border="0" /> 
+Jaoo zaj pa najde nova errora in niti ne prikaze kje sta  <img src="images/smiles/icon_confused.gif" alt=":?" border="0" /> 
 
 <br />
 
@@ -744,7 +692,7 @@ fatal error LNK1120: 1 unresolved externals
 
 
 <br />
-Zal mi je ampak zdaj sem komaj zacel delat z programiranjem v WINsih pa mi ne gre neke  <img src="images/smiles/icon_razz.gif" alt="icon_razz.gif" border="0" /> 
+Zal mi je ampak zdaj sem komaj zacel delat z programiranjem v WINsih pa mi ne gre neke  <img src="images/smiles/icon_razz.gif" alt=":P" border="0" /> 
 
 <br />
 
@@ -767,7 +715,7 @@ Vnaprej TnX</span><span class="gensmall"></span></td>
 	</tr>
 	
 	<tr>
-		<td width="150" align="left" valign="top" class="row2"><span class="name"><a name="5117"></a><b>Ozzy</b></span><br /><span class="postdetails">wannabe<br /><img src="images/ranks/sgd-2.gif" alt="wannabe" title="wannabe" border="0" /><br /><img src="images/avatars/a4081333430d8da37ef5c.gif" alt="" border="0" /><br /><br />Pridružen: 19. jan 2003 ob 22:17<br />objav: 125<br /></span><br /></td>
+		<td width="150" align="left" valign="top" class="row2"><span class="name"><a name="5117"></a><b>Ozzy</b></span><br /><span class="postdetails">poznavalec<br /><img src="images/ranks/sgd-3.gif" alt="poznavalec" title="poznavalec" border="0" /><br /><img src="images/avatars/a4081333430d8da37ef5c.gif" alt="" border="0" /><br /><br />Pridružen: 19. jan 2003 ob 22:17<br />objav: 172<br /></span><br /></td>
 		<td class="row2" width="100%" height="28" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
 			<tr>
 				<td colspan="2" width="100%">
@@ -810,7 +758,7 @@ Po pravici sem samo čakal, kdaj boš prišel do te napake...</span><span class=
 	</tr>
 	
 	<tr>
-		<td width="150" align="left" valign="top" class="row1"><span class="name"><a name="5118"></a><b>_t3ch_</b></span><br /><span class="postdetails">wannabe<br /><img src="images/ranks/sgd-2.gif" alt="wannabe" title="wannabe" border="0" /><br /><img src="images/avatars/c2f922b13f93ced57f936.gif" alt="" border="0" /><br /><br />Pridružen: 09. okt 2003 ob 16:04<br />objav: 75<br />Kraj: Mafia SoftWare IT</span><br /></td>
+		<td width="150" align="left" valign="top" class="row1"><span class="name"><a name="5118"></a><b>_t3ch_</b></span><br /><span class="postdetails">wannabe<br /><img src="images/ranks/sgd-2.gif" alt="wannabe" title="wannabe" border="0" /><br /><img src="images/avatars/c2f922b13f93ced57f936.gif" alt="" border="0" /><br /><br />Pridružen: 09. okt 2003 ob 16:04<br />objav: 77<br />Kraj: Mafia SoftWare IT</span><br /></td>
 		<td class="row1" width="100%" height="28" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
 			<tr>
 				<td colspan="2" width="100%">
@@ -830,10 +778,10 @@ Po pravici sem samo čakal, kdaj boš prišel do te napake...</span><span class=
 				<td colspan="2"><hr /></td>
 			</tr>
 			<tr>
-				<td colspan="2"><span class="postbody"><img src="images/smiles/icon_smile.gif" alt="icon_smile.gif" border="0" /> em zaj dela ampak kolko vem sem jas tud prej odpr v win32 application in ne console am zdaj pa sem samo passtal tja in dela...
+				<td colspan="2"><span class="postbody"><img src="images/smiles/icon_smile.gif" alt=":)" border="0" /> em zaj dela ampak kolko vem sem jas tud prej odpr v win32 application in ne console am zdaj pa sem samo passtal tja in dela...
 
 <br />
-tnx ozzeku in mavricku  <img src="images/smiles/icon_razz.gif" alt="icon_razz.gif" border="0" />  
+tnx ozzeku in mavricku  <img src="images/smiles/icon_razz.gif" alt=":P" border="0" />  
 
 <br />
 
@@ -842,7 +790,7 @@ tnx ozzeku in mavricku  <img src="images/smiles/icon_razz.gif" alt="icon_razz.gi
 Em kaj pa  je mogoce delal kaj s tem win32 in ali se da naret iz tega kaksna igrca in ali ima gdo kaksen source za posodit da bi mal pregledal...
 
 <br />
-ker namrec moja kniga se tu koncala <img src="images/smiles/icon_smile.gif" alt="icon_smile.gif" border="0" />...
+ker namrec moja kniga se tu koncala <img src="images/smiles/icon_smile.gif" alt=":)" border="0" />...
 
 <br />
 
@@ -865,7 +813,7 @@ TNNNX</span><span class="gensmall"></span></td>
 	</tr>
 	
 	<tr>
-		<td width="150" align="left" valign="top" class="row2"><span class="name"><a name="5119"></a><b>Ozzy</b></span><br /><span class="postdetails">wannabe<br /><img src="images/ranks/sgd-2.gif" alt="wannabe" title="wannabe" border="0" /><br /><img src="images/avatars/a4081333430d8da37ef5c.gif" alt="" border="0" /><br /><br />Pridružen: 19. jan 2003 ob 22:17<br />objav: 125<br /></span><br /></td>
+		<td width="150" align="left" valign="top" class="row2"><span class="name"><a name="5119"></a><b>Ozzy</b></span><br /><span class="postdetails">poznavalec<br /><img src="images/ranks/sgd-3.gif" alt="poznavalec" title="poznavalec" border="0" /><br /><img src="images/avatars/a4081333430d8da37ef5c.gif" alt="" border="0" /><br /><br />Pridružen: 19. jan 2003 ob 22:17<br />objav: 172<br /></span><br /></td>
 		<td class="row2" width="100%" height="28" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
 			<tr>
 				<td colspan="2" width="100%">
@@ -902,7 +850,7 @@ TNNNX</span><span class="gensmall"></span></td>
 	</tr>
 	
 	<tr>
-		<td width="150" align="left" valign="top" class="row1"><span class="name"><a name="5120"></a><b>_t3ch_</b></span><br /><span class="postdetails">wannabe<br /><img src="images/ranks/sgd-2.gif" alt="wannabe" title="wannabe" border="0" /><br /><img src="images/avatars/c2f922b13f93ced57f936.gif" alt="" border="0" /><br /><br />Pridružen: 09. okt 2003 ob 16:04<br />objav: 75<br />Kraj: Mafia SoftWare IT</span><br /></td>
+		<td width="150" align="left" valign="top" class="row1"><span class="name"><a name="5120"></a><b>_t3ch_</b></span><br /><span class="postdetails">wannabe<br /><img src="images/ranks/sgd-2.gif" alt="wannabe" title="wannabe" border="0" /><br /><img src="images/avatars/c2f922b13f93ced57f936.gif" alt="" border="0" /><br /><br />Pridružen: 09. okt 2003 ob 16:04<br />objav: 77<br />Kraj: Mafia SoftWare IT</span><br /></td>
 		<td class="row1" width="100%" height="28" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
 			<tr>
 				<td colspan="2" width="100%">
@@ -922,7 +870,7 @@ TNNNX</span><span class="gensmall"></span></td>
 				<td colspan="2"><hr /></td>
 			</tr>
 			<tr>
-				<td colspan="2"><span class="postbody">oki tnx pa plid se kaj na irca poledat #slogamedev <img src="images/smiles/icon_smile.gif" alt="icon_smile.gif" border="0" />
+				<td colspan="2"><span class="postbody">oki tnx pa plid se kaj na irca poledat #slogamedev <img src="images/smiles/icon_smile.gif" alt=":)" border="0" />
 
 <br />
 
@@ -945,7 +893,7 @@ CaW</span><span class="gensmall"></span></td>
 	</tr>
 	
 	<tr>
-		<td width="150" align="left" valign="top" class="row2"><span class="name"><a name="5125"></a><b>snake</b></span><br /><span class="postdetails">expert<br /><img src="images/ranks/sgd-6.gif" alt="expert" title="expert" border="0" /><br /><img src="images/avatars/c14dbb55415c469152089.gif" alt="" border="0" /><br /><br />Pridružen: 10. jan 2003 ob 08:28<br />objav: 795<br />Kraj: NULL</span><br /></td>
+		<td width="150" align="left" valign="top" class="row2"><span class="name"><a name="5125"></a><b>snake</b></span><br /><span class="postdetails">expert<br /><img src="images/ranks/sgd-6.gif" alt="expert" title="expert" border="0" /><br /><img src="images/avatars/c14dbb55415c469152089.gif" alt="" border="0" /><br /><br />Pridružen: 10. jan 2003 ob 08:28<br />objav: 782<br />Kraj: NULL</span><br /></td>
 		<td class="row2" width="100%" height="28" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
 			<tr>
 				<td colspan="2" width="100%">
@@ -965,7 +913,7 @@ CaW</span><span class="gensmall"></span></td>
 				<td colspan="2"><hr /></td>
 			</tr>
 			<tr>
-				<td colspan="2"><span class="postbody">Ja, a ti nism na IRCu pravu, da daj Win32 application in ne CONSOLE application?!  <img src="images/smiles/icon_biggrin.gif" alt="icon_biggrin.gif" border="0" /></span><span class="gensmall"></span></td>
+				<td colspan="2"><span class="postbody">Ja, a ti nism na IRCu pravu, da daj Win32 application in ne CONSOLE application?!  <img src="images/smiles/icon_biggrin.gif" alt=":D" border="0" /></span><span class="gensmall"></span></td>
 			</tr>
 		</table></td>
 	</tr>
@@ -973,7 +921,7 @@ CaW</span><span class="gensmall"></span></td>
 		<td class="row2" width="150" align="left" valign="middle"><span class="nav"><a href="#top" class="nav">Nazaj na vrh</a></span></td>
 		<td class="row2" width="100%" height="28" valign="bottom" nowrap="nowrap"><table cellspacing="0" cellpadding="0" border="0" height="18" width="18">
 			<tr>
-				<td valign="middle" nowrap="nowrap"><a href="profile-10.html"><img src="templates/SGD2/images/lang_slovenian/icon_profile.gif" alt="Poglej uporabnikov profil" title="Poglej uporabnikov profil" border="0" /></a> <a  target="_userwww"><img src="templates/SGD2/images/lang_slovenian/icon_www.gif" alt="Obišči avtorjevo spletno stran" title="Obišči avtorjevo spletno stran" border="0" /></a></td>
+				<td valign="middle" nowrap="nowrap"><a href="profile-10.html"><img src="templates/SGD2/images/lang_slovenian/icon_profile.gif" alt="Poglej uporabnikov profil" title="Poglej uporabnikov profil" border="0" /></a> </td>
 			</tr>
 		</table></td>
 	</tr>
@@ -982,7 +930,7 @@ CaW</span><span class="gensmall"></span></td>
 	</tr>
 	
 	<tr>
-		<td width="150" align="left" valign="top" class="row1"><span class="name"><a name="5130"></a><b>maverick</b></span><br /><span class="postdetails">SGD Moderator<br /><img src="images/ranks/sgd-mod.gif" alt="SGD Moderator" title="SGD Moderator" border="0" /><br /><img src="images/avatars/c14d5dba3fdc712804eb2.gif" alt="" border="0" /><br /><br />Pridružen: 10. sep 2003 ob 19:44<br />objav: 1225<br />Kraj: Slovenija</span><br /></td>
+		<td width="150" align="left" valign="top" class="row1"><span class="name"><a name="5130"></a><b>maverick</b></span><br /><span class="postdetails">SGD Moderator<br /><img src="images/ranks/sgd-mod.gif" alt="SGD Moderator" title="SGD Moderator" border="0" /><br /><img src="images/avatars/c14d5dba3fdc712804eb2.gif" alt="" border="0" /><br /><br />Pridružen: 10. sep 2003 ob 19:44<br />objav: 1050<br />Kraj: Slovenija</span><br /></td>
 		<td class="row1" width="100%" height="28" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
 			<tr>
 				<td colspan="2" width="100%">
@@ -1008,13 +956,13 @@ CaW</span><span class="gensmall"></span></td>
 Naredil sem že en prog pa gor meni pa en box, tako da....
 
 <br />
-I'm soo happy!!! <img src="images/smiles/icon_lol.gif" alt="icon_lol.gif" border="0" /> 
+I'm soo happy!!! <img src="images/smiles/icon_lol.gif" alt=":lol:" border="0" /> 
 
 <br />
-Verjetno pa bo za resnejšo uporabo C++ počakal še kakšno leto ali pol.<br />_________________<br /><span style="font-size: 9px; line-height: normal"><span style="font-weight: bold"><span style="color: black"><a  target="_blank" class="postlink">http://www.BojZGames.net</a></span></span></span><span style="color: black"></span>
+Verjetno pa bo za resnejšo uporabo C++ počakal še kakšno leto ali pol.<br />_________________<br /><span style="font-size: 75%; line-height: normal"><span style="font-weight: bold"><span style="color: black"><a  target="_blank" class="postlink">http&#58;//www&#46;BojZGames&#46;net</a></span></span></span>
 
 <br />
-<span style="font-size: 8px; line-height: normal"><span style="font-weight: bold"><span style="color: black"><a  target="_blank" class="postlink">http://brunsek.blogspot.com</a></span></span></span><span style="color: black"></span></span><span class="gensmall"></span></td>
+<span style="font-size: 67%; line-height: normal"><span style="font-weight: bold"><span style="color: black"><a  target="_blank" class="postlink">http&#58;//brunsek&#46;blogspot&#46;com</a></span></span></span></span><span class="gensmall"></span></td>
 			</tr>
 		</table></td>
 	</tr>
@@ -1031,7 +979,7 @@ Verjetno pa bo za resnejšo uporabo C++ počakal še kakšno leto ali pol.<br />
 	</tr>
 	
 	<tr>
-		<td width="150" align="left" valign="top" class="row2"><span class="name"><a name="5631"></a><b>_t3ch_</b></span><br /><span class="postdetails">wannabe<br /><img src="images/ranks/sgd-2.gif" alt="wannabe" title="wannabe" border="0" /><br /><img src="images/avatars/c2f922b13f93ced57f936.gif" alt="" border="0" /><br /><br />Pridružen: 09. okt 2003 ob 16:04<br />objav: 75<br />Kraj: Mafia SoftWare IT</span><br /></td>
+		<td width="150" align="left" valign="top" class="row2"><span class="name"><a name="5631"></a><b>_t3ch_</b></span><br /><span class="postdetails">wannabe<br /><img src="images/ranks/sgd-2.gif" alt="wannabe" title="wannabe" border="0" /><br /><img src="images/avatars/c2f922b13f93ced57f936.gif" alt="" border="0" /><br /><br />Pridružen: 09. okt 2003 ob 16:04<br />objav: 77<br />Kraj: Mafia SoftWare IT</span><br /></td>
 		<td class="row2" width="100%" height="28" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
 			<tr>
 				<td colspan="2" width="100%">
@@ -1054,13 +1002,13 @@ Verjetno pa bo za resnejšo uporabo C++ počakal še kakšno leto ali pol.<br />
 				<td colspan="2"><span class="postbody">Eite kak bi zai tu dodal kaj polek da bi blo kai grafike na pa samo to okno em nareo sem se da pac izpise nasvidenje pac neke... 
 
 <br />
-Bi mi lahko gdo razlozo kak naj vklucim kai zai zraven kode da bi blo kai vidno  <img src="images/smiles/icon_rolleyes.gif" alt="icon_rolleyes.gif" border="0" /> 
+Bi mi lahko gdo razlozo kak naj vklucim kai zai zraven kode da bi blo kai vidno  <img src="images/smiles/icon_rolleyes.gif" alt=":roll:" border="0" /> 
 
 <br />
 
 
 <br />
-tNx vsem 666 ×  <img src="images/smiles/icon_razz.gif" alt="icon_razz.gif" border="0" /></span><span class="gensmall"></span></td>
+tNx vsem 666 ×  <img src="images/smiles/icon_razz.gif" alt=":P" border="0" /></span><span class="gensmall"></span></td>
 			</tr>
 		</table></td>
 	</tr>
@@ -1077,7 +1025,7 @@ tNx vsem 666 ×  <img src="images/smiles/icon_razz.gif" alt="icon_razz.gif" bord
 	</tr>
 	
 	<tr>
-		<td width="150" align="left" valign="top" class="row1"><span class="name"><a name="5634"></a><b>maverick</b></span><br /><span class="postdetails">SGD Moderator<br /><img src="images/ranks/sgd-mod.gif" alt="SGD Moderator" title="SGD Moderator" border="0" /><br /><img src="images/avatars/c14d5dba3fdc712804eb2.gif" alt="" border="0" /><br /><br />Pridružen: 10. sep 2003 ob 19:44<br />objav: 1225<br />Kraj: Slovenija</span><br /></td>
+		<td width="150" align="left" valign="top" class="row1"><span class="name"><a name="5634"></a><b>maverick</b></span><br /><span class="postdetails">SGD Moderator<br /><img src="images/ranks/sgd-mod.gif" alt="SGD Moderator" title="SGD Moderator" border="0" /><br /><img src="images/avatars/c14d5dba3fdc712804eb2.gif" alt="" border="0" /><br /><br />Pridružen: 10. sep 2003 ob 19:44<br />objav: 1050<br />Kraj: Slovenija</span><br /></td>
 		<td class="row1" width="100%" height="28" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
 			<tr>
 				<td colspan="2" width="100%">
@@ -1109,578 +1057,387 @@ tNx vsem 666 ×  <img src="images/smiles/icon_razz.gif" alt="icon_razz.gif" bord
 <br />
 	<tr>
 <br />
-	  <td class="code">// DX.cpp &#58; Defines the entry point for the application.
-
+	  <td class="code">// DX&#46;cpp &#58; Defines the entry point for the application&#46;
 <br />
 //
-
 <br />
 
-
 <br />
-#include &quot;stdafx.h&quot;
-
+#include &quot;stdafx&#46;h&quot;
 <br />
-#include &quot;resource.h&quot;
-
+#include &quot;resource&#46;h&quot;
 <br />
-
 
 <br />
 #define MAX_LOADSTRING 100
-
 <br />
-
 
 <br />
 // Global Variables&#58;
-
 <br />
-HINSTANCE hInst;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;// current instance
-
+HINSTANCE hInst;								// current instance
 <br />
-TCHAR szTitle&#91;MAX_LOADSTRING&#93;;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;// The title bar text
-
+TCHAR szTitle&#91;MAX_LOADSTRING&#93;;								// The title bar text
 <br />
-TCHAR szWindowClass&#91;MAX_LOADSTRING&#93;;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;// The title bar text
-
+TCHAR szWindowClass&#91;MAX_LOADSTRING&#93;;								// The title bar text
 <br />
-
 
 <br />
 // Foward declarations of functions included in this code module&#58;
-
 <br />
-ATOM&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;MyRegisterClass&#40;HINSTANCE hInstance&#41;;
-
+ATOM				MyRegisterClass&#40;HINSTANCE hInstance&#41;;
 <br />
-BOOL&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;InitInstance&#40;HINSTANCE, int&#41;;
-
+BOOL				InitInstance&#40;HINSTANCE, int&#41;;
 <br />
-LRESULT CALLBACK&nbsp; &nbsp;WndProc&#40;HWND, UINT, WPARAM, LPARAM&#41;;
-
+LRESULT CALLBACK	WndProc&#40;HWND, UINT, WPARAM, LPARAM&#41;;
 <br />
-LRESULT CALLBACK&nbsp; &nbsp;About&#40;HWND, UINT, WPARAM, LPARAM&#41;;
-
+LRESULT CALLBACK	About&#40;HWND, UINT, WPARAM, LPARAM&#41;;
 <br />
-
 
 <br />
 int APIENTRY WinMain&#40;HINSTANCE hInstance,
-
 <br />
-&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  HINSTANCE hPrevInstance,
-
+                     HINSTANCE hPrevInstance,
 <br />
-&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  LPSTR&nbsp; &nbsp;  lpCmdLine,
-
+                     LPSTR     lpCmdLine,
 <br />
-&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  int&nbsp; &nbsp; &nbsp;  nCmdShow&#41;
-
+                     int       nCmdShow&#41;
 <br />
 &#123;
-
 <br />
- &nbsp; &nbsp;// TODO&#58; Place code here.
-
+ 	// TODO&#58; Place code here&#46;
 <br />
-&nbsp; &nbsp;MSG msg;
-
+	MSG msg;
 <br />
-&nbsp; &nbsp;HACCEL hAccelTable;
-
+	HACCEL hAccelTable;
 <br />
 
-
 <br />
-&nbsp; &nbsp;// Initialize global strings
-
+	// Initialize global strings
 <br />
-&nbsp; &nbsp;LoadString&#40;hInstance, IDS_APP_TITLE, szTitle, MAX_LOADSTRING&#41;;
-
+	LoadString&#40;hInstance, IDS_APP_TITLE, szTitle, MAX_LOADSTRING&#41;;
 <br />
-&nbsp; &nbsp;LoadString&#40;hInstance, IDC_DX, szWindowClass, MAX_LOADSTRING&#41;;
-
+	LoadString&#40;hInstance, IDC_DX, szWindowClass, MAX_LOADSTRING&#41;;
 <br />
-&nbsp; &nbsp;MyRegisterClass&#40;hInstance&#41;;
-
+	MyRegisterClass&#40;hInstance&#41;;
 <br />
 
-
 <br />
-&nbsp; &nbsp;// Perform application initialization&#58;
-
+	// Perform application initialization&#58;
 <br />
-&nbsp; &nbsp;if &#40;!InitInstance &#40;hInstance, nCmdShow&#41;&#41; 
-
+	if &#40;!InitInstance &#40;hInstance, nCmdShow&#41;&#41; 
 <br />
-&nbsp; &nbsp;&#123;
-
+	&#123;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;return FALSE;
-
+		return FALSE;
 <br />
-&nbsp; &nbsp;&#125;
-
+	&#125;
 <br />
 
-
 <br />
-&nbsp; &nbsp;hAccelTable = LoadAccelerators&#40;hInstance, &#40;LPCTSTR&#41;IDC_DX&#41;;
-
+	hAccelTable = LoadAccelerators&#40;hInstance, &#40;LPCTSTR&#41;IDC_DX&#41;;
 <br />
 
-
 <br />
-&nbsp; &nbsp;// Main message loop&#58;
-
+	// Main message loop&#58;
 <br />
-&nbsp; &nbsp;while &#40;GetMessage&#40;&amp;msg, NULL, 0, 0&#41;&#41; 
-
+	while &#40;GetMessage&#40;&amp;msg, NULL, 0, 0&#41;&#41; 
 <br />
-&nbsp; &nbsp;&#123;
-
+	&#123;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;if &#40;!TranslateAccelerator&#40;msg.hwnd, hAccelTable, &amp;msg&#41;&#41; 
-
+		if &#40;!TranslateAccelerator&#40;msg&#46;hwnd, hAccelTable, &amp;msg&#41;&#41; 
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&#123;
-
+		&#123;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;TranslateMessage&#40;&amp;msg&#41;;
-
+			TranslateMessage&#40;&amp;msg&#41;;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;DispatchMessage&#40;&amp;msg&#41;;
-
+			DispatchMessage&#40;&amp;msg&#41;;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&#125;
-
+		&#125;
 <br />
-&nbsp; &nbsp;&#125;
-
+	&#125;
 <br />
 
-
 <br />
-&nbsp; &nbsp;return msg.wParam;
-
+	return msg&#46;wParam;
 <br />
 &#125;
+<br />
 
 <br />
 
-
 <br />
-
-
-<br />
-
 
 <br />
 //
-
 <br />
-//&nbsp; FUNCTION&#58; MyRegisterClass&#40;&#41;
-
+//  FUNCTION&#58; MyRegisterClass&#40;&#41;
 <br />
 //
-
 <br />
-//&nbsp; PURPOSE&#58; Registers the window class.
-
+//  PURPOSE&#58; Registers the window class&#46;
 <br />
 //
-
 <br />
-//&nbsp; COMMENTS&#58;
-
+//  COMMENTS&#58;
 <br />
 //
-
 <br />
-//&nbsp; &nbsp; This function and its usage is only necessary if you want this code
-
+//    This function and its usage is only necessary if you want this code
 <br />
-//&nbsp; &nbsp; to be compatible with Win32 systems prior to the 'RegisterClassEx'
-
+//    to be compatible with Win32 systems prior to the 'RegisterClassEx'
 <br />
-//&nbsp; &nbsp; function that was added to Windows 95. It is important to call this function
-
+//    function that was added to Windows 95&#46; It is important to call this function
 <br />
-//&nbsp; &nbsp; so that the application will get 'well formed' small icons associated
-
+//    so that the application will get 'well formed' small icons associated
 <br />
-//&nbsp; &nbsp; with it.
-
+//    with it&#46;
 <br />
 //
-
 <br />
 ATOM MyRegisterClass&#40;HINSTANCE hInstance&#41;
-
 <br />
 &#123;
-
 <br />
-&nbsp; &nbsp;WNDCLASSEX wcex;
-
+	WNDCLASSEX wcex;
 <br />
 
-
 <br />
-&nbsp; &nbsp;wcex.cbSize = sizeof&#40;WNDCLASSEX&#41;; 
-
+	wcex&#46;cbSize = sizeof&#40;WNDCLASSEX&#41;; 
 <br />
 
-
 <br />
-&nbsp; &nbsp;wcex.style&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;= CS_HREDRAW | CS_VREDRAW;
-
+	wcex&#46;style			= CS_HREDRAW | CS_VREDRAW;
 <br />
-&nbsp; &nbsp;wcex.lpfnWndProc&nbsp; &nbsp;= &#40;WNDPROC&#41;WndProc;
-
+	wcex&#46;lpfnWndProc	= &#40;WNDPROC&#41;WndProc;
 <br />
-&nbsp; &nbsp;wcex.cbClsExtra&nbsp; &nbsp;&nbsp; &nbsp;= 0;
-
+	wcex&#46;cbClsExtra		= 0;
 <br />
-&nbsp; &nbsp;wcex.cbWndExtra&nbsp; &nbsp;&nbsp; &nbsp;= 0;
-
+	wcex&#46;cbWndExtra		= 0;
 <br />
-&nbsp; &nbsp;wcex.hInstance&nbsp; &nbsp;&nbsp; &nbsp;= hInstance;
-
+	wcex&#46;hInstance		= hInstance;
 <br />
-&nbsp; &nbsp;wcex.hIcon&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;= LoadIcon&#40;hInstance, &#40;LPCTSTR&#41;IDI_DX&#41;;
-
+	wcex&#46;hIcon			= LoadIcon&#40;hInstance, &#40;LPCTSTR&#41;IDI_DX&#41;;
 <br />
-&nbsp; &nbsp;wcex.hCursor&nbsp; &nbsp;&nbsp; &nbsp;= LoadCursor&#40;NULL, IDC_ARROW&#41;;
-
+	wcex&#46;hCursor		= LoadCursor&#40;NULL, IDC_ARROW&#41;;
 <br />
-&nbsp; &nbsp;wcex.hbrBackground&nbsp; &nbsp;= &#40;HBRUSH&#41;&#40;COLOR_WINDOW+1&#41;;
-
+	wcex&#46;hbrBackground	= &#40;HBRUSH&#41;&#40;COLOR_WINDOW+1&#41;;
 <br />
-&nbsp; &nbsp;wcex.lpszMenuName&nbsp; &nbsp;= &#40;LPCSTR&#41;IDC_DX;
-
+	wcex&#46;lpszMenuName	= &#40;LPCSTR&#41;IDC_DX;
 <br />
-&nbsp; &nbsp;wcex.lpszClassName&nbsp; &nbsp;= szWindowClass;
-
+	wcex&#46;lpszClassName	= szWindowClass;
 <br />
-&nbsp; &nbsp;wcex.hIconSm&nbsp; &nbsp;&nbsp; &nbsp;= LoadIcon&#40;wcex.hInstance, &#40;LPCTSTR&#41;IDI_SMALL&#41;;
-
+	wcex&#46;hIconSm		= LoadIcon&#40;wcex&#46;hInstance, &#40;LPCTSTR&#41;IDI_SMALL&#41;;
 <br />
 
-
 <br />
-&nbsp; &nbsp;return RegisterClassEx&#40;&amp;wcex&#41;;
-
+	return RegisterClassEx&#40;&amp;wcex&#41;;
 <br />
 &#125;
-
 <br />
-
 
 <br />
 //
-
 <br />
-//&nbsp;  FUNCTION&#58; InitInstance&#40;HANDLE, int&#41;
-
+//   FUNCTION&#58; InitInstance&#40;HANDLE, int&#41;
 <br />
 //
-
 <br />
-//&nbsp;  PURPOSE&#58; Saves instance handle and creates main window
-
+//   PURPOSE&#58; Saves instance handle and creates main window
 <br />
 //
-
 <br />
-//&nbsp;  COMMENTS&#58;
-
+//   COMMENTS&#58;
 <br />
 //
-
 <br />
-//&nbsp; &nbsp; &nbsp; &nbsp; In this function, we save the instance handle in a global variable and
-
+//        In this function, we save the instance handle in a global variable and
 <br />
-//&nbsp; &nbsp; &nbsp; &nbsp; create and display the main program window.
-
+//        create and display the main program window&#46;
 <br />
 //
-
 <br />
 BOOL InitInstance&#40;HINSTANCE hInstance, int nCmdShow&#41;
-
 <br />
 &#123;
-
 <br />
-&nbsp;  HWND hWnd;
-
+   HWND hWnd;
 <br />
 
-
 <br />
-&nbsp;  hInst = hInstance; // Store instance handle in our global variable
-
+   hInst = hInstance; // Store instance handle in our global variable
 <br />
 
-
 <br />
-&nbsp;  hWnd = CreateWindow&#40;szWindowClass, szTitle, WS_OVERLAPPEDWINDOW,
-
+   hWnd = CreateWindow&#40;szWindowClass, szTitle, WS_OVERLAPPEDWINDOW,
 <br />
-&nbsp; &nbsp; &nbsp; CW_USEDEFAULT, 0, CW_USEDEFAULT, 0, NULL, NULL, hInstance, NULL&#41;;
-
+      CW_USEDEFAULT, 0, CW_USEDEFAULT, 0, NULL, NULL, hInstance, NULL&#41;;
 <br />
 
-
 <br />
-&nbsp;  if &#40;!hWnd&#41;
-
+   if &#40;!hWnd&#41;
 <br />
-&nbsp;  &#123;
-
+   &#123;
 <br />
-&nbsp; &nbsp; &nbsp; return FALSE;
-
+      return FALSE;
 <br />
-&nbsp;  &#125;
-
+   &#125;
 <br />
 
-
 <br />
-&nbsp;  ShowWindow&#40;hWnd, nCmdShow&#41;;
-
+   ShowWindow&#40;hWnd, nCmdShow&#41;;
 <br />
-&nbsp;  UpdateWindow&#40;hWnd&#41;;
-
+   UpdateWindow&#40;hWnd&#41;;
 <br />
 
-
 <br />
-&nbsp;  return TRUE;
-
+   return TRUE;
 <br />
 &#125;
-
 <br />
-
 
 <br />
 //
-
 <br />
-//&nbsp; FUNCTION&#58; WndProc&#40;HWND, unsigned, WORD, LONG&#41;
-
+//  FUNCTION&#58; WndProc&#40;HWND, unsigned, WORD, LONG&#41;
 <br />
 //
-
 <br />
-//&nbsp; PURPOSE&#58;&nbsp; Processes messages for the main window.
-
+//  PURPOSE&#58;  Processes messages for the main window&#46;
 <br />
 //
-
 <br />
-//&nbsp; WM_COMMAND&nbsp; &nbsp;- process the application menu
-
+//  WM_COMMAND	- process the application menu
 <br />
-//&nbsp; WM_PAINT&nbsp; &nbsp;- Paint the main window
-
+//  WM_PAINT	- Paint the main window
 <br />
-//&nbsp; WM_DESTROY&nbsp; &nbsp;- post a quit message and return
-
+//  WM_DESTROY	- post a quit message and return
 <br />
 //
-
 <br />
 //
-
 <br />
 LRESULT CALLBACK WndProc&#40;HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam&#41;
-
 <br />
 &#123;
-
 <br />
-&nbsp; &nbsp;int wmId, wmEvent;
-
+	int wmId, wmEvent;
 <br />
-&nbsp; &nbsp;PAINTSTRUCT ps;
-
+	PAINTSTRUCT ps;
 <br />
-&nbsp; &nbsp;HDC hdc;
-
+	HDC hdc;
 <br />
-&nbsp; &nbsp;TCHAR szHello&#91;MAX_LOADSTRING&#93;;
-
+	TCHAR szHello&#91;MAX_LOADSTRING&#93;;
 <br />
-&nbsp; &nbsp;LoadString&#40;hInst, IDS_HELLO, szHello, MAX_LOADSTRING&#41;;
-
+	LoadString&#40;hInst, IDS_HELLO, szHello, MAX_LOADSTRING&#41;;
 <br />
 
-
 <br />
-&nbsp; &nbsp;switch &#40;message&#41; 
-
+	switch &#40;message&#41; 
 <br />
-&nbsp; &nbsp;&#123;
-
+	&#123;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;case WM_COMMAND&#58;
-
+		case WM_COMMAND&#58;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;wmId&nbsp; &nbsp; = LOWORD&#40;wParam&#41;; 
-
+			wmId    = LOWORD&#40;wParam&#41;; 
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;wmEvent = HIWORD&#40;wParam&#41;; 
-
+			wmEvent = HIWORD&#40;wParam&#41;; 
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;// Parse the menu selections&#58;
-
+			// Parse the menu selections&#58;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;switch &#40;wmId&#41;
-
+			switch &#40;wmId&#41;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&#123;
-
+			&#123;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;case IDM_ABOUT&#58;
-
+				case IDM_ABOUT&#58;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;  DialogBox&#40;hInst, &#40;LPCTSTR&#41;IDD_ABOUTBOX, hWnd, &#40;DLGPROC&#41;About&#41;;
-
+				   DialogBox&#40;hInst, &#40;LPCTSTR&#41;IDD_ABOUTBOX, hWnd, &#40;DLGPROC&#41;About&#41;;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;  break;
-
+				   break;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;case IDM_EXIT&#58;
-
+				case IDM_EXIT&#58;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;  DestroyWindow&#40;hWnd&#41;;
-
+				   DestroyWindow&#40;hWnd&#41;;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;  break;
-
+				   break;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;default&#58;
-
+				default&#58;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;  return DefWindowProc&#40;hWnd, message, wParam, lParam&#41;;
-
+				   return DefWindowProc&#40;hWnd, message, wParam, lParam&#41;;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&#125;
-
+			&#125;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;break;
-
+			break;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;case WM_PAINT&#58;
-
+		case WM_PAINT&#58;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;hdc = BeginPaint&#40;hWnd, &amp;ps&#41;;
-
+			hdc = BeginPaint&#40;hWnd, &amp;ps&#41;;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;// TODO&#58; Add any drawing code here...
-
+			// TODO&#58; Add any drawing code here&#46;&#46;&#46;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;RECT rt;
-
+			RECT rt;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;GetClientRect&#40;hWnd, &amp;rt&#41;;
-
+			GetClientRect&#40;hWnd, &amp;rt&#41;;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;DrawText&#40;hdc, szHello, strlen&#40;szHello&#41;, &amp;rt, DT_CENTER&#41;;
-
+			DrawText&#40;hdc, szHello, strlen&#40;szHello&#41;, &amp;rt, DT_CENTER&#41;;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;EndPaint&#40;hWnd, &amp;ps&#41;;
-
+			EndPaint&#40;hWnd, &amp;ps&#41;;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;break;
-
+			break;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;case WM_DESTROY&#58;
-
+		case WM_DESTROY&#58;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;PostQuitMessage&#40;0&#41;;
-
+			PostQuitMessage&#40;0&#41;;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;break;
-
+			break;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;default&#58;
-
+		default&#58;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;return DefWindowProc&#40;hWnd, message, wParam, lParam&#41;;
-
+			return DefWindowProc&#40;hWnd, message, wParam, lParam&#41;;
 <br />
-&nbsp;  &#125;
-
+   &#125;
 <br />
-&nbsp;  return 0;
-
+   return 0;
 <br />
 &#125;
-
 <br />
 
-
 <br />
-// Mesage handler for about box.
-
+// Mesage handler for about box&#46;
 <br />
 LRESULT CALLBACK About&#40;HWND hDlg, UINT message, WPARAM wParam, LPARAM lParam&#41;
-
 <br />
 &#123;
-
 <br />
-&nbsp; &nbsp;switch &#40;message&#41;
-
+	switch &#40;message&#41;
 <br />
-&nbsp; &nbsp;&#123;
-
+	&#123;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;case WM_INITDIALOG&#58;
-
+		case WM_INITDIALOG&#58;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;return TRUE;
-
+				return TRUE;
 <br />
 
-
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;case WM_COMMAND&#58;
-
+		case WM_COMMAND&#58;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;if &#40;LOWORD&#40;wParam&#41; == IDOK || LOWORD&#40;wParam&#41; == IDCANCEL&#41; 
-
+			if &#40;LOWORD&#40;wParam&#41; == IDOK || LOWORD&#40;wParam&#41; == IDCANCEL&#41; 
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&#123;
-
+			&#123;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;EndDialog&#40;hDlg, LOWORD&#40;wParam&#41;&#41;;
-
+				EndDialog&#40;hDlg, LOWORD&#40;wParam&#41;&#41;;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;return TRUE;
-
+				return TRUE;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&#125;
-
+			&#125;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;break;
-
+			break;
 <br />
-&nbsp; &nbsp;&#125;
-
+	&#125;
 <br />
-&nbsp; &nbsp; return FALSE;
-
+    return FALSE;
 <br />
 &#125;
-
 <br />
 </td>
 <br />
@@ -1691,10 +1448,10 @@ LRESULT CALLBACK About&#40;HWND hDlg, UINT message, WPARAM wParam, LPARAM lParam
 <span class="postbody">
 
 <br />
-Nekaj iz helpa..... <img src="images/smiles/icon_biggrin.gif" alt="icon_biggrin.gif" border="0" /><br />_________________<br /><span style="font-size: 9px; line-height: normal"><span style="font-weight: bold"><span style="color: black"><a  target="_blank" class="postlink">http://www.BojZGames.net</a></span></span></span><span style="color: black"></span>
+Nekaj iz helpa..... <img src="images/smiles/icon_biggrin.gif" alt=":D" border="0" /><br />_________________<br /><span style="font-size: 75%; line-height: normal"><span style="font-weight: bold"><span style="color: black"><a  target="_blank" class="postlink">http&#58;//www&#46;BojZGames&#46;net</a></span></span></span>
 
 <br />
-<span style="font-size: 8px; line-height: normal"><span style="font-weight: bold"><span style="color: black"><a  target="_blank" class="postlink">http://brunsek.blogspot.com</a></span></span></span><span style="color: black"></span></span><span class="gensmall"></span></td>
+<span style="font-size: 67%; line-height: normal"><span style="font-weight: bold"><span style="color: black"><a  target="_blank" class="postlink">http&#58;//brunsek&#46;blogspot&#46;com</a></span></span></span></span><span class="gensmall"></span></td>
 			</tr>
 		</table></td>
 	</tr>
@@ -1711,7 +1468,7 @@ Nekaj iz helpa..... <img src="images/smiles/icon_biggrin.gif" alt="icon_biggrin.
 	</tr>
 	
 	<tr>
-		<td width="150" align="left" valign="top" class="row2"><span class="name"><a name="5637"></a><b>_t3ch_</b></span><br /><span class="postdetails">wannabe<br /><img src="images/ranks/sgd-2.gif" alt="wannabe" title="wannabe" border="0" /><br /><img src="images/avatars/c2f922b13f93ced57f936.gif" alt="" border="0" /><br /><br />Pridružen: 09. okt 2003 ob 16:04<br />objav: 75<br />Kraj: Mafia SoftWare IT</span><br /></td>
+		<td width="150" align="left" valign="top" class="row2"><span class="name"><a name="5637"></a><b>_t3ch_</b></span><br /><span class="postdetails">wannabe<br /><img src="images/ranks/sgd-2.gif" alt="wannabe" title="wannabe" border="0" /><br /><img src="images/avatars/c2f922b13f93ced57f936.gif" alt="" border="0" /><br /><br />Pridružen: 09. okt 2003 ob 16:04<br />objav: 77<br />Kraj: Mafia SoftWare IT</span><br /></td>
 		<td class="row2" width="100%" height="28" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
 			<tr>
 				<td colspan="2" width="100%">
@@ -1731,7 +1488,7 @@ Nekaj iz helpa..... <img src="images/smiles/icon_biggrin.gif" alt="icon_biggrin.
 				<td colspan="2"><hr /></td>
 			</tr>
 			<tr>
-				<td colspan="2"><span class="postbody">waau tnx man em se om probal naucit neke iz tega  <img src="images/smiles/icon_razz.gif" alt="icon_razz.gif" border="0" /> 
+				<td colspan="2"><span class="postbody">waau tnx man em se om probal naucit neke iz tega  <img src="images/smiles/icon_razz.gif" alt=":P" border="0" /> 
 
 <br />
 
@@ -1762,7 +1519,7 @@ dio mio</span><span class="gensmall"></span></td>
   <tr>
 	<td align="left" valign="middle" nowrap="nowrap">&nbsp;</td>
 	<td align="left" valign="middle" width="100%"><span class="nav">&nbsp;&nbsp;&nbsp;<a href="index.html" class="nav">SloGameDev.net seznam forumov</a>
-	  -> <a href="forum-10.html" class="nav">Za Začetnike</a></span></td>
+	  -> <a href="forum-49.html" class="nav">Začetniki</a></span></td>
 	<td align="right" valign="top" nowrap="nowrap"><span class="gensmall">Časovni pas (GMT +2:00 uri) Slovenija, poletni čas</span><br /><span class="nav"></span>
 	  </td>
   </tr>
@@ -1778,7 +1535,7 @@ dio mio</span><span class="gensmall"></span></td>
   </tr>
 </table>
 
-<div align="center"><span class="copyright"><br />Arhiv stanja na dan 13. 2. 2006 &mdash; samo za branje.<br />
+<div align="center"><span class="copyright"><br />Arhiv &mdash; samo za branje.<br />
 <!--
 	We request you retain the full copyright notice below including the link to www.phpbb.com.
 	This not only gives respect to the large amount of time given freely by the developers

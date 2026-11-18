@@ -276,13 +276,13 @@ input.liteoption {
   <tr>
 	<td align="left" valign="bottom" nowrap="nowrap">&nbsp;</td>
 	<td align="left" valign="middle" width="100%"><span class="nav">&nbsp;&nbsp;&nbsp;<a href="index.html" class="nav">SloGameDev.net seznam forumov</a>
-	  -> <a href="forum-1.html" class="nav">Splošno Programiranje</a></span></td>
+	  -> <a href="forum-52.html" class="nav">Izdelovanje iger</a></span></td>
   </tr>
 </table>
 
 <table class="forumline" width="100%" cellspacing="1" cellpadding="3" border="0">
 	<tr align="right">
-		<td class="catHead" colspan="2" height="28"><span class="nav"><a href="topic-641.html" class="nav">Prejšnja tema</a> :: <a href="topic-699.html" class="nav">Naslednja tema</a> &nbsp;</span></td>
+		<td class="catHead" colspan="2" height="28"><span class="nav"><a href="topic-641.html" class="nav">Prejšnja tema</a> :: <a href="topic-691.html" class="nav">Naslednja tema</a> &nbsp;</span></td>
 	</tr>
 	
 	<tr>
@@ -291,7 +291,7 @@ input.liteoption {
 	</tr>
 	
 	<tr>
-		<td width="150" align="left" valign="top" class="row1"><span class="name"><a name="7650"></a><b>_t3ch_</b></span><br /><span class="postdetails">wannabe<br /><img src="images/ranks/sgd-2.gif" alt="wannabe" title="wannabe" border="0" /><br /><img src="images/avatars/c2f922b13f93ced57f936.gif" alt="" border="0" /><br /><br />Pridružen: 09. okt 2003 ob 16:04<br />objav: 75<br />Kraj: Mafia SoftWare IT</span><br /></td>
+		<td width="150" align="left" valign="top" class="row1"><span class="name"><a name="7650"></a><b>_t3ch_</b></span><br /><span class="postdetails">wannabe<br /><img src="images/ranks/sgd-2.gif" alt="wannabe" title="wannabe" border="0" /><br /><img src="images/avatars/c2f922b13f93ced57f936.gif" alt="" border="0" /><br /><br />Pridružen: 09. okt 2003 ob 16:04<br />objav: 77<br />Kraj: Mafia SoftWare IT</span><br /></td>
 		<td class="row1" width="100%" height="28" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
 			<tr>
 				<td colspan="2" width="100%">
@@ -311,7 +311,7 @@ input.liteoption {
 				<td colspan="2"><hr /></td>
 			</tr>
 			<tr>
-				<td colspan="2"><span class="postbody">Em ne vem ne ce ma gdo kako idejo ki pa tak vem da jih mate dovol naj kaj doda <img src="images/smiles/icon_wink.gif" alt="icon_wink.gif" border="0" /> jas mam namrec polo izpitov v soli tak da niam casa neke nadaljevat :-/
+				<td colspan="2"><span class="postbody">Em ne vem ne ce ma gdo kako idejo ki pa tak vem da jih mate dovol naj kaj doda <img src="images/smiles/icon_wink.gif" alt=";)" border="0" /> jas mam namrec polo izpitov v soli tak da niam casa neke nadaljevat :-/
 
 <br />
 
@@ -330,478 +330,320 @@ input.liteoption {
 	<tr>
 <br />
 	  <td class="code">
-
 <br />
-#include &lt;iostream.h&gt;
-
+#include &lt;iostream&#46;h&gt;
 <br />
-#include &lt;winsock2.h&gt;
-
+#include &lt;winsock2&#46;h&gt;
 <br />
-#include &lt;stdio.h&gt;
-
+#include &lt;stdio&#46;h&gt;
 <br />
-
 
 <br />
 int bajt, moje_socket;
-
 <br />
 char poslji_serverju, znak;
-
 <br />
 
-
 <br />
-// te podatke more server dobit da te sploh sprejme za to priporocam to stran http&#58;//rfc.sunsite.dk/rfc/rfc1459.html
-
+// te podatke more server dobit da te sploh sprejme za to priporocam to stran http&#58;//rfc&#46;sunsite&#46;dk/rfc/rfc1459&#46;html
 <br />
 #define MSG_PODATKI 1024
-
 <br />
 
-
 <br />
-char outPodatki&#91;MSG_PODATKI&#93; = &quot; PASS anonymous \n NICK test-749 &#91;0&#93; \n USER gost cmb5-177.dial-up.arnes.si irc.link.si &#58;Miki Miska \n SERVER irc.link.si 0 LINK&quot;;
-
+char outPodatki&#91;MSG_PODATKI&#93; = &quot; PASS anonymous \n NICK test-749 &#91;0&#93; \n USER gost cmb5-177&#46;dial-up&#46;arnes&#46;si irc&#46;link&#46;si &#58;Miki Miska \n SERVER irc&#46;link&#46;si 0 LINK&quot;;
 <br />
-
 
 <br />
 void podatki&#40;&#41;
-
 <br />
 &#123;
-
 <br />
-&nbsp; &nbsp;  send&#40;moje_socket, outPodatki, sizeof&#40;outPodatki&#41;, 0&#41;;
-
+     send&#40;moje_socket, outPodatki, sizeof&#40;outPodatki&#41;, 0&#41;;
 <br />
 &#125;
-
 <br />
 /////////////////////////////////////////////////////////////////////////
-
 <br />
-
 
 <br />
 // funkcija za posiljanje sporocil in komand k serverju
-
 <br />
 #define MSG_SIZE 65535
-
 <br />
-
 
 <br />
 char inMSG&#91;MSG_SIZE&#93;;
-
 <br />
 char outMSG&#91;MSG_SIZE&#93; = &#123;poslji_serverju&#125;;
-
 <br />
 // ta posilja
-
 <br />
 void posli&#40;&#41;
-
 <br />
 &#123;
-
 <br />
-&nbsp; &nbsp;bajt = send&#40;moje_socket, outMSG, sizeof&#40;outMSG&#41;, 0&#41;;
-
+	bajt = send&#40;moje_socket, outMSG, sizeof&#40;outMSG&#41;, 0&#41;;
 <br />
 
-
 <br />
-&nbsp; &nbsp;if &#40;bajt == SOCKET_ERROR&#41;
-
+	if &#40;bajt == SOCKET_ERROR&#41;
 <br />
-&nbsp; &nbsp;&#123;
-
+	&#123;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;cout &lt;&lt; &quot; Sporocilo NI poslano &quot; &lt;&lt; endl;
-
+		cout &lt;&lt; &quot; Sporocilo NI poslano &quot; &lt;&lt; endl;
 <br />
 
-
 <br />
-&nbsp; &nbsp;&#125;
-
+	&#125;
 <br />
-&nbsp; &nbsp;else
-
+	else
 <br />
-&nbsp; &nbsp;&#123;
-
+	&#123;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;cout &lt;&lt; &quot; Sporocilo poslano &quot; &lt;&lt; endl;
-
+		cout &lt;&lt; &quot; Sporocilo poslano &quot; &lt;&lt; endl;
 <br />
-&nbsp; &nbsp;&#125;
-
+	&#125;
 <br />
 &#125;
-
 <br />
 // ta sprejema
-
 <br />
 void sprejmi&#40;&#41;
-
 <br />
-&#123;&nbsp; &nbsp;
-
+&#123;	
 <br />
-&nbsp; &nbsp;bajt = recv&#40;moje_socket, inMSG, sizeof&#40;inMSG&#41;, 0&#41;;
-
+	bajt = recv&#40;moje_socket, inMSG, sizeof&#40;inMSG&#41;, 0&#41;;
 <br />
-&nbsp; &nbsp;
-
+	
 <br />
-&nbsp; &nbsp;if &#40; bajt == SOCKET_ERROR&#41;
-
+	if &#40; bajt == SOCKET_ERROR&#41;
 <br />
-&nbsp; &nbsp;&#123;
-
+	&#123;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;cout &lt;&lt; &quot; Sprejemanje spodletelo !!! &quot; &lt;&lt; endl;
-
+		cout &lt;&lt; &quot; Sprejemanje spodletelo !!! &quot; &lt;&lt; endl;
 <br />
-&nbsp; &nbsp;&#125;
-
+	&#125;
 <br />
-&nbsp; &nbsp;else 
-
+	else 
 <br />
-&nbsp; &nbsp;&#123;
-
+	&#123;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;while&#40;bajt &gt; 0&#41;
-
+		while&#40;bajt &gt; 0&#41;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&#123;
-
+		&#123;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;cout &lt;&lt; inMSG &lt;&lt; endl;
-
+		cout &lt;&lt; inMSG &lt;&lt; endl;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&#125;
-
+		&#125;
 <br />
-&nbsp; &nbsp;&#125;
-
+	&#125;
 <br />
 &#125;
-
 <br />
 // funkcija za zakljucit program
-
 <br />
 void quit&#40;&#41;
-
 <br />
 &#123;
-
 <br />
-&nbsp; &nbsp;closesocket&#40;moje_socket&#41;;
-
+	closesocket&#40;moje_socket&#41;;
 <br />
 
-
 <br />
-&nbsp; &nbsp;cout &lt;&lt; &quot; Povezava se zapira ...\n&quot; &lt;&lt; endl;
-
+	cout &lt;&lt; &quot; Povezava se zapira &#46;&#46;&#46;\n&quot; &lt;&lt; endl;
 <br />
 
-
 <br />
-&nbsp; &nbsp;WSACleanup&#40;&#41;;
-
+	WSACleanup&#40;&#41;;
 <br />
-&nbsp;  
-
+   
 <br />
-&nbsp; &nbsp;printf&#40;&quot; IrC Cl0sinG \n&quot;&#41;; 
-
+	printf&#40;&quot; IrC Cl0sinG \n&quot;&#41;; 
 <br />
 
-
 <br />
-&nbsp; &nbsp;system&#40;&quot;pause&quot;&#41;;
-
+	system&#40;&quot;pause&quot;&#41;;
 <br />
 &#125;
-
 <br />
 // izpise tabelo
-
 <br />
 void izpis&#40;&#41;
-
 <br />
 &#123;
-
 <br />
-&nbsp; &nbsp;cout &lt;&lt; &quot;*************************************&quot; &lt;&lt; endl
-
+	cout &lt;&lt; &quot;*************************************&quot; &lt;&lt; endl
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp; &lt;&lt; &quot;*&nbsp; 1.&#41;&nbsp; &nbsp; Poslji serverju&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  *&quot; &lt;&lt; endl
-
+		 &lt;&lt; &quot;*  1&#46;&#41;    Poslji serverju           *&quot; &lt;&lt; endl
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp; &lt;&lt; &quot;*&nbsp; 2.&#41;&nbsp; &nbsp; &nbsp; &nbsp;  Izhod&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; *&quot; &lt;&lt; endl
-
+		 &lt;&lt; &quot;*  2&#46;&#41;         Izhod                *&quot; &lt;&lt; endl
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp; &lt;&lt; &quot;*************************************&quot; &lt;&lt; endl;
-
+		 &lt;&lt; &quot;*************************************&quot; &lt;&lt; endl;
 <br />
 &#125;
-
 <br />
-
 
 <br />
 void izbira&#40;&#41;
-
 <br />
 &#123;
-
 <br />
-&nbsp; &nbsp;izpis&#40;&#41;;
-
+	izpis&#40;&#41;;
 <br />
-&nbsp; &nbsp;cout &lt;&lt; &quot; Vpisi zeleno storitev&#58; &quot;;
-
+	cout &lt;&lt; &quot; Vpisi zeleno storitev&#58; &quot;;
 <br />
-&nbsp; &nbsp;cin &gt;&gt; znak;
-
+	cin &gt;&gt; znak;
 <br />
 
-
 <br />
-&nbsp; &nbsp;switch&#40;znak&#41;
-
+	switch&#40;znak&#41;
 <br />
-&nbsp; &nbsp;&#123;
-
+	&#123;
 <br />
-&nbsp; &nbsp;case '1'&#58;
-
+	case '1'&#58;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&#123;
-
+		&#123;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;do
-
+			do
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&#123;
-
+			&#123;
 <br />
-&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  cout &lt;&lt; &quot; Vpisi besedilo ki ga zelis poslat serverju&#58; &quot; &lt;&lt; endl;
-
+             cout &lt;&lt; &quot; Vpisi besedilo ki ga zelis poslat serverju&#58; &quot; &lt;&lt; endl;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp;  cin &gt;&gt; poslji_serverju;
-
+	         cin &gt;&gt; poslji_serverju;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp; 
-
+			 
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp; posli&#40;&#41;;
-
+			 posli&#40;&#41;;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp; 
-
+			 
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp; sprejmi&#40;&#41;;
-
+			 sprejmi&#40;&#41;;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp; 
-
+			 
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&#125;
-
+			&#125;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;while &#40; poslji_serverju != 'q' &#41;;
-
+			while &#40; poslji_serverju != 'q' &#41;;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&#125;
-
+		&#125;
 <br />
-&nbsp; &nbsp;case '2'&#58;
-
+	case '2'&#58;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&#123;
-
+		&#123;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;quit&#40;&#41;;
-
+			quit&#40;&#41;;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&#125;
-
+		&#125;
 <br />
-&nbsp; &nbsp;default&#58;
-
+	default&#58;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;cout &lt;&lt; &quot; Ta znak ne obstaja !!! &quot; &lt;&lt; endl;
-
+		cout &lt;&lt; &quot; Ta znak ne obstaja !!! &quot; &lt;&lt; endl;
 <br />
-&nbsp; &nbsp;&#125;
-
+	&#125;
 <br />
 &#125;
-
 <br />
-
 
 <br />
 int main&#40;&#41;
-
 <br />
 &#123;
-
 <br />
-&nbsp; &nbsp; int napaka;
-
+    int napaka;
 <br />
 
-
 <br />
-&nbsp; &nbsp;WSADATA wsaData;
-
+	WSADATA wsaData;
 <br />
 
-
 <br />
-&nbsp; &nbsp;WSAStartup&#40;MAKEWORD&#40; 2, 2&#41;, &amp;wsaData&#41;;
-
+	WSAStartup&#40;MAKEWORD&#40; 2, 2&#41;, &amp;wsaData&#41;;
 <br />
 
-
 <br />
-&nbsp; &nbsp;moje_socket = socket&#40;AF_INET, SOCK_STREAM, IPPROTO_TCP&#41;;
-
+	moje_socket = socket&#40;AF_INET, SOCK_STREAM, IPPROTO_TCP&#41;;
 <br />
 
-
 <br />
-&nbsp; &nbsp;if &#40; moje_socket == SOCKET_ERROR &#41;
-
+	if &#40; moje_socket == SOCKET_ERROR &#41;
 <br />
-&nbsp; &nbsp;&#123;&nbsp; 
-
+	&#123;  
 <br />
-&nbsp; &nbsp; &nbsp; &nbsp; cout &lt;&lt; &quot; IP ni na Netu &#58;-/ \n &quot; &lt;&lt; endl;
-
+        cout &lt;&lt; &quot; IP ni na Netu &#58;-/ \n &quot; &lt;&lt; endl;
 <br />
-&nbsp; &nbsp;&#125;
-
+	&#125;
 <br />
 
-
 <br />
-&nbsp; &nbsp; char ime_serverja&#91;40&#93;;
-
+    char ime_serverja&#91;40&#93;;
 <br />
-&nbsp; &nbsp; printf&#40;&quot; Vpisi ip serverja&#58; &quot;&#41;;
-
+    printf&#40;&quot; Vpisi ip serverja&#58; &quot;&#41;;
 <br />
-&nbsp; &nbsp;cin.getline&#40;ime_serverja, 40&#41;;
-
+	cin&#46;getline&#40;ime_serverja, 40&#41;;
 <br />
 
-
 <br />
-&nbsp; &nbsp;struct hostent *host_entry;
-
+	struct hostent *host_entry;
 <br />
-&nbsp; &nbsp;host_entry = gethostbyname&#40; ime_serverja &#41;;
-
+	host_entry = gethostbyname&#40; ime_serverja &#41;;
 <br />
-&nbsp; &nbsp;
-
+	
 <br />
-&nbsp; &nbsp;struct sockaddr_in tester;
-
+	struct sockaddr_in tester;
 <br />
 
-
 <br />
-&nbsp; &nbsp;tester.sin_family = AF_INET;
-
+	tester&#46;sin_family = AF_INET;
 <br />
-&nbsp; &nbsp; 
-
+    
 <br />
-&nbsp; &nbsp;
-
+	
 <br />
-&nbsp; &nbsp;tester.sin_port = htons&#40;6667&#41;; //nastavljaš port
-
+	tester&#46;sin_port = htons&#40;6667&#41;; //nastavljaš port
 <br />
-&nbsp; &nbsp;tester.sin_addr.s_addr = *&#40;unsigned long*&#41; host_entry-&gt;h_addr; //nastavljaš adress
-
+	tester&#46;sin_addr&#46;s_addr = *&#40;unsigned long*&#41; host_entry-&gt;h_addr; //nastavljaš adress
 <br />
-&nbsp; &nbsp;
-
+	
 <br />
-&nbsp; &nbsp;napaka = connect&#40;moje_socket, &#40;sockaddr*&#41;&amp;tester, sizeof&#40;tester&#41;&#41;; //tukaj se konektaš
-
+	napaka = connect&#40;moje_socket, &#40;sockaddr*&#41;&amp;tester, sizeof&#40;tester&#41;&#41;; //tukaj se konektaš
 <br />
-&nbsp; &nbsp;
-
+	
 <br />
-&nbsp; &nbsp; if &#40; napaka == SOCKET_ERROR &#41;
-
+    if &#40; napaka == SOCKET_ERROR &#41;
 <br />
-&nbsp; &nbsp;&#123;
-
+	&#123;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;cout &lt;&lt; &quot; Povezava NI uspesna ! &quot; &lt;&lt; endl;
-
+		cout &lt;&lt; &quot; Povezava NI uspesna ! &quot; &lt;&lt; endl;
 <br />
-&nbsp; &nbsp;&#125;
-
+	&#125;
 <br />
-&nbsp; &nbsp;else
-
+	else
 <br />
-&nbsp; &nbsp;&#123;
-
+	&#123;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;cout &lt;&lt; &quot; Povezava uspesna &quot; &lt;&lt; endl;
-
+		cout &lt;&lt; &quot; Povezava uspesna &quot; &lt;&lt; endl;
 <br />
-&nbsp; &nbsp;&#125;
-
+	&#125;
 <br />
 
-
 <br />
-&nbsp; &nbsp;podatki&#40;&#41;; // poslje podatke ki jih potrebuje server da te registrira in sprejme
-
+	podatki&#40;&#41;; // poslje podatke ki jih potrebuje server da te registrira in sprejme
 <br />
-&nbsp; &nbsp;
-
+	
 <br />
-&nbsp; &nbsp; sprejmi&#40;&#41;; //server se odzove in poslje podatke zato jih mi sprejmemo
-
+    sprejmi&#40;&#41;; //server se odzove in poslje podatke zato jih mi sprejmemo
 <br />
 
-
 <br />
-&nbsp; &nbsp;izbira&#40;&#41;;
-
+	izbira&#40;&#41;;
 <br />
 
-
 <br />
-&nbsp; &nbsp;return 0;
-
+	return 0;
 <br />
 &#125;
-
 <br />
 </td>
 <br />
@@ -810,28 +652,20 @@ int main&#40;&#41;
 </table>
 <br />
 <span class="postbody">
-
 <br />
-
 
 <br />
 <span style="font-weight: bold">
-
 <br />
-emz res je da nimajo te kode neke veze z igrami .. ampak problem je da se nisem pri grafiki delam zaj na tistem API ki ga napisal Ozzy tnx to him upam da bo tist toturial kaj nadaljeval in da se om kaj iz tistega nauco <img src="images/smiles/icon_smile.gif" alt="icon_smile.gif" border="0" />
-
+emz res je da nimajo te kode neke veze z igrami .. ampak problem je da se nisem pri grafiki delam zaj na tistem API ki ga napisal Ozzy tnx to him upam da bo tist toturial kaj nadaljeval in da se om kaj iz tistega nauco <img src="images/smiles/icon_smile.gif" alt=":)" border="0" />
 <br />
 wiwiwi ajdi
-
 <br />
 </span>
-
 <br />
 
-
 <br />
-delfy priskoci na pomoc <img src="images/smiles/icon_smile.gif" alt="icon_smile.gif" border="0" />
-
+delfy priskoci na pomoc <img src="images/smiles/icon_smile.gif" alt=":)" border="0" />
 <br />
 </span>
 <br />
@@ -846,55 +680,38 @@ delfy priskoci na pomoc <img src="images/smiles/icon_smile.gif" alt="icon_smile.
 	<tr>
 <br />
 	  <td class="code">
-
 <br />
 void sprejmi&#40;&#41;
-
 <br />
-&#123;&nbsp; &nbsp;
-
+&#123;	
 <br />
-&nbsp; &nbsp; while&#40;bajt &gt; 0&#41;
-
+    while&#40;bajt &gt; 0&#41;
 <br />
-&nbsp; &nbsp;&#123;
-
+	&#123;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;cout &lt;&lt; inMSG &lt;&lt; endl;
-
+		cout &lt;&lt; inMSG &lt;&lt; endl;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;bajt = recv&#40;moje_socket, inMSG, sizeof&#40;inMSG&#41;, 0&#41;;
-
+		bajt = recv&#40;moje_socket, inMSG, sizeof&#40;inMSG&#41;, 0&#41;;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;if&#40;bajt == 0&#41;
-
+		if&#40;bajt == 0&#41;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&#123;
-
+		&#123;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;cout &lt;&lt; &quot;Prenos koncan!&quot; &lt;&lt; endl;
-
+			cout &lt;&lt; &quot;Prenos koncan!&quot; &lt;&lt; endl;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&#125;
-
+		&#125;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;else if&#40;bajt == SOCKET_ERROR&#41;
-
+		else if&#40;bajt == SOCKET_ERROR&#41;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&#123;
-
+		&#123;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;cout &lt;&lt; &quot;Med prejemanjem je prislo do napake!&quot; &lt;&lt; endl;
-
+			cout &lt;&lt; &quot;Med prejemanjem je prislo do napake!&quot; &lt;&lt; endl;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&#125;
-
+		&#125;
 <br />
-&nbsp; &nbsp;&#125;
-
+	&#125;
 <br />
 &#125;
-
 <br />
 </td>
 <br />
@@ -908,7 +725,7 @@ void sprejmi&#40;&#41;
 
 
 <br />
-pa s eto emm Rhuantavan povej kaj naj se ucim da om mel kako pikico cina vec ?<img src="images/smiles/icon_smile.gif" alt="icon_smile.gif" border="0" />
+pa s eto emm Rhuantavan povej kaj naj se ucim da om mel kako pikico cina vec ?:)
 
 <br />
 
@@ -937,7 +754,7 @@ pa strasno bi bil vesel ce bi bli za videt kaksni kometarji magari ostri, (dodan
 	</tr>
 	
 	<tr>
-		<td width="150" align="left" valign="top" class="row2"><span class="name"><a name="7654"></a><b>Rhuantavan</b></span><br /><span class="postdetails">SGD Admin<br /><img src="images/ranks/sgd-admin.gif" alt="SGD Admin" title="SGD Admin" border="0" /><br /><img src="images/avatars/c14db2394124b99a07556.gif" alt="" border="0" /><br /><br />Pridružen: 26. okt 2002 ob 14:16<br />objav: 644<br />Kraj: Renče (NG), Slovenia</span><br /></td>
+		<td width="150" align="left" valign="top" class="row2"><span class="name"><a name="7654"></a><b>Rhuantavan</b></span><br /><span class="postdetails">SGD Admin<br /><img src="images/ranks/sgd-admin.gif" alt="SGD Admin" title="SGD Admin" border="0" /><br /><img src="images/avatars/c14db2394124b99a07556.gif" alt="" border="0" /><br /><br />Pridružen: 26. okt 2002 ob 14:16<br />objav: 632<br />Kraj: Renče, Slovenia</span><br /></td>
 		<td class="row2" width="100%" height="28" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
 			<tr>
 				<td colspan="2" width="100%">
@@ -970,24 +787,19 @@ pa strasno bi bil vesel ce bi bli za videt kaksni kometarji magari ostri, (dodan
 	<tr>
 <br />
 	  <td class="quote">
-
 <br />
-pa s eto emm Rhuantavan povej kaj naj se ucim da om mel kako pikico cina vec ?<img src="images/smiles/icon_smile.gif" alt="icon_smile.gif" border="0" /></td>
+pa s eto emm Rhuantavan povej kaj naj se ucim da om mel kako pikico cina vec ?:)</td>
 <br />
 	</tr>
 <br />
 </table>
 <br />
 <span class="postbody">
-
 <br />
-
 
 <br />
 Emm... piši dosti pametnih stvari na forum.
-
 <br />
-
 
 <br />
  </span>
@@ -1003,7 +815,6 @@ Emm... piši dosti pametnih stvari na forum.
 	<tr>
 <br />
 	  <td class="quote">
-
 <br />
 ...ostri demet se pa nisem neviden</td>
 <br />
@@ -1017,10 +828,7 @@ Emm... piši dosti pametnih stvari na forum.
 
 
 <br />
-Tega pa ne razumem... <img src="images/smiles/icon_question.gif" alt="icon_question.gif" border="0" /><br />_________________<br /><span style="font-size: 10px; line-height: normal">Where's the fun?</span>
-
-<br />
-<span style="font-size: 10px; line-height: normal"><a  target="_blank" class="postlink">http://dw.slogamedev.net</a></span></span><span class="gensmall"></span></td>
+Tega pa ne razumem... <img src="images/smiles/icon_question.gif" alt=":?:" border="0" /><br />_________________<br /><a class="postlink" >http://www.damjanmozetic.si</a></span><span class="gensmall"></span></td>
 			</tr>
 		</table></td>
 	</tr>
@@ -1037,7 +845,7 @@ Tega pa ne razumem... <img src="images/smiles/icon_question.gif" alt="icon_quest
 	</tr>
 	
 	<tr>
-		<td width="150" align="left" valign="top" class="row1"><span class="name"><a name="7656"></a><b>_t3ch_</b></span><br /><span class="postdetails">wannabe<br /><img src="images/ranks/sgd-2.gif" alt="wannabe" title="wannabe" border="0" /><br /><img src="images/avatars/c2f922b13f93ced57f936.gif" alt="" border="0" /><br /><br />Pridružen: 09. okt 2003 ob 16:04<br />objav: 75<br />Kraj: Mafia SoftWare IT</span><br /></td>
+		<td width="150" align="left" valign="top" class="row1"><span class="name"><a name="7656"></a><b>_t3ch_</b></span><br /><span class="postdetails">wannabe<br /><img src="images/ranks/sgd-2.gif" alt="wannabe" title="wannabe" border="0" /><br /><img src="images/avatars/c2f922b13f93ced57f936.gif" alt="" border="0" /><br /><br />Pridružen: 09. okt 2003 ob 16:04<br />objav: 77<br />Kraj: Mafia SoftWare IT</span><br /></td>
 		<td class="row1" width="100%" height="28" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
 			<tr>
 				<td colspan="2" width="100%">
@@ -1074,7 +882,7 @@ Tega pa ne razumem... <img src="images/smiles/icon_question.gif" alt="icon_quest
 	</tr>
 	
 	<tr>
-		<td width="150" align="left" valign="top" class="row2"><span class="name"><a name="7786"></a><b>_t3ch_</b></span><br /><span class="postdetails">wannabe<br /><img src="images/ranks/sgd-2.gif" alt="wannabe" title="wannabe" border="0" /><br /><img src="images/avatars/c2f922b13f93ced57f936.gif" alt="" border="0" /><br /><br />Pridružen: 09. okt 2003 ob 16:04<br />objav: 75<br />Kraj: Mafia SoftWare IT</span><br /></td>
+		<td width="150" align="left" valign="top" class="row2"><span class="name"><a name="7786"></a><b>_t3ch_</b></span><br /><span class="postdetails">wannabe<br /><img src="images/ranks/sgd-2.gif" alt="wannabe" title="wannabe" border="0" /><br /><img src="images/avatars/c2f922b13f93ced57f936.gif" alt="" border="0" /><br /><br />Pridružen: 09. okt 2003 ob 16:04<br />objav: 77<br />Kraj: Mafia SoftWare IT</span><br /></td>
 		<td class="row2" width="100%" height="28" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
 			<tr>
 				<td colspan="2" width="100%">
@@ -1100,7 +908,7 @@ Tega pa ne razumem... <img src="images/smiles/icon_question.gif" alt="icon_quest
 Samo funkciji send_ukaz() in recv_ukaz() ne delujeta pravilno, zanka se zatakne in se vse vstavi ...
 
 <br />
-Ce ma gdo kaki predlog naj ga izpljune  <img src="images/smiles/icon_smile.gif" alt="icon_smile.gif" border="0" />  tNx
+Ce ma gdo kaki predlog naj ga izpljune  <img src="images/smiles/icon_smile.gif" alt=":)" border="0" />  tNx
 
 <br />
 
@@ -1119,601 +927,402 @@ Ce ma gdo kaki predlog naj ga izpljune  <img src="images/smiles/icon_smile.gif" 
 	<tr>
 <br />
 	  <td class="code">
-
 <br />
 // includamo potrebne kniznice
-
 <br />
-#include &lt;iostream.h&gt;
-
+#include &lt;iostream&#46;h&gt;
 <br />
-#include &lt;winsock2.h&gt;
-
+#include &lt;winsock2&#46;h&gt;
 <br />
-#include &lt;stdio.h&gt;
-
+#include &lt;stdio&#46;h&gt;
 <br />
-#include &lt;time.h&gt;
-
+#include &lt;time&#46;h&gt;
 <br />
-
 
 <br />
 // spremenljivke ki jih potrebujemo
-
 <br />
-
 
 <br />
 int bajt, moje_socket;
-
 <br />
 char send_serv, znak;
-
 <br />
-
 
 <br />
 /* te podatke more server dobit da te sploh sprejme za to priporocam to stran 
-
 <br />
-http&#58;//rfc.sunsite.dk/rfc/rfc1459.html na tak nacin server razume ukaze*/
-
+http&#58;//rfc&#46;sunsite&#46;dk/rfc/rfc1459&#46;html na tak nacin server razume ukaze*/
 <br />
-
 
 <br />
 #define MSG_PODATKI 20000 //definiramo velikost sporocila za registracijo
-
 <br />
 
-
 <br />
-char outPodatki&#91;MSG_PODATKI&#93; = &quot; PASS anonymous \n NICK test-749 &#91;0&#93; \n USER gost cmb5-177.dial-up.arnes.si irc.link.si &#58;Miki Miska \n SERVER irc.link.si 0 LINK&quot;;
-
+char outPodatki&#91;MSG_PODATKI&#93; = &quot; PASS anonymous \n NICK test-749 &#91;0&#93; \n USER gost cmb5-177&#46;dial-up&#46;arnes&#46;si irc&#46;link&#46;si &#58;Miki Miska \n SERVER irc&#46;link&#46;si 0 LINK&quot;;
 <br />
-
 
 <br />
 // funkcija ki poslje podatke serverju
-
 <br />
 void reg_poslji&#40;&#41;
-
 <br />
 &#123;
-
 <br />
-&nbsp; &nbsp;bajt = send&#40;moje_socket, outPodatki, sizeof&#40;outPodatki&#41;, 0&#41;;
-
+	bajt = send&#40;moje_socket, outPodatki, sizeof&#40;outPodatki&#41;, 0&#41;;
 <br />
-&nbsp; &nbsp;if &#40;bajt == SOCKET_ERROR&#41;
-
+	if &#40;bajt == SOCKET_ERROR&#41;
 <br />
-&nbsp; &nbsp;&#123;
-
+	&#123;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;cout &lt;&lt; &quot; Registracija spodletela! &quot; &lt;&lt; endl;
-
+		cout &lt;&lt; &quot; Registracija spodletela! &quot; &lt;&lt; endl;
 <br />
-&nbsp; &nbsp;&#125;
-
+	&#125;
 <br />
-&nbsp; &nbsp;else
-
+	else
 <br />
-&nbsp; &nbsp;&#123;
-
+	&#123;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;cout &lt;&lt; &quot; Registracija poteka server posilja podatke &quot; &lt;&lt; endl
-
+		cout &lt;&lt; &quot; Registracija poteka server posilja podatke &quot; &lt;&lt; endl
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&lt;&lt; &quot; System sleep for 10 sec.... &quot; &lt;&lt; endl;
-
+			&lt;&lt; &quot; System sleep for 10 sec&#46;&#46;&#46;&#46; &quot; &lt;&lt; endl;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;Sleep&#40;11000&#41;;
-
+		Sleep&#40;11000&#41;;
 <br />
-&nbsp; &nbsp;&#125;
-
+	&#125;
 <br />
 &#125;
-
 <br />
-
 
 <br />
 // funkcija ki sprejme podatke od serverja
-
 <br />
-
 
 <br />
 char inPodatki&#91;MSG_PODATKI&#93;; 
-
 <br />
-
 
 <br />
 void reg_sprejmi&#40;&#41;
-
 <br />
 &#123;
-
 <br />
-&nbsp; &nbsp;//&nbsp; &nbsp;while &#40; bajt &gt; 0 &#41;
-
+	//	while &#40; bajt &gt; 0 &#41;
 <br />
-&nbsp; &nbsp;bajt = recv&#40;moje_socket, inPodatki, sizeof&#40;inPodatki&#41;, 0&#41;;
-
+	bajt = recv&#40;moje_socket, inPodatki, sizeof&#40;inPodatki&#41;, 0&#41;;
 <br />
-&nbsp; &nbsp;if &#40;bajt == SOCKET_ERROR&#41;
-
+	if &#40;bajt == SOCKET_ERROR&#41;
 <br />
-&nbsp; &nbsp;&#123;
-
+	&#123;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;cout &lt;&lt; &quot; Napaka na posiljanju &quot; &lt;&lt; endl;
-
+		cout &lt;&lt; &quot; Napaka na posiljanju &quot; &lt;&lt; endl;
 <br />
-&nbsp; &nbsp;&#125;
-
+	&#125;
 <br />
-&nbsp; &nbsp;else
-
+	else
 <br />
-&nbsp; &nbsp;&#123;
-
+	&#123;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;cout &lt;&lt; inPodatki &lt;&lt; endl;
-
+		cout &lt;&lt; inPodatki &lt;&lt; endl;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;cout &lt;&lt; &quot; Posiljanje uspelo &quot; &lt;&lt; endl;
-
+		cout &lt;&lt; &quot; Posiljanje uspelo &quot; &lt;&lt; endl;
 <br />
-&nbsp; &nbsp;&#125;
-
+	&#125;
 <br />
 &#125;
-
 <br />
-
 
 <br />
 char inMSG&#91;1024&#93;;
-
 <br />
 char outMSG&#91;1024&#93; = &#123;send_serv&#125;; //send_serv je spremenljivka ki sprejema ukaze
-
 <br />
-
 
 <br />
 void send_ukaz&#40;&#41; // funkcija za posiljanje ukazov
-
 <br />
 &#123;
-
 <br />
-&nbsp; &nbsp;bajt = send&#40;moje_socket, outMSG, sizeof&#40;outMSG&#41;, 0&#41;;
-
+	bajt = send&#40;moje_socket, outMSG, sizeof&#40;outMSG&#41;, 0&#41;;
 <br />
-&nbsp; &nbsp;
-
+	
 <br />
-&nbsp; &nbsp;if &#40;bajt == SOCKET_ERROR&#41;
-
+	if &#40;bajt == SOCKET_ERROR&#41;
 <br />
-&nbsp; &nbsp;&#123;
-
+	&#123;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;cout &lt;&lt; &quot; Sporocilo NI poslano &quot; &lt;&lt; endl;
-
+		cout &lt;&lt; &quot; Sporocilo NI poslano &quot; &lt;&lt; endl;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;
-
+		
 <br />
-&nbsp; &nbsp;&#125;
-
+	&#125;
 <br />
-&nbsp; &nbsp;else
-
+	else
 <br />
-&nbsp; &nbsp;&#123;
-
+	&#123;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;cout &lt;&lt; &quot; Sporocilo poslano &quot; &lt;&lt; endl;&nbsp; &nbsp;&nbsp; &nbsp;
-
+		cout &lt;&lt; &quot; Sporocilo poslano &quot; &lt;&lt; endl;		
 <br />
-&nbsp; &nbsp;&#125;
-
+	&#125;
 <br />
 &#125;
-
 <br />
 
-
 <br />
-void recv_ukaz&#40;&#41; // funk. za sprejemanje ukazov
-
+void recv_ukaz&#40;&#41; // funk&#46; za sprejemanje ukazov
 <br />
 &#123;
-
 <br />
-&nbsp; &nbsp;bajt = recv&#40;moje_socket, inMSG, sizeof&#40;inMSG&#41;, 0&#41;;
-
+	bajt = recv&#40;moje_socket, inMSG, sizeof&#40;inMSG&#41;, 0&#41;;
 <br />
-&nbsp; &nbsp;
-
+	
 <br />
-&nbsp; &nbsp;if &#40; bajt == SOCKET_ERROR &#41;
-
+	if &#40; bajt == SOCKET_ERROR &#41;
 <br />
-&nbsp; &nbsp;&#123;
-
+	&#123;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;cout &lt;&lt; &quot; Napaka na sprejemanju ! &quot; &lt;&lt; endl;
-
+		cout &lt;&lt; &quot; Napaka na sprejemanju ! &quot; &lt;&lt; endl;
 <br />
-&nbsp; &nbsp;&#125;
-
+	&#125;
 <br />
-&nbsp; &nbsp;
-
+	
 <br />
-&nbsp; &nbsp;else
-
+	else
 <br />
-&nbsp; &nbsp;&#123;
-
+	&#123;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;cout &lt;&lt; inMSG &lt;&lt; endl;
-
+		cout &lt;&lt; inMSG &lt;&lt; endl;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;cout &lt;&lt; &quot; Sporocilo vrnjeno&nbsp; &quot; &lt;&lt; endl;
-
+		cout &lt;&lt; &quot; Sporocilo vrnjeno  &quot; &lt;&lt; endl;
 <br />
-&nbsp; &nbsp;&#125;
-
+	&#125;
 <br />
 &#125;
-
 <br />
-
 
 <br />
 void quit&#40;&#41; // funkcija za zakljucit program
-
 <br />
 &#123;
-
 <br />
-&nbsp; &nbsp;closesocket&#40;moje_socket&#41;;
-
+	closesocket&#40;moje_socket&#41;;
 <br />
-&nbsp; &nbsp;
-
+	
 <br />
-&nbsp; &nbsp;cout &lt;&lt; &quot; Povezava se zapira ...\n&quot; &lt;&lt; endl;
-
+	cout &lt;&lt; &quot; Povezava se zapira &#46;&#46;&#46;\n&quot; &lt;&lt; endl;
 <br />
-&nbsp; &nbsp;
-
+	
 <br />
-&nbsp; &nbsp;WSACleanup&#40;&#41;;
-
+	WSACleanup&#40;&#41;;
 <br />
-&nbsp; &nbsp;
-
+	
 <br />
-&nbsp; &nbsp;printf&#40;&quot; IrC Cl0sinG \n&quot;&#41;; 
-
+	printf&#40;&quot; IrC Cl0sinG \n&quot;&#41;; 
 <br />
 &#125;
-
 <br />
-
 
 <br />
 void izpis&#40;&#41; // funkcija za izpis
-
 <br />
 &#123;
-
 <br />
-&nbsp; &nbsp;cout &lt;&lt; &quot; 1.&#41;&nbsp; Poslji ukaz &quot; &lt;&lt; endl
-
+	cout &lt;&lt; &quot; 1&#46;&#41;  Poslji ukaz &quot; &lt;&lt; endl
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp; &lt;&lt; &quot; 2.&#41;&nbsp; &nbsp; Izhod&nbsp; &nbsp;  &quot; &lt;&lt; endl;
-
+		 &lt;&lt; &quot; 2&#46;&#41;    Izhod     &quot; &lt;&lt; endl;
 <br />
 &#125;
-
 <br />
-
 
 <br />
 void izbira&#40;&#41;
-
 <br />
 &#123;
-
 <br />
-&nbsp; &nbsp;do
-
+	do
 <br />
-&nbsp; &nbsp;&#123;
-
+	&#123;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;izpis&#40;&#41;;
-
+		izpis&#40;&#41;;
 <br />
 
-
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;char znak;
-
+		char znak;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;cout &lt;&lt; &quot; Vpisi zeleno izbiro&#58; &quot; &lt;&lt; endl;
-
+		cout &lt;&lt; &quot; Vpisi zeleno izbiro&#58; &quot; &lt;&lt; endl;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;cin &gt;&gt; znak;
-
+		cin &gt;&gt; znak;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;
-
+		
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;switch &#40;znak&#41;
-
+		switch &#40;znak&#41;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&#123;
-
+		&#123;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;case '1'&#58;
-
+		case '1'&#58;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&#123;
-
+			&#123;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;cout &lt;&lt; &quot; Vpisi ukaz&#58; &quot;;
-
+				cout &lt;&lt; &quot; Vpisi ukaz&#58; &quot;;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;cin &gt;&gt; send_serv;
-
+				cin &gt;&gt; send_serv;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;
-
+				
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;send_ukaz&#40;&#41;; // posilja ukaz
-
+				send_ukaz&#40;&#41;; // posilja ukaz
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;recv_ukaz&#40;&#41;; // sprejema vrnjeno od ukaza
-
+				recv_ukaz&#40;&#41;; // sprejema vrnjeno od ukaza
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&#125;
-
+			&#125;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;case '2'&#58;
-
+		case '2'&#58;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&#123;
-
+			&#123;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;cout &lt;&lt; &quot; Izbran ukaz za izhod iz programa ! &quot; &lt;&lt; endl;
-
+				cout &lt;&lt; &quot; Izbran ukaz za izhod iz programa ! &quot; &lt;&lt; endl;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;quit&#40;&#41;;
-
+				quit&#40;&#41;;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&#125;
-
+			&#125;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;default&#58;
-
+		default&#58;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;cout &lt;&lt; &quot; Izbira ne obstaja &quot; &lt;&lt; endl;
-
+			cout &lt;&lt; &quot; Izbira ne obstaja &quot; &lt;&lt; endl;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;
-
+			
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&#125;
-
+		&#125;
 <br />
-&nbsp; &nbsp;&#125;
-
+	&#125;
 <br />
-&nbsp; &nbsp;while &#40; znak != '2' &#41;;
-
+	while &#40; znak != '2' &#41;;
 <br />
 &#125;
-
 <br />
 
-
 <br />
-
 
 <br />
 /* zacetek programa */
-
 <br />
 int main&#40;&#41;
-
 <br />
-
 
 <br />
 &#123;
-
 <br />
-&nbsp; &nbsp; int napaka; // definiramo spremenljivko napaka 
-
+    int napaka; // definiramo spremenljivko napaka 
 <br />
-&nbsp; &nbsp;
-
+	
 <br />
 /* definiramo spremenljivko wsaData sem potem 
-
 <br />
-&nbsp; &nbsp;shranjuje informacije o povezavi itd*/
-
+	shranjuje informacije o povezavi itd*/
 <br />
-&nbsp; &nbsp;
-
+	
 <br />
-&nbsp; &nbsp;WSADATA wsaData; 
-
+	WSADATA wsaData; 
 <br />
-&nbsp; &nbsp;
-
+	
 <br />
-&nbsp; &nbsp;/* zazenemo startup in povemo kiro verzijo
-
+	/* zazenemo startup in povemo kiro verzijo
 <br />
-&nbsp; &nbsp;winsockow uporabljamo*/
-
+	winsockow uporabljamo*/
 <br />
-&nbsp; &nbsp;WSAStartup&#40;MAKEWORD&#40; 2, 2&#41;, &amp;wsaData&#41;; 
-
+	WSAStartup&#40;MAKEWORD&#40; 2, 2&#41;, &amp;wsaData&#41;; 
 <br />
 
-
 <br />
-&nbsp; &nbsp;/*moje_socket je premenljivka da lazje razberemo errore
-
+	/*moje_socket je premenljivka da lazje razberemo errore
 <br />
-&nbsp; &nbsp;AF_INET se uporablja za internet protokol s tem povemo 
-
+	AF_INET se uporablja za internet protokol s tem povemo 
 <br />
-&nbsp; &nbsp;programu da dela prek interneta SOCK_STREAM povemo da dela prek TCP/IP protokola
-
+	programu da dela prek interneta SOCK_STREAM povemo da dela prek TCP/IP protokola
 <br />
-&nbsp; &nbsp;0 pa ne vem tocno*/
-
+	0 pa ne vem tocno*/
 <br />
 
-
 <br />
-&nbsp; &nbsp;moje_socket = socket&#40;AF_INET, SOCK_STREAM, 0&#41;;
-
+	moje_socket = socket&#40;AF_INET, SOCK_STREAM, 0&#41;;
 <br />
-&nbsp; &nbsp;
-
+	
 <br />
-&nbsp; &nbsp;if &#40; moje_socket == SOCKET_ERROR &#41; // preverimo error
-
+	if &#40; moje_socket == SOCKET_ERROR &#41; // preverimo error
 <br />
-&nbsp; &nbsp;&#123;&nbsp; 
-
+	&#123;  
 <br />
-&nbsp; &nbsp; &nbsp; &nbsp; cout &lt;&lt; &quot; IP ni na Netu &#58;-/ \n &quot; &lt;&lt; endl;
-
+        cout &lt;&lt; &quot; IP ni na Netu &#58;-/ \n &quot; &lt;&lt; endl;
 <br />
-&nbsp; &nbsp;&#125;
-
+	&#125;
 <br />
-&nbsp; &nbsp;
-
+	
 <br />
-&nbsp; &nbsp; char ime_serverja&#91;40&#93;; // vpisemo server
-
+    char ime_serverja&#91;40&#93;; // vpisemo server
 <br />
-&nbsp; &nbsp; printf&#40;&quot; Vpisi ime serverja&#58; &quot;&#41;;
-
+    printf&#40;&quot; Vpisi ime serverja&#58; &quot;&#41;;
 <br />
-&nbsp; &nbsp;cin.getline&#40;ime_serverja, 40&#41;;
-
+	cin&#46;getline&#40;ime_serverja, 40&#41;;
 <br />
-&nbsp; &nbsp;
-
+	
 <br />
-&nbsp; &nbsp;struct hostent *host_entry; //s tem spremenimo iz hosta v ip 
-
+	struct hostent *host_entry; //s tem spremenimo iz hosta v ip 
 <br />
-&nbsp; &nbsp;host_entry = gethostbyname&#40; ime_serverja &#41;;
-
+	host_entry = gethostbyname&#40; ime_serverja &#41;;
 <br />
-&nbsp; &nbsp;
-
+	
 <br />
-&nbsp; &nbsp;struct sockaddr_in tester;
-
+	struct sockaddr_in tester;
 <br />
-&nbsp; &nbsp;
-
+	
 <br />
-&nbsp; &nbsp;tester.sin_family = AF_INET;
-
+	tester&#46;sin_family = AF_INET;
 <br />
-&nbsp; &nbsp; 
-
+    
 <br />
-&nbsp; &nbsp;
-
+	
 <br />
-&nbsp; &nbsp;tester.sin_port = htons&#40;6667&#41;; //nastavljaš port
-
+	tester&#46;sin_port = htons&#40;6667&#41;; //nastavljaš port
 <br />
-&nbsp; &nbsp;tester.sin_addr.s_addr = *&#40;unsigned long*&#41; host_entry-&gt;h_addr; //nastavljaš adress
-
+	tester&#46;sin_addr&#46;s_addr = *&#40;unsigned long*&#41; host_entry-&gt;h_addr; //nastavljaš adress
 <br />
-&nbsp; &nbsp;
-
+	
 <br />
-&nbsp; &nbsp;napaka = connect&#40;moje_socket, &#40;sockaddr*&#41;&amp;tester, sizeof&#40;tester&#41;&#41;; //tukaj se konektaš
-
+	napaka = connect&#40;moje_socket, &#40;sockaddr*&#41;&amp;tester, sizeof&#40;tester&#41;&#41;; //tukaj se konektaš
 <br />
-&nbsp; &nbsp;
-
+	
 <br />
-&nbsp; &nbsp; if &#40; napaka == SOCKET_ERROR &#41;
-
+    if &#40; napaka == SOCKET_ERROR &#41;
 <br />
-&nbsp; &nbsp;&#123;
-
+	&#123;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;cout &lt;&lt; &quot; Povezava NI uspesna ! &quot; &lt;&lt; endl;
-
+		cout &lt;&lt; &quot; Povezava NI uspesna ! &quot; &lt;&lt; endl;
 <br />
-&nbsp; &nbsp;&#125;
-
+	&#125;
 <br />
-&nbsp; &nbsp;else
-
+	else
 <br />
-&nbsp; &nbsp;&#123;
-
+	&#123;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;cout &lt;&lt; &quot; Povezava uspesna &quot; &lt;&lt; endl; 
-
+		cout &lt;&lt; &quot; Povezava uspesna &quot; &lt;&lt; endl; 
 <br />
-&nbsp; &nbsp;&#125;
-
+	&#125;
 <br />
-&nbsp; &nbsp;
-
+	
 <br />
-&nbsp; &nbsp;reg_poslji&#40;&#41;; // posljemo registracijo
-
+	reg_poslji&#40;&#41;; // posljemo registracijo
 <br />
-&nbsp; &nbsp;reg_sprejmi&#40;&#41;; // sprejmemo registracijo
-
+	reg_sprejmi&#40;&#41;; // sprejmemo registracijo
 <br />
 
-
 <br />
-&nbsp; &nbsp;izbira&#40;&#41;; // izbira med posiljanjem ukazov in izhodom
-
+	izbira&#40;&#41;; // izbira med posiljanjem ukazov in izhodom
 <br />
-&nbsp; &nbsp;
-
+	
 <br />
-&nbsp; &nbsp;return 0;
-
+	return 0;
 <br />
 &#125;
-
 <br />
 </td>
 <br />
@@ -1734,16 +1343,12 @@ Zadnji vrstici ki jih more izpisat je:
 
 <br />
 <span style="font-weight: bold">
-
 <br />
 End of MOTD command.
-
 <br />
 -
-
 <br />
 * test-749 sets mode: +i
-
 <br />
 </span>
 
@@ -1776,7 +1381,7 @@ emz prosim za pomoc</span><span class="gensmall"></span></td>
   <tr>
 	<td align="left" valign="middle" nowrap="nowrap">&nbsp;</td>
 	<td align="left" valign="middle" width="100%"><span class="nav">&nbsp;&nbsp;&nbsp;<a href="index.html" class="nav">SloGameDev.net seznam forumov</a>
-	  -> <a href="forum-1.html" class="nav">Splošno Programiranje</a></span></td>
+	  -> <a href="forum-52.html" class="nav">Izdelovanje iger</a></span></td>
 	<td align="right" valign="top" nowrap="nowrap"><span class="gensmall">Časovni pas (GMT +2:00 uri) Slovenija, poletni čas</span><br /><span class="nav"></span>
 	  </td>
   </tr>
@@ -1792,7 +1397,7 @@ emz prosim za pomoc</span><span class="gensmall"></span></td>
   </tr>
 </table>
 
-<div align="center"><span class="copyright"><br />Arhiv stanja na dan 13. 2. 2006 &mdash; samo za branje.<br />
+<div align="center"><span class="copyright"><br />Arhiv &mdash; samo za branje.<br />
 <!--
 	We request you retain the full copyright notice below including the link to www.phpbb.com.
 	This not only gives respect to the large amount of time given freely by the developers

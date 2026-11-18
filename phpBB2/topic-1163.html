@@ -276,13 +276,13 @@ input.liteoption {
   <tr>
 	<td align="left" valign="bottom" nowrap="nowrap">&nbsp;</td>
 	<td align="left" valign="middle" width="100%"><span class="nav">&nbsp;&nbsp;&nbsp;<a href="index.html" class="nav">SloGameDev.net seznam forumov</a>
-	  -> <a href="forum-1.html" class="nav">Splošno Programiranje</a></span></td>
+	  -> <a href="forum-52.html" class="nav">Izdelovanje iger</a></span></td>
   </tr>
 </table>
 
 <table class="forumline" width="100%" cellspacing="1" cellpadding="3" border="0">
 	<tr align="right">
-		<td class="catHead" colspan="2" height="28"><span class="nav"><a href="topic-1158.html" class="nav">Prejšnja tema</a> :: <a href="topic-1177.html" class="nav">Naslednja tema</a> &nbsp;</span></td>
+		<td class="catHead" colspan="2" height="28"><span class="nav"><a href="topic-1161.html" class="nav">Prejšnja tema</a> :: <a href="topic-1165.html" class="nav">Naslednja tema</a> &nbsp;</span></td>
 	</tr>
 	
 	<tr>
@@ -291,7 +291,7 @@ input.liteoption {
 	</tr>
 	
 	<tr>
-		<td width="150" align="left" valign="top" class="row1"><span class="name"><a name="13136"></a><b>matjazvn</b></span><br /><span class="postdetails">poznavalec<br /><img src="images/ranks/sgd-3.gif" alt="poznavalec" title="poznavalec" border="0" /><br /><img src="images/avatars/c2f92b8440531dc3b71c9.gif" alt="" border="0" /><br /><br />Pridružen: 16. maj 2003 ob 14:46<br />objav: 151<br />Kraj: Somewhere around Barstow, on the edge of the desert</span><br /></td>
+		<td width="150" align="left" valign="top" class="row1"><span class="name"><a name="13136"></a><b>matjazvn</b></span><br /><span class="postdetails">poznavalec<br /><img src="images/ranks/sgd-3.gif" alt="poznavalec" title="poznavalec" border="0" /><br /><img src="images/avatars/c2f92b8440531dc3b71c9.gif" alt="" border="0" /><br /><br />Pridružen: 16. maj 2003 ob 14:46<br />objav: 164<br />Kraj: Somewhere around Barstow, on the edge of the desert</span><br /></td>
 		<td class="row1" width="100%" height="28" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
 			<tr>
 				<td colspan="2" width="100%">
@@ -345,46 +345,32 @@ pol mam:
 	<tr>
 <br />
 	  <td class="code">
-
 <br />
 struct otrok
-
 <br />
 &#123;
-
 <br />
-&nbsp;  char ime&#91;20&#93;;
-
+   char ime&#91;20&#93;;
 <br />
-&nbsp;  otrok *nasl;
-
+   otrok *nasl;
 <br />
 &#125;
-
 <br />
-
 
 <br />
 struct oseba
-
 <br />
 &#123;
-
 <br />
-&nbsp;  char niz&#91;20&#93;;
-
+   char niz&#91;20&#93;;
 <br />
-&nbsp;  oseba *nasl;
-
+   oseba *nasl;
 <br />
-&nbsp;  oseba *pred;
-
+   oseba *pred;
 <br />
-&nbsp;  otrok *otroci_zac;
-
+   otrok *otroci_zac;
 <br />
 &#125;
-
 <br />
 </td>
 <br />
@@ -393,15 +379,11 @@ struct oseba
 </table>
 <br />
 <span class="postbody">
-
 <br />
-
 
 <br />
 .. ampak v funkciji ko dodajam otroke mi ne dela ok:
-
 <br />
-
 
 <br />
 </span>
@@ -417,67 +399,46 @@ struct oseba
 	<tr>
 <br />
 	  <td class="code">
-
 <br />
 void dodaj_otroka&#40;oseba *&amp;otroci_zac&#41;
-
 <br />
 &#123;
-
 <br />
-&nbsp;  otrok *novi = new otrok;
-
+   otrok *novi = new otrok;
 <br />
-&nbsp;  otrok *temp;
-
+   otrok *temp;
 <br />
-&nbsp;  temp=otroci_zac; // tu ne more spremenit iz oseba v otrok
-
+   temp=otroci_zac; // tu ne more spremenit iz oseba v otrok
 <br />
-&nbsp;  
-
+   
 <br />
-&nbsp;  cin&gt;&gt;novi-&gt;ime;
-
+   cin&gt;&gt;novi-&gt;ime;
 <br />
-&nbsp;  novi-&gt;nasl=NULL;
-
+   novi-&gt;nasl=NULL;
 <br />
 
-
 <br />
-&nbsp;  if&#40;otroci_zac=NULL&#41;
-
+   if&#40;otroci_zac=NULL&#41;
 <br />
-&nbsp; &nbsp; &nbsp; otroci_zac=novi;
-
+      otroci_zac=novi;
 <br />
-&nbsp;  else
-
+   else
 <br />
-&nbsp;  &#123;
-
+   &#123;
 <br />
-&nbsp; &nbsp; &nbsp; while&#40;temp-&gt;nasl!=NULL&#41;
-
+      while&#40;temp-&gt;nasl!=NULL&#41;
 <br />
-&nbsp; &nbsp; &nbsp; &#123;
-
+      &#123;
 <br />
-&nbsp; &nbsp; &nbsp; &nbsp;  temp=temp-&gt;nasl; //grem do zadnjega
-
+         temp=temp-&gt;nasl; //grem do zadnjega
 <br />
-&nbsp; &nbsp; &nbsp; &#125;
-
+      &#125;
 <br />
-&nbsp; &nbsp; &nbsp; temp-&gt;nasl=novi;&nbsp; &nbsp; //dodam na konec seznama novega;
-
+      temp-&gt;nasl=novi;    //dodam na konec seznama novega;
 <br />
-&nbsp;  &#125;
-
+   &#125;
 <br />
-&#125;&nbsp;  
-
+&#125;   
 <br />
 </td>
 <br />
@@ -486,28 +447,21 @@ void dodaj_otroka&#40;oseba *&amp;otroci_zac&#41;
 </table>
 <br />
 <span class="postbody">
+<br />
 
 <br />
 
-
 <br />
-
-
-<br />
-
 
 <br />
 evo...[/code]<br />_________________<br />______________________________
 
 <br />
-<span style="font-size: 10px; line-height: normal"><span style="font-style: italic"><span style="text-decoration: underline">If a thing's worth doing, it's worth doing right
-
+<span style="font-size: 84%; line-height: normal"><span style="font-style: italic"><span style="text-decoration: underline">If a thing's worth doing, it's worth doing right
 <br />
 ____________________________________________
-
 <br />
 Ignore this terrible drug, pretend it's not happening
-
 <br />
 </span></span></span></span><span class="gensmall"></span></td>
 			</tr>
@@ -526,7 +480,7 @@ Ignore this terrible drug, pretend it's not happening
 	</tr>
 	
 	<tr>
-		<td width="150" align="left" valign="top" class="row2"><span class="name"><a name="13137"></a><b>Alfa</b></span><br /><span class="postdetails">poznavalec<br /><img src="images/ranks/sgd-3.gif" alt="poznavalec" title="poznavalec" border="0" /><br /><img src="images/avatars/c2f90a1540823086cd155.jpg" alt="" border="0" /><br /><br />Pridružen: 04. mar 2004 ob 18:14<br />objav: 235<br />Kraj: SG</span><br /></td>
+		<td width="150" align="left" valign="top" class="row2"><span class="name"><a name="13137"></a><b>Alfa</b></span><br /><span class="postdetails">mojster<br /><img src="images/ranks/sgd-5.gif" alt="mojster" title="mojster" border="0" /><br /><img src="images/avatars/c2f90a1540823086cd155.jpg" alt="" border="0" /><br /><br />Pridružen: 04. mar 2004 ob 18:14<br />objav: 471<br />Kraj: SG</span><br /></td>
 		<td class="row2" width="100%" height="28" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
 			<tr>
 				<td colspan="2" width="100%">
@@ -570,7 +524,7 @@ Ignore this terrible drug, pretend it's not happening
 <span class="postbody">
 
 <br />
-Sn tk ne veš, ka se bo zgodlo. Risk. <img src="images/smiles/icon_twisted.gif" alt="icon_twisted.gif" border="0" /><br />_________________<br />"Pustimo malenkosti, pravi cesar, PeCe pa nič (več)."
+Sn tk ne veš, ka se bo zgodlo. Risk. <img src="images/smiles/icon_twisted.gif" alt=":twisted:" border="0" /><br />_________________<br />&quot;Pustimo malenkosti, pravi cesar, PeCe pa nič (več).&quot;
 
 <br />
 Goran Bervar: C++ na kolenih</span><span class="gensmall"></span></td>
@@ -590,7 +544,7 @@ Goran Bervar: C++ na kolenih</span><span class="gensmall"></span></td>
 	</tr>
 	
 	<tr>
-		<td width="150" align="left" valign="top" class="row1"><span class="name"><a name="13139"></a><b>ALTF4</b></span><br /><span class="postdetails">inštruktor<br /><img src="images/ranks/sgd-4.gif" alt="inštruktor" title="inštruktor" border="0" /><br /><img src="images/avatars/563d301443ad69c6388ac.gif" alt="" border="0" /><br /><br />Pridružen: 10. jul 2003 ob 15:23<br />objav: 345<br />Kraj: Slovenska Bistrica</span><br /></td>
+		<td width="150" align="left" valign="top" class="row1"><span class="name"><a name="13139"></a><b>ALTF4</b></span><br /><span class="postdetails">guru<br /><img src="images/ranks/sgd-8.gif" alt="guru" title="guru" border="0" /><br /><img src="images/avatars/563d301443ad69c6388ac.gif" alt="" border="0" /><br /><br />Pridružen: 10. jul 2003 ob 15:23<br />objav: 1175<br />Kraj: Slovenska Bistrica</span><br /></td>
 		<td class="row1" width="100%" height="28" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
 			<tr>
 				<td colspan="2" width="100%">
@@ -626,24 +580,18 @@ Goran Bervar: C++ na kolenih</span><span class="gensmall"></span></td>
 	<tr>
 <br />
 	  <td class="code">
-
 <br />
 void dodaj_otroka&#40;oseba *&amp;os&#41;
-
 <br />
 &#123;
-
 <br />
-&nbsp;  otrok *novi = new otrok;
-
+   otrok *novi = new otrok;
 <br />
-&nbsp;  otrok *temp;
-
+   otrok *temp;
 <br />
-&nbsp;  temp=os-&gt;otroci_zac; // tu je razlicno od tvoje kode
-
+   temp=os-&gt;otroci_zac; // tu je razlicno od tvoje kode
 <br />
-...</td>
+&#46;&#46;&#46;</td>
 <br />
 	</tr>
 <br />
@@ -674,7 +622,7 @@ void dodaj_otroka&#40;oseba *&amp;os&#41;
   <tr>
 	<td align="left" valign="middle" nowrap="nowrap">&nbsp;</td>
 	<td align="left" valign="middle" width="100%"><span class="nav">&nbsp;&nbsp;&nbsp;<a href="index.html" class="nav">SloGameDev.net seznam forumov</a>
-	  -> <a href="forum-1.html" class="nav">Splošno Programiranje</a></span></td>
+	  -> <a href="forum-52.html" class="nav">Izdelovanje iger</a></span></td>
 	<td align="right" valign="top" nowrap="nowrap"><span class="gensmall">Časovni pas (GMT +2:00 uri) Slovenija, poletni čas</span><br /><span class="nav"></span>
 	  </td>
   </tr>
@@ -690,7 +638,7 @@ void dodaj_otroka&#40;oseba *&amp;os&#41;
   </tr>
 </table>
 
-<div align="center"><span class="copyright"><br />Arhiv stanja na dan 13. 2. 2006 &mdash; samo za branje.<br />
+<div align="center"><span class="copyright"><br />Arhiv &mdash; samo za branje.<br />
 <!--
 	We request you retain the full copyright notice below including the link to www.phpbb.com.
 	This not only gives respect to the large amount of time given freely by the developers

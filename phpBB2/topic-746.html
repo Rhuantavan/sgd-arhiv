@@ -276,13 +276,13 @@ input.liteoption {
   <tr>
 	<td align="left" valign="bottom" nowrap="nowrap">&nbsp;</td>
 	<td align="left" valign="middle" width="100%"><span class="nav">&nbsp;&nbsp;&nbsp;<a href="index.html" class="nav">SloGameDev.net seznam forumov</a>
-	  -> <a href="forum-1.html" class="nav">Splošno Programiranje</a></span></td>
+	  -> <a href="forum-52.html" class="nav">Izdelovanje iger</a></span></td>
   </tr>
 </table>
 
 <table class="forumline" width="100%" cellspacing="1" cellpadding="3" border="0">
 	<tr align="right">
-		<td class="catHead" colspan="2" height="28"><span class="nav"><a href="topic-759.html" class="nav">Prejšnja tema</a> :: <a href="topic-720.html" class="nav">Naslednja tema</a> &nbsp;</span></td>
+		<td class="catHead" colspan="2" height="28"><span class="nav"><a href="topic-765.html" class="nav">Prejšnja tema</a> :: <a href="topic-720.html" class="nav">Naslednja tema</a> &nbsp;</span></td>
 	</tr>
 	
 	<tr>
@@ -291,7 +291,7 @@ input.liteoption {
 	</tr>
 	
 	<tr>
-		<td width="150" align="left" valign="top" class="row1"><span class="name"><a name="8521"></a><b>kosov</b></span><br /><span class="postdetails">novinec<br /><img src="images/ranks/sgd-0.gif" alt="novinec" title="novinec" border="0" /><br /><br /><br />Pridružen: 23. jul 2003 ob 06:46<br />objav: 21<br /></span><br /></td>
+		<td width="150" align="left" valign="top" class="row1"><span class="name"><a name="8521"></a><b>kosov</b></span><br /><span class="postdetails">novinec<br /><img src="images/ranks/sgd-0.gif" alt="novinec" title="novinec" border="0" /><br /><br /><br />Pridružen: 23. jul 2003 ob 06:46<br />objav: 22<br /></span><br /></td>
 		<td class="row1" width="100%" height="28" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
 			<tr>
 				<td colspan="2" width="100%">
@@ -408,274 +408,184 @@ Hvala za odgovore
 	<tr>
 <br />
 	  <td class="code">
-
 <br />
 #include &lt;map&gt;
-
 <br />
 #include &lt;iostream&gt;
-
 <br />
-
 
 <br />
 using namespace std;
-
 <br />
 
-
 <br />
-
 
 <br />
 // TCellCoord - koordinate celice
-
 <br />
 typedef struct &#123;
-
 <br />
-&nbsp; &nbsp;int Col;
-
+	int Col;
 <br />
-&nbsp; &nbsp;int Row;
-
+	int Row;
 <br />
 &#125; TCellCoord;
-
 <br />
 
-
 <br />
-// TCellData - vrednost celice&nbsp; &nbsp; 
-
+// TCellData - vrednost celice	 
 <br />
 typedef struct &#123;
-
 <br />
-&nbsp; &nbsp;char* Value;
-
+	char* Value;
 <br />
 &#125; TCellData;
-
 <br />
-
 
 <br />
 //PCellData
-
 <br />
 typedef TCellData* PCellData;
-
 <br />
 
-
 <br />
-
 
 <br />
 // CellSortCriterion
-
 <br />
 class CellSortCriterion &#123;
-
 <br />
-&nbsp; public&#58;&nbsp; 
-
+  public&#58;  
 <br />
-&nbsp; &nbsp; // Če je &#91; &#40;Col1 manjse Col2&#41; ALI &#40; &#40;Col1 je enako Col2&#41; IN &#40;Row1 manjse Row2 &#41; &#41; &#93;
-
+    // Če je &#91; &#40;Col1 manjse Col2&#41; ALI &#40; &#40;Col1 je enako Col2&#41; IN &#40;Row1 manjse Row2 &#41; &#41; &#93;
 <br />
-&nbsp; &nbsp; bool operator&#40;&#41; &#40;const TCellCoord&amp; CellCoord1, const TCellCoord&amp; CellCoord2&#41; const &#123; 
-
+    bool operator&#40;&#41; &#40;const TCellCoord&amp; CellCoord1, const TCellCoord&amp; CellCoord2&#41; const &#123; 
 <br />
-&nbsp; &nbsp; &nbsp; &nbsp; return &#40; &#40;CellCoord1.Col &lt; CellCoord2.Col&#41; || 
-
+        return &#40; &#40;CellCoord1&#46;Col &lt; CellCoord2&#46;Col&#41; || 
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&#40; &#40;CellCoord1.Col == CellCoord2.Col&#41; &amp;&amp; &#40;CellCoord1.Row &lt; CellCoord2.Row&#41; &#41; &#41;;
-
+			&#40; &#40;CellCoord1&#46;Col == CellCoord2&#46;Col&#41; &amp;&amp; &#40;CellCoord1&#46;Row &lt; CellCoord2&#46;Row&#41; &#41; &#41;;
 <br />
-&nbsp; &nbsp; &#125;
-
+    &#125;
 <br />
 &#125;;
-
 <br />
-
 
 <br />
 // TCellsMap
-
 <br />
 typedef map&lt;TCellCoord, PCellData, CellSortCriterion&gt; TCellsMap;
-
 <br />
-
 
 <br />
 // fCellCoord
-
 <br />
 TCellCoord fCellCoord&#40;int Col, int Row&#41;
-
 <br />
 &#123;
-
 <br />
-&nbsp; &nbsp;TCellCoord cc;
-
+	TCellCoord cc;
 <br />
-&nbsp; &nbsp;cc.Col = Col;
-
+	cc&#46;Col = Col;
 <br />
-&nbsp; &nbsp;cc.Row = Row;
-
+	cc&#46;Row = Row;
 <br />
-&nbsp; &nbsp;return cc;
-
+	return cc;
 <br />
 &#125;
-
 <br />
 
-
 <br />
-
 
 <br />
 // PrintMap
-
 <br />
 void PrintMap&#40;TCellsMap &amp;CellsMap&#41;
-
 <br />
 &#123;
-
 <br />
-&nbsp; &nbsp;TCellsMap&#58;&#58;iterator pos;
-
+	TCellsMap&#58;&#58;iterator pos;
 <br />
 
-
 <br />
-&nbsp; &nbsp;for &#40;pos = CellsMap.begin&#40;&#41;; pos != CellsMap.end&#40;&#41;; pos++&#41;
-
+	for &#40;pos = CellsMap&#46;begin&#40;&#41;; pos != CellsMap&#46;end&#40;&#41;; pos++&#41;
 <br />
-&nbsp; &nbsp;&#123;
-
+	&#123;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;cout &lt;&lt; &quot;Col&#58; &quot; &lt;&lt; pos-&gt;first.Col &lt;&lt; &quot; Row&#58; &quot; &lt;&lt; pos-&gt;first.Row &lt;&lt; endl;
-
+		cout &lt;&lt; &quot;Col&#58; &quot; &lt;&lt; pos-&gt;first&#46;Col &lt;&lt; &quot; Row&#58; &quot; &lt;&lt; pos-&gt;first&#46;Row &lt;&lt; endl;
 <br />
-&nbsp; &nbsp;&#125;
-
+	&#125;
 <br />
 &#125;
-
 <br />
 
-
 <br />
-
 
 <br />
 //Main
-
 <br />
 int main&#40;int argc, char* argv&#91;&#93;&#41;
-
 <br />
 &#123;
-
 <br />
-&nbsp; &nbsp;TCellsMap celice;&nbsp; &nbsp;// primerek tipa TCellsMap
-
+	TCellsMap celice;	// primerek tipa TCellsMap
 <br />
 
-
 <br />
-&nbsp; &nbsp;// dodam nekaj poskusnih vrednosti
-
+	// dodam nekaj poskusnih vrednosti
 <br />
-&nbsp; &nbsp;celice.insert&#40; TCellsMap&#58;&#58;value_type&#40;fCellCoord&#40;1, 3&#41;, NULL&#41; &#41;;
-
+	celice&#46;insert&#40; TCellsMap&#58;&#58;value_type&#40;fCellCoord&#40;1, 3&#41;, NULL&#41; &#41;;
 <br />
-&nbsp; &nbsp;celice.insert&#40; TCellsMap&#58;&#58;value_type&#40;fCellCoord&#40;3, 1&#41;, NULL&#41; &#41;;
-
+	celice&#46;insert&#40; TCellsMap&#58;&#58;value_type&#40;fCellCoord&#40;3, 1&#41;, NULL&#41; &#41;;
 <br />
-&nbsp; &nbsp;celice.insert&#40; TCellsMap&#58;&#58;value_type&#40;fCellCoord&#40;5, 7&#41;, NULL&#41; &#41;;
-
+	celice&#46;insert&#40; TCellsMap&#58;&#58;value_type&#40;fCellCoord&#40;5, 7&#41;, NULL&#41; &#41;;
 <br />
-&nbsp; &nbsp;celice.insert&#40; TCellsMap&#58;&#58;value_type&#40;fCellCoord&#40;1, 5&#41;, NULL&#41; &#41;;
-
+	celice&#46;insert&#40; TCellsMap&#58;&#58;value_type&#40;fCellCoord&#40;1, 5&#41;, NULL&#41; &#41;;
 <br />
-&nbsp; &nbsp;celice.insert&#40; TCellsMap&#58;&#58;value_type&#40;fCellCoord&#40;12, 5&#41;, NULL&#41; &#41;;
-
+	celice&#46;insert&#40; TCellsMap&#58;&#58;value_type&#40;fCellCoord&#40;12, 5&#41;, NULL&#41; &#41;;
 <br />
-&nbsp; &nbsp;celice.insert&#40; TCellsMap&#58;&#58;value_type&#40;fCellCoord&#40;12, 2&#41;, NULL&#41; &#41;;
-
+	celice&#46;insert&#40; TCellsMap&#58;&#58;value_type&#40;fCellCoord&#40;12, 2&#41;, NULL&#41; &#41;;
 <br />
-&nbsp; &nbsp;celice.insert&#40; TCellsMap&#58;&#58;value_type&#40;fCellCoord&#40;14, 0&#41;, NULL&#41; &#41;;
-
+	celice&#46;insert&#40; TCellsMap&#58;&#58;value_type&#40;fCellCoord&#40;14, 0&#41;, NULL&#41; &#41;;
 <br />
-&nbsp; &nbsp;celice.insert&#40; TCellsMap&#58;&#58;value_type&#40;fCellCoord&#40;6, 1&#41;, NULL&#41; &#41;;
-
+	celice&#46;insert&#40; TCellsMap&#58;&#58;value_type&#40;fCellCoord&#40;6, 1&#41;, NULL&#41; &#41;;
 <br />
-&nbsp; &nbsp;celice.insert&#40; TCellsMap&#58;&#58;value_type&#40;fCellCoord&#40;12, 4&#41;, NULL&#41; &#41;;
-
+	celice&#46;insert&#40; TCellsMap&#58;&#58;value_type&#40;fCellCoord&#40;12, 4&#41;, NULL&#41; &#41;;
 <br />
-&nbsp; &nbsp;
-
+	
 <br />
-&nbsp; &nbsp;// Izpisem vrednosti
-
+	// Izpisem vrednosti
 <br />
-&nbsp; &nbsp;PrintMap&#40;celice&#41;;
-
+	PrintMap&#40;celice&#41;;
 <br />
 
-
 <br />
-&nbsp; &nbsp;// poskus iskanja
-
+	// poskus iskanja
 <br />
-&nbsp; &nbsp; /*TCellsMap&#58;&#58;iterator pos;
-
+    /*TCellsMap&#58;&#58;iterator pos;
 <br />
-&nbsp; &nbsp;pos = celice.find&#40;fCellCoord&#40;12,5&#41;&#41;;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  
-
+	pos = celice&#46;find&#40;fCellCoord&#40;12,5&#41;&#41;;                     
 <br />
-&nbsp; &nbsp; if &#40;pos != celice.end&#40;&#41;&#41; &#123;
-
+    if &#40;pos != celice&#46;end&#40;&#41;&#41; &#123;
 <br />
-&nbsp; &nbsp; &nbsp; &nbsp; cout &lt;&lt; &quot;yes&quot;;
-
+        cout &lt;&lt; &quot;yes&quot;;
 <br />
-&nbsp; &nbsp; &#125; else
-
+    &#125; else
 <br />
-&nbsp; &nbsp;&#123;
-
+	&#123;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;cout &lt;&lt; &quot;no&quot;;
-
+		cout &lt;&lt; &quot;no&quot;;
 <br />
-&nbsp; &nbsp;&#125;*/
-
+	&#125;*/
 <br />
 
-
 <br />
-&nbsp; &nbsp;// pocistim celice
-
+	// pocistim celice
 <br />
-&nbsp; &nbsp;celice.clear&#40;&#41;;
-
+	celice&#46;clear&#40;&#41;;
 <br />
 
-
 <br />
-&nbsp; &nbsp;return 0;
-
+	return 0;
 <br />
 &#125;</td>
 <br />
@@ -700,7 +610,7 @@ int main&#40;int argc, char* argv&#91;&#93;&#41;
 	</tr>
 	
 	<tr>
-		<td width="150" align="left" valign="top" class="row2"><span class="name"><a name="8562"></a><b>vesoljc</b></span><br /><span class="postdetails">inštruktor<br /><img src="images/ranks/sgd-4.gif" alt="inštruktor" title="inštruktor" border="0" /><br /><img src="images/avatars/c1bdb98c3fb49342927df.jpg" alt="" border="0" /><br /><br />Pridružen: 18. feb 2003 ob 22:16<br />objav: 297<br />Kraj: Brezovica, homeland of the mighty Beawer Blasters</span><br /></td>
+		<td width="150" align="left" valign="top" class="row2"><span class="name"><a name="8562"></a><b>vesoljc</b></span><br /><span class="postdetails">inštruktor<br /><img src="images/ranks/sgd-4.gif" alt="inštruktor" title="inštruktor" border="0" /><br /><img src="images/avatars/c1bdb98c3fb49342927df.jpg" alt="" border="0" /><br /><br />Pridružen: 18. feb 2003 ob 22:16<br />objav: 291<br />Kraj: Brezovica, homeland of the mighty Beawer Blasters</span><br /></td>
 		<td class="row2" width="100%" height="28" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
 			<tr>
 				<td colspan="2" width="100%">
@@ -723,19 +633,19 @@ int main&#40;int argc, char* argv&#91;&#93;&#41;
 				<td colspan="2"><span class="postbody">std::map performance
 
 <br />
-<a  target="_blank">http://www.gamedev.net/community/forums/topic.asp?topic_id=220266</a>
+<a class="postlink" >http://www.gamedev.net/community/forums ... _id=220266</a>
 
 <br />
-pravjo, da je hashmap naj naj <img src="images/smiles/icon_wink.gif" alt="icon_wink.gif" border="0" />
+pravjo, da je hashmap naj naj <img src="images/smiles/icon_wink.gif" alt=";)" border="0" />
 
 <br />
 konc koncev ga lahko tudi sam implementiraš/optimiziraš za lastne potrebe
 
 <br />
-<a  target="_blank">http://www.brpreiss.com/books/opus4/html/page203.html#SECTION009000000000000000000</a>
+<a class="postlink" >http://www.brpreiss.com/books/opus4/htm ... 0000000000</a>
 
 <br />
-al je to že res overkill? <img src="images/smiles/icon_wink.gif" alt="icon_wink.gif" border="0" />
+al je to že res overkill? <img src="images/smiles/icon_wink.gif" alt=":wink:" border="0" />
 
 <br />
 
@@ -758,7 +668,7 @@ in ja, v mapo je najbolje dajati samo pointerje (kot value namreč)<br />_______
 	</tr>
 	
 	<tr>
-		<td width="150" align="left" valign="top" class="row1"><span class="name"><a name="8753"></a><b>Shinobi</b></span><br /><span class="postdetails">inštruktor<br /><img src="images/ranks/sgd-4.gif" alt="inštruktor" title="inštruktor" border="0" /><br /><img src="images/avatars/d5fd66913fcf278e24a0c.gif" alt="" border="0" /><br /><br />Pridružen: 15. maj 2003 ob 18:04<br />objav: 257<br />Kraj: Maribor</span><br /></td>
+		<td width="150" align="left" valign="top" class="row1"><span class="name"><a name="8753"></a><b>Shinobi</b></span><br /><span class="postdetails">mojster<br /><img src="images/ranks/sgd-5.gif" alt="mojster" title="mojster" border="0" /><br /><img src="images/avatars/d5fd66913fcf278e24a0c.gif" alt="" border="0" /><br /><br />Pridružen: 15. maj 2003 ob 18:04<br />objav: 491<br />Kraj: Maribor</span><br /></td>
 		<td class="row1" width="100%" height="28" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
 			<tr>
 				<td colspan="2" width="100%">
@@ -845,7 +755,7 @@ Držim pesti in veselo programiranje.</span><span class="gensmall"></span></td>
   <tr>
 	<td align="left" valign="middle" nowrap="nowrap">&nbsp;</td>
 	<td align="left" valign="middle" width="100%"><span class="nav">&nbsp;&nbsp;&nbsp;<a href="index.html" class="nav">SloGameDev.net seznam forumov</a>
-	  -> <a href="forum-1.html" class="nav">Splošno Programiranje</a></span></td>
+	  -> <a href="forum-52.html" class="nav">Izdelovanje iger</a></span></td>
 	<td align="right" valign="top" nowrap="nowrap"><span class="gensmall">Časovni pas (GMT +2:00 uri) Slovenija, poletni čas</span><br /><span class="nav"></span>
 	  </td>
   </tr>
@@ -861,7 +771,7 @@ Držim pesti in veselo programiranje.</span><span class="gensmall"></span></td>
   </tr>
 </table>
 
-<div align="center"><span class="copyright"><br />Arhiv stanja na dan 13. 2. 2006 &mdash; samo za branje.<br />
+<div align="center"><span class="copyright"><br />Arhiv &mdash; samo za branje.<br />
 <!--
 	We request you retain the full copyright notice below including the link to www.phpbb.com.
 	This not only gives respect to the large amount of time given freely by the developers

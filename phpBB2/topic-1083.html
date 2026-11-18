@@ -276,13 +276,13 @@ input.liteoption {
   <tr>
 	<td align="left" valign="bottom" nowrap="nowrap">&nbsp;</td>
 	<td align="left" valign="middle" width="100%"><span class="nav">&nbsp;&nbsp;&nbsp;<a href="index.html" class="nav">SloGameDev.net seznam forumov</a>
-	  -> <a href="forum-1.html" class="nav">Splošno Programiranje</a></span></td>
+	  -> <a href="forum-52.html" class="nav">Izdelovanje iger</a></span></td>
   </tr>
 </table>
 
 <table class="forumline" width="100%" cellspacing="1" cellpadding="3" border="0">
 	<tr align="right">
-		<td class="catHead" colspan="2" height="28"><span class="nav"><a href="topic-1084.html" class="nav">Prejšnja tema</a> :: <a href="topic-1089.html" class="nav">Naslednja tema</a> &nbsp;</span></td>
+		<td class="catHead" colspan="2" height="28"><span class="nav"><a href="topic-1091.html" class="nav">Prejšnja tema</a> :: <a href="topic-1093.html" class="nav">Naslednja tema</a> &nbsp;</span></td>
 	</tr>
 	
 	<tr>
@@ -291,7 +291,7 @@ input.liteoption {
 	</tr>
 	
 	<tr>
-		<td width="150" align="left" valign="top" class="row1"><span class="name"><a name="12391"></a><b>Alfa</b></span><br /><span class="postdetails">poznavalec<br /><img src="images/ranks/sgd-3.gif" alt="poznavalec" title="poznavalec" border="0" /><br /><img src="images/avatars/c2f90a1540823086cd155.jpg" alt="" border="0" /><br /><br />Pridružen: 04. mar 2004 ob 18:14<br />objav: 235<br />Kraj: SG</span><br /></td>
+		<td width="150" align="left" valign="top" class="row1"><span class="name"><a name="12391"></a><b>Alfa</b></span><br /><span class="postdetails">mojster<br /><img src="images/ranks/sgd-5.gif" alt="mojster" title="mojster" border="0" /><br /><img src="images/avatars/c2f90a1540823086cd155.jpg" alt="" border="0" /><br /><br />Pridružen: 04. mar 2004 ob 18:14<br />objav: 471<br />Kraj: SG</span><br /></td>
 		<td class="row1" width="100%" height="28" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
 			<tr>
 				<td colspan="2" width="100%">
@@ -324,144 +324,98 @@ input.liteoption {
 	<tr>
 <br />
 	  <td class="code">
-
 <br />
- // Initialize Winsock.
-
+ // Initialize Winsock&#46;
 <br />
-&nbsp; &nbsp; WSADATA wsaData;
-
+    WSADATA wsaData;
 <br />
-&nbsp; &nbsp; int iResult = WSAStartup&#40; MAKEWORD&#40;2,2&#41;, &amp;wsaData &#41;;
-
+    int iResult = WSAStartup&#40; MAKEWORD&#40;2,2&#41;, &amp;wsaData &#41;;
 <br />
-&nbsp; &nbsp; if &#40; iResult != NO_ERROR &#41;
-
+    if &#40; iResult != NO_ERROR &#41;
 <br />
-&nbsp; &nbsp; &nbsp; &nbsp; printf&#40;&quot;Error at WSAStartup&#40;&#41;\n&quot;&#41;;
-
+        printf&#40;&quot;Error at WSAStartup&#40;&#41;\n&quot;&#41;;
 <br />
 
-
 <br />
-&nbsp; &nbsp; // Create a socket.
-
+    // Create a socket&#46;
 <br />
-&nbsp; &nbsp; SOCKET m_socket;
-
+    SOCKET m_socket;
 <br />
-&nbsp; &nbsp; m_socket = socket&#40; AF_INET, SOCK_STREAM, IPPROTO_TCP &#41;;
-
+    m_socket = socket&#40; AF_INET, SOCK_STREAM, IPPROTO_TCP &#41;;
 <br />
 
-
 <br />
-&nbsp; &nbsp; if &#40; m_socket == INVALID_SOCKET &#41; &#123;
-
+    if &#40; m_socket == INVALID_SOCKET &#41; &#123;
 <br />
-&nbsp; &nbsp; &nbsp; &nbsp; printf&#40; &quot;Error at socket&#40;&#41;&#58; %ld\n&quot;, WSAGetLastError&#40;&#41; &#41;;
-
+        printf&#40; &quot;Error at socket&#40;&#41;&#58; %ld\n&quot;, WSAGetLastError&#40;&#41; &#41;;
 <br />
-&nbsp; &nbsp; &nbsp; &nbsp; WSACleanup&#40;&#41;;
-
+        WSACleanup&#40;&#41;;
 <br />
-&nbsp; &nbsp; &nbsp; &nbsp; return;
-
+        return;
 <br />
-&nbsp; &nbsp; &#125;
-
+    &#125;
 <br />
 
-
 <br />
-&nbsp; &nbsp; // Bind the socket.
-
+    // Bind the socket&#46;
 <br />
-&nbsp; &nbsp; sockaddr_in service;
-
+    sockaddr_in service;
 <br />
 
-
 <br />
-&nbsp; &nbsp; service.sin_family = AF_INET;
-
+    service&#46;sin_family = AF_INET;
 <br />
-&nbsp; &nbsp; service.sin_addr.s_addr = inet_addr&#40; &quot;127.0.0.1&quot; &#41;;
-
+    service&#46;sin_addr&#46;s_addr = inet_addr&#40; &quot;127&#46;0&#46;0&#46;1&quot; &#41;;
 <br />
-&nbsp; &nbsp; service.sin_port = htons&#40; 27015 &#41;;
-
+    service&#46;sin_port = htons&#40; 27015 &#41;;
 <br />
 
-
 <br />
-&nbsp; &nbsp; if &#40; bind&#40; m_socket, &#40;SOCKADDR*&#41; &amp;service, sizeof&#40;service&#41; &#41; == SOCKET_ERROR &#41; &#123;
-
+    if &#40; bind&#40; m_socket, &#40;SOCKADDR*&#41; &amp;service, sizeof&#40;service&#41; &#41; == SOCKET_ERROR &#41; &#123;
 <br />
-&nbsp; &nbsp; &nbsp; &nbsp; printf&#40; &quot;bind&#40;&#41; failed.\n&quot; &#41;;
-
+        printf&#40; &quot;bind&#40;&#41; failed&#46;\n&quot; &#41;;
 <br />
-&nbsp; &nbsp; &nbsp; &nbsp; closesocket&#40;m_socket&#41;;
-
+        closesocket&#40;m_socket&#41;;
 <br />
-&nbsp; &nbsp; &nbsp; &nbsp; return;
-
+        return;
 <br />
-&nbsp; &nbsp; &#125;
-
+    &#125;
 <br />
-&nbsp; &nbsp; 
-
+    
 <br />
-&nbsp; &nbsp; // Listen on the socket.
-
+    // Listen on the socket&#46;
 <br />
-&nbsp; &nbsp; if &#40; listen&#40; m_socket, 1 &#41; == SOCKET_ERROR &#41;
-
+    if &#40; listen&#40; m_socket, 1 &#41; == SOCKET_ERROR &#41;
 <br />
-&nbsp; &nbsp; &nbsp; &nbsp; printf&#40; &quot;Error listening on socket.\n&quot;&#41;;
-
+        printf&#40; &quot;Error listening on socket&#46;\n&quot;&#41;;
 <br />
 
-
 <br />
-&nbsp; &nbsp; // Accept connections.
-
+    // Accept connections&#46;
 <br />
-&nbsp; &nbsp; SOCKET AcceptSocket;
-
+    SOCKET AcceptSocket;
 <br />
 
-
 <br />
-&nbsp; &nbsp; printf&#40; &quot;Waiting for a client to connect...\n&quot; &#41;;
-
+    printf&#40; &quot;Waiting for a client to connect&#46;&#46;&#46;\n&quot; &#41;;
 <br />
-&nbsp; &nbsp; while &#40;1&#41; &#123;
-
+    while &#40;1&#41; &#123;
 <br />
-&nbsp; &nbsp; &nbsp; &nbsp; AcceptSocket = SOCKET_ERROR;
-
+        AcceptSocket = SOCKET_ERROR;
 <br />
-&nbsp; &nbsp; &nbsp; &nbsp; while &#40; AcceptSocket == SOCKET_ERROR &#41; &#123;
-
+        while &#40; AcceptSocket == SOCKET_ERROR &#41; &#123;
 <br />
-&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; AcceptSocket = accept&#40; m_socket, NULL, NULL &#41;;
-
+            AcceptSocket = accept&#40; m_socket, NULL, NULL &#41;;
 <br />
-&nbsp; &nbsp; &nbsp; &nbsp; &#125;
-
+        &#125;
 <br />
-&nbsp; &nbsp; &nbsp; &nbsp; printf&#40; &quot;Client Connected.\n&quot;&#41;;
-
+        printf&#40; &quot;Client Connected&#46;\n&quot;&#41;;
 <br />
-&nbsp; &nbsp; &nbsp; &nbsp; m_socket = AcceptSocket; 
-
+        m_socket = AcceptSocket; 
 <br />
-&nbsp; &nbsp; &nbsp; &nbsp; break;
-
+        break;
 <br />
-&nbsp; &nbsp; &#125;</td>
+    &#125;</td>
 <br />
 	</tr>
 <br />
@@ -479,7 +433,7 @@ To je koda za inicializacijo in polušanje preprostega TCP\IP serverja. Kolikor 
 
 
 <br />
-Prosim, povejte mi, kako bi povečal število clientov. Zanima me tudi, s kakšno funkcijo lahko dobim trenutni IP naslov računalnika, na katerem program teče.<br />_________________<br />"Pustimo malenkosti, pravi cesar, PeCe pa nič (več)."
+Prosim, povejte mi, kako bi povečal število clientov. Zanima me tudi, s kakšno funkcijo lahko dobim trenutni IP naslov računalnika, na katerem program teče.<br />_________________<br />&quot;Pustimo malenkosti, pravi cesar, PeCe pa nič (več).&quot;
 
 <br />
 Goran Bervar: C++ na kolenih</span><span class="gensmall"></span></td>
@@ -499,7 +453,7 @@ Goran Bervar: C++ na kolenih</span><span class="gensmall"></span></td>
 	</tr>
 	
 	<tr>
-		<td width="150" align="left" valign="top" class="row2"><span class="name"><a name="12398"></a><b>Senitel</b></span><br /><span class="postdetails">wannabe<br /><img src="images/ranks/sgd-2.gif" alt="wannabe" title="wannabe" border="0" /><br /><br /><br />Pridružen: 02. jul 2003 ob 17:01<br />objav: 97<br /></span><br /></td>
+		<td width="150" align="left" valign="top" class="row2"><span class="name"><a name="12398"></a><b>Senitel</b></span><br /><span class="postdetails">wannabe<br /><img src="images/ranks/sgd-2.gif" alt="wannabe" title="wannabe" border="0" /><br /><br /><br />Pridružen: 02. jul 2003 ob 17:01<br />objav: 127<br /></span><br /></td>
 		<td class="row2" width="100%" height="28" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
 			<tr>
 				<td colspan="2" width="100%">
@@ -536,7 +490,7 @@ Goran Bervar: C++ na kolenih</span><span class="gensmall"></span></td>
 	</tr>
 	
 	<tr>
-		<td width="150" align="left" valign="top" class="row1"><span class="name"><a name="12399"></a><b>Alfa</b></span><br /><span class="postdetails">poznavalec<br /><img src="images/ranks/sgd-3.gif" alt="poznavalec" title="poznavalec" border="0" /><br /><img src="images/avatars/c2f90a1540823086cd155.jpg" alt="" border="0" /><br /><br />Pridružen: 04. mar 2004 ob 18:14<br />objav: 235<br />Kraj: SG</span><br /></td>
+		<td width="150" align="left" valign="top" class="row1"><span class="name"><a name="12399"></a><b>Alfa</b></span><br /><span class="postdetails">mojster<br /><img src="images/ranks/sgd-5.gif" alt="mojster" title="mojster" border="0" /><br /><img src="images/avatars/c2f90a1540823086cd155.jpg" alt="" border="0" /><br /><br />Pridružen: 04. mar 2004 ob 18:14<br />objav: 471<br />Kraj: SG</span><br /></td>
 		<td class="row1" width="100%" height="28" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
 			<tr>
 				<td colspan="2" width="100%">
@@ -556,7 +510,7 @@ Goran Bervar: C++ na kolenih</span><span class="gensmall"></span></td>
 				<td colspan="2"><hr /></td>
 			</tr>
 			<tr>
-				<td colspan="2"><span class="postbody">Torej vse kar naredim je, spremenim socket, na katerega se shrane AcceptSocket in potem še naprej poslušam na istem?<br />_________________<br />"Pustimo malenkosti, pravi cesar, PeCe pa nič (več)."
+				<td colspan="2"><span class="postbody">Torej vse kar naredim je, spremenim socket, na katerega se shrane AcceptSocket in potem še naprej poslušam na istem?<br />_________________<br />&quot;Pustimo malenkosti, pravi cesar, PeCe pa nič (več).&quot;
 
 <br />
 Goran Bervar: C++ na kolenih</span><span class="gensmall"></span></td>
@@ -576,7 +530,7 @@ Goran Bervar: C++ na kolenih</span><span class="gensmall"></span></td>
 	</tr>
 	
 	<tr>
-		<td width="150" align="left" valign="top" class="row2"><span class="name"><a name="12447"></a><b>Senitel</b></span><br /><span class="postdetails">wannabe<br /><img src="images/ranks/sgd-2.gif" alt="wannabe" title="wannabe" border="0" /><br /><br /><br />Pridružen: 02. jul 2003 ob 17:01<br />objav: 97<br /></span><br /></td>
+		<td width="150" align="left" valign="top" class="row2"><span class="name"><a name="12447"></a><b>Senitel</b></span><br /><span class="postdetails">wannabe<br /><img src="images/ranks/sgd-2.gif" alt="wannabe" title="wannabe" border="0" /><br /><br /><br />Pridružen: 02. jul 2003 ob 17:01<br />objav: 127<br /></span><br /></td>
 		<td class="row2" width="100%" height="28" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
 			<tr>
 				<td colspan="2" width="100%">
@@ -621,7 +575,7 @@ Goran Bervar: C++ na kolenih</span><span class="gensmall"></span></td>
   <tr>
 	<td align="left" valign="middle" nowrap="nowrap">&nbsp;</td>
 	<td align="left" valign="middle" width="100%"><span class="nav">&nbsp;&nbsp;&nbsp;<a href="index.html" class="nav">SloGameDev.net seznam forumov</a>
-	  -> <a href="forum-1.html" class="nav">Splošno Programiranje</a></span></td>
+	  -> <a href="forum-52.html" class="nav">Izdelovanje iger</a></span></td>
 	<td align="right" valign="top" nowrap="nowrap"><span class="gensmall">Časovni pas (GMT +2:00 uri) Slovenija, poletni čas</span><br /><span class="nav"></span>
 	  </td>
   </tr>
@@ -637,7 +591,7 @@ Goran Bervar: C++ na kolenih</span><span class="gensmall"></span></td>
   </tr>
 </table>
 
-<div align="center"><span class="copyright"><br />Arhiv stanja na dan 13. 2. 2006 &mdash; samo za branje.<br />
+<div align="center"><span class="copyright"><br />Arhiv &mdash; samo za branje.<br />
 <!--
 	We request you retain the full copyright notice below including the link to www.phpbb.com.
 	This not only gives respect to the large amount of time given freely by the developers

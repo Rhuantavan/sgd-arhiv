@@ -1,0 +1,2274 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html dir="ltr">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta http-equiv="Content-Style-Type" content="text/css">
+<style type="text/css">
+<!--
+.style1 {color: #FFFFFF}
+-->
+</style>
+
+
+
+<title>SloGameDev.net :: OpenGL ali DirectX ali drugo ?</title>
+<!-- link rel="stylesheet" href="templates/SGD/SGD2.css" type="text/css" -->
+<style type="text/css">
+<!--
+/*
+  The SGD Theme for phpBB version 2+
+  Created by Rhuantavan
+  http://www.rhuantavan.org
+
+  NOTE: These CSS definitions are stored within the main page body so that you can use the phpBB2
+  theme administration centre. When you have finalised your style you could cut the final CSS code
+  and place it in an external file, deleting this section to save bandwidth.
+*/
+
+/* General page style. The scroll bar colours only visible in IE5.5+ */
+body {
+	background-color: #DDDDDD;
+	scrollbar-face-color: #000000;
+	scrollbar-highlight-color: #000000;
+	scrollbar-3dlight-color: #EEEEEE;
+	scrollbar-darkshadow-color: #EEEEEE;
+	scrollbar-shadow-color: #000000;
+	scrollbar-arrow-color: #55FF00;
+	scrollbar-track-color: #EEEEEE;
+}
+
+/* General font families for common tags */
+font,th,td,p { font-family: Verdana, Arial, Helvetica, sans-serif }
+a:link,a:active,a:visited { color : #338800; }
+a:hover		{ text-decoration: underline; color : #338800; }
+hr	{ height: 0px; border: solid #E9E9E9 0px; border-top-width: 1px;}
+
+/* This is the border line & background colour round the entire page */
+.bodyline	{ background-color: #EEEEEE; border-left: 1px #000000 solid; border-right: 1px #000000 solid; }
+
+/* This is the outline round the main forum tables */
+.forumline	{ background-color: #EEEEEE; border: 0px #DDDDDD solid; }
+
+/* Main table cell colours and backgrounds */
+td.row1	{ background-color: #F8F8F8; }
+td.row2	{ background-color: #F0F0F0; }
+td.row3	{ background-color: #E9E9E9; }
+
+/*
+  This is for the table cell above the Topics, Post & Last posts on the index.php page
+  By default this is the fading out gradiated silver background.
+  However, you could replace this with a bitmap specific for each forum
+*/
+td.rowpic {
+		background-color: #EEEEEE;
+		background-image: url(templates/SGD/images/cellpic3.gif);
+		background-repeat: repeat-y;
+}
+
+/* Header cells - the blue and silver gradient backgrounds */
+th	{
+	color: #66CC33; font-size: 11px; font-weight : bold;
+	background-color: #338800; height: 25px;
+	background-image: url(templates/SGD/images/cellpic2.gif);
+}
+
+td.cat,td.catHead,td.catSides,td.catLeft,td.catRight,td.catBottom {
+			background-image: url(templates/SGD/images/cellpic1.gif);
+			background-color:#E9E9E9; border: #999999; border-style: solid; height: 28px;
+}
+
+/*
+  Setting additional nice inner borders for the main table cells.
+  The names indicate which sides the border will be on.
+  Don't worry if you don't understand this, just ignore it :-)
+*/
+td.cat,td.catHead,td.catBottom {
+	height: 29px;
+	border-width: 0px 0px 0px 0px;
+}
+th.thHead,th.thSides,th.thTop,th.thLeft,th.thRight,th.thBottom,th.thCornerL,th.thCornerR {
+	font-weight: bold; border: #EEEEEE; border-style: solid; height: 28px;
+}
+td.row3Right,td.spaceRow {
+	background-color: #E9E9E9; border: #999999; border-style: solid;
+}
+
+th.thHead,td.catHead { font-size: 12px; border-width: 0px 0px 0px 0px; }
+th.thSides,td.catSides,td.spaceRow	 { border-width: 0px 0px 0px 0px; }
+th.thRight,td.catRight,td.row3Right	 { border-width: 0px 0px 0px 0px; }
+th.thLeft,td.catLeft	  { border-width: 0px 0px 0px 0px; }
+th.thBottom,td.catBottom  { border-width: 0px 0px 0px 1px; }
+th.thTop	 { border-width: 0px 0px 0px 0px; }
+th.thCornerL { border-width: 0px 0px 0px 1px; }
+th.thCornerR { border-width: 0px 0px 0px 0px; }
+
+/* The largest text used in the index page title and toptic title etc. */
+.maintitle	{
+	font-weight: bold; font-size: 18px; font-family: "Trebuchet MS",Verdana, Arial, Helvetica, sans-serif;
+	text-decoration: none; line-height : 120%; color : #666666;
+}
+
+/* General text */
+.gen { font-size : 12px; }
+.genmed { font-size : 11px; }
+.gensmall { font-size : 10px; }
+.gen,.genmed,.gensmall { color : #666666; }
+a.gen,a.genmed,a.gensmall { color: #338800; text-decoration: none; }
+a.gen:hover,a.genmed:hover,a.gensmall:hover	{ color: #338800; text-decoration: underline; }
+
+/* The register, login, search etc links at the top of the page */
+.mainmenu		{ font-size : 11px; color : #666666 }
+a.mainmenu		{ text-decoration: none; color : #338800;  }
+a.mainmenu:hover{ text-decoration: underline; color : #338800; }
+
+/* SGD main menu */
+.sgdmainmenu			{ font-size : 10px; color : #99FF33 }
+a.sgdmainmenu:link		{ text-decoration: none; color : #99FF33;  }
+a.sgdmainmenu:active	{ text-decoration: none; color : #99FF33;  }
+a.sgdmainmenu:visited	{ text-decoration: none; color : #99FF33;  }
+a.sgdmainmenu:hover		{ text-decoration: underline; color : #99FF33; }
+
+/* Forum category titles */
+.cattitle		{ font-weight: bold; font-size: 12px ; letter-spacing: 1px; color : #338800}
+a.cattitle		{ text-decoration: none; color : #338800; }
+a.cattitle:hover{ text-decoration: underline; }
+
+/* Forum title: Text and link to the forums used in: index.php */
+.forumlink		{ font-weight: bold; font-size: 12px; color : #338800; }
+a.forumlink 	{ text-decoration: none; color : #338800; }
+a.forumlink:hover{ text-decoration: underline; color : #338800; }
+
+/* Used for the navigation text, (Page 1,2,3 etc) and the navigation bar when in a forum */
+.nav			{ font-weight: bold; font-size: 11px; color : #666666;}
+a.nav			{ text-decoration: none; color : #338800; }
+a.nav:hover		{ text-decoration: underline; }
+
+/* titles for the topics: could specify viewed link colour too */
+.topictitle,h1,h2	{ font-weight: bold; font-size: 11px; color : #666666; }
+a.topictitle:link   { text-decoration: none; color : #338800; }
+a.topictitle:visited { text-decoration: none; color : #338800; }
+a.topictitle:hover	{ text-decoration: underline; color : #338800; }
+
+/* Name of poster in viewmsg.php and viewtopic.php and other places */
+.name			{ font-size : 11px; color : #000000;}
+
+/* Location, number of posts, post date etc */
+.postdetails		{ font-size : 10px; color : #666666; }
+
+/* The content of the posts (body of text) */
+.postbody { font-size : 12px; line-height: 18px; color : #000000;}
+a.postlink:link	{ text-decoration: none; color : #338800 }
+a.postlink:visited { text-decoration: none; color : #338800; }
+a.postlink:hover { text-decoration: underline; color : #338800}
+
+/* Quote & Code blocks */
+.code {
+	font-family: Courier, 'Courier New', sans-serif; font-size: 11px; color: #006600;
+	background-color: #D6D6D6; border: #E9E9E9; border-style: solid;
+	border-left-width: 1px; border-top-width: 1px; border-right-width: 1px; border-bottom-width: 1px
+}
+
+.quote {
+	font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 11px; color: #444444; line-height: 125%;
+	background-color: #BBBBBB; border: #E9E9E9; border-style: solid;
+	border-left-width: 1px; border-top-width: 1px; border-right-width: 1px; border-bottom-width: 1px
+}
+
+/* Copyright and bottom info */
+.copyright		{ font-size: 10px; font-family: Verdana, Arial, Helvetica, sans-serif; color: #444444; letter-spacing: -1px;}
+a.copyright		{ color: #444444; text-decoration: none;}
+a.copyright:hover { color: #666666; text-decoration: underline;}
+
+/* Form elements */
+input,textarea, select {
+	color : #666666;
+	font: normal 11px Verdana, Arial, Helvetica, sans-serif;
+	border-color : #666666;
+}
+
+/* The text input fields background colour */
+input.post, textarea.post, select {
+	background-color : #EEEEEE;
+}
+
+input { text-indent : 2px; }
+
+/* The buttons used for bbCode styling in message post */
+input.button {
+	background-color : #F8F8F8;
+	color : #666666;
+	font-size: 11px; font-family: Verdana, Arial, Helvetica, sans-serif;
+}
+
+/* The main submit button option */
+input.mainoption {
+	background-color : #BBBBBB;
+	font-weight : bold;
+}
+
+/* None-bold submit button */
+input.liteoption {
+	background-color : #BBBBBB;
+	font-weight : normal;
+}
+
+/* This is the line in the posting page which shows the rollover
+  help line. This is actually a text box, but if set to be the same
+  colour as the background no one will know ;)
+*/
+.helpline { background-color: #F0F0F0; border-style: none; }
+
+/* Import the fancy styles for IE only (NS4.x doesn't use the @import function) */
+@import url("templates/SGD/formIE.css");
+-->
+</style>
+</head>
+<body bgcolor="#DDDDDD" text="#666666" link="#338800" vlink="#338800" topmargin="0" />
+<a name="top"></a>
+<table width="100%" cellspacing="0" cellpadding="0" border="0" align="center" nowrap>
+	<tr>
+		<td class="bodyline">
+			<table width="100%" border="0" cellpadding="0" cellspacing="0">
+				<tr>
+					<td bgcolor="#FFFFFF">
+						<img src="images/spacer.gif" width="760" height="20" alt=""></td>
+				</tr>
+			</table>
+			<table width="100%" border="0" cellpadding="0" cellspacing="0">
+				<tr>
+					<td bgcolor="#000000">
+						<a href="../index.html"><img src="images/home.gif" width="10" height="10" alt="" border="0"></a><img src="images/spacer.gif" width="5" height="5" alt=""><a href="../index.html" class="sgdmainmenu">Nazaj na domačo stran</a> <img src="images/defaulticon_green.gif" alt="" width="7" height="7" border="0"> <a href="../clanki.html" class="sgdmainmenu">Clanki</a> <img src="images/defaulticon_green.gif" alt="" width="7" height="7" border="0"> <a href="../koda.html" class="sgdmainmenu">Koda</a> <img src="images/defaulticon_green.gif" alt="" width="7" height="7" border="0"> <a href="../clani.html" class="sgdmainmenu">Clani</a> <img src="images/defaulticon_green.gif" alt="" width="7" height="7" border="0"> <a href="../skupine.html" class="sgdmainmenu">Skupine</a> <img src="images/defaulticon_green.gif" alt="" width="7" height="7" border="0"> <a href="../projekti.html" class="sgdmainmenu">Projekti</a> <img src="images/defaulticon_green.gif" alt="" width="7" height="7" border="0"> <a href="../povezave.html" class="sgdmainmenu">Povezave</a></td>
+				</tr>
+			</table>
+			<table width="100%" border="0" cellpadding="0" cellspacing="0">
+				<tr>
+					<td colspan="3" bgcolor="#000000">
+						<img src="images/spacer.gif" width="760" height="10" alt=""></td>
+				</tr>
+				<tr>
+					<td>
+						<a href="index.html"><img src="images/logo.gif" width="351" height="62" alt="" border="0"></a></td>
+					<td>
+						<img src="images/forum_03.gif" width="408" height="62" alt=""></td>
+					<td width="100%" bgcolor="#000000">
+						<img src="images/spacer.gif" width="1" height="1" alt=""></td>
+				</tr>
+				<tr>
+					<td colspan="3" bgcolor="#000000" align="center">
+						<a href="memberlist.html" class="sgdmainmenu"><img src="images/defaulticon_green.gif" alt="" width="7" height="7" border="0">&nbsp;Seznam članov</a>
+						<a href="index.html" class="sgdmainmenu"><img src="images/defaulticon_green.gif" alt="" width="7" height="7" border="0">&nbsp;Seznam</a></td>
+				</tr>
+				<tr>
+					<td colspan="3" bgcolor="#000000">
+						<img src="images/spacer.gif" width="760" height="5" alt=""></td>
+				</tr>
+			</table>
+
+<table width="100%" cellspacing="2" cellpadding="2" border="0">
+  <tr>
+	<td align="left" valign="bottom" colspan="2"><a class="maintitle" href="topic-1428.html">OpenGL ali DirectX ali drugo ?</a><br />
+	  <span class="gensmall"><b>Pojdi na stran <b>1</b>, <a href="topic-1428-30.html">2</a>, <a href="topic-1428-60.html">3</a>&nbsp;&nbsp;<a href="topic-1428-30.html">Naslednji</a></b><br />
+	  &nbsp; </span></td>
+  </tr>
+</table>
+
+<table width="100%" cellspacing="2" cellpadding="2" border="0">
+  <tr>
+	<td align="left" valign="bottom" nowrap="nowrap">&nbsp;</td>
+	<td align="left" valign="middle" width="100%"><span class="nav">&nbsp;&nbsp;&nbsp;<a href="index.html" class="nav">SloGameDev.net seznam forumov</a>
+	  -> <a href="forum-52.html" class="nav">Izdelovanje iger</a></span></td>
+  </tr>
+</table>
+
+<table class="forumline" width="100%" cellspacing="1" cellpadding="3" border="0">
+	<tr align="right">
+		<td class="catHead" colspan="2" height="28"><span class="nav"><a href="topic-1607.html" class="nav">Prejšnja tema</a> :: <a href="topic-1610.html" class="nav">Naslednja tema</a> &nbsp;</span></td>
+	</tr>
+	
+	<tr>
+		<th class="thLeft" width="150" height="26" nowrap="nowrap">avtor</th>
+		<th class="thRight" nowrap="nowrap">Sporočilo</th>
+	</tr>
+	
+	<tr>
+		<td width="150" align="left" valign="top" class="row1"><span class="name"><a name="17366"></a><b>JPY</b></span><br /><span class="postdetails">novinec<br /><img src="images/ranks/sgd-0.gif" alt="novinec" title="novinec" border="0" /><br /><br /><br />Pridružen: 30. jul 2007 ob 10:05<br />objav: 2<br />Kraj: MENGEš</span><br /></td>
+		<td class="row1" width="100%" height="28" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+			<tr>
+				<td colspan="2" width="100%">
+					<table width="100%" cellpadding="0" cellspacing="0" border="0">
+						<tr>
+							<td valign="middle" align="left">
+								<a href="topic-1428.html#17366"><img src="templates/SGD2/images/icon_minipost.gif" width="12" height="9" alt="objava" title="objava" border="0" /></a>
+								<span class="postdetails">Objavljeno: pon jul 30, 2007 11:31 am<span class="gen">&nbsp;</span>&nbsp; &nbsp;Pošlji temo: OpenGL ali DirectX ali drugo ?</span>
+							</td>
+							<td valign="middle" align="right" nowrap="nowrap">
+							</td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+			<tr>
+				<td colspan="2"><hr /></td>
+			</tr>
+			<tr>
+				<td colspan="2"><span class="postbody">Ojla vsi, ki hekate v 2D/3D gr.mode.
+
+<br />
+
+
+<br />
+Se nahajam v trenutku, ko bom kmalu izbral eno okolje v katerem bom programiral 2D/3D app, pa imam tezavo izbrat pravo podlago.
+
+<br />
+
+
+<br />
+Zanimam me kaj priporocate na podlagi iskusenj in na podlagi tezav, ki ste jih imeli in na podlagi hitrih resitev, ki ste jih izvedli v OpenGL ali DirectX ali drugo.
+
+<br />
+
+
+<br />
+V zgodovini sem hekal z uporabo DirectDraw, res je da se je tudi ta ze posodobil a vseeno rabim nasvet.
+
+<br />
+
+
+<br />
+Kje se da izdelat lepo in transparentno 2D/3D app, ki jo bom lahko brez tezav lahko hekal tudi v prihodnje ne da bi moral prehekat celo kodo tudi cez ca. 3 leta. Kje se recimo najmanj spreminja osnova in funkcije ostajajo iste in so kvecem razsirjene ne pa spremenjene in pol v trenutku  npr. DirectX update omogoci <img src="images/smiles/icon_wink.gif" alt=";)" border="0" /> , da stara app ne dela vec.
+
+<br />
+
+
+<br />
+Saj veste iskusnje za hitro in elegantno resitev v OpenGL ali DirectX ali drugo. In kje, ko pridem do problema bom nasel tudi, kar se da cim hitreje hitro resitev.
+
+<br />
+
+
+<br />
+App bo game z veliko statisticnimi podatki, preglednicami, tabelami in charti in tudi vpisnimi formami. Neke vrste stara zogobrc manager game samo, da bo app bolj fensi zgledala. Uporabljalo pa se bo veliko metod ala TSR (na tipko izvrsenih akcij, ki ze v zadju preracunavajo podatke in potem prikazejo rezultat).
+
+<br />
+
+
+<br />
+<span style="font-weight: bold">Kaj priporocate ?</span><br />_________________<br />by JPY</span><span class="gensmall"></span></td>
+			</tr>
+		</table></td>
+	</tr>
+	<tr>
+		<td class="row1" width="150" align="left" valign="middle"><span class="nav"><a href="#top" class="nav">Nazaj na vrh</a></span></td>
+		<td class="row1" width="100%" height="28" valign="bottom" nowrap="nowrap"><table cellspacing="0" cellpadding="0" border="0" height="18" width="18">
+			<tr>
+				<td valign="middle" nowrap="nowrap"><a href="profile-793.html"><img src="templates/SGD2/images/lang_slovenian/icon_profile.gif" alt="Poglej uporabnikov profil" title="Poglej uporabnikov profil" border="0" /></a> </td>
+			</tr>
+		</table></td>
+	</tr>
+	<tr>
+		<td class="spaceRow" colspan="2" height="1"><img src="templates/SGD/images/spacer.gif" alt="" width="1" height="1" /></td>
+	</tr>
+	
+	<tr>
+		<td width="150" align="left" valign="top" class="row2"><span class="name"><a name="17367"></a><b>Shinobi</b></span><br /><span class="postdetails">mojster<br /><img src="images/ranks/sgd-5.gif" alt="mojster" title="mojster" border="0" /><br /><img src="images/avatars/d5fd66913fcf278e24a0c.gif" alt="" border="0" /><br /><br />Pridružen: 15. maj 2003 ob 18:04<br />objav: 491<br />Kraj: Maribor</span><br /></td>
+		<td class="row2" width="100%" height="28" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+			<tr>
+				<td colspan="2" width="100%">
+					<table width="100%" cellpadding="0" cellspacing="0" border="0">
+						<tr>
+							<td valign="middle" align="left">
+								<a href="topic-1428.html#17367"><img src="templates/SGD2/images/icon_minipost.gif" width="12" height="9" alt="objava" title="objava" border="0" /></a>
+								<span class="postdetails">Objavljeno: pon jul 30, 2007 12:01 pm<span class="gen">&nbsp;</span>&nbsp; &nbsp;Pošlji temo: </span>
+							</td>
+							<td valign="middle" align="right" nowrap="nowrap">
+							</td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+			<tr>
+				<td colspan="2"><hr /></td>
+			</tr>
+			<tr>
+				<td colspan="2"><span class="postbody">XNA ni druge. Imas vse kaj rabis. Ce ne uporabljas XNA je ze skoraj kriminalno. Pozabi C++, OpenGL in DirectX jajce. Vzami XNA in zacni kreirat. Retro je ogromno napisal o tem, tudi v Jokeju je ogromno clankov, prav tako je ogromno strani na internetu pa se povsem zastonj je in dela na XBOX 360.</span><span class="gensmall"></span></td>
+			</tr>
+		</table></td>
+	</tr>
+	<tr>
+		<td class="row2" width="150" align="left" valign="middle"><span class="nav"><a href="#top" class="nav">Nazaj na vrh</a></span></td>
+		<td class="row2" width="100%" height="28" valign="bottom" nowrap="nowrap"><table cellspacing="0" cellpadding="0" border="0" height="18" width="18">
+			<tr>
+				<td valign="middle" nowrap="nowrap"><a href="profile-62.html"><img src="templates/SGD2/images/lang_slovenian/icon_profile.gif" alt="Poglej uporabnikov profil" title="Poglej uporabnikov profil" border="0" /></a> </td>
+			</tr>
+		</table></td>
+	</tr>
+	<tr>
+		<td class="spaceRow" colspan="2" height="1"><img src="templates/SGD/images/spacer.gif" alt="" width="1" height="1" /></td>
+	</tr>
+	
+	<tr>
+		<td width="150" align="left" valign="top" class="row1"><span class="name"><a name="17368"></a><b>Delfi</b></span><br /><span class="postdetails">poznavalec<br /><img src="images/ranks/sgd-3.gif" alt="poznavalec" title="poznavalec" border="0" /><br /><img src="images/avatars/d9485b593fec639470dcc.gif" alt="" border="0" /><br /><br />Pridružen: 27. okt 2003 ob 19:22<br />objav: 165<br /></span><br /></td>
+		<td class="row1" width="100%" height="28" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+			<tr>
+				<td colspan="2" width="100%">
+					<table width="100%" cellpadding="0" cellspacing="0" border="0">
+						<tr>
+							<td valign="middle" align="left">
+								<a href="topic-1428.html#17368"><img src="templates/SGD2/images/icon_minipost.gif" width="12" height="9" alt="objava" title="objava" border="0" /></a>
+								<span class="postdetails">Objavljeno: pon jul 30, 2007 7:16 pm<span class="gen">&nbsp;</span>&nbsp; &nbsp;Pošlji temo: </span>
+							</td>
+							<td valign="middle" align="right" nowrap="nowrap">
+							</td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+			<tr>
+				<td colspan="2"><hr /></td>
+			</tr>
+			<tr>
+				<td colspan="2"><span class="postbody"></span>
+<br />
+<table width="90%" cellspacing="1" cellpadding="3" border="0" align="center">
+<br />
+<tr> 
+<br />
+	  <td><span class="genmed"><b>Shinobi je napisal:</b></span></td>
+<br />
+	</tr>
+<br />
+	<tr>
+<br />
+	  <td class="quote">XNA ni druge. Imas vse kaj rabis. Ce ne uporabljas XNA je ze skoraj kriminalno. Pozabi C++, OpenGL in DirectX jajce. Vzami XNA in zacni kreirat. Retro je ogromno napisal o tem, tudi v Jokeju je ogromno clankov, prav tako je ogromno strani na internetu pa se povsem zastonj je in dela na XBOX 360.</td>
+<br />
+	</tr>
+<br />
+</table>
+<br />
+<span class="postbody"> 
+
+<br />
+ 
+
+<br />
+A si ti čisto znorel ali kaj? xna ni nikakor optimalen za izdelavo iger, in ima hud vendor lock-in, pa še omejuje te na marsikaterem področju, pa še .net in xna runtime moraš distributirat (xna za izdelavo iger je, kot da bi šel dol po stopnicah da bi prišel gor v klet). 
+
+<br />
+ 
+
+<br />
+JPY: Edini način da bo tvoja aplikacija lahko podpirala vedno novejše tehnologije bo, da uporabiš opengl, pa še na več platformah bo delovala, če bi rad uporabljal samo na windows platformi, lahko probaš kakšen grafični pogon kot je ogre, itd...<br />_________________<br />Moj projekt: Top Down City
+<br />
+<a class="postlink" >http://mathpudding.com</a>
+<br />
+<a class="postlink-local" href="topic-467-90.html#12253">phpBB2/viewtopic.php?p=12253</a></span><span class="gensmall"></span></td>
+			</tr>
+		</table></td>
+	</tr>
+	<tr>
+		<td class="row1" width="150" align="left" valign="middle"><span class="nav"><a href="#top" class="nav">Nazaj na vrh</a></span></td>
+		<td class="row1" width="100%" height="28" valign="bottom" nowrap="nowrap"><table cellspacing="0" cellpadding="0" border="0" height="18" width="18">
+			<tr>
+				<td valign="middle" nowrap="nowrap"><a href="profile-118.html"><img src="templates/SGD2/images/lang_slovenian/icon_profile.gif" alt="Poglej uporabnikov profil" title="Poglej uporabnikov profil" border="0" /></a> <a  target="_userwww"><img src="templates/SGD2/images/lang_slovenian/icon_www.gif" alt="Obišči avtorjevo spletno stran" title="Obišči avtorjevo spletno stran" border="0" /></a></td>
+			</tr>
+		</table></td>
+	</tr>
+	<tr>
+		<td class="spaceRow" colspan="2" height="1"><img src="templates/SGD/images/spacer.gif" alt="" width="1" height="1" /></td>
+	</tr>
+	
+	<tr>
+		<td width="150" align="left" valign="top" class="row2"><span class="name"><a name="17369"></a><b>Wing</b></span><br /><span class="postdetails">SGD Admin<br /><img src="images/ranks/sgd-admin.gif" alt="SGD Admin" title="SGD Admin" border="0" /><br /><br /><br />Pridružen: 08. jan 2003 ob 21:33<br />objav: 481<br />Kraj: Kranj</span><br /></td>
+		<td class="row2" width="100%" height="28" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+			<tr>
+				<td colspan="2" width="100%">
+					<table width="100%" cellpadding="0" cellspacing="0" border="0">
+						<tr>
+							<td valign="middle" align="left">
+								<a href="topic-1428.html#17369"><img src="templates/SGD2/images/icon_minipost.gif" width="12" height="9" alt="objava" title="objava" border="0" /></a>
+								<span class="postdetails">Objavljeno: pon jul 30, 2007 7:59 pm<span class="gen">&nbsp;</span>&nbsp; &nbsp;Pošlji temo: </span>
+							</td>
+							<td valign="middle" align="right" nowrap="nowrap">
+							</td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+			<tr>
+				<td colspan="2"><hr /></td>
+			</tr>
+			<tr>
+				<td colspan="2"><span class="postbody">Uporabi karkoli ti paše. Pozanimaj se malo o vsem, poglej, kaj ti ima ljubšo sintakso itd., potem pa izberi. Vseeno je.
+
+<br />
+Pri tem bi te opozoril, da bo OpenGL v bližnji prihodnosti temeljito prenovljen (Longs Peak) oz. posodobljen - beri <a  target="_blank" class="postlink">http&#58;//www&#46;opengl&#46;org/pipeline/</a> za več.
+
+<br />
+
+
+<br />
+Sicer pa se danes uporablja pretežno tole:
+
+<br />
+- mainstream gamedev industrija (za windows): DirectX
+
+<br />
+- vse ostalo (vojaške simulacije, znanstvene 3d aplikacije...) in vse, kjer je pomembna prenosljivost med sistemi: OpenGL
+
+<br />
+
+
+<br />
+Kakor pa te razumem, ti bolj iščeš GUI - tega je precej, vsaj za OpenGL (google: opengl gui), za DX pa ne vem, kako je s tem. Seveda greš vedno lahko delati svojega.
+
+<br />
+
+
+<br />
+Delfi: za vsako pomankljivost XNA, ki si jo naštel, ti naštejem 2 prednosti. Tvoji argumenti, dokler je govora o garažnem izdelovanju iger (in ne vem če  je avtor teme profi z 8 urami časa dnvno), padejo zelo.</span><span class="gensmall"></span></td>
+			</tr>
+		</table></td>
+	</tr>
+	<tr>
+		<td class="row2" width="150" align="left" valign="middle"><span class="nav"><a href="#top" class="nav">Nazaj na vrh</a></span></td>
+		<td class="row2" width="100%" height="28" valign="bottom" nowrap="nowrap"><table cellspacing="0" cellpadding="0" border="0" height="18" width="18">
+			<tr>
+				<td valign="middle" nowrap="nowrap"><a href="profile-7.html"><img src="templates/SGD2/images/lang_slovenian/icon_profile.gif" alt="Poglej uporabnikov profil" title="Poglej uporabnikov profil" border="0" /></a> </td>
+			</tr>
+		</table></td>
+	</tr>
+	<tr>
+		<td class="spaceRow" colspan="2" height="1"><img src="templates/SGD/images/spacer.gif" alt="" width="1" height="1" /></td>
+	</tr>
+	
+	<tr>
+		<td width="150" align="left" valign="top" class="row1"><span class="name"><a name="17370"></a><b>Delfi</b></span><br /><span class="postdetails">poznavalec<br /><img src="images/ranks/sgd-3.gif" alt="poznavalec" title="poznavalec" border="0" /><br /><img src="images/avatars/d9485b593fec639470dcc.gif" alt="" border="0" /><br /><br />Pridružen: 27. okt 2003 ob 19:22<br />objav: 165<br /></span><br /></td>
+		<td class="row1" width="100%" height="28" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+			<tr>
+				<td colspan="2" width="100%">
+					<table width="100%" cellpadding="0" cellspacing="0" border="0">
+						<tr>
+							<td valign="middle" align="left">
+								<a href="topic-1428.html#17370"><img src="templates/SGD2/images/icon_minipost.gif" width="12" height="9" alt="objava" title="objava" border="0" /></a>
+								<span class="postdetails">Objavljeno: pon jul 30, 2007 9:22 pm<span class="gen">&nbsp;</span>&nbsp; &nbsp;Pošlji temo: </span>
+							</td>
+							<td valign="middle" align="right" nowrap="nowrap">
+							</td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+			<tr>
+				<td colspan="2"><hr /></td>
+			</tr>
+			<tr>
+				<td colspan="2"><span class="postbody"></span>
+<br />
+<table width="90%" cellspacing="1" cellpadding="3" border="0" align="center">
+<br />
+<tr> 
+<br />
+	  <td><span class="genmed"><b>Wingman je napisal:</b></span></td>
+<br />
+	</tr>
+<br />
+	<tr>
+<br />
+	  <td class="quote">Delfi: za vsako pomankljivost XNA, ki si jo naštel, ti naštejem 2 prednosti. Tvoji argumenti, dokler je govora o garažnem izdelovanju iger (in ne vem če  je avtor teme profi z 8 urami časa dnvno), padejo zelo.</td>
+<br />
+	</tr>
+<br />
+</table>
+<br />
+<span class="postbody"> 
+
+<br />
+ 
+
+<br />
+Mhm, sej, za vsako prednost ki jo pa ti našteješ ti jst naštejem pomankljivost... 
+
+<br />
+ 
+
+<br />
+Vsekakor če bo želel kdorkoli narest kaj bolj naprednega z xna ali karkoli C# bo naletel na trdi zid, kot je že veliko ljudi ki jih poznam, še posebej je problem hitrost.. ko je pomemben vsak megahertz xna &amp; C# preprosto ne pride v upoštev.<br />_________________<br />Moj projekt: Top Down City
+<br />
+<a class="postlink" >http://mathpudding.com</a>
+<br />
+<a class="postlink-local" href="topic-467-90.html#12253">phpBB2/viewtopic.php?p=12253</a></span><span class="gensmall"></span></td>
+			</tr>
+		</table></td>
+	</tr>
+	<tr>
+		<td class="row1" width="150" align="left" valign="middle"><span class="nav"><a href="#top" class="nav">Nazaj na vrh</a></span></td>
+		<td class="row1" width="100%" height="28" valign="bottom" nowrap="nowrap"><table cellspacing="0" cellpadding="0" border="0" height="18" width="18">
+			<tr>
+				<td valign="middle" nowrap="nowrap"><a href="profile-118.html"><img src="templates/SGD2/images/lang_slovenian/icon_profile.gif" alt="Poglej uporabnikov profil" title="Poglej uporabnikov profil" border="0" /></a> <a  target="_userwww"><img src="templates/SGD2/images/lang_slovenian/icon_www.gif" alt="Obišči avtorjevo spletno stran" title="Obišči avtorjevo spletno stran" border="0" /></a></td>
+			</tr>
+		</table></td>
+	</tr>
+	<tr>
+		<td class="spaceRow" colspan="2" height="1"><img src="templates/SGD/images/spacer.gif" alt="" width="1" height="1" /></td>
+	</tr>
+	
+	<tr>
+		<td width="150" align="left" valign="top" class="row2"><span class="name"><a name="17371"></a><b>snake</b></span><br /><span class="postdetails">expert<br /><img src="images/ranks/sgd-6.gif" alt="expert" title="expert" border="0" /><br /><img src="images/avatars/c14dbb55415c469152089.gif" alt="" border="0" /><br /><br />Pridružen: 10. jan 2003 ob 08:28<br />objav: 782<br />Kraj: NULL</span><br /></td>
+		<td class="row2" width="100%" height="28" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+			<tr>
+				<td colspan="2" width="100%">
+					<table width="100%" cellpadding="0" cellspacing="0" border="0">
+						<tr>
+							<td valign="middle" align="left">
+								<a href="topic-1428.html#17371"><img src="templates/SGD2/images/icon_minipost.gif" width="12" height="9" alt="objava" title="objava" border="0" /></a>
+								<span class="postdetails">Objavljeno: tor jul 31, 2007 1:41 am<span class="gen">&nbsp;</span>&nbsp; &nbsp;Pošlji temo: </span>
+							</td>
+							<td valign="middle" align="right" nowrap="nowrap">
+							</td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+			<tr>
+				<td colspan="2"><hr /></td>
+			</tr>
+			<tr>
+				<td colspan="2"><span class="postbody"></span>
+<br />
+<table width="90%" cellspacing="1" cellpadding="3" border="0" align="center">
+<br />
+<tr> 
+<br />
+	  <td><span class="genmed"><b>Delfi je napisal:</b></span></td>
+<br />
+	</tr>
+<br />
+	<tr>
+<br />
+	  <td class="quote"></span>
+<br />
+<table width="90%" cellspacing="1" cellpadding="3" border="0" align="center">
+<br />
+<tr> 
+<br />
+	  <td><span class="genmed"><b>Wingman je napisal:</b></span></td>
+<br />
+	</tr>
+<br />
+	<tr>
+<br />
+	  <td class="quote">Delfi: za vsako pomankljivost XNA, ki si jo naštel, ti naštejem 2 prednosti. Tvoji argumenti, dokler je govora o garažnem izdelovanju iger (in ne vem če  je avtor teme profi z 8 urami časa dnvno), padejo zelo.</td>
+<br />
+	</tr>
+<br />
+</table>
+<br />
+<span class="postbody"> 
+<br />
+ 
+<br />
+Mhm, sej, za vsako prednost ki jo pa ti našteješ ti jst naštejem pomankljivost... 
+<br />
+ 
+<br />
+Vsekakor če bo želel kdorkoli narest kaj bolj naprednega z xna ali karkoli C# bo naletel na trdi zid, kot je že veliko ljudi ki jih poznam, še posebej je problem hitrost.. ko je pomemben vsak megahertz xna &amp; C# preprosto ne pride v upoštev.</td>
+<br />
+	</tr>
+<br />
+</table>
+<br />
+<span class="postbody">
+
+<br />
+i lol'd</span><span class="gensmall"></span></td>
+			</tr>
+		</table></td>
+	</tr>
+	<tr>
+		<td class="row2" width="150" align="left" valign="middle"><span class="nav"><a href="#top" class="nav">Nazaj na vrh</a></span></td>
+		<td class="row2" width="100%" height="28" valign="bottom" nowrap="nowrap"><table cellspacing="0" cellpadding="0" border="0" height="18" width="18">
+			<tr>
+				<td valign="middle" nowrap="nowrap"><a href="profile-10.html"><img src="templates/SGD2/images/lang_slovenian/icon_profile.gif" alt="Poglej uporabnikov profil" title="Poglej uporabnikov profil" border="0" /></a> </td>
+			</tr>
+		</table></td>
+	</tr>
+	<tr>
+		<td class="spaceRow" colspan="2" height="1"><img src="templates/SGD/images/spacer.gif" alt="" width="1" height="1" /></td>
+	</tr>
+	
+	<tr>
+		<td width="150" align="left" valign="top" class="row1"><span class="name"><a name="17372"></a><b>Alfa</b></span><br /><span class="postdetails">mojster<br /><img src="images/ranks/sgd-5.gif" alt="mojster" title="mojster" border="0" /><br /><img src="images/avatars/c2f90a1540823086cd155.jpg" alt="" border="0" /><br /><br />Pridružen: 04. mar 2004 ob 18:14<br />objav: 471<br />Kraj: SG</span><br /></td>
+		<td class="row1" width="100%" height="28" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+			<tr>
+				<td colspan="2" width="100%">
+					<table width="100%" cellpadding="0" cellspacing="0" border="0">
+						<tr>
+							<td valign="middle" align="left">
+								<a href="topic-1428.html#17372"><img src="templates/SGD2/images/icon_minipost.gif" width="12" height="9" alt="objava" title="objava" border="0" /></a>
+								<span class="postdetails">Objavljeno: tor jul 31, 2007 7:12 am<span class="gen">&nbsp;</span>&nbsp; &nbsp;Pošlji temo: </span>
+							</td>
+							<td valign="middle" align="right" nowrap="nowrap">
+							</td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+			<tr>
+				<td colspan="2"><hr /></td>
+			</tr>
+			<tr>
+				<td colspan="2"><span class="postbody">Sicer mi je všeč, da nekdo občuti podobno o xna kot jaz, vendar odkar sem samo poskusil c#, vidim zakaj je tako všečen. Sovražim ga pa še vedno.  <img src="images/smiles/icon_razz.gif" alt=":P" border="0" />  Rad vem kako stvari delujejo, ne pa kot je naš profesor na faksu rekel za javo: &quot;Kako to dela nas pa ne zanima.&quot;<br />_________________<br />&quot;Pustimo malenkosti, pravi cesar, PeCe pa nič (več).&quot;
+
+<br />
+Goran Bervar: C++ na kolenih</span><span class="gensmall"></span></td>
+			</tr>
+		</table></td>
+	</tr>
+	<tr>
+		<td class="row1" width="150" align="left" valign="middle"><span class="nav"><a href="#top" class="nav">Nazaj na vrh</a></span></td>
+		<td class="row1" width="100%" height="28" valign="bottom" nowrap="nowrap"><table cellspacing="0" cellpadding="0" border="0" height="18" width="18">
+			<tr>
+				<td valign="middle" nowrap="nowrap"><a href="profile-162.html"><img src="templates/SGD2/images/lang_slovenian/icon_profile.gif" alt="Poglej uporabnikov profil" title="Poglej uporabnikov profil" border="0" /></a> <a  target="_userwww"><img src="templates/SGD2/images/lang_slovenian/icon_www.gif" alt="Obišči avtorjevo spletno stran" title="Obišči avtorjevo spletno stran" border="0" /></a></td>
+			</tr>
+		</table></td>
+	</tr>
+	<tr>
+		<td class="spaceRow" colspan="2" height="1"><img src="templates/SGD/images/spacer.gif" alt="" width="1" height="1" /></td>
+	</tr>
+	
+	<tr>
+		<td width="150" align="left" valign="top" class="row2"><span class="name"><a name="17373"></a><b>Shinobi</b></span><br /><span class="postdetails">mojster<br /><img src="images/ranks/sgd-5.gif" alt="mojster" title="mojster" border="0" /><br /><img src="images/avatars/d5fd66913fcf278e24a0c.gif" alt="" border="0" /><br /><br />Pridružen: 15. maj 2003 ob 18:04<br />objav: 491<br />Kraj: Maribor</span><br /></td>
+		<td class="row2" width="100%" height="28" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+			<tr>
+				<td colspan="2" width="100%">
+					<table width="100%" cellpadding="0" cellspacing="0" border="0">
+						<tr>
+							<td valign="middle" align="left">
+								<a href="topic-1428.html#17373"><img src="templates/SGD2/images/icon_minipost.gif" width="12" height="9" alt="objava" title="objava" border="0" /></a>
+								<span class="postdetails">Objavljeno: tor jul 31, 2007 9:06 am<span class="gen">&nbsp;</span>&nbsp; &nbsp;Pošlji temo: </span>
+							</td>
+							<td valign="middle" align="right" nowrap="nowrap">
+							</td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+			<tr>
+				<td colspan="2"><hr /></td>
+			</tr>
+			<tr>
+				<td colspan="2"><span class="postbody">Ah, dajte no mir! XNA ponuja vec kot bo kateri koli tukaj kdarkoli sposoben narediti.
+
+<br />
+
+
+<br />
+Let's face it - nihce se ni uporabil kaj sele na svoje napisal F od Funkcionalnosti ki jo ponuja XNA.
+
+<br />
+
+
+<br />
+Zato mi gre to bluzenje tako na zivce. Pametuje lahko vsak. Orodje vam je v glavnem na voljo. Jaz zelo rad uporabim izrek:
+
+<br />
+
+
+<br />
+<span style="font-weight: bold">A Fool with a Tool is still a Fool</span>
+
+<br />
+
+
+<br />
+Bo domace povedano najboljse orodnje ti nic ne koristi ce si retard. To je isto kot orangutan z 10 mio euro. Tud ne ve kaj bi z njimi.
+
+<br />
+
+
+<br />
+Tople vode odrkivat dan danes nima smisla. To sicer ne leti na nikogar osebno amak tako to je.</span><span class="gensmall"></span></td>
+			</tr>
+		</table></td>
+	</tr>
+	<tr>
+		<td class="row2" width="150" align="left" valign="middle"><span class="nav"><a href="#top" class="nav">Nazaj na vrh</a></span></td>
+		<td class="row2" width="100%" height="28" valign="bottom" nowrap="nowrap"><table cellspacing="0" cellpadding="0" border="0" height="18" width="18">
+			<tr>
+				<td valign="middle" nowrap="nowrap"><a href="profile-62.html"><img src="templates/SGD2/images/lang_slovenian/icon_profile.gif" alt="Poglej uporabnikov profil" title="Poglej uporabnikov profil" border="0" /></a> </td>
+			</tr>
+		</table></td>
+	</tr>
+	<tr>
+		<td class="spaceRow" colspan="2" height="1"><img src="templates/SGD/images/spacer.gif" alt="" width="1" height="1" /></td>
+	</tr>
+	
+	<tr>
+		<td width="150" align="left" valign="top" class="row1"><span class="name"><a name="17374"></a><b>blan</b></span><br /><span class="postdetails">poizvedovalec<br /><img src="images/ranks/sgd-1.gif" alt="poizvedovalec" title="poizvedovalec" border="0" /><br /><br /><br />Pridružen: 18. apr 2006 ob 21:23<br />objav: 69<br /></span><br /></td>
+		<td class="row1" width="100%" height="28" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+			<tr>
+				<td colspan="2" width="100%">
+					<table width="100%" cellpadding="0" cellspacing="0" border="0">
+						<tr>
+							<td valign="middle" align="left">
+								<a href="topic-1428.html#17374"><img src="templates/SGD2/images/icon_minipost.gif" width="12" height="9" alt="objava" title="objava" border="0" /></a>
+								<span class="postdetails">Objavljeno: tor jul 31, 2007 9:08 am<span class="gen">&nbsp;</span>&nbsp; &nbsp;Pošlji temo: </span>
+							</td>
+							<td valign="middle" align="right" nowrap="nowrap">
+							</td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+			<tr>
+				<td colspan="2"><hr /></td>
+			</tr>
+			<tr>
+				<td colspan="2"><span class="postbody"></span>
+<br />
+<table width="90%" cellspacing="1" cellpadding="3" border="0" align="center">
+<br />
+<tr> 
+<br />
+	  <td><span class="genmed"><b>Wingman je napisal:</b></span></td>
+<br />
+	</tr>
+<br />
+	<tr>
+<br />
+	  <td class="quote">Uporabi karkoli ti paše. Pozanimaj se malo o vsem, poglej, kaj ti ima ljubšo sintakso itd., potem pa izberi. Vseeno je.</td>
+<br />
+	</tr>
+<br />
+</table>
+<br />
+<span class="postbody">
+
+<br />
+
+
+<br />
+Jest sem tudi bolj začetnik, in sem malo sprobal OpenGL in DirectX. Pišeš več ali manj iste stvari (kreiranje okna, message pipe, initalizacija, kreiranje matrik, funkcija za rendiranje ...), le na drugačnen način, malo drugačna logika kako nekaj povedat, drugače je pa zelo podobno. To je kar se grafičnega dela APIjev tiče.</span><span class="gensmall"></span></td>
+			</tr>
+		</table></td>
+	</tr>
+	<tr>
+		<td class="row1" width="150" align="left" valign="middle"><span class="nav"><a href="#top" class="nav">Nazaj na vrh</a></span></td>
+		<td class="row1" width="100%" height="28" valign="bottom" nowrap="nowrap"><table cellspacing="0" cellpadding="0" border="0" height="18" width="18">
+			<tr>
+				<td valign="middle" nowrap="nowrap"><a href="profile-277.html"><img src="templates/SGD2/images/lang_slovenian/icon_profile.gif" alt="Poglej uporabnikov profil" title="Poglej uporabnikov profil" border="0" /></a> </td>
+			</tr>
+		</table></td>
+	</tr>
+	<tr>
+		<td class="spaceRow" colspan="2" height="1"><img src="templates/SGD/images/spacer.gif" alt="" width="1" height="1" /></td>
+	</tr>
+	
+	<tr>
+		<td width="150" align="left" valign="top" class="row2"><span class="name"><a name="17375"></a><b>compufreek</b></span><br /><span class="postdetails">poznavalec<br /><img src="images/ranks/sgd-3.gif" alt="poznavalec" title="poznavalec" border="0" /><br /><br /><br />Pridružen: 19. jul 2006 ob 02:46<br />objav: 188<br />Kraj: Vuzenica</span><br /></td>
+		<td class="row2" width="100%" height="28" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+			<tr>
+				<td colspan="2" width="100%">
+					<table width="100%" cellpadding="0" cellspacing="0" border="0">
+						<tr>
+							<td valign="middle" align="left">
+								<a href="topic-1428.html#17375"><img src="templates/SGD2/images/icon_minipost.gif" width="12" height="9" alt="objava" title="objava" border="0" /></a>
+								<span class="postdetails">Objavljeno: tor jul 31, 2007 10:23 am<span class="gen">&nbsp;</span>&nbsp; &nbsp;Pošlji temo: </span>
+							</td>
+							<td valign="middle" align="right" nowrap="nowrap">
+							</td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+			<tr>
+				<td colspan="2"><hr /></td>
+			</tr>
+			<tr>
+				<td colspan="2"><span class="postbody">Shinobi ....
+
+<br />
+sicer se s tabo strinjam sam a ni brezveze da delaš z XNA - jom če misliš delat igre poklicno ...........tam ti vso znanje XNA ja skoraj nič ne hasne (malo že sam kaj prida pa ne) tako da XNA je zeloooo uporabn za home made igrce ...za nadalno kariero je pa pomoje neuporabn!!</span><span class="gensmall"></span></td>
+			</tr>
+		</table></td>
+	</tr>
+	<tr>
+		<td class="row2" width="150" align="left" valign="middle"><span class="nav"><a href="#top" class="nav">Nazaj na vrh</a></span></td>
+		<td class="row2" width="100%" height="28" valign="bottom" nowrap="nowrap"><table cellspacing="0" cellpadding="0" border="0" height="18" width="18">
+			<tr>
+				<td valign="middle" nowrap="nowrap"><a href="profile-284.html"><img src="templates/SGD2/images/lang_slovenian/icon_profile.gif" alt="Poglej uporabnikov profil" title="Poglej uporabnikov profil" border="0" /></a> </td>
+			</tr>
+		</table></td>
+	</tr>
+	<tr>
+		<td class="spaceRow" colspan="2" height="1"><img src="templates/SGD/images/spacer.gif" alt="" width="1" height="1" /></td>
+	</tr>
+	
+	<tr>
+		<td width="150" align="left" valign="top" class="row1"><span class="name"><a name="17376"></a><b>Shinobi</b></span><br /><span class="postdetails">mojster<br /><img src="images/ranks/sgd-5.gif" alt="mojster" title="mojster" border="0" /><br /><img src="images/avatars/d5fd66913fcf278e24a0c.gif" alt="" border="0" /><br /><br />Pridružen: 15. maj 2003 ob 18:04<br />objav: 491<br />Kraj: Maribor</span><br /></td>
+		<td class="row1" width="100%" height="28" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+			<tr>
+				<td colspan="2" width="100%">
+					<table width="100%" cellpadding="0" cellspacing="0" border="0">
+						<tr>
+							<td valign="middle" align="left">
+								<a href="topic-1428.html#17376"><img src="templates/SGD2/images/icon_minipost.gif" width="12" height="9" alt="objava" title="objava" border="0" /></a>
+								<span class="postdetails">Objavljeno: tor jul 31, 2007 10:33 am<span class="gen">&nbsp;</span>&nbsp; &nbsp;Pošlji temo: </span>
+							</td>
+							<td valign="middle" align="right" nowrap="nowrap">
+							</td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+			<tr>
+				<td colspan="2"><hr /></td>
+			</tr>
+			<tr>
+				<td colspan="2"><span class="postbody">Mislim, da prvi ki je vprasal, ni spraseval ker bi rad kariero kot game developer ampak za doma.
+
+<br />
+
+
+<br />
+Poleg tega ti najboljse znanje OpenGL/DirectX nic ne pomaga ce igre nisi sposoben koncati. On je torej vprasal primarno kot home brew, se pravi ni boljsega kot XNA.
+
+<br />
+
+
+<br />
+Naj gre na OpenGL oz. DirectX direktno, s tem ni nic narobe, a pol se bo zacelo: kje dobiti knjizice za loadanje textur, kje dobiti knjizice za modele, kje dobiti knjizice za fonte bla bla bla. Preden bo imel konkretno igro bodo minila leta. Z XNA jo lahko ima v roku par dni, kar je s C/C++ prakticno ne mogoce.
+
+<br />
+
+
+<br />
+Da se a v praksi propades.
+
+<br />
+
+
+<br />
+Gamedev je v sloveniji profesionalno premalo razvit, to pa zato, ker sploh nimamo ne trga niti ne dejanske potrebe (zelje in povprasevanje na trgu sta dva razlicna pojma). Radi bi ze a se ne obrestuje. V mat kurji imamo samo zootfly to pa je vse.
+
+<br />
+
+
+<br />
+Zato se vedno pravim stick to XNA. Ful me zanima, kaj bi rekel ALT F4, ce bi portal dungeon keeperja v XNA ? Seveda izgubil bi ogromno znanja, ki ga je pridobil s C/C++ raziskovanjem, a spilcic bi imel dosti manj kode, dosti manj zajebancije, prej bi bil fertig in cas bi bil bolj efektivno porabljen.
+
+<br />
+
+
+<br />
+A ni to zelja vsakega homebrew developerja, da ima cimprej kaj za pokazat, brez da se mesece zajebava? Ce je odgovor JA potem ni druge kot XNA, ce pa je odgovor ne in si pripravljen investirati leta plus da iz tega nic nebo, pa pejt na C/C++ in DirectX ali OpenGl..</span><span class="gensmall"></span></td>
+			</tr>
+		</table></td>
+	</tr>
+	<tr>
+		<td class="row1" width="150" align="left" valign="middle"><span class="nav"><a href="#top" class="nav">Nazaj na vrh</a></span></td>
+		<td class="row1" width="100%" height="28" valign="bottom" nowrap="nowrap"><table cellspacing="0" cellpadding="0" border="0" height="18" width="18">
+			<tr>
+				<td valign="middle" nowrap="nowrap"><a href="profile-62.html"><img src="templates/SGD2/images/lang_slovenian/icon_profile.gif" alt="Poglej uporabnikov profil" title="Poglej uporabnikov profil" border="0" /></a> </td>
+			</tr>
+		</table></td>
+	</tr>
+	<tr>
+		<td class="spaceRow" colspan="2" height="1"><img src="templates/SGD/images/spacer.gif" alt="" width="1" height="1" /></td>
+	</tr>
+	
+	<tr>
+		<td width="150" align="left" valign="top" class="row2"><span class="name"><a name="17377"></a><b>JPY</b></span><br /><span class="postdetails">novinec<br /><img src="images/ranks/sgd-0.gif" alt="novinec" title="novinec" border="0" /><br /><br /><br />Pridružen: 30. jul 2007 ob 10:05<br />objav: 2<br />Kraj: MENGEš</span><br /></td>
+		<td class="row2" width="100%" height="28" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+			<tr>
+				<td colspan="2" width="100%">
+					<table width="100%" cellpadding="0" cellspacing="0" border="0">
+						<tr>
+							<td valign="middle" align="left">
+								<a href="topic-1428.html#17377"><img src="templates/SGD2/images/icon_minipost.gif" width="12" height="9" alt="objava" title="objava" border="0" /></a>
+								<span class="postdetails">Objavljeno: tor jul 31, 2007 3:09 pm<span class="gen">&nbsp;</span>&nbsp; &nbsp;Pošlji temo: Programski jezik</span>
+							</td>
+							<td valign="middle" align="right" nowrap="nowrap">
+							</td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+			<tr>
+				<td colspan="2"><hr /></td>
+			</tr>
+			<tr>
+				<td colspan="2"><span class="postbody">Glede na to da ste viliko pisali o programskig jezikih lahko povem, da hekam sam v C/C++ in PYTHON.
+
+<br />
+
+
+<br />
+Novitete kot so C#, F#, in drugi derivati me ne pritegnejo saj je vecino softwera nahekano se VEDNO V ANSI C, CPP in SCRIPT LANGUAGES. Pa ne mislim samo LO level SW tudi HI level SW. In ker predvidevam da se se nekaj 100 let nebo uveljavil noben drug jezik, sem kar vesel da hekam v dveh najbolj uporabljenih.
+
+<br />
+
+
+<br />
+WIN OS spisan v ANSI C, C/C++
+
+<br />
+LINUX OS spisan v ANSI C, C/C++
+
+<br />
+
+
+<br />
+Fante ne zamerit ampak vsak se odloci sam kje bo hekal, moje vprasanje je bilo bolj usmerjeno na 2D/3D engine.
+
+<br />
+
+
+<br />
+Drugace pa nisem 8h game developer sem pa 12h app developer in sem do sedaj uporabljal preproste metode za prikazovanje.
+
+<br />
+
+
+<br />
+In po nekaj testih in demo napisanih v DX, GL in XNA sem se odlocil za:
+
+<br />
+
+
+<br />
+OpenGL (c/c++)
+
+<br />
+pyOpenGL (python)<br />_________________<br />by JPY</span><span class="gensmall"></span></td>
+			</tr>
+		</table></td>
+	</tr>
+	<tr>
+		<td class="row2" width="150" align="left" valign="middle"><span class="nav"><a href="#top" class="nav">Nazaj na vrh</a></span></td>
+		<td class="row2" width="100%" height="28" valign="bottom" nowrap="nowrap"><table cellspacing="0" cellpadding="0" border="0" height="18" width="18">
+			<tr>
+				<td valign="middle" nowrap="nowrap"><a href="profile-793.html"><img src="templates/SGD2/images/lang_slovenian/icon_profile.gif" alt="Poglej uporabnikov profil" title="Poglej uporabnikov profil" border="0" /></a> </td>
+			</tr>
+		</table></td>
+	</tr>
+	<tr>
+		<td class="spaceRow" colspan="2" height="1"><img src="templates/SGD/images/spacer.gif" alt="" width="1" height="1" /></td>
+	</tr>
+	
+	<tr>
+		<td width="150" align="left" valign="top" class="row1"><span class="name"><a name="17378"></a><b>Shinobi</b></span><br /><span class="postdetails">mojster<br /><img src="images/ranks/sgd-5.gif" alt="mojster" title="mojster" border="0" /><br /><img src="images/avatars/d5fd66913fcf278e24a0c.gif" alt="" border="0" /><br /><br />Pridružen: 15. maj 2003 ob 18:04<br />objav: 491<br />Kraj: Maribor</span><br /></td>
+		<td class="row1" width="100%" height="28" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+			<tr>
+				<td colspan="2" width="100%">
+					<table width="100%" cellpadding="0" cellspacing="0" border="0">
+						<tr>
+							<td valign="middle" align="left">
+								<a href="topic-1428.html#17378"><img src="templates/SGD2/images/icon_minipost.gif" width="12" height="9" alt="objava" title="objava" border="0" /></a>
+								<span class="postdetails">Objavljeno: tor jul 31, 2007 10:03 pm<span class="gen">&nbsp;</span>&nbsp; &nbsp;Pošlji temo: </span>
+							</td>
+							<td valign="middle" align="right" nowrap="nowrap">
+							</td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+			<tr>
+				<td colspan="2"><hr /></td>
+			</tr>
+			<tr>
+				<td colspan="2"><span class="postbody">Saj vse kul samo malo si mimo vstrelo. Heckanje niti slucajno ne pomeni programiranje. Kot drugo pa ce si res C freak, potem lahko vzames SDL. SDL ti je wrapper za OpenGL in se mnogo vec, dela pa pod Winsi in Linuxom (ista koda, rabis drugi kompajler).
+
+<br />
+
+
+<br />
+Vse kar ti SDL podpira je ogromno 2D funkcionalnosti + ves 3D, joysticki in celo sound.
+
+<br />
+
+
+<br />
+SDL so knjizice ki jih includas svojemu C programu in si screcen. Poleg tega ti SDL omogoci dostop do OpenGL in lahko uporabljas vso OpenGL funkcionalnost poleg tega da ti SDL olajsa managiranje oken in vso ostalo saro. Res se ti splaca pogledati.
+
+<br />
+
+
+<br />
+Glede derivatov pa sploh ni dvoma, XNA je prihodnost, podprt je na XBOX 360 in celo na Nintendo WII. Mislem, how cool is that? Je pa res, da ima tudi C/C++ svoje care, ampak ko postane na pol profesionalno vidis koliko dela je s tem, pa pogruntas, da bi z XNA bilo ze vse nareto.
+
+<br />
+
+
+<br />
+Zivi primer ti je Delfi, ki poca oni top down city klon GTA ze ne vem vec kako dolgo in Retro, ki je dejasnko ogromno funkcionalnosti predstavil kar med predavanji na faxu v roku enega tedna. Potem se vidi delfi/c development proti RAD (rapid application developmentu) ki ti ga XNA ponuja.
+
+<br />
+
+
+<br />
+Proti nikomur nimam osebno nic, ampak kar je delfi povedal, je enostavno brezpredmetno in iz trte zvito. Sploh pa se mi je dopadlo, da je rekel, da pozna ogromno ljudi, ki so z XNA prisli do skrajnih mej in niso mogli realizirat projektov?!
+
+<br />
+
+
+<br />
+Kolkr jaz vem v sloveniji bolj kot ne noben ni se nobenga projekta bilokje realiziral, ne v C/C++ kaj sele XNA. Dobro so izjeme kot Jankom in pa se neki FRP so menda naredil, celo na slogamedev so linki in igra je zastonj, tu ni kaj rect, na koga pa se je delfi konretno nanasal pa nebi vedel povedat.
+
+<br />
+
+
+<br />
+A ce se bo folk drzal XNA bomo hitro obradili sadove. Nam vsem zelim, da bi cimprej realizirali projekte v bilokaterem jeziku. Da ne bo pomote, tudi sam nimam nic realiziranega, kar bi sapo jemalo, tako da sem v tem smislu tudi zbediral vseskupaj.
+
+<br />
+
+
+<br />
+Prisparaj si gorje in bodi cim bolj efektiven.</span><span class="gensmall"></span></td>
+			</tr>
+		</table></td>
+	</tr>
+	<tr>
+		<td class="row1" width="150" align="left" valign="middle"><span class="nav"><a href="#top" class="nav">Nazaj na vrh</a></span></td>
+		<td class="row1" width="100%" height="28" valign="bottom" nowrap="nowrap"><table cellspacing="0" cellpadding="0" border="0" height="18" width="18">
+			<tr>
+				<td valign="middle" nowrap="nowrap"><a href="profile-62.html"><img src="templates/SGD2/images/lang_slovenian/icon_profile.gif" alt="Poglej uporabnikov profil" title="Poglej uporabnikov profil" border="0" /></a> </td>
+			</tr>
+		</table></td>
+	</tr>
+	<tr>
+		<td class="spaceRow" colspan="2" height="1"><img src="templates/SGD/images/spacer.gif" alt="" width="1" height="1" /></td>
+	</tr>
+	
+	<tr>
+		<td width="150" align="left" valign="top" class="row2"><span class="name"><a name="17379"></a><b>Tepkoslav</b></span><br /><span class="postdetails">wannabe<br /><img src="images/ranks/sgd-2.gif" alt="wannabe" title="wannabe" border="0" /><br /><br /><br />Pridružen: 24. jan 2007 ob 11:27<br />objav: 129<br /></span><br /></td>
+		<td class="row2" width="100%" height="28" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+			<tr>
+				<td colspan="2" width="100%">
+					<table width="100%" cellpadding="0" cellspacing="0" border="0">
+						<tr>
+							<td valign="middle" align="left">
+								<a href="topic-1428.html#17379"><img src="templates/SGD2/images/icon_minipost.gif" width="12" height="9" alt="objava" title="objava" border="0" /></a>
+								<span class="postdetails">Objavljeno: sre avg 01, 2007 3:41 pm<span class="gen">&nbsp;</span>&nbsp; &nbsp;Pošlji temo: </span>
+							</td>
+							<td valign="middle" align="right" nowrap="nowrap">
+							</td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+			<tr>
+				<td colspan="2"><hr /></td>
+			</tr>
+			<tr>
+				<td colspan="2"><span class="postbody">Ja kater je pa tak najbolj easy XNA tutorial, ker vse kar sem se jaz učil, mi je bolj malo ostalo v glavi. Še posebej me zanima 2D, pa sound in input zadeve.  <img src="images/smiles/icon_rolleyes.gif" alt=":roll:" border="0" /><br />_________________<br />//**//</span><span class="gensmall"></span></td>
+			</tr>
+		</table></td>
+	</tr>
+	<tr>
+		<td class="row2" width="150" align="left" valign="middle"><span class="nav"><a href="#top" class="nav">Nazaj na vrh</a></span></td>
+		<td class="row2" width="100%" height="28" valign="bottom" nowrap="nowrap"><table cellspacing="0" cellpadding="0" border="0" height="18" width="18">
+			<tr>
+				<td valign="middle" nowrap="nowrap"><a href="profile-747.html"><img src="templates/SGD2/images/lang_slovenian/icon_profile.gif" alt="Poglej uporabnikov profil" title="Poglej uporabnikov profil" border="0" /></a> </td>
+			</tr>
+		</table></td>
+	</tr>
+	<tr>
+		<td class="spaceRow" colspan="2" height="1"><img src="templates/SGD/images/spacer.gif" alt="" width="1" height="1" /></td>
+	</tr>
+	
+	<tr>
+		<td width="150" align="left" valign="top" class="row1"><span class="name"><a name="17380"></a><b>Delfi</b></span><br /><span class="postdetails">poznavalec<br /><img src="images/ranks/sgd-3.gif" alt="poznavalec" title="poznavalec" border="0" /><br /><img src="images/avatars/d9485b593fec639470dcc.gif" alt="" border="0" /><br /><br />Pridružen: 27. okt 2003 ob 19:22<br />objav: 165<br /></span><br /></td>
+		<td class="row1" width="100%" height="28" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+			<tr>
+				<td colspan="2" width="100%">
+					<table width="100%" cellpadding="0" cellspacing="0" border="0">
+						<tr>
+							<td valign="middle" align="left">
+								<a href="topic-1428.html#17380"><img src="templates/SGD2/images/icon_minipost.gif" width="12" height="9" alt="objava" title="objava" border="0" /></a>
+								<span class="postdetails">Objavljeno: sre avg 01, 2007 8:02 pm<span class="gen">&nbsp;</span>&nbsp; &nbsp;Pošlji temo: </span>
+							</td>
+							<td valign="middle" align="right" nowrap="nowrap">
+							</td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+			<tr>
+				<td colspan="2"><hr /></td>
+			</tr>
+			<tr>
+				<td colspan="2"><span class="postbody"></span>
+<br />
+<table width="90%" cellspacing="1" cellpadding="3" border="0" align="center">
+<br />
+<tr> 
+<br />
+	  <td><span class="genmed"><b>Shinobi je napisal:</b></span></td>
+<br />
+	</tr>
+<br />
+	<tr>
+<br />
+	  <td class="quote">Zivi primer ti je Delfi, ki poca oni top down city klon GTA ze ne vem vec kako dolgo in Retro, ki je dejasnko ogromno funkcionalnosti predstavil kar med predavanji na faxu v roku enega tedna. Potem se vidi delfi/c development proti RAD (rapid application developmentu) ki ti ga XNA ponuja.
+<br />
+</td>
+<br />
+	</tr>
+<br />
+</table>
+<br />
+<span class="postbody">
+<br />
+ 
+<br />
+Mislim da je skrajno neprimerno da govoriš o nečem, o čemer ne veš nič, razlog za počasnost razvoja (hmmph? počasnost? od kje tebi to? ) top down city-a ni v načinu programiranja, ampak v tem, da preprosto ne morem projektu posvetiti dovolj časa, in da nisem hud fizik, da bi znal fizikalni model za avte napisat v enem tednu (in to velja tudi za XNA, a ti xna sam napiše kodo za takšno fiziko??!? ), in da nisem ravno expert 3D modeler in nisem niti ne hud slikar sprite-ov, tako da to kar si zgoraj napisal je totalen nesmisel. 
+<br />
+ 
+<br />
+Pa ne mi omenjat da &quot;pocam&quot; skupaj igro, dejansko sploh nič ne veš kaj se z projektom dogaja in se spuščaš v obsojanje mojega dela in projekta o katerem sploh nič ne veš &quot;zakaj&quot; ali &quot;kako&quot;. 
+<br />
+ 
+<br />
+</span>
+<br />
+<table width="90%" cellspacing="1" cellpadding="3" border="0" align="center">
+<br />
+<tr> 
+<br />
+	  <td><span class="genmed"><b>Shinobi je napisal:</b></span></td>
+<br />
+	</tr>
+<br />
+	<tr>
+<br />
+	  <td class="quote">
+<br />
+Proti nikomur nimam osebno nic, ampak kar je delfi povedal, je enostavno brezpredmetno in iz trte zvito. Sploh pa se mi je dopadlo, da je rekel, da pozna ogromno ljudi, ki so z XNA prisli do skrajnih mej in niso mogli realizirat projektov?!
+<br />
+</td>
+<br />
+	</tr>
+<br />
+</table>
+<br />
+<span class="postbody"> 
+<br />
+ 
+<br />
+A sem res to rekel?!? nisem rekel da niso mogli realizirati.. realizirali so, ampak je bila na koncu potrebna večja hitrost, zaradi česar je bilo potrebno projekt nanovo narest z c++. 
+<br />
+ 
+<br />
+</span>
+<br />
+<table width="90%" cellspacing="1" cellpadding="3" border="0" align="center">
+<br />
+<tr> 
+<br />
+	  <td><span class="genmed"><b>Shinobi je napisal:</b></span></td>
+<br />
+	</tr>
+<br />
+	<tr>
+<br />
+	  <td class="quote">
+<br />
+Kolkr jaz vem v sloveniji bolj kot ne noben ni se nobenga projekta bilokje realiziral, ne v C/C++ kaj sele XNA. Dobro so izjeme kot Jankom in pa se neki FRP so menda naredil, celo na slogamedev so linki in igra je zastonj, tu ni kaj rect, na koga pa se je delfi konretno nanasal pa nebi vedel povedat. 
+<br />
+</td>
+<br />
+	</tr>
+<br />
+</table>
+<br />
+<span class="postbody">  
+
+<br />
+ 
+
+<br />
+Kar sem povedal, se sploh ni nanašalo na kakršenkoli slovenski projekt, a lahko prosim nehaš tako hitro posploševati in sklepati?!? začn malo bolj mislit preden odgovoriš, ampak očitno te je nekaj v rit pičlo v mojem odgovoru da si tako postal tako šlampast da se ti ne da niti razmislit, ampak moraš takoj zblebetat en odgovor ki nima nobene objektivnosti samo da bi mene diskreditiral.<br />_________________<br />Moj projekt: Top Down City
+<br />
+<a class="postlink" >http://mathpudding.com</a>
+<br />
+<a class="postlink-local" href="topic-467-90.html#12253">phpBB2/viewtopic.php?p=12253</a></span><span class="gensmall"></span></td>
+			</tr>
+		</table></td>
+	</tr>
+	<tr>
+		<td class="row1" width="150" align="left" valign="middle"><span class="nav"><a href="#top" class="nav">Nazaj na vrh</a></span></td>
+		<td class="row1" width="100%" height="28" valign="bottom" nowrap="nowrap"><table cellspacing="0" cellpadding="0" border="0" height="18" width="18">
+			<tr>
+				<td valign="middle" nowrap="nowrap"><a href="profile-118.html"><img src="templates/SGD2/images/lang_slovenian/icon_profile.gif" alt="Poglej uporabnikov profil" title="Poglej uporabnikov profil" border="0" /></a> <a  target="_userwww"><img src="templates/SGD2/images/lang_slovenian/icon_www.gif" alt="Obišči avtorjevo spletno stran" title="Obišči avtorjevo spletno stran" border="0" /></a></td>
+			</tr>
+		</table></td>
+	</tr>
+	<tr>
+		<td class="spaceRow" colspan="2" height="1"><img src="templates/SGD/images/spacer.gif" alt="" width="1" height="1" /></td>
+	</tr>
+	
+	<tr>
+		<td width="150" align="left" valign="top" class="row2"><span class="name"><a name="17381"></a><b>jankoM</b></span><br /><span class="postdetails">inštruktor<br /><img src="images/ranks/sgd-4.gif" alt="inštruktor" title="inštruktor" border="0" /><br /><br /><br />Pridružen: 11. avg 2005 ob 10:06<br />objav: 274<br /></span><br /></td>
+		<td class="row2" width="100%" height="28" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+			<tr>
+				<td colspan="2" width="100%">
+					<table width="100%" cellpadding="0" cellspacing="0" border="0">
+						<tr>
+							<td valign="middle" align="left">
+								<a href="topic-1428.html#17381"><img src="templates/SGD2/images/icon_minipost.gif" width="12" height="9" alt="objava" title="objava" border="0" /></a>
+								<span class="postdetails">Objavljeno: sre avg 01, 2007 8:28 pm<span class="gen">&nbsp;</span>&nbsp; &nbsp;Pošlji temo: </span>
+							</td>
+							<td valign="middle" align="right" nowrap="nowrap">
+							</td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+			<tr>
+				<td colspan="2"><hr /></td>
+			</tr>
+			<tr>
+				<td colspan="2"><span class="postbody"></span>
+<br />
+<table width="90%" cellspacing="1" cellpadding="3" border="0" align="center">
+<br />
+<tr> 
+<br />
+	  <td><span class="genmed"><b>Citiram:</b></span></td>
+<br />
+	</tr>
+<br />
+	<tr>
+<br />
+	  <td class="quote">Tvoji argumenti, dokler je govora o garažnem izdelovanju iger (in ne vem če je avtor teme profi z 8 urami časa dnvno), padejo zelo.</td>
+<br />
+	</tr>
+<br />
+</table>
+<br />
+<span class="postbody">
+
+<br />
+
+
+<br />
+ne vem kako je z garažami samo če delaš npr v spalnici (in računaš da boš igre prodajal al pa vsaj da jih bo čimveč ljudi špilali) tako kot jst potem je XNA med zelo neprimernimi zadevami za izdelavo iger. to ne govorim iz istega razloga kot Delfi (hitrost) ampak drugih.
+
+<br />
+
+
+<br />
+Če ti prodaja oz dostopnost izdelka ni tako pomembna in ti je MS-look&amp;feel všeč (in imaš boljši računalnik kot jst) potem verjamem da je XNA zanimiva in sodobna stvar za začet delat v njej.
+
+<br />
+
+
+<br />
+((( drugač mam svojo verzijo ideje kaj je platforma za igre prihodnjosti s katero se vas tuki (kolkr vas poznam) najbrž večina nebi strinjala )))<br />_________________<br /><a  target="_blank" class="postlink">Games for kids</a> | <a  target="_blank" class="postlink">Klikni-za-pizzo</a> | <a  target="_blank" class="postlink">REFAKTOR d.o.o.</a> | <a  target="_blank" class="postlink">Oglasko.com</a></span><span class="gensmall"></span></td>
+			</tr>
+		</table></td>
+	</tr>
+	<tr>
+		<td class="row2" width="150" align="left" valign="middle"><span class="nav"><a href="#top" class="nav">Nazaj na vrh</a></span></td>
+		<td class="row2" width="100%" height="28" valign="bottom" nowrap="nowrap"><table cellspacing="0" cellpadding="0" border="0" height="18" width="18">
+			<tr>
+				<td valign="middle" nowrap="nowrap"><a href="profile-243.html"><img src="templates/SGD2/images/lang_slovenian/icon_profile.gif" alt="Poglej uporabnikov profil" title="Poglej uporabnikov profil" border="0" /></a> <a  target="_userwww"><img src="templates/SGD2/images/lang_slovenian/icon_www.gif" alt="Obišči avtorjevo spletno stran" title="Obišči avtorjevo spletno stran" border="0" /></a></td>
+			</tr>
+		</table></td>
+	</tr>
+	<tr>
+		<td class="spaceRow" colspan="2" height="1"><img src="templates/SGD/images/spacer.gif" alt="" width="1" height="1" /></td>
+	</tr>
+	
+	<tr>
+		<td width="150" align="left" valign="top" class="row1"><span class="name"><a name="17382"></a><b>jan1024188</b></span><br /><span class="postdetails">wannabe<br /><img src="images/ranks/sgd-2.gif" alt="wannabe" title="wannabe" border="0" /><br /><br /><br />Pridružen: 05. jun 2007 ob 18:15<br />objav: 102<br />Kraj: skofije</span><br /></td>
+		<td class="row1" width="100%" height="28" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+			<tr>
+				<td colspan="2" width="100%">
+					<table width="100%" cellpadding="0" cellspacing="0" border="0">
+						<tr>
+							<td valign="middle" align="left">
+								<a href="topic-1428.html#17382"><img src="templates/SGD2/images/icon_minipost.gif" width="12" height="9" alt="objava" title="objava" border="0" /></a>
+								<span class="postdetails">Objavljeno: sre avg 01, 2007 10:35 pm<span class="gen">&nbsp;</span>&nbsp; &nbsp;Pošlji temo: </span>
+							</td>
+							<td valign="middle" align="right" nowrap="nowrap">
+							</td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+			<tr>
+				<td colspan="2"><hr /></td>
+			</tr>
+			<tr>
+				<td colspan="2"><span class="postbody">XNA je the best.
+
+<br />
+
+
+<br />
+Poskusil sm z OpenGL pa Direct3D 10, pa nism nc kapiro. V XNA pa lepo napredujem + ko sm nazadnje prebirad DirectX 10 tutorial mi je bil dosti bolj razumljiv.
+
+<br />
+
+
+<br />
+XNA rulz for newbs</span><span class="gensmall"></span></td>
+			</tr>
+		</table></td>
+	</tr>
+	<tr>
+		<td class="row1" width="150" align="left" valign="middle"><span class="nav"><a href="#top" class="nav">Nazaj na vrh</a></span></td>
+		<td class="row1" width="100%" height="28" valign="bottom" nowrap="nowrap"><table cellspacing="0" cellpadding="0" border="0" height="18" width="18">
+			<tr>
+				<td valign="middle" nowrap="nowrap"><a href="profile-778.html"><img src="templates/SGD2/images/lang_slovenian/icon_profile.gif" alt="Poglej uporabnikov profil" title="Poglej uporabnikov profil" border="0" /></a> <a  target="_userwww"><img src="templates/SGD2/images/lang_slovenian/icon_www.gif" alt="Obišči avtorjevo spletno stran" title="Obišči avtorjevo spletno stran" border="0" /></a></td>
+			</tr>
+		</table></td>
+	</tr>
+	<tr>
+		<td class="spaceRow" colspan="2" height="1"><img src="templates/SGD/images/spacer.gif" alt="" width="1" height="1" /></td>
+	</tr>
+	
+	<tr>
+		<td width="150" align="left" valign="top" class="row2"><span class="name"><a name="17383"></a><b>Delfi</b></span><br /><span class="postdetails">poznavalec<br /><img src="images/ranks/sgd-3.gif" alt="poznavalec" title="poznavalec" border="0" /><br /><img src="images/avatars/d9485b593fec639470dcc.gif" alt="" border="0" /><br /><br />Pridružen: 27. okt 2003 ob 19:22<br />objav: 165<br /></span><br /></td>
+		<td class="row2" width="100%" height="28" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+			<tr>
+				<td colspan="2" width="100%">
+					<table width="100%" cellpadding="0" cellspacing="0" border="0">
+						<tr>
+							<td valign="middle" align="left">
+								<a href="topic-1428.html#17383"><img src="templates/SGD2/images/icon_minipost.gif" width="12" height="9" alt="objava" title="objava" border="0" /></a>
+								<span class="postdetails">Objavljeno: sre avg 01, 2007 11:11 pm<span class="gen">&nbsp;</span>&nbsp; &nbsp;Pošlji temo: </span>
+							</td>
+							<td valign="middle" align="right" nowrap="nowrap">
+							</td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+			<tr>
+				<td colspan="2"><hr /></td>
+			</tr>
+			<tr>
+				<td colspan="2"><span class="postbody"></span>
+<br />
+<table width="90%" cellspacing="1" cellpadding="3" border="0" align="center">
+<br />
+<tr> 
+<br />
+	  <td><span class="genmed"><b>jan1024188 je napisal:</b></span></td>
+<br />
+	</tr>
+<br />
+	<tr>
+<br />
+	  <td class="quote">XNA je the best.
+<br />
+
+<br />
+Poskusil sm z OpenGL pa Direct3D 10, pa nism nc kapiro. V XNA pa lepo napredujem + ko sm nazadnje prebirad DirectX 10 tutorial mi je bil dosti bolj razumljiv.
+<br />
+
+<br />
+XNA rulz for newbs</td>
+<br />
+	</tr>
+<br />
+</table>
+<br />
+<span class="postbody"> 
+
+<br />
+ 
+
+<br />
+Sej xna je za razvijanje, ampak za distribucijo pa ne.. zamisli si, kaj vse bo moral ubogi uporabnik ki bi tvojo igro rad igral narest preden bo lahko igral..<br />_________________<br />Moj projekt: Top Down City
+<br />
+<a class="postlink" >http://mathpudding.com</a>
+<br />
+<a class="postlink-local" href="topic-467-90.html#12253">phpBB2/viewtopic.php?p=12253</a></span><span class="gensmall"></span></td>
+			</tr>
+		</table></td>
+	</tr>
+	<tr>
+		<td class="row2" width="150" align="left" valign="middle"><span class="nav"><a href="#top" class="nav">Nazaj na vrh</a></span></td>
+		<td class="row2" width="100%" height="28" valign="bottom" nowrap="nowrap"><table cellspacing="0" cellpadding="0" border="0" height="18" width="18">
+			<tr>
+				<td valign="middle" nowrap="nowrap"><a href="profile-118.html"><img src="templates/SGD2/images/lang_slovenian/icon_profile.gif" alt="Poglej uporabnikov profil" title="Poglej uporabnikov profil" border="0" /></a> <a  target="_userwww"><img src="templates/SGD2/images/lang_slovenian/icon_www.gif" alt="Obišči avtorjevo spletno stran" title="Obišči avtorjevo spletno stran" border="0" /></a></td>
+			</tr>
+		</table></td>
+	</tr>
+	<tr>
+		<td class="spaceRow" colspan="2" height="1"><img src="templates/SGD/images/spacer.gif" alt="" width="1" height="1" /></td>
+	</tr>
+	
+	<tr>
+		<td width="150" align="left" valign="top" class="row1"><span class="name"><a name="17384"></a><b>Alfa</b></span><br /><span class="postdetails">mojster<br /><img src="images/ranks/sgd-5.gif" alt="mojster" title="mojster" border="0" /><br /><img src="images/avatars/c2f90a1540823086cd155.jpg" alt="" border="0" /><br /><br />Pridružen: 04. mar 2004 ob 18:14<br />objav: 471<br />Kraj: SG</span><br /></td>
+		<td class="row1" width="100%" height="28" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+			<tr>
+				<td colspan="2" width="100%">
+					<table width="100%" cellpadding="0" cellspacing="0" border="0">
+						<tr>
+							<td valign="middle" align="left">
+								<a href="topic-1428.html#17384"><img src="templates/SGD2/images/icon_minipost.gif" width="12" height="9" alt="objava" title="objava" border="0" /></a>
+								<span class="postdetails">Objavljeno: čet avg 02, 2007 7:20 am<span class="gen">&nbsp;</span>&nbsp; &nbsp;Pošlji temo: </span>
+							</td>
+							<td valign="middle" align="right" nowrap="nowrap">
+							</td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+			<tr>
+				<td colspan="2"><hr /></td>
+			</tr>
+			<tr>
+				<td colspan="2"><span class="postbody">Tudi za c(++) imaš knjižnice s katerimi lahko hitro razviješ software. Tisti DX pa openGL init sem jaz samo enkrat šel skozi, to sam zato ker me je zanimalo. Drgač uporabiš kak engine, jih he polno, lahk tut svojga napišeš če ti je to všeč.
+
+<br />
+
+
+<br />
+Sam mam rajši 2D. Sem sprobal DX DD, je blo bol zajebano, kot pa če bi naredil D3D površine, pa skine gr. Sem probal tut SDL je všečen, fajn prenosen, sam še vedno se zafrkavaš. Mi je pa absolutni favorit Allegro. Čeprav ni napisan po najnovejši modi (objektni model, derenžacija pa take stvari), je verjetno med najpreprostejšimi za razumet, in najhitrešimi, kar se dev časa tiče, verjetno prav tako hiter kot XNA (nisem še probal tega, nimam compa na katerem bi to delalo, vendar to lahko rečem, ker v Allegru se bremzam sam, in ne knjižnica oz. koda).<br />_________________<br />&quot;Pustimo malenkosti, pravi cesar, PeCe pa nič (več).&quot;
+
+<br />
+Goran Bervar: C++ na kolenih</span><span class="gensmall"></span></td>
+			</tr>
+		</table></td>
+	</tr>
+	<tr>
+		<td class="row1" width="150" align="left" valign="middle"><span class="nav"><a href="#top" class="nav">Nazaj na vrh</a></span></td>
+		<td class="row1" width="100%" height="28" valign="bottom" nowrap="nowrap"><table cellspacing="0" cellpadding="0" border="0" height="18" width="18">
+			<tr>
+				<td valign="middle" nowrap="nowrap"><a href="profile-162.html"><img src="templates/SGD2/images/lang_slovenian/icon_profile.gif" alt="Poglej uporabnikov profil" title="Poglej uporabnikov profil" border="0" /></a> <a  target="_userwww"><img src="templates/SGD2/images/lang_slovenian/icon_www.gif" alt="Obišči avtorjevo spletno stran" title="Obišči avtorjevo spletno stran" border="0" /></a></td>
+			</tr>
+		</table></td>
+	</tr>
+	<tr>
+		<td class="spaceRow" colspan="2" height="1"><img src="templates/SGD/images/spacer.gif" alt="" width="1" height="1" /></td>
+	</tr>
+	
+	<tr>
+		<td width="150" align="left" valign="top" class="row2"><span class="name"><a name="17385"></a><b>Shinobi</b></span><br /><span class="postdetails">mojster<br /><img src="images/ranks/sgd-5.gif" alt="mojster" title="mojster" border="0" /><br /><img src="images/avatars/d5fd66913fcf278e24a0c.gif" alt="" border="0" /><br /><br />Pridružen: 15. maj 2003 ob 18:04<br />objav: 491<br />Kraj: Maribor</span><br /></td>
+		<td class="row2" width="100%" height="28" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+			<tr>
+				<td colspan="2" width="100%">
+					<table width="100%" cellpadding="0" cellspacing="0" border="0">
+						<tr>
+							<td valign="middle" align="left">
+								<a href="topic-1428.html#17385"><img src="templates/SGD2/images/icon_minipost.gif" width="12" height="9" alt="objava" title="objava" border="0" /></a>
+								<span class="postdetails">Objavljeno: čet avg 02, 2007 10:19 am<span class="gen">&nbsp;</span>&nbsp; &nbsp;Pošlji temo: </span>
+							</td>
+							<td valign="middle" align="right" nowrap="nowrap">
+							</td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+			<tr>
+				<td colspan="2"><hr /></td>
+			</tr>
+			<tr>
+				<td colspan="2"><span class="postbody">No ja, vsega je po malem res. Samo XNA ni tako procesorsko zahteven, da nebi bilo mogoce delati z njim? Meni dela na 1,7GHZ notebooku cisto vredu.
+
+<br />
+
+
+<br />
+Je pa se nek aspekt, cisto prvo igro ki jo bos naredil, je sigurno ne bos prodal, zato je marketisnki aspekt povsem irelevanten.
+
+<br />
+
+
+<br />
+Najbolj nujno je, da ti ideja uspe, in se potem mogoce lotis komercialnih projektov.
+
+<br />
+
+
+<br />
+Nekaj je treba vedeti. Ce nimas hobi projekta ali ze kaj narejenega, potem ti ziv bog nebo dal denarja za razvoj iger.
+
+<br />
+
+
+<br />
+Ce pa imas hobi projekt pa ni vrag, da lahko koga nazicas, da te so financira, ker bo videl, da si nekaj ze realiziral.
+
+<br />
+
+
+<br />
+Ce pa gres delat igro brez financnega zaledja in upas da bos prodal, pa je isto kot da se gres zakreditirat za novo vilo in BMW 7 za posel, BMW X5 za familijo in mogoce BMW serije 6 za na morje in potem se eno malo jahtico, konec koncev bos z igro vse pokril. Iz te moke nebo nikoli kruha.
+
+<br />
+
+
+<br />
+Ne glede kje boste igro razvili, ce bi jo radi prenesli na kak drug sistem oz. programski jezik nebo problem prenosljivost ampak je glavna ideja, da ves kako se kaj naredi. Kar lahko naredis v C/C++ lahko naredis v C#, Delphi, Pascal, Visual Basic. You name it. Dobro vsaka milisekunda bo drugacna, ampak naceloma se ideja da prenest.
+
+<br />
+
+
+<br />
+Tako na Playstation kot na Nintendo WII. Kako se realizira, dobro to ze moras biti PRO ampak da se. Se pravi je glavna ideja in sele potem je programski jezik.
+
+<br />
+
+
+<br />
+Na koncu bo bolj zanimiv tudi tisti, ki bo kaj naredil v Game Makerju kot pa nekdo, ki je pol zivljenje &quot;heckal&quot; v C++ in ima sicer svoj produkt, ki pa je nezanimiv, ker se je predolgo zajebaval s tehnologijo, ki je itak spet zastarela. DirectX SDK pride konec koncev sake 2 meseca novi.
+
+<br />
+
+
+<br />
+Realizirajte svoje ideje, vseeno kje in s cimerkoli ce je le mozno.
+
+<br />
+
+
+<br />
+[edit]
+
+<br />
+Aja, to sem pozabil. A ste vedeli, da ste za game developerje bolj zanimivi, ce znate uporabljati druge engine kot svoje? Vsi vejo, da igre nikoli ne boste pisali v skupini s svojim enginom, ker je to tehnolosko nemogoce (sploh ce ima kdo utopicno predstavo narediti boljsi pogon kot Unreal 3 ali Crysis 2).
+
+<br />
+
+
+<br />
+Zato je ful dobro ce recete, da ste delali z OGRE ali pa Torque (garage games) in da imate projekt, kot pa da imate vse from scratch na svoje napisano. To je ful velik plus, kadar iscete sluzbo v game industriji. Je pa res, da tu je potem bolj kot ne samo C ali pa C++.</span><span class="gensmall"></span></td>
+			</tr>
+		</table></td>
+	</tr>
+	<tr>
+		<td class="row2" width="150" align="left" valign="middle"><span class="nav"><a href="#top" class="nav">Nazaj na vrh</a></span></td>
+		<td class="row2" width="100%" height="28" valign="bottom" nowrap="nowrap"><table cellspacing="0" cellpadding="0" border="0" height="18" width="18">
+			<tr>
+				<td valign="middle" nowrap="nowrap"><a href="profile-62.html"><img src="templates/SGD2/images/lang_slovenian/icon_profile.gif" alt="Poglej uporabnikov profil" title="Poglej uporabnikov profil" border="0" /></a> </td>
+			</tr>
+		</table></td>
+	</tr>
+	<tr>
+		<td class="spaceRow" colspan="2" height="1"><img src="templates/SGD/images/spacer.gif" alt="" width="1" height="1" /></td>
+	</tr>
+	
+	<tr>
+		<td width="150" align="left" valign="top" class="row1"><span class="name"><a name="17386"></a><b>blan</b></span><br /><span class="postdetails">poizvedovalec<br /><img src="images/ranks/sgd-1.gif" alt="poizvedovalec" title="poizvedovalec" border="0" /><br /><br /><br />Pridružen: 18. apr 2006 ob 21:23<br />objav: 69<br /></span><br /></td>
+		<td class="row1" width="100%" height="28" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+			<tr>
+				<td colspan="2" width="100%">
+					<table width="100%" cellpadding="0" cellspacing="0" border="0">
+						<tr>
+							<td valign="middle" align="left">
+								<a href="topic-1428.html#17386"><img src="templates/SGD2/images/icon_minipost.gif" width="12" height="9" alt="objava" title="objava" border="0" /></a>
+								<span class="postdetails">Objavljeno: čet avg 02, 2007 1:00 pm<span class="gen">&nbsp;</span>&nbsp; &nbsp;Pošlji temo: </span>
+							</td>
+							<td valign="middle" align="right" nowrap="nowrap">
+							</td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+			<tr>
+				<td colspan="2"><hr /></td>
+			</tr>
+			<tr>
+				<td colspan="2"><span class="postbody">Kakor se je ogovor razvil naprej, bi rekel da je XNA boljša izbira.
+
+<br />
+Sicer nism fan XNAja, ampak tako je dejstvo. Ali hočeš nekaj narest (sam), ali pa se zafrkavaš dve leti, da sploh veš kako se je treba zadeve lotit. Tle ni tok question s katero tehnologijo, ampak kaj načrtuješ v prihodnosti. XNA ne gre v isti kontejner kot OGL ali DD.
+
+<br />
+
+
+<br />
+To je podobno kot če hočeš narest avto, lahko nabaviš dele za preprost avto (XNA) in sestaviš ( C#), lahko pa da hočeš sestavit ferrarija in se zafrkavaš s tem, kako motor, aerodinamika, ... delujejo in kako so skonstruirani(npr OpenGL) in potem se zafrkavaš še s tem da znaš vse skupi povezat in uskladit (npr C++). Lahko maš hiter sestavljen navaden avto. Lahko pa svoj lajf posvetiš gdju in potem v ekipi sestaviš avto ki ima 30 hp več od ferrarija.</span><span class="gensmall"></span></td>
+			</tr>
+		</table></td>
+	</tr>
+	<tr>
+		<td class="row1" width="150" align="left" valign="middle"><span class="nav"><a href="#top" class="nav">Nazaj na vrh</a></span></td>
+		<td class="row1" width="100%" height="28" valign="bottom" nowrap="nowrap"><table cellspacing="0" cellpadding="0" border="0" height="18" width="18">
+			<tr>
+				<td valign="middle" nowrap="nowrap"><a href="profile-277.html"><img src="templates/SGD2/images/lang_slovenian/icon_profile.gif" alt="Poglej uporabnikov profil" title="Poglej uporabnikov profil" border="0" /></a> </td>
+			</tr>
+		</table></td>
+	</tr>
+	<tr>
+		<td class="spaceRow" colspan="2" height="1"><img src="templates/SGD/images/spacer.gif" alt="" width="1" height="1" /></td>
+	</tr>
+	
+	<tr>
+		<td width="150" align="left" valign="top" class="row2"><span class="name"><a name="17387"></a><b>jankoM</b></span><br /><span class="postdetails">inštruktor<br /><img src="images/ranks/sgd-4.gif" alt="inštruktor" title="inštruktor" border="0" /><br /><br /><br />Pridružen: 11. avg 2005 ob 10:06<br />objav: 274<br /></span><br /></td>
+		<td class="row2" width="100%" height="28" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+			<tr>
+				<td colspan="2" width="100%">
+					<table width="100%" cellpadding="0" cellspacing="0" border="0">
+						<tr>
+							<td valign="middle" align="left">
+								<a href="topic-1428.html#17387"><img src="templates/SGD2/images/icon_minipost.gif" width="12" height="9" alt="objava" title="objava" border="0" /></a>
+								<span class="postdetails">Objavljeno: čet avg 02, 2007 5:28 pm<span class="gen">&nbsp;</span>&nbsp; &nbsp;Pošlji temo: </span>
+							</td>
+							<td valign="middle" align="right" nowrap="nowrap">
+							</td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+			<tr>
+				<td colspan="2"><hr /></td>
+			</tr>
+			<tr>
+				<td colspan="2"><span class="postbody">mene so vedno te diskusije o XNA tako mal smešne... tako mi zgledajo kot da je nekdo celo življenje delal na low levelu kot je npr. DX al pa openGL in pol ko je MS dal ven XNA je probu in je reku &quot;U fak shit... xna je pa skotrat boljš kot DX/OGL. I love XNA...&quot;
+
+<br />
+
+
+<br />
+jst ne pravim da XNA ni ql samo ne mi bluzit da je bol učinkovit kot OGL/DX... ker to sploh ni point... obstaja veliko &quot;enginov&quot; in librarijev za izdelavo iger in če ga primerjaš z njimi ne vem če je tako simpl in učinkovit - in tud če je , je samo 1 od njih z svojimi prednostmi in pomankljivostmi.
+
+<br />
+
+
+<br />
+npr PTK ima tako brezvezno simpl funkcije pa se velik delež najuspešnejših 2d indie iger dela v njem... npr vsi hiti od FunPause tazadn je Azada (trenutno prva na BigFishGames) 
+
+<br />
+<a class="postlink" >http://www.bigfishgames.com/download-ga ... index.html</a>
+
+<br />
+<a class="postlink" >http://www.phelios.com/ptk/showcase.html</a>
+
+<br />
+
+
+<br />
+drugi je npr BlitzMax (to je BASIC tako da ne rečt da ni simpl) ... npr v njem je tale delal orng stvari tale dev: 
+
+<br />
+<a class="postlink" >http://www.rocksolidgames.com/</a>
+
+<br />
+
+
+<br />
+Tretji je npr Torque Game Builder: npr v njem so narejeni Archmage, Styrateg, Phantasia iz tukaj: <a class="postlink" >http://www.300ad.com/</a>
+
+<br />
+
+
+<br />
+v glavnem tega je polno ... kaj so prednosti teh treh libov pred XNA ... največja je da delajo vsi 3 na MAC in PC (kar je totalno pomembno za indije) , druga je imajo vsi 3je DX in OGL renderer (ker je na PC-ju najbol ziher DX in ker je na macu ogl)...  in vsi trije imajo DX7 ali največ DX8, ker tako dobiš največjo pokritost uporabnikov in najmanj problemov še trenutno.
+
+<br />
+
+
+<br />
+če te pa zanima 3d je pa itak TOLK enginov v vseh možnih jezikih da crkneš ( <a class="postlink" >http://www.devmaster.net/engines/</a> ), in težko verjamem da je XNA najboljši in najbol všečen od vseh med njimi... kolkr vem XNA niti nima scene grapha ker je bol low level zadeva, prav tako večina 3d enginov stremi k multiplatformnosti... 
+
+<br />
+
+
+<br />
+pa še to mi je smešno da govorite da uporabljate xna za mal učit in garaže in to... po drugi strani vam je pa ql ker lahko igra laufa na Xbox kamor pa itak večina resnih indie iger ki so narejene z nekimi konkretnimi budgeti ne pride...
+
+<br />
+
+
+<br />
+sori da sem mal rentaču , ne me preveč hudo jemat... v končni fazi itak ni pomembno v čem delaš ker je vse bol kot ne isti shit... važno je da boš sploh kej naredu... itak pa več stvari kot sprobaš boljš je.... jst npr zdejle delam v 4 jezikih po naročilu naenkrat pa mi čist paše tako da če si mal razširte pogled pa kej mal manj tipičnega probate vas ne bo noben tepu..
+
+<br />
+
+
+<br />
+v glavnem obstaja google ... pa če daš search najdeš še velik več stvari kot tisto kar ti neka firma reče &quot;to je pa tabolš&quot;
+
+<br />
+
+
+<br />
+pa ne pozabt da obstaja še flash<br />_________________<br /><a  target="_blank" class="postlink">Games for kids</a> | <a  target="_blank" class="postlink">Klikni-za-pizzo</a> | <a  target="_blank" class="postlink">REFAKTOR d.o.o.</a> | <a  target="_blank" class="postlink">Oglasko.com</a></span><span class="gensmall"></span></td>
+			</tr>
+		</table></td>
+	</tr>
+	<tr>
+		<td class="row2" width="150" align="left" valign="middle"><span class="nav"><a href="#top" class="nav">Nazaj na vrh</a></span></td>
+		<td class="row2" width="100%" height="28" valign="bottom" nowrap="nowrap"><table cellspacing="0" cellpadding="0" border="0" height="18" width="18">
+			<tr>
+				<td valign="middle" nowrap="nowrap"><a href="profile-243.html"><img src="templates/SGD2/images/lang_slovenian/icon_profile.gif" alt="Poglej uporabnikov profil" title="Poglej uporabnikov profil" border="0" /></a> <a  target="_userwww"><img src="templates/SGD2/images/lang_slovenian/icon_www.gif" alt="Obišči avtorjevo spletno stran" title="Obišči avtorjevo spletno stran" border="0" /></a></td>
+			</tr>
+		</table></td>
+	</tr>
+	<tr>
+		<td class="spaceRow" colspan="2" height="1"><img src="templates/SGD/images/spacer.gif" alt="" width="1" height="1" /></td>
+	</tr>
+	
+	<tr>
+		<td width="150" align="left" valign="top" class="row1"><span class="name"><a name="17388"></a><b>Delfi</b></span><br /><span class="postdetails">poznavalec<br /><img src="images/ranks/sgd-3.gif" alt="poznavalec" title="poznavalec" border="0" /><br /><img src="images/avatars/d9485b593fec639470dcc.gif" alt="" border="0" /><br /><br />Pridružen: 27. okt 2003 ob 19:22<br />objav: 165<br /></span><br /></td>
+		<td class="row1" width="100%" height="28" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+			<tr>
+				<td colspan="2" width="100%">
+					<table width="100%" cellpadding="0" cellspacing="0" border="0">
+						<tr>
+							<td valign="middle" align="left">
+								<a href="topic-1428.html#17388"><img src="templates/SGD2/images/icon_minipost.gif" width="12" height="9" alt="objava" title="objava" border="0" /></a>
+								<span class="postdetails">Objavljeno: čet avg 02, 2007 8:06 pm<span class="gen">&nbsp;</span>&nbsp; &nbsp;Pošlji temo: </span>
+							</td>
+							<td valign="middle" align="right" nowrap="nowrap">
+							</td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+			<tr>
+				<td colspan="2"><hr /></td>
+			</tr>
+			<tr>
+				<td colspan="2"><span class="postbody"></span>
+<br />
+<table width="90%" cellspacing="1" cellpadding="3" border="0" align="center">
+<br />
+<tr> 
+<br />
+	  <td><span class="genmed"><b>Shinobi je napisal:</b></span></td>
+<br />
+	</tr>
+<br />
+	<tr>
+<br />
+	  <td class="quote">
+<br />
+Aja, to sem pozabil. A ste vedeli, da ste za game developerje bolj zanimivi, ce znate uporabljati druge engine kot svoje? Vsi vejo, da igre nikoli ne boste pisali v skupini s svojim enginom, ker je to tehnolosko nemogoce (sploh ce ima kdo utopicno predstavo narediti boljsi pogon kot Unreal 3 ali Crysis 2).
+<br />
+
+<br />
+Zato je ful dobro ce recete, da ste delali z OGRE ali pa Torque (garage games) in da imate projekt, kot pa da imate vse from scratch na svoje napisano. To je ful velik plus, kadar iscete sluzbo v game industriji. Je pa res, da tu je potem bolj kot ne samo C ali pa C++.</td>
+<br />
+	</tr>
+<br />
+</table>
+<br />
+<span class="postbody"> 
+
+<br />
+ 
+
+<br />
+Zakaj bi pa bilo nekaj, kar si sam <span style="font-weight: bold">naredil</span>, kar tudi pokaže tvoje dejansko gamedev znanje slabše, kot nekaj, kar so napisali drugi, in si ti samo <span style="font-weight: bold">uporabil</span>? 
+
+<br />
+ 
+
+<br />
+To je tako kot a bi primerjal &quot;script kiddie&quot;-ja ki samo downloada orodja za hekanje z pravim hekerjem ki sam napiše svoja orodja in potem trdil da je &quot;script kiddie&quot; boljši od pravega hekerja..<br />_________________<br />Moj projekt: Top Down City
+<br />
+<a class="postlink" >http://mathpudding.com</a>
+<br />
+<a class="postlink-local" href="topic-467-90.html#12253">phpBB2/viewtopic.php?p=12253</a></span><span class="gensmall"></span></td>
+			</tr>
+		</table></td>
+	</tr>
+	<tr>
+		<td class="row1" width="150" align="left" valign="middle"><span class="nav"><a href="#top" class="nav">Nazaj na vrh</a></span></td>
+		<td class="row1" width="100%" height="28" valign="bottom" nowrap="nowrap"><table cellspacing="0" cellpadding="0" border="0" height="18" width="18">
+			<tr>
+				<td valign="middle" nowrap="nowrap"><a href="profile-118.html"><img src="templates/SGD2/images/lang_slovenian/icon_profile.gif" alt="Poglej uporabnikov profil" title="Poglej uporabnikov profil" border="0" /></a> <a  target="_userwww"><img src="templates/SGD2/images/lang_slovenian/icon_www.gif" alt="Obišči avtorjevo spletno stran" title="Obišči avtorjevo spletno stran" border="0" /></a></td>
+			</tr>
+		</table></td>
+	</tr>
+	<tr>
+		<td class="spaceRow" colspan="2" height="1"><img src="templates/SGD/images/spacer.gif" alt="" width="1" height="1" /></td>
+	</tr>
+	
+	<tr>
+		<td width="150" align="left" valign="top" class="row2"><span class="name"><a name="17389"></a><b>Shinobi</b></span><br /><span class="postdetails">mojster<br /><img src="images/ranks/sgd-5.gif" alt="mojster" title="mojster" border="0" /><br /><img src="images/avatars/d5fd66913fcf278e24a0c.gif" alt="" border="0" /><br /><br />Pridružen: 15. maj 2003 ob 18:04<br />objav: 491<br />Kraj: Maribor</span><br /></td>
+		<td class="row2" width="100%" height="28" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+			<tr>
+				<td colspan="2" width="100%">
+					<table width="100%" cellpadding="0" cellspacing="0" border="0">
+						<tr>
+							<td valign="middle" align="left">
+								<a href="topic-1428.html#17389"><img src="templates/SGD2/images/icon_minipost.gif" width="12" height="9" alt="objava" title="objava" border="0" /></a>
+								<span class="postdetails">Objavljeno: pet avg 03, 2007 8:18 am<span class="gen">&nbsp;</span>&nbsp; &nbsp;Pošlji temo: </span>
+							</td>
+							<td valign="middle" align="right" nowrap="nowrap">
+							</td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+			<tr>
+				<td colspan="2"><hr /></td>
+			</tr>
+			<tr>
+				<td colspan="2"><span class="postbody">[quote=&quot;Delfi&quot;]Zakaj bi pa bilo nekaj, kar si sam <span style="font-weight: bold">naredil</span>, kar tudi pokaže tvoje dejansko gamedev znanje slabše, kot nekaj, kar so napisali drugi, in si ti samo <span style="font-weight: bold">uporabil</span>?[/quote=&quot;Delfi&quot;]
+
+<br />
+ 
+
+<br />
+Odgovor je preprost: ker vidijo, da znas uporabit ze obstejece in se integrirat, namesto da tratis cas in budget ter razvijes po svoje.
+
+<br />
+
+
+<br />
+Odkrivanje tople vode je zelo osvrazeno. In misel, da si bolj pomemben, ker si sam dovolj pameten in lahko naredis namesto da bi kar uporabil je v poslu napacna, ker izgubis prevec efforta.
+
+<br />
+
+
+<br />
+Zato sem Alt+F4 vedno svetoval, naj uporabi cimvec obstojecega, kot pa vse na svoje pisat. In to je ful velik plus.
+
+<br />
+
+
+<br />
+Ko dobis v profesionalnih logih kak task, bodo izredno veseli, ce bos znal na hitro nekaj uporabit in se integrirat, kot ba da bos na svojo pest razvijal in tratil cas in denar. Tak je to dan danes. Je pa seveda tak nacin dela bolj efektiven.
+
+<br />
+
+
+<br />
+Recimo ce rabis GUI vzames Eddie al pa kaj podobnega z C/C++ in imas v enem dnevu stvar reseno, lahko pa gres svoj gui pisat in preden bo Release bodo minili tedni. Pol pa to vse skupaj pomnozis s koliko stane inzenir na dan pa vidis zakaj taksne stvari na lastno pest nimajo smisla.
+
+<br />
+
+
+<br />
+Tu so tudi vse prednosti v C++ kot je STL in pa BOOST. Vse je ze za vas napisano, samo uporabit je treba znat. In v zivljenjepisu ti to zelo prav pride.</span><span class="gensmall"></span></td>
+			</tr>
+		</table></td>
+	</tr>
+	<tr>
+		<td class="row2" width="150" align="left" valign="middle"><span class="nav"><a href="#top" class="nav">Nazaj na vrh</a></span></td>
+		<td class="row2" width="100%" height="28" valign="bottom" nowrap="nowrap"><table cellspacing="0" cellpadding="0" border="0" height="18" width="18">
+			<tr>
+				<td valign="middle" nowrap="nowrap"><a href="profile-62.html"><img src="templates/SGD2/images/lang_slovenian/icon_profile.gif" alt="Poglej uporabnikov profil" title="Poglej uporabnikov profil" border="0" /></a> </td>
+			</tr>
+		</table></td>
+	</tr>
+	<tr>
+		<td class="spaceRow" colspan="2" height="1"><img src="templates/SGD/images/spacer.gif" alt="" width="1" height="1" /></td>
+	</tr>
+	
+	<tr>
+		<td width="150" align="left" valign="top" class="row1"><span class="name"><a name="17390"></a><b>Tepkoslav</b></span><br /><span class="postdetails">wannabe<br /><img src="images/ranks/sgd-2.gif" alt="wannabe" title="wannabe" border="0" /><br /><br /><br />Pridružen: 24. jan 2007 ob 11:27<br />objav: 129<br /></span><br /></td>
+		<td class="row1" width="100%" height="28" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+			<tr>
+				<td colspan="2" width="100%">
+					<table width="100%" cellpadding="0" cellspacing="0" border="0">
+						<tr>
+							<td valign="middle" align="left">
+								<a href="topic-1428.html#17390"><img src="templates/SGD2/images/icon_minipost.gif" width="12" height="9" alt="objava" title="objava" border="0" /></a>
+								<span class="postdetails">Objavljeno: pet avg 03, 2007 11:33 am<span class="gen">&nbsp;</span>&nbsp; &nbsp;Pošlji temo: </span>
+							</td>
+							<td valign="middle" align="right" nowrap="nowrap">
+							</td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+			<tr>
+				<td colspan="2"><hr /></td>
+			</tr>
+			<tr>
+				<td colspan="2"><span class="postbody">Iz lastnih izkušenj potrjujem, da v firmah ne marajo da izumljaš toplo vodo... še for zanke in if stavke moraš pisati z generatojem, ker je možnost napake veliko manjša. Potem ti dajo internet in se moraš znajti. Toliko in toliko časa imaš, da narediš. Če delaš sam, nikoli ne boš naredi, razen če si super-duper programer. Na netu pa najdeš že dovolj rešitev, ki jih samo dodelaš in zadeva deluje. Pa še manjša možnost bug-ov je, ker je koda 10000x preizkušena.<br />_________________<br />//**//</span><span class="gensmall"></span></td>
+			</tr>
+		</table></td>
+	</tr>
+	<tr>
+		<td class="row1" width="150" align="left" valign="middle"><span class="nav"><a href="#top" class="nav">Nazaj na vrh</a></span></td>
+		<td class="row1" width="100%" height="28" valign="bottom" nowrap="nowrap"><table cellspacing="0" cellpadding="0" border="0" height="18" width="18">
+			<tr>
+				<td valign="middle" nowrap="nowrap"><a href="profile-747.html"><img src="templates/SGD2/images/lang_slovenian/icon_profile.gif" alt="Poglej uporabnikov profil" title="Poglej uporabnikov profil" border="0" /></a> </td>
+			</tr>
+		</table></td>
+	</tr>
+	<tr>
+		<td class="spaceRow" colspan="2" height="1"><img src="templates/SGD/images/spacer.gif" alt="" width="1" height="1" /></td>
+	</tr>
+	
+	<tr>
+		<td width="150" align="left" valign="top" class="row2"><span class="name"><a name="17394"></a><b>Delfi</b></span><br /><span class="postdetails">poznavalec<br /><img src="images/ranks/sgd-3.gif" alt="poznavalec" title="poznavalec" border="0" /><br /><img src="images/avatars/d9485b593fec639470dcc.gif" alt="" border="0" /><br /><br />Pridružen: 27. okt 2003 ob 19:22<br />objav: 165<br /></span><br /></td>
+		<td class="row2" width="100%" height="28" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+			<tr>
+				<td colspan="2" width="100%">
+					<table width="100%" cellpadding="0" cellspacing="0" border="0">
+						<tr>
+							<td valign="middle" align="left">
+								<a href="topic-1428.html#17394"><img src="templates/SGD2/images/icon_minipost.gif" width="12" height="9" alt="objava" title="objava" border="0" /></a>
+								<span class="postdetails">Objavljeno: pet avg 03, 2007 6:54 pm<span class="gen">&nbsp;</span>&nbsp; &nbsp;Pošlji temo: </span>
+							</td>
+							<td valign="middle" align="right" nowrap="nowrap">
+							</td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+			<tr>
+				<td colspan="2"><hr /></td>
+			</tr>
+			<tr>
+				<td colspan="2"><span class="postbody">Saj obstajajo tudi engine programerji, in tam ne verjamem da bi raje imeli &quot;miška programerje&quot;.. Velika večina iger uporablja lasten engine kot pa nekaj generičnega (renderware, ogre, unreal, itd.. ) Celo v sloveniji recimo Zootfly razvija in uporablja lasten engine..<br />_________________<br />Moj projekt: Top Down City
+<br />
+<a class="postlink" >http://mathpudding.com</a>
+<br />
+<a class="postlink-local" href="topic-467-90.html#12253">phpBB2/viewtopic.php?p=12253</a></span><span class="gensmall"></span></td>
+			</tr>
+		</table></td>
+	</tr>
+	<tr>
+		<td class="row2" width="150" align="left" valign="middle"><span class="nav"><a href="#top" class="nav">Nazaj na vrh</a></span></td>
+		<td class="row2" width="100%" height="28" valign="bottom" nowrap="nowrap"><table cellspacing="0" cellpadding="0" border="0" height="18" width="18">
+			<tr>
+				<td valign="middle" nowrap="nowrap"><a href="profile-118.html"><img src="templates/SGD2/images/lang_slovenian/icon_profile.gif" alt="Poglej uporabnikov profil" title="Poglej uporabnikov profil" border="0" /></a> <a  target="_userwww"><img src="templates/SGD2/images/lang_slovenian/icon_www.gif" alt="Obišči avtorjevo spletno stran" title="Obišči avtorjevo spletno stran" border="0" /></a></td>
+			</tr>
+		</table></td>
+	</tr>
+	<tr>
+		<td class="spaceRow" colspan="2" height="1"><img src="templates/SGD/images/spacer.gif" alt="" width="1" height="1" /></td>
+	</tr>
+	
+	<tr>
+		<td width="150" align="left" valign="top" class="row1"><span class="name"><a name="17395"></a><b>Tepkoslav</b></span><br /><span class="postdetails">wannabe<br /><img src="images/ranks/sgd-2.gif" alt="wannabe" title="wannabe" border="0" /><br /><br /><br />Pridružen: 24. jan 2007 ob 11:27<br />objav: 129<br /></span><br /></td>
+		<td class="row1" width="100%" height="28" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+			<tr>
+				<td colspan="2" width="100%">
+					<table width="100%" cellpadding="0" cellspacing="0" border="0">
+						<tr>
+							<td valign="middle" align="left">
+								<a href="topic-1428.html#17395"><img src="templates/SGD2/images/icon_minipost.gif" width="12" height="9" alt="objava" title="objava" border="0" /></a>
+								<span class="postdetails">Objavljeno: pet avg 03, 2007 8:16 pm<span class="gen">&nbsp;</span>&nbsp; &nbsp;Pošlji temo: </span>
+							</td>
+							<td valign="middle" align="right" nowrap="nowrap">
+							</td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+			<tr>
+				<td colspan="2"><hr /></td>
+			</tr>
+			<tr>
+				<td colspan="2"><span class="postbody">No rabim en easy XNA tutorial, lahko v pidsni obliki, naj ima pa slike notri. Pa vesel bi bil, če nebi bil takoj na začetku 3D orientiran, pač pa splošno ali 2D.<br />_________________<br />//**//</span><span class="gensmall"></span></td>
+			</tr>
+		</table></td>
+	</tr>
+	<tr>
+		<td class="row1" width="150" align="left" valign="middle"><span class="nav"><a href="#top" class="nav">Nazaj na vrh</a></span></td>
+		<td class="row1" width="100%" height="28" valign="bottom" nowrap="nowrap"><table cellspacing="0" cellpadding="0" border="0" height="18" width="18">
+			<tr>
+				<td valign="middle" nowrap="nowrap"><a href="profile-747.html"><img src="templates/SGD2/images/lang_slovenian/icon_profile.gif" alt="Poglej uporabnikov profil" title="Poglej uporabnikov profil" border="0" /></a> </td>
+			</tr>
+		</table></td>
+	</tr>
+	<tr>
+		<td class="spaceRow" colspan="2" height="1"><img src="templates/SGD/images/spacer.gif" alt="" width="1" height="1" /></td>
+	</tr>
+	
+	<tr>
+		<td width="150" align="left" valign="top" class="row2"><span class="name"><a name="17397"></a><b>Alfa</b></span><br /><span class="postdetails">mojster<br /><img src="images/ranks/sgd-5.gif" alt="mojster" title="mojster" border="0" /><br /><img src="images/avatars/c2f90a1540823086cd155.jpg" alt="" border="0" /><br /><br />Pridružen: 04. mar 2004 ob 18:14<br />objav: 471<br />Kraj: SG</span><br /></td>
+		<td class="row2" width="100%" height="28" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+			<tr>
+				<td colspan="2" width="100%">
+					<table width="100%" cellpadding="0" cellspacing="0" border="0">
+						<tr>
+							<td valign="middle" align="left">
+								<a href="topic-1428.html#17397"><img src="templates/SGD2/images/icon_minipost.gif" width="12" height="9" alt="objava" title="objava" border="0" /></a>
+								<span class="postdetails">Objavljeno: pet avg 03, 2007 8:42 pm<span class="gen">&nbsp;</span>&nbsp; &nbsp;Pošlji temo: </span>
+							</td>
+							<td valign="middle" align="right" nowrap="nowrap">
+							</td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+			<tr>
+				<td colspan="2"><hr /></td>
+			</tr>
+			<tr>
+				<td colspan="2"><span class="postbody">Glede odkrivanja tople vode, se ne čisto strinjam, da bi bilo tako nezaželeno. Če ti zmoreš sam napisati stvari, potem ni vrag da ne boš hitro pogruntal tudi že obstoječih. Poleg tega je pa še dodaten bonus, da boš že obstoječe stvari znal prilagoditi in izboljšati za lastne pogoje.  
+
+<br />
+
+
+<br />
+Tepko nekaj ne razumem, ko rečeš splošno ali 2D, kaj ti misliš s splošno? Text based?<br />_________________<br />&quot;Pustimo malenkosti, pravi cesar, PeCe pa nič (več).&quot;
+
+<br />
+Goran Bervar: C++ na kolenih</span><span class="gensmall"></span></td>
+			</tr>
+		</table></td>
+	</tr>
+	<tr>
+		<td class="row2" width="150" align="left" valign="middle"><span class="nav"><a href="#top" class="nav">Nazaj na vrh</a></span></td>
+		<td class="row2" width="100%" height="28" valign="bottom" nowrap="nowrap"><table cellspacing="0" cellpadding="0" border="0" height="18" width="18">
+			<tr>
+				<td valign="middle" nowrap="nowrap"><a href="profile-162.html"><img src="templates/SGD2/images/lang_slovenian/icon_profile.gif" alt="Poglej uporabnikov profil" title="Poglej uporabnikov profil" border="0" /></a> <a  target="_userwww"><img src="templates/SGD2/images/lang_slovenian/icon_www.gif" alt="Obišči avtorjevo spletno stran" title="Obišči avtorjevo spletno stran" border="0" /></a></td>
+			</tr>
+		</table></td>
+	</tr>
+	<tr>
+		<td class="spaceRow" colspan="2" height="1"><img src="templates/SGD/images/spacer.gif" alt="" width="1" height="1" /></td>
+	</tr>
+	
+	<tr>
+		<td width="150" align="left" valign="top" class="row1"><span class="name"><a name="17398"></a><b>Shinobi</b></span><br /><span class="postdetails">mojster<br /><img src="images/ranks/sgd-5.gif" alt="mojster" title="mojster" border="0" /><br /><img src="images/avatars/d5fd66913fcf278e24a0c.gif" alt="" border="0" /><br /><br />Pridružen: 15. maj 2003 ob 18:04<br />objav: 491<br />Kraj: Maribor</span><br /></td>
+		<td class="row1" width="100%" height="28" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+			<tr>
+				<td colspan="2" width="100%">
+					<table width="100%" cellpadding="0" cellspacing="0" border="0">
+						<tr>
+							<td valign="middle" align="left">
+								<a href="topic-1428.html#17398"><img src="templates/SGD2/images/icon_minipost.gif" width="12" height="9" alt="objava" title="objava" border="0" /></a>
+								<span class="postdetails">Objavljeno: pet avg 03, 2007 9:57 pm<span class="gen">&nbsp;</span>&nbsp; &nbsp;Pošlji temo: </span>
+							</td>
+							<td valign="middle" align="right" nowrap="nowrap">
+							</td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+			<tr>
+				<td colspan="2"><hr /></td>
+			</tr>
+			<tr>
+				<td colspan="2"><span class="postbody">Ah narobe ste dojeli in se ne razumete.
+
+<br />
+
+
+<br />
+Ja zootfly ima svoj engine in ce bi mu ti pokazal, da znas uporabljati tudi druge stvari ne samo tvoje, to pomeni, da se bos lazje integriral tudi z zootfly enginom.
+
+<br />
+
+
+<br />
+Tisti ko pa vedno na svoje dela, pa bo imel probleme se integrirati v obstojec projekt oz. team. Ponavadi je tak.</span><span class="gensmall"></span></td>
+			</tr>
+		</table></td>
+	</tr>
+	<tr>
+		<td class="row1" width="150" align="left" valign="middle"><span class="nav"><a href="#top" class="nav">Nazaj na vrh</a></span></td>
+		<td class="row1" width="100%" height="28" valign="bottom" nowrap="nowrap"><table cellspacing="0" cellpadding="0" border="0" height="18" width="18">
+			<tr>
+				<td valign="middle" nowrap="nowrap"><a href="profile-62.html"><img src="templates/SGD2/images/lang_slovenian/icon_profile.gif" alt="Poglej uporabnikov profil" title="Poglej uporabnikov profil" border="0" /></a> </td>
+			</tr>
+		</table></td>
+	</tr>
+	<tr>
+		<td class="spaceRow" colspan="2" height="1"><img src="templates/SGD/images/spacer.gif" alt="" width="1" height="1" /></td>
+	</tr>
+	
+	<tr>
+		<td width="150" align="left" valign="top" class="row2"><span class="name"><a name="17399"></a><b>blan</b></span><br /><span class="postdetails">poizvedovalec<br /><img src="images/ranks/sgd-1.gif" alt="poizvedovalec" title="poizvedovalec" border="0" /><br /><br /><br />Pridružen: 18. apr 2006 ob 21:23<br />objav: 69<br /></span><br /></td>
+		<td class="row2" width="100%" height="28" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+			<tr>
+				<td colspan="2" width="100%">
+					<table width="100%" cellpadding="0" cellspacing="0" border="0">
+						<tr>
+							<td valign="middle" align="left">
+								<a href="topic-1428.html#17399"><img src="templates/SGD2/images/icon_minipost.gif" width="12" height="9" alt="objava" title="objava" border="0" /></a>
+								<span class="postdetails">Objavljeno: pet avg 03, 2007 10:29 pm<span class="gen">&nbsp;</span>&nbsp; &nbsp;Pošlji temo: </span>
+							</td>
+							<td valign="middle" align="right" nowrap="nowrap">
+							</td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+			<tr>
+				<td colspan="2"><hr /></td>
+			</tr>
+			<tr>
+				<td colspan="2"><span class="postbody"></span>
+<br />
+<table width="90%" cellspacing="1" cellpadding="3" border="0" align="center">
+<br />
+<tr> 
+<br />
+	  <td><span class="genmed"><b>Tepkoslav je napisal:</b></span></td>
+<br />
+	</tr>
+<br />
+	<tr>
+<br />
+	  <td class="quote">No rabim en easy XNA tutorial, lahko v pidsni obliki, naj ima pa slike notri. Pa vesel bi bil, če nebi bil takoj na začetku 3D orientiran, pač pa splošno ali 2D.</td>
+<br />
+	</tr>
+<br />
+</table>
+<br />
+<span class="postbody">
+
+<br />
+
+
+<br />
+<a class="postlink" >http://www.3dlevel.com/gamedev/xnatutorial/</a> ?</span><span class="gensmall"></span></td>
+			</tr>
+		</table></td>
+	</tr>
+	<tr>
+		<td class="row2" width="150" align="left" valign="middle"><span class="nav"><a href="#top" class="nav">Nazaj na vrh</a></span></td>
+		<td class="row2" width="100%" height="28" valign="bottom" nowrap="nowrap"><table cellspacing="0" cellpadding="0" border="0" height="18" width="18">
+			<tr>
+				<td valign="middle" nowrap="nowrap"><a href="profile-277.html"><img src="templates/SGD2/images/lang_slovenian/icon_profile.gif" alt="Poglej uporabnikov profil" title="Poglej uporabnikov profil" border="0" /></a> </td>
+			</tr>
+		</table></td>
+	</tr>
+	<tr>
+		<td class="spaceRow" colspan="2" height="1"><img src="templates/SGD/images/spacer.gif" alt="" width="1" height="1" /></td>
+	</tr>
+	
+	<tr align="center">
+		<td class="catBottom" colspan="2" height="28">&nbsp;</td>
+	</tr>
+</table>
+
+<table width="100%" cellspacing="2" cellpadding="2" border="0" align="center">
+  <tr>
+	<td align="left" valign="middle" nowrap="nowrap">&nbsp;</td>
+	<td align="left" valign="middle" width="100%"><span class="nav">&nbsp;&nbsp;&nbsp;<a href="index.html" class="nav">SloGameDev.net seznam forumov</a>
+	  -> <a href="forum-52.html" class="nav">Izdelovanje iger</a></span></td>
+	<td align="right" valign="top" nowrap="nowrap"><span class="gensmall">Časovni pas (GMT +2:00 uri) Slovenija, poletni čas</span><br /><span class="nav">Pojdi na stran <b>1</b>, <a href="topic-1428-30.html">2</a>, <a href="topic-1428-60.html">3</a>&nbsp;&nbsp;<a href="topic-1428-30.html">Naslednji</a></span>
+	  </td>
+  </tr>
+  <tr>
+	<td align="left" colspan="3"><span class="nav">Stran <b>1</b> od <b>3</b></span></td>
+  </tr>
+</table>
+
+<table width="100%" cellspacing="2" border="0" align="center">
+  <tr>
+	<td width="40%" valign="top" nowrap="nowrap" align="left">&nbsp;</td>
+	<td align="right" valign="top" nowrap="nowrap">&nbsp;</td>
+  </tr>
+</table>
+
+<div align="center"><span class="copyright"><br />Arhiv &mdash; samo za branje.<br />
+<!--
+	We request you retain the full copyright notice below including the link to www.phpbb.com.
+	This not only gives respect to the large amount of time given freely by the developers
+	but also helps build interest, traffic and use of phpBB 2.0. If you cannot (for good
+	reason) retain the full copyright we request you at least leave in place the 
+	Powered by phpBB 2.0.4 line, with phpBB linked to www.phpbb.com. If you refuse
+	to include even this then support on our forums may be affected. 
+
+	The phpBB Group : 2002
+// -->
+Powered by <a  target="_phpbb" class="copyright">phpBB</a> 2.0.4 &copy; 2001, 2002 phpBB Group<br /></span></div>
+		</td>
+	</tr>
+</table>
+
+</body>
+</html>

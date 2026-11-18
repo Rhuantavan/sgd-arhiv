@@ -276,13 +276,13 @@ input.liteoption {
   <tr>
 	<td align="left" valign="bottom" nowrap="nowrap">&nbsp;</td>
 	<td align="left" valign="middle" width="100%"><span class="nav">&nbsp;&nbsp;&nbsp;<a href="index.html" class="nav">SloGameDev.net seznam forumov</a>
-	  -> <a href="forum-1.html" class="nav">Splošno Programiranje</a></span></td>
+	  -> <a href="forum-52.html" class="nav">Izdelovanje iger</a></span></td>
   </tr>
 </table>
 
 <table class="forumline" width="100%" cellspacing="1" cellpadding="3" border="0">
 	<tr align="right">
-		<td class="catHead" colspan="2" height="28"><span class="nav"><a href="topic-732.html" class="nav">Prejšnja tema</a> :: <a href="topic-752.html" class="nav">Naslednja tema</a> &nbsp;</span></td>
+		<td class="catHead" colspan="2" height="28"><span class="nav"><a href="topic-388.html" class="nav">Prejšnja tema</a> :: <a href="topic-736.html" class="nav">Naslednja tema</a> &nbsp;</span></td>
 	</tr>
 	
 	<tr>
@@ -291,7 +291,7 @@ input.liteoption {
 	</tr>
 	
 	<tr>
-		<td width="150" align="left" valign="top" class="row1"><span class="name"><a name="8420"></a><b>Shinobi</b></span><br /><span class="postdetails">inštruktor<br /><img src="images/ranks/sgd-4.gif" alt="inštruktor" title="inštruktor" border="0" /><br /><img src="images/avatars/d5fd66913fcf278e24a0c.gif" alt="" border="0" /><br /><br />Pridružen: 15. maj 2003 ob 18:04<br />objav: 257<br />Kraj: Maribor</span><br /></td>
+		<td width="150" align="left" valign="top" class="row1"><span class="name"><a name="8420"></a><b>Shinobi</b></span><br /><span class="postdetails">mojster<br /><img src="images/ranks/sgd-5.gif" alt="mojster" title="mojster" border="0" /><br /><img src="images/avatars/d5fd66913fcf278e24a0c.gif" alt="" border="0" /><br /><br />Pridružen: 15. maj 2003 ob 18:04<br />objav: 491<br />Kraj: Maribor</span><br /></td>
 		<td class="row1" width="100%" height="28" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
 			<tr>
 				<td colspan="2" width="100%">
@@ -333,43 +333,30 @@ Po nekaj tedenskih raziskavah SGI (Sillicon Graphics) dokumentov, sem naletel na
 	<tr>
 <br />
 	  <td class="code">
-
 <br />
 class CStudent &#123;
-
 <br />
 protected&#58;
-
 <br />
-&nbsp;  static int iSteviloStudentov;
-
+   static int iSteviloStudentov;
 <br />
-
 
 <br />
 public&#58;
-
 <br />
-&nbsp;  CStudent&#40;&#41; &#123; iSteviloStudentov++; &#125;
-
+   CStudent&#40;&#41; &#123; iSteviloStudentov++; &#125;
 <br />
-&nbsp;  virutal ~CStudent&#40;&#41; &#123; iSteviloStudentov--; &#125;
-
+   virutal ~CStudent&#40;&#41; &#123; iSteviloStudentov--; &#125;
 <br />
 
-
 <br />
-&nbsp;  int getSteviloStudentov&#40;&#41; &#123; return iSteviloStudentov; &#125;
-
+   int getSteviloStudentov&#40;&#41; &#123; return iSteviloStudentov; &#125;
 <br />
 &#125;
-
 <br />
-
 
 <br />
 int CStudent&#58;&#58;iSteviloStudentov = 0
-
 <br />
 </td>
 <br />
@@ -378,10 +365,8 @@ int CStudent&#58;&#58;iSteviloStudentov = 0
 </table>
 <br />
 <span class="postbody">
-
 <br />
 Zgoraj navedena koda bo ob vsaki novi kreaciji študenta povečala število študentov, in ob vsakem destruktorju to tudi zmanjšala. Zatorej bo npr:
-
 <br />
 </span>
 <br />
@@ -396,28 +381,20 @@ Zgoraj navedena koda bo ob vsaki novi kreaciji študenta povečala število štu
 	<tr>
 <br />
 	  <td class="code">
-
 <br />
 CStudent *a = new CStudent&#40;&#41;;
-
 <br />
 CStudent *b = new CStudent&#40;&#41;;
-
 <br />
 CStudent *c = new CStudent&#40;&#41;;
-
 <br />
-
 
 <br />
 cout &lt;&lt; CStudent&#58;&#58;getSteviloStudentov&#40;&#41; &lt;&lt; endl;
-
 <br />
 delete b;
-
 <br />
 cout &lt;&lt; CStudent&#58;&#58;getSteviloStudentov&#40;&#41; &lt;&lt; endl;
-
 <br />
 </td>
 <br />
@@ -426,67 +403,46 @@ cout &lt;&lt; CStudent&#58;&#58;getSteviloStudentov&#40;&#41; &lt;&lt; endl;
 </table>
 <br />
 <span class="postbody">
-
 <br />
-
 
 <br />
 v prvi vrstici vrnilo 3 v drugi pa 2 (enega studenta smo zbrisali). Problematika, ki se je tukaj pojavila je bila seveda, kaj pa če imaš 507 študentov, pa bi rad dosegel natančno študenta 201 s tem da nimaš reference nanj? Zadeva se je zdela dokaj kompleksna, je pa zelo lahko rešljiva. Vse kaj potrebujemo je dodaten Class ki je neke vrste seznam kazalcev. 
-
 <br />
-
 
 <br />
 Da ne bom preveč palamudil (dajmo mu ime CSeznam):
-
 <br />
 - ta razred ne rabi nobene statične metode
-
 <br />
 - mora imeti vsaj metodo add(void* p), katera na naslednje prosto mesto v seznamu kazalcev shrani p
-
 <br />
 - da ne bom komplicral, vsak element ki se doda (add) se ve njegova številka
-
 <br />
 - funkcijo void* get(int iElement) { return seznam_kazalcev[i]; }
-
 <br />
 - debug metodo dump(), ki izpise stevilo kazalcev in njihove naslove
-
 <br />
 - hja dojeli ste, če bi metoda Add imela še (char* pIme) bi naš seznam celo vedel, kako smo študenta poimenovali
-
 <br />
-
 
 <br />
 Okej do tukaj je vse okej. S tistimi stringi ni treba komplicirat, je pa debug dosti lepši npr:
-
 <br />
 1. Ales 0xFFFF
-
 <br />
 2. Asmer 0xEFE
-
 <br />
-
 
 <br />
 kot pa:
-
 <br />
 1. 0xFFAA
-
 <br />
 2. 0xAAEF
-
 <br />
-
 
 <br />
 nema veze, ta class imamo. Ni potrebno več komplicirati. Zdaj pa dejanska rešitev problema. Našemu CStudentu dodajmo public spremenljivko:
-
 <br />
 </span>
 <br />
@@ -501,13 +457,10 @@ nema veze, ta class imamo. Ni potrebno več komplicirati. Zdaj pa dejanska reši
 	<tr>
 <br />
 	  <td class="code">
-
 <br />
 public&#58;
-
 <br />
 static CSeznam* seznamStudentov;
-
 <br />
 </td>
 <br />
@@ -516,16 +469,12 @@ static CSeznam* seznamStudentov;
 </table>
 <br />
 <span class="postbody">
-
 <br />
-
 
 <br />
 Sedaj pa <span style="font-weight: bold">Tricky</span> part:
-
 <br />
 seznamStudentov se ne bo inicializiral sam, tega bomo mi:
-
 <br />
 </span>
 <br />
@@ -540,22 +489,16 @@ seznamStudentov se ne bo inicializiral sam, tega bomo mi:
 	<tr>
 <br />
 	  <td class="code">
-
 <br />
 CSeznam* CStudent&#58;&#58;seznamStudentov;
-
 <br />
-
 
 <br />
 void main&#40;&#41;
-
 <br />
 &#123;
-
 <br />
 CStudent&#58;&#58;seznamStudentov = new CSeznam&#40;&#41;
-
 <br />
 </td>
 <br />
@@ -564,10 +507,8 @@ CStudent&#58;&#58;seznamStudentov = new CSeznam&#40;&#41;
 </table>
 <br />
 <span class="postbody">
-
 <br />
 Okej, zdaj imamo seznam, nihče pa ga še ne uporablja. Sedaj lahko v konstruktor studenta damo naslednjo vrstico:
-
 <br />
 </span>
 <br />
@@ -582,13 +523,10 @@ Okej, zdaj imamo seznam, nihče pa ga še ne uporablja. Sedaj lahko v konstrukto
 	<tr>
 <br />
 	  <td class="code">
-
 <br />
 public&#58;
-
 <br />
 CStudent&#40;&#41; &#123; seznamStudentov-&gt;Add&#40; &#40;CStudent*&#41; this &#41;; &#125;
-
 <br />
 </td>
 <br />
@@ -597,10 +535,8 @@ CStudent&#40;&#41; &#123; seznamStudentov-&gt;Add&#40; &#40;CStudent*&#41; this 
 </table>
 <br />
 <span class="postbody">
-
 <br />
 Hja, komur se še ni posvetilu, pravkar smo dali v seznam samega sebe z metodo "this", ki sama po sebi ni dovoljena za static metode, lahko pa jo castamo. In tukaj je ves trik. Sedaj pa še samo metoda  NajdiStudenta:
-
 <br />
 </span>
 <br />
@@ -615,25 +551,18 @@ Hja, komur se še ni posvetilu, pravkar smo dali v seznam samega sebe z metodo "
 	<tr>
 <br />
 	  <td class="code">
-
 <br />
 // v razredu student, dajmo public metodo, da bo lazje&#58;
-
 <br />
 public&#58;
-
 <br />
 static CStudent* NajdiStudentaPoVrsti&#40;int iVnos&#41;
-
 <br />
 &#123;
-
 <br />
 return &#40;CStudent*&#41;seznamStudentov-&gt;get&#40;iVnos&#41;;
-
 <br />
 &#125;
-
 <br />
 </td>
 <br />
@@ -642,13 +571,10 @@ return &#40;CStudent*&#41;seznamStudentov-&gt;get&#40;iVnos&#41;;
 </table>
 <br />
 <span class="postbody">
-
 <br />
-
 
 <br />
 sedaj pa lahko v mainu po vsej salati, bilo kje rečete naslednje:
-
 <br />
 </span>
 <br />
@@ -663,13 +589,10 @@ sedaj pa lahko v mainu po vsej salati, bilo kje rečete naslednje:
 	<tr>
 <br />
 	  <td class="code">
-
 <br />
-.... bilo kje v mainu ....
-
+&#46;&#46;&#46;&#46; bilo kje v mainu &#46;&#46;&#46;&#46;
 <br />
-CStudent* pIscemo =&nbsp; CStudent&#58;&#58;NajdiStudentaPoVrsti&#40;201&#41;;
-
+CStudent* pIscemo =  CStudent&#58;&#58;NajdiStudentaPoVrsti&#40;201&#41;;
 <br />
 </td>
 <br />
@@ -718,7 +641,7 @@ Shinobi aka Slim Shady</span><span class="gensmall"></span></td>
 	</tr>
 	
 	<tr>
-		<td width="150" align="left" valign="top" class="row2"><span class="name"><a name="8423"></a><b>CWIZO</b></span><br /><span class="postdetails">SGD Admin<br /><img src="images/ranks/sgd-admin.gif" alt="SGD Admin" title="SGD Admin" border="0" /><br /><img src="images/avatars/c2f9c6313f016e6cd131f.gif" alt="" border="0" /><br /><br />Pridružen: 05. maj 2003 ob 20:36<br />objav: 955<br />Kraj: WriteLine(CWIZO.Location);</span><br /></td>
+		<td width="150" align="left" valign="top" class="row2"><span class="name"><a name="8423"></a><b>CWIZO</b></span><br /><span class="postdetails">SGD Moderator<br /><img src="images/ranks/sgd-mod.gif" alt="SGD Moderator" title="SGD Moderator" border="0" /><br /><img src="images/avatars/c2f9c6313f016e6cd131f.gif" alt="" border="0" /><br /><br />Pridružen: 05. maj 2003 ob 20:36<br />objav: 914<br />Kraj: WriteLine(CWIZO.Location);</span><br /></td>
 		<td class="row2" width="100%" height="28" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
 			<tr>
 				<td colspan="2" width="100%">
@@ -738,7 +661,7 @@ Shinobi aka Slim Shady</span><span class="gensmall"></span></td>
 				<td colspan="2"><hr /></td>
 			</tr>
 			<tr>
-				<td colspan="2"><span class="postbody">System.Collections has it all <img src="images/smiles/icon_lol.gif" alt="icon_lol.gif" border="0" /><br />_________________<br /><a  target="_blank" class="postlink">CWIZO.SloGameDev.net</a>
+				<td colspan="2"><span class="postbody">System.Collections has it all <img src="images/smiles/icon_lol.gif" alt=":lol:" border="0" /><br />_________________<br /><a  target="_blank" class="postlink">Jan Hančič</a>
 
 <br />
 ------
@@ -764,7 +687,7 @@ Kaj reče podedovan razred v C#u svojemu staršu?
 	</tr>
 	
 	<tr>
-		<td width="150" align="left" valign="top" class="row1"><span class="name"><a name="8433"></a><b>Kavan</b></span><br /><span class="postdetails">inštruktor<br /><img src="images/ranks/sgd-4.gif" alt="inštruktor" title="inštruktor" border="0" /><br /><br /><br />Pridružen: 10. jan 2003 ob 12:57<br />objav: 363<br />Kraj: Los Angeles</span><br /></td>
+		<td width="150" align="left" valign="top" class="row1"><span class="name"><a name="8433"></a><b>Kavan</b></span><br /><span class="postdetails">inštruktor<br /><img src="images/ranks/sgd-4.gif" alt="inštruktor" title="inštruktor" border="0" /><br /><br /><br />Pridružen: 10. jan 2003 ob 12:57<br />objav: 314<br />Kraj: Los Angeles</span><br /></td>
 		<td class="row1" width="100%" height="28" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
 			<tr>
 				<td colspan="2" width="100%">
@@ -796,7 +719,7 @@ Kaj reče podedovan razred v C#u svojemu staršu?
 <br />
 	<tr>
 <br />
-	  <td class="quote">System.Collections has it all <img src="images/smiles/icon_lol.gif" alt="icon_lol.gif" border="0" /></td>
+	  <td class="quote">System.Collections has it all <img src="images/smiles/icon_lol.gif" alt=":lol:" border="0" /></td>
 <br />
 	</tr>
 <br />
@@ -811,7 +734,7 @@ Kaj reče podedovan razred v C#u svojemu staršu?
 Kako hudo res.<br />_________________<br />
 
 <br />
-<span style="font-size: 9px; line-height: normal"><a  target="_blank" class="postlink">www.3dlevel.com</a></span></span><span class="gensmall"></span></td>
+<span style="font-size: 75%; line-height: normal"><a  target="_blank" class="postlink">http&#58;//www&#46;3dlevel&#46;com</a></span></span><span class="gensmall"></span></td>
 			</tr>
 		</table></td>
 	</tr>
@@ -828,7 +751,7 @@ Kako hudo res.<br />_________________<br />
 	</tr>
 	
 	<tr>
-		<td width="150" align="left" valign="top" class="row2"><span class="name"><a name="8435"></a><b>snake</b></span><br /><span class="postdetails">expert<br /><img src="images/ranks/sgd-6.gif" alt="expert" title="expert" border="0" /><br /><img src="images/avatars/c14dbb55415c469152089.gif" alt="" border="0" /><br /><br />Pridružen: 10. jan 2003 ob 08:28<br />objav: 795<br />Kraj: NULL</span><br /></td>
+		<td width="150" align="left" valign="top" class="row2"><span class="name"><a name="8435"></a><b>snake</b></span><br /><span class="postdetails">expert<br /><img src="images/ranks/sgd-6.gif" alt="expert" title="expert" border="0" /><br /><img src="images/avatars/c14dbb55415c469152089.gif" alt="" border="0" /><br /><br />Pridružen: 10. jan 2003 ob 08:28<br />objav: 782<br />Kraj: NULL</span><br /></td>
 		<td class="row2" width="100%" height="28" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
 			<tr>
 				<td colspan="2" width="100%">
@@ -848,19 +771,19 @@ Kako hudo res.<br />_________________<br />
 				<td colspan="2"><hr /></td>
 			</tr>
 			<tr>
-				<td colspan="2"><span class="postbody">mwahaha.... .NET p0wah! <img src="images/smiles/icon_razz.gif" alt="icon_razz.gif" border="0" />
+				<td colspan="2"><span class="postbody">mwahaha.... .NET p0wah! <img src="images/smiles/icon_razz.gif" alt=":P" border="0" />
 
 <br />
 
 
 <br />
-Drugace pa... good research, Shinobi <img src="images/smiles/icon_wink.gif" alt="icon_wink.gif" border="0" />
+Drugace pa... good research, Shinobi <img src="images/smiles/icon_wink.gif" alt=";)" border="0" />
 
 <br />
 
 
 <br />
-btw. CWIZO... "Kraj" pod tvojim avatarjem ima verjetno napako... moglo bi biti brez return, ampak samo this.Location. <img src="images/smiles/icon_razz.gif" alt="icon_razz.gif" border="0" /></span><span class="gensmall"></span></td>
+btw. CWIZO... "Kraj" pod tvojim avatarjem ima verjetno napako... moglo bi biti brez return, ampak samo this.Location. <img src="images/smiles/icon_razz.gif" alt=":P" border="0" /></span><span class="gensmall"></span></td>
 			</tr>
 		</table></td>
 	</tr>
@@ -868,7 +791,7 @@ btw. CWIZO... "Kraj" pod tvojim avatarjem ima verjetno napako... moglo bi biti b
 		<td class="row2" width="150" align="left" valign="middle"><span class="nav"><a href="#top" class="nav">Nazaj na vrh</a></span></td>
 		<td class="row2" width="100%" height="28" valign="bottom" nowrap="nowrap"><table cellspacing="0" cellpadding="0" border="0" height="18" width="18">
 			<tr>
-				<td valign="middle" nowrap="nowrap"><a href="profile-10.html"><img src="templates/SGD2/images/lang_slovenian/icon_profile.gif" alt="Poglej uporabnikov profil" title="Poglej uporabnikov profil" border="0" /></a> <a  target="_userwww"><img src="templates/SGD2/images/lang_slovenian/icon_www.gif" alt="Obišči avtorjevo spletno stran" title="Obišči avtorjevo spletno stran" border="0" /></a></td>
+				<td valign="middle" nowrap="nowrap"><a href="profile-10.html"><img src="templates/SGD2/images/lang_slovenian/icon_profile.gif" alt="Poglej uporabnikov profil" title="Poglej uporabnikov profil" border="0" /></a> </td>
 			</tr>
 		</table></td>
 	</tr>
@@ -877,7 +800,7 @@ btw. CWIZO... "Kraj" pod tvojim avatarjem ima verjetno napako... moglo bi biti b
 	</tr>
 	
 	<tr>
-		<td width="150" align="left" valign="top" class="row1"><span class="name"><a name="8436"></a><b>CWIZO</b></span><br /><span class="postdetails">SGD Admin<br /><img src="images/ranks/sgd-admin.gif" alt="SGD Admin" title="SGD Admin" border="0" /><br /><img src="images/avatars/c2f9c6313f016e6cd131f.gif" alt="" border="0" /><br /><br />Pridružen: 05. maj 2003 ob 20:36<br />objav: 955<br />Kraj: WriteLine(CWIZO.Location);</span><br /></td>
+		<td width="150" align="left" valign="top" class="row1"><span class="name"><a name="8436"></a><b>CWIZO</b></span><br /><span class="postdetails">SGD Moderator<br /><img src="images/ranks/sgd-mod.gif" alt="SGD Moderator" title="SGD Moderator" border="0" /><br /><img src="images/avatars/c2f9c6313f016e6cd131f.gif" alt="" border="0" /><br /><br />Pridružen: 05. maj 2003 ob 20:36<br />objav: 914<br />Kraj: WriteLine(CWIZO.Location);</span><br /></td>
 		<td class="row1" width="100%" height="28" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
 			<tr>
 				<td colspan="2" width="100%">
@@ -897,10 +820,10 @@ btw. CWIZO... "Kraj" pod tvojim avatarjem ima verjetno napako... moglo bi biti b
 				<td colspan="2"><hr /></td>
 			</tr>
 			<tr>
-				<td colspan="2"><span class="postbody">Ja odvisno kako vzameš <img src="images/smiles/icon_smile.gif" alt="icon_smile.gif" border="0" />
+				<td colspan="2"><span class="postbody">Ja odvisno kako vzameš <img src="images/smiles/icon_smile.gif" alt=":)" border="0" />
 
 <br />
-Jest sem predpostavil da, čaki ... hmmm, maybe u are right ... bom popravil <img src="images/smiles/icon_smile.gif" alt="icon_smile.gif" border="0" /><br />_________________<br /><a  target="_blank" class="postlink">CWIZO.SloGameDev.net</a>
+Jest sem predpostavil da, čaki ... hmmm, maybe u are right ... bom popravil <img src="images/smiles/icon_smile.gif" alt=":)" border="0" /><br />_________________<br /><a  target="_blank" class="postlink">Jan Hančič</a>
 
 <br />
 ------
@@ -934,7 +857,7 @@ Kaj reče podedovan razred v C#u svojemu staršu?
   <tr>
 	<td align="left" valign="middle" nowrap="nowrap">&nbsp;</td>
 	<td align="left" valign="middle" width="100%"><span class="nav">&nbsp;&nbsp;&nbsp;<a href="index.html" class="nav">SloGameDev.net seznam forumov</a>
-	  -> <a href="forum-1.html" class="nav">Splošno Programiranje</a></span></td>
+	  -> <a href="forum-52.html" class="nav">Izdelovanje iger</a></span></td>
 	<td align="right" valign="top" nowrap="nowrap"><span class="gensmall">Časovni pas (GMT +2:00 uri) Slovenija, poletni čas</span><br /><span class="nav"></span>
 	  </td>
   </tr>
@@ -950,7 +873,7 @@ Kaj reče podedovan razred v C#u svojemu staršu?
   </tr>
 </table>
 
-<div align="center"><span class="copyright"><br />Arhiv stanja na dan 13. 2. 2006 &mdash; samo za branje.<br />
+<div align="center"><span class="copyright"><br />Arhiv &mdash; samo za branje.<br />
 <!--
 	We request you retain the full copyright notice below including the link to www.phpbb.com.
 	This not only gives respect to the large amount of time given freely by the developers

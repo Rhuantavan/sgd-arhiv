@@ -276,7 +276,7 @@ input.liteoption {
   <tr>
 	<td align="left" valign="bottom" nowrap="nowrap">&nbsp;</td>
 	<td align="left" valign="middle" width="100%"><span class="nav">&nbsp;&nbsp;&nbsp;<a href="index.html" class="nav">SloGameDev.net seznam forumov</a>
-	  -> <a href="forum-10.html" class="nav">Za Začetnike</a></span></td>
+	  -> <a href="forum-49.html" class="nav">Začetniki</a></span></td>
   </tr>
 </table>
 
@@ -291,7 +291,7 @@ input.liteoption {
 	</tr>
 	
 	<tr>
-		<td width="150" align="left" valign="top" class="row1"><span class="name"><a name="3724"></a><b>Mitja</b></span><br /><span class="postdetails">novinec<br /><img src="images/ranks/sgd-0.gif" alt="novinec" title="novinec" border="0" /><br /><img src="images/avatars/a4086c8c42d34ff76440c.gif" alt="" border="0" /><br /><br />Pridružen: 22. sep 2003 ob 08:28<br />objav: 19<br /></span><br /></td>
+		<td width="150" align="left" valign="top" class="row1"><span class="name"><a name="3724"></a><b>Mitja</b></span><br /><span class="postdetails">novinec<br /><img src="images/ranks/sgd-0.gif" alt="novinec" title="novinec" border="0" /><br /><img src="images/avatars/a4086c8c42d34ff76440c.gif" alt="" border="0" /><br /><br />Pridružen: 22. sep 2003 ob 08:28<br />objav: 20<br /></span><br /></td>
 		<td class="row1" width="100%" height="28" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
 			<tr>
 				<td colspan="2" width="100%">
@@ -338,79 +338,54 @@ Header, ki ga uporabim pri DLL in klicatelju
 <br />
 	<tr>
 <br />
-	  <td class="code">//text.h-----------------------------
-
+	  <td class="code">//text&#46;h-----------------------------
 <br />
 #ifndef _TEXT_H_
-
 <br />
 #define _TEXT_H_
-
 <br />
-
 
 <br />
 #if BUILDING_DLL
-
 <br />
 #define DLLIMPORT extern &quot;C&quot; __declspec &#40;dllexport&#41;
-
 <br />
 #else /* Not BUILDING_DLL */
-
 <br />
 #define DLLIMPORT __declspec &#40;dllimport&#41;
-
 <br />
 #endif /* Not BUILDING_DLL */
-
 <br />
-
 
 <br />
 class DLLIMPORT DLLClass
-
 <br />
 &#123;
-
 <br />
-&nbsp; public&#58;
-
+  public&#58;
 <br />
-&nbsp; 
-
+  
 <br />
-&nbsp; &nbsp; DLLClass&#40;&#41;;
-
+    DLLClass&#40;&#41;;
 <br />
-&nbsp; &nbsp; 
-
+    
 <br />
-&nbsp; &nbsp; void text1&#40;&#41;;&nbsp; &nbsp; 
-
+    void text1&#40;&#41;;    
 <br />
-&nbsp; &nbsp; void text2&#40;&#41;;
-
+    void text2&#40;&#41;;
 <br />
-&nbsp; &nbsp; 
-
+    
 <br />
-&nbsp; &nbsp; virtual ~DLLClass&#40;void&#41;;
-
+    virtual ~DLLClass&#40;void&#41;;
 <br />
 
-
 <br />
-&nbsp; private&#58;
-
+  private&#58;
 <br />
-
 
 <br />
 &#125;;
-
 <br />
-
 
 <br />
 #endif // _TEXT_H</td>
@@ -420,16 +395,12 @@ class DLLIMPORT DLLClass
 </table>
 <br />
 <span class="postbody">
-
 <br />
 
-
 <br />
-
 
 <br />
 Definicije v DLL
-
 <br />
 </span>
 <br />
@@ -443,65 +414,45 @@ Definicije v DLL
 <br />
 	<tr>
 <br />
-	  <td class="code">//text.dll-----------------------------
-
+	  <td class="code">//text&#46;dll-----------------------------
 <br />
 #include &lt;iostream&gt;
-
 <br />
-#include &lt;windows.h&gt;
-
+#include &lt;windows&#46;h&gt;
 <br />
-#include &quot;classdll.h&quot;
-
+#include &quot;classdll&#46;h&quot;
 <br />
-
 
 <br />
 using namespace std;
-
 <br />
-
 
 <br />
 void DLLClass&#58;&#58;text1&#40;&#41;
-
 <br />
 &#123;
-
 <br />
 cout &lt;&lt; &quot;Hello from text1!&quot;;
-
 <br />
 &#125;
-
 <br />
-
 
 <br />
 void DLLClass&#58;&#58;text2&#40;&#41;
-
 <br />
 &#123;
-
 <br />
 cout &lt;&lt; &quot;Hello from text2!&quot;;
-
 <br />
 &#125;
-
 <br />
-
 
 <br />
 extern &quot;C&quot; __declspec &#40;dllexport&#41; void text3&#40;&#41;
-
 <br />
 &#123;
-
 <br />
 cout &lt;&lt; &quot;Hello from text3 DLL&#58;&#41;&quot;;
-
 <br />
 &#125;</td>
 <br />
@@ -510,13 +461,10 @@ cout &lt;&lt; &quot;Hello from text3 DLL&#58;&#41;&quot;;
 </table>
 <br />
 <span class="postbody">
-
 <br />
-
 
 <br />
 Klicatelj - caller, host
-
 <br />
 </span>
 <br />
@@ -530,164 +478,111 @@ Klicatelj - caller, host
 <br />
 	<tr>
 <br />
-	  <td class="code">//text.exe-----------------------------
-
+	  <td class="code">//text&#46;exe-----------------------------
 <br />
 #include &lt;iostream&gt;
-
 <br />
-#include &lt;stdlib.h&gt;
-
+#include &lt;stdlib&#46;h&gt;
 <br />
 
-
 <br />
-#include &lt;windows.h&gt;
-
+#include &lt;windows&#46;h&gt;
 <br />
 #include &lt;iostream&gt;
-
 <br />
-#include &lt;stdio.h&gt;
-
+#include &lt;stdio&#46;h&gt;
 <br />
-#include &lt;conio.h&gt;
-
+#include &lt;conio&#46;h&gt;
 <br />
-#include &quot;classdll.h&quot;
-
+#include &quot;classdll&#46;h&quot;
 <br />
 
-
 <br />
-
 
 <br />
 using namespace std;
-
 <br />
-
 
 <br />
 int main&#40;&#41;
-
 <br />
 &#123;
-
 <br />
-
 
 <br />
 HINSTANCE gLibMyDLL = NULL;
-
 <br />
-
 
 <br />
 typedef void &#40;*tfunc&#41;&#40;&#41;;
-
 <br />
 tfunc textclass; 
-
 <br />
 
-
 <br />
-gLibMyDLL = LoadLibrary&#40;&quot;text.dll&quot;&#41;;
-
+gLibMyDLL = LoadLibrary&#40;&quot;text&#46;dll&quot;&#41;;
 <br />
-
 
 <br />
 if &#40;gLibMyDLL == NULL&#41;
-
 <br />
 &#123;
-
 <br />
-&nbsp; &nbsp; cout &lt;&lt; &quot;gLibMyDLL is empty&quot; &lt;&lt; endl;
-
+    cout &lt;&lt; &quot;gLibMyDLL is empty&quot; &lt;&lt; endl;
 <br />
-&nbsp; &nbsp; system&#40;&quot;PAUSE&quot;&#41;;
-
+    system&#40;&quot;PAUSE&quot;&#41;;
 <br />
 &#125;
-
 <br />
 else
-
 <br />
 &#123;
-
 <br />
-&nbsp; &nbsp; cout &lt;&lt; &quot;gLibMyDLL is loaded&quot; &lt;&lt; endl;
-
+    cout &lt;&lt; &quot;gLibMyDLL is loaded&quot; &lt;&lt; endl;
 <br />
-&nbsp; &nbsp; system&#40;&quot;PAUSE&quot;&#41;;
-
+    system&#40;&quot;PAUSE&quot;&#41;;
 <br />
 &#125;
-
 <br />
-
 
 <br />
 textclass = &#40;tfunc&#41;GetProcAddress&#40;gLibMyDLL, &quot;DLLClass&#58;&#58;text1&quot;&#41;; // ? pravilna sintaksa ?
-
 <br />
-
 
 <br />
 if &#40;textclass == NULL&#41;
-
 <br />
 &#123;
-
 <br />
-&nbsp; &nbsp; cout &lt;&lt; &quot;textclass is empty&quot; &lt;&lt; endl;
-
+    cout &lt;&lt; &quot;textclass is empty&quot; &lt;&lt; endl;
 <br />
-&nbsp; &nbsp; system&#40;&quot;PAUSE&quot;&#41;;
-
+    system&#40;&quot;PAUSE&quot;&#41;;
 <br />
 &#125;
-
 <br />
 else
-
 <br />
 &#123;
-
 <br />
-&nbsp; &nbsp; cout &lt;&lt; &quot;textclass is loaded&quot; &lt;&lt; endl;
-
+    cout &lt;&lt; &quot;textclass is loaded&quot; &lt;&lt; endl;
 <br />
-&nbsp; &nbsp; system&#40;&quot;PAUSE&quot;&#41;;
-
+    system&#40;&quot;PAUSE&quot;&#41;;
 <br />
 &#125;
-
 <br />
 
-
 <br />
-
 
 <br />
 textclass&#40;&#41;;
-
 <br />
 getch&#40;&#41;;
-
 <br />
 
-
 <br />
-
 
 <br />
 return 0;
-
 <br />
 &#125;</td>
 <br />
@@ -727,7 +622,7 @@ Mitja</span><span class="gensmall"></span></td>
 		<td class="row1" width="150" align="left" valign="middle"><span class="nav"><a href="#top" class="nav">Nazaj na vrh</a></span></td>
 		<td class="row1" width="100%" height="28" valign="bottom" nowrap="nowrap"><table cellspacing="0" cellpadding="0" border="0" height="18" width="18">
 			<tr>
-				<td valign="middle" nowrap="nowrap"><a href="profile-104.html"><img src="templates/SGD2/images/lang_slovenian/icon_profile.gif" alt="Poglej uporabnikov profil" title="Poglej uporabnikov profil" border="0" /></a> <a  target="_userwww"><img src="templates/SGD2/images/lang_slovenian/icon_www.gif" alt="Obišči avtorjevo spletno stran" title="Obišči avtorjevo spletno stran" border="0" /></a></td>
+				<td valign="middle" nowrap="nowrap"><a href="profile-104.html"><img src="templates/SGD2/images/lang_slovenian/icon_profile.gif" alt="Poglej uporabnikov profil" title="Poglej uporabnikov profil" border="0" /></a> </td>
 			</tr>
 		</table></td>
 	</tr>
@@ -736,7 +631,7 @@ Mitja</span><span class="gensmall"></span></td>
 	</tr>
 	
 	<tr>
-		<td width="150" align="left" valign="top" class="row2"><span class="name"><a name="3725"></a><b>vesoljc</b></span><br /><span class="postdetails">inštruktor<br /><img src="images/ranks/sgd-4.gif" alt="inštruktor" title="inštruktor" border="0" /><br /><img src="images/avatars/c1bdb98c3fb49342927df.jpg" alt="" border="0" /><br /><br />Pridružen: 18. feb 2003 ob 22:16<br />objav: 297<br />Kraj: Brezovica, homeland of the mighty Beawer Blasters</span><br /></td>
+		<td width="150" align="left" valign="top" class="row2"><span class="name"><a name="3725"></a><b>vesoljc</b></span><br /><span class="postdetails">inštruktor<br /><img src="images/ranks/sgd-4.gif" alt="inštruktor" title="inštruktor" border="0" /><br /><img src="images/avatars/c1bdb98c3fb49342927df.jpg" alt="" border="0" /><br /><br />Pridružen: 18. feb 2003 ob 22:16<br />objav: 291<br />Kraj: Brezovica, homeland of the mighty Beawer Blasters</span><br /></td>
 		<td class="row2" width="100%" height="28" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
 			<tr>
 				<td colspan="2" width="100%">
@@ -869,7 +764,7 @@ ko smart_ptr "pade" ven iz funkcije/scope-a, se avtomatsko izbiše tudi alociran
 	</tr>
 	
 	<tr>
-		<td width="150" align="left" valign="top" class="row1"><span class="name"><a name="3726"></a><b>vesoljc</b></span><br /><span class="postdetails">inštruktor<br /><img src="images/ranks/sgd-4.gif" alt="inštruktor" title="inštruktor" border="0" /><br /><img src="images/avatars/c1bdb98c3fb49342927df.jpg" alt="" border="0" /><br /><br />Pridružen: 18. feb 2003 ob 22:16<br />objav: 297<br />Kraj: Brezovica, homeland of the mighty Beawer Blasters</span><br /></td>
+		<td width="150" align="left" valign="top" class="row1"><span class="name"><a name="3726"></a><b>vesoljc</b></span><br /><span class="postdetails">inštruktor<br /><img src="images/ranks/sgd-4.gif" alt="inštruktor" title="inštruktor" border="0" /><br /><img src="images/avatars/c1bdb98c3fb49342927df.jpg" alt="" border="0" /><br /><br />Pridružen: 18. feb 2003 ob 22:16<br />objav: 291<br />Kraj: Brezovica, homeland of the mighty Beawer Blasters</span><br /></td>
 		<td class="row1" width="100%" height="28" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
 			<tr>
 				<td colspan="2" width="100%">
@@ -915,7 +810,7 @@ ko smart_ptr "pade" ven iz funkcije/scope-a, se avtomatsko izbiše tudi alociran
 	</tr>
 	
 	<tr>
-		<td width="150" align="left" valign="top" class="row2"><span class="name"><a name="3727"></a><b>Mitja</b></span><br /><span class="postdetails">novinec<br /><img src="images/ranks/sgd-0.gif" alt="novinec" title="novinec" border="0" /><br /><img src="images/avatars/a4086c8c42d34ff76440c.gif" alt="" border="0" /><br /><br />Pridružen: 22. sep 2003 ob 08:28<br />objav: 19<br /></span><br /></td>
+		<td width="150" align="left" valign="top" class="row2"><span class="name"><a name="3727"></a><b>Mitja</b></span><br /><span class="postdetails">novinec<br /><img src="images/ranks/sgd-0.gif" alt="novinec" title="novinec" border="0" /><br /><img src="images/avatars/a4086c8c42d34ff76440c.gif" alt="" border="0" /><br /><br />Pridružen: 22. sep 2003 ob 08:28<br />objav: 20<br /></span><br /></td>
 		<td class="row2" width="100%" height="28" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
 			<tr>
 				<td colspan="2" width="100%">
@@ -935,7 +830,7 @@ ko smart_ptr "pade" ven iz funkcije/scope-a, se avtomatsko izbiše tudi alociran
 				<td colspan="2"><hr /></td>
 			</tr>
 			<tr>
-				<td colspan="2"><span class="postbody">najlepša hvala, take informacije je težko dobit (al pa js ne znam iskat), bom to zdej mal preštudiral... <img src="images/smiles/icon_biggrin.gif" alt="icon_biggrin.gif" border="0" /></span><span class="gensmall"></span></td>
+				<td colspan="2"><span class="postbody">najlepša hvala, take informacije je težko dobit (al pa js ne znam iskat), bom to zdej mal preštudiral... <img src="images/smiles/icon_biggrin.gif" alt=":D" border="0" /></span><span class="gensmall"></span></td>
 			</tr>
 		</table></td>
 	</tr>
@@ -943,7 +838,7 @@ ko smart_ptr "pade" ven iz funkcije/scope-a, se avtomatsko izbiše tudi alociran
 		<td class="row2" width="150" align="left" valign="middle"><span class="nav"><a href="#top" class="nav">Nazaj na vrh</a></span></td>
 		<td class="row2" width="100%" height="28" valign="bottom" nowrap="nowrap"><table cellspacing="0" cellpadding="0" border="0" height="18" width="18">
 			<tr>
-				<td valign="middle" nowrap="nowrap"><a href="profile-104.html"><img src="templates/SGD2/images/lang_slovenian/icon_profile.gif" alt="Poglej uporabnikov profil" title="Poglej uporabnikov profil" border="0" /></a> <a  target="_userwww"><img src="templates/SGD2/images/lang_slovenian/icon_www.gif" alt="Obišči avtorjevo spletno stran" title="Obišči avtorjevo spletno stran" border="0" /></a></td>
+				<td valign="middle" nowrap="nowrap"><a href="profile-104.html"><img src="templates/SGD2/images/lang_slovenian/icon_profile.gif" alt="Poglej uporabnikov profil" title="Poglej uporabnikov profil" border="0" /></a> </td>
 			</tr>
 		</table></td>
 	</tr>
@@ -952,7 +847,7 @@ ko smart_ptr "pade" ven iz funkcije/scope-a, se avtomatsko izbiše tudi alociran
 	</tr>
 	
 	<tr>
-		<td width="150" align="left" valign="top" class="row1"><span class="name"><a name="3747"></a><b>vesoljc</b></span><br /><span class="postdetails">inštruktor<br /><img src="images/ranks/sgd-4.gif" alt="inštruktor" title="inštruktor" border="0" /><br /><img src="images/avatars/c1bdb98c3fb49342927df.jpg" alt="" border="0" /><br /><br />Pridružen: 18. feb 2003 ob 22:16<br />objav: 297<br />Kraj: Brezovica, homeland of the mighty Beawer Blasters</span><br /></td>
+		<td width="150" align="left" valign="top" class="row1"><span class="name"><a name="3747"></a><b>vesoljc</b></span><br /><span class="postdetails">inštruktor<br /><img src="images/ranks/sgd-4.gif" alt="inštruktor" title="inštruktor" border="0" /><br /><img src="images/avatars/c1bdb98c3fb49342927df.jpg" alt="" border="0" /><br /><br />Pridružen: 18. feb 2003 ob 22:16<br />objav: 291<br />Kraj: Brezovica, homeland of the mighty Beawer Blasters</span><br /></td>
 		<td class="row1" width="100%" height="28" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
 			<tr>
 				<td colspan="2" width="100%">
@@ -972,7 +867,7 @@ ko smart_ptr "pade" ven iz funkcije/scope-a, se avtomatsko izbiše tudi alociran
 				<td colspan="2"><hr /></td>
 			</tr>
 			<tr>
-				<td colspan="2"><span class="postbody">da ne boste rekli, da zavajam mladino... <img src="images/smiles/icon_smile.gif" alt="icon_smile.gif" border="0" />
+				<td colspan="2"><span class="postbody">da ne boste rekli, da zavajam mladino... <img src="images/smiles/icon_smile.gif" alt=":)" border="0" />
 
 <br />
 tole mi generira MS VisualC++6, ko rečem new dll project...
@@ -994,43 +889,30 @@ tole mi generira MS VisualC++6, ko rečem new dll project...
 	<tr>
 <br />
 	  <td class="code">
-
 <br />
 #ifdef DLLTEST_EXPORTS
-
 <br />
 #define DLLTEST_API __declspec&#40;dllexport&#41;
-
 <br />
 #else
-
 <br />
 #define DLLTEST_API __declspec&#40;dllimport&#41;
-
 <br />
 #endif
-
 <br />
 
-
 <br />
-// This class is exported from the dllTest.dll
-
+// This class is exported from the dllTest&#46;dll
 <br />
 class DLLTEST_API CDllTest &#123;
-
 <br />
 public&#58;
-
 <br />
-&nbsp; &nbsp;CDllTest&#40;void&#41;;
-
+	CDllTest&#40;void&#41;;
 <br />
-&nbsp; &nbsp;// TODO&#58; add your methods here.
-
+	// TODO&#58; add your methods here&#46;
 <br />
 &#125;;
-
 <br />
 </td>
 <br />
@@ -1044,7 +926,7 @@ public&#58;
 
 
 <br />
-kot kaže se da izvozit class direktno... kako natačno pa dela zadeva mi pa ni jasno in po pravici povedano, me tud ne zanima <img src="images/smiles/icon_smile.gif" alt="icon_smile.gif" border="0" />
+kot kaže se da izvozit class direktno... kako natačno pa dela zadeva mi pa ni jasno in po pravici povedano, me tud ne zanima <img src="images/smiles/icon_smile.gif" alt=":)" border="0" />
 
 <br />
 hmm, verjtno ga nardi kar na svojem stacku...
@@ -1070,7 +952,7 @@ kwazi COM rulz...<br />_________________<br /><span style="font-style: italic">A
 	</tr>
 	
 	<tr>
-		<td width="150" align="left" valign="top" class="row2"><span class="name"><a name="3781"></a><b>Mitja</b></span><br /><span class="postdetails">novinec<br /><img src="images/ranks/sgd-0.gif" alt="novinec" title="novinec" border="0" /><br /><img src="images/avatars/a4086c8c42d34ff76440c.gif" alt="" border="0" /><br /><br />Pridružen: 22. sep 2003 ob 08:28<br />objav: 19<br /></span><br /></td>
+		<td width="150" align="left" valign="top" class="row2"><span class="name"><a name="3781"></a><b>Mitja</b></span><br /><span class="postdetails">novinec<br /><img src="images/ranks/sgd-0.gif" alt="novinec" title="novinec" border="0" /><br /><img src="images/avatars/a4086c8c42d34ff76440c.gif" alt="" border="0" /><br /><br />Pridružen: 22. sep 2003 ob 08:28<br />objav: 20<br /></span><br /></td>
 		<td class="row2" width="100%" height="28" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
 			<tr>
 				<td colspan="2" width="100%">
@@ -1090,7 +972,7 @@ kwazi COM rulz...<br />_________________<br /><span style="font-style: italic">A
 				<td colspan="2"><hr /></td>
 			</tr>
 			<tr>
-				<td colspan="2"><span class="postbody">Še enkrat se zahvaljujem za nasvet, dosti mi je pomagal tudi članek, ki sem ga našel preko povezave na Slo-Techu: <a  target="_blank" class="postlink">http://codeguru.earthweb.com/dll/expclass.shtml</a>.
+				<td colspan="2"><span class="postbody">Še enkrat se zahvaljujem za nasvet, dosti mi je pomagal tudi članek, ki sem ga našel preko povezave na Slo-Techu: <a  target="_blank" class="postlink">http&#58;//codeguru&#46;earthweb&#46;com/dll/expclass&#46;shtml</a>.
 
 <br />
 
@@ -1102,7 +984,7 @@ Poskusil sem prvi način, z virtual function tabelami in dela, ampak ločeno gle
 
 
 <br />
-Datoteke lahko dobite tule: <a  target="_blank" class="postlink">http://earth.prohosting.com/mitjau/slogamedev.zip</a>.
+Datoteke lahko dobite tule: <a  target="_blank" class="postlink">http&#58;//earth&#46;prohosting&#46;com/mitjau/slogamedev&#46;zip</a>.
 
 <br />
 
@@ -1128,7 +1010,7 @@ Mitja</span><span class="gensmall"></span></td>
 		<td class="row2" width="150" align="left" valign="middle"><span class="nav"><a href="#top" class="nav">Nazaj na vrh</a></span></td>
 		<td class="row2" width="100%" height="28" valign="bottom" nowrap="nowrap"><table cellspacing="0" cellpadding="0" border="0" height="18" width="18">
 			<tr>
-				<td valign="middle" nowrap="nowrap"><a href="profile-104.html"><img src="templates/SGD2/images/lang_slovenian/icon_profile.gif" alt="Poglej uporabnikov profil" title="Poglej uporabnikov profil" border="0" /></a> <a  target="_userwww"><img src="templates/SGD2/images/lang_slovenian/icon_www.gif" alt="Obišči avtorjevo spletno stran" title="Obišči avtorjevo spletno stran" border="0" /></a></td>
+				<td valign="middle" nowrap="nowrap"><a href="profile-104.html"><img src="templates/SGD2/images/lang_slovenian/icon_profile.gif" alt="Poglej uporabnikov profil" title="Poglej uporabnikov profil" border="0" /></a> </td>
 			</tr>
 		</table></td>
 	</tr>
@@ -1137,7 +1019,7 @@ Mitja</span><span class="gensmall"></span></td>
 	</tr>
 	
 	<tr>
-		<td width="150" align="left" valign="top" class="row1"><span class="name"><a name="3789"></a><b>Senitel</b></span><br /><span class="postdetails">wannabe<br /><img src="images/ranks/sgd-2.gif" alt="wannabe" title="wannabe" border="0" /><br /><br /><br />Pridružen: 02. jul 2003 ob 17:01<br />objav: 97<br /></span><br /></td>
+		<td width="150" align="left" valign="top" class="row1"><span class="name"><a name="3789"></a><b>Senitel</b></span><br /><span class="postdetails">wannabe<br /><img src="images/ranks/sgd-2.gif" alt="wannabe" title="wannabe" border="0" /><br /><br /><br />Pridružen: 02. jul 2003 ob 17:01<br />objav: 127<br /></span><br /></td>
 		<td class="row1" width="100%" height="28" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
 			<tr>
 				<td colspan="2" width="100%">
@@ -1177,7 +1059,7 @@ Eden izmed možnih problemov je ta, da imaš v client kodi "delete a;" in briše
 	</tr>
 	
 	<tr>
-		<td width="150" align="left" valign="top" class="row2"><span class="name"><a name="3807"></a><b>Mitja</b></span><br /><span class="postdetails">novinec<br /><img src="images/ranks/sgd-0.gif" alt="novinec" title="novinec" border="0" /><br /><img src="images/avatars/a4086c8c42d34ff76440c.gif" alt="" border="0" /><br /><br />Pridružen: 22. sep 2003 ob 08:28<br />objav: 19<br /></span><br /></td>
+		<td width="150" align="left" valign="top" class="row2"><span class="name"><a name="3807"></a><b>Mitja</b></span><br /><span class="postdetails">novinec<br /><img src="images/ranks/sgd-0.gif" alt="novinec" title="novinec" border="0" /><br /><img src="images/avatars/a4086c8c42d34ff76440c.gif" alt="" border="0" /><br /><br />Pridružen: 22. sep 2003 ob 08:28<br />objav: 20<br /></span><br /></td>
 		<td class="row2" width="100%" height="28" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
 			<tr>
 				<td colspan="2" width="100%">
@@ -1225,13 +1107,10 @@ V klientu
 </table>
 <br />
 <span class="postbody">
-
 <br />
-
 
 <br />
 V DLL
-
 <br />
 </span>
 <br />
@@ -1245,22 +1124,18 @@ V DLL
 <br />
 	<tr>
 <br />
-	  <td class="code">printf&#40;&quot;In Default Constructor of A in DLL1. m_nNum = %d\n&quot;, m_nNum&#41;;</td>
+	  <td class="code">printf&#40;&quot;In Default Constructor of A in DLL1&#46; m_nNum = %d\n&quot;, m_nNum&#41;;</td>
 <br />
 	</tr>
 <br />
 </table>
 <br />
 <span class="postbody">
-
 <br />
-
 
 <br />
 Konstruktor se izvede normalno, problem se pojavi, ko hoče klient poklicati metodo SetNum(int):
-
 <br />
-
 
 <br />
 </span>
@@ -1282,19 +1157,14 @@ Konstruktor se izvede normalno, problem se pojavi, ko hoče klient poklicati met
 </table>
 <br />
 <span class="postbody">, ki je takoj za klicem konstruktorja.
-
 <br />
-
 
 <br />
 delete a; pride na vrsto šele pozneje.
-
 <br />
-
 
 <br />
 Celoten klient:
-
 <br />
 </span>
 <br />
@@ -1308,193 +1178,130 @@ Celoten klient:
 <br />
 	<tr>
 <br />
-	  <td class="code">#include &quot;stdafx.h&quot;
-
+	  <td class="code">#include &quot;stdafx&#46;h&quot;
 <br />
-#include &quot;expclass.h&quot;
-
+#include &quot;expclass&#46;h&quot;
 <br />
-#include &lt;malloc.h&gt;
-
+#include &lt;malloc&#46;h&gt;
 <br />
-#include &lt;windows.h&gt;
-
+#include &lt;windows&#46;h&gt;
 <br />
-
 
 <br />
 int main&#40;int argc, char* argv&#91;&#93;&#41;
-
 <br />
 &#123;
-
 <br />
 
-
 <br />
-&nbsp; &nbsp;TCHAR szDllPath&#91;MAX_PATH&#93;;
-
+	TCHAR szDllPath&#91;MAX_PATH&#93;;
 <br />
-&nbsp; &nbsp;HMODULE hMod;
-
+	HMODULE hMod;
 <br />
-&nbsp; &nbsp;
-
+	
 <br />
-&nbsp; &nbsp;do
-
+	do
 <br />
-&nbsp; &nbsp;&#123;
-
+	&#123;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;_tprintf&#40;TEXT&#40;&quot;Please enter the dll to load the class from&#58;\n&quot;&#41;&#41;;
-
+		_tprintf&#40;TEXT&#40;&quot;Please enter the dll to load the class from&#58;\n&quot;&#41;&#41;;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;_tscanf&#40;TEXT&#40;&quot;%s&quot;&#41;, szDllPath&#41;;
-
+		_tscanf&#40;TEXT&#40;&quot;%s&quot;&#41;, szDllPath&#41;;
 <br />
-&nbsp; &nbsp;&#125;
-
+	&#125;
 <br />
-&nbsp; &nbsp;while &#40;&#40;hMod = LoadLibrary&#40;szDllPath&#41;&#41; ? 
-
+	while &#40;&#40;hMod = LoadLibrary&#40;szDllPath&#41;&#41; ? 
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;false &#58; 
-
+				false &#58; 
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;_tprintf&#40;TEXT&#40;&quot;Failed to Load the dll. GetLastError returns&#58; 0x%X\n&quot;&#41;, GetLastError&#40;&#41;&#41;&#41;;
-
+				_tprintf&#40;TEXT&#40;&quot;Failed to Load the dll&#46; GetLastError returns&#58; 0x%X\n&quot;&#41;, GetLastError&#40;&#41;&#41;&#41;;
 <br />
 
-
 <br />
-&nbsp; &nbsp;
-
+	
 <br />
-&nbsp; &nbsp;/* Virtual Function table method */
-
+	/* Virtual Function table method */
 <br />
-&nbsp; &nbsp;_tprintf&#40;TEXT&#40;&quot;Importing by Virtual Function Table&#58;\n\n&quot;&#41;&#41;;
-
+	_tprintf&#40;TEXT&#40;&quot;Importing by Virtual Function Table&#58;\n\n&quot;&#41;&#41;;
 <br />
-&nbsp; &nbsp;
-
+	
 <br />
-&nbsp; &nbsp;typedef A* &#40;*PFNCreateA1&#41;&#40;&#41;;
-
+	typedef A* &#40;*PFNCreateA1&#41;&#40;&#41;;
 <br />
-&nbsp; &nbsp;typedef A* &#40;*PFNCreateA2&#41;&#40;int&#41;;
-
+	typedef A* &#40;*PFNCreateA2&#41;&#40;int&#41;;
 <br />
 
-
 <br />
-/*************************************************************************/&nbsp; &nbsp;
-
+/*************************************************************************/	
 <br />
-&nbsp; &nbsp;_tprintf&#40;TEXT&#40;&quot;Creating an Object of A through Default Constructor\n&quot;&#41;&#41;;
-
+	_tprintf&#40;TEXT&#40;&quot;Creating an Object of A through Default Constructor\n&quot;&#41;&#41;;
 <br />
 
-
 <br />
-&nbsp; &nbsp;PFNCreateA1 pfnCreateA1 = &#40;PFNCreateA1&#41;GetProcAddress&#40;hMod, TEXT&#40;&quot;CreateObjectofA1&quot;&#41;&#41;;
-
+	PFNCreateA1 pfnCreateA1 = &#40;PFNCreateA1&#41;GetProcAddress&#40;hMod, TEXT&#40;&quot;CreateObjectofA1&quot;&#41;&#41;;
 <br />
 
-
 <br />
-&nbsp; &nbsp;A* a = &#40;pfnCreateA1&#41;&#40;&#41;;&nbsp; &nbsp; &nbsp; &nbsp; // še dela
-
+	A* a = &#40;pfnCreateA1&#41;&#40;&#41;;        // še dela
 <br />
 
-
 <br />
-&nbsp; &nbsp;a-&gt;SetNum&#40;1&#41;;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  // se zruši
-
+	a-&gt;SetNum&#40;1&#41;;                     // se zruši
 <br />
 
-
 <br />
-&nbsp; &nbsp;_tprintf&#40;TEXT&#40;&quot;Value of m_nNum in a is %d\n&quot;&#41;, a-&gt;GetNum&#40;&#41;&#41;;
-
+	_tprintf&#40;TEXT&#40;&quot;Value of m_nNum in a is %d\n&quot;&#41;, a-&gt;GetNum&#40;&#41;&#41;;
 <br />
-&nbsp; &nbsp;
-
+	
 <br />
-&nbsp; &nbsp;delete a;
-
+	delete a;
 <br />
-&nbsp; &nbsp;
-
+	
 <br />
-&nbsp; &nbsp;a = NULL;
-
+	a = NULL;
 <br />
-/*************************************************************************/&nbsp; &nbsp;
-
+/*************************************************************************/	
 <br />
-&nbsp; &nbsp;_tprintf&#40;TEXT&#40;&quot;Creating an Object of A through Other Constructor\n&quot;&#41;&#41;;
-
+	_tprintf&#40;TEXT&#40;&quot;Creating an Object of A through Other Constructor\n&quot;&#41;&#41;;
 <br />
-&nbsp; &nbsp;
-
+	
 <br />
-&nbsp; &nbsp;PFNCreateA2 pfnCreateA2 = &#40;PFNCreateA2&#41;GetProcAddress&#40;hMod, TEXT&#40;&quot;CreateObjectofA2&quot;&#41;&#41;;
-
+	PFNCreateA2 pfnCreateA2 = &#40;PFNCreateA2&#41;GetProcAddress&#40;hMod, TEXT&#40;&quot;CreateObjectofA2&quot;&#41;&#41;;
 <br />
 
-
 <br />
-&nbsp; &nbsp;a = &#40;pfnCreateA2&#41;&#40;2&#41;;
-
+	a = &#40;pfnCreateA2&#41;&#40;2&#41;;
 <br />
 
-
 <br />
-&nbsp; &nbsp;_tprintf&#40;TEXT&#40;&quot;Value of m_nNum in a is %d\n&quot;&#41;, a-&gt;GetNum&#40;&#41;&#41;;
-
+	_tprintf&#40;TEXT&#40;&quot;Value of m_nNum in a is %d\n&quot;&#41;, a-&gt;GetNum&#40;&#41;&#41;;
 <br />
 
-
 <br />
-&nbsp; &nbsp;a-&gt;SetNum&#40;1&#41;;
-
+	a-&gt;SetNum&#40;1&#41;;
 <br />
 
-
 <br />
-&nbsp; &nbsp;_tprintf&#40;TEXT&#40;&quot;Value of m_nNum in a is %d\n&quot;&#41;, a-&gt;GetNum&#40;&#41;&#41;;
-
+	_tprintf&#40;TEXT&#40;&quot;Value of m_nNum in a is %d\n&quot;&#41;, a-&gt;GetNum&#40;&#41;&#41;;
 <br />
-&nbsp; &nbsp;
-
+	
 <br />
-&nbsp; &nbsp;delete a;
-
+	delete a;
 <br />
-
 
 <br />
 /*************************************************************************/
-
 <br />
 
-
 <br />
-&nbsp; &nbsp;
-
+	
 <br />
-&nbsp; &nbsp;
-
+	
 <br />
-&nbsp; &nbsp;return 0;
-
+	return 0;
 <br />
 &#125;
-
 <br />
-
 
 <br />
 </td>
@@ -1523,7 +1330,7 @@ Mogoče prevajalnika različno izvozita metode (različen name mangling?).</span
 		<td class="row2" width="150" align="left" valign="middle"><span class="nav"><a href="#top" class="nav">Nazaj na vrh</a></span></td>
 		<td class="row2" width="100%" height="28" valign="bottom" nowrap="nowrap"><table cellspacing="0" cellpadding="0" border="0" height="18" width="18">
 			<tr>
-				<td valign="middle" nowrap="nowrap"><a href="profile-104.html"><img src="templates/SGD2/images/lang_slovenian/icon_profile.gif" alt="Poglej uporabnikov profil" title="Poglej uporabnikov profil" border="0" /></a> <a  target="_userwww"><img src="templates/SGD2/images/lang_slovenian/icon_www.gif" alt="Obišči avtorjevo spletno stran" title="Obišči avtorjevo spletno stran" border="0" /></a></td>
+				<td valign="middle" nowrap="nowrap"><a href="profile-104.html"><img src="templates/SGD2/images/lang_slovenian/icon_profile.gif" alt="Poglej uporabnikov profil" title="Poglej uporabnikov profil" border="0" /></a> </td>
 			</tr>
 		</table></td>
 	</tr>
@@ -1532,7 +1339,7 @@ Mogoče prevajalnika različno izvozita metode (različen name mangling?).</span
 	</tr>
 	
 	<tr>
-		<td width="150" align="left" valign="top" class="row1"><span class="name"><a name="3860"></a><b>vesoljc</b></span><br /><span class="postdetails">inštruktor<br /><img src="images/ranks/sgd-4.gif" alt="inštruktor" title="inštruktor" border="0" /><br /><img src="images/avatars/c1bdb98c3fb49342927df.jpg" alt="" border="0" /><br /><br />Pridružen: 18. feb 2003 ob 22:16<br />objav: 297<br />Kraj: Brezovica, homeland of the mighty Beawer Blasters</span><br /></td>
+		<td width="150" align="left" valign="top" class="row1"><span class="name"><a name="3860"></a><b>vesoljc</b></span><br /><span class="postdetails">inštruktor<br /><img src="images/ranks/sgd-4.gif" alt="inštruktor" title="inštruktor" border="0" /><br /><img src="images/avatars/c1bdb98c3fb49342927df.jpg" alt="" border="0" /><br /><br />Pridružen: 18. feb 2003 ob 22:16<br />objav: 291<br />Kraj: Brezovica, homeland of the mighty Beawer Blasters</span><br /></td>
 		<td class="row1" width="100%" height="28" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
 			<tr>
 				<td colspan="2" width="100%">
@@ -1580,52 +1387,36 @@ abstraktni razred, osnova
 	<tr>
 <br />
 	  <td class="code">
-
 <br />
 // header
-
 <br />
 class IRefCounted
-
 <br />
 &#123;
-
 <br />
 public&#58;
-
 <br />
-&nbsp; &nbsp; &nbsp;  virtual void ~IRefCounted&#40;&#41; &#123;&#125; = 0;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  // pure virtua
-
+       virtual void ~IRefCounted&#40;&#41; &#123;&#125; = 0;           // pure virtua
 <br />
-&nbsp; &nbsp; &nbsp;  void AddRef&#40;&#41; &#123;++mRefCounter;&#125;
-
+       void AddRef&#40;&#41; &#123;++mRefCounter;&#125;
 <br />
-&nbsp; &nbsp; &nbsp;  void Release&#40;&#41; &#123;--mRefCounter; if &#40;mRefCounter &lt;= 0&#41; delete this;&#125;
-
+       void Release&#40;&#41; &#123;--mRefCounter; if &#40;mRefCounter &lt;= 0&#41; delete this;&#125;
 <br />
 private&#58;
-
 <br />
-&nbsp; &nbsp; &nbsp; int mRefCounter;&nbsp; // = 0 v construktorju
-
+      int mRefCounter;  // = 0 v construktorju
 <br />
 &#125;;
-
 <br />
-
 
 <br />
 extern &quot;C&quot;
-
 <br />
 &#123;
-
 <br />
-&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  IRefCounted*&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  Create&#40;&#41;;&nbsp; &nbsp; &nbsp; &nbsp; // prototip funkcije
-
+           IRefCounted*           Create&#40;&#41;;        // prototip funkcije
 <br />
 &#125;
-
 <br />
 </td>
 <br />
@@ -1634,13 +1425,10 @@ extern &quot;C&quot;
 </table>
 <br />
 <span class="postbody">
-
 <br />
-
 
 <br />
 test class
-
 <br />
 </span>
 <br />
@@ -1655,52 +1443,36 @@ test class
 	<tr>
 <br />
 	  <td class="code">
-
 <br />
 // header
-
 <br />
 class CExpTest&#58; public IRefCounted
-
 <br />
 &#123;
-
 <br />
 public&#58;
-
 <br />
-&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  void SetNum&#40;int&#41;;
-
+               void SetNum&#40;int&#41;;
 <br />
-&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  int GetNum&#40;&#41;;
-
+               int GetNum&#40;&#41;;
 <br />
 private&#58;
-
 <br />
-&nbsp;  int&nbsp; mNum;
-
+   int  mNum;
 <br />
 &#125;;
-
 <br />
-
 
 <br />
 // implementacija ene in edine funkcije
-
 <br />
-IRefCounted*&nbsp; &nbsp; Create&#40;&#41;
-
+IRefCounted*    Create&#40;&#41;
 <br />
 &#123;
-
 <br />
-&nbsp;  return&#40;new CExpTest&#41;;&nbsp;  // cast
-
+   return&#40;new CExpTest&#41;;   // cast
 <br />
 &#125;
-
 <br />
 </td>
 <br />
@@ -1709,46 +1481,32 @@ IRefCounted*&nbsp; &nbsp; Create&#40;&#41;
 </table>
 <br />
 <span class="postbody">
-
 <br />
-
 
 <br />
 ko delaš dll "ročno", rabi projekt še en *.def file, tkole nekak
-
 <br />
 *.def
-
 <br />
 [
-
 <br />
     LIBRARY  *.dll
-
 <br />
     EXPORTS       
-
 <br />
                      Create
-
 <br />
 ]
-
 <br />
-
 
 <br />
 v clientu pa tkole:
-
 <br />
-
 
 <br />
 - load dll
-
 <br />
 - get proc address "Create"
-
 <br />
 - klic Create-a preko func pointerja, glede na to da create vrne IRefCounted*, morš le tega cast-at nazaj v konkreten class </span>
 <br />
@@ -1769,13 +1527,10 @@ v clientu pa tkole:
 </table>
 <br />
 <span class="postbody">
-
 <br />
-
 
 <br />
 uporaba:
-
 <br />
 </span>
 <br />
@@ -1790,70 +1545,48 @@ uporaba:
 	<tr>
 <br />
 	  <td class="code">
-
 <br />
-
 
 <br />
 // dva pointerja na isti objekt, ki ga je allociral dll
-
 <br />
 CExpTest* lPtr1 = funcPtr&#40;&#41;;
-
 <br />
 CExpTest* lPtr2 = lPtr1;
-
 <br />
-
 
 <br />
 // bi moral dodati referenco ali dve
-
 <br />
 // to lahko avtomatiziraš z uporabo smart pointerjev
-
 <br />
-
 
 <br />
 // addref na &quot;istem&quot; objektu
-
 <br />
-lPtr1-&gt;AddRef&#40;&#41;;&nbsp; &nbsp; &nbsp; &nbsp;  // 0-&gt;1
-
+lPtr1-&gt;AddRef&#40;&#41;;         // 0-&gt;1
 <br />
-lPtr2-&gt;AddRef&#40;&#41;;&nbsp; &nbsp; &nbsp; &nbsp; // 1-&gt;2
-
+lPtr2-&gt;AddRef&#40;&#41;;        // 1-&gt;2
 <br />
-
 
 <br />
 lPtr1-&gt;SetNum&#40;100&#41;;
-
 <br />
-lPtr1-&gt;Release&#40;&#41;;&nbsp; &nbsp; // ref count 2-&gt; 1
-
+lPtr1-&gt;Release&#40;&#41;;    // ref count 2-&gt; 1
 <br />
 lPtr1 = 0;
-
 <br />
 
-
 <br />
-cout &lt;&lt; lPtr2-&gt;GetNum&#40;&#41;;&nbsp;  // še vedno ok
-
+cout &lt;&lt; lPtr2-&gt;GetNum&#40;&#41;;   // še vedno ok
 <br />
 
-
 <br />
-lPtr2-&gt;Release&#40;&#41;;&nbsp; &nbsp; // ref count 1-&gt;0, delete this, dll pobriše &quot;svoj&quot; 
-
+lPtr2-&gt;Release&#40;&#41;;    // ref count 1-&gt;0, delete this, dll pobriše &quot;svoj&quot; 
 <br />
 lPtr2 = 0;
-
 <br />
-objekt na svoji strani...
-
+objekt na svoji strani&#46;&#46;&#46;
 <br />
 </td>
 <br />
@@ -1892,7 +1625,7 @@ tuki pride prav še ena template funkcija SafeRelease, ki sprejeme pointer refer
   <tr>
 	<td align="left" valign="middle" nowrap="nowrap">&nbsp;</td>
 	<td align="left" valign="middle" width="100%"><span class="nav">&nbsp;&nbsp;&nbsp;<a href="index.html" class="nav">SloGameDev.net seznam forumov</a>
-	  -> <a href="forum-10.html" class="nav">Za Začetnike</a></span></td>
+	  -> <a href="forum-49.html" class="nav">Začetniki</a></span></td>
 	<td align="right" valign="top" nowrap="nowrap"><span class="gensmall">Časovni pas (GMT +2:00 uri) Slovenija, poletni čas</span><br /><span class="nav"></span>
 	  </td>
   </tr>
@@ -1908,7 +1641,7 @@ tuki pride prav še ena template funkcija SafeRelease, ki sprejeme pointer refer
   </tr>
 </table>
 
-<div align="center"><span class="copyright"><br />Arhiv stanja na dan 13. 2. 2006 &mdash; samo za branje.<br />
+<div align="center"><span class="copyright"><br />Arhiv &mdash; samo za branje.<br />
 <!--
 	We request you retain the full copyright notice below including the link to www.phpbb.com.
 	This not only gives respect to the large amount of time given freely by the developers

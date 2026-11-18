@@ -276,13 +276,13 @@ input.liteoption {
   <tr>
 	<td align="left" valign="bottom" nowrap="nowrap">&nbsp;</td>
 	<td align="left" valign="middle" width="100%"><span class="nav">&nbsp;&nbsp;&nbsp;<a href="index.html" class="nav">SloGameDev.net seznam forumov</a>
-	  -> <a href="forum-1.html" class="nav">Splošno Programiranje</a></span></td>
+	  -> <a href="forum-52.html" class="nav">Izdelovanje iger</a></span></td>
   </tr>
 </table>
 
 <table class="forumline" width="100%" cellspacing="1" cellpadding="3" border="0">
 	<tr align="right">
-		<td class="catHead" colspan="2" height="28"><span class="nav"><a href="topic-466.html" class="nav">Prejšnja tema</a> :: <a href="topic-474.html" class="nav">Naslednja tema</a> &nbsp;</span></td>
+		<td class="catHead" colspan="2" height="28"><span class="nav"><a href="topic-466.html" class="nav">Prejšnja tema</a> :: <a href="topic-472.html" class="nav">Naslednja tema</a> &nbsp;</span></td>
 	</tr>
 	
 	<tr>
@@ -291,7 +291,7 @@ input.liteoption {
 	</tr>
 	
 	<tr>
-		<td width="150" align="left" valign="top" class="row1"><span class="name"><a name="5318"></a><b>_t3ch_</b></span><br /><span class="postdetails">wannabe<br /><img src="images/ranks/sgd-2.gif" alt="wannabe" title="wannabe" border="0" /><br /><img src="images/avatars/c2f922b13f93ced57f936.gif" alt="" border="0" /><br /><br />Pridružen: 09. okt 2003 ob 16:04<br />objav: 75<br />Kraj: Mafia SoftWare IT</span><br /></td>
+		<td width="150" align="left" valign="top" class="row1"><span class="name"><a name="5318"></a><b>_t3ch_</b></span><br /><span class="postdetails">wannabe<br /><img src="images/ranks/sgd-2.gif" alt="wannabe" title="wannabe" border="0" /><br /><img src="images/avatars/c2f922b13f93ced57f936.gif" alt="" border="0" /><br /><br />Pridružen: 09. okt 2003 ob 16:04<br />objav: 77<br />Kraj: Mafia SoftWare IT</span><br /></td>
 		<td class="row1" width="100%" height="28" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
 			<tr>
 				<td colspan="2" width="100%">
@@ -314,7 +314,7 @@ input.liteoption {
 				<td colspan="2"><span class="postbody">Mi lahko gdo razlozi zakaj to ne dela in zakaj vrze tolko errorov ven ?
 
 <br />
-                                                 <img src="images/smiles/icon_confused.gif" alt="icon_confused.gif" border="0" /> 
+                                                 <img src="images/smiles/icon_confused.gif" alt=":?" border="0" /> 
 
 <br />
 
@@ -333,589 +333,394 @@ input.liteoption {
 	<tr>
 <br />
 	  <td class="code">
-
 <br />
-/* &nbsp; &nbsp;Head request example
-
+/* 	Head request example
 <br />
- *&nbsp; View with tabsize = 4
-
+ *  View with tabsize = 4
 <br />
- *&nbsp; &nbsp;Part of the Winsock networking tutorial by Thomas Bleeker
-
+ *	Part of the Winsock networking tutorial by Thomas Bleeker
 <br />
- *&nbsp; &nbsp;Visit <a  target="_blank">www.MadWizard.org</a>
-
+ *	Visit www&#46;MadWizard&#46;org
 <br />
  */
-
 <br />
 #include &lt;iostream&gt;
-
 <br />
-
 
 <br />
 #define WIN32_MEAN_AND_LEAN
-
 <br />
-#include &lt;winsock2.h&gt;
-
+#include &lt;winsock2&#46;h&gt;
 <br />
-#include &lt;windows.h&gt;
-
+#include &lt;windows&#46;h&gt;
 <br />
-
 
 <br />
 using namespace std;
-
 <br />
-
 
 <br />
 class HRException
-
 <br />
 &#123;
-
 <br />
 public&#58;
-
 <br />
-&nbsp; &nbsp; HRException&#40;&#41; &#58;
-
+    HRException&#40;&#41; &#58;
 <br />
-&nbsp; &nbsp; &nbsp; &nbsp;  m_pMessage&#40;&quot;&quot;&#41; &#123;&#125;
-
+         m_pMessage&#40;&quot;&quot;&#41; &#123;&#125;
 <br />
-&nbsp; &nbsp; virtual ~HRException&#40;&#41; &#123;&#125;
-
+    virtual ~HRException&#40;&#41; &#123;&#125;
 <br />
-&nbsp; &nbsp; HRException&#40;const char *pMessage&#41; &#58;
-
+    HRException&#40;const char *pMessage&#41; &#58;
 <br />
-&nbsp; &nbsp; &nbsp; &nbsp;  m_pMessage&#40;pMessage&#41; &#123;&#125;
-
+         m_pMessage&#40;pMessage&#41; &#123;&#125;
 <br />
-&nbsp; &nbsp; const char * what&#40;&#41; &#123; return m_pMessage; &#125;
-
+    const char * what&#40;&#41; &#123; return m_pMessage; &#125;
 <br />
 private&#58;
-
 <br />
-&nbsp; &nbsp; const char *m_pMessage;
-
+    const char *m_pMessage;
 <br />
 &#125;;
-
 <br />
 
-
 <br />
-const int&nbsp; REQ_WINSOCK_VER&nbsp;  = 2;&nbsp; &nbsp;// Minimum winsock version required
-
+const int  REQ_WINSOCK_VER   = 2;	// Minimum winsock version required
 <br />
-const char DEF_SERVER_NAME&#91;&#93; = &quot;www.google.com&quot;;
-
+const char DEF_SERVER_NAME&#91;&#93; = &quot;www&#46;google&#46;com&quot;;
 <br />
-const int&nbsp; SERVER_PORT&nbsp; &nbsp; &nbsp;  = 80;&nbsp; &nbsp;
-
+const int  SERVER_PORT       = 80;	
 <br />
-const int&nbsp; TEMP_BUFFER_SIZE&nbsp; = 128;
-
+const int  TEMP_BUFFER_SIZE  = 128;
 <br />
-
 
 <br />
 const char HEAD_REQUEST_PART1&#91;&#93; =
-
 <br />
 &#123;
-
 <br />
-&nbsp; &nbsp;&quot;HEAD / HTTP/1.1\r\n&quot; &nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;// Get root index from server
-
+	&quot;HEAD / HTTP/1&#46;1\r\n&quot; 			// Get root index from server
 <br />
-&nbsp; &nbsp;&quot;Host&#58; &quot;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;// Specify host name used
-
+	&quot;Host&#58; &quot;						// Specify host name used
 <br />
 &#125;;
-
 <br />
-
 
 <br />
 const char HEAD_REQUEST_PART2&#91;&#93; =
-
 <br />
 &#123;
-
 <br />
-&nbsp; &nbsp;&quot;\r\n&quot;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;// End hostname header from part1
-
+	&quot;\r\n&quot;							// End hostname header from part1
 <br />
-&nbsp; &nbsp;&quot;User-agent&#58; HeadReqSample\r\n&quot; // Specify user agent
-
+	&quot;User-agent&#58; HeadReqSample\r\n&quot; // Specify user agent
 <br />
-&nbsp; &nbsp;&quot;Connection&#58; close\r\n&quot; &nbsp; &nbsp;&nbsp; &nbsp;// Close connection after response
-
+	&quot;Connection&#58; close\r\n&quot; 		// Close connection after response
 <br />
-&nbsp; &nbsp;&quot;\r\n&quot;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;// Empty line indicating end of request
-
+	&quot;\r\n&quot;							// Empty line indicating end of request
 <br />
 &#125;;
-
 <br />
-
 
 <br />
 // IP number typedef for IPv4
-
 <br />
 typedef unsigned long IPNumber;
-
 <br />
-
 
 <br />
 IPNumber FindHostIP&#40;const char *pServerName&#41;
-
 <br />
 &#123;
-
 <br />
-&nbsp; &nbsp;HOSTENT *pHostent;
-
+	HOSTENT *pHostent;
 <br />
 
-
 <br />
-&nbsp; &nbsp;// Get hostent structure for hostname&#58;
-
+	// Get hostent structure for hostname&#58;
 <br />
-&nbsp; &nbsp;if &#40;!&#40;pHostent = gethostbyname&#40;pServerName&#41;&#41;&#41;
-
+	if &#40;!&#40;pHostent = gethostbyname&#40;pServerName&#41;&#41;&#41;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;throw HRException&#40;&quot;could not resolve hostname.&quot;&#41;;
-
+			throw HRException&#40;&quot;could not resolve hostname&#46;&quot;&#41;;
 <br />
-&nbsp; &nbsp;
-
+	
 <br />
-&nbsp; &nbsp;// Extract primary IP address from hostent structure&#58;
-
+	// Extract primary IP address from hostent structure&#58;
 <br />
-&nbsp; &nbsp;if &#40;pHostent-&gt;h_addr_list &amp;&amp; pHostent-&gt;h_addr_list&#91;0&#93;&#41;
-
+	if &#40;pHostent-&gt;h_addr_list &amp;&amp; pHostent-&gt;h_addr_list&#91;0&#93;&#41;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;return *reinterpret_cast&lt;IPNumber*&gt;&#40;pHostent-&gt;h_addr_list&#91;0&#93;&#41;;
-
+		return *reinterpret_cast&lt;IPNumber*&gt;&#40;pHostent-&gt;h_addr_list&#91;0&#93;&#41;;
 <br />
-&nbsp; &nbsp;
-
+	
 <br />
-&nbsp; &nbsp;return 0;
-
+	return 0;
 <br />
 &#125;
-
 <br />
-
 
 <br />
 void FillSockAddr&#40;sockaddr_in *pSockAddr, const char *pServerName, int portNumber&#41;
-
 <br />
 &#123;
-
 <br />
-&nbsp; &nbsp;// Set family, port and find IP
-
+	// Set family, port and find IP
 <br />
-&nbsp; &nbsp;pSockAddr-&gt;sin_family = AF_INET;
-
+	pSockAddr-&gt;sin_family = AF_INET;
 <br />
-&nbsp; &nbsp;pSockAddr-&gt;sin_port = htons&#40;portNumber&#41;;
-
+	pSockAddr-&gt;sin_port = htons&#40;portNumber&#41;;
 <br />
-&nbsp; &nbsp;pSockAddr-&gt;sin_addr.S_un.S_addr = FindHostIP&#40;pServerName&#41;;
-
+	pSockAddr-&gt;sin_addr&#46;S_un&#46;S_addr = FindHostIP&#40;pServerName&#41;;
 <br />
 &#125;
-
 <br />
-
 
 <br />
 bool RequestHeaders&#40;const char *pServername&#41;
-
 <br />
 &#123;
-
 <br />
-&nbsp; &nbsp;SOCKET &nbsp; &nbsp;&nbsp; &nbsp;hSocket = INVALID_SOCKET;
-
+	SOCKET 		hSocket = INVALID_SOCKET;
 <br />
-&nbsp; &nbsp;char&nbsp; &nbsp;&nbsp; &nbsp;tempBuffer&#91;TEMP_BUFFER_SIZE&#93;;
-
+	char		tempBuffer&#91;TEMP_BUFFER_SIZE&#93;;
 <br />
-&nbsp; &nbsp;sockaddr_in&nbsp; &nbsp;sockAddr = &#123;0&#125;;
-
+	sockaddr_in	sockAddr = &#123;0&#125;;
 <br />
-&nbsp; &nbsp;bool&nbsp; &nbsp;&nbsp; &nbsp;bSuccess = true;
-
+	bool		bSuccess = true;
 <br />
-&nbsp; &nbsp;
-
+	
 <br />
-&nbsp; &nbsp;try
-
+	try
 <br />
-&nbsp; &nbsp;&#123;
-
+	&#123;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;// Lookup hostname and fill sockaddr_in structure&#58;
-
+		// Lookup hostname and fill sockaddr_in structure&#58;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;cout &lt;&lt; &quot;Looking up hostname &quot; &lt;&lt; pServername &lt;&lt; &quot;... &quot;;
-
+		cout &lt;&lt; &quot;Looking up hostname &quot; &lt;&lt; pServername &lt;&lt; &quot;&#46;&#46;&#46; &quot;;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;FillSockAddr&#40;&amp;sockAddr, pServername, SERVER_PORT&#41;;
-
+		FillSockAddr&#40;&amp;sockAddr, pServername, SERVER_PORT&#41;;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;cout &lt;&lt; &quot;found.\n&quot;;
-
+		cout &lt;&lt; &quot;found&#46;\n&quot;;
 <br />
-&nbsp; &nbsp;
-
+	
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;// Create socket
-
+		// Create socket
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;cout &lt;&lt; &quot;Creating socket... &quot;;
-
+		cout &lt;&lt; &quot;Creating socket&#46;&#46;&#46; &quot;;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;if &#40;&#40;hSocket = socket&#40;AF_INET, SOCK_STREAM, IPPROTO_TCP&#41;&#41; == INVALID_SOCKET&#41;
-
+		if &#40;&#40;hSocket = socket&#40;AF_INET, SOCK_STREAM, IPPROTO_TCP&#41;&#41; == INVALID_SOCKET&#41;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;throw HRException&#40;&quot;could not create socket.&quot;&#41;;
-
+			throw HRException&#40;&quot;could not create socket&#46;&quot;&#41;;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;cout &lt;&lt; &quot;created.\n&quot;;
-
+		cout &lt;&lt; &quot;created&#46;\n&quot;;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;
-
+		
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;// Connect to server
-
+		// Connect to server
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;cout &lt;&lt; &quot;Attempting to connect to &quot; &lt;&lt; inet_ntoa&#40;sockAddr.sin_addr&#41;
-
+		cout &lt;&lt; &quot;Attempting to connect to &quot; &lt;&lt; inet_ntoa&#40;sockAddr&#46;sin_addr&#41;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;  &lt;&lt; &quot;&#58;&quot; &lt;&lt; SERVER_PORT &lt;&lt;&nbsp; &quot;... &quot;;
-
+		     &lt;&lt; &quot;&#58;&quot; &lt;&lt; SERVER_PORT &lt;&lt;  &quot;&#46;&#46;&#46; &quot;;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;if &#40;connect&#40;hSocket, reinterpret_cast&lt;sockaddr*&gt;&#40;&amp;sockAddr&#41;, sizeof&#40;sockAddr&#41;&#41;!=0&#41;
-
+		if &#40;connect&#40;hSocket, reinterpret_cast&lt;sockaddr*&gt;&#40;&amp;sockAddr&#41;, sizeof&#40;sockAddr&#41;&#41;!=0&#41;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp; throw HRException&#40;&quot;could not connect.&quot;&#41;;
-
+		    throw HRException&#40;&quot;could not connect&#46;&quot;&#41;;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;cout &lt;&lt; &quot;connected.\n&quot;;
-
+		cout &lt;&lt; &quot;connected&#46;\n&quot;;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;
-
+		
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;cout &lt;&lt; &quot;Sending request... &quot;;
-
+		cout &lt;&lt; &quot;Sending request&#46;&#46;&#46; &quot;;
 <br />
 
-
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;// send request part 1
-
+		// send request part 1
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;if &#40;send&#40;hSocket, HEAD_REQUEST_PART1, sizeof&#40;HEAD_REQUEST_PART1&#41;-1, 0&#41;==SOCKET_ERROR&#41;
-
+		if &#40;send&#40;hSocket, HEAD_REQUEST_PART1, sizeof&#40;HEAD_REQUEST_PART1&#41;-1, 0&#41;==SOCKET_ERROR&#41;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;throw HRException&#40;&quot;failed to send data.&quot;&#41;;
-
+			throw HRException&#40;&quot;failed to send data&#46;&quot;&#41;;
 <br />
 
-
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;// send hostname
-
+		// send hostname
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;if &#40;send&#40;hSocket, pServername, lstrlen&#40;pServername&#41;, 0&#41;==SOCKET_ERROR&#41;
-
+		if &#40;send&#40;hSocket, pServername, lstrlen&#40;pServername&#41;, 0&#41;==SOCKET_ERROR&#41;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;throw HRException&#40;&quot;failed to send data.&quot;&#41;;
-
+			throw HRException&#40;&quot;failed to send data&#46;&quot;&#41;;
 <br />
-
 
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;// send request part 2
-
+		// send request part 2
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;if &#40;send&#40;hSocket, HEAD_REQUEST_PART2, sizeof&#40;HEAD_REQUEST_PART2&#41;-1, 0&#41;==SOCKET_ERROR&#41;
-
+		if &#40;send&#40;hSocket, HEAD_REQUEST_PART2, sizeof&#40;HEAD_REQUEST_PART2&#41;-1, 0&#41;==SOCKET_ERROR&#41;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;throw HRException&#40;&quot;failed to send data.&quot;&#41;;
-
+			throw HRException&#40;&quot;failed to send data&#46;&quot;&#41;;
 <br />
 
-
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;cout &lt;&lt; &quot;request sent.\n&quot;;
-
+		cout &lt;&lt; &quot;request sent&#46;\n&quot;;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;
-
+		
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;cout &lt;&lt;&nbsp; &nbsp;&quot;Dumping received data...\n\n&quot;;
-
+		cout &lt;&lt;	&quot;Dumping received data&#46;&#46;&#46;\n\n&quot;;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;// Loop to print all data
-
+		// Loop to print all data
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;while&#40;true&#41;
-
+		while&#40;true&#41;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&#123;
-
+		&#123;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;int retval;
-
+			int retval;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;retval = recv&#40;hSocket, tempBuffer, sizeof&#40;tempBuffer&#41;-1, 0&#41;;
-
+			retval = recv&#40;hSocket, tempBuffer, sizeof&#40;tempBuffer&#41;-1, 0&#41;;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;if &#40;retval==0&#41;
-
+			if &#40;retval==0&#41;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&#123; 
-
+			&#123; 
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;break; // Connection has been closed
-
+				break; // Connection has been closed
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&#125;
-
+			&#125;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;else if &#40;retval==SOCKET_ERROR&#41;
-
+			else if &#40;retval==SOCKET_ERROR&#41;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&#123;
-
+			&#123;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;throw HRException&#40;&quot;socket error while receiving.&quot;&#41;;
-
+				throw HRException&#40;&quot;socket error while receiving&#46;&quot;&#41;;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&#125;
-
+			&#125;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;else
-
+			else
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&#123;
-
+			&#123;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;// retval is number of bytes read
-
+				// retval is number of bytes read
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;// Terminate buffer with zero and print as string
-
+				// Terminate buffer with zero and print as string
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;tempBuffer&#91;retval&#93; = 0;
-
+				tempBuffer&#91;retval&#93; = 0;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;cout &lt;&lt; tempBuffer;
-
+				cout &lt;&lt; tempBuffer;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&#125;
-
+			&#125;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&#125;
-
+		&#125;
 <br />
-&nbsp; &nbsp;&#125;
-
+	&#125;
 <br />
-&nbsp; &nbsp;catch&#40;HRException e&#41;
-
+	catch&#40;HRException e&#41;
 <br />
-&nbsp; &nbsp;&#123;
-
+	&#123;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;cerr &lt;&lt; &quot;\nError&#58; &quot; &lt;&lt; e.what&#40;&#41; &lt;&lt; endl;
-
+		cerr &lt;&lt; &quot;\nError&#58; &quot; &lt;&lt; e&#46;what&#40;&#41; &lt;&lt; endl;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;bSuccess = false; 
-
+		bSuccess = false; 
 <br />
-&nbsp; &nbsp;&#125;
-
+	&#125;
 <br />
 
-
 <br />
-&nbsp; &nbsp;if &#40;hSocket!=INVALID_SOCKET&#41;
-
+	if &#40;hSocket!=INVALID_SOCKET&#41;
 <br />
-&nbsp; &nbsp;&#123;
-
+	&#123;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;closesocket&#40;hSocket&#41;;
-
+		closesocket&#40;hSocket&#41;;
 <br />
-&nbsp; &nbsp;&#125;
-
+	&#125;
 <br />
-&nbsp; &nbsp;return bSuccess;
-
+	return bSuccess;
 <br />
-&#125;&nbsp; &nbsp;
-
+&#125;	
 <br />
-
 
 <br />
 int main&#40;int argc, char* argv&#91;&#93;&#41;
-
 <br />
 &#123;
-
 <br />
-&nbsp; &nbsp;int iRet = 1;
-
+	int iRet = 1;
 <br />
-&nbsp; &nbsp;WSADATA wsaData;
-
+	WSADATA wsaData;
 <br />
 
-
 <br />
-&nbsp; &nbsp;cout &lt;&lt; &quot;Initializing winsock... &quot;;
-
+	cout &lt;&lt; &quot;Initializing winsock&#46;&#46;&#46; &quot;;
 <br />
 
-
 <br />
-&nbsp; &nbsp;if &#40;WSAStartup&#40;MAKEWORD&#40;REQ_WINSOCK_VER,0&#41;, &amp;wsaData&#41;==0&#41;
-
+	if &#40;WSAStartup&#40;MAKEWORD&#40;REQ_WINSOCK_VER,0&#41;, &amp;wsaData&#41;==0&#41;
 <br />
-&nbsp; &nbsp;&#123;
-
+	&#123;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;// Check if major version is at least REQ_WINSOCK_VER
-
+		// Check if major version is at least REQ_WINSOCK_VER
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;if &#40;LOBYTE&#40;wsaData.wVersion&#41; &gt;= REQ_WINSOCK_VER&#41;
-
+		if &#40;LOBYTE&#40;wsaData&#46;wVersion&#41; &gt;= REQ_WINSOCK_VER&#41;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&#123;
-
+		&#123;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;cout &lt;&lt; &quot;initialized.\n&quot;;
-
+			cout &lt;&lt; &quot;initialized&#46;\n&quot;;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;
-
+			
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;// Set default hostname&#58;
-
+			// Set default hostname&#58;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;const char *pHostname = DEF_SERVER_NAME;
-
+			const char *pHostname = DEF_SERVER_NAME;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;
-
+			
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;// Set custom hostname if given on the commandline&#58;
-
+			// Set custom hostname if given on the commandline&#58;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;if &#40;argc &gt; 1&#41;
-
+			if &#40;argc &gt; 1&#41;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;pHostname = argv&#91;1&#93;;
-
+				pHostname = argv&#91;1&#93;;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;
-
+				
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;iRet = !RequestHeaders&#40;pHostname&#41;;
-
+			iRet = !RequestHeaders&#40;pHostname&#41;;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&#125;
-
+		&#125;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;else
-
+		else
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&#123;
-
+		&#123;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;cerr &lt;&lt; &quot;required version not supported!&quot;;
-
+			cerr &lt;&lt; &quot;required version not supported!&quot;;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&#125;
-
+		&#125;
 <br />
 
-
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;cout &lt;&lt; &quot;Cleaning up winsock... &quot;;
-
+		cout &lt;&lt; &quot;Cleaning up winsock&#46;&#46;&#46; &quot;;
 <br />
 
-
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;// Cleanup winsock
-
+		// Cleanup winsock
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;if &#40;WSACleanup&#40;&#41;!=0&#41;
-
+		if &#40;WSACleanup&#40;&#41;!=0&#41;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&#123;
-
+		&#123;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;cerr &lt;&lt; &quot;cleanup failed!\n&quot;;
-
+			cerr &lt;&lt; &quot;cleanup failed!\n&quot;;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;iRet = 1;
-
+			iRet = 1;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;&#125;&nbsp;  
-
+		&#125;   
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;cout &lt;&lt; &quot;done.\n&quot;;
-
+		cout &lt;&lt; &quot;done&#46;\n&quot;;
 <br />
-&nbsp; &nbsp;&#125;
-
+	&#125;
 <br />
-&nbsp; &nbsp;else
-
+	else
 <br />
-&nbsp; &nbsp;&#123;
-
+	&#123;
 <br />
-&nbsp; &nbsp;&nbsp; &nbsp;cerr &lt;&lt; &quot;startup failed!\n&quot;;
-
+		cerr &lt;&lt; &quot;startup failed!\n&quot;;
 <br />
-&nbsp; &nbsp;&#125;
-
+	&#125;
 <br />
-&nbsp; &nbsp;return iRet;
-
+	return iRet;
 <br />
 &#125;
-
 <br />
 </td>
 <br />
@@ -933,43 +738,30 @@ ERROR-i <span style="font-weight: bold">:</span>
 
 <br />
 <span style="font-weight: bold">
-
 <br />
 headreq.obj : error LNK2001: unresolved external symbol __imp__gethostbyname@4
-
 <br />
 headreq.obj : error LNK2001: unresolved external symbol __imp__htons@4
-
 <br />
 headreq.obj : error LNK2001: unresolved external symbol __imp__closesocket@4
-
 <br />
 headreq.obj : error LNK2001: unresolved external symbol __imp__recv@16
-
 <br />
 headreq.obj : error LNK2001: unresolved external symbol __imp__send@16
-
 <br />
 headreq.obj : error LNK2001: unresolved external symbol __imp__connect@12
-
 <br />
 headreq.obj : error LNK2001: unresolved external symbol __imp__inet_ntoa@4
-
 <br />
 headreq.obj : error LNK2001: unresolved external symbol __imp__socket@12
-
 <br />
 headreq.obj : error LNK2001: unresolved external symbol __imp__WSACleanup@0
-
 <br />
 headreq.obj : error LNK2001: unresolved external symbol __imp__WSAStartup@8
-
 <br />
 Debug/headreq.exe : fatal error LNK1120: 10 unresolved externals
-
 <br />
 Error executing link.exe.
-
 <br />
 </span>
 
@@ -997,7 +789,7 @@ Tnx</span><span class="gensmall"></span></td>
 	</tr>
 	
 	<tr>
-		<td width="150" align="left" valign="top" class="row2"><span class="name"><a name="5320"></a><b>Ozzy</b></span><br /><span class="postdetails">wannabe<br /><img src="images/ranks/sgd-2.gif" alt="wannabe" title="wannabe" border="0" /><br /><img src="images/avatars/a4081333430d8da37ef5c.gif" alt="" border="0" /><br /><br />Pridružen: 19. jan 2003 ob 22:17<br />objav: 125<br /></span><br /></td>
+		<td width="150" align="left" valign="top" class="row2"><span class="name"><a name="5320"></a><b>Ozzy</b></span><br /><span class="postdetails">poznavalec<br /><img src="images/ranks/sgd-3.gif" alt="poznavalec" title="poznavalec" border="0" /><br /><img src="images/avatars/a4081333430d8da37ef5c.gif" alt="" border="0" /><br /><br />Pridružen: 19. jan 2003 ob 22:17<br />objav: 172<br /></span><br /></td>
 		<td class="row2" width="100%" height="28" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
 			<tr>
 				<td colspan="2" width="100%">
@@ -1043,7 +835,7 @@ Tnx</span><span class="gensmall"></span></td>
 	</tr>
 	
 	<tr>
-		<td width="150" align="left" valign="top" class="row1"><span class="name"><a name="5321"></a><b>Ozzy</b></span><br /><span class="postdetails">wannabe<br /><img src="images/ranks/sgd-2.gif" alt="wannabe" title="wannabe" border="0" /><br /><img src="images/avatars/a4081333430d8da37ef5c.gif" alt="" border="0" /><br /><br />Pridružen: 19. jan 2003 ob 22:17<br />objav: 125<br /></span><br /></td>
+		<td width="150" align="left" valign="top" class="row1"><span class="name"><a name="5321"></a><b>Ozzy</b></span><br /><span class="postdetails">poznavalec<br /><img src="images/ranks/sgd-3.gif" alt="poznavalec" title="poznavalec" border="0" /><br /><img src="images/avatars/a4081333430d8da37ef5c.gif" alt="" border="0" /><br /><br />Pridružen: 19. jan 2003 ob 22:17<br />objav: 172<br /></span><br /></td>
 		<td class="row1" width="100%" height="28" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
 			<tr>
 				<td colspan="2" width="100%">
@@ -1086,7 +878,7 @@ in dodas <span style="font-style: italic">ws2_32.lib</span> na konec.</span><spa
 	</tr>
 	
 	<tr>
-		<td width="150" align="left" valign="top" class="row2"><span class="name"><a name="5333"></a><b>_t3ch_</b></span><br /><span class="postdetails">wannabe<br /><img src="images/ranks/sgd-2.gif" alt="wannabe" title="wannabe" border="0" /><br /><img src="images/avatars/c2f922b13f93ced57f936.gif" alt="" border="0" /><br /><br />Pridružen: 09. okt 2003 ob 16:04<br />objav: 75<br />Kraj: Mafia SoftWare IT</span><br /></td>
+		<td width="150" align="left" valign="top" class="row2"><span class="name"><a name="5333"></a><b>_t3ch_</b></span><br /><span class="postdetails">wannabe<br /><img src="images/ranks/sgd-2.gif" alt="wannabe" title="wannabe" border="0" /><br /><img src="images/avatars/c2f922b13f93ced57f936.gif" alt="" border="0" /><br /><br />Pridružen: 09. okt 2003 ob 16:04<br />objav: 77<br />Kraj: Mafia SoftWare IT</span><br /></td>
 		<td class="row2" width="100%" height="28" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
 			<tr>
 				<td colspan="2" width="100%">
@@ -1106,7 +898,7 @@ in dodas <span style="font-style: italic">ws2_32.lib</span> na konec.</span><spa
 				<td colspan="2"><hr /></td>
 			</tr>
 			<tr>
-				<td colspan="2"><span class="postbody">tnx grem probat zaj pa se brat malo  <img src="images/smiles/icon_razz.gif" alt="icon_razz.gif" border="0" /></span><span class="gensmall"></span></td>
+				<td colspan="2"><span class="postbody">tnx grem probat zaj pa se brat malo  <img src="images/smiles/icon_razz.gif" alt=":P" border="0" /></span><span class="gensmall"></span></td>
 			</tr>
 		</table></td>
 	</tr>
@@ -1123,7 +915,7 @@ in dodas <span style="font-style: italic">ws2_32.lib</span> na konec.</span><spa
 	</tr>
 	
 	<tr>
-		<td width="150" align="left" valign="top" class="row1"><span class="name"><a name="5334"></a><b>_t3ch_</b></span><br /><span class="postdetails">wannabe<br /><img src="images/ranks/sgd-2.gif" alt="wannabe" title="wannabe" border="0" /><br /><img src="images/avatars/c2f922b13f93ced57f936.gif" alt="" border="0" /><br /><br />Pridružen: 09. okt 2003 ob 16:04<br />objav: 75<br />Kraj: Mafia SoftWare IT</span><br /></td>
+		<td width="150" align="left" valign="top" class="row1"><span class="name"><a name="5334"></a><b>_t3ch_</b></span><br /><span class="postdetails">wannabe<br /><img src="images/ranks/sgd-2.gif" alt="wannabe" title="wannabe" border="0" /><br /><img src="images/avatars/c2f922b13f93ced57f936.gif" alt="" border="0" /><br /><br />Pridružen: 09. okt 2003 ob 16:04<br />objav: 77<br />Kraj: Mafia SoftWare IT</span><br /></td>
 		<td class="row1" width="100%" height="28" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
 			<tr>
 				<td colspan="2" width="100%">
@@ -1143,7 +935,7 @@ in dodas <span style="font-style: italic">ws2_32.lib</span> na konec.</span><spa
 				<td colspan="2"><hr /></td>
 			</tr>
 			<tr>
-				<td colspan="2"><span class="postbody">dela zaj tnx u  <img src="images/smiles/icon_razz.gif" alt="icon_razz.gif" border="0" /></span><span class="gensmall"></span></td>
+				<td colspan="2"><span class="postbody">dela zaj tnx u  <img src="images/smiles/icon_razz.gif" alt=":P" border="0" /></span><span class="gensmall"></span></td>
 			</tr>
 		</table></td>
 	</tr>
@@ -1160,7 +952,7 @@ in dodas <span style="font-style: italic">ws2_32.lib</span> na konec.</span><spa
 	</tr>
 	
 	<tr>
-		<td width="150" align="left" valign="top" class="row2"><span class="name"><a name="5338"></a><b>Person</b></span><br /><span class="postdetails">expert<br /><img src="images/ranks/sgd-6.gif" alt="expert" title="expert" border="0" /><br /><img src="images/avatars/d5fa111d422d913c2ca73.gif" alt="" border="0" /><br /><br />Pridružen: 11. jan 2003 ob 21:25<br />objav: 643<br /></span><br /></td>
+		<td width="150" align="left" valign="top" class="row2"><span class="name"><a name="5338"></a><b>Person</b></span><br /><span class="postdetails">igralec<br /><img src="images/ranks/sgd-7.gif" alt="igralec" title="igralec" border="0" /><br /><img src="images/avatars/d5fa111d422d913c2ca73.gif" alt="" border="0" /><br /><br />Pridružen: 11. jan 2003 ob 21:25<br />objav: 810<br /></span><br /></td>
 		<td class="row2" width="100%" height="28" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
 			<tr>
 				<td colspan="2" width="100%">
@@ -1180,7 +972,7 @@ in dodas <span style="font-style: italic">ws2_32.lib</span> na konec.</span><spa
 				<td colspan="2"><hr /></td>
 			</tr>
 			<tr>
-				<td colspan="2"><span class="postbody">Hm, navodila so za to, da se preberejo <img src="images/smiles/icon_wink.gif" alt="icon_wink.gif" border="0" /><br />_________________<br /><a  target="_blank" class="postlink">ACenterMedia.unimatrix-one.com</a></span><span class="gensmall"></span></td>
+				<td colspan="2"><span class="postbody">Hm, navodila so za to, da se preberejo <img src="images/smiles/icon_wink.gif" alt=":wink:" border="0" /></span><span class="gensmall"></span></td>
 			</tr>
 		</table></td>
 	</tr>
@@ -1197,7 +989,7 @@ in dodas <span style="font-style: italic">ws2_32.lib</span> na konec.</span><spa
 	</tr>
 	
 	<tr>
-		<td width="150" align="left" valign="top" class="row1"><span class="name"><a name="5347"></a><b>matjazvn</b></span><br /><span class="postdetails">poznavalec<br /><img src="images/ranks/sgd-3.gif" alt="poznavalec" title="poznavalec" border="0" /><br /><img src="images/avatars/c2f92b8440531dc3b71c9.gif" alt="" border="0" /><br /><br />Pridružen: 16. maj 2003 ob 14:46<br />objav: 151<br />Kraj: Somewhere around Barstow, on the edge of the desert</span><br /></td>
+		<td width="150" align="left" valign="top" class="row1"><span class="name"><a name="5347"></a><b>matjazvn</b></span><br /><span class="postdetails">poznavalec<br /><img src="images/ranks/sgd-3.gif" alt="poznavalec" title="poznavalec" border="0" /><br /><img src="images/avatars/c2f92b8440531dc3b71c9.gif" alt="" border="0" /><br /><br />Pridružen: 16. maj 2003 ob 14:46<br />objav: 164<br />Kraj: Somewhere around Barstow, on the edge of the desert</span><br /></td>
 		<td class="row1" width="100%" height="28" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
 			<tr>
 				<td colspan="2" width="100%">
@@ -1220,14 +1012,11 @@ in dodas <span style="font-style: italic">ws2_32.lib</span> na konec.</span><spa
 				<td colspan="2"><span class="postbody">ne za vsaki error ki ga ne rešiš v 5min dat posta.. preprosto večkrat boš prebreal bolj ti bo jasno.. In na koncu boš ugotovil kje tiči problem in se iz tega še kaj naučil.<br />_________________<br />______________________________
 
 <br />
-<span style="font-size: 10px; line-height: normal"><span style="font-style: italic"><span style="text-decoration: underline">If a thing's worth doing, it's worth doing right
-
+<span style="font-size: 84%; line-height: normal"><span style="font-style: italic"><span style="text-decoration: underline">If a thing's worth doing, it's worth doing right
 <br />
 ____________________________________________
-
 <br />
 Ignore this terrible drug, pretend it's not happening
-
 <br />
 </span></span></span></span><span class="gensmall"></span></td>
 			</tr>
@@ -1254,7 +1043,7 @@ Ignore this terrible drug, pretend it's not happening
   <tr>
 	<td align="left" valign="middle" nowrap="nowrap">&nbsp;</td>
 	<td align="left" valign="middle" width="100%"><span class="nav">&nbsp;&nbsp;&nbsp;<a href="index.html" class="nav">SloGameDev.net seznam forumov</a>
-	  -> <a href="forum-1.html" class="nav">Splošno Programiranje</a></span></td>
+	  -> <a href="forum-52.html" class="nav">Izdelovanje iger</a></span></td>
 	<td align="right" valign="top" nowrap="nowrap"><span class="gensmall">Časovni pas (GMT +2:00 uri) Slovenija, poletni čas</span><br /><span class="nav"></span>
 	  </td>
   </tr>
@@ -1270,7 +1059,7 @@ Ignore this terrible drug, pretend it's not happening
   </tr>
 </table>
 
-<div align="center"><span class="copyright"><br />Arhiv stanja na dan 13. 2. 2006 &mdash; samo za branje.<br />
+<div align="center"><span class="copyright"><br />Arhiv &mdash; samo za branje.<br />
 <!--
 	We request you retain the full copyright notice below including the link to www.phpbb.com.
 	This not only gives respect to the large amount of time given freely by the developers

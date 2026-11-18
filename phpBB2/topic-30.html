@@ -276,13 +276,13 @@ input.liteoption {
   <tr>
 	<td align="left" valign="bottom" nowrap="nowrap">&nbsp;</td>
 	<td align="left" valign="middle" width="100%"><span class="nav">&nbsp;&nbsp;&nbsp;<a href="index.html" class="nav">SloGameDev.net seznam forumov</a>
-	  -> <a href="forum-15.html" class="nav">Grafično Programiranje</a></span></td>
+	  -> <a href="forum-52.html" class="nav">Izdelovanje iger</a></span></td>
   </tr>
 </table>
 
 <table class="forumline" width="100%" cellspacing="1" cellpadding="3" border="0">
 	<tr align="right">
-		<td class="catHead" colspan="2" height="28"><span class="nav"><a href="topic-30.html" class="nav">Prejšnja tema</a> :: <a href="topic-27.html" class="nav">Naslednja tema</a> &nbsp;</span></td>
+		<td class="catHead" colspan="2" height="28"><span class="nav"><a href="topic-45.html" class="nav">Prejšnja tema</a> :: <a href="topic-21.html" class="nav">Naslednja tema</a> &nbsp;</span></td>
 	</tr>
 	
 	<tr>
@@ -291,7 +291,7 @@ input.liteoption {
 	</tr>
 	
 	<tr>
-		<td width="150" align="left" valign="top" class="row1"><span class="name"><a name="159"></a><b>rabely</b></span><br /><span class="postdetails">poznavalec<br /><img src="images/ranks/sgd-3.gif" alt="poznavalec" title="poznavalec" border="0" /><br /><img src="images/avatars/c2f900893e99064641ec4.jpg" alt="" border="0" /><br /><br />Pridružen: 06. jan 2003 ob 15:58<br />objav: 155<br />Kraj: darkness</span><br /></td>
+		<td width="150" align="left" valign="top" class="row1"><span class="name"><a name="159"></a><b>rabely</b></span><br /><span class="postdetails">wannabe<br /><img src="images/ranks/sgd-2.gif" alt="wannabe" title="wannabe" border="0" /><br /><img src="images/avatars/c2f900893e99064641ec4.jpg" alt="" border="0" /><br /><br />Pridružen: 06. jan 2003 ob 15:58<br />objav: 138<br />Kraj: darkness</span><br /></td>
 		<td class="row1" width="100%" height="28" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
 			<tr>
 				<td colspan="2" width="100%">
@@ -323,146 +323,99 @@ input.liteoption {
 <br />
 	<tr>
 <br />
-	  <td class="code">#include &lt;dsound.h&gt;
-
+	  <td class="code">#include &lt;dsound&#46;h&gt;
 <br />
-#include &lt;windows.h&gt;
-
+#include &lt;windows&#46;h&gt;
 <br />
-#include &lt;stdio.h&gt;
-
+#include &lt;stdio&#46;h&gt;
 <br />
 
-
 <br />
-extern HWND hMainWnd;&nbsp; //handle to the window from the main windows program
-
+extern HWND hMainWnd;  //handle to the window from the main windows program
 <br />
 static LPDIRECTSOUND lpDS; //pointer to the directsound object
-
 <br />
-
 
 <br />
 /* This function will initialize Direct Sound */
-
 <br />
 /* it returns TRUE if it was successful or FALSE otherwise */
-
 <br />
-
 
 <br />
 BOOL Sound_Init&#40;void&#41;
-
 <br />
 &#123;
-
 <br />
-&nbsp; &nbsp; if &#40;DS_OK==DirectSoundCreate&#40;NULL,&amp;lpDS,NULL&#41;&#41; //create direct sound object
-
+    if &#40;DS_OK==DirectSoundCreate&#40;NULL,&amp;lpDS,NULL&#41;&#41; //create direct sound object
 <br />
-&nbsp; &nbsp; &#123;
-
+    &#123;
 <br />
-&nbsp; &nbsp; &nbsp; &nbsp; //ok, DirectSound Object created, let's take control now...
-
+        //ok, DirectSound Object created, let's take control now&#46;&#46;&#46;
 <br />
-&nbsp; &nbsp; &nbsp; &nbsp; if &#40;DS_OK==IDirectSound_SetCooperativeLevel&#40;lpDS, hMainWnd, DSSCL_EXCLUSIVE&#41;&#41;
-
+        if &#40;DS_OK==IDirectSound_SetCooperativeLevel&#40;lpDS, hMainWnd, DSSCL_EXCLUSIVE&#41;&#41;
 <br />
-&nbsp; &nbsp; &nbsp; &nbsp; &#123;
-
+        &#123;
 <br />
-&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; //MessageBox&#40;hMainWnd,&quot;Cooperative Level Succefully Set!&quot;,&quot;Good!!&quot;,MB_OK&#41;;
-
+            //MessageBox&#40;hMainWnd,&quot;Cooperative Level Succefully Set!&quot;,&quot;Good!!&quot;,MB_OK&#41;;
 <br />
-&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; return TRUE;
-
+            return TRUE;
 <br />
-&nbsp; &nbsp; &nbsp; &nbsp; &#125;
-
+        &#125;
 <br />
-&nbsp; &nbsp; &nbsp; &nbsp; else //SetCoop was unsuccessful, let's give up control
-
+        else //SetCoop was unsuccessful, let's give up control
 <br />
-&nbsp; &nbsp; &nbsp; &nbsp; &#123;
-
+        &#123;
 <br />
-&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; IDirectSound_Release&#40;lpDS&#41;;
-
+            IDirectSound_Release&#40;lpDS&#41;;
 <br />
-&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; MessageBox&#40;hMainWnd,&quot;Set Cooperative Level didn't Work!&quot;,&quot;BAD!!&quot;,MB_OK&#41;;
-
+            MessageBox&#40;hMainWnd,&quot;Set Cooperative Level didn't Work!&quot;,&quot;BAD!!&quot;,MB_OK&#41;;
 <br />
-&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; return FALSE;
-
+            return FALSE;
 <br />
-&nbsp; &nbsp; &nbsp; &nbsp; &#125;
-
+        &#125;
 <br />
-&nbsp; &nbsp; &#125;
-
+    &#125;
 <br />
-&nbsp; &nbsp; else&nbsp; //DSObj creation was unsuccessful
-
+    else  //DSObj creation was unsuccessful
 <br />
-&nbsp; &nbsp; &#123;
-
+    &#123;
 <br />
-&nbsp; &nbsp; &nbsp; &nbsp; MessageBox&#40;hMainWnd,&quot;Could Not Create Direct Sound Object&quot;,&quot;Error!&quot;,MB_OK&#41;;
-
+        MessageBox&#40;hMainWnd,&quot;Could Not Create Direct Sound Object&quot;,&quot;Error!&quot;,MB_OK&#41;;
 <br />
-&nbsp; &nbsp; &nbsp; &nbsp; return &#40;FALSE&#41;;
-
+        return &#40;FALSE&#41;;
 <br />
-&nbsp; &nbsp; &#125;
-
+    &#125;
 <br />
 &#125;
-
 <br />
-
 
 <br />
 /*here's a simple function to shut down direct sound when you're done with it */
-
 <br />
 void Sound_Exit&#40;void&#41;
-
 <br />
 &#123;
-
 <br />
-&nbsp; &nbsp; if &#40;lpDS&#41;
-
+    if &#40;lpDS&#41;
 <br />
-&nbsp; &nbsp; &#123;
-
+    &#123;
 <br />
-&nbsp; &nbsp; &nbsp; &nbsp; IDirectSound_Release&#40;lpDS&#41;;
-
+        IDirectSound_Release&#40;lpDS&#41;;
 <br />
-&nbsp; &nbsp; &#125;
-
+    &#125;
 <br />
-&nbsp; &nbsp; else
-
+    else
 <br />
-&nbsp; &nbsp; &#123;
-
+    &#123;
 <br />
-&nbsp; &nbsp; &nbsp; &nbsp; MessageBox&#40;hMainWnd,&quot;Sound was not initialized and cannot Exit!&quot;,
-
+        MessageBox&#40;hMainWnd,&quot;Sound was not initialized and cannot Exit!&quot;,
 <br />
-&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &quot;Error!&quot;,MB_OK&#41;;
-
+                &quot;Error!&quot;,MB_OK&#41;;
 <br />
-&nbsp; &nbsp; &#125;
-
+    &#125;
 <br />
 &#125;
-
 <br />
 </td>
 <br />
@@ -471,15 +424,11 @@ void Sound_Exit&#40;void&#41;
 </table>
 <br />
 <span class="postbody">
-
 <br />
-
 
 <br />
 kompajla brez problema, ko pa hočem narest EXE pa javi tole:
-
 <br />
-
 
 <br />
 </span>
@@ -495,25 +444,18 @@ kompajla brez problema, ko pa hočem narest EXE pa javi tole:
 	<tr>
 <br />
 	  <td class="code">--------------------Configuration&#58; V2 sound module - Win32 Debug--------------------
-
 <br />
-Linking...
-
+Linking&#46;&#46;&#46;
 <br />
-V2 sound module.obj &#58; error LNK2001&#58; unresolved external symbol &quot;struct HWND__ * hMainWnd&quot; &#40;?hMainWnd@@3PAUHWND__@@A&#41;
-
+V2 sound module&#46;obj &#58; error LNK2001&#58; unresolved external symbol &quot;struct HWND__ * hMainWnd&quot; &#40;?hMainWnd@@3PAUHWND__@@A&#41;
 <br />
-Debug/V2 sound module.exe &#58; fatal error LNK1120&#58; 1 unresolved externals
-
+Debug/V2 sound module&#46;exe &#58; fatal error LNK1120&#58; 1 unresolved externals
 <br />
-Error executing link.exe.
-
+Error executing link&#46;exe&#46;
 <br />
 
-
 <br />
-V2 sound module.exe - 2 error&#40;s&#41;, 0 warning&#40;s&#41;
-
+V2 sound module&#46;exe - 2 error&#40;s&#41;, 0 warning&#40;s&#41;
 <br />
 </td>
 <br />
@@ -547,7 +489,7 @@ Pa tega nisem jaz napisal, je iz GameDev.net.<br />_________________<br /><span 
 	</tr>
 	
 	<tr>
-		<td width="150" align="left" valign="top" class="row2"><span class="name"><a name="160"></a><b>Wingman</b></span><br /><span class="postdetails">SGD Moderator<br /><img src="images/ranks/sgd-mod.gif" alt="SGD Moderator" title="SGD Moderator" border="0" /><br /><img src="images/avatars/c14d9fca410a4a42927d3.jpg" alt="" border="0" /><br /><br />Pridružen: 08. jan 2003 ob 21:33<br />objav: 293<br />Kraj: Kranj</span><br /></td>
+		<td width="150" align="left" valign="top" class="row2"><span class="name"><a name="160"></a><b>Wing</b></span><br /><span class="postdetails">SGD Admin<br /><img src="images/ranks/sgd-admin.gif" alt="SGD Admin" title="SGD Admin" border="0" /><br /><br /><br />Pridružen: 08. jan 2003 ob 21:33<br />objav: 481<br />Kraj: Kranj</span><br /></td>
 		<td class="row2" width="100%" height="28" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
 			<tr>
 				<td colspan="2" width="100%">
@@ -567,7 +509,7 @@ Pa tega nisem jaz napisal, je iz GameDev.net.<br />_________________<br /><span 
 				<td colspan="2"><hr /></td>
 			</tr>
 			<tr>
-				<td colspan="2"><span class="postbody">O DXu sicer nimam pojma, ampka odstrani extern izpred HWND.<br />_________________<br />In Soviet Russia, if your program doesn't execute, they execute YOU!</span><span class="gensmall"></span></td>
+				<td colspan="2"><span class="postbody">O DXu sicer nimam pojma, ampka odstrani extern izpred HWND.</span><span class="gensmall"></span></td>
 			</tr>
 		</table></td>
 	</tr>
@@ -584,7 +526,7 @@ Pa tega nisem jaz napisal, je iz GameDev.net.<br />_________________<br /><span 
 	</tr>
 	
 	<tr>
-		<td width="150" align="left" valign="top" class="row1"><span class="name"><a name="163"></a><b>Person</b></span><br /><span class="postdetails">expert<br /><img src="images/ranks/sgd-6.gif" alt="expert" title="expert" border="0" /><br /><img src="images/avatars/d5fa111d422d913c2ca73.gif" alt="" border="0" /><br /><br />Pridružen: 11. jan 2003 ob 21:25<br />objav: 643<br /></span><br /></td>
+		<td width="150" align="left" valign="top" class="row1"><span class="name"><a name="163"></a><b>Person</b></span><br /><span class="postdetails">igralec<br /><img src="images/ranks/sgd-7.gif" alt="igralec" title="igralec" border="0" /><br /><img src="images/avatars/d5fa111d422d913c2ca73.gif" alt="" border="0" /><br /><br />Pridružen: 11. jan 2003 ob 21:25<br />objav: 810<br /></span><br /></td>
 		<td class="row1" width="100%" height="28" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
 			<tr>
 				<td colspan="2" width="100%">
@@ -616,7 +558,7 @@ No, tvoj program jo pa ne najde in zato napiše, da ne pozna te funkcije.
 
 
 <br />
-Napiši še kaj več. <img src="images/smiles/icon_wink.gif" alt="icon_wink.gif" border="0" /><br />_________________<br /><a  target="_blank" class="postlink">ACenterMedia.unimatrix-one.com</a></span><span class="gensmall"></span></td>
+Napiši še kaj več. <img src="images/smiles/icon_wink.gif" alt=":wink:" border="0" /></span><span class="gensmall"></span></td>
 			</tr>
 		</table></td>
 	</tr>
@@ -633,7 +575,7 @@ Napiši še kaj več. <img src="images/smiles/icon_wink.gif" alt="icon_wink.gif"
 	</tr>
 	
 	<tr>
-		<td width="150" align="left" valign="top" class="row2"><span class="name"><a name="169"></a><b>rabely</b></span><br /><span class="postdetails">poznavalec<br /><img src="images/ranks/sgd-3.gif" alt="poznavalec" title="poznavalec" border="0" /><br /><img src="images/avatars/c2f900893e99064641ec4.jpg" alt="" border="0" /><br /><br />Pridružen: 06. jan 2003 ob 15:58<br />objav: 155<br />Kraj: darkness</span><br /></td>
+		<td width="150" align="left" valign="top" class="row2"><span class="name"><a name="169"></a><b>rabely</b></span><br /><span class="postdetails">wannabe<br /><img src="images/ranks/sgd-2.gif" alt="wannabe" title="wannabe" border="0" /><br /><img src="images/avatars/c2f900893e99064641ec4.jpg" alt="" border="0" /><br /><br />Pridružen: 06. jan 2003 ob 15:58<br />objav: 138<br />Kraj: darkness</span><br /></td>
 		<td class="row2" width="100%" height="28" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
 			<tr>
 				<td colspan="2" width="100%">
@@ -673,7 +615,7 @@ Yeah, grem MSDN brat.<br />_________________<br /><span style="font-style: itali
 	</tr>
 	
 	<tr>
-		<td width="150" align="left" valign="top" class="row1"><span class="name"><a name="171"></a><b>Person</b></span><br /><span class="postdetails">expert<br /><img src="images/ranks/sgd-6.gif" alt="expert" title="expert" border="0" /><br /><img src="images/avatars/d5fa111d422d913c2ca73.gif" alt="" border="0" /><br /><br />Pridružen: 11. jan 2003 ob 21:25<br />objav: 643<br /></span><br /></td>
+		<td width="150" align="left" valign="top" class="row1"><span class="name"><a name="171"></a><b>Person</b></span><br /><span class="postdetails">igralec<br /><img src="images/ranks/sgd-7.gif" alt="igralec" title="igralec" border="0" /><br /><img src="images/avatars/d5fa111d422d913c2ca73.gif" alt="" border="0" /><br /><br />Pridružen: 11. jan 2003 ob 21:25<br />objav: 810<br /></span><br /></td>
 		<td class="row1" width="100%" height="28" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
 			<tr>
 				<td colspan="2" width="100%">
@@ -708,7 +650,7 @@ Pa če maš pravilno nastavljene include in podobne stvari...
 
 
 <br />
-Če si ga pa kje na net-u našel, pa lahk da ne dela.<br />_________________<br /><a  target="_blank" class="postlink">ACenterMedia.unimatrix-one.com</a></span><span class="gensmall"></span></td>
+Če si ga pa kje na net-u našel, pa lahk da ne dela.</span><span class="gensmall"></span></td>
 			</tr>
 		</table></td>
 	</tr>
@@ -725,7 +667,7 @@ Pa če maš pravilno nastavljene include in podobne stvari...
 	</tr>
 	
 	<tr>
-		<td width="150" align="left" valign="top" class="row2"><span class="name"><a name="228"></a><b>BAADC0DE</b></span><br /><span class="postdetails">poizvedovalec<br /><img src="images/ranks/sgd-1.gif" alt="poizvedovalec" title="poizvedovalec" border="0" /><br /><img src="images/avatars/c15fc9eb41f7a06b1fbe1.png" alt="" border="0" /><br /><br />Pridružen: 11. jan 2003 ob 17:17<br />objav: 65<br /></span><br /></td>
+		<td width="150" align="left" valign="top" class="row2"><span class="name"><a name="228"></a><b>BAADC0DE</b></span><br /><span class="postdetails">wannabe<br /><img src="images/ranks/sgd-2.gif" alt="wannabe" title="wannabe" border="0" /><br /><img src="images/avatars/c15fc9eb41f7a06b1fbe1.png" alt="" border="0" /><br /><br />Pridružen: 11. jan 2003 ob 17:17<br />objav: 81<br /></span><br /></td>
 		<td class="row2" width="100%" height="28" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
 			<tr>
 				<td colspan="2" width="100%">
@@ -772,7 +714,7 @@ Pac tako kot DirectGraphics ... registriras svoj WNDCLASS, naredis Window in se 
 
 
 <br />
-naredi en dialog iz MFC-ja recimo in je to vse postimano namesto tebe. Gor narises kontrole in z njimi povezane metode napises "sproti"  <img src="images/smiles/icon_biggrin.gif" alt="icon_biggrin.gif" border="0" /> 
+naredi en dialog iz MFC-ja recimo in je to vse postimano namesto tebe. Gor narises kontrole in z njimi povezane metode napises "sproti"  <img src="images/smiles/icon_biggrin.gif" alt=":D" border="0" /> 
 
 <br />
 
@@ -795,7 +737,7 @@ BAADC0DE, out...</span><span class="gensmall"></span></td>
 	</tr>
 	
 	<tr>
-		<td width="150" align="left" valign="top" class="row1"><span class="name"><a name="279"></a><b>rabely</b></span><br /><span class="postdetails">poznavalec<br /><img src="images/ranks/sgd-3.gif" alt="poznavalec" title="poznavalec" border="0" /><br /><img src="images/avatars/c2f900893e99064641ec4.jpg" alt="" border="0" /><br /><br />Pridružen: 06. jan 2003 ob 15:58<br />objav: 155<br />Kraj: darkness</span><br /></td>
+		<td width="150" align="left" valign="top" class="row1"><span class="name"><a name="279"></a><b>rabely</b></span><br /><span class="postdetails">wannabe<br /><img src="images/ranks/sgd-2.gif" alt="wannabe" title="wannabe" border="0" /><br /><img src="images/avatars/c2f900893e99064641ec4.jpg" alt="" border="0" /><br /><br />Pridružen: 06. jan 2003 ob 15:58<br />objav: 138<br />Kraj: darkness</span><br /></td>
 		<td class="row1" width="100%" height="28" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
 			<tr>
 				<td colspan="2" width="100%">
@@ -832,7 +774,7 @@ BAADC0DE, out...</span><span class="gensmall"></span></td>
 	</tr>
 	
 	<tr>
-		<td width="150" align="left" valign="top" class="row2"><span class="name"><a name="282"></a><b>rabely</b></span><br /><span class="postdetails">poznavalec<br /><img src="images/ranks/sgd-3.gif" alt="poznavalec" title="poznavalec" border="0" /><br /><img src="images/avatars/c2f900893e99064641ec4.jpg" alt="" border="0" /><br /><br />Pridružen: 06. jan 2003 ob 15:58<br />objav: 155<br />Kraj: darkness</span><br /></td>
+		<td width="150" align="left" valign="top" class="row2"><span class="name"><a name="282"></a><b>rabely</b></span><br /><span class="postdetails">wannabe<br /><img src="images/ranks/sgd-2.gif" alt="wannabe" title="wannabe" border="0" /><br /><img src="images/avatars/c2f900893e99064641ec4.jpg" alt="" border="0" /><br /><br />Pridružen: 06. jan 2003 ob 15:58<br />objav: 138<br />Kraj: darkness</span><br /></td>
 		<td class="row2" width="100%" height="28" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
 			<tr>
 				<td colspan="2" width="100%">
@@ -869,7 +811,7 @@ BAADC0DE, out...</span><span class="gensmall"></span></td>
 	</tr>
 	
 	<tr>
-		<td width="150" align="left" valign="top" class="row1"><span class="name"><a name="283"></a><b>BAADC0DE</b></span><br /><span class="postdetails">poizvedovalec<br /><img src="images/ranks/sgd-1.gif" alt="poizvedovalec" title="poizvedovalec" border="0" /><br /><img src="images/avatars/c15fc9eb41f7a06b1fbe1.png" alt="" border="0" /><br /><br />Pridružen: 11. jan 2003 ob 17:17<br />objav: 65<br /></span><br /></td>
+		<td width="150" align="left" valign="top" class="row1"><span class="name"><a name="283"></a><b>BAADC0DE</b></span><br /><span class="postdetails">wannabe<br /><img src="images/ranks/sgd-2.gif" alt="wannabe" title="wannabe" border="0" /><br /><img src="images/avatars/c15fc9eb41f7a06b1fbe1.png" alt="" border="0" /><br /><br />Pridružen: 11. jan 2003 ob 17:17<br />objav: 81<br /></span><br /></td>
 		<td class="row1" width="100%" height="28" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
 			<tr>
 				<td colspan="2" width="100%">
@@ -904,7 +846,7 @@ ShowWindow(hWnd,SW_HIDE);
 
 
 <br />
-Mislim da bi _moralo_ delati.<br />_________________<br /><a  target="_blank">http://baadengine.sourceforge.net</a></span><span class="gensmall"></span></td>
+Mislim da bi _moralo_ delati.<br />_________________<br /><a class="postlink" >http://www.baadengine.org</a></span><span class="gensmall"></span></td>
 			</tr>
 		</table></td>
 	</tr>
@@ -921,7 +863,7 @@ Mislim da bi _moralo_ delati.<br />_________________<br /><a  target="_blank">ht
 	</tr>
 	
 	<tr>
-		<td width="150" align="left" valign="top" class="row2"><span class="name"><a name="319"></a><b>Person</b></span><br /><span class="postdetails">expert<br /><img src="images/ranks/sgd-6.gif" alt="expert" title="expert" border="0" /><br /><img src="images/avatars/d5fa111d422d913c2ca73.gif" alt="" border="0" /><br /><br />Pridružen: 11. jan 2003 ob 21:25<br />objav: 643<br /></span><br /></td>
+		<td width="150" align="left" valign="top" class="row2"><span class="name"><a name="319"></a><b>Person</b></span><br /><span class="postdetails">igralec<br /><img src="images/ranks/sgd-7.gif" alt="igralec" title="igralec" border="0" /><br /><img src="images/avatars/d5fa111d422d913c2ca73.gif" alt="" border="0" /><br /><br />Pridružen: 11. jan 2003 ob 21:25<br />objav: 810<br /></span><br /></td>
 		<td class="row2" width="100%" height="28" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
 			<tr>
 				<td colspan="2" width="100%">
@@ -950,7 +892,7 @@ Samo Create...
 
 
 <br />
-Tk sm jst naredil en easy autorun prog., ki je narejen iz enega samega dialoga. Rabo sm pa HWND<br />_________________<br /><a  target="_blank" class="postlink">ACenterMedia.unimatrix-one.com</a></span><span class="gensmall"></span></td>
+Tk sm jst naredil en easy autorun prog., ki je narejen iz enega samega dialoga. Rabo sm pa HWND</span><span class="gensmall"></span></td>
 			</tr>
 		</table></td>
 	</tr>
@@ -967,7 +909,7 @@ Tk sm jst naredil en easy autorun prog., ki je narejen iz enega samega dialoga. 
 	</tr>
 	
 	<tr>
-		<td width="150" align="left" valign="top" class="row1"><span class="name"><a name="322"></a><b>hugoboss</b></span><br /><span class="postdetails">poznavalec<br /><img src="images/ranks/sgd-3.gif" alt="poznavalec" title="poznavalec" border="0" /><br /><img src="images/avatars/c2f900cf3e245e2ad2ecf.gif" alt="" border="0" /><br /><br />Pridružen: 11. jan 2003 ob 21:57<br />objav: 193<br /></span><br /></td>
+		<td width="150" align="left" valign="top" class="row1"><span class="name"><a name="322"></a><b>hugoboss</b></span><br /><span class="postdetails">poznavalec<br /><img src="images/ranks/sgd-3.gif" alt="poznavalec" title="poznavalec" border="0" /><br /><img src="images/avatars/c2f900cf3e245e2ad2ecf.gif" alt="" border="0" /><br /><br />Pridružen: 11. jan 2003 ob 21:57<br />objav: 189<br /></span><br /></td>
 		<td class="row1" width="100%" height="28" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
 			<tr>
 				<td colspan="2" width="100%">
@@ -987,7 +929,7 @@ Tk sm jst naredil en easy autorun prog., ki je narejen iz enega samega dialoga. 
 				<td colspan="2"><hr /></td>
 			</tr>
 			<tr>
-				<td colspan="2"><span class="postbody">Ja z DS je obcasno problem ker zeli imeti HWND... Ce se ne motim(!!!), lahko dobis hwnd na easy tako, da query-as "desktop window" oz. osnovni wnd ki VEDNO obstaja preko funkcije GetDeskotopWindow() oz. nekaj podobnega! Tako da okna ne rabis ustvariti ti ampak vzames ze obsojece. Poglej malo se po helpu od WinAPI...<br />_________________<br />hugo2me@…
+				<td colspan="2"><span class="postbody">Ja z DS je obcasno problem ker zeli imeti HWND... Ce se ne motim(!!!), lahko dobis hwnd na easy tako, da query-as "desktop window" oz. osnovni wnd ki VEDNO obstaja preko funkcije GetDeskotopWindow() oz. nekaj podobnega! Tako da okna ne rabis ustvariti ti ampak vzames ze obsojece. Poglej malo se po helpu od WinAPI...<br />_________________<br /><a >hugo2me@…</a>
 
 <br />
 
@@ -1021,7 +963,7 @@ School SUX!</span><span class="gensmall"></span></td>
   <tr>
 	<td align="left" valign="middle" nowrap="nowrap">&nbsp;</td>
 	<td align="left" valign="middle" width="100%"><span class="nav">&nbsp;&nbsp;&nbsp;<a href="index.html" class="nav">SloGameDev.net seznam forumov</a>
-	  -> <a href="forum-15.html" class="nav">Grafično Programiranje</a></span></td>
+	  -> <a href="forum-52.html" class="nav">Izdelovanje iger</a></span></td>
 	<td align="right" valign="top" nowrap="nowrap"><span class="gensmall">Časovni pas (GMT +2:00 uri) Slovenija, poletni čas</span><br /><span class="nav"></span>
 	  </td>
   </tr>
@@ -1037,7 +979,7 @@ School SUX!</span><span class="gensmall"></span></td>
   </tr>
 </table>
 
-<div align="center"><span class="copyright"><br />Arhiv stanja na dan 13. 2. 2006 &mdash; samo za branje.<br />
+<div align="center"><span class="copyright"><br />Arhiv &mdash; samo za branje.<br />
 <!--
 	We request you retain the full copyright notice below including the link to www.phpbb.com.
 	This not only gives respect to the large amount of time given freely by the developers
