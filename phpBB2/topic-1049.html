@@ -1,0 +1,2246 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html dir="ltr">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta http-equiv="Content-Style-Type" content="text/css">
+<style type="text/css">
+<!--
+.style1 {color: #FFFFFF}
+-->
+</style>
+
+
+
+<title>SloGameDev.net :: client-client komunikacija</title>
+<!-- link rel="stylesheet" href="templates/SGD/SGD2.css" type="text/css" -->
+<style type="text/css">
+<!--
+/*
+  The SGD Theme for phpBB version 2+
+  Created by Rhuantavan
+  http://www.rhuantavan.org
+
+  NOTE: These CSS definitions are stored within the main page body so that you can use the phpBB2
+  theme administration centre. When you have finalised your style you could cut the final CSS code
+  and place it in an external file, deleting this section to save bandwidth.
+*/
+
+/* General page style. The scroll bar colours only visible in IE5.5+ */
+body {
+	background-color: #DDDDDD;
+	scrollbar-face-color: #000000;
+	scrollbar-highlight-color: #000000;
+	scrollbar-3dlight-color: #EEEEEE;
+	scrollbar-darkshadow-color: #EEEEEE;
+	scrollbar-shadow-color: #000000;
+	scrollbar-arrow-color: #55FF00;
+	scrollbar-track-color: #EEEEEE;
+}
+
+/* General font families for common tags */
+font,th,td,p { font-family: Verdana, Arial, Helvetica, sans-serif }
+a:link,a:active,a:visited { color : #338800; }
+a:hover		{ text-decoration: underline; color : #338800; }
+hr	{ height: 0px; border: solid #E9E9E9 0px; border-top-width: 1px;}
+
+/* This is the border line & background colour round the entire page */
+.bodyline	{ background-color: #EEEEEE; border-left: 1px #000000 solid; border-right: 1px #000000 solid; }
+
+/* This is the outline round the main forum tables */
+.forumline	{ background-color: #EEEEEE; border: 0px #DDDDDD solid; }
+
+/* Main table cell colours and backgrounds */
+td.row1	{ background-color: #F8F8F8; }
+td.row2	{ background-color: #F0F0F0; }
+td.row3	{ background-color: #E9E9E9; }
+
+/*
+  This is for the table cell above the Topics, Post & Last posts on the index.php page
+  By default this is the fading out gradiated silver background.
+  However, you could replace this with a bitmap specific for each forum
+*/
+td.rowpic {
+		background-color: #EEEEEE;
+		background-image: url(templates/SGD/images/cellpic3.gif);
+		background-repeat: repeat-y;
+}
+
+/* Header cells - the blue and silver gradient backgrounds */
+th	{
+	color: #66CC33; font-size: 11px; font-weight : bold;
+	background-color: #338800; height: 25px;
+	background-image: url(templates/SGD/images/cellpic2.gif);
+}
+
+td.cat,td.catHead,td.catSides,td.catLeft,td.catRight,td.catBottom {
+			background-image: url(templates/SGD/images/cellpic1.gif);
+			background-color:#E9E9E9; border: #999999; border-style: solid; height: 28px;
+}
+
+/*
+  Setting additional nice inner borders for the main table cells.
+  The names indicate which sides the border will be on.
+  Don't worry if you don't understand this, just ignore it :-)
+*/
+td.cat,td.catHead,td.catBottom {
+	height: 29px;
+	border-width: 0px 0px 0px 0px;
+}
+th.thHead,th.thSides,th.thTop,th.thLeft,th.thRight,th.thBottom,th.thCornerL,th.thCornerR {
+	font-weight: bold; border: #EEEEEE; border-style: solid; height: 28px;
+}
+td.row3Right,td.spaceRow {
+	background-color: #E9E9E9; border: #999999; border-style: solid;
+}
+
+th.thHead,td.catHead { font-size: 12px; border-width: 0px 0px 0px 0px; }
+th.thSides,td.catSides,td.spaceRow	 { border-width: 0px 0px 0px 0px; }
+th.thRight,td.catRight,td.row3Right	 { border-width: 0px 0px 0px 0px; }
+th.thLeft,td.catLeft	  { border-width: 0px 0px 0px 0px; }
+th.thBottom,td.catBottom  { border-width: 0px 0px 0px 1px; }
+th.thTop	 { border-width: 0px 0px 0px 0px; }
+th.thCornerL { border-width: 0px 0px 0px 1px; }
+th.thCornerR { border-width: 0px 0px 0px 0px; }
+
+/* The largest text used in the index page title and toptic title etc. */
+.maintitle	{
+	font-weight: bold; font-size: 18px; font-family: "Trebuchet MS",Verdana, Arial, Helvetica, sans-serif;
+	text-decoration: none; line-height : 120%; color : #666666;
+}
+
+/* General text */
+.gen { font-size : 12px; }
+.genmed { font-size : 11px; }
+.gensmall { font-size : 10px; }
+.gen,.genmed,.gensmall { color : #666666; }
+a.gen,a.genmed,a.gensmall { color: #338800; text-decoration: none; }
+a.gen:hover,a.genmed:hover,a.gensmall:hover	{ color: #338800; text-decoration: underline; }
+
+/* The register, login, search etc links at the top of the page */
+.mainmenu		{ font-size : 11px; color : #666666 }
+a.mainmenu		{ text-decoration: none; color : #338800;  }
+a.mainmenu:hover{ text-decoration: underline; color : #338800; }
+
+/* SGD main menu */
+.sgdmainmenu			{ font-size : 10px; color : #99FF33 }
+a.sgdmainmenu:link		{ text-decoration: none; color : #99FF33;  }
+a.sgdmainmenu:active	{ text-decoration: none; color : #99FF33;  }
+a.sgdmainmenu:visited	{ text-decoration: none; color : #99FF33;  }
+a.sgdmainmenu:hover		{ text-decoration: underline; color : #99FF33; }
+
+/* Forum category titles */
+.cattitle		{ font-weight: bold; font-size: 12px ; letter-spacing: 1px; color : #338800}
+a.cattitle		{ text-decoration: none; color : #338800; }
+a.cattitle:hover{ text-decoration: underline; }
+
+/* Forum title: Text and link to the forums used in: index.php */
+.forumlink		{ font-weight: bold; font-size: 12px; color : #338800; }
+a.forumlink 	{ text-decoration: none; color : #338800; }
+a.forumlink:hover{ text-decoration: underline; color : #338800; }
+
+/* Used for the navigation text, (Page 1,2,3 etc) and the navigation bar when in a forum */
+.nav			{ font-weight: bold; font-size: 11px; color : #666666;}
+a.nav			{ text-decoration: none; color : #338800; }
+a.nav:hover		{ text-decoration: underline; }
+
+/* titles for the topics: could specify viewed link colour too */
+.topictitle,h1,h2	{ font-weight: bold; font-size: 11px; color : #666666; }
+a.topictitle:link   { text-decoration: none; color : #338800; }
+a.topictitle:visited { text-decoration: none; color : #338800; }
+a.topictitle:hover	{ text-decoration: underline; color : #338800; }
+
+/* Name of poster in viewmsg.php and viewtopic.php and other places */
+.name			{ font-size : 11px; color : #000000;}
+
+/* Location, number of posts, post date etc */
+.postdetails		{ font-size : 10px; color : #666666; }
+
+/* The content of the posts (body of text) */
+.postbody { font-size : 12px; line-height: 18px; color : #000000;}
+a.postlink:link	{ text-decoration: none; color : #338800 }
+a.postlink:visited { text-decoration: none; color : #338800; }
+a.postlink:hover { text-decoration: underline; color : #338800}
+
+/* Quote & Code blocks */
+.code {
+	font-family: Courier, 'Courier New', sans-serif; font-size: 11px; color: #006600;
+	background-color: #D6D6D6; border: #E9E9E9; border-style: solid;
+	border-left-width: 1px; border-top-width: 1px; border-right-width: 1px; border-bottom-width: 1px
+}
+
+.quote {
+	font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 11px; color: #444444; line-height: 125%;
+	background-color: #BBBBBB; border: #E9E9E9; border-style: solid;
+	border-left-width: 1px; border-top-width: 1px; border-right-width: 1px; border-bottom-width: 1px
+}
+
+/* Copyright and bottom info */
+.copyright		{ font-size: 10px; font-family: Verdana, Arial, Helvetica, sans-serif; color: #444444; letter-spacing: -1px;}
+a.copyright		{ color: #444444; text-decoration: none;}
+a.copyright:hover { color: #666666; text-decoration: underline;}
+
+/* Form elements */
+input,textarea, select {
+	color : #666666;
+	font: normal 11px Verdana, Arial, Helvetica, sans-serif;
+	border-color : #666666;
+}
+
+/* The text input fields background colour */
+input.post, textarea.post, select {
+	background-color : #EEEEEE;
+}
+
+input { text-indent : 2px; }
+
+/* The buttons used for bbCode styling in message post */
+input.button {
+	background-color : #F8F8F8;
+	color : #666666;
+	font-size: 11px; font-family: Verdana, Arial, Helvetica, sans-serif;
+}
+
+/* The main submit button option */
+input.mainoption {
+	background-color : #BBBBBB;
+	font-weight : bold;
+}
+
+/* None-bold submit button */
+input.liteoption {
+	background-color : #BBBBBB;
+	font-weight : normal;
+}
+
+/* This is the line in the posting page which shows the rollover
+  help line. This is actually a text box, but if set to be the same
+  colour as the background no one will know ;)
+*/
+.helpline { background-color: #F0F0F0; border-style: none; }
+
+/* Import the fancy styles for IE only (NS4.x doesn't use the @import function) */
+@import url("templates/SGD/formIE.css");
+-->
+</style>
+</head>
+<body bgcolor="#DDDDDD" text="#666666" link="#338800" vlink="#338800" topmargin="0" />
+<a name="top"></a>
+<table width="100%" cellspacing="0" cellpadding="0" border="0" align="center" nowrap>
+	<tr>
+		<td class="bodyline">
+			<table width="100%" border="0" cellpadding="0" cellspacing="0">
+				<tr>
+					<td bgcolor="#FFFFFF">
+						<img src="images/spacer.gif" width="760" height="20" alt=""></td>
+				</tr>
+			</table>
+			<table width="100%" border="0" cellpadding="0" cellspacing="0">
+				<tr>
+					<td bgcolor="#000000">
+						<a href="../index.html"><img src="images/home.gif" width="10" height="10" alt="" border="0"></a><img src="images/spacer.gif" width="5" height="5" alt=""><a href="../index.html" class="sgdmainmenu">Nazaj na domačo stran</a> <img src="images/defaulticon_green.gif" alt="" width="7" height="7" border="0"> <a href="../clanki.html" class="sgdmainmenu">Clanki</a> <img src="images/defaulticon_green.gif" alt="" width="7" height="7" border="0"> <a href="../koda.html" class="sgdmainmenu">Koda</a> <img src="images/defaulticon_green.gif" alt="" width="7" height="7" border="0"> <a href="../clani.html" class="sgdmainmenu">Clani</a> <img src="images/defaulticon_green.gif" alt="" width="7" height="7" border="0"> <a href="../skupine.html" class="sgdmainmenu">Skupine</a> <img src="images/defaulticon_green.gif" alt="" width="7" height="7" border="0"> <a href="../projekti.html" class="sgdmainmenu">Projekti</a> <img src="images/defaulticon_green.gif" alt="" width="7" height="7" border="0"> <a href="../povezave.html" class="sgdmainmenu">Povezave</a></td>
+				</tr>
+			</table>
+			<table width="100%" border="0" cellpadding="0" cellspacing="0">
+				<tr>
+					<td colspan="3" bgcolor="#000000">
+						<img src="images/spacer.gif" width="760" height="10" alt=""></td>
+				</tr>
+				<tr>
+					<td>
+						<a href="index.html"><img src="images/logo.gif" width="351" height="62" alt="" border="0"></a></td>
+					<td>
+						<img src="images/forum_03.gif" width="408" height="62" alt=""></td>
+					<td width="100%" bgcolor="#000000">
+						<img src="images/spacer.gif" width="1" height="1" alt=""></td>
+				</tr>
+				<tr>
+					<td colspan="3" bgcolor="#000000" align="center">
+						<a href="memberlist.html" class="sgdmainmenu"><img src="images/defaulticon_green.gif" alt="" width="7" height="7" border="0">&nbsp;Seznam članov</a>
+						<a href="index.html" class="sgdmainmenu"><img src="images/defaulticon_green.gif" alt="" width="7" height="7" border="0">&nbsp;Seznam</a></td>
+				</tr>
+				<tr>
+					<td colspan="3" bgcolor="#000000">
+						<img src="images/spacer.gif" width="760" height="5" alt=""></td>
+				</tr>
+			</table>
+
+<table width="100%" cellspacing="2" cellpadding="2" border="0">
+  <tr>
+	<td align="left" valign="bottom" colspan="2"><a class="maintitle" href="topic-1049.html">client-client komunikacija</a><br />
+	  <span class="gensmall"><b></b><br />
+	  &nbsp; </span></td>
+  </tr>
+</table>
+
+<table width="100%" cellspacing="2" cellpadding="2" border="0">
+  <tr>
+	<td align="left" valign="bottom" nowrap="nowrap">&nbsp;</td>
+	<td align="left" valign="middle" width="100%"><span class="nav">&nbsp;&nbsp;&nbsp;<a href="index.html" class="nav">SloGameDev.net seznam forumov</a>
+	  -> <a href="forum-1.html" class="nav">Splošno Programiranje</a></span></td>
+  </tr>
+</table>
+
+<table class="forumline" width="100%" cellspacing="1" cellpadding="3" border="0">
+	<tr align="right">
+		<td class="catHead" colspan="2" height="28"><span class="nav"><a href="topic-1050.html" class="nav">Prejšnja tema</a> :: <a href="topic-1051.html" class="nav">Naslednja tema</a> &nbsp;</span></td>
+	</tr>
+	
+	<tr>
+		<th class="thLeft" width="150" height="26" nowrap="nowrap">avtor</th>
+		<th class="thRight" nowrap="nowrap">Sporočilo</th>
+	</tr>
+	
+	<tr>
+		<td width="150" align="left" valign="top" class="row1"><span class="name"><a name="11970"></a><b>ALTF4</b></span><br /><span class="postdetails">inštruktor<br /><img src="images/ranks/sgd-4.gif" alt="inštruktor" title="inštruktor" border="0" /><br /><img src="images/avatars/563d301443ad69c6388ac.gif" alt="" border="0" /><br /><br />Pridružen: 10. jul 2003 ob 15:23<br />objav: 345<br />Kraj: Slovenska Bistrica</span><br /></td>
+		<td class="row1" width="100%" height="28" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+			<tr>
+				<td colspan="2" width="100%">
+					<table width="100%" cellpadding="0" cellspacing="0" border="0">
+						<tr>
+							<td valign="middle" align="left">
+								<a href="topic-1049.html#11970"><img src="templates/SGD2/images/icon_minipost.gif" width="12" height="9" alt="objava" title="objava" border="0" /></a>
+								<span class="postdetails">Objavljeno: ned jun 05, 2005 11:22 pm<span class="gen">&nbsp;</span>&nbsp; &nbsp;Pošlji temo: client-client komunikacija</span>
+							</td>
+							<td valign="middle" align="right" nowrap="nowrap">
+							</td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+			<tr>
+				<td colspan="2"><hr /></td>
+			</tr>
+			<tr>
+				<td colspan="2"><span class="postbody">eno vprašanje, ki ni direktno povezano z gamedev. 
+
+<br />
+Torej rad bi napisal aplikacijo za komunikacijo med dvema računalnikoma. kar en uporabnik napiše na prvem računalniku bi se vidlo na drugem računalniku in obratno. pač aplikacija bo morala imeti elemente serverja in klienta. delala naj bi na LINUXU, pisana v C....bla bla bla. 
+
+<br />
+
+
+<br />
+kako bi se najlažje tega lotil?
+
+<br />
+
+
+<br />
+za začetek že vem. ker se pač oba uporabnika poznata si pač nekako sporočita svoja IP naslova. pravtako vesta na katera vrata se morata povezati. tako da je ta osnovni problem rešen.
+
+<br />
+
+
+<br />
+program bo enostaven konzolski.
+
+<br />
+
+
+<br />
+pognal pa bi ga iz 2 parametrama: IP in port drugega računalnika<br />_________________<br />LP!</span><span class="gensmall"></span></td>
+			</tr>
+		</table></td>
+	</tr>
+	<tr>
+		<td class="row1" width="150" align="left" valign="middle"><span class="nav"><a href="#top" class="nav">Nazaj na vrh</a></span></td>
+		<td class="row1" width="100%" height="28" valign="bottom" nowrap="nowrap"><table cellspacing="0" cellpadding="0" border="0" height="18" width="18">
+			<tr>
+				<td valign="middle" nowrap="nowrap"><a href="profile-80.html"><img src="templates/SGD2/images/lang_slovenian/icon_profile.gif" alt="Poglej uporabnikov profil" title="Poglej uporabnikov profil" border="0" /></a> </td>
+			</tr>
+		</table></td>
+	</tr>
+	<tr>
+		<td class="spaceRow" colspan="2" height="1"><img src="templates/SGD/images/spacer.gif" alt="" width="1" height="1" /></td>
+	</tr>
+	
+	<tr>
+		<td width="150" align="left" valign="top" class="row2"><span class="name"><a name="11971"></a><b>Senitel</b></span><br /><span class="postdetails">wannabe<br /><img src="images/ranks/sgd-2.gif" alt="wannabe" title="wannabe" border="0" /><br /><br /><br />Pridružen: 02. jul 2003 ob 17:01<br />objav: 97<br /></span><br /></td>
+		<td class="row2" width="100%" height="28" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+			<tr>
+				<td colspan="2" width="100%">
+					<table width="100%" cellpadding="0" cellspacing="0" border="0">
+						<tr>
+							<td valign="middle" align="left">
+								<a href="topic-1049.html#11971"><img src="templates/SGD2/images/icon_minipost.gif" width="12" height="9" alt="objava" title="objava" border="0" /></a>
+								<span class="postdetails">Objavljeno: ned jun 05, 2005 11:45 pm<span class="gen">&nbsp;</span>&nbsp; &nbsp;Pošlji temo: </span>
+							</td>
+							<td valign="middle" align="right" nowrap="nowrap">
+							</td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+			<tr>
+				<td colspan="2"><hr /></td>
+			</tr>
+			<tr>
+				<td colspan="2"><span class="postbody">Lahko uporabiš UDP, ki ne potrebuje vspostavitve povezave in pač pošlješ nekaj na nek IP na nek port in če tam to kdo prebere prav, če ne pa tudi cool. Tako ne rabiš dosti komplicirat s tem kaj se kam poveže.</span><span class="gensmall"></span></td>
+			</tr>
+		</table></td>
+	</tr>
+	<tr>
+		<td class="row2" width="150" align="left" valign="middle"><span class="nav"><a href="#top" class="nav">Nazaj na vrh</a></span></td>
+		<td class="row2" width="100%" height="28" valign="bottom" nowrap="nowrap"><table cellspacing="0" cellpadding="0" border="0" height="18" width="18">
+			<tr>
+				<td valign="middle" nowrap="nowrap"><a href="profile-74.html"><img src="templates/SGD2/images/lang_slovenian/icon_profile.gif" alt="Poglej uporabnikov profil" title="Poglej uporabnikov profil" border="0" /></a> </td>
+			</tr>
+		</table></td>
+	</tr>
+	<tr>
+		<td class="spaceRow" colspan="2" height="1"><img src="templates/SGD/images/spacer.gif" alt="" width="1" height="1" /></td>
+	</tr>
+	
+	<tr>
+		<td width="150" align="left" valign="top" class="row1"><span class="name"><a name="11972"></a><b>hasek</b></span><br /><span class="postdetails">novinec<br /><img src="images/ranks/sgd-0.gif" alt="novinec" title="novinec" border="0" /><br /><br /><br />Pridružen: 18. jun 2004 ob 22:28<br />objav: 13<br /></span><br /></td>
+		<td class="row1" width="100%" height="28" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+			<tr>
+				<td colspan="2" width="100%">
+					<table width="100%" cellpadding="0" cellspacing="0" border="0">
+						<tr>
+							<td valign="middle" align="left">
+								<a href="topic-1049.html#11972"><img src="templates/SGD2/images/icon_minipost.gif" width="12" height="9" alt="objava" title="objava" border="0" /></a>
+								<span class="postdetails">Objavljeno: pon jun 06, 2005 12:10 am<span class="gen">&nbsp;</span>&nbsp; &nbsp;Pošlji temo: </span>
+							</td>
+							<td valign="middle" align="right" nowrap="nowrap">
+							</td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+			<tr>
+				<td colspan="2"><hr /></td>
+			</tr>
+			<tr>
+				<td colspan="2"><span class="postbody">zanimivo mas mogoce kaksen primer al pa kaj podobnega za to ?
+
+<br />
+
+
+<br />
+
+
+<br />
+torej mores na zacetku narediti samo en vtic/socket pa s tistim operiras ?<br />_________________<br />///---there is no hope for you---\\\</span><span class="gensmall"></span></td>
+			</tr>
+		</table></td>
+	</tr>
+	<tr>
+		<td class="row1" width="150" align="left" valign="middle"><span class="nav"><a href="#top" class="nav">Nazaj na vrh</a></span></td>
+		<td class="row1" width="100%" height="28" valign="bottom" nowrap="nowrap"><table cellspacing="0" cellpadding="0" border="0" height="18" width="18">
+			<tr>
+				<td valign="middle" nowrap="nowrap"><a href="profile-184.html"><img src="templates/SGD2/images/lang_slovenian/icon_profile.gif" alt="Poglej uporabnikov profil" title="Poglej uporabnikov profil" border="0" /></a> </td>
+			</tr>
+		</table></td>
+	</tr>
+	<tr>
+		<td class="spaceRow" colspan="2" height="1"><img src="templates/SGD/images/spacer.gif" alt="" width="1" height="1" /></td>
+	</tr>
+	
+	<tr>
+		<td width="150" align="left" valign="top" class="row2"><span class="name"><a name="11973"></a><b>Senitel</b></span><br /><span class="postdetails">wannabe<br /><img src="images/ranks/sgd-2.gif" alt="wannabe" title="wannabe" border="0" /><br /><br /><br />Pridružen: 02. jul 2003 ob 17:01<br />objav: 97<br /></span><br /></td>
+		<td class="row2" width="100%" height="28" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+			<tr>
+				<td colspan="2" width="100%">
+					<table width="100%" cellpadding="0" cellspacing="0" border="0">
+						<tr>
+							<td valign="middle" align="left">
+								<a href="topic-1049.html#11973"><img src="templates/SGD2/images/icon_minipost.gif" width="12" height="9" alt="objava" title="objava" border="0" /></a>
+								<span class="postdetails">Objavljeno: pon jun 06, 2005 9:44 am<span class="gen">&nbsp;</span>&nbsp; &nbsp;Pošlji temo: </span>
+							</td>
+							<td valign="middle" align="right" nowrap="nowrap">
+							</td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+			<tr>
+				<td colspan="2"><hr /></td>
+			</tr>
+			<tr>
+				<td colspan="2"><span class="postbody">Najprej narediš nekaj takega:
+
+<br />
+</span>
+<br />
+<table width="90%" cellspacing="1" cellpadding="3" border="0" align="center">
+<br />
+<tr> 
+<br />
+	  <td><span class="genmed"><b>Koda:</b></span></td>
+<br />
+	</tr>
+<br />
+	<tr>
+<br />
+	  <td class="code">SOCKET s = socket&#40;AF_INET,SOCK_DGRAM,0&#41;;
+
+<br />
+sockaddr_in addr;
+
+<br />
+ZeroMemory&#40;&amp;addr,sizeof&#40;sockaddr_in&#41;&#41;;
+
+<br />
+addr.sin_family = AF_INET;
+
+<br />
+addr.sin_port = htons&#40;port&#41;;
+
+<br />
+bind&#40;s,&#40;sockaddr*&#41;&amp;addr,sizeof&#40;sockaddr_in&#41;&#41;;
+
+<br />
+</td>
+<br />
+	</tr>
+<br />
+</table>
+<br />
+<span class="postbody">
+
+<br />
+Potem imaš pa za pošiljanje:
+
+<br />
+</span>
+<br />
+<table width="90%" cellspacing="1" cellpadding="3" border="0" align="center">
+<br />
+<tr> 
+<br />
+	  <td><span class="genmed"><b>Koda:</b></span></td>
+<br />
+	</tr>
+<br />
+	<tr>
+<br />
+	  <td class="code">socaddr_in addr;
+
+<br />
+addr.sin_family = AF_INET;
+
+<br />
+addr.sin_port = htons&#40;port&#41;;
+
+<br />
+addr.sin_addr = inet_addr&#40;string z IP-jem&#41;;
+
+<br />
+sendto&#40;s,buffer,dolžinabufferja,0,&amp;addr,sizeof&#40;sockaddr_in&#41;&#41;;
+
+<br />
+</td>
+<br />
+	</tr>
+<br />
+</table>
+<br />
+<span class="postbody">
+
+<br />
+In sprejemanje:
+
+<br />
+</span>
+<br />
+<table width="90%" cellspacing="1" cellpadding="3" border="0" align="center">
+<br />
+<tr> 
+<br />
+	  <td><span class="genmed"><b>Koda:</b></span></td>
+<br />
+	</tr>
+<br />
+	<tr>
+<br />
+	  <td class="code">sockaddr* addr;
+
+<br />
+int dolžinaddr;
+
+<br />
+recvfrom&#40;s,buffer,dolžinabufferja,0,addr,&amp;dolžinaaddr&#41;;
+
+<br />
+</td>
+<br />
+	</tr>
+<br />
+</table>
+<br />
+<span class="postbody">
+
+<br />
+
+
+<br />
+P.S.: Malo popravljena verzija, ki zna celo delat...</span><span class="gensmall"><br /><br />Popravil je Senitel dne, pon jun 06, 2005 10:49 am, popravljal je 1 krat</span></td>
+			</tr>
+		</table></td>
+	</tr>
+	<tr>
+		<td class="row2" width="150" align="left" valign="middle"><span class="nav"><a href="#top" class="nav">Nazaj na vrh</a></span></td>
+		<td class="row2" width="100%" height="28" valign="bottom" nowrap="nowrap"><table cellspacing="0" cellpadding="0" border="0" height="18" width="18">
+			<tr>
+				<td valign="middle" nowrap="nowrap"><a href="profile-74.html"><img src="templates/SGD2/images/lang_slovenian/icon_profile.gif" alt="Poglej uporabnikov profil" title="Poglej uporabnikov profil" border="0" /></a> </td>
+			</tr>
+		</table></td>
+	</tr>
+	<tr>
+		<td class="spaceRow" colspan="2" height="1"><img src="templates/SGD/images/spacer.gif" alt="" width="1" height="1" /></td>
+	</tr>
+	
+	<tr>
+		<td width="150" align="left" valign="top" class="row1"><span class="name"><a name="11974"></a><b>hasek</b></span><br /><span class="postdetails">novinec<br /><img src="images/ranks/sgd-0.gif" alt="novinec" title="novinec" border="0" /><br /><br /><br />Pridružen: 18. jun 2004 ob 22:28<br />objav: 13<br /></span><br /></td>
+		<td class="row1" width="100%" height="28" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+			<tr>
+				<td colspan="2" width="100%">
+					<table width="100%" cellpadding="0" cellspacing="0" border="0">
+						<tr>
+							<td valign="middle" align="left">
+								<a href="topic-1049.html#11974"><img src="templates/SGD2/images/icon_minipost.gif" width="12" height="9" alt="objava" title="objava" border="0" /></a>
+								<span class="postdetails">Objavljeno: pon jun 06, 2005 10:12 am<span class="gen">&nbsp;</span>&nbsp; &nbsp;Pošlji temo: </span>
+							</td>
+							<td valign="middle" align="right" nowrap="nowrap">
+							</td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+			<tr>
+				<td colspan="2"><hr /></td>
+			</tr>
+			<tr>
+				<td colspan="2"><span class="postbody">ok jaz sem se nekaj spravil to delat sicer je TCP samo mi nekaj  ze pri samem konektanju ne deluje OK
+
+<br />
+</span>
+<br />
+<table width="90%" cellspacing="1" cellpadding="3" border="0" align="center">
+<br />
+<tr> 
+<br />
+	  <td><span class="genmed"><b>Koda:</b></span></td>
+<br />
+	</tr>
+<br />
+	<tr>
+<br />
+	  <td class="code">
+
+<br />
+#include &lt;sys/types.h&gt;
+
+<br />
+#include &lt;sys/socket.h&gt;
+
+<br />
+#include &lt;stdlib.h&gt;
+
+<br />
+#include &lt;netdb.h&gt;
+
+<br />
+#include &lt;stdio.h&gt;
+
+<br />
+#include &lt;netinet/in.h&gt;
+
+<br />
+ 
+
+<br />
+
+
+<br />
+int main&#40;int argc, char** argv&#41; &#123;
+
+<br />
+
+
+<br />
+
+
+<br />
+
+
+<br />
+if&#40;argc !=4&#41;
+
+<br />
+&#123;
+
+<br />
+&nbsp; &nbsp;printf&#40;&quot;vpisal si premalo/prevec parametrov\n&quot;&#41;;
+
+<br />
+&nbsp; &nbsp;printf&#40;&quot; vpisati moras&#58; argv&#91;1&#93;==IP \n&quot;&#41;;
+
+<br />
+&nbsp; &nbsp;printf&#40;&quot; argv&#91;2&#93; port na katerem naj poslusa \n&quot;&#41;; 
+
+<br />
+&nbsp; &nbsp;printf&#40;&quot;in argv&#91;3&#93;= port kamor naj pise \n&quot;&#41;;
+
+<br />
+&nbsp; &nbsp;return -1;
+
+<br />
+&nbsp; &nbsp;&#125;
+
+<br />
+//ustvarimo vticnico
+
+<br />
+struct sockaddr_in my_addr;
+
+<br />
+&nbsp; &nbsp; 
+
+<br />
+&nbsp; &nbsp; int serversocket = socket&#40;AF_INET, SOCK_STREAM, 0&#41;; 
+
+<br />
+&nbsp; &nbsp; 
+
+<br />
+&nbsp; &nbsp; my_addr.sin_family = AF_INET;&nbsp; &nbsp;  
+
+<br />
+&nbsp; &nbsp; my_addr.sin_port = htons&#40;atoi&#40;argv&#91;2&#93;&#41;&#41;; 
+
+<br />
+&nbsp; &nbsp; my_addr.sin_addr.s_addr = inet_addr&#40;&quot;0.0.0.0&quot;&#41;;
+
+<br />
+&nbsp; &nbsp; bzero&#40;&amp;&#40;my_addr.sin_zero&#41;, 8&#41;;&nbsp; &nbsp; 
+
+<br />
+&nbsp; &nbsp; 
+
+<br />
+&nbsp; &nbsp; if &#40;bind&#40;serversocket, &#40;struct sockaddr *&#41;&amp;my_addr, sizeof&#40;struct sockaddr&#41;&#41;==-1&#41; &#123;
+
+<br />
+&nbsp; &nbsp; &nbsp; perror&#40;&quot;Cannot bind&quot;&#41;;
+
+<br />
+&nbsp; &nbsp; &#125;
+
+<br />
+&nbsp; &nbsp; listen&#40;serversocket, 10&#41;;
+
+<br />
+
+
+<br />
+&nbsp; &nbsp; 
+
+<br />
+&nbsp; &nbsp; //ustvarimo vtic za klienta 
+
+<br />
+&nbsp; &nbsp;  int socketfd = socket&#40;PF_INET, SOCK_STREAM, 0&#41;;
+
+<br />
+&nbsp; if &#40;socketfd&lt;0&#41; &#123;
+
+<br />
+&nbsp; &nbsp; perror&#40;&quot;Error opening socket&quot;&#41;;
+
+<br />
+&nbsp; &nbsp; return -1;
+
+<br />
+&nbsp; &#125;
+
+<br />
+&nbsp;  struct sockaddr_in server;
+
+<br />
+&nbsp;  struct hostent *host;
+
+<br />
+&nbsp;  server.sin_family= AF_INET;
+
+<br />
+&nbsp;  server.sin_port = htons&#40;atoi&#40;argv&#91;3&#93;&#41;&#41;;
+
+<br />
+&nbsp;  host = gethostbyname&#40;argv&#91;1&#93;&#41;;
+
+<br />
+&nbsp;  if &#40;host==NULL&#41; &#123;
+
+<br />
+&nbsp; &nbsp;  perror&#40;&quot;Unknown host&quot;&#41;;
+
+<br />
+&nbsp; &nbsp;  return -1;
+
+<br />
+&nbsp;  &#125;
+
+<br />
+&nbsp;  server.sin_addr = *&#40;&#40;struct in_addr*&#41;host-&gt;h_addr&#41;;
+
+<br />
+&nbsp; &nbsp; 
+
+<br />
+&nbsp; &nbsp; struct sockaddr client_addr;
+
+<br />
+&nbsp; &nbsp;socklen_t size = sizeof&#40;client_addr&#41;;
+
+<br />
+&nbsp; &nbsp; 
+
+<br />
+&nbsp; &nbsp;  while &#40;1&#41; &#123;
+
+<br />
+&nbsp; &nbsp;  
+
+<br />
+&nbsp; &nbsp;  
+
+<br />
+&nbsp;  //&nbsp; &nbsp;  int clientfd = accept&#40;serversocket, &amp;client_addr, &amp;size&#41;;
+
+<br />
+&nbsp; &nbsp;  
+
+<br />
+&nbsp; &nbsp;  
+
+<br />
+ 
+
+<br />
+&nbsp; &nbsp; &nbsp; &nbsp; if &#40;connect&#40;socketfd, &#40;struct sockaddr*&#41;&amp;server,&nbsp;  sizeof&#40;struct sockaddr&#41;&#41;==&nbsp; -1&#41; &#123;
+
+<br />
+&nbsp; &nbsp;  //&nbsp; perror&#40;&quot;Connect&quot;&#41;;
+
+<br />
+&nbsp; &nbsp; &nbsp; // return -1;
+
+<br />
+&nbsp; &nbsp;  &#125;else
+
+<br />
+&nbsp; &nbsp; &nbsp; &#123;
+
+<br />
+&nbsp; &nbsp; &nbsp;  printf&#40;&quot;uspelo je \n&quot;&#41;;break;
+
+<br />
+&nbsp; &nbsp; &nbsp; &#125;
+
+<br />
+&nbsp; &nbsp; &nbsp;  // int clientfd = accept&#40;serversocket, &amp;client_addr, &amp;size&#41;;
+
+<br />
+&nbsp; &nbsp; 
+
+<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &#125;
+
+<br />
+&nbsp; &nbsp; 
+
+<br />
+printf&#40;&quot;konec&quot;&#41;;
+
+<br />
+close&#40;socketfd&#41;;
+
+<br />
+close&#40;serversocket&#41;;
+
+<br />
+return 0;
+
+<br />
+&#125;</td>
+<br />
+	</tr>
+<br />
+</table>
+<br />
+<span class="postbody">
+
+<br />
+
+
+<br />
+
+
+<br />
+Problem imam pa v tem da se prvi klient ko se zazene nikoli ne konca splih se ne poveze 2 klient pa se poveze javi da mu je uspelo in se konca<br />_________________<br />///---there is no hope for you---\\\</span><span class="gensmall"></span></td>
+			</tr>
+		</table></td>
+	</tr>
+	<tr>
+		<td class="row1" width="150" align="left" valign="middle"><span class="nav"><a href="#top" class="nav">Nazaj na vrh</a></span></td>
+		<td class="row1" width="100%" height="28" valign="bottom" nowrap="nowrap"><table cellspacing="0" cellpadding="0" border="0" height="18" width="18">
+			<tr>
+				<td valign="middle" nowrap="nowrap"><a href="profile-184.html"><img src="templates/SGD2/images/lang_slovenian/icon_profile.gif" alt="Poglej uporabnikov profil" title="Poglej uporabnikov profil" border="0" /></a> </td>
+			</tr>
+		</table></td>
+	</tr>
+	<tr>
+		<td class="spaceRow" colspan="2" height="1"><img src="templates/SGD/images/spacer.gif" alt="" width="1" height="1" /></td>
+	</tr>
+	
+	<tr>
+		<td width="150" align="left" valign="top" class="row2"><span class="name"><a name="11975"></a><b>Senitel</b></span><br /><span class="postdetails">wannabe<br /><img src="images/ranks/sgd-2.gif" alt="wannabe" title="wannabe" border="0" /><br /><br /><br />Pridružen: 02. jul 2003 ob 17:01<br />objav: 97<br /></span><br /></td>
+		<td class="row2" width="100%" height="28" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+			<tr>
+				<td colspan="2" width="100%">
+					<table width="100%" cellpadding="0" cellspacing="0" border="0">
+						<tr>
+							<td valign="middle" align="left">
+								<a href="topic-1049.html#11975"><img src="templates/SGD2/images/icon_minipost.gif" width="12" height="9" alt="objava" title="objava" border="0" /></a>
+								<span class="postdetails">Objavljeno: pon jun 06, 2005 11:08 am<span class="gen">&nbsp;</span>&nbsp; &nbsp;Pošlji temo: </span>
+							</td>
+							<td valign="middle" align="right" nowrap="nowrap">
+							</td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+			<tr>
+				<td colspan="2"><hr /></td>
+			</tr>
+			<tr>
+				<td colspan="2"><span class="postbody">Jah... Če že delaš s TCP potem moraš pa program naredit v takem smislu, da se najprej poskusi povezat na tisti IP, če se mu ne rata, se pa spravi v "listen" state in čaka da se bo kdo povezal nanj.
+
+<br />
+Tale tvoja koda pa dela nekako tako: poženeš aplikacijo na enem "klientu" in zablokira v acceptu, dokler ne pride do time-outa. Potem ko pride do time-outa se poskuša povezat nekam drugam in ker je bil drugi "klient" pognan kasneje še ni time-outal, torej se prvemu klientu rata povezat, potem se pa takoj zaključi (ker imaš break). Drugi klient je prišel čez prvi accept, connect mu ne uspe, ker na drugi strani noben več ne posluša in se spet vrne  v stanje accept.
+
+<br />
+Vrstni red je seveda odvisen od tega kateri accept odkomentiraš.</span><span class="gensmall"></span></td>
+			</tr>
+		</table></td>
+	</tr>
+	<tr>
+		<td class="row2" width="150" align="left" valign="middle"><span class="nav"><a href="#top" class="nav">Nazaj na vrh</a></span></td>
+		<td class="row2" width="100%" height="28" valign="bottom" nowrap="nowrap"><table cellspacing="0" cellpadding="0" border="0" height="18" width="18">
+			<tr>
+				<td valign="middle" nowrap="nowrap"><a href="profile-74.html"><img src="templates/SGD2/images/lang_slovenian/icon_profile.gif" alt="Poglej uporabnikov profil" title="Poglej uporabnikov profil" border="0" /></a> </td>
+			</tr>
+		</table></td>
+	</tr>
+	<tr>
+		<td class="spaceRow" colspan="2" height="1"><img src="templates/SGD/images/spacer.gif" alt="" width="1" height="1" /></td>
+	</tr>
+	
+	<tr>
+		<td width="150" align="left" valign="top" class="row1"><span class="name"><a name="11977"></a><b>hasek</b></span><br /><span class="postdetails">novinec<br /><img src="images/ranks/sgd-0.gif" alt="novinec" title="novinec" border="0" /><br /><br /><br />Pridružen: 18. jun 2004 ob 22:28<br />objav: 13<br /></span><br /></td>
+		<td class="row1" width="100%" height="28" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+			<tr>
+				<td colspan="2" width="100%">
+					<table width="100%" cellpadding="0" cellspacing="0" border="0">
+						<tr>
+							<td valign="middle" align="left">
+								<a href="topic-1049.html#11977"><img src="templates/SGD2/images/icon_minipost.gif" width="12" height="9" alt="objava" title="objava" border="0" /></a>
+								<span class="postdetails">Objavljeno: pon jun 06, 2005 12:47 pm<span class="gen">&nbsp;</span>&nbsp; &nbsp;Pošlji temo: </span>
+							</td>
+							<td valign="middle" align="right" nowrap="nowrap">
+							</td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+			<tr>
+				<td colspan="2"><hr /></td>
+			</tr>
+			<tr>
+				<td colspan="2"><span class="postbody">ja pa saj mam tako ali ne najprej naredim vtic nato pa se poskusam konektati na njega kje ti vidis napako ?<br />_________________<br />///---there is no hope for you---\\\</span><span class="gensmall"></span></td>
+			</tr>
+		</table></td>
+	</tr>
+	<tr>
+		<td class="row1" width="150" align="left" valign="middle"><span class="nav"><a href="#top" class="nav">Nazaj na vrh</a></span></td>
+		<td class="row1" width="100%" height="28" valign="bottom" nowrap="nowrap"><table cellspacing="0" cellpadding="0" border="0" height="18" width="18">
+			<tr>
+				<td valign="middle" nowrap="nowrap"><a href="profile-184.html"><img src="templates/SGD2/images/lang_slovenian/icon_profile.gif" alt="Poglej uporabnikov profil" title="Poglej uporabnikov profil" border="0" /></a> </td>
+			</tr>
+		</table></td>
+	</tr>
+	<tr>
+		<td class="spaceRow" colspan="2" height="1"><img src="templates/SGD/images/spacer.gif" alt="" width="1" height="1" /></td>
+	</tr>
+	
+	<tr>
+		<td width="150" align="left" valign="top" class="row2"><span class="name"><a name="11978"></a><b>Senitel</b></span><br /><span class="postdetails">wannabe<br /><img src="images/ranks/sgd-2.gif" alt="wannabe" title="wannabe" border="0" /><br /><br /><br />Pridružen: 02. jul 2003 ob 17:01<br />objav: 97<br /></span><br /></td>
+		<td class="row2" width="100%" height="28" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+			<tr>
+				<td colspan="2" width="100%">
+					<table width="100%" cellpadding="0" cellspacing="0" border="0">
+						<tr>
+							<td valign="middle" align="left">
+								<a href="topic-1049.html#11978"><img src="templates/SGD2/images/icon_minipost.gif" width="12" height="9" alt="objava" title="objava" border="0" /></a>
+								<span class="postdetails">Objavljeno: pon jun 06, 2005 1:14 pm<span class="gen">&nbsp;</span>&nbsp; &nbsp;Pošlji temo: </span>
+							</td>
+							<td valign="middle" align="right" nowrap="nowrap">
+							</td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+			<tr>
+				<td colspan="2"><hr /></td>
+			</tr>
+			<tr>
+				<td colspan="2"><span class="postbody">Saj do same while zanke je vse cool...
+
+<br />
+Problem se pojavi v while zanki s funkcijo accept... Šele tukaj ti dejansko sprejmeš prihajajočo povezavo in če ni nobene povezave že v vrsti potem ČAKA dokler se kdo ne poskuša povezat.
+
+<br />
+Ti imaš trenutno takole:
+
+<br />
+narediš server socket
+
+<br />
+narediš client socket
+
+<br />
+while
+
+<br />
+{
+
+<br />
+// accept čaka, da bo sprejel povezavo dokler ne obupa
+
+<br />
+se poskušaš povezat na client socket
+
+<br />
+// accept čaka, da bo sprejel povezavo dokler ne obupa
+
+<br />
+}
+
+<br />
+Kar jaz pravim je pa:
+
+<br />
+narediš client socket
+
+<br />
+se poskušaš povezat na client
+
+<br />
+če rata si že uspel, če ne
+
+<br />
+narediš server socket
+
+<br />
+accept čaka, da sprejme povezavo
+
+<br />
+
+
+<br />
+Daj uporabi malo printf debuginga pa boš videl kako se ti tistale while (1) zanka vrti...</span><span class="gensmall"></span></td>
+			</tr>
+		</table></td>
+	</tr>
+	<tr>
+		<td class="row2" width="150" align="left" valign="middle"><span class="nav"><a href="#top" class="nav">Nazaj na vrh</a></span></td>
+		<td class="row2" width="100%" height="28" valign="bottom" nowrap="nowrap"><table cellspacing="0" cellpadding="0" border="0" height="18" width="18">
+			<tr>
+				<td valign="middle" nowrap="nowrap"><a href="profile-74.html"><img src="templates/SGD2/images/lang_slovenian/icon_profile.gif" alt="Poglej uporabnikov profil" title="Poglej uporabnikov profil" border="0" /></a> </td>
+			</tr>
+		</table></td>
+	</tr>
+	<tr>
+		<td class="spaceRow" colspan="2" height="1"><img src="templates/SGD/images/spacer.gif" alt="" width="1" height="1" /></td>
+	</tr>
+	
+	<tr>
+		<td width="150" align="left" valign="top" class="row1"><span class="name"><a name="11979"></a><b>hasek</b></span><br /><span class="postdetails">novinec<br /><img src="images/ranks/sgd-0.gif" alt="novinec" title="novinec" border="0" /><br /><br /><br />Pridružen: 18. jun 2004 ob 22:28<br />objav: 13<br /></span><br /></td>
+		<td class="row1" width="100%" height="28" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+			<tr>
+				<td colspan="2" width="100%">
+					<table width="100%" cellpadding="0" cellspacing="0" border="0">
+						<tr>
+							<td valign="middle" align="left">
+								<a href="topic-1049.html#11979"><img src="templates/SGD2/images/icon_minipost.gif" width="12" height="9" alt="objava" title="objava" border="0" /></a>
+								<span class="postdetails">Objavljeno: pon jun 06, 2005 1:33 pm<span class="gen">&nbsp;</span>&nbsp; &nbsp;Pošlji temo: </span>
+							</td>
+							<td valign="middle" align="right" nowrap="nowrap">
+							</td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+			<tr>
+				<td colspan="2"><hr /></td>
+			</tr>
+			<tr>
+				<td colspan="2"><span class="postbody"></span>
+<br />
+<table width="90%" cellspacing="1" cellpadding="3" border="0" align="center">
+<br />
+<tr> 
+<br />
+	  <td><span class="genmed"><b>Koda:</b></span></td>
+<br />
+	</tr>
+<br />
+	<tr>
+<br />
+	  <td class="code">#include &lt;sys/types.h&gt;
+
+<br />
+#include &lt;sys/socket.h&gt;
+
+<br />
+#include &lt;stdlib.h&gt;
+
+<br />
+#include &lt;netdb.h&gt;
+
+<br />
+#include &lt;stdio.h&gt;
+
+<br />
+#include &lt;netinet/in.h&gt;
+
+<br />
+ 
+
+<br />
+
+
+<br />
+int main&#40;int argc, char** argv&#41; &#123;
+
+<br />
+
+
+<br />
+int x;
+
+<br />
+&nbsp; &nbsp;int clientfd;
+
+<br />
+if&#40;argc !=4&#41;
+
+<br />
+&#123;
+
+<br />
+&nbsp; &nbsp;printf&#40;&quot;vpisal si premalo/prevec parametrov\n&quot;&#41;;
+
+<br />
+&nbsp; &nbsp;printf&#40;&quot; vpisati moras&#58; argv&#91;1&#93;==IP \n&quot;&#41;;
+
+<br />
+&nbsp; &nbsp;printf&#40;&quot; argv&#91;2&#93; port na katerem naj poslusa \n&quot;&#41;; 
+
+<br />
+&nbsp; &nbsp;printf&#40;&quot;in argv&#91;3&#93;= port kamor naj pise \n&quot;&#41;;
+
+<br />
+&nbsp; &nbsp;return -1;
+
+<br />
+&nbsp; &nbsp;&#125;
+
+<br />
+//ustvarimo vticnico
+
+<br />
+struct sockaddr_in my_addr;
+
+<br />
+&nbsp; &nbsp; 
+
+<br />
+&nbsp; &nbsp; int serversocket = socket&#40;AF_INET, SOCK_STREAM, 0&#41;; 
+
+<br />
+&nbsp; &nbsp; 
+
+<br />
+&nbsp; &nbsp; my_addr.sin_family = AF_INET;&nbsp; &nbsp;  
+
+<br />
+&nbsp; &nbsp; my_addr.sin_port = htons&#40;atoi&#40;argv&#91;2&#93;&#41;&#41;; 
+
+<br />
+&nbsp; &nbsp; my_addr.sin_addr.s_addr = inet_addr&#40;&quot;0.0.0.0&quot;&#41;;
+
+<br />
+&nbsp; &nbsp; bzero&#40;&amp;&#40;my_addr.sin_zero&#41;, 8&#41;;&nbsp; &nbsp; 
+
+<br />
+&nbsp; &nbsp; 
+
+<br />
+&nbsp; &nbsp; if &#40;bind&#40;serversocket, &#40;struct sockaddr *&#41;&amp;my_addr, sizeof&#40;struct sockaddr&#41;&#41;==-1&#41; &#123;
+
+<br />
+&nbsp; &nbsp; &nbsp; perror&#40;&quot;Cannot bind&quot;&#41;;
+
+<br />
+&nbsp; &nbsp; &#125;
+
+<br />
+&nbsp; &nbsp; listen&#40;serversocket, 10&#41;;
+
+<br />
+
+
+<br />
+&nbsp; &nbsp; 
+
+<br />
+&nbsp; &nbsp; //ustvarimo vtic za klienta 
+
+<br />
+&nbsp; &nbsp;  int socketfd = socket&#40;PF_INET, SOCK_STREAM, 0&#41;;
+
+<br />
+&nbsp; if &#40;socketfd&lt;0&#41; &#123;
+
+<br />
+&nbsp; &nbsp; perror&#40;&quot;Error opening socket&quot;&#41;;
+
+<br />
+&nbsp; &nbsp; return -1;
+
+<br />
+&nbsp; &#125;
+
+<br />
+&nbsp;  struct sockaddr_in server;
+
+<br />
+&nbsp;  struct hostent *host;
+
+<br />
+&nbsp;  server.sin_family= AF_INET;
+
+<br />
+&nbsp;  server.sin_port = htons&#40;atoi&#40;argv&#91;3&#93;&#41;&#41;;
+
+<br />
+&nbsp;  host = gethostbyname&#40;argv&#91;1&#93;&#41;;
+
+<br />
+&nbsp;  if &#40;host==NULL&#41; &#123;
+
+<br />
+&nbsp; &nbsp;  perror&#40;&quot;Unknown host&quot;&#41;;
+
+<br />
+&nbsp; &nbsp;  return -1;
+
+<br />
+&nbsp;  &#125;
+
+<br />
+&nbsp;  server.sin_addr = *&#40;&#40;struct in_addr*&#41;host-&gt;h_addr&#41;;
+
+<br />
+&nbsp; &nbsp; 
+
+<br />
+&nbsp; &nbsp; struct sockaddr client_addr;
+
+<br />
+&nbsp; &nbsp;socklen_t size = sizeof&#40;client_addr&#41;;
+
+<br />
+&nbsp; &nbsp; 
+
+<br />
+&nbsp; &nbsp; if &#40;connect&#40;socketfd, &#40;struct sockaddr*&#41;&amp;server,&nbsp;  sizeof&#40;struct sockaddr&#41;&#41;==&nbsp; -1&#41; &#123;
+
+<br />
+&nbsp; &nbsp; &nbsp; &nbsp; printf&#40;&quot;poskusal sem se povezati pa ni slo \n&quot;&#41;;
+
+<br />
+&nbsp; &nbsp;
+
+<br />
+&nbsp; &nbsp;x=1;
+
+<br />
+&nbsp; &nbsp;  &#125;else
+
+<br />
+&nbsp; &nbsp; &nbsp; &#123;
+
+<br />
+&nbsp; &nbsp; &nbsp;  printf&#40;&quot;uspelo je \n&quot;&#41;;
+
+<br />
+&nbsp; &nbsp; &nbsp; &#125;
+
+<br />
+&nbsp; &nbsp; &nbsp; if&#40;x==1&#41;&#123;
+
+<br />
+
+
+<br />
+&nbsp; &nbsp;  
+
+<br />
+&nbsp; &nbsp;  
+
+<br />
+&nbsp; &nbsp; &nbsp; &nbsp;  clientfd = accept&#40;serversocket, &amp;client_addr, &amp;size&#41;;
+
+<br />
+&nbsp; &nbsp; if&#40;clientfd==-1&#41;
+
+<br />
+&nbsp; &nbsp; &#123;
+
+<br />
+&nbsp; &nbsp;&nbsp;  printf&#40;&quot;nobeden se noce povezat&#58;&#40;\n&quot;&#41;;
+
+<br />
+&nbsp; &nbsp; &#125;else&#123;printf&#40;&quot;povezal se je 1\n&quot;&#41;;&#125;
+
+<br />
+&nbsp; &nbsp;  &#125;
+
+<br />
+&nbsp; &nbsp;  
+
+<br />
+ 
+
+<br />
+&nbsp; &nbsp; &nbsp;  
+
+<br />
+&nbsp; &nbsp; &nbsp; 
+
+<br />
+&nbsp; &nbsp;&nbsp; 
+
+<br />
+&nbsp; &nbsp;&nbsp; 
+
+<br />
+&nbsp; &nbsp;&nbsp;  
+
+<br />
+printf&#40;&quot;konec&quot;&#41;;
+
+<br />
+close&#40;socketfd&#41;;
+
+<br />
+close&#40;clientfd&#41;;
+
+<br />
+return 0;
+
+<br />
+&#125;
+
+<br />
+</td>
+<br />
+	</tr>
+<br />
+</table>
+<br />
+<span class="postbody">
+
+<br />
+
+
+<br />
+
+
+<br />
+vrejetno si mislil nekaj takega kaj ?
+
+<br />
+samo a nebo sedaj problem tole ce eden se konektal drugi pa sprejel povezavo kako naj sedaj posliljam sporocila med njima recimo jaz bi zelel pisati na clientfd brati pa iz socketfd nevem ce  gre ?<br />_________________<br />///---there is no hope for you---\\\</span><span class="gensmall"></span></td>
+			</tr>
+		</table></td>
+	</tr>
+	<tr>
+		<td class="row1" width="150" align="left" valign="middle"><span class="nav"><a href="#top" class="nav">Nazaj na vrh</a></span></td>
+		<td class="row1" width="100%" height="28" valign="bottom" nowrap="nowrap"><table cellspacing="0" cellpadding="0" border="0" height="18" width="18">
+			<tr>
+				<td valign="middle" nowrap="nowrap"><a href="profile-184.html"><img src="templates/SGD2/images/lang_slovenian/icon_profile.gif" alt="Poglej uporabnikov profil" title="Poglej uporabnikov profil" border="0" /></a> </td>
+			</tr>
+		</table></td>
+	</tr>
+	<tr>
+		<td class="spaceRow" colspan="2" height="1"><img src="templates/SGD/images/spacer.gif" alt="" width="1" height="1" /></td>
+	</tr>
+	
+	<tr>
+		<td width="150" align="left" valign="top" class="row2"><span class="name"><a name="11980"></a><b>Senitel</b></span><br /><span class="postdetails">wannabe<br /><img src="images/ranks/sgd-2.gif" alt="wannabe" title="wannabe" border="0" /><br /><br /><br />Pridružen: 02. jul 2003 ob 17:01<br />objav: 97<br /></span><br /></td>
+		<td class="row2" width="100%" height="28" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+			<tr>
+				<td colspan="2" width="100%">
+					<table width="100%" cellpadding="0" cellspacing="0" border="0">
+						<tr>
+							<td valign="middle" align="left">
+								<a href="topic-1049.html#11980"><img src="templates/SGD2/images/icon_minipost.gif" width="12" height="9" alt="objava" title="objava" border="0" /></a>
+								<span class="postdetails">Objavljeno: pon jun 06, 2005 1:52 pm<span class="gen">&nbsp;</span>&nbsp; &nbsp;Pošlji temo: </span>
+							</td>
+							<td valign="middle" align="right" nowrap="nowrap">
+							</td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+			<tr>
+				<td colspan="2"><hr /></td>
+			</tr>
+			<tr>
+				<td colspan="2"><span class="postbody">Pišeš in bereš vedno z istega socketa... Server socket samo sprejema povezave po njem se ne piše in ne bere.
+
+<br />
+Z socketfd lahko počneš kar koli. V bistvu bi morala socketfd in clientfd biti enaka.</span><span class="gensmall"></span></td>
+			</tr>
+		</table></td>
+	</tr>
+	<tr>
+		<td class="row2" width="150" align="left" valign="middle"><span class="nav"><a href="#top" class="nav">Nazaj na vrh</a></span></td>
+		<td class="row2" width="100%" height="28" valign="bottom" nowrap="nowrap"><table cellspacing="0" cellpadding="0" border="0" height="18" width="18">
+			<tr>
+				<td valign="middle" nowrap="nowrap"><a href="profile-74.html"><img src="templates/SGD2/images/lang_slovenian/icon_profile.gif" alt="Poglej uporabnikov profil" title="Poglej uporabnikov profil" border="0" /></a> </td>
+			</tr>
+		</table></td>
+	</tr>
+	<tr>
+		<td class="spaceRow" colspan="2" height="1"><img src="templates/SGD/images/spacer.gif" alt="" width="1" height="1" /></td>
+	</tr>
+	
+	<tr>
+		<td width="150" align="left" valign="top" class="row1"><span class="name"><a name="12016"></a><b>hasek</b></span><br /><span class="postdetails">novinec<br /><img src="images/ranks/sgd-0.gif" alt="novinec" title="novinec" border="0" /><br /><br /><br />Pridružen: 18. jun 2004 ob 22:28<br />objav: 13<br /></span><br /></td>
+		<td class="row1" width="100%" height="28" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+			<tr>
+				<td colspan="2" width="100%">
+					<table width="100%" cellpadding="0" cellspacing="0" border="0">
+						<tr>
+							<td valign="middle" align="left">
+								<a href="topic-1049.html#12016"><img src="templates/SGD2/images/icon_minipost.gif" width="12" height="9" alt="objava" title="objava" border="0" /></a>
+								<span class="postdetails">Objavljeno: sre jun 08, 2005 6:52 pm<span class="gen">&nbsp;</span>&nbsp; &nbsp;Pošlji temo: </span>
+							</td>
+							<td valign="middle" align="right" nowrap="nowrap">
+							</td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+			<tr>
+				<td colspan="2"><hr /></td>
+			</tr>
+			<tr>
+				<td colspan="2"><span class="postbody">ok sedaj sem sem se odpravil to nalogo delati malo drugace in sicer z nitmi imam 1 nit za server in eno za klienta 
+
+<br />
+
+
+<br />
+</span>
+<br />
+<table width="90%" cellspacing="1" cellpadding="3" border="0" align="center">
+<br />
+<tr> 
+<br />
+	  <td><span class="genmed"><b>Koda:</b></span></td>
+<br />
+	</tr>
+<br />
+	<tr>
+<br />
+	  <td class="code">#include &lt;unistd.h&gt;
+
+<br />
+#include &lt;pthread.h&gt;
+
+<br />
+#include &lt;errno.h&gt;
+
+<br />
+#include &lt;sys/types.h&gt;
+
+<br />
+#include &lt;sys/socket.h&gt;
+
+<br />
+#include &lt;stdlib.h&gt;
+
+<br />
+#include &lt;netdb.h&gt;
+
+<br />
+#include &lt;stdio.h&gt;
+
+<br />
+#include &lt;netinet/in.h&gt;
+
+<br />
+
+
+<br />
+&nbsp; int socketfd;//klient
+
+<br />
+ int clientfd;
+
+<br />
+ char*ena;
+
+<br />
+ char*dva;
+
+<br />
+ char*tri;
+
+<br />
+ int serversocket;
+
+<br />
+ struct sockaddr_in my_addr;
+
+<br />
+ struct sockaddr_in server;
+
+<br />
+ struct hostent *host;
+
+<br />
+ int j=0;
+
+<br />
+ int streznik1=0;
+
+<br />
+ int klient1=0;
+
+<br />
+ 
+
+<br />
+ 
+
+<br />
+ void*streznik&#40;void*args&#41;
+
+<br />
+ &#123;
+
+<br />
+&nbsp; serversocket = socket&#40;AF_INET, SOCK_STREAM, 0&#41;; 
+
+<br />
+&nbsp; &nbsp; 
+
+<br />
+&nbsp; &nbsp; my_addr.sin_family = AF_INET;&nbsp; &nbsp;  
+
+<br />
+&nbsp; &nbsp; my_addr.sin_port = htons&#40;atoi&#40;dva&#41;&#41;; 
+
+<br />
+&nbsp; &nbsp; my_addr.sin_addr.s_addr = inet_addr&#40;&quot;0.0.0.0&quot;&#41;;
+
+<br />
+&nbsp; &nbsp; bzero&#40;&amp;&#40;my_addr.sin_zero&#41;, 8&#41;;&nbsp; &nbsp; 
+
+<br />
+&nbsp; &nbsp; 
+
+<br />
+&nbsp; &nbsp; if &#40;bind&#40;serversocket, &#40;struct sockaddr *&#41;&amp;my_addr, sizeof&#40;struct sockaddr&#41;&#41;
+
+<br />
+==-1&#41; &#123;
+
+<br />
+&nbsp; &nbsp; &nbsp; perror&#40;&quot;Cannot bind&quot;&#41;;
+
+<br />
+&nbsp; &nbsp; &#125;
+
+<br />
+&nbsp; &nbsp; listen&#40;serversocket, 10&#41;;
+
+<br />
+&nbsp; &nbsp; 
+
+<br />
+&nbsp; &nbsp;  while &#40;1&#41; &#123;
+
+<br />
+ //&nbsp; &nbsp;.....
+
+<br />
+&nbsp; &nbsp;struct sockaddr client_addr;
+
+<br />
+&nbsp; &nbsp;socklen_t size = sizeof&#40;client_addr&#41;;
+
+<br />
+&nbsp; &nbsp; &nbsp; &nbsp;  clientfd = accept&#40;serversocket, &amp;client_addr, &amp;size&#41;;
+
+<br />
+&nbsp; &nbsp; if&#40;clientfd!=-1&#41;break;
+
+<br />
+&nbsp; &nbsp; &#125;
+
+<br />
+&nbsp; &nbsp; printf&#40;&quot;uspel sem dobiti povezavo na strezniku\n&quot;&#41;;
+
+<br />
+&nbsp; &nbsp; j++;
+
+<br />
+&nbsp; &nbsp; streznik1=1;
+
+<br />
+&nbsp; &nbsp; pthread_exit&#40;0&#41;;
+
+<br />
+ &#125;
+
+<br />
+ 
+
+<br />
+ 
+
+<br />
+ void*klient&#40;void*args&#41;
+
+<br />
+ &#123;
+
+<br />
+&nbsp;  
+
+<br />
+&nbsp; &nbsp; server.sin_family= AF_INET;
+
+<br />
+&nbsp;  server.sin_port = htons&#40;atoi&#40;tri&#41;&#41;;
+
+<br />
+&nbsp;  host = gethostbyname&#40;ena&#41;;
+
+<br />
+&nbsp;  if &#40;host==NULL&#41; &#123;
+
+<br />
+&nbsp; &nbsp;  perror&#40;&quot;Unknown host&quot;&#41;;
+
+<br />
+&nbsp; &nbsp;  return -1;
+
+<br />
+&nbsp;  &#125;
+
+<br />
+&nbsp;  server.sin_addr = *&#40;&#40;struct in_addr*&#41;host-&gt;h_addr&#41;;
+
+<br />
+&nbsp;  if &#40;connect&#40;socketfd, &#40;struct sockaddr*&#41;&amp;server,&nbsp;  sizeof&#40;struct sockaddr&#41;&#41;
+
+<br />
+==&nbsp; -1&#41; &#123;
+
+<br />
+&nbsp; &nbsp; &nbsp;  perror&#40;&quot;Connect&quot;&#41;;
+
+<br />
+&nbsp; &nbsp; &nbsp;  //return -1;
+
+<br />
+&nbsp; &nbsp;  &#125;else&#123;printf&#40;&quot;uspelo se mi je povezati z klientom\n&quot;&#41;;j++;klient1=1;&#125;
+
+<br />
+&nbsp; &nbsp;  
+
+<br />
+ pthread_exit&#40;0&#41;;
+
+<br />
+ &#125;
+
+<br />
+ 
+
+<br />
+ 
+
+<br />
+ 
+
+<br />
+ int main&#40;int argc, char**argv&#41;
+
+<br />
+ &#123;
+
+<br />
+ 
+
+<br />
+ if&#40;argc!=4&#41;
+
+<br />
+ &#123;
+
+<br />
+ &nbsp; &nbsp;printf&#40;&quot;premalo argumentov&quot;&#41;;
+
+<br />
+&nbsp; &nbsp;return -1;
+
+<br />
+ &#125;
+
+<br />
+socketfd = socket&#40;PF_INET, SOCK_STREAM, 0&#41;;
+
+<br />
+&nbsp; if &#40;socketfd&lt;0&#41; &#123;
+
+<br />
+&nbsp; &nbsp; perror&#40;&quot;Error opening socket&quot;&#41;;
+
+<br />
+&nbsp; &nbsp; return -1;
+
+<br />
+&nbsp; &#125;
+
+<br />
+&nbsp; pthread_t tid&#91;2&#93;; //polje niti
+
+<br />
+ ena=argv&#91;1&#93;;
+
+<br />
+ dva=argv&#91;2&#93;;
+
+<br />
+ tri=argv&#91;3&#93;;
+
+<br />
+ 
+
+<br />
+ while&#40;j!=2&#41;&#123;
+
+<br />
+ 
+
+<br />
+ if&#40;klient1!=1&#41;
+
+<br />
+ pthread_create&#40;&amp;tid&#91;1&#93;,NULL,klient,0&#41;;
+
+<br />
+ if&#40;streznik1!=1&#41;
+
+<br />
+ pthread_create&#40;&amp;tid&#91;2&#93;,NULL,streznik,0&#41;;
+
+<br />
+ &#125;
+
+<br />
+// wait&#40;5&#41;;
+
+<br />
+ 
+
+<br />
+ int i=0;
+
+<br />
+ char buffer&#91;19&#93;;
+
+<br />
+ char buffer1&#91;19&#93;;
+
+<br />
+ read&#40;0,buffer,strlen&#40;buffer&#41;&#41;;
+
+<br />
+ 
+
+<br />
+ write&#40;clientfd,buffer,19&#41;;
+
+<br />
+ 
+
+<br />
+ while&#40;i!=1&#41;
+
+<br />
+ &#123;
+
+<br />
+&nbsp;  int z= read&#40; socketfd,buffer1,19&#41;;
+
+<br />
+&nbsp;  if&#40;z&gt;0&#41;
+
+<br />
+&nbsp;  i++;
+
+<br />
+ &#125;
+
+<br />
+ 
+
+<br />
+ write&#40;1,buffer1,strlen&#40;buffer&#41;&#41;;
+
+<br />
+ //zdruzimo niti
+
+<br />
+&nbsp; &nbsp; for&#40;i=2;i&gt;=0;i--&#41;&#123;pthread_join&#40;tid&#91;i&#93;,NULL&#41;;&#125;
+
+<br />
+ 
+
+<br />
+&nbsp; close&#40;socketfd&#41;;
+
+<br />
+&nbsp; close&#40; clientfd&#41;; 
+
+<br />
+ return 0;
+
+<br />
+ &#125;
+
+<br />
+
+
+<br />
+
+
+<br />
+mislim da bi v teoriji tole moramlo delati vendar imam 1 problem ko se 1 zazene je jasno da ce ni drugi zagnan se ne more&nbsp; povezati ko&nbsp; zazenes se drugega mi 2 program javi lepo da se je lepo povezal na server nato pa mi 1 program zacne metati ven cannot bind BAD FILE DESCRIPTOR drugi program pa javla CANNOT BIND ADDRESS ALREDY IN USE 
+
+<br />
+
+
+<br />
+
+
+<br />
+a je slucajno problem tole ker programa testiram tako 
+
+<br />
+imam 2 primerka tega programa v razlicnih datotekah 
+
+<br />
+
+
+<br />
+in testiram v 2 konzolnih oknih takole
+
+<br />
+
+
+<br />
+./a.out 127.0.0.1 5000 5001
+
+<br />
+
+
+<br />
+./a.out 127.0.0.1 5001 5000
+
+<br />
+
+
+<br />
+
+
+<br />
+A mi zna kdo pomagati ?
+
+<br />
+
+
+<br />
+
+
+<br />
+
+
+<br />
+</td>
+<br />
+	</tr>
+<br />
+</table>
+<br />
+<span class="postbody"><br />_________________<br />///---there is no hope for you---\\\</span><span class="gensmall"></span></td>
+			</tr>
+		</table></td>
+	</tr>
+	<tr>
+		<td class="row1" width="150" align="left" valign="middle"><span class="nav"><a href="#top" class="nav">Nazaj na vrh</a></span></td>
+		<td class="row1" width="100%" height="28" valign="bottom" nowrap="nowrap"><table cellspacing="0" cellpadding="0" border="0" height="18" width="18">
+			<tr>
+				<td valign="middle" nowrap="nowrap"><a href="profile-184.html"><img src="templates/SGD2/images/lang_slovenian/icon_profile.gif" alt="Poglej uporabnikov profil" title="Poglej uporabnikov profil" border="0" /></a> </td>
+			</tr>
+		</table></td>
+	</tr>
+	<tr>
+		<td class="spaceRow" colspan="2" height="1"><img src="templates/SGD/images/spacer.gif" alt="" width="1" height="1" /></td>
+	</tr>
+	
+	<tr>
+		<td width="150" align="left" valign="top" class="row2"><span class="name"><a name="12019"></a><b>Senitel</b></span><br /><span class="postdetails">wannabe<br /><img src="images/ranks/sgd-2.gif" alt="wannabe" title="wannabe" border="0" /><br /><br /><br />Pridružen: 02. jul 2003 ob 17:01<br />objav: 97<br /></span><br /></td>
+		<td class="row2" width="100%" height="28" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+			<tr>
+				<td colspan="2" width="100%">
+					<table width="100%" cellpadding="0" cellspacing="0" border="0">
+						<tr>
+							<td valign="middle" align="left">
+								<a href="topic-1049.html#12019"><img src="templates/SGD2/images/icon_minipost.gif" width="12" height="9" alt="objava" title="objava" border="0" /></a>
+								<span class="postdetails">Objavljeno: sre jun 08, 2005 8:57 pm<span class="gen">&nbsp;</span>&nbsp; &nbsp;Pošlji temo: </span>
+							</td>
+							<td valign="middle" align="right" nowrap="nowrap">
+							</td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+			<tr>
+				<td colspan="2"><hr /></td>
+			</tr>
+			<tr>
+				<td colspan="2"><span class="postbody">Joj pa kaj moraš tolk komplicirat...
+
+<br />
+
+
+<br />
+</span>
+<br />
+<table width="90%" cellspacing="1" cellpadding="3" border="0" align="center">
+<br />
+<tr> 
+<br />
+	  <td><span class="genmed"><b>Koda:</b></span></td>
+<br />
+	</tr>
+<br />
+	<tr>
+<br />
+	  <td class="code">#include &lt;winsock2.h&gt;
+
+<br />
+#include &lt;iostream&gt;
+
+<br />
+
+
+<br />
+DWORD WINAPI inputThread&#40;LPVOID param&#41;
+
+<br />
+&#123;
+
+<br />
+&nbsp; &nbsp;SOCKET comm = *&#40;&#40;SOCKET*&#41;param&#41;;
+
+<br />
+&nbsp; &nbsp;char buffer&#91;512&#93;;
+
+<br />
+&nbsp; &nbsp;while &#40;1&#41;
+
+<br />
+&nbsp; &nbsp;&#123;
+
+<br />
+&nbsp; &nbsp;&nbsp; &nbsp;ZeroMemory&#40;buffer,512&#41;;
+
+<br />
+&nbsp; &nbsp;&nbsp; &nbsp;std&#58;&#58;cin.getline&#40;buffer,512&#41;;
+
+<br />
+&nbsp; &nbsp;&nbsp; &nbsp;send&#40;comm,buffer,&#40;int&#41;strlen&#40;buffer&#41;,0&#41;;
+
+<br />
+&nbsp; &nbsp;&nbsp; &nbsp;if &#40;strcmp&#40;buffer,&quot;bye&quot;&#41; == 0&#41; break;
+
+<br />
+&nbsp; &nbsp;&#125;
+
+<br />
+
+
+<br />
+&nbsp; &nbsp;return 1;
+
+<br />
+&#125;
+
+<br />
+
+
+<br />
+int main&#40;int argc,char** argv&#41;
+
+<br />
+&#123;
+
+<br />
+&nbsp; &nbsp;if &#40;argc != 3&#41; return 0;
+
+<br />
+
+
+<br />
+&nbsp; &nbsp;WSAData data;
+
+<br />
+&nbsp; &nbsp;WSAStartup&#40;MAKEWORD&#40;1,1&#41;,&amp;data&#41;;
+
+<br />
+
+
+<br />
+&nbsp; &nbsp;// Poskusimo se povezati na strežnik
+
+<br />
+&nbsp; &nbsp;SOCKET server = NULL;
+
+<br />
+&nbsp; &nbsp;SOCKET comm = socket&#40;AF_INET,SOCK_STREAM,0&#41;;
+
+<br />
+&nbsp; &nbsp;sockaddr_in addr;
+
+<br />
+&nbsp; &nbsp;ZeroMemory&#40;&amp;addr,sizeof&#40;sockaddr_in&#41;&#41;;
+
+<br />
+&nbsp; &nbsp;addr.sin_family = AF_INET;
+
+<br />
+&nbsp; &nbsp;addr.sin_port = htons&#40;atoi&#40;argv&#91;2&#93;&#41;&#41;;
+
+<br />
+&nbsp; &nbsp;addr.sin_addr.S_un.S_addr = inet_addr&#40;argv&#91;1&#93;&#41;;
+
+<br />
+&nbsp; &nbsp;if &#40;connect&#40;comm,&#40;sockaddr*&#41;&amp;addr,sizeof&#40;sockaddr_in&#41;&#41; != 0&#41;
+
+<br />
+&nbsp; &nbsp;&#123;
+
+<br />
+&nbsp; &nbsp;&nbsp; &nbsp;std&#58;&#58;cout &lt;&lt; &quot;Povezava s strežnikom ni uspela, postavimo se v strežniški način.&quot; &lt;&lt; std&#58;&#58;endl;
+
+<br />
+
+
+<br />
+&nbsp; &nbsp;&nbsp; &nbsp;server = socket&#40;AF_INET,SOCK_STREAM,0&#41;;
+
+<br />
+&nbsp; &nbsp;&nbsp; &nbsp;sockaddr_in serv;
+
+<br />
+&nbsp; &nbsp;&nbsp; &nbsp;ZeroMemory&#40;&amp;serv,sizeof&#40;sockaddr_in&#41;&#41;;
+
+<br />
+&nbsp; &nbsp;&nbsp; &nbsp;serv.sin_family = AF_INET;
+
+<br />
+&nbsp; &nbsp;&nbsp; &nbsp;serv.sin_port = htons&#40;atoi&#40;argv&#91;2&#93;&#41;&#41;;
+
+<br />
+&nbsp; &nbsp;&nbsp; &nbsp;bind&#40;server,&#40;sockaddr*&#41;&amp;serv,sizeof&#40;sockaddr_in&#41;&#41;;
+
+<br />
+&nbsp; &nbsp;&nbsp; &nbsp;listen&#40;server,10&#41;;
+
+<br />
+
+
+<br />
+&nbsp; &nbsp;&nbsp; &nbsp;std&#58;&#58;cout &lt;&lt; &quot;Čakamo na povezavo...&quot; &lt;&lt; std&#58;&#58;endl;
+
+<br />
+&nbsp; &nbsp;&nbsp; &nbsp;comm = accept&#40;server,NULL,NULL&#41;;
+
+<br />
+&nbsp; &nbsp;&#125;
+
+<br />
+&nbsp; &nbsp;printf&#40;&quot;Povezava vzpostavljena\n&quot;&#41;;
+
+<br />
+
+
+<br />
+&nbsp; &nbsp;// Kreiramo nit, ki bere in pošilja tekst
+
+<br />
+&nbsp; &nbsp;HANDLE thread = 0;
+
+<br />
+&nbsp; &nbsp;CreateThread&#40;NULL,0,inputThread,&#40;LPVOID&#41;&amp;comm,0,&#40;DWORD*&#41;&amp;thread&#41;;
+
+<br />
+
+
+<br />
+&nbsp; &nbsp;char buffer&#91;512&#93;;
+
+<br />
+&nbsp; &nbsp;while &#40;1&#41;
+
+<br />
+&nbsp; &nbsp;&#123;
+
+<br />
+&nbsp; &nbsp;&nbsp; &nbsp;ZeroMemory&#40;buffer,512&#41;;
+
+<br />
+&nbsp; &nbsp;&nbsp; &nbsp;if &#40;recv&#40;comm,&#40;char*&#41;buffer,512,0&#41; &lt;= 0&#41; break;
+
+<br />
+&nbsp; &nbsp;&nbsp; &nbsp;std&#58;&#58;cout &lt;&lt; &quot;&gt;&quot; &lt;&lt; buffer &lt;&lt; std&#58;&#58;endl;
+
+<br />
+&nbsp; &nbsp;&nbsp; &nbsp;if &#40;strcmp&#40;buffer,&quot;bye&quot;&#41; == 0&#41; break;
+
+<br />
+&nbsp; &nbsp;&#125;
+
+<br />
+&nbsp; &nbsp;CloseHandle&#40;thread&#41;;
+
+<br />
+
+
+<br />
+&nbsp; &nbsp;// Zapremo povezave
+
+<br />
+&nbsp; &nbsp;if &#40;server != NULL&#41; closesocket&#40;server&#41;;
+
+<br />
+&nbsp; &nbsp;closesocket&#40;comm&#41;;
+
+<br />
+&nbsp; &nbsp;std&#58;&#58;cout &lt;&lt; &quot;Povezava zaključena!&quot; &lt;&lt; std&#58;&#58;endl;
+
+<br />
+
+
+<br />
+&nbsp; &nbsp;WSACleanup&#40;&#41;;
+
+<br />
+&nbsp; &nbsp;return 0;
+
+<br />
+&#125;</td>
+<br />
+	</tr>
+<br />
+</table>
+<br />
+<span class="postbody">
+
+<br />
+
+
+<br />
+Eko tukaj imaš zadevo narejeno za windowse...</span><span class="gensmall"></span></td>
+			</tr>
+		</table></td>
+	</tr>
+	<tr>
+		<td class="row2" width="150" align="left" valign="middle"><span class="nav"><a href="#top" class="nav">Nazaj na vrh</a></span></td>
+		<td class="row2" width="100%" height="28" valign="bottom" nowrap="nowrap"><table cellspacing="0" cellpadding="0" border="0" height="18" width="18">
+			<tr>
+				<td valign="middle" nowrap="nowrap"><a href="profile-74.html"><img src="templates/SGD2/images/lang_slovenian/icon_profile.gif" alt="Poglej uporabnikov profil" title="Poglej uporabnikov profil" border="0" /></a> </td>
+			</tr>
+		</table></td>
+	</tr>
+	<tr>
+		<td class="spaceRow" colspan="2" height="1"><img src="templates/SGD/images/spacer.gif" alt="" width="1" height="1" /></td>
+	</tr>
+	
+	<tr align="center">
+		<td class="catBottom" colspan="2" height="28">&nbsp;</td>
+	</tr>
+</table>
+
+<table width="100%" cellspacing="2" cellpadding="2" border="0" align="center">
+  <tr>
+	<td align="left" valign="middle" nowrap="nowrap">&nbsp;</td>
+	<td align="left" valign="middle" width="100%"><span class="nav">&nbsp;&nbsp;&nbsp;<a href="index.html" class="nav">SloGameDev.net seznam forumov</a>
+	  -> <a href="forum-1.html" class="nav">Splošno Programiranje</a></span></td>
+	<td align="right" valign="top" nowrap="nowrap"><span class="gensmall">Časovni pas (GMT +2:00 uri) Slovenija, poletni čas</span><br /><span class="nav"></span>
+	  </td>
+  </tr>
+  <tr>
+	<td align="left" colspan="3"><span class="nav">Stran <b>1</b> od <b>1</b></span></td>
+  </tr>
+</table>
+
+<table width="100%" cellspacing="2" border="0" align="center">
+  <tr>
+	<td width="40%" valign="top" nowrap="nowrap" align="left">&nbsp;</td>
+	<td align="right" valign="top" nowrap="nowrap">&nbsp;</td>
+  </tr>
+</table>
+
+<div align="center"><span class="copyright"><br />Arhiv stanja na dan 13. 2. 2006 &mdash; samo za branje.<br />
+<!--
+	We request you retain the full copyright notice below including the link to www.phpbb.com.
+	This not only gives respect to the large amount of time given freely by the developers
+	but also helps build interest, traffic and use of phpBB 2.0. If you cannot (for good
+	reason) retain the full copyright we request you at least leave in place the 
+	Powered by phpBB 2.0.4 line, with phpBB linked to www.phpbb.com. If you refuse
+	to include even this then support on our forums may be affected. 
+
+	The phpBB Group : 2002
+// -->
+Powered by <a  target="_phpbb" class="copyright">phpBB</a> 2.0.4 &copy; 2001, 2002 phpBB Group<br /></span></div>
+		</td>
+	</tr>
+</table>
+
+</body>
+</html>

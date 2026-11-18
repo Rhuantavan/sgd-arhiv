@@ -1,0 +1,176 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3c.org/TR/1999/REC-html401-19991224/loose.dtd">
+<!-- saved from url=(0041)http://localhost/wiki/index.php/Main_Page -->
+<HTML>
+<HEAD>
+<TITLE>Snake :: Article</TITLE>
+<META http-equiv=Content-Type content="text/html; charset=utf-8">
+<META content="Main Page" name=KEYWORDS>
+<META content="index,follow" name="robots">
+<LINK href="../../favicon.ico" 
+rel="shortcut icon">
+<STYLE type=text/css media="screen,projection">
+@import url( ../main.css ); @import url( codeColors.css );
+</STYLE>
+<LINK media=print  type=text/css rel=stylesheet>
+</HEAD>
+<BODY class="ns-0" style="background-image:url(../images/boxes_back.png); background-position:center;" >
+<DIV id=globalWrapper>
+  <DIV id=column-content>
+    <DIV id=content>
+      <H1 class=firstHeading>Drevesne strukture: Osnove </H1>
+      <DIV id=bodyContent>
+        <!-- start content -->
+        <p>Predavanje na temo zgradbe grafičnega (in tudi splošnega) pogona igre + senitelov dodatek o senčilnikih.</p>
+        <p>&nbsp;</p>
+        <p class="codetext">
+        <p><i>Drevesa igrajo v programiranju zelo pomembno vlogo (pri podatkovnih bazah, grafičnem programiranju, umetni inteligenci,). Tokratni članek obsega osnove drevesnih struktur in krajšo predstavitev splošnih dreves.</i></p>
+        <p>&nbsp;</p>
+        <p class="codetitlesmall">Rekurzija</p>
+        <p class="codetext">Rekurzija je zelo pomembno (in tudi zapleteno) poglavje o drevesih. Zakaj pravzaprav gre?</p>
+        <p class="codetext">Programerski slovarji ta pojem razlagajo takole:</p>
+        <p class="codetext"><b>Rekurzija</b>: glej Rekurzija</p>
+        <p class="codetext">Bistvo rekurzije je v tem, da rekurzivna funkcija kliče sama sebe. Poleg tega pa lahko z rekurzijo problem razdelimo na več podproblemov, kar lahko znatno pospeši reševanje zadanega problema.</p>
+        <p class="codetext">&nbsp;</p>
+        <p class="codetext">Kako se vse to naredi?</p>
+        <p class="codetext">Vsaka rekurzivna funkcija je sestavljena iz rekurzivnega dela (dela kjer kaže sama nase) in terminacijskega dela. Terminacijski del je pomemben zato, ker bi se drugače rekurzivna funkcija ponavljala v neskončnost. To so za nas najpomembnejše lastnosti rekurzije.</p>
+        <p class="codetext">Neskončnosti izvajanja rekurzije pa ne potekajo točno tako, kot je navedeno v prejšnjem odstavku. Rekurzija si namreč ob vsakem izvajanju dodeli nek prostor v spominu (stack). Ko je spomin poln, pride do t.i. "stack overflowa" in funkcija se konča. Prostor, ki ga funkcija zapolni ob vsakem izvajanju, vsebuje informacije o stanju funkcije. Tako se lahko v kateremkoli trenutku vrnemo na katerokoli stanje, kjer se je rekurzivna funkcija nahajala. Tukaj se skriva naša ključna informacija.</p>
+        <p class="codetext">Poglejmo primer rekurzivnega in nerekurzivnega reševanja problema:</p>
+        <pre class="precode">1.:  void izpisi_stevilo_rekurzivno( int stevilo )
+2.:  {
+3.: 	cout << stevilo << endl;
+4.: 	if ( stevilo == 0 )
+5.: 		cout << "Konec rekurzijske funkcije\n";
+6.: 	else
+7.: 	{
+8.:  		izpisi_stevilo_rekurzijsko( stevilo - 1 );
+9.: 	}
+10.: }
+</pre>
+        <p class="codetext">vrstica 3: izpišemo število<br>
+          vrstica 4: terminacijski del (preverjamo ali smo z odštevanjem že prišli do 0), če smo, izpiši tekst (vrstica 5)<br>
+          vrstica 8: če še nismo končali, ponovno začni našo rekurzivno funkcijo (to je rekurzivni del).</p>
+        <p class="codetext">In še nerekurzivno (z iteracijo):</p>
+        <pre class="precode">1.: void izpisi_stevilo( int stevilo )
+2.: {
+3.:	while( stevilo != 0 )
+4.:	{
+5.:		cout << stevilo << endl;;
+6.:		stevilo--;
+7.:	}
+8.:	cout << "Konec nerekurzijske funkcije\n";
+9.: }
+</pre>
+        <p class="codetext">vrstica 3: terminacijski del<br>
+          vrstica 5: izpišemo število<br>
+          vrstica 6: zmanjšamo število in ponovimo zanko.</p>
+        <p class="codetext">V takšnih primerih rekurzije ne bomo uporabili, saj ima kar nekaj slabosti (je nekoliko počasnejša, poleg tega pa se ne more ponavljati v neskončnost).</p>
+        <p class="codetext">Pomembno: rekurzivna funkcija si dodeljuje prostor v spominu, kjer shranjuje podatke o njenih prejšnjih stanjih (zna biti nepotrebno tratenje spomina).</p>
+        <p class="codetext">Spoznali ste osnove rekurzij. Več informacij lahko najdete na <a  title="Google" target="_blank"><img src="../images/external.png" alt="l"> googlu</a>.</p>
+        <p class="codetext">&nbsp;</p>
+        <p class="codetitlesmall">Drevesa</p>
+        <p class="codetext">Pri programiranju se uporablja več vrst drevesnih struktur. Drevesne strukture se uporabljajo za iskanje po bazah podatkov ("2-3 trees", "2-3-4 trees", "AVL trees", "red-black trees",...), pri 3D grafiki ("BSP trees", "OCtrees", "quad trees",...), splošnem game programmingu (minmax, pathfinding trees,...), datotečnih sistemih, stiskanju podatkov,... Vseh teh pa si zaenkrat še ne bomo ogledali.</p>
+        <p class="codetext">Najosnovnejši primer predstave drevesa:</p>
+        <center>
+          <img src="images/image001.gif">
+        </center>
+        <p class="codetext">Vsak krog predstavlja eno vozlišče (node). V tem primeru bi lahko kateregakoli izmed vozlišč proglasili za izhodiščnega (root node). Zato bolj pogosto uporabljamo poseben razred, ki kaže na eno vozlišče, ki predstavlja izhodišče.</p>
+        <center>
+          <img src="images/image002.gif">
+        </center>
+        <p class="codetext">&nbsp;</p>
+        <p class="codetitlesmall">Deli drevesa</p>
+        <p class="codetext">Kot že omenjeno je drevo sestavljeno iz vozlišč. Začetno vozlišče se imenuje <b>root node</b>. če ima izhodiščno vozlišče pod sabo še kakšnega, se "spodnji" imenuje <b>child node</b> (hčerinsko vozlišče), "zgornji" pa je v takem primeru <b>parent node</b> (starševsko vozlišče). Vozlišče, ki nima hčerinskega vozlišča, se imenuje <b>leaf node</b>.</p>
+        <p class="codetext">Poglejmo primer:</p>
+        <center>
+          <img src="images/image003.gif">
+        </center>
+        <p class="codetext">Vozlišče 1 je izhodno (in hkrati starš vozlišč 2, 3 in 4). Vozlišče 2 je hčerinsko volišče vozlišča 1 in starš vozlišč 5 in 6. Vozlišče 3 je hčerinsko vozlišče vozlišča 1 in starš vozlišča 7. Vozlišče 4 je hčerinsko vozlišče vozlišča 1, obenem pa je tudi leaf node, saj nima hčerinskega vozlišča.<br>
+          Drevo lahko ima tudi poddrevesa. V našem primeru bi lahko določili, da je vozlišče 2 izhodiščno vozlišče poddrevesa.<br>
+          Sedaj pa se mi že vozlajo prsti! :-]</p>
+        <p class="codetext">&nbsp;</p>
+        <p class="codetitlesmall">Drevesna urejenost</p>
+        <p class="codetext">Poleg vseh starševsko-hčerinskih zadev, lahko drevesa razdelimo tudi na višinske stopnje (<b>Height Levels</b>). Izhodiščno vozlišče je ničelne stopnje (ali prve, odvisno od našega štetja), vsako hčerinsko vozlišče pa je za eno stopnjo višje kot je njegov starš.</p>
+        <center>
+          <img src="images/image004.gif">
+        </center>
+        <p class="codetext">Osvojili smo osnovno teorijo, sedaj pa h konkretnim drevesom.</p>
+        <p class="codetext">&nbsp;</p>
+        <p class="codetitlesmall">General Tree</p>
+        <p class="codetext">Splošno drevo (general tree) je drevo z enim izhodiščnim drevesom in neomejenim številom hčerinskih vozlišč.</p>
+        <p class="codetext">Najpogosteje se taka drevesa uporablja pri družinskih drevesih:</p>
+        <center>
+          <img src="images/image005.gif">
+        </center>
+        <p class="codetext">V takšni obliki bi težko kaj spravili v računalnik, zato se drevo največkrat prikazuje kot povezan seznam (<b>linked list</b>). Namesto seznama lahko uporabimo katerokoli drugo primerno linearno "shrambo".(npr. polja).</p>
+        <p class="codetext">Družinica, predstavljena zgoraj, bi potemtakem izgledala takole (s povezanimi linearnimi "shrambami"):</p>
+        <center>
+          <img src="images/image006.gif">
+        </center>
+        <p class="codetext">Kot vidite, vsako vozlišče kaže na eno samo linearno "shrambo".</p>
+        <p class="codetext">&nbsp;</p>
+        <p class="codetitlesmall">V praksi</p>
+        <p class="codetext">Verjetno splošnega drevesa v igrah ne boste uporabljali z namenom predstavljanja izvora svoje družine. V igrah se splošna drevesa največkrat uporabljajo v procesih odločanja (umetna inteligenca).</p>
+        <p class="codetext">Na primer:</p>
+        <p class="codetext">Računalniški igralec vas zagleda, kako plezate čez most, da bi zavzeli njegovo bazo.</p>
+        <center>
+          <img src="images/image007.gif">
+        </center>
+        <p class="codetext">To bi bil eden najosnovnejših (in zelo kratkih) primerov odločanja. V igrah se velikokrat pojavljajo mnogo bolj zapletena in večja drevesa.</p>
+        <p class="codetext">&nbsp;</p>
+        <p class="codetitlesmall">Zaključek</p>
+        <p class="codetext">V prvem delu smo spoznali nekaj osnov dreves. Upam, da sem vam to področje dovolj nazorno predstavil, da si sedaj lažje predstavljate, kaj so drevesa, če vam jih imeni programer. Če pa imate kakšno vprašanje, komentar ali kritiko, pa mi pošljite <a >e-mail</a>.</p>
+        <p class="codetext">&nbsp;</p>
+        <p class="codetext"> Izvorne kode zgornjega članka (še) nisem priložil. Stanje se lahko spremeni, če bo povpraševanje po mejlu dovolj veliko. </p>
+        <!-- end content -->
+        </p>
+        <DIV class=visualClear></DIV>
+      </DIV>
+    </DIV>
+  </DIV>
+  <DIV id=column-one>
+    <DIV class=portlet id=p-cactions>
+      <H5>Views</H5>
+      <UL>
+        <LI><A href="../index.html">Home</A></LI>
+        <LI><A href="../showcase.html">Showcase</A></LI>
+        <LI><A href="../hippo.html">Hippo</A></LI>
+        <LI class="selected"><A href="../articles.html">Articles</A></LI>
+      </UL>
+    </DIV>
+    <DIV class=portlet id=p-personal>
+      <H5>Personal tools</H5>
+      <!-- 
+	        <DIV class=pBody>
+
+	    <UL>
+          <LI id=pt-login><A >Create an account or log in</A> </LI>
+        </UL>
+
+      </DIV>
+-->
+    </DIV>
+    <DIV class=portlet id=p-logo style=" BACKGROUND-IMAGE: url(../images/boxes.png); background-repeat:no-repeat"></DIV>
+    <DIV class=portlet id=p-nav>
+      <H5>Links</H5>
+      <DIV class=pBody>
+        <UL>
+          <LI><A href="../../index.html" target="_blank">SloGamedev.net</A>
+          <LI><A  target="_blank">Gamedev.net</A>
+          <LI><A  target="_blank">Flipcode</A>
+          <LI><A  target="_blank">Gamasutra</A>
+          <LI><A  target="_blank">CodeProject</A>
+        </UL>
+      </DIV>
+    </DIV>
+  </DIV>
+  <!-- end of the left (by default at least) column -->
+  <DIV class=visualClear style="position:relative; bottom:-5px; right:0px; left:0px; width:100%; "></DIV>
+  <DIV id=footer style="position:relative; bottom:-5px; right:0px; left:0px; width:100%; ">
+    <UL>
+      <LI>&copy; 2005, <a  title="e-mail">Samo Kralj</a><br>
+      <LI><span style="font-size:xx-small;">Base of site design grabbed from monobook style from <a  title="Mediawiki" target="_blank"> Mediawiki</a>.</span>
+    </UL>
+  </DIV>
+</DIV>
+</BODY>
+</HTML>

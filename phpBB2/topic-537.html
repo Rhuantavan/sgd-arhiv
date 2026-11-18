@@ -1,0 +1,2165 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html dir="ltr">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta http-equiv="Content-Style-Type" content="text/css">
+<style type="text/css">
+<!--
+.style1 {color: #FFFFFF}
+-->
+</style>
+
+
+
+<title>SloGameDev.net :: C++ sortiranje seznama!</title>
+<!-- link rel="stylesheet" href="templates/SGD/SGD2.css" type="text/css" -->
+<style type="text/css">
+<!--
+/*
+  The SGD Theme for phpBB version 2+
+  Created by Rhuantavan
+  http://www.rhuantavan.org
+
+  NOTE: These CSS definitions are stored within the main page body so that you can use the phpBB2
+  theme administration centre. When you have finalised your style you could cut the final CSS code
+  and place it in an external file, deleting this section to save bandwidth.
+*/
+
+/* General page style. The scroll bar colours only visible in IE5.5+ */
+body {
+	background-color: #DDDDDD;
+	scrollbar-face-color: #000000;
+	scrollbar-highlight-color: #000000;
+	scrollbar-3dlight-color: #EEEEEE;
+	scrollbar-darkshadow-color: #EEEEEE;
+	scrollbar-shadow-color: #000000;
+	scrollbar-arrow-color: #55FF00;
+	scrollbar-track-color: #EEEEEE;
+}
+
+/* General font families for common tags */
+font,th,td,p { font-family: Verdana, Arial, Helvetica, sans-serif }
+a:link,a:active,a:visited { color : #338800; }
+a:hover		{ text-decoration: underline; color : #338800; }
+hr	{ height: 0px; border: solid #E9E9E9 0px; border-top-width: 1px;}
+
+/* This is the border line & background colour round the entire page */
+.bodyline	{ background-color: #EEEEEE; border-left: 1px #000000 solid; border-right: 1px #000000 solid; }
+
+/* This is the outline round the main forum tables */
+.forumline	{ background-color: #EEEEEE; border: 0px #DDDDDD solid; }
+
+/* Main table cell colours and backgrounds */
+td.row1	{ background-color: #F8F8F8; }
+td.row2	{ background-color: #F0F0F0; }
+td.row3	{ background-color: #E9E9E9; }
+
+/*
+  This is for the table cell above the Topics, Post & Last posts on the index.php page
+  By default this is the fading out gradiated silver background.
+  However, you could replace this with a bitmap specific for each forum
+*/
+td.rowpic {
+		background-color: #EEEEEE;
+		background-image: url(templates/SGD/images/cellpic3.gif);
+		background-repeat: repeat-y;
+}
+
+/* Header cells - the blue and silver gradient backgrounds */
+th	{
+	color: #66CC33; font-size: 11px; font-weight : bold;
+	background-color: #338800; height: 25px;
+	background-image: url(templates/SGD/images/cellpic2.gif);
+}
+
+td.cat,td.catHead,td.catSides,td.catLeft,td.catRight,td.catBottom {
+			background-image: url(templates/SGD/images/cellpic1.gif);
+			background-color:#E9E9E9; border: #999999; border-style: solid; height: 28px;
+}
+
+/*
+  Setting additional nice inner borders for the main table cells.
+  The names indicate which sides the border will be on.
+  Don't worry if you don't understand this, just ignore it :-)
+*/
+td.cat,td.catHead,td.catBottom {
+	height: 29px;
+	border-width: 0px 0px 0px 0px;
+}
+th.thHead,th.thSides,th.thTop,th.thLeft,th.thRight,th.thBottom,th.thCornerL,th.thCornerR {
+	font-weight: bold; border: #EEEEEE; border-style: solid; height: 28px;
+}
+td.row3Right,td.spaceRow {
+	background-color: #E9E9E9; border: #999999; border-style: solid;
+}
+
+th.thHead,td.catHead { font-size: 12px; border-width: 0px 0px 0px 0px; }
+th.thSides,td.catSides,td.spaceRow	 { border-width: 0px 0px 0px 0px; }
+th.thRight,td.catRight,td.row3Right	 { border-width: 0px 0px 0px 0px; }
+th.thLeft,td.catLeft	  { border-width: 0px 0px 0px 0px; }
+th.thBottom,td.catBottom  { border-width: 0px 0px 0px 1px; }
+th.thTop	 { border-width: 0px 0px 0px 0px; }
+th.thCornerL { border-width: 0px 0px 0px 1px; }
+th.thCornerR { border-width: 0px 0px 0px 0px; }
+
+/* The largest text used in the index page title and toptic title etc. */
+.maintitle	{
+	font-weight: bold; font-size: 18px; font-family: "Trebuchet MS",Verdana, Arial, Helvetica, sans-serif;
+	text-decoration: none; line-height : 120%; color : #666666;
+}
+
+/* General text */
+.gen { font-size : 12px; }
+.genmed { font-size : 11px; }
+.gensmall { font-size : 10px; }
+.gen,.genmed,.gensmall { color : #666666; }
+a.gen,a.genmed,a.gensmall { color: #338800; text-decoration: none; }
+a.gen:hover,a.genmed:hover,a.gensmall:hover	{ color: #338800; text-decoration: underline; }
+
+/* The register, login, search etc links at the top of the page */
+.mainmenu		{ font-size : 11px; color : #666666 }
+a.mainmenu		{ text-decoration: none; color : #338800;  }
+a.mainmenu:hover{ text-decoration: underline; color : #338800; }
+
+/* SGD main menu */
+.sgdmainmenu			{ font-size : 10px; color : #99FF33 }
+a.sgdmainmenu:link		{ text-decoration: none; color : #99FF33;  }
+a.sgdmainmenu:active	{ text-decoration: none; color : #99FF33;  }
+a.sgdmainmenu:visited	{ text-decoration: none; color : #99FF33;  }
+a.sgdmainmenu:hover		{ text-decoration: underline; color : #99FF33; }
+
+/* Forum category titles */
+.cattitle		{ font-weight: bold; font-size: 12px ; letter-spacing: 1px; color : #338800}
+a.cattitle		{ text-decoration: none; color : #338800; }
+a.cattitle:hover{ text-decoration: underline; }
+
+/* Forum title: Text and link to the forums used in: index.php */
+.forumlink		{ font-weight: bold; font-size: 12px; color : #338800; }
+a.forumlink 	{ text-decoration: none; color : #338800; }
+a.forumlink:hover{ text-decoration: underline; color : #338800; }
+
+/* Used for the navigation text, (Page 1,2,3 etc) and the navigation bar when in a forum */
+.nav			{ font-weight: bold; font-size: 11px; color : #666666;}
+a.nav			{ text-decoration: none; color : #338800; }
+a.nav:hover		{ text-decoration: underline; }
+
+/* titles for the topics: could specify viewed link colour too */
+.topictitle,h1,h2	{ font-weight: bold; font-size: 11px; color : #666666; }
+a.topictitle:link   { text-decoration: none; color : #338800; }
+a.topictitle:visited { text-decoration: none; color : #338800; }
+a.topictitle:hover	{ text-decoration: underline; color : #338800; }
+
+/* Name of poster in viewmsg.php and viewtopic.php and other places */
+.name			{ font-size : 11px; color : #000000;}
+
+/* Location, number of posts, post date etc */
+.postdetails		{ font-size : 10px; color : #666666; }
+
+/* The content of the posts (body of text) */
+.postbody { font-size : 12px; line-height: 18px; color : #000000;}
+a.postlink:link	{ text-decoration: none; color : #338800 }
+a.postlink:visited { text-decoration: none; color : #338800; }
+a.postlink:hover { text-decoration: underline; color : #338800}
+
+/* Quote & Code blocks */
+.code {
+	font-family: Courier, 'Courier New', sans-serif; font-size: 11px; color: #006600;
+	background-color: #D6D6D6; border: #E9E9E9; border-style: solid;
+	border-left-width: 1px; border-top-width: 1px; border-right-width: 1px; border-bottom-width: 1px
+}
+
+.quote {
+	font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 11px; color: #444444; line-height: 125%;
+	background-color: #BBBBBB; border: #E9E9E9; border-style: solid;
+	border-left-width: 1px; border-top-width: 1px; border-right-width: 1px; border-bottom-width: 1px
+}
+
+/* Copyright and bottom info */
+.copyright		{ font-size: 10px; font-family: Verdana, Arial, Helvetica, sans-serif; color: #444444; letter-spacing: -1px;}
+a.copyright		{ color: #444444; text-decoration: none;}
+a.copyright:hover { color: #666666; text-decoration: underline;}
+
+/* Form elements */
+input,textarea, select {
+	color : #666666;
+	font: normal 11px Verdana, Arial, Helvetica, sans-serif;
+	border-color : #666666;
+}
+
+/* The text input fields background colour */
+input.post, textarea.post, select {
+	background-color : #EEEEEE;
+}
+
+input { text-indent : 2px; }
+
+/* The buttons used for bbCode styling in message post */
+input.button {
+	background-color : #F8F8F8;
+	color : #666666;
+	font-size: 11px; font-family: Verdana, Arial, Helvetica, sans-serif;
+}
+
+/* The main submit button option */
+input.mainoption {
+	background-color : #BBBBBB;
+	font-weight : bold;
+}
+
+/* None-bold submit button */
+input.liteoption {
+	background-color : #BBBBBB;
+	font-weight : normal;
+}
+
+/* This is the line in the posting page which shows the rollover
+  help line. This is actually a text box, but if set to be the same
+  colour as the background no one will know ;)
+*/
+.helpline { background-color: #F0F0F0; border-style: none; }
+
+/* Import the fancy styles for IE only (NS4.x doesn't use the @import function) */
+@import url("templates/SGD/formIE.css");
+-->
+</style>
+</head>
+<body bgcolor="#DDDDDD" text="#666666" link="#338800" vlink="#338800" topmargin="0" />
+<a name="top"></a>
+<table width="100%" cellspacing="0" cellpadding="0" border="0" align="center" nowrap>
+	<tr>
+		<td class="bodyline">
+			<table width="100%" border="0" cellpadding="0" cellspacing="0">
+				<tr>
+					<td bgcolor="#FFFFFF">
+						<img src="images/spacer.gif" width="760" height="20" alt=""></td>
+				</tr>
+			</table>
+			<table width="100%" border="0" cellpadding="0" cellspacing="0">
+				<tr>
+					<td bgcolor="#000000">
+						<a href="../index.html"><img src="images/home.gif" width="10" height="10" alt="" border="0"></a><img src="images/spacer.gif" width="5" height="5" alt=""><a href="../index.html" class="sgdmainmenu">Nazaj na domačo stran</a> <img src="images/defaulticon_green.gif" alt="" width="7" height="7" border="0"> <a href="../clanki.html" class="sgdmainmenu">Clanki</a> <img src="images/defaulticon_green.gif" alt="" width="7" height="7" border="0"> <a href="../koda.html" class="sgdmainmenu">Koda</a> <img src="images/defaulticon_green.gif" alt="" width="7" height="7" border="0"> <a href="../clani.html" class="sgdmainmenu">Clani</a> <img src="images/defaulticon_green.gif" alt="" width="7" height="7" border="0"> <a href="../skupine.html" class="sgdmainmenu">Skupine</a> <img src="images/defaulticon_green.gif" alt="" width="7" height="7" border="0"> <a href="../projekti.html" class="sgdmainmenu">Projekti</a> <img src="images/defaulticon_green.gif" alt="" width="7" height="7" border="0"> <a href="../povezave.html" class="sgdmainmenu">Povezave</a></td>
+				</tr>
+			</table>
+			<table width="100%" border="0" cellpadding="0" cellspacing="0">
+				<tr>
+					<td colspan="3" bgcolor="#000000">
+						<img src="images/spacer.gif" width="760" height="10" alt=""></td>
+				</tr>
+				<tr>
+					<td>
+						<a href="index.html"><img src="images/logo.gif" width="351" height="62" alt="" border="0"></a></td>
+					<td>
+						<img src="images/forum_03.gif" width="408" height="62" alt=""></td>
+					<td width="100%" bgcolor="#000000">
+						<img src="images/spacer.gif" width="1" height="1" alt=""></td>
+				</tr>
+				<tr>
+					<td colspan="3" bgcolor="#000000" align="center">
+						<a href="memberlist.html" class="sgdmainmenu"><img src="images/defaulticon_green.gif" alt="" width="7" height="7" border="0">&nbsp;Seznam članov</a>
+						<a href="index.html" class="sgdmainmenu"><img src="images/defaulticon_green.gif" alt="" width="7" height="7" border="0">&nbsp;Seznam</a></td>
+				</tr>
+				<tr>
+					<td colspan="3" bgcolor="#000000">
+						<img src="images/spacer.gif" width="760" height="5" alt=""></td>
+				</tr>
+			</table>
+
+<table width="100%" cellspacing="2" cellpadding="2" border="0">
+  <tr>
+	<td align="left" valign="bottom" colspan="2"><a class="maintitle" href="topic-537.html">C++ sortiranje seznama!</a><br />
+	  <span class="gensmall"><b></b><br />
+	  &nbsp; </span></td>
+  </tr>
+</table>
+
+<table width="100%" cellspacing="2" cellpadding="2" border="0">
+  <tr>
+	<td align="left" valign="bottom" nowrap="nowrap">&nbsp;</td>
+	<td align="left" valign="middle" width="100%"><span class="nav">&nbsp;&nbsp;&nbsp;<a href="index.html" class="nav">SloGameDev.net seznam forumov</a>
+	  -> <a href="forum-1.html" class="nav">Splošno Programiranje</a></span></td>
+  </tr>
+</table>
+
+<table class="forumline" width="100%" cellspacing="1" cellpadding="3" border="0">
+	<tr align="right">
+		<td class="catHead" colspan="2" height="28"><span class="nav"><a href="topic-532.html" class="nav">Prejšnja tema</a> :: <a href="topic-541.html" class="nav">Naslednja tema</a> &nbsp;</span></td>
+	</tr>
+	
+	<tr>
+		<th class="thLeft" width="150" height="26" nowrap="nowrap">avtor</th>
+		<th class="thRight" nowrap="nowrap">Sporočilo</th>
+	</tr>
+	
+	<tr>
+		<td width="150" align="left" valign="top" class="row1"><span class="name"><a name="6080"></a><b>rodrigec</b></span><br /><span class="postdetails">novinec<br /><img src="images/ranks/sgd-0.gif" alt="novinec" title="novinec" border="0" /><br /><br /><br />Pridružen: 12. jan 2004 ob 20:37<br />objav: 4<br /></span><br /></td>
+		<td class="row1" width="100%" height="28" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+			<tr>
+				<td colspan="2" width="100%">
+					<table width="100%" cellpadding="0" cellspacing="0" border="0">
+						<tr>
+							<td valign="middle" align="left">
+								<a href="topic-537.html#6080"><img src="templates/SGD2/images/icon_minipost.gif" width="12" height="9" alt="objava" title="objava" border="0" /></a>
+								<span class="postdetails">Objavljeno: pon jan 12, 2004 9:00 pm<span class="gen">&nbsp;</span>&nbsp; &nbsp;Pošlji temo: C++ sortiranje seznama!</span>
+							</td>
+							<td valign="middle" align="right" nowrap="nowrap">
+							</td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+			<tr>
+				<td colspan="2"><hr /></td>
+			</tr>
+			<tr>
+				<td colspan="2"><span class="postbody">Hy! 
+
+<br />
+
+
+<br />
+Zanima me kako naj sortiram enosmerni seznam po priimku?
+
+<br />
+
+
+<br />
+</span>
+<br />
+<table width="90%" cellspacing="1" cellpadding="3" border="0" align="center">
+<br />
+<tr> 
+<br />
+	  <td><span class="genmed"><b>Koda:</b></span></td>
+<br />
+	</tr>
+<br />
+	<tr>
+<br />
+	  <td class="code">
+
+<br />
+...
+
+<br />
+struct Oseba
+
+<br />
+&#123;
+
+<br />
+&nbsp; &nbsp;char *ime;
+
+<br />
+&nbsp; &nbsp;char *priimek;
+
+<br />
+&nbsp; &nbsp;int zaposlen;
+
+<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; int dejavnost;
+
+<br />
+&nbsp; &nbsp;char spol;
+
+<br />
+&nbsp; &nbsp;int starost;
+
+<br />
+&nbsp; &nbsp;Datum *dne;
+
+<br />
+&nbsp; &nbsp;Oseba *naslOs;
+
+<br />
+&nbsp; &nbsp;koment komentar&#91;10&#93;;
+
+<br />
+&nbsp; &nbsp;int stevKomentar;
+
+<br />
+&nbsp; &nbsp;void vnesi&#40;&#41;;
+
+<br />
+&nbsp; &nbsp;void izpisi&#40;&#41;;
+
+<br />
+&nbsp; &nbsp;void dodajKomentar&#40;&#41;;
+
+<br />
+&nbsp; &nbsp;void izpisikomentar&#40;&#41;;
+
+<br />
+&#125;;
+
+<br />
+...
+
+<br />
+
+
+<br />
+void po_priimku&#40;Oseba *&amp;k_cel_seznam&#41; //sortiranje podatkov po imenu
+
+<br />
+&#123;
+
+<br />
+&nbsp; &nbsp;Oseba *temp = k_cel_seznam;
+
+<br />
+&nbsp; &nbsp;char *pomozni;
+
+<br />
+
+
+<br />
+&nbsp; &nbsp; cout &lt;&lt; &quot;\nSoritran izpis priimkov&#58; &quot;&lt;&lt;endl;
+
+<br />
+
+
+<br />
+&nbsp; &nbsp;  if &#40;temp != NULL&#41; // Sledi preverjanje ali je seznam poln
+
+<br />
+&nbsp; &nbsp;  &#123;
+
+<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; pomozni = temp-&gt;priimek; // Zacetna vrednost min
+
+<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; temp = temp-&gt;naslOs; // Povemo kam kaze k_najmansi
+
+<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 
+
+<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; while &#40;temp != NULL&#41; // S while zanke preverimo ali je kak element v seznamu nansi od min
+
+<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  &#123;
+
+<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  if &#40;pomozni &gt; temp-&gt;priimek&#41; // Pogoj za spremembo min
+
+<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  pomozni = temp-&gt;priimek; // Povemo cemu je enak min
+
+<br />
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;  temp = temp-&gt;naslOs; // Povemo kam kaze k_najmansi 
+
+<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &#125;
+
+<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; cout &lt;&lt; endl &lt;&lt; endl;
+
+<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; cout&lt;&lt; pomozni &lt;&lt; endl;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 
+
+<br />
+&nbsp; &nbsp;  &#125;
+
+<br />
+&nbsp; &nbsp;  else
+
+<br />
+&nbsp; &nbsp;  &#123;
+
+<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; cout &lt;&lt; &quot;Seznam je prazen!&quot; &lt;&lt; endl;
+
+<br />
+&nbsp; &nbsp;  &#125;
+
+<br />
+&nbsp; &nbsp; cakaj&#40;enter&#41;;
+
+<br />
+&#125;
+
+<br />
+...
+
+<br />
+</td>
+<br />
+	</tr>
+<br />
+</table>
+<br />
+<span class="postbody">
+
+<br />
+
+
+<br />
+to je del kode, vse mi deluje samo ne sortira! vem da ta funkcija za soritanje ne deluje naj bi bila samo neke vrste pomoc! 
+
+<br />
+
+
+<br />
+Potrebno je naredit funkcijo z uporabo metode strcmp, ki bi izpisala sortirane priimke seznama! (Pomembno je, da ne ustvarimo nobega seznama, temvec ustrezno prevezemo obstojeci seznam!!!!)
+
+<br />
+
+
+<br />
+Hvala za pomoc
+
+<br />
+lp</span><span class="gensmall"></span></td>
+			</tr>
+		</table></td>
+	</tr>
+	<tr>
+		<td class="row1" width="150" align="left" valign="middle"><span class="nav"><a href="#top" class="nav">Nazaj na vrh</a></span></td>
+		<td class="row1" width="100%" height="28" valign="bottom" nowrap="nowrap"><table cellspacing="0" cellpadding="0" border="0" height="18" width="18">
+			<tr>
+				<td valign="middle" nowrap="nowrap"><a href="profile-137.html"><img src="templates/SGD2/images/lang_slovenian/icon_profile.gif" alt="Poglej uporabnikov profil" title="Poglej uporabnikov profil" border="0" /></a> </td>
+			</tr>
+		</table></td>
+	</tr>
+	<tr>
+		<td class="spaceRow" colspan="2" height="1"><img src="templates/SGD/images/spacer.gif" alt="" width="1" height="1" /></td>
+	</tr>
+	
+	<tr>
+		<td width="150" align="left" valign="top" class="row2"><span class="name"><a name="6086"></a><b>vesoljc</b></span><br /><span class="postdetails">inštruktor<br /><img src="images/ranks/sgd-4.gif" alt="inštruktor" title="inštruktor" border="0" /><br /><img src="images/avatars/c1bdb98c3fb49342927df.jpg" alt="" border="0" /><br /><br />Pridružen: 18. feb 2003 ob 22:16<br />objav: 297<br />Kraj: Brezovica, homeland of the mighty Beawer Blasters</span><br /></td>
+		<td class="row2" width="100%" height="28" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+			<tr>
+				<td colspan="2" width="100%">
+					<table width="100%" cellpadding="0" cellspacing="0" border="0">
+						<tr>
+							<td valign="middle" align="left">
+								<a href="topic-537.html#6086"><img src="templates/SGD2/images/icon_minipost.gif" width="12" height="9" alt="objava" title="objava" border="0" /></a>
+								<span class="postdetails">Objavljeno: tor jan 13, 2004 12:19 am<span class="gen">&nbsp;</span>&nbsp; &nbsp;Pošlji temo: </span>
+							</td>
+							<td valign="middle" align="right" nowrap="nowrap">
+							</td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+			<tr>
+				<td colspan="2"><hr /></td>
+			</tr>
+			<tr>
+				<td colspan="2"><span class="postbody"></span>
+<br />
+<table width="90%" cellspacing="1" cellpadding="3" border="0" align="center">
+<br />
+<tr> 
+<br />
+	  <td><span class="genmed"><b>Koda:</b></span></td>
+<br />
+	</tr>
+<br />
+	<tr>
+<br />
+	  <td class="code">
+
+<br />
+pomozni &gt; temp-&gt;priimek
+
+<br />
+</td>
+<br />
+	</tr>
+<br />
+</table>
+<br />
+<span class="postbody">
+
+<br />
+kaj je pomozni? in kaj je priimek? to ni vrstica teksta ampak pointer na prvo črko te tekstne vrstice! in pointerje primerjat je rahlo čudno  <img src="images/smiles/icon_confused.gif" alt="icon_confused.gif" border="0" /> 
+
+<br />
+<a  target="_blank" class="postlink">http://www.mkssoftware.com/docs/man3/strcmp.3.asp</a> tuki maš strcmp deklaracijo
+
+<br />
+
+
+<br />
+rabiš pa nekaj takega
+
+<br />
+</span>
+<br />
+<table width="90%" cellspacing="1" cellpadding="3" border="0" align="center">
+<br />
+<tr> 
+<br />
+	  <td><span class="genmed"><b>Koda:</b></span></td>
+<br />
+	</tr>
+<br />
+	<tr>
+<br />
+	  <td class="code">
+
+<br />
+if &#40;strcmp&#40;pomozni, temp-&gt;priimek&#41; &gt; 0&#41; 
+
+<br />
+do stuff
+
+<br />
+</td>
+<br />
+	</tr>
+<br />
+</table>
+<br />
+<span class="postbody">
+
+<br />
+The function strcmp() returns a positive integer if string s1 is lexically greater than string s2; zero if the two strings are identical; and a negative integer if string s1 is lexically less than string s2.[/code]<br />_________________<br /><span style="font-style: italic">Abnormal behaviour of abnormal brain makes me normal...</span></span><span class="gensmall"></span></td>
+			</tr>
+		</table></td>
+	</tr>
+	<tr>
+		<td class="row2" width="150" align="left" valign="middle"><span class="nav"><a href="#top" class="nav">Nazaj na vrh</a></span></td>
+		<td class="row2" width="100%" height="28" valign="bottom" nowrap="nowrap"><table cellspacing="0" cellpadding="0" border="0" height="18" width="18">
+			<tr>
+				<td valign="middle" nowrap="nowrap"><a href="profile-47.html"><img src="templates/SGD2/images/lang_slovenian/icon_profile.gif" alt="Poglej uporabnikov profil" title="Poglej uporabnikov profil" border="0" /></a> <a  target="_userwww"><img src="templates/SGD2/images/lang_slovenian/icon_www.gif" alt="Obišči avtorjevo spletno stran" title="Obišči avtorjevo spletno stran" border="0" /></a></td>
+			</tr>
+		</table></td>
+	</tr>
+	<tr>
+		<td class="spaceRow" colspan="2" height="1"><img src="templates/SGD/images/spacer.gif" alt="" width="1" height="1" /></td>
+	</tr>
+	
+	<tr>
+		<td width="150" align="left" valign="top" class="row1"><span class="name"><a name="6088"></a><b>ALTF4</b></span><br /><span class="postdetails">inštruktor<br /><img src="images/ranks/sgd-4.gif" alt="inštruktor" title="inštruktor" border="0" /><br /><img src="images/avatars/563d301443ad69c6388ac.gif" alt="" border="0" /><br /><br />Pridružen: 10. jul 2003 ob 15:23<br />objav: 345<br />Kraj: Slovenska Bistrica</span><br /></td>
+		<td class="row1" width="100%" height="28" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+			<tr>
+				<td colspan="2" width="100%">
+					<table width="100%" cellpadding="0" cellspacing="0" border="0">
+						<tr>
+							<td valign="middle" align="left">
+								<a href="topic-537.html#6088"><img src="templates/SGD2/images/icon_minipost.gif" width="12" height="9" alt="objava" title="objava" border="0" /></a>
+								<span class="postdetails">Objavljeno: tor jan 13, 2004 12:32 am<span class="gen">&nbsp;</span>&nbsp; &nbsp;Pošlji temo: </span>
+							</td>
+							<td valign="middle" align="right" nowrap="nowrap">
+							</td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+			<tr>
+				<td colspan="2"><hr /></td>
+			</tr>
+			<tr>
+				<td colspan="2"><span class="postbody">tu maš sortiranje + še druge stvari; kot vedno, se večino stvari da narediti na lepši način  <img src="images/smiles/icon_biggrin.gif" alt="icon_biggrin.gif" border="0" /> 
+
+<br />
+
+
+<br />
+</span>
+<br />
+<table width="90%" cellspacing="1" cellpadding="3" border="0" align="center">
+<br />
+<tr> 
+<br />
+	  <td><span class="genmed"><b>Koda:</b></span></td>
+<br />
+	</tr>
+<br />
+	<tr>
+<br />
+	  <td class="code">#include &lt;iostream.h&gt;
+
+<br />
+#include &lt;string.h&gt;
+
+<br />
+#include &lt;stdlib.h&gt;
+
+<br />
+#include &lt;iomanip.h&gt;
+
+<br />
+//#include &lt;crtdbg.h&gt;
+
+<br />
+
+
+<br />
+struct DatumProjekta
+
+<br />
+&#123;
+
+<br />
+&nbsp; &nbsp;int d,m,l;
+
+<br />
+&#125;;
+
+<br />
+
+
+<br />
+struct NaslovUdelezenca
+
+<br />
+&#123;
+
+<br />
+&nbsp; &nbsp;char *ulica;
+
+<br />
+&nbsp; &nbsp;char *posta;
+
+<br />
+&#125;;
+
+<br />
+
+
+<br />
+struct UdelezenecProjekta
+
+<br />
+&#123;
+
+<br />
+&nbsp; &nbsp;char *ime;
+
+<br />
+&nbsp; &nbsp;char *priimek;
+
+<br />
+&nbsp; &nbsp;NaslovUdelezenca naslov;
+
+<br />
+&nbsp; &nbsp;UdelezenecProjekta *naslednji_udelezenec;
+
+<br />
+&#125;;
+
+<br />
+
+
+<br />
+struct Projekt
+
+<br />
+&#123;
+
+<br />
+&nbsp; &nbsp;char *ime;
+
+<br />
+&nbsp; &nbsp;char *namen;
+
+<br />
+&nbsp; &nbsp;DatumProjekta datum;
+
+<br />
+&nbsp; &nbsp;UdelezenecProjekta *udelezenci;
+
+<br />
+&nbsp; &nbsp;UdelezenecProjekta *konec;
+
+<br />
+&nbsp; &nbsp;Projekt *naslednji_projekt;
+
+<br />
+&#125;;
+
+<br />
+
+
+<br />
+void clrScr&#40;&#41;
+
+<br />
+&#123;
+
+<br />
+&nbsp; &nbsp;system&#40;&quot;cls&quot;&#41;;
+
+<br />
+&#125;
+
+<br />
+
+
+<br />
+char *beriNiz&#40;&#41;
+
+<br />
+&#123;
+
+<br />
+&nbsp; &nbsp;char a&#91;100&#93;;
+
+<br />
+&nbsp; &nbsp;cout.flush&#40;&#41;;
+
+<br />
+&nbsp; &nbsp;cin.eatwhite&#40;&#41;;
+
+<br />
+&nbsp; &nbsp;cin.getline&#40;a,100&#41;;
+
+<br />
+&nbsp; &nbsp;if &#40;cin.gcount&#40;&#41;==99&#41;
+
+<br />
+&nbsp; &nbsp;&nbsp; &nbsp;cin.ignore&#40;255,'\n'&#41;;
+
+<br />
+&nbsp; &nbsp;return strdup&#40;a&#41;;
+
+<br />
+&#125;
+
+<br />
+
+
+<br />
+int steviloProjektov&#40;Projekt *zacetek&#41;
+
+<br />
+&#123;
+
+<br />
+&nbsp; &nbsp;int i=0;
+
+<br />
+&nbsp; &nbsp;Projekt *vmesni=zacetek;
+
+<br />
+&nbsp; &nbsp;while &#40;vmesni!=NULL&#41;
+
+<br />
+&nbsp; &nbsp;&#123;
+
+<br />
+&nbsp; &nbsp;&nbsp; &nbsp;i++;
+
+<br />
+&nbsp; &nbsp;&nbsp; &nbsp;vmesni=vmesni-&gt;naslednji_projekt;
+
+<br />
+&nbsp; &nbsp;&#125;
+
+<br />
+&nbsp; &nbsp;return i;
+
+<br />
+&#125;
+
+<br />
+
+
+<br />
+void dodajProjektNaZacetekSeznama&#40;Projekt *&amp;zacetek&#41;
+
+<br />
+&#123;
+
+<br />
+&nbsp; &nbsp;Projekt *novi=new Projekt;
+
+<br />
+&nbsp; &nbsp;cout &lt;&lt; &quot;Vpisovanje podatkov o projektu.&quot; &lt;&lt; endl;
+
+<br />
+&nbsp; &nbsp;cout &lt;&lt; &quot;Vpisi ime projekta&#58; &quot; &lt;&lt; endl;
+
+<br />
+&nbsp; &nbsp;novi-&gt;ime=beriNiz&#40;&#41;;
+
+<br />
+&nbsp; &nbsp;cout &lt;&lt; &quot;Vpisi namen projekta&#58; &quot; &lt;&lt; endl;
+
+<br />
+&nbsp; &nbsp;novi-&gt;namen=beriNiz&#40;&#41;;
+
+<br />
+&nbsp; &nbsp;cout &lt;&lt; &quot;Vpisi datum zacetka projekta &#40;dan mesec leto&#41;&#58;&quot; &lt;&lt; endl;
+
+<br />
+&nbsp; &nbsp;cin &gt;&gt; novi-&gt;datum.d &gt;&gt; novi-&gt;datum.m &gt;&gt; novi-&gt;datum.l;
+
+<br />
+&nbsp; &nbsp;novi-&gt;naslednji_projekt=zacetek;
+
+<br />
+&nbsp; &nbsp;novi-&gt;udelezenci=NULL;
+
+<br />
+&nbsp; &nbsp;novi-&gt;konec=NULL;
+
+<br />
+&nbsp; &nbsp;zacetek=novi;
+
+<br />
+&#125;
+
+<br />
+
+
+<br />
+void dodajProjektNaKonecSeznama&#40;Projekt *&amp;konec, Projekt *zacetek&#41;
+
+<br />
+&#123;
+
+<br />
+&nbsp; &nbsp;Projekt *novi=new Projekt;
+
+<br />
+&nbsp; &nbsp;cout &lt;&lt; &quot;Vpisovanje podatkov o projektu.&quot; &lt;&lt; endl;
+
+<br />
+&nbsp; &nbsp;cout &lt;&lt; &quot;Vpisi ime projekta&#58; &quot; &lt;&lt; endl;
+
+<br />
+&nbsp; &nbsp;novi-&gt;ime=beriNiz&#40;&#41;;
+
+<br />
+&nbsp; &nbsp;cout &lt;&lt; &quot;Vpisi namen projekta&#58; &quot; &lt;&lt; endl;
+
+<br />
+&nbsp; &nbsp;novi-&gt;namen=beriNiz&#40;&#41;;
+
+<br />
+&nbsp; &nbsp;cout &lt;&lt; &quot;Vpisi datum zacetka projekta &#40;dan mesec leto&#41;&#58;&quot; &lt;&lt; endl;
+
+<br />
+&nbsp; &nbsp;cin &gt;&gt; novi-&gt;datum.d &gt;&gt; novi-&gt;datum.m &gt;&gt; novi-&gt;datum.l;
+
+<br />
+&nbsp; &nbsp;novi-&gt;naslednji_projekt=NULL;
+
+<br />
+&nbsp; &nbsp;novi-&gt;udelezenci=NULL;
+
+<br />
+&nbsp; &nbsp;konec-&gt;naslednji_projekt=novi;
+
+<br />
+&nbsp; &nbsp;konec-&gt;konec=NULL;
+
+<br />
+&nbsp; &nbsp;konec=novi;
+
+<br />
+&#125;
+
+<br />
+
+
+<br />
+void izpisiProjekte&#40;Projekt *zacetek&#41;
+
+<br />
+&#123;
+
+<br />
+&nbsp; &nbsp;cout &lt;&lt; &quot;Trenutno so aktivni naslednji projekti&#58;&quot; &lt;&lt; endl &lt;&lt; endl;
+
+<br />
+&nbsp; &nbsp;int i=0;
+
+<br />
+&nbsp; &nbsp;Projekt *vmesni = zacetek;
+
+<br />
+&nbsp; &nbsp;while &#40;vmesni!=NULL&#41;
+
+<br />
+&nbsp; &nbsp;&#123;
+
+<br />
+&nbsp; &nbsp;&nbsp; &nbsp;i++;
+
+<br />
+&nbsp; &nbsp;&nbsp; &nbsp;cout &lt;&lt; &quot;Zaporedna stevilka projekta&#58; &quot; &lt;&lt; i &lt;&lt; endl;
+
+<br />
+&nbsp; &nbsp;&nbsp; &nbsp;cout &lt;&lt; &quot;Ime projekta&#58; &quot; &lt;&lt; vmesni-&gt;ime &lt;&lt; endl;
+
+<br />
+&nbsp; &nbsp;&nbsp; &nbsp;cout &lt;&lt; &quot;Namen projekta&#58; &quot; &lt;&lt; vmesni-&gt;namen &lt;&lt; endl;
+
+<br />
+&nbsp; &nbsp;&nbsp; &nbsp;cout &lt;&lt; &quot;Datum projekta&#58; &quot; &lt;&lt; vmesni-&gt;datum.d &lt;&lt; &quot;.&quot;
+
+<br />
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp; &lt;&lt; vmesni-&gt;datum.m &lt;&lt; &quot;.&quot; &lt;&lt; vmesni-&gt;datum.l &lt;&lt; endl;
+
+<br />
+&nbsp; &nbsp;&nbsp; &nbsp;cout &lt;&lt; &quot;--------------------------------------&quot; &lt;&lt; endl;
+
+<br />
+&nbsp; &nbsp;&nbsp; &nbsp;vmesni=vmesni-&gt;naslednji_projekt;
+
+<br />
+&nbsp; &nbsp;&#125;
+
+<br />
+&nbsp; &nbsp;cout &lt;&lt; endl;
+
+<br />
+&#125;
+
+<br />
+
+
+<br />
+void pobrisiUdelezence&#40;Projekt *&amp;zacetek&#41;
+
+<br />
+&#123;
+
+<br />
+&nbsp; &nbsp;Projekt *vmesni_projekt=zacetek;
+
+<br />
+&nbsp; &nbsp;UdelezenecProjekta *vmesni_udelezenec;
+
+<br />
+&nbsp; &nbsp;UdelezenecProjekta *delovni_udelezenec;
+
+<br />
+&nbsp; &nbsp;while &#40;vmesni_projekt!=NULL&#41;
+
+<br />
+&nbsp; &nbsp;&#123;
+
+<br />
+&nbsp; &nbsp;&nbsp; &nbsp;vmesni_udelezenec=vmesni_projekt-&gt;udelezenci;
+
+<br />
+&nbsp; &nbsp;&nbsp; &nbsp;while &#40;vmesni_udelezenec!=NULL&#41;
+
+<br />
+&nbsp; &nbsp;&nbsp; &nbsp;&#123;
+
+<br />
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;delovni_udelezenec=vmesni_udelezenec-&gt;naslednji_udelezenec;
+
+<br />
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;delete vmesni_udelezenec;
+
+<br />
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;vmesni_udelezenec=delovni_udelezenec;
+
+<br />
+&nbsp; &nbsp;&nbsp; &nbsp;&#125;
+
+<br />
+&nbsp; &nbsp;&nbsp; &nbsp;vmesni_projekt=vmesni_projekt-&gt;naslednji_projekt;
+
+<br />
+&nbsp; &nbsp;&#125;
+
+<br />
+&#125;
+
+<br />
+
+
+<br />
+void pobrisiProjekte&#40;Projekt *&amp;zacetek&#41;
+
+<br />
+&#123;
+
+<br />
+&nbsp; &nbsp;Projekt *vmesni=zacetek;
+
+<br />
+&nbsp; &nbsp;Projekt *delovni;
+
+<br />
+&nbsp; &nbsp;while &#40;vmesni!=NULL&#41;
+
+<br />
+&nbsp; &nbsp;&#123;
+
+<br />
+&nbsp; &nbsp;&nbsp; &nbsp;delovni=vmesni-&gt;naslednji_projekt;
+
+<br />
+&nbsp; &nbsp;&nbsp; &nbsp;delete vmesni;
+
+<br />
+&nbsp; &nbsp;&nbsp; &nbsp;vmesni=delovni;
+
+<br />
+&nbsp; &nbsp;&#125;
+
+<br />
+&#125;
+
+<br />
+
+
+<br />
+void zamenjajPrvaDvaProjekta&#40;Projekt *&amp;zacetek, Projekt *prvi, Projekt *drugi&#41;
+
+<br />
+&#123;
+
+<br />
+&nbsp; &nbsp;prvi-&gt;naslednji_projekt=drugi-&gt;naslednji_projekt;
+
+<br />
+&nbsp; &nbsp;drugi-&gt;naslednji_projekt=prvi;
+
+<br />
+&nbsp; &nbsp;zacetek=drugi;
+
+<br />
+&#125;
+
+<br />
+
+
+<br />
+void zamenjajOstaleProjekte&#40;Projekt *pred, Projekt *prvi, Projekt *drugi, Projekt *&amp;konec&#41;
+
+<br />
+&#123;
+
+<br />
+&nbsp; &nbsp;if &#40;drugi==konec&#41; konec=prvi;
+
+<br />
+&nbsp; &nbsp;Projekt *k_prvi=prvi;
+
+<br />
+&nbsp; &nbsp;pred-&gt;naslednji_projekt=drugi;
+
+<br />
+&nbsp; &nbsp;prvi-&gt;naslednji_projekt=drugi-&gt;naslednji_projekt;
+
+<br />
+&nbsp; &nbsp;drugi-&gt;naslednji_projekt=prvi;
+
+<br />
+&#125;
+
+<br />
+
+
+<br />
+void urediProjekte&#40;Projekt *&amp;zacetek, Projekt *&amp;konec&#41;
+
+<br />
+&#123;
+
+<br />
+&nbsp; &nbsp;for &#40;Projekt *trenutni=zacetek; trenutni-&gt;naslednji_projekt!=NULL; trenutni=trenutni-&gt;naslednji_projekt&#41;
+
+<br />
+&nbsp; &nbsp;&#123;
+
+<br />
+&nbsp; &nbsp;&nbsp; &nbsp;if &#40;strcmp&#40;zacetek-&gt;ime,zacetek-&gt;naslednji_projekt-&gt;ime&#41;&gt;0&#41; zamenjajPrvaDvaProjekta&#40;zacetek,zacetek,zacetek-&gt;naslednji_projekt&#41;;
+
+<br />
+&nbsp; &nbsp;&nbsp; &nbsp;Projekt *vmesni=zacetek;
+
+<br />
+&nbsp; &nbsp;&nbsp; &nbsp;while &#40;vmesni-&gt;naslednji_projekt-&gt;naslednji_projekt!=NULL&#41;
+
+<br />
+&nbsp; &nbsp;&nbsp; &nbsp;&#123;
+
+<br />
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;if &#40;strcmp&#40;vmesni-&gt;naslednji_projekt-&gt;ime,vmesni-&gt;naslednji_projekt-&gt;naslednji_projekt-&gt;ime&#41;&gt;0&#41;
+
+<br />
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&#123;
+
+<br />
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;/*vmesni_udelezenec=vmesni-&gt;naslednji_projekt-&gt;naslednji_projekt-&gt;udelezenci;
+
+<br />
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;vmesni-&gt;naslednji_projekt-&gt;naslednji_projekt-&gt;udelezenci=vmesni-&gt;naslednji_projekt-&gt;udelezenci;
+
+<br />
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;vmesni-&gt;naslednji_projekt-&gt;udelezenci=vmesni_udelezenec;*/
+
+<br />
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;zamenjajOstaleProjekte&#40;vmesni,vmesni-&gt;naslednji_projekt,vmesni-&gt;naslednji_projekt-&gt;naslednji_projekt, konec&#41;;
+
+<br />
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&#125;
+
+<br />
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;vmesni=vmesni-&gt;naslednji_projekt;
+
+<br />
+&nbsp; &nbsp;&nbsp; &nbsp;&#125;
+
+<br />
+&nbsp; &nbsp;&#125;
+
+<br />
+&#125;
+
+<br />
+
+
+<br />
+void poisciProjekt&#40;Projekt *zacetek&#41;
+
+<br />
+&#123;
+
+<br />
+&nbsp; &nbsp;char *ime;
+
+<br />
+&nbsp; &nbsp;bool najden=false;
+
+<br />
+&nbsp; &nbsp;cout &lt;&lt; &quot;Vpisi ime projekta, ki ga hocete poiskati.&quot; &lt;&lt; endl;
+
+<br />
+&nbsp; &nbsp;ime=beriNiz&#40;&#41;;
+
+<br />
+&nbsp; &nbsp;clrScr&#40;&#41;;
+
+<br />
+&nbsp; &nbsp;cout &lt;&lt; &quot;Iskanje po nizu&#58; &quot; &lt;&lt; ime &lt;&lt; &quot;...&quot;&lt;&lt; endl &lt;&lt; endl;
+
+<br />
+&nbsp; &nbsp;int i=0;
+
+<br />
+&nbsp; &nbsp;Projekt *vmesni=zacetek;
+
+<br />
+&nbsp; &nbsp;while &#40;vmesni!=NULL&#41;
+
+<br />
+&nbsp; &nbsp;&#123;
+
+<br />
+&nbsp; &nbsp;&nbsp; &nbsp;i++;
+
+<br />
+&nbsp; &nbsp;&nbsp; &nbsp;if &#40;strcmp&#40;vmesni-&gt;ime,ime&#41;==0&#41;
+
+<br />
+&nbsp; &nbsp;&nbsp; &nbsp;&#123;
+
+<br />
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;cout &lt;&lt; &quot;Zaporedna stevilka projekta&#58; &quot; &lt;&lt; i &lt;&lt; endl;
+
+<br />
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;cout &lt;&lt; &quot;Ime projekta&#58; &quot; &lt;&lt; vmesni-&gt;ime &lt;&lt; endl;
+
+<br />
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;cout &lt;&lt; &quot;Namen projekta&#58; &quot; &lt;&lt; vmesni-&gt;namen &lt;&lt; endl;
+
+<br />
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;cout &lt;&lt; &quot;Datum projekta&#58; &quot; &lt;&lt; vmesni-&gt;datum.d &lt;&lt; &quot;.&quot;
+
+<br />
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp; &lt;&lt; vmesni-&gt;datum.m &lt;&lt; &quot;.&quot; &lt;&lt; vmesni-&gt;datum.l &lt;&lt; endl;
+
+<br />
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;cout &lt;&lt; &quot;--------------------------------------&quot; &lt;&lt; endl &lt;&lt; endl;
+
+<br />
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;najden=true;
+
+<br />
+&nbsp; &nbsp;&nbsp; &nbsp;&#125;
+
+<br />
+&nbsp; &nbsp;&nbsp; &nbsp;vmesni=vmesni-&gt;naslednji_projekt;
+
+<br />
+&nbsp; &nbsp;&#125;
+
+<br />
+&nbsp; &nbsp;if &#40;!najden&#41; cout &lt;&lt; &quot;Projekt s taksnim imenom ne obstaja!&quot; &lt;&lt; endl &lt;&lt; endl;
+
+<br />
+&#125;
+
+<br />
+
+
+<br />
+void izbrisiProjekt&#40;Projekt *&amp;zacetek&#41;
+
+<br />
+&#123;
+
+<br />
+&nbsp; &nbsp;int i=0;
+
+<br />
+&nbsp; &nbsp;Projekt *vmesni=zacetek;
+
+<br />
+&nbsp; &nbsp;cout &lt;&lt; &quot;Izbirate lahko med naslednjimi projekti&#58; &quot; &lt;&lt; endl &lt;&lt; endl;
+
+<br />
+&nbsp; &nbsp;while &#40;vmesni!=NULL&#41;
+
+<br />
+&nbsp; &nbsp;&#123;
+
+<br />
+&nbsp; &nbsp;&nbsp; &nbsp;i++;
+
+<br />
+&nbsp; &nbsp;&nbsp; &nbsp;cout &lt;&lt; i &lt;&lt; &quot;&#58; &quot; &lt;&lt; vmesni-&gt;ime &lt;&lt; endl;
+
+<br />
+&nbsp; &nbsp;&nbsp; &nbsp;vmesni=vmesni-&gt;naslednji_projekt;
+
+<br />
+&nbsp; &nbsp;&#125;
+
+<br />
+&nbsp; &nbsp;int izbira;
+
+<br />
+&nbsp; &nbsp;cout &lt;&lt; &quot;Izberite projekt, ki ga zelite izbrisati&#58; &quot;&lt;&lt; endl;
+
+<br />
+&nbsp; &nbsp;cin &gt;&gt; izbira;
+
+<br />
+&nbsp; &nbsp;izbira--;
+
+<br />
+&nbsp; &nbsp;if &#40;izbira==0&#41;
+
+<br />
+&nbsp; &nbsp;&#123;
+
+<br />
+&nbsp; &nbsp;&nbsp; &nbsp;Projekt *vmesni=zacetek;
+
+<br />
+&nbsp; &nbsp;&nbsp; &nbsp;zacetek=zacetek-&gt;naslednji_projekt;
+
+<br />
+&nbsp; &nbsp;&nbsp; &nbsp;delete vmesni;
+
+<br />
+&nbsp; &nbsp;&nbsp; &nbsp;return;
+
+<br />
+&nbsp; &nbsp;&#125;
+
+<br />
+&nbsp; &nbsp;
+
+<br />
+&nbsp; &nbsp;if &#40;izbira==&#40;steviloProjektov&#40;zacetek&#41;-1&#41;&#41;
+
+<br />
+&nbsp; &nbsp;&#123;
+
+<br />
+
+
+<br />
+&nbsp; &nbsp;&nbsp; &nbsp;Projekt *vmesni=zacetek;
+
+<br />
+&nbsp; &nbsp;&nbsp; &nbsp;for &#40;int i=0; i&lt;steviloProjektov&#40;zacetek&#41;-2; i++&#41;
+
+<br />
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;vmesni=vmesni-&gt;naslednji_projekt;
+
+<br />
+&nbsp; &nbsp;&nbsp; &nbsp;Projekt *delovni=vmesni-&gt;naslednji_projekt;
+
+<br />
+&nbsp; &nbsp;&nbsp; &nbsp;vmesni-&gt;naslednji_projekt=NULL;
+
+<br />
+&nbsp; &nbsp;&nbsp; &nbsp;delete delovni;
+
+<br />
+&nbsp; &nbsp;&nbsp; &nbsp;return;
+
+<br />
+&nbsp; &nbsp;&#125;
+
+<br />
+
+
+<br />
+&nbsp; &nbsp;vmesni=zacetek;
+
+<br />
+&nbsp; &nbsp;for &#40;i=0; i&lt;izbira-1; i++&#41;
+
+<br />
+&nbsp; &nbsp;&nbsp; &nbsp;vmesni=vmesni-&gt;naslednji_projekt;
+
+<br />
+&nbsp; &nbsp;Projekt *delovni=vmesni-&gt;naslednji_projekt;
+
+<br />
+&nbsp; &nbsp;vmesni-&gt;naslednji_projekt=delovni-&gt;naslednji_projekt;
+
+<br />
+&nbsp; &nbsp;delete delovni;
+
+<br />
+&nbsp; &nbsp;
+
+<br />
+&nbsp; &nbsp;cout &lt;&lt; endl;
+
+<br />
+&#125;
+
+<br />
+
+
+<br />
+void dodajUdelezenca&#40;Projekt *&amp;zacetek&#41;
+
+<br />
+&#123;
+
+<br />
+&nbsp; &nbsp;int i=0;
+
+<br />
+&nbsp; &nbsp;Projekt *vmesni=zacetek;
+
+<br />
+&nbsp; &nbsp;cout &lt;&lt; &quot;Kateremu projektu zelite dodati udelezence/ca?&quot; &lt;&lt; endl &lt;&lt; endl;
+
+<br />
+&nbsp; &nbsp;while &#40;vmesni!=NULL&#41;
+
+<br />
+&nbsp; &nbsp;&#123;
+
+<br />
+&nbsp; &nbsp;&nbsp; &nbsp;i++;
+
+<br />
+&nbsp; &nbsp;&nbsp; &nbsp;cout &lt;&lt; i &lt;&lt; &quot;&#58; &quot; &lt;&lt; vmesni-&gt;ime &lt;&lt; endl;
+
+<br />
+&nbsp; &nbsp;&nbsp; &nbsp;vmesni=vmesni-&gt;naslednji_projekt;
+
+<br />
+&nbsp; &nbsp;&#125;
+
+<br />
+&nbsp; &nbsp;int izbira=0;
+
+<br />
+&nbsp; &nbsp;cin &gt;&gt; izbira;
+
+<br />
+&nbsp; &nbsp;izbira--;
+
+<br />
+
+
+<br />
+&nbsp; &nbsp;vmesni=zacetek;
+
+<br />
+&nbsp; &nbsp;for &#40;i=0; i&lt;izbira; i++&#41;
+
+<br />
+&nbsp; &nbsp;&nbsp; &nbsp;vmesni=vmesni-&gt;naslednji_projekt;
+
+<br />
+
+
+<br />
+&nbsp; &nbsp;&nbsp; &nbsp;
+
+<br />
+&nbsp; &nbsp;UdelezenecProjekta *udelezenec = new UdelezenecProjekta;
+
+<br />
+&nbsp; &nbsp;if &#40;vmesni-&gt;udelezenci==NULL&#41;
+
+<br />
+&nbsp; &nbsp;&#123;
+
+<br />
+&nbsp; &nbsp;&nbsp; &nbsp;udelezenec-&gt;naslednji_udelezenec=NULL;
+
+<br />
+&nbsp; &nbsp;&nbsp; &nbsp;cout &lt;&lt; &quot;Novi udelezenec&quot; &lt;&lt; endl;
+
+<br />
+&nbsp; &nbsp;&#125;
+
+<br />
+&nbsp; &nbsp;cout &lt;&lt; &quot;Vpisi ime&#58; &quot; &lt;&lt; endl;
+
+<br />
+&nbsp; &nbsp;udelezenec-&gt;ime=beriNiz&#40;&#41;;
+
+<br />
+&nbsp; &nbsp;cout &lt;&lt; &quot;Vpisi priimek&#58; &quot; &lt;&lt; endl;
+
+<br />
+&nbsp; &nbsp;udelezenec-&gt;priimek=beriNiz&#40;&#41;;
+
+<br />
+&nbsp; &nbsp;cout &lt;&lt; &quot;Vpisi ulico&#58; &quot; &lt;&lt; endl;
+
+<br />
+&nbsp; &nbsp;udelezenec-&gt;naslov.ulica=beriNiz&#40;&#41;;
+
+<br />
+&nbsp; &nbsp;cout &lt;&lt; &quot;Vpisi posto&#58; &quot; &lt;&lt; endl;
+
+<br />
+&nbsp; &nbsp;udelezenec-&gt;naslov.posta=beriNiz&#40;&#41;;
+
+<br />
+&nbsp; &nbsp;udelezenec-&gt;naslednji_udelezenec=vmesni-&gt;udelezenci;
+
+<br />
+&nbsp; &nbsp;vmesni-&gt;udelezenci=udelezenec;
+
+<br />
+&#125;
+
+<br />
+
+
+<br />
+void izpisiUdelezence&#40;Projekt *zacetek&#41;
+
+<br />
+&#123;
+
+<br />
+&nbsp; &nbsp;UdelezenecProjekta *vmesni_udelezenec;
+
+<br />
+&nbsp; &nbsp;int st_u=0;
+
+<br />
+&nbsp; &nbsp;for &#40;Projekt *vmesni_projekt=zacetek; vmesni_projekt!=NULL; vmesni_projekt=vmesni_projekt-&gt;naslednji_projekt&#41;
+
+<br />
+&nbsp; &nbsp;&#123;
+
+<br />
+&nbsp; &nbsp;&nbsp; &nbsp;st_u=0;
+
+<br />
+&nbsp; &nbsp;&nbsp; &nbsp;cout &lt;&lt; &quot;Udelezenci projekta&#58; &quot; &lt;&lt; vmesni_projekt-&gt;ime &lt;&lt; endl;
+
+<br />
+&nbsp; &nbsp;&nbsp; &nbsp;vmesni_udelezenec=vmesni_projekt-&gt;udelezenci;
+
+<br />
+&nbsp; &nbsp;&nbsp; &nbsp;while &#40;vmesni_udelezenec!=NULL&#41;
+
+<br />
+&nbsp; &nbsp;&nbsp; &nbsp;&#123;
+
+<br />
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;st_u++;
+
+<br />
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;cout &lt;&lt; &quot;Zaporedna stevilka&#58; &quot; &lt;&lt; st_u &lt;&lt; endl;
+
+<br />
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;cout &lt;&lt; &quot;Ime in priimek&#58; &quot; &lt;&lt; vmesni_udelezenec-&gt;ime &lt;&lt; &quot; &quot; &lt;&lt; vmesni_udelezenec-&gt;priimek &lt;&lt; endl;
+
+<br />
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;cout &lt;&lt; &quot;Ulica&#58; &quot; &lt;&lt; vmesni_udelezenec-&gt;naslov.ulica &lt;&lt; endl;
+
+<br />
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;cout &lt;&lt; &quot;Posta&#58; &quot; &lt;&lt; vmesni_udelezenec-&gt;naslov.posta &lt;&lt; endl;
+
+<br />
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;cout &lt;&lt; &quot;--------------------------------------&quot; &lt;&lt; endl &lt;&lt; endl;
+
+<br />
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;vmesni_udelezenec=vmesni_udelezenec-&gt;naslednji_udelezenec;
+
+<br />
+&nbsp; &nbsp;&nbsp; &nbsp;&#125;
+
+<br />
+&nbsp; &nbsp;&nbsp; &nbsp;cout &lt;&lt; endl &lt;&lt; endl;
+
+<br />
+&nbsp; &nbsp;&#125;
+
+<br />
+&#125;
+
+<br />
+
+
+<br />
+void poisciUdelezenca&#40;Projekt *zacetek&#41;
+
+<br />
+&#123;
+
+<br />
+&nbsp; &nbsp;char *ime;
+
+<br />
+&nbsp; &nbsp;cout &lt;&lt; &quot;Vpisi ime udelezenca&#58;&quot; &lt;&lt; endl;
+
+<br />
+&nbsp; &nbsp;ime=beriNiz&#40;&#41;;
+
+<br />
+&nbsp; &nbsp;UdelezenecProjekta *vmesni_udelezenec;
+
+<br />
+&nbsp; &nbsp;bool najden=false;
+
+<br />
+
+
+<br />
+&nbsp; &nbsp;for &#40;Projekt *vmesni_projekt=zacetek; vmesni_projekt!=NULL; vmesni_projekt=vmesni_projekt-&gt;naslednji_projekt&#41;
+
+<br />
+&nbsp; &nbsp;&#123;
+
+<br />
+&nbsp; &nbsp;&nbsp; &nbsp;vmesni_udelezenec=vmesni_projekt-&gt;udelezenci;
+
+<br />
+&nbsp; &nbsp;&nbsp; &nbsp;while &#40;vmesni_udelezenec!=NULL&#41;
+
+<br />
+&nbsp; &nbsp;&nbsp; &nbsp;&#123;
+
+<br />
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;if &#40;strcmp&#40;ime,vmesni_udelezenec-&gt;ime&#41;==0&#41;
+
+<br />
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&#123;
+
+<br />
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;najden=true;
+
+<br />
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;cout &lt;&lt; &quot;Udelezenec je bil najden v projektu&#58; &quot; &lt;&lt; vmesni_projekt-&gt;ime &lt;&lt; endl;
+
+<br />
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;cout &lt;&lt; &quot;Ime in priimek&#58; &quot; &lt;&lt; vmesni_udelezenec-&gt;ime &lt;&lt; &quot; &quot; &lt;&lt; vmesni_udelezenec-&gt;priimek &lt;&lt; endl;
+
+<br />
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;cout &lt;&lt; &quot;Ulica&#58; &quot; &lt;&lt; vmesni_udelezenec-&gt;naslov.ulica &lt;&lt; endl;
+
+<br />
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;cout &lt;&lt; &quot;Posta&#58; &quot; &lt;&lt; vmesni_udelezenec-&gt;naslov.posta &lt;&lt; endl;
+
+<br />
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;cout &lt;&lt; &quot;--------------------------------------&quot; &lt;&lt; endl &lt;&lt; endl;
+
+<br />
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&#125;
+
+<br />
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;vmesni_udelezenec=vmesni_udelezenec-&gt;naslednji_udelezenec;
+
+<br />
+&nbsp; &nbsp;&nbsp; &nbsp;&#125;
+
+<br />
+&nbsp; &nbsp;&#125;
+
+<br />
+&nbsp; &nbsp;if &#40;!najden&#41; cout &lt;&lt; &quot;Udelezenca ni bilo moc najti!&quot; &lt;&lt; endl;
+
+<br />
+&#125;
+
+<br />
+
+
+<br />
+void izpisiMeni&#40;Projekt *&amp;zacetek, Projekt *&amp;konec&#41;
+
+<br />
+&#123;
+
+<br />
+&nbsp; &nbsp;int izbira=0;
+
+<br />
+&nbsp; &nbsp;do
+
+<br />
+&nbsp; &nbsp;&#123;
+
+<br />
+&nbsp; &nbsp;&nbsp; &nbsp;clrScr&#40;&#41;;
+
+<br />
+&nbsp; &nbsp;&nbsp; &nbsp;cout &lt;&lt; &quot; ----------------------------------------------&quot; &lt;&lt; endl;
+
+<br />
+&nbsp; &nbsp;&nbsp; &nbsp;cout &lt;&lt; &quot;| 1 - Dodaj projekt na zacetek.&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; |&quot; &lt;&lt; endl;
+
+<br />
+&nbsp; &nbsp;&nbsp; &nbsp;cout &lt;&lt; &quot;|----------------------------------------------|&quot; &lt;&lt; endl;
+
+<br />
+&nbsp; &nbsp;&nbsp; &nbsp;cout &lt;&lt; &quot;| 2 - Dodaj projekt na konec.&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; |&quot; &lt;&lt; endl;
+
+<br />
+&nbsp; &nbsp;&nbsp; &nbsp;cout &lt;&lt; &quot;|----------------------------------------------|&quot; &lt;&lt; endl;
+
+<br />
+&nbsp; &nbsp;&nbsp; &nbsp;cout &lt;&lt; &quot;| 3 - Izpisi projekte.&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  |&quot; &lt;&lt; endl; 
+
+<br />
+&nbsp; &nbsp;&nbsp; &nbsp;cout &lt;&lt; &quot;|----------------------------------------------|&quot; &lt;&lt; endl;
+
+<br />
+&nbsp; &nbsp;&nbsp; &nbsp;cout &lt;&lt; &quot;| 4 - Uredi projekte pa imenu.&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  |&quot; &lt;&lt; endl;
+
+<br />
+&nbsp; &nbsp;&nbsp; &nbsp;cout &lt;&lt; &quot;|----------------------------------------------|&quot; &lt;&lt; endl;
+
+<br />
+&nbsp; &nbsp;&nbsp; &nbsp;cout &lt;&lt; &quot;| 5 - Poisci projekt.&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; |&quot; &lt;&lt; endl;
+
+<br />
+&nbsp; &nbsp;&nbsp; &nbsp;cout &lt;&lt; &quot;|----------------------------------------------|&quot; &lt;&lt; endl;
+
+<br />
+&nbsp; &nbsp;&nbsp; &nbsp;cout &lt;&lt; &quot;| 6 - Izbrisi dolocen projekt.&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  |&quot; &lt;&lt; endl;
+
+<br />
+&nbsp; &nbsp;&nbsp; &nbsp;cout &lt;&lt; &quot;|----------------------------------------------|&quot; &lt;&lt; endl;
+
+<br />
+&nbsp; &nbsp;&nbsp; &nbsp;cout &lt;&lt; &quot;| 7 - Dodaj udelezenca.&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; |&quot; &lt;&lt; endl;
+
+<br />
+&nbsp; &nbsp;&nbsp; &nbsp;cout &lt;&lt; &quot;|----------------------------------------------|&quot; &lt;&lt; endl;
+
+<br />
+&nbsp; &nbsp;&nbsp; &nbsp;cout &lt;&lt; &quot;| 8 - Izpisi udelezence.&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  |&quot; &lt;&lt; endl;
+
+<br />
+&nbsp; &nbsp;&nbsp; &nbsp;cout &lt;&lt; &quot;|----------------------------------------------|&quot; &lt;&lt; endl;
+
+<br />
+&nbsp; &nbsp;&nbsp; &nbsp;cout &lt;&lt; &quot;| 9 - Poisci udelezenca.&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  |&quot; &lt;&lt; endl;
+
+<br />
+&nbsp; &nbsp;&nbsp; &nbsp;cout &lt;&lt; &quot;|----------------------------------------------|&quot; &lt;&lt; endl;
+
+<br />
+&nbsp; &nbsp;&nbsp; &nbsp;cout &lt;&lt; &quot;| 10 - Izpis stevila projektov.&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; |&quot; &lt;&lt; endl;
+
+<br />
+&nbsp; &nbsp;&nbsp; &nbsp;cout &lt;&lt; &quot;|----------------------------------------------|&quot; &lt;&lt; endl;
+
+<br />
+&nbsp; &nbsp;&nbsp; &nbsp;cout &lt;&lt; &quot;| 0 - Konec.&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  |&quot; &lt;&lt; endl;
+
+<br />
+&nbsp; &nbsp;&nbsp; &nbsp;cout &lt;&lt; &quot;|----------------------------------------------&quot; &lt;&lt; endl;
+
+<br />
+&nbsp; &nbsp;&nbsp; &nbsp;cout &lt;&lt; &quot;| IZBIRA&#58; &quot;;
+
+<br />
+&nbsp; &nbsp;&nbsp; &nbsp;cin &gt;&gt; izbira;
+
+<br />
+&nbsp; &nbsp;&nbsp; &nbsp;switch &#40;izbira&#41;
+
+<br />
+&nbsp; &nbsp;&nbsp; &nbsp;&#123;
+
+<br />
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;case 1&#58; 
+
+<br />
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&#123;
+
+<br />
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;clrScr&#40;&#41;; 
+
+<br />
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;dodajProjektNaZacetekSeznama&#40;zacetek&#41;; 
+
+<br />
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;break;
+
+<br />
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&#125;
+
+<br />
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;case 2&#58; 
+
+<br />
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&#123;
+
+<br />
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;clrScr&#40;&#41;; 
+
+<br />
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;dodajProjektNaKonecSeznama&#40;konec,zacetek&#41;;
+
+<br />
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;break;
+
+<br />
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&#125;
+
+<br />
+
+
+<br />
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;case 3&#58; 
+
+<br />
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&#123;
+
+<br />
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;clrScr&#40;&#41;; 
+
+<br />
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;izpisiProjekte&#40;zacetek&#41;;
+
+<br />
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;break;
+
+<br />
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&#125;
+
+<br />
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;case 4&#58; 
+
+<br />
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&#123;
+
+<br />
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;clrScr&#40;&#41;; 
+
+<br />
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;urediProjekte&#40;zacetek,konec&#41;;
+
+<br />
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;break;
+
+<br />
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&#125;
+
+<br />
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;case 5&#58; 
+
+<br />
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&#123;
+
+<br />
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;clrScr&#40;&#41;; 
+
+<br />
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;poisciProjekt&#40;zacetek&#41;;
+
+<br />
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;break;
+
+<br />
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&#125;
+
+<br />
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;case 6&#58; 
+
+<br />
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&#123;
+
+<br />
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;clrScr&#40;&#41;; 
+
+<br />
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;izbrisiProjekt&#40;zacetek&#41;;
+
+<br />
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;break;
+
+<br />
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&#125;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;
+
+<br />
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;case 7&#58; 
+
+<br />
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&#123;
+
+<br />
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;clrScr&#40;&#41;; 
+
+<br />
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;dodajUdelezenca&#40;zacetek&#41;;
+
+<br />
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;break;
+
+<br />
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&#125;
+
+<br />
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;case 8&#58; 
+
+<br />
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&#123;
+
+<br />
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;clrScr&#40;&#41;; 
+
+<br />
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;izpisiUdelezence&#40;zacetek&#41;;
+
+<br />
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;break;
+
+<br />
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&#125;
+
+<br />
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;case 9&#58; 
+
+<br />
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&#123;
+
+<br />
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;clrScr&#40;&#41;; 
+
+<br />
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;poisciUdelezenca&#40;zacetek&#41;;
+
+<br />
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;break;
+
+<br />
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&#125;
+
+<br />
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;case 10&#58; 
+
+<br />
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&#123;
+
+<br />
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;clrScr&#40;&#41;; 
+
+<br />
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;cout &lt;&lt; &quot;Trenutno je aktivnih &quot; &lt;&lt; steviloProjektov&#40;zacetek&#41; &lt;&lt; &quot; projektov.&quot; &lt;&lt; endl;
+
+<br />
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;break;
+
+<br />
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&#125;
+
+<br />
+&nbsp; &nbsp;&nbsp; &nbsp;&#125;
+
+<br />
+&nbsp; &nbsp;&nbsp; &nbsp;
+
+<br />
+&nbsp; &nbsp;&nbsp; &nbsp;if &#40;izbira!=0&#41;
+
+<br />
+&nbsp; &nbsp;&nbsp; &nbsp;&#123;
+
+<br />
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;cout &lt;&lt; &quot;1 - Nadaljevanje | 0 - Izhod&quot; &lt;&lt; endl;
+
+<br />
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;cin &gt;&gt; izbira;
+
+<br />
+&nbsp; &nbsp;&nbsp; &nbsp;&#125;
+
+<br />
+&nbsp; &nbsp;&#125;while &#40;izbira!=0&#41;;
+
+<br />
+&#125;
+
+<br />
+
+
+<br />
+int main&#40;&#41;
+
+<br />
+&#123;
+
+<br />
+&nbsp; &nbsp;Projekt *zacetek_p = new Projekt;
+
+<br />
+&nbsp; &nbsp;zacetek_p-&gt;datum.d=1;
+
+<br />
+&nbsp; &nbsp;zacetek_p-&gt;datum.m=2;
+
+<br />
+&nbsp; &nbsp;zacetek_p-&gt;datum.l=3;
+
+<br />
+&nbsp; &nbsp;zacetek_p-&gt;ime=&quot;testni projekt&quot;;
+
+<br />
+&nbsp; &nbsp;zacetek_p-&gt;namen=&quot;test&quot;;
+
+<br />
+&nbsp; &nbsp;zacetek_p-&gt;naslednji_projekt=NULL;
+
+<br />
+&nbsp; &nbsp;zacetek_p-&gt;udelezenci=NULL;
+
+<br />
+
+
+<br />
+&nbsp; &nbsp;Projekt *konec_p=zacetek_p;
+
+<br />
+
+
+<br />
+&nbsp; &nbsp;UdelezenecProjekta *zacetek_u = new UdelezenecProjekta;
+
+<br />
+&nbsp; &nbsp;UdelezenecProjekta *konec_u;
+
+<br />
+&nbsp; &nbsp;zacetek_u-&gt;ime=&quot;testni&quot;;
+
+<br />
+&nbsp; &nbsp;zacetek_u-&gt;priimek=&quot;udelezenec&quot;;
+
+<br />
+&nbsp; &nbsp;zacetek_u-&gt;naslov.posta=&quot;posta&quot;;
+
+<br />
+&nbsp; &nbsp;zacetek_u-&gt;naslov.ulica=&quot;ulica&quot;;
+
+<br />
+&nbsp; &nbsp;zacetek_u-&gt;naslednji_udelezenec=NULL;
+
+<br />
+
+
+<br />
+&nbsp; &nbsp;zacetek_p-&gt;udelezenci=zacetek_u;
+
+<br />
+&nbsp; &nbsp;zacetek_p-&gt;konec=zacetek_u;
+
+<br />
+&nbsp; &nbsp;konec_u=zacetek_u;
+
+<br />
+
+
+<br />
+&nbsp; &nbsp;izpisiMeni&#40;zacetek_p,konec_p&#41;;
+
+<br />
+&nbsp; &nbsp;pobrisiUdelezence&#40;zacetek_p&#41;;
+
+<br />
+&nbsp; &nbsp;pobrisiProjekte&#40;zacetek_p&#41;;
+
+<br />
+&nbsp; &nbsp;return 0;
+
+<br />
+&#125;</td>
+<br />
+	</tr>
+<br />
+</table>
+<br />
+<span class="postbody"><br />_________________<br />LP!</span><span class="gensmall"></span></td>
+			</tr>
+		</table></td>
+	</tr>
+	<tr>
+		<td class="row1" width="150" align="left" valign="middle"><span class="nav"><a href="#top" class="nav">Nazaj na vrh</a></span></td>
+		<td class="row1" width="100%" height="28" valign="bottom" nowrap="nowrap"><table cellspacing="0" cellpadding="0" border="0" height="18" width="18">
+			<tr>
+				<td valign="middle" nowrap="nowrap"><a href="profile-80.html"><img src="templates/SGD2/images/lang_slovenian/icon_profile.gif" alt="Poglej uporabnikov profil" title="Poglej uporabnikov profil" border="0" /></a> </td>
+			</tr>
+		</table></td>
+	</tr>
+	<tr>
+		<td class="spaceRow" colspan="2" height="1"><img src="templates/SGD/images/spacer.gif" alt="" width="1" height="1" /></td>
+	</tr>
+	
+	<tr align="center">
+		<td class="catBottom" colspan="2" height="28">&nbsp;</td>
+	</tr>
+</table>
+
+<table width="100%" cellspacing="2" cellpadding="2" border="0" align="center">
+  <tr>
+	<td align="left" valign="middle" nowrap="nowrap">&nbsp;</td>
+	<td align="left" valign="middle" width="100%"><span class="nav">&nbsp;&nbsp;&nbsp;<a href="index.html" class="nav">SloGameDev.net seznam forumov</a>
+	  -> <a href="forum-1.html" class="nav">Splošno Programiranje</a></span></td>
+	<td align="right" valign="top" nowrap="nowrap"><span class="gensmall">Časovni pas (GMT +2:00 uri) Slovenija, poletni čas</span><br /><span class="nav"></span>
+	  </td>
+  </tr>
+  <tr>
+	<td align="left" colspan="3"><span class="nav">Stran <b>1</b> od <b>1</b></span></td>
+  </tr>
+</table>
+
+<table width="100%" cellspacing="2" border="0" align="center">
+  <tr>
+	<td width="40%" valign="top" nowrap="nowrap" align="left">&nbsp;</td>
+	<td align="right" valign="top" nowrap="nowrap">&nbsp;</td>
+  </tr>
+</table>
+
+<div align="center"><span class="copyright"><br />Arhiv stanja na dan 13. 2. 2006 &mdash; samo za branje.<br />
+<!--
+	We request you retain the full copyright notice below including the link to www.phpbb.com.
+	This not only gives respect to the large amount of time given freely by the developers
+	but also helps build interest, traffic and use of phpBB 2.0. If you cannot (for good
+	reason) retain the full copyright we request you at least leave in place the 
+	Powered by phpBB 2.0.4 line, with phpBB linked to www.phpbb.com. If you refuse
+	to include even this then support on our forums may be affected. 
+
+	The phpBB Group : 2002
+// -->
+Powered by <a  target="_phpbb" class="copyright">phpBB</a> 2.0.4 &copy; 2001, 2002 phpBB Group<br /></span></div>
+		</td>
+	</tr>
+</table>
+
+</body>
+</html>

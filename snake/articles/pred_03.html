@@ -1,0 +1,450 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3c.org/TR/1999/REC-html401-19991224/loose.dtd">
+<!-- saved from url=(0041)http://localhost/wiki/index.php/Main_Page -->
+<HTML>
+<HEAD>
+<TITLE>Snake :: Article</TITLE>
+<META http-equiv=Content-Type content="text/html; charset=utf-8">
+<META content="Main Page" name=KEYWORDS>
+<META content="index,follow" name="robots">
+<LINK href="../../favicon.ico" 
+rel="shortcut icon">
+<STYLE type=text/css media="screen,projection">
+@import url( ../main.css ); @import url( codeColors.css );
+</STYLE>
+<LINK media=print  type=text/css rel=stylesheet>
+</HEAD>
+<BODY class="ns-0" style="background-image:url(../images/boxes_back.png); background-position:center;" >
+<DIV id=globalWrapper>
+  <DIV id=column-content>
+    <DIV id=content>
+      <H1 class=firstHeading>Izvleček iz predavanja - [graficno programiranje] Grafični motor </H1>
+      <DIV id=bodyContent>
+        <!-- start content -->
+        <p>Predavanje na temo zgradbe grafičnega (in tudi splošnega) pogona igre + senitelov dodatek o senčilnikih.</p>
+        <p>&nbsp;</p>
+        <p class="small"> <b>&lt;snake&gt;</b> Kot prvo vas verjetno zanima kaj pogoni sploh so.<br>
+          <b>&lt;snake&gt;</b> Najlazje si jih je predstavljat z vsakdanjim primerom.<br>
+          <b>&lt;snake&gt;</b> AVTO.<br>
+          <b>&lt;snake&gt;</b> Le kaj motor pomeni njemu? Ga poganja! Torej skrbi za njegovo delovanje.<br>
+          <b>&lt;snake&gt;</b> Isto je pri game engineih (oz. katerih iz podskupine --> fizikalni pogon, grafični,...)<br>
+          <b>&lt;snake&gt;</b> Posebnost vseh teh motorjev pa je, da morajo na zunaj delovati kar se da preprosto.<br>
+          <b>&lt;snake&gt;</b> V avtomobilu pritisnemo na gas (pač neki podatki) --><br>
+          <b>&lt;snake&gt;</b> [motor nekaj dela, nas niti ne briga kaj] --><br>
+          <b>&lt;snake&gt;</b> in kolesa se zavrtijo (koncni ucinek).<br>
+          <b>&lt;snake&gt;</b> Isto je z grafičnimi pogoni (oz pogoni na splošno)...<br>
+          <b>&lt;senitel&gt;</b> -> Črna škatlica ki nekaj počne a vas direktno ne zanima kako<br>
+          <b>&lt;snake&gt;</b> Rečemo mu, da naj nekaj nariše, on nekaj melje, in rezultat je na ekranu.<br>
+          <b>&lt;snake&gt;</b> Torej pri vsem tem (in programiranju na splošno) stremimo proti čim lažji uporabi našega izdelka.<br>
+          <b>&lt;snake&gt;</b> Uporabniku želimo ponuditi API, ki je preprost za uporabo (malo klicev funkcij, veliko rezultata).<br>
+          <b>&lt;snake&gt;</b> Mislim, da vam je že potegnilo...<br>
+          <b>&lt;snake&gt;</b> Sedaj, ko smo razčistili kaj to je (en fancy ime za nek (ponavadi) velik del kode).<br>
+          <b>&lt;snake&gt;</b> Kaj pa pride sedaj?<br>
+          <b>&lt;snake&gt;</b> Razmisliti je treba o funkcionalnostih pogona in kako bomo tega uporabljali.<br>
+          <b>&lt;snake&gt;</b> Vedno obstaja več varijant.<br>
+          <b>&lt;snake&gt;</b> Lahko se odločimo, da bo naš pogon vključen v nekega že obstoječega (Enginuity izgleda zelo zanimivo --> gamedev.net).<br>
+          <b>&lt;snake&gt;</b> Lahko pa ga izdelamo kot samostojnega.<br>
+          <b>&lt;CWIZO&gt;</b> Link do Enginuity člankov (prvi del) :<a >http://www.gamedev.net/reference/programming/features/enginuity1/</a><br>
+          <b>&lt;snake&gt;</b> Če smo se odločili za prvo možnost -vključitev v že narejenega, moramo poznati njegove značilnosti in delovanje, saj bomo le tako vedeli kako naš del kode (modul/pšogon ali kako ga pač poimenujemo) pripraviti za delovanje.<br>
+          <b>&lt;snake&gt;</b> hvala CWIZO.<br>
+          <b>&lt;snake&gt;</b> Če pa se odločimo za drugo pot -samostojnega, bo potrebno razmisliti še o nekaterih drugih stvareh...<br>
+          <b>&lt;snake&gt;</b> -memory management<br>
+          <b>&lt;snake&gt;</b> -input<br>
+          <b>&lt;snake&gt;</b> -logger (beleži dogajanja)<br>
+          <b>&lt;snake&gt;</b> ..<br>
+          <b>&lt;snake&gt;</b> .<br>
+          <b>&lt;snake&gt;</b> Prav tako moramo razmisliti o ciljnem OSu na katerem bo program tekel...ker imamo visoke cilje bo naš engine tekel na X in Windows platformi...<br>
+          <b>&lt;snake&gt;</b> Torej poznavanje obeh ni odveč (vendar pa primeri ko pride do OS dependant pisanja niso tako pogosti, vendar pa obstajajo).<br>
+          <b>&lt;senitel&gt;</b> Lahko pa uporabis SDL(www.libsdl.org), pa bo delalo v Linuxu in Windowsih.<br>
+          <b>&lt;snake&gt;</b> Prav tako je potrebno razmisliti o tem kateri grafični API bo naš pogon uporabljal (OpenGL, Direct3D, *SDL*:) ). <br>
+          <b>&lt;snake&gt;</b> Spet smo zahtevni in bomo vzeli kar oba (btw. tole je tudi uvod v MiX projekt --> grafični pogon na čast SGD)...<br>
+          <b>&lt;snake&gt;</b> No, če se odločimo za takšne pristope, je potrebno paziti, da čim več kode napišemo z knjižnicami (oz. uporabimo pristope, ki so) neodvisni od določenega primera...<br>
+          <b>&lt;snake&gt;</b> HugoBoss bi temu rekel OSI (al neki takega OS Independant)...<br>
+          <b>&lt;snake&gt;</b> Torej, da čim bolj elegantno ločimo dele ki so odvisni od OSa APIja in dele, ki niso.<br>
+          <b>&lt;snake&gt;</b> Tak omimo grede, pri tem nam zelo koristi abstraktna narava jezika C++ (o tem več kdaj drugič).<br>
+          <b>&lt;snake&gt;</b> No, ko smo se končno odločili na čem bo tekel, kaj bo uporabljal ipd. je čas da...<br>
+          <b>&lt;snake&gt;</b> da...<br>
+          <b>&lt;snake&gt;</b> začnemo pisat tehnično dokumentacijo, diagrame in podobno navlako...<br>
+          <b>&lt;snake&gt;</b> na papir seveda!<br>
+          <b>&lt;snake&gt;</b> Zakaj?! porečete. Zato da se s tem predhodno izognete nesoglasjim med različnimi moduli, da odkrijete kakšne hrošče, ki bi vas drugače stali ogromno količino kave med programiranjem.<br>
+          <b>&lt;snake&gt;</b> Prav tako je sedaj tudu čas, da se odločite, kako boste sinhronizirali delovanje z ostalimi moduli.<br>
+          <b>&lt;snake&gt;</b> V primeru, ko vgradite gr. pogon v že obstoječ engine, ste itak vezani na njegovo delovanje,<br>
+          <b>&lt;snake&gt;</b> v našem primeru pa se lahko še odločite. Ker smo zahtevni, smo celotno glavno zanko...<br>
+          <b>&lt;snake&gt;</b> <a href="../../clanek-26.html">povezava</a> :)<br>
+          <b>&lt;snake&gt;</b> zadržali zase. Torej bo iz te zanke potrebno ostalim modulom povedati kdaj je napočil čas za nov frame...<br>
+          <b>&lt;snake&gt;</b> nekako tako, da na začetek frejma (funkcije Update()) postaveimo listenerje (butasto ime), ki bodo poslušali kdaj je na vrsti nov frejm...<br>
+          <b>&lt;snake&gt;</b> le te listenerje pa bomo povezali z ostalimi moduli (fiziko, AI, sound).<br>
+          <b>&lt;snake&gt;</b> To je to, kar se tiče ostalih modulov.<br>
+          <b>&lt;snake&gt;</b> OK, če se nam ne ljubi delat teh listenerjev, je še vedno možnost, da glavno zanko razkrijemo:<br>
+          <b>&lt;snake&gt;</b> while(game_running) {<br>
+          <b>&lt;snake&gt;</b> renderer->Update();<br>
+          <b>&lt;snake&gt;</b> fizika->Update();...<br>
+          <b>&lt;snake&gt;</b> }<br>
+          <b>&lt;snake&gt;</b> Vsekakor lažje, vendar nekoliko več dela za uporabnika pogona.<br>
+          <b>&lt;snake&gt;</b> No in ko je naše papirnato delo končano, smo prišli do naslednje ugotovitve... dela je... OGROMNO!<br>
+          <b>&lt;snake&gt;</b> Še posebej v našem primeru, ko je potrebno pisati na združljivost z windows - linux, OGL - D3D.<br>
+          <b>&lt;snake&gt;</b> OK, da ne bom kar tako nekaj nakladal, vam dam 3 minute, da kaj poveste :)<br>
+          <b>&lt;joco-&gt;</b> uh<br>
+          <b>&lt;snake&gt;</b> nato pa nadaljujemo s praktičnim primerom (MiX engine).<br>
+          <b>&lt;snake&gt;</b> does this sux?<br>
+          <b>&lt;CWIZO&gt;</b> Nope<br>
+          <b>&lt;Axellus&gt;</b> not at all...<br>
+          <b>&lt;_Wing_&gt;</b> dobro za zacetek<br>
+          <b>&lt;joco-&gt;</b> interesting<br>
+          <b>&lt;Axellus&gt;</b> zanimivo... go on:)<br>
+          <b>&lt;kyon&gt;</b> tisto z listenerji nisem dobro razumel, kako tocno se to naredi<br>
+          <b>&lt;snake&gt;</b> še sam nimam pojma :)<br>
+          <b>&lt;GupeM&gt;</b> jsz zudi ne<br>
+          <b>&lt;snake&gt;</b> Recimo takole:<br>
+          <b>&lt;kyon&gt;</b> samo da nisem edini :)<br>
+          <b>&lt;kyon&gt;</b> lahko kaj vec najprej poves o tem Mix engine-u<br>
+          <b>&lt;snake&gt;</b> Vsakemu od ostalih modulov rečeš, da naj čaka dokler ne dobi nekega znaka da lahko začne (nekakšen flag).<br>
+          <b>&lt;senitel&gt;</b> Samo en optimizacijski info: renderer->Update(); fizika->Update(); ni glih optimalna resitev, ce imas veliko dela. Dosti bolje je renderer nekoliko locit, da imas renderer->Update(); fizika->Update(); renderer->ShowFrame();<br>
+          <b>&lt;snake&gt;</b> ja. Vsekakor.<br>
+          <b>&lt;snake&gt;</b> v optimizacijo in končne rešitve se bomo spuščali ob programiranju Mixa. Tako da... vseeno hvala!<br>
+          <b>&lt;snake&gt;</b> umm... ne nejdem ene slikce, tak da bo tale dobra --><br>
+          <b>&lt;senitel&gt;</b> Just a note ;)<br>
+          <b>&lt;snake&gt;</b> <a >http://users.volja.net/snake7/ostalo/screeny.jpg</a><br>
+          <b>&lt;senitel&gt;</b> a bo tale engine bolj indoor ali outdoor(terrain)<br>
+          <b>&lt;snake&gt;</b> Bistvo je tisti diagram v sredini :) To predstavlja delo od kreiranja okna, pa do takrat, ko je pripravljen da rečemo naj nariše nekaj.<br>
+          <b>&lt;snake&gt;</b> MiX :)<br>
+          <b>&lt;snake&gt;</b> oboje.<br>
+          <b>&lt;neonX&gt;</b> ej a pozna kdo kak virtual chat???<br>
+          <b>&lt;neonX&gt;</b> razn habbo hotel?<br>
+          <b>&lt;snake&gt;</b> nadaljujemo?<br>
+          <b>&lt;Vrvy&gt;</b> snake, ti kr<br>
+          <b>&lt;neonX&gt;</b> ??<br>
+          <b>&lt;CWIZO&gt;</b> če odgovoriš na moj question :)<br>
+          <b>&lt;kyon&gt;</b> ja<br>
+          <b>&lt;neonX&gt;</b> em za moj q.<br>
+          <b>&lt;_Wing_&gt;</b> snake naprej<br>
+          <b>&lt;snake&gt;</b> kakopak.<br>
+          <b>&lt;snake&gt;</b> A gledate sliko?<br>
+          <b>&lt;snake&gt;</b> bom na hitro komentiral.<br>
+          <b>&lt;snake&gt;</b> Povsem v sredini je IRenderTarget<br>
+          <b>&lt;snake&gt;</b> abstrakten razred, ki predstavlja površino kamor bomo renderirali...<br>
+          <b>&lt;snake&gt;</b> ta površina je lahko tiskalnik, tekstura, okno,... v našem primeru se lahko odločimo za okno IRenderWindow ali teksturo CRenderTexture<br>
+          <b>&lt;snake&gt;</b> V prvem primeru bomo ustvarili okno v katerega bomo risali, v drugem pa v teksturo (tiskalnika nekako ne potrebujemo;))<br>
+          <b>&lt;snake&gt;</b> Kot lahko vidite, je tudi IRenderWindow abstrakten (I -interface), saj lahko z njim naredimo Win32 okno (Windows) ali X okno (Linux).<br>
+          <b>&lt;snake&gt;</b> To je ta abstraktnost C++a.<br>
+          <b>&lt;snake&gt;</b> Ok, če gremo levo zgoraj, vidimo, da lahko naši tarči dodamo od 1-n viewportov (del površine kamor se v resnici riše) vsakemu pa svojo kamero.<br>
+          <b>&lt;snake&gt;</b> Povsem na vrhu pa je IRenderSystem, ponovno interface. To pa je tisti wrapper za poenotene klice OGL ali D3D.<br>
+          <b>&lt;snake&gt;</b> Na desni se ne vidita CD3dRenSys in COGLRenSys.<br>
+          <b>&lt;snake&gt;</b> Na sliki se lepo vidi OS/API neodvisno programiranje. Vse kar se začne na I + CCamera in CViewport so neodvisni, delujejo na obeh OSih,<br>
+          <b>&lt;snake&gt;</b> Ostalo pa je ali v d3d.dll ogl.dll Xplat.so ipd.<br>
+          <b>&lt;snake&gt;</b> OK, tole ni bilo v planu, ampak saj ni škodovalo, kajne?...<br>
+          <b>&lt;snake&gt;</b> Kako pa vse to deluje?<br>
+          <b>&lt;snake&gt;</b> Na začetku kreira okno, izbere API, nastavi viewporte, kamere, vse inicializira. Če je OGL, preveri zmožnosti grafične (extensione),...<br>
+          <b>&lt;snake&gt;</b> če je D3D preveri kaj strojno pospešuje in česa ne (da se slednjih izogibamo).<br>
+          <b>&lt;snake&gt;</b> Ko je vse to narejeno (nastavitve prebere iz nastavitvene datoteke, ali pa mu jih sproti določimo, kakor se odločimo).<br>
+          <b>&lt;snake&gt;</b> In pred nami se sveti lepo okno s črnim ozadjem, pripravljenim da mu povemo kaj naj izrisuje.<br>
+          <b>&lt;snake&gt;</b> pri risanju se uporablja interface (IRenderSystem), tako da računalnik sploh ne ve li teče pod D3D ali OGL (malce lažem, a vseeno).<br>
+          <b>&lt;snake&gt;</b> Sedaj bi bil čas, da se odločimo kako bomo čim enostavneje risali na sceno (eg. rečemo "nariši fancy BSP sceno iz te in te datoteke" in on jo nariše).<br>
+          <b>&lt;snake&gt;</b> Pri tem je dobro uporabiti čimbolj poenoten način... lahko uporabimo t.i. Scene Graph (toplo priporočam).<br>
+          <b>&lt;snake&gt;</b> Kaj to je? Scene Graph je lepo ime za hierarhično urejenost objektov v sceni. Vsem tem objektom pa ponudimo enak interface.<br>
+          <b>&lt;snake&gt;</b> Recimo Prepare() (pripravi ovjekt), Update() (ga updejta --> eg. renderira).<br>
+          <b>&lt;snake&gt;</b> Kaj nam to sploh koristi?<br>
+          <b>&lt;snake&gt;</b> Recimo, da imamo na sceni ogromno predmetov (skale, ljudje,...) in vsekakor ne bomo šli vsakomur posebej reči, naj se izriše!<br>
+          <b>&lt;snake&gt;</b> Zato jih postavimo v drevo. Na vrhu je ROOT (ali kakor ga že poimenujete), nato pa mu dodajamo različne otroke...<br>
+          <b>&lt;snake&gt;</b> recimo človeško telo. Telesu nato dodamo roko (kot njegovega otroka), roki prste (kot otroka od roke), prstu noht,...<br>
+          <b>&lt;snake&gt;</b> Na koncu pa le rečemo ROOT->Update() in primerno se bo updejtalo vse kar je pod ROOTom (od telesa, pa vse do nohta).<br>
+          <b>&lt;snake&gt;</b> Le en klic in vse je narejeno! Le kdo bi želel še več!<br>
+          <b>&lt;snake&gt;</b> Prav tako pa je to svojevrsten Memory manager. Če recimo odstranimo človeka, bo z njim izginil tudi noht.<br>
+          <b>&lt;snake&gt;</b> Spet zelo priročno, da ne pišemo 100x ->Delete();<br>
+          <b>&lt;snake&gt;</b> No, ta Scene Graph se mi zdi nekako pomemben.<br>
+          <b>&lt;snake&gt;</b> Seveda pa v ta graf (drevo) postavimo vse kar se nam zdi, da bi lahko bil objekt (teren, modeli,... celo zvok, texture,...).<br>
+          <b>&lt;snake&gt;</b> Torej, Scene Graph ni namenjen samo renderiranju ampak tudi vsem drugim modulom.<br>
+          <b>&lt;snake&gt;</b> ... eno vprašanje by CWIZO:<br>
+          <b>&lt;snake&gt;</b> &lt;CWIZO&gt; pol more vsak parent(root) objekt met seznam otrkov in pol on pokliče recimo njihove Delet() metode al kako?<br>
+          <b>&lt;snake&gt;</b> predlagal bi članek na SGD:<br>
+          <b>&lt;snake&gt;</b> <a href="../../clanek-13.html">povezava</a><br>
+          <b>&lt;CWIZO&gt;</b> hvala<br>
+          <b>&lt;snake&gt;</b> Torej, mi samo rečemo ROOT->Delete() in on bo poklical ->Delete() od njegovega otroka/otrok, vsak otrok pa bo potem klical ->Delete() od svojega otroka...<br>
+          <b>&lt;snake&gt;</b> in tako naprej do konca (rekurzija).<br>
+          <b>&lt;snake&gt;</b> Nadaljujmo.<br>
+          <b>&lt;snake&gt;</b> btw. dobro vprašanje! Kar sprašujte!<br>
+          <b>&lt;snake&gt;</b> Torej, če smo že preverjali extensione, ki jih naša grafična podpira (govoril bom za OGL)...<br>
+          <b>&lt;snake&gt;</b> vemo katere lahko nato uporabljamo in katerih ne.<br>
+          <b>&lt;snake&gt;</b> Če smo zelo zagnani (in je naš idol Carmack ali pa Yann Lombard), potem se odločimo za pisanje različnih renderpathov...<br>
+          <b>&lt;snake&gt;</b> Render-Path, je ime za pot po kateri bo nekaj zrenderirano.<br>
+          <b>&lt;snake&gt;</b> Če se odločimo, da bo naš pogon deloval tako na TNT2 grafičnih kot tudi na R9800, ter da obenem izkoristi vse zmožnosti obeh,<br>
+          <b>&lt;snake&gt;</b> nam ne preostane drugega, kot da za vsako grafično kartico napišemo kako naj sceno izriše.<br>
+          <b>&lt;snake&gt;</b> No, ni potrebno za VSAKO grafično. Zadostuje za kartice iz iste družine, oz. z istimi zmogljivostmi (extensionov).<br>
+          <b>&lt;snake&gt;</b> ... &lt;kyon&gt; katera drevesa se pa ponavadi uporabljajo za Scene Graphe?<br>
+          <b>&lt;senitel&gt;</b> Tukaj bi IMO dobro omenit LOD (level of detail) mehanizme ki lahko kontrolirajo vse od shaderjev do geometrije.<br>
+          <b>&lt;snake&gt;</b> nimajo nobenega posebnega imena torej General Tree. Vse kar potrebuješ je kazalec na starša, kazalec na otroka in kazalec na levega/desnega soseda.<br>
+          <b>&lt;snake&gt;</b> Več o tem drugič.<br>
+          <b>&lt;snake&gt;</b> Nadaljujmo.<br>
+          <b>&lt;snake&gt;</b> OK, torej z različnimi pathi se na začetku (recimo z abstrakcijo) odločimo katero pot bomo izbrali.<br>
+          <b>&lt;snake&gt;</b> Če izberemo neko starejšo kartico, potem bomo sceno renderirali z CVAs (compiled vertex arays).<br>
+          <b>&lt;snake&gt;</b> Če bo teklo na r9800, potem z VBO (vertex buffer objects). To je samo primer.<br>
+          <b>&lt;snake&gt;</b> Prav tako bomo npr. na tnt2 izpustili shaderje, na r9800 pa bo scena kar žarela od njih.<br>
+          <b>&lt;snake&gt;</b> Dovolj o renderpathih.<br>
+          <b>&lt;snake&gt;</b> Nasledanja stvar, ki bi recimo morala biti, je implementacija materialov.<br>
+          <b>&lt;snake&gt;</b> Kaj pa je spet to?!?<br>
+          <b>&lt;snake&gt;</b> <a >http://www.gamedev.net/community/forums/topic.asp?topic_id=169710</a><br>
+          <b>&lt;snake&gt;</b> Recimo temu, da nam texture ne povedo dovolj.<br>
+          <b>&lt;snake&gt;</b> Verjetno ste nekateri že videli, da Q3 spremljajo .shader datoteke. No, to je drugo ima ze materiale.<br>
+          <b>&lt;snake&gt;</b> Namesto, da uporabljamo direktno texturo, povemo kateri material naj uporablja.<br>
+          <b>&lt;snake&gt;</b> zgled preprostega materiala (q3 style):<br>
+          <b>&lt;snake&gt;</b> textures/bumpy<br>
+          <b>&lt;snake&gt;</b> {<br>
+          <b>&lt;snake&gt;</b> bumpmapping<br>
+          <b>&lt;snake&gt;</b> {<br>
+          <b>&lt;snake&gt;</b> map textures/wall/dirtywall.tga<br>
+          <b>&lt;snake&gt;</b> }<br>
+          <b>&lt;snake&gt;</b> {<br>
+          <b>&lt;snake&gt;</b> map textures/wall/dirtywall2.tga<br>
+          <b>&lt;snake&gt;</b> }<br>
+          <b>&lt;snake&gt;</b> }<br>
+          <b>&lt;snake&gt;</b> voila!<br>
+          <b>&lt;snake&gt;</b> tole je naš material z imenom textures/bumpy.<br>
+          <b>&lt;snake&gt;</b> Torej namesto da face-u določimo točno določeno texturo, mu določimo kazalec na ta material.<br>
+          <b>&lt;snake&gt;</b> Ko bo nato na vrsti renderiranje face-a s tem materialom, bo renderer ukrepal glede na lastnosti materiala.<br>
+          <b>&lt;snake&gt;</b> kot vidimo, uporabljamo bumpmapping in dve texturi (dva layerja, torej multitexturing).<br>
+          <b>&lt;snake&gt;</b> Nadalje sedaj uporabimo različne renderpathe. Na starejših bi bumpmapping naredili kot nek fake, oz. z različnimi (včasih počasnejšimi) metodami.<br>
+          <b>&lt;snake&gt;</b> Prav tako bi bilo z multitextureingom. Če ga grafična ne podpira (torej to sploh ni grafična, ampak *drek*), bi bilo potrebnih več prehodov...<br>
+          <b>&lt;snake&gt;</b> na r9800 pa bi vse skupaj lahko spravili v shaderje.<br>
+          <b>&lt;snake&gt;</b> Kaj vse se lahko vključi v materiale? Veliko! Mnogo najdete na linku, še nekaj na tem:<br>
+          <b>&lt;snake&gt;</b> <a >http://mirror.ati.com/developer/gdc/AtiGDC02Vlachos.PDF</a><br>
+          <b>&lt;snake&gt;</b> Seveda se da v materiale vključiti tudi stvari, ki niso povezane z renderiranjem. Npr. to, ali se sliši hoja po takšnih površinah,<br>
+          <b>&lt;snake&gt;</b> ali drsi, je lepljiva, prehodna in še mnogo!<br>
+          <b>&lt;snake&gt;</b> Vsekakor zelo uporabno!<br>
+          <b>&lt;snake&gt;</b> hmm...<br>
+          <b>&lt;snake&gt;</b> mnja. Še kaj?<br>
+          <b>&lt;GupeM&gt;</b> ti samo govor<br>
+          <b>&lt;GupeM&gt;</b> ni važno kaj<br>
+          <b>&lt;GupeM&gt;</b> kar ti pride pod prste<br>
+          <b>&lt;snake&gt;</b> Vsekakor bi še lahko govoril o drevesih, vendar nimam nič kaj posebnega pripravljenega, tak da sem suh :)<br>
+          <b>&lt;snake&gt;</b> Senitel, kaj za dodati?<br>
+          <b>&lt;snake&gt;</b> Tako na splošno!<br>
+          <b>&lt;snake&gt;</b> grrr!<br>
+          <b>&lt;snake&gt;</b> pritisnu napačen gumb :)<br>
+          <b>&lt;GupeM&gt;</b> :)<br>
+          <b>&lt;_Wing_&gt;</b> se je men tud prej zgodil :><br>
+          <b>&lt;kyon&gt;</b> cisto informativno, koliko kode imas trenutno napisane?<br>
+          <b>&lt;snake&gt;</b> Samo da pogledam...<br>
+          <b>&lt;GupeM&gt;</b> ravno koda mi je manjkala, čeprav sem vedel da je nebo<br>
+          <b>&lt;snake&gt;</b> takle na oko bi rekel 4k vrstic<br>
+          <b>&lt;snake&gt;</b> morda kaj več.<br>
+          <b>&lt;snake&gt;</b> Čeprav me tole stane kar veliko...<br>
+          <b>&lt;snake&gt;</b> bi moral delat na v2!<br>
+          <b>&lt;kyon&gt;</b> ni slabo<br>
+          <b>&lt;GupeM&gt;</b> super je blo<br>
+          <b>&lt;kyon&gt;</b> kaj je ta V2<br>
+          <b>&lt;_Wing_&gt;</b> vredu je<br>
+          <b>&lt;snake&gt;</b> projekt na katerem dela moja ekipa.<br>
+          <b>&lt;snake&gt;</b> delamo ;)<br>
+          <b>&lt;GupeM&gt;</b> upam da bo koda kmalu<br>
+          <b>&lt;kyon&gt;</b> kaj pa Mix<br>
+          <b>&lt;snake&gt;</b> Kar se pa kode tiče... šlo bo nekako takole:<br>
+          <b>&lt;snake&gt;</b> več člankov v katerih bomo postavljali naš engine,<br>
+          <b>&lt;snake&gt;</b> podobno kot tisto o Enginuity.<br>
+          <b>&lt;kyon&gt;</b> tisto ravnokar berem...zelo dober clanek<br>
+          <b>&lt;kyon&gt;</b> Mi dokazuje, da sem v c++ mrzel :))<br>
+          <b>&lt;snake&gt;</b> ja, meni tudi template niso všeč... ampak se navajam nanje ;)<br>
+          <b>&lt;kyon&gt;</b> meni so pa zelo vsec, ideja je res super, nov nivo abstrakcije<br>
+          <b>&lt;kyon&gt;</b> moram pa se navadit na razna preoblaganja operatorjev<br>
+          <b>&lt;snake&gt;</b> no, narobe sem se izrazil... so mi všeč, ampak sem nov v njih, zato mi /niso/ všeč<br>
+          <b>&lt;senitel&gt;</b> ce je kdo za lahko se jaz povem kaj o terrain enginih(pac bolj na kratko, osnove(heightmape), quadtrees...)<br>
+          <b>&lt;kyon&gt;</b> heh, ja imajo res neverjeten potencial<br>
+          <b>&lt;kyon&gt;</b> kar se ponovne uporabljivosti kode tice<br>
+          <b>&lt;_Wing_&gt;</b> death itak<br>
+          <b>&lt;snake&gt;</b> approved<br>
+          <b>&lt;GupeM&gt;</b> death kar začni<br>
+          <b>&lt;kyon&gt;</b> seveda<br>
+          <b>&lt;_Wing_&gt;</b> a dons?<br>
+          <b>&lt;GupeM&gt;</b> zdejle<br>
+          <b>&lt;snake&gt;</b> na kratko :)<br>
+          <b>&lt;senitel&gt;</b> ja lahko...samo bom kar tako malo pravil na pamet :)<br>
+          <b>&lt;GupeM&gt;</b> sej ni važn<br>
+          <b>&lt;GupeM&gt;</b> sm de je<br>
+          <b>&lt;_Wing_&gt;</b> hm jaz bi rad ostal samo morem it, se slismo :><br>
+          <b>&lt;_Wing_&gt;</b> ajd<br>
+          <b>&lt;snake&gt;</b> Ti kar, jaz bom pa na koncu povedal kako se da to vključit v moje;)<br>
+          <b>&lt;snake&gt;</b> ajd!<br>
+          <b>&lt;GupeM&gt;</b> ajd<br>
+          <b>&lt;GupeM&gt;</b> 5<br>
+          <b>&lt;GupeM&gt;</b> 4<br>
+          <b>&lt;GupeM&gt;</b> 3<br>
+          <b>&lt;GupeM&gt;</b> 2<br>
+          <b>&lt;GupeM&gt;</b> 1<br>
+          <b>&lt;GupeM&gt;</b> Go<br>
+          <b>&lt;GupeM&gt;</b> death_<br>
+          <b>&lt;GupeM&gt;</b> Go<br>
+          <b>&lt;GupeM&gt;</b> :)<br>
+          <b>&lt;death_&gt;</b> no, prvo rabimo heightmapo, ki jo lahko kreiramo kar v navadnem risarskem programu(recimo paint shop pro)...najlazje je, ce potem to exportamo v 8 bit raw file...<br>
+          <b>&lt;death_&gt;</b> potem v nasem programu preberemo datoteko(ker je raw file lahko z fread preberemo kar celo datoteko brez kompliciranja)...<br>
+          <b>&lt;death_&gt;</b> v tej datoteki so spravljene Y koordinate posameznih vertexov...visina<br>
+          <b>&lt;death_&gt;</b> tako se potem "sprehodimo" cez vse podatke(koordinate - od 0 do 255 (toliko lahko spravi en bajt)) in narisemo trikotnike...<br>
+          <b>&lt;death_&gt;</b> to je tako imenovani "brute force" nacin...ni ravno priporocljiv, predvsem za vecje terene, ker je pocasen...teren pa zrendira z najvecjim detajlom...<br>
+          <b>&lt;death_&gt;</b> zato je priporocljivo da uporabis kaksen LOD(Level of Detail) algoritem...<br>
+          <b>&lt;senitel&gt;</b> tako, da je na primer hrib ki je bolj oddaljen sestavljen iz manj trikotnikov, kot tisti, ki je neposredno pred tabo<br>
+          <b>&lt;death_&gt;</b> primer takega algoritma je geomipmapping - whitepaper si lahko snamete tukaj -> <a >http://www.flipcode.com/tutorials/geomipmaps.pdf</a><br>
+          <b>&lt;snake&gt;</b> opomba: ta algoritem ne naredi le to, da zmanjsa podrobnost na oddaljenih trikotnikih, ampak na vseh, ki jim ni treba biti tako na drobno teseliran (ravnine rabijo manj trikotnikov, kot grbinice).<br>
+          <b>&lt;death_&gt;</b> ja,...razlagam malo bolj na preprosto :) vec lahko najdete v whitepaperju<br>
+          <b>&lt;GupeM&gt;</b> ni važno kako razlagaš<br>
+          <b>&lt;snake&gt;</b> bzzz...<br>
+          <b>&lt;senitel&gt;</b> veliko je se za napisat samo da ne bi zdej sel v podrobnosti...bi si moral prej kaj napisat :)<br>
+          <b>&lt;senitel&gt;</b> Se kaj al lahko jaz malo o shaderjih povem?<br>
+          <b>&lt;death_&gt;</b> kar zacni... :)<br>
+          <b>&lt;senitel&gt;</b> Ok, 1, 2, 3 o shaderjih :-><br>
+          <b>&lt;senitel&gt;</b> Oznaka "shader" v osnovi izhaja iz RenderMana, kjer shader oznacuje kako se obnasajo povrsine (odbivanje svetlobe itd)<br>
+          <b>&lt;senitel&gt;</b> Ker je pojem prikladen se je prijel tudi v PC svetu, ceprav je malo "zgresen".<br>
+          <b>&lt;senitel&gt;</b> Vsak 3D pospesevalnik je sposoben "shadeinga" (to je od Voodoo 1 dalje)<br>
+          <b>&lt;senitel&gt;</b> Voodoo 1 je bil prvi resen cip za mnozice, ki je lahko na ze izrisano sliko dorisal se kaj<br>
+          <b>&lt;senitel&gt;</b> (ti. blending)<br>
+          <b>&lt;senitel&gt;</b> In da se dokazati, da se samo z blendingom naredit prakticno vse kar so sposobni sodobni shaderji (samo vprasanje hitrosti, koliko krat bo treba piksel prerisat)<br>
+          <b>&lt;senitel&gt;</b> In Voodoo 1 pac ni dovolj hiter, da bi bilo to prakticno uporabno<br>
+          <b>&lt;senitel&gt;</b> Novejse kartice zacele podpirati vec funkcij in najprej je prisla na vrsto ti. multitexture skladovnica (cascade)<br>
+          <b>&lt;senitel&gt;</b> Ker vedno v bistvu delamo z neko vhodno "sliko", ki ji pristejemo/odstejemo/mnozimo/... drugo sliko je pac pametno, da nam ni treba stalno sariti po pomnilniku cim vec narediti v samem cipu<br>
+          <b>&lt;senitel&gt;</b> In kartice so zacele sibati vedno vec matematike in teksturirnih enot (vsaka teksturirna enota je nekako prisla z eno matematicno enoto, ker koncept nima smisla, ker moras vedno "blendat" dve sliki (teksturi))<br>
+          <b>&lt;senitel&gt;</b> Shaderji tako omogocajo programabilonst (oz. "visoko konfigurabilnost"), da lahko programerji delajo se kaj drugega kot samo popajo teksture<br>
+          <b>&lt;senitel&gt;</b> V bistvu hardware ala GeForce 256, GeForce 2, Radeon 7x00 podpira vse kar podpirajo nove kartice, samo da so nove kartice hitrejše, fleksibilnejše, natančnejše<br>
+          <b>&lt;senitel&gt;</b> Problem same programabilnosti v grafičnih čipih je v tem, da so grafični čipi en sam dolg pipeline (cevovod)<br>
+          <b>&lt;senitel&gt;</b> Kar pomeni, da je vedno najboljse vzeti eno ogromno vedro podatkov in jih zliti v pipeline, kartica se bo ze znasla<br>
+          <b>&lt;senitel&gt;</b> Programabilnost, pa te pipeline zakomplicira, ker lahko sprememba konstante na cipu povzroci pravo revolucijo<br>
+          <b>&lt;senitel&gt;</b> Primer: Pentium 4 ima ~40 nivojev globok pipeline, pa so ga vsi skritizirali do amena<br>
+          <b>&lt;senitel&gt;</b> GeForce 3 ima ~300+ nivojev globok pipeline, pa je se vseeno dovolj hiter<br>
+          <b>&lt;senitel&gt;</b> zadnja generacija npr. Radeon 9700 pa ima ~1000 nivojev...<br>
+          <b>&lt;senitel&gt;</b> Ker je grafika skrajno vektorska je to lazje optimizirat in če rečemo grafični kartici, da hočemo pač prebrat teksturo jo bo pač prebrala<br>
+          <b>&lt;senitel&gt;</b> in to bo za nas izgledalo povsem instantno (čeprav traja več kot 100 ciklov, da kartica dejansko pride do bilinearno interpolirane teksture!)<br>
+          <b>&lt;senitel&gt;</b> to je mozno, ker kartica ne dela z posameznimi piksli ampak z veliko mnozico pikslov hkrati<br>
+          <b>&lt;senitel&gt;</b> shaderji pa lahko vse te mehanizme kar hitro sesujejo<br>
+          <b>&lt;senitel&gt;</b> Kje smo s shaderji trenutno?<br>
+          <b>&lt;senitel&gt;</b> Lahko programiramo tako na vertexih kot pixlih<br>
+          <b>&lt;senitel&gt;</b> Ok popravek P4 ima 20 nivojev pipeline ;-)<br>
+          <b>&lt;senitel&gt;</b> Zadnja generacija ima prakticno enak nabor ukazov za vertexe kot pixle<br>
+          <b>&lt;senitel&gt;</b> In pocnemo lahko marsikaj (od implementacija stvari s starejsih shaderjev, kot povsem nove zadeve)<br>
+          <b>&lt;senitel&gt;</b> Osnovno nacelo pri tem pa je: ne uporabljat vseh "shiny" shaderjev, da lahko implementiraš stvari, ki jih lahko naredi GF2 ampak naredi nekaj novega ;-)<br>
+          <b>&lt;senitel&gt;</b> Shaderji so predvsem novo orodje in ne hitrejše staro orodje<br>
+          <b>&lt;senitel&gt;</b> Hmmm zdaj sem se pa malo zgubil...<br>
+          <b>&lt;senitel&gt;</b> OK, kam gredo shaderji?<br>
+          <b>&lt;snake&gt;</b> tole bo tut koncalo na SGD kot log!<br>
+          <b>&lt;senitel&gt;</b> Shaderji bodo predvsem daljši, dobili bodo še nekaj ukazov (vejitve, zanke,... tako per vertex kot per pixel)<br>
+          <b>&lt;senitel&gt;</b> Nekoc (upam da kmalu), bomo iz shaderjev lahko dostopali tudi to vsebine slike kamor trenutno renderiramo (render target) in z tistim poceli kar bomo pac hoteli<br>
+          <b>&lt;senitel&gt;</b> Pojavili pa se bodo se "primitive shaderji" oziroma shaderji, ki se bodo izvajali na trikotnikih<br>
+          <b>&lt;senitel&gt;</b> Tako bo mozno na graficno kartico preselit vse "shiny" LOD (Level Of Detail) algoritme, krivulje, parametrične ploske, fiziko<br>
+          <b>&lt;senitel&gt;</b> IMO: bo kmalu možno narediti vsaj tetris povsem na grafični kartici (ok input bo še za CPU)<br>
+          <b>&lt;senitel&gt;</b> <b>&lt;senitel&gt;</b> mene nekaj zanima glede shaderjev, sem kar nekaj prebral o njih, o CGju, HLSLju itd dejansko jih pa se nisem probal implementirati in se tudi v kodo se nisem poglabljal...recimo ce bi hotu narediti eno senco od kozarca...a podas shader funkciji podas recimo vertex array od kozarca ali podobno ali kako je to treba?<br>
+          <b>&lt;senitel&gt;</b> Torej kako bi to naredili?<br>
+          <b>&lt;senitel&gt;</b> Ce vzamemo tako popularne shadow mape moramo najprej izrisati viewport z kamero s podatki luči v neko teksturo<br>
+          <b>&lt;senitel&gt;</b> Za to ne potrebujemo nujno shaderjev (GeForce 3+ zna delat to hardwaresko, na Radeon 9700 itd. pa to naredimo s shaderji)<br>
+          <b>&lt;snake&gt;</b> render_to_texture?<br>
+          <b>&lt;senitel&gt;</b> Teksture v shaderjih niso vec samo slike, bistveno bolje si jih je predstavljati kot tabele (1D, 2D, 3D)<br>
+          <b>&lt;senitel&gt;</b> snake: jup.<br>
+          <b>&lt;senitel&gt;</b> In tudi shaderji niso samo "mikser" za teksture ampak pravi mali računalnik, ki lahko izvaja neko matematiko na vsakem pixlu<br>
+          <b>&lt;senitel&gt;</b> Sedaj, ko imamo v teksturi izrisano globino scene s strani luči se lotimo renderiranja same scene<br>
+          <b>&lt;senitel&gt;</b> Hmm... Ok malo same arhitekture:<br>
+          <b>&lt;senitel&gt;</b> -najprej imamo API, ki sprejme zahtevek za renderiranje<br>
+          <b>&lt;senitel&gt;</b> -potem vzame podatke o geometriji v roke vertex shader in na njih izvede nek set operacij (transformacij)<br>
+          <b>&lt;senitel&gt;</b> in izpljune en kup vertexov<br>
+          <b>&lt;senitel&gt;</b> -te transformirane vertexe nato prevzame "triangle setup" enote, ki dejansko pove pixel shaderju kje na render targetu (back buffer, tekstura,...) naj renderira<br>
+          <b>&lt;senitel&gt;</b> (in se par stvari ;-)<br>
+          <b>&lt;senitel&gt;</b> -pixel shader nato dobi podatke o teksturah, barvah in izpljune piksel<br>
+          <b>&lt;senitel&gt;</b> Nazaj k sencam<br>
+          <b>&lt;senitel&gt;</b> Sedaj še enkrat izrišemo celotno sceno z kamero opazovalca<br>
+          <b>&lt;senitel&gt;</b> (v back buffer)<br>
+          <b>&lt;senitel&gt;</b> Pixel shaderju nastavimo eno teksturo (ali več če potrebujemo), ki vsebuje oddaljenost najbližjih točk od luči<br>
+          <b>&lt;senitel&gt;</b> Vertex shader pa najprej transformira našo geometrijo in v koordinato za teksturo shrani še naš vertex transformiran z projekcijsko matriko, ki smo jo uporabili za renderiranje "shadow mape"<br>
+          <b>&lt;senitel&gt;</b> Sedaj moramo še enkrat za vsak piksel na zaslonu ponoviti računanje oddaljenosti od luči (in uporabiti moramo povsem isto funkcijo)<br>
+          <b>&lt;senitel&gt;</b> Ker sedaj na sceno gledamo z drugega zornega kota bodo na vrhu drugi piksli, kot so v shadow mapi<br>
+          <b>&lt;senitel&gt;</b> Za vsak piksel na sliki imamo tako oddaljenost našega pixla od luči in oddaljenost piksla na shadow mapi od luči<br>
+          <b>&lt;senitel&gt;</b> če gre za isti pixel, potem bosta obe oddaljenosti enaki, če pa je naš pixel, ki ga renderiramo dlje, potem je v senci<br>
+          <b>&lt;senitel&gt;</b> V praksi imamo pogosto probleme z natančnostjo in je treba malo hackat<br>
+          <b>&lt;senitel&gt;</b> ker sem dobra dusca in ker se ravno ubadam z nečim kar uporablja shadow mape sem naredil še en screen shot...<br>
+          <b>&lt;senitel&gt;</b> <a >http://www2.arnes.si/~mdolen/ShadowMap.jpg</a><br>
+          <b>&lt;senitel&gt;</b> V bistu je zanimivejši del na tem screen shotu tone mapping ampak dober ;-)<br>
+          <b>&lt;senitel&gt;</b> sem odgovoril na vprašanje?<br>
+          <b>&lt;snake&gt;</b> zelo podrobno :)<br>
+          <b>&lt;senitel&gt;</b> ja...hvala :)<br>
+          <b>&lt;senitel&gt;</b> No pa še zaključek<br>
+          <b>&lt;senitel&gt;</b> Shaderji niso samo zelo velike skladovnice za teksturiranje, in teksture niso več samo teksture, ampak so bolj tabele<br>
+          <b>&lt;senitel&gt;</b> V teksture lahko shranjujemo npr. tudi geometrične podatke (normal mape bi kar padle v to kategorijo)<br>
+          <b>&lt;senitel&gt;</b> In sami shaderji se ne ubadajo samo z barvo, ampak z matematiko<br>
+          <b>&lt;senitel&gt;</b> Npr. oni moj screen shot ne uporablja nobene teksture v klasičnem pomenu besede (uporablja tri shadow mape)<br>
+          <b>&lt;snake&gt;</b> look-up tabele (tak da lahko folk googla, ce ve original imena).<br>
+          <b>&lt;senitel&gt;</b> a lahko priporocas se kaksno knjigo o shaderjih, ali pa kaksen clanek?<br>
+          <b>&lt;senitel&gt;</b> look-up tabele so uporabne npr. za cartoon rendering<br>
+          <b>&lt;senitel&gt;</b> DX9 HLSL shaderji: <a >povezava</a><br>
+          <b>&lt;snake&gt;</b> and more ;)<br>
+          <b>&lt;senitel&gt;</b> Knjige so npr: ShaderX in ShaderX2 od Wolfgang Engel<br>
+          <b>&lt;senitel&gt;</b> Še nekaj o tem <a >http://www.shaderx.com/direct3d.net/index.html</a><br>
+          <b>&lt;senitel&gt;</b> Za OGL je pa itak zelo podobno<br>
+          <b>&lt;senitel&gt;</b> različna je predvsem uporaba shaderjev v samem API-ju, shaderji sami dosti manj<br>
+          <b>&lt;senitel&gt;</b> Morda še nekaj tipov kako začeti:<br>
+          <b>&lt;snake&gt;</b> za shaderji je v bistvu matematika. Ta pa je univerzalna ;)<br>
+          <b>&lt;senitel&gt;</b> Dobro je imeti kartico ala Radeon 9500, ki ima pixel shaderje 2.0, ki so dosti manj omejeni kot ps_1_1<br>
+          <b>&lt;senitel&gt;</b> Vendar je tukaj še vedno reference rasterizer (v D3D), ki pa lahko porabi tudi več minut za frame...<br>
+          <b>&lt;senitel&gt;</b> Pa tudi kartice ala GeForce 3 še niso ravno za odmet.<br>
+          <b>&lt;senitel&gt;</b> Ko se nekako začneš učit shaderje (da ne pozabim, emulacija za vertex shaderje je zelo hitra tudi na karticah, ki nimajo vertex shaderjev)<br>
+          <b>&lt;senitel&gt;</b> jest imam geforce 4 ti4200...semizdi da ce bi hotu v opengl delat bi mogu pisat za ati in pa nvidio posebi kodo ali kako?<br>
+          <b>&lt;senitel&gt;</b> death: za geforce 4 imaš v OpenGL samo NVIDIA specific extensione<br>
+          <b>&lt;senitel&gt;</b> Cele zadeve se lotiš pač tako, da enostavno narediš eno skeletno aplikacijo, ki ti npr. renderira kocko<br>
+          <b>&lt;senitel&gt;</b> in potem napišeš vertex sahder, ki premika vertexe malo sem malo tja<br>
+          <b>&lt;senitel&gt;</b> Ali pa napišeš en enostaven pixel shader ala mov r0, c0 (ki samo izriše barvo, ki se interpolira preko trikotnika)<br>
+          <b>&lt;senitel&gt;</b> Če pa recimo hočeš enostavno aplikacij (brez raznih cube map ipd), ki ti prikaže razliko med phong senčenjem za vsak vertex in za vsak pixel pa žal že potrebuješ Radeon 9500+<br>
+          <b>&lt;senitel&gt;</b> Še kaj?<br>
+          <b>&lt;senitel&gt;</b> No tudi omejitev se je treba zavedat (koliko ukazov lahko spraviš v en vertex shader ali pixel shader)<br>
+          <b>&lt;senitel&gt;</b> Še kakšno vprašanje?<br>
+          <b>&lt;senitel&gt;</b> Al sem vas vse uspaval... :><br>
+          <b>&lt;senitel&gt;</b> ne :)<br>
+          <b>&lt;senitel&gt;</b> jest sem zdej pred dilemo ali se naj vrzem v shaderje ali pa prestudiram knjigo ki jo dobim(tricks of the 3d game programming gurus - o delanju svojega softwerskega 3d engina) :)<br>
+          <b>&lt;senitel&gt;</b> death: BTW za shaderje in za začetek na geforce 4 bi bil po moje zelo dober Cg, ker skrije dosti zafrkancij z samim nalaganjem shaderjev<br>
+          <b>&lt;senitel&gt;</b> CG sem si ze downloadal..malo sem ze bral in pogledal tisti viewer<br>
+          <b>&lt;senitel&gt;</b> odvisno kaj hočeš. Softwareski 3D engine je dober, če hočeš razumet pipeline. Za Cg si pa preberi mal un manual, ki pride zraven<br>
+          <b>&lt;senitel&gt;</b> vsega skupaj je samo par funkcij, ki jih moraš klicat iz tvojega programa<br>
+          <b>&lt;senitel&gt;</b> Ok, grem jaz...<br>
+          <b>&lt;senitel&gt;</b> ok...ajde..upam da bo se vec takih predavanj :)<br>
+          <b>&lt;senitel&gt;</b> Takih nepredvidenih nadaljevanj? ;) </p>
+        <!-- end content -->
+        <DIV class=visualClear></DIV>
+      </DIV>
+    </DIV>
+  </DIV>
+  <DIV id=column-one>
+    <DIV class=portlet id=p-cactions>
+      <H5>Views</H5>
+      <UL>
+        <LI><A href="../index.html">Home</A></LI>
+        <LI><A href="../showcase.html">Showcase</A></LI>
+        <LI><A href="../hippo.html">Hippo</A></LI>
+        <LI class="selected"><A href="../articles.html">Articles</A></LI>
+      </UL>
+    </DIV>
+    <DIV class=portlet id=p-personal>
+      <H5>Personal tools</H5>
+      <!-- 
+	        <DIV class=pBody>
+
+	    <UL>
+          <LI id=pt-login><A >Create an account or log in</A> </LI>
+        </UL>
+
+      </DIV>
+-->
+    </DIV>
+    <DIV class=portlet id=p-logo style=" BACKGROUND-IMAGE: url(../images/boxes.png); background-repeat:no-repeat"></DIV>
+    <DIV class=portlet id=p-nav>
+      <H5>Links</H5>
+      <DIV class=pBody>
+        <UL>
+          <LI><A href="../../index.html" target="_blank">SloGamedev.net</A>
+          <LI><A  target="_blank">Gamedev.net</A>
+          <LI><A  target="_blank">Flipcode</A>
+          <LI><A  target="_blank">Gamasutra</A>
+          <LI><A  target="_blank">CodeProject</A>
+        </UL>
+      </DIV>
+    </DIV>
+  </DIV>
+  <!-- end of the left (by default at least) column -->
+  <DIV class=visualClear style="position:relative; bottom:0px; right:-5px; left:0px; width:100%; "></DIV>
+  <DIV id=footer style="position:relative; bottom:-5px; right:0px; left:0px; width:100%; ">
+    <UL>
+      <LI>&copy; 2005, <a  title="e-mail">Samo Kralj</a><br>
+      <LI><span style="font-size:xx-small;">Base of site design grabbed from monobook style from <a  title="Mediawiki" target="_blank"> Mediawiki</a>.</span>
+    </UL>
+  </DIV>
+</DIV>
+</BODY>
+</HTML>

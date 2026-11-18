@@ -1,0 +1,881 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html dir="ltr">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta http-equiv="Content-Style-Type" content="text/css">
+<style type="text/css">
+<!--
+.style1 {color: #FFFFFF}
+-->
+</style>
+
+
+
+<title>SloGameDev.net :: Rabim nekaj nasvetov o izdelavi edtitorja</title>
+<!-- link rel="stylesheet" href="templates/SGD/SGD2.css" type="text/css" -->
+<style type="text/css">
+<!--
+/*
+  The SGD Theme for phpBB version 2+
+  Created by Rhuantavan
+  http://www.rhuantavan.org
+
+  NOTE: These CSS definitions are stored within the main page body so that you can use the phpBB2
+  theme administration centre. When you have finalised your style you could cut the final CSS code
+  and place it in an external file, deleting this section to save bandwidth.
+*/
+
+/* General page style. The scroll bar colours only visible in IE5.5+ */
+body {
+	background-color: #DDDDDD;
+	scrollbar-face-color: #000000;
+	scrollbar-highlight-color: #000000;
+	scrollbar-3dlight-color: #EEEEEE;
+	scrollbar-darkshadow-color: #EEEEEE;
+	scrollbar-shadow-color: #000000;
+	scrollbar-arrow-color: #55FF00;
+	scrollbar-track-color: #EEEEEE;
+}
+
+/* General font families for common tags */
+font,th,td,p { font-family: Verdana, Arial, Helvetica, sans-serif }
+a:link,a:active,a:visited { color : #338800; }
+a:hover		{ text-decoration: underline; color : #338800; }
+hr	{ height: 0px; border: solid #E9E9E9 0px; border-top-width: 1px;}
+
+/* This is the border line & background colour round the entire page */
+.bodyline	{ background-color: #EEEEEE; border-left: 1px #000000 solid; border-right: 1px #000000 solid; }
+
+/* This is the outline round the main forum tables */
+.forumline	{ background-color: #EEEEEE; border: 0px #DDDDDD solid; }
+
+/* Main table cell colours and backgrounds */
+td.row1	{ background-color: #F8F8F8; }
+td.row2	{ background-color: #F0F0F0; }
+td.row3	{ background-color: #E9E9E9; }
+
+/*
+  This is for the table cell above the Topics, Post & Last posts on the index.php page
+  By default this is the fading out gradiated silver background.
+  However, you could replace this with a bitmap specific for each forum
+*/
+td.rowpic {
+		background-color: #EEEEEE;
+		background-image: url(templates/SGD/images/cellpic3.gif);
+		background-repeat: repeat-y;
+}
+
+/* Header cells - the blue and silver gradient backgrounds */
+th	{
+	color: #66CC33; font-size: 11px; font-weight : bold;
+	background-color: #338800; height: 25px;
+	background-image: url(templates/SGD/images/cellpic2.gif);
+}
+
+td.cat,td.catHead,td.catSides,td.catLeft,td.catRight,td.catBottom {
+			background-image: url(templates/SGD/images/cellpic1.gif);
+			background-color:#E9E9E9; border: #999999; border-style: solid; height: 28px;
+}
+
+/*
+  Setting additional nice inner borders for the main table cells.
+  The names indicate which sides the border will be on.
+  Don't worry if you don't understand this, just ignore it :-)
+*/
+td.cat,td.catHead,td.catBottom {
+	height: 29px;
+	border-width: 0px 0px 0px 0px;
+}
+th.thHead,th.thSides,th.thTop,th.thLeft,th.thRight,th.thBottom,th.thCornerL,th.thCornerR {
+	font-weight: bold; border: #EEEEEE; border-style: solid; height: 28px;
+}
+td.row3Right,td.spaceRow {
+	background-color: #E9E9E9; border: #999999; border-style: solid;
+}
+
+th.thHead,td.catHead { font-size: 12px; border-width: 0px 0px 0px 0px; }
+th.thSides,td.catSides,td.spaceRow	 { border-width: 0px 0px 0px 0px; }
+th.thRight,td.catRight,td.row3Right	 { border-width: 0px 0px 0px 0px; }
+th.thLeft,td.catLeft	  { border-width: 0px 0px 0px 0px; }
+th.thBottom,td.catBottom  { border-width: 0px 0px 0px 1px; }
+th.thTop	 { border-width: 0px 0px 0px 0px; }
+th.thCornerL { border-width: 0px 0px 0px 1px; }
+th.thCornerR { border-width: 0px 0px 0px 0px; }
+
+/* The largest text used in the index page title and toptic title etc. */
+.maintitle	{
+	font-weight: bold; font-size: 18px; font-family: "Trebuchet MS",Verdana, Arial, Helvetica, sans-serif;
+	text-decoration: none; line-height : 120%; color : #666666;
+}
+
+/* General text */
+.gen { font-size : 12px; }
+.genmed { font-size : 11px; }
+.gensmall { font-size : 10px; }
+.gen,.genmed,.gensmall { color : #666666; }
+a.gen,a.genmed,a.gensmall { color: #338800; text-decoration: none; }
+a.gen:hover,a.genmed:hover,a.gensmall:hover	{ color: #338800; text-decoration: underline; }
+
+/* The register, login, search etc links at the top of the page */
+.mainmenu		{ font-size : 11px; color : #666666 }
+a.mainmenu		{ text-decoration: none; color : #338800;  }
+a.mainmenu:hover{ text-decoration: underline; color : #338800; }
+
+/* SGD main menu */
+.sgdmainmenu			{ font-size : 10px; color : #99FF33 }
+a.sgdmainmenu:link		{ text-decoration: none; color : #99FF33;  }
+a.sgdmainmenu:active	{ text-decoration: none; color : #99FF33;  }
+a.sgdmainmenu:visited	{ text-decoration: none; color : #99FF33;  }
+a.sgdmainmenu:hover		{ text-decoration: underline; color : #99FF33; }
+
+/* Forum category titles */
+.cattitle		{ font-weight: bold; font-size: 12px ; letter-spacing: 1px; color : #338800}
+a.cattitle		{ text-decoration: none; color : #338800; }
+a.cattitle:hover{ text-decoration: underline; }
+
+/* Forum title: Text and link to the forums used in: index.php */
+.forumlink		{ font-weight: bold; font-size: 12px; color : #338800; }
+a.forumlink 	{ text-decoration: none; color : #338800; }
+a.forumlink:hover{ text-decoration: underline; color : #338800; }
+
+/* Used for the navigation text, (Page 1,2,3 etc) and the navigation bar when in a forum */
+.nav			{ font-weight: bold; font-size: 11px; color : #666666;}
+a.nav			{ text-decoration: none; color : #338800; }
+a.nav:hover		{ text-decoration: underline; }
+
+/* titles for the topics: could specify viewed link colour too */
+.topictitle,h1,h2	{ font-weight: bold; font-size: 11px; color : #666666; }
+a.topictitle:link   { text-decoration: none; color : #338800; }
+a.topictitle:visited { text-decoration: none; color : #338800; }
+a.topictitle:hover	{ text-decoration: underline; color : #338800; }
+
+/* Name of poster in viewmsg.php and viewtopic.php and other places */
+.name			{ font-size : 11px; color : #000000;}
+
+/* Location, number of posts, post date etc */
+.postdetails		{ font-size : 10px; color : #666666; }
+
+/* The content of the posts (body of text) */
+.postbody { font-size : 12px; line-height: 18px; color : #000000;}
+a.postlink:link	{ text-decoration: none; color : #338800 }
+a.postlink:visited { text-decoration: none; color : #338800; }
+a.postlink:hover { text-decoration: underline; color : #338800}
+
+/* Quote & Code blocks */
+.code {
+	font-family: Courier, 'Courier New', sans-serif; font-size: 11px; color: #006600;
+	background-color: #D6D6D6; border: #E9E9E9; border-style: solid;
+	border-left-width: 1px; border-top-width: 1px; border-right-width: 1px; border-bottom-width: 1px
+}
+
+.quote {
+	font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 11px; color: #444444; line-height: 125%;
+	background-color: #BBBBBB; border: #E9E9E9; border-style: solid;
+	border-left-width: 1px; border-top-width: 1px; border-right-width: 1px; border-bottom-width: 1px
+}
+
+/* Copyright and bottom info */
+.copyright		{ font-size: 10px; font-family: Verdana, Arial, Helvetica, sans-serif; color: #444444; letter-spacing: -1px;}
+a.copyright		{ color: #444444; text-decoration: none;}
+a.copyright:hover { color: #666666; text-decoration: underline;}
+
+/* Form elements */
+input,textarea, select {
+	color : #666666;
+	font: normal 11px Verdana, Arial, Helvetica, sans-serif;
+	border-color : #666666;
+}
+
+/* The text input fields background colour */
+input.post, textarea.post, select {
+	background-color : #EEEEEE;
+}
+
+input { text-indent : 2px; }
+
+/* The buttons used for bbCode styling in message post */
+input.button {
+	background-color : #F8F8F8;
+	color : #666666;
+	font-size: 11px; font-family: Verdana, Arial, Helvetica, sans-serif;
+}
+
+/* The main submit button option */
+input.mainoption {
+	background-color : #BBBBBB;
+	font-weight : bold;
+}
+
+/* None-bold submit button */
+input.liteoption {
+	background-color : #BBBBBB;
+	font-weight : normal;
+}
+
+/* This is the line in the posting page which shows the rollover
+  help line. This is actually a text box, but if set to be the same
+  colour as the background no one will know ;)
+*/
+.helpline { background-color: #F0F0F0; border-style: none; }
+
+/* Import the fancy styles for IE only (NS4.x doesn't use the @import function) */
+@import url("templates/SGD/formIE.css");
+-->
+</style>
+</head>
+<body bgcolor="#DDDDDD" text="#666666" link="#338800" vlink="#338800" topmargin="0" />
+<a name="top"></a>
+<table width="100%" cellspacing="0" cellpadding="0" border="0" align="center" nowrap>
+	<tr>
+		<td class="bodyline">
+			<table width="100%" border="0" cellpadding="0" cellspacing="0">
+				<tr>
+					<td bgcolor="#FFFFFF">
+						<img src="images/spacer.gif" width="760" height="20" alt=""></td>
+				</tr>
+			</table>
+			<table width="100%" border="0" cellpadding="0" cellspacing="0">
+				<tr>
+					<td bgcolor="#000000">
+						<a href="../index.html"><img src="images/home.gif" width="10" height="10" alt="" border="0"></a><img src="images/spacer.gif" width="5" height="5" alt=""><a href="../index.html" class="sgdmainmenu">Nazaj na domačo stran</a> <img src="images/defaulticon_green.gif" alt="" width="7" height="7" border="0"> <a href="../clanki.html" class="sgdmainmenu">Clanki</a> <img src="images/defaulticon_green.gif" alt="" width="7" height="7" border="0"> <a href="../koda.html" class="sgdmainmenu">Koda</a> <img src="images/defaulticon_green.gif" alt="" width="7" height="7" border="0"> <a href="../clani.html" class="sgdmainmenu">Clani</a> <img src="images/defaulticon_green.gif" alt="" width="7" height="7" border="0"> <a href="../skupine.html" class="sgdmainmenu">Skupine</a> <img src="images/defaulticon_green.gif" alt="" width="7" height="7" border="0"> <a href="../projekti.html" class="sgdmainmenu">Projekti</a> <img src="images/defaulticon_green.gif" alt="" width="7" height="7" border="0"> <a href="../povezave.html" class="sgdmainmenu">Povezave</a></td>
+				</tr>
+			</table>
+			<table width="100%" border="0" cellpadding="0" cellspacing="0">
+				<tr>
+					<td colspan="3" bgcolor="#000000">
+						<img src="images/spacer.gif" width="760" height="10" alt=""></td>
+				</tr>
+				<tr>
+					<td>
+						<a href="index.html"><img src="images/logo.gif" width="351" height="62" alt="" border="0"></a></td>
+					<td>
+						<img src="images/forum_03.gif" width="408" height="62" alt=""></td>
+					<td width="100%" bgcolor="#000000">
+						<img src="images/spacer.gif" width="1" height="1" alt=""></td>
+				</tr>
+				<tr>
+					<td colspan="3" bgcolor="#000000" align="center">
+						<a href="memberlist.html" class="sgdmainmenu"><img src="images/defaulticon_green.gif" alt="" width="7" height="7" border="0">&nbsp;Seznam članov</a>
+						<a href="index.html" class="sgdmainmenu"><img src="images/defaulticon_green.gif" alt="" width="7" height="7" border="0">&nbsp;Seznam</a></td>
+				</tr>
+				<tr>
+					<td colspan="3" bgcolor="#000000">
+						<img src="images/spacer.gif" width="760" height="5" alt=""></td>
+				</tr>
+			</table>
+
+<table width="100%" cellspacing="2" cellpadding="2" border="0">
+  <tr>
+	<td align="left" valign="bottom" colspan="2"><a class="maintitle" href="topic-746.html">Rabim nekaj nasvetov o izdelavi edtitorja</a><br />
+	  <span class="gensmall"><b></b><br />
+	  &nbsp; </span></td>
+  </tr>
+</table>
+
+<table width="100%" cellspacing="2" cellpadding="2" border="0">
+  <tr>
+	<td align="left" valign="bottom" nowrap="nowrap">&nbsp;</td>
+	<td align="left" valign="middle" width="100%"><span class="nav">&nbsp;&nbsp;&nbsp;<a href="index.html" class="nav">SloGameDev.net seznam forumov</a>
+	  -> <a href="forum-1.html" class="nav">Splošno Programiranje</a></span></td>
+  </tr>
+</table>
+
+<table class="forumline" width="100%" cellspacing="1" cellpadding="3" border="0">
+	<tr align="right">
+		<td class="catHead" colspan="2" height="28"><span class="nav"><a href="topic-759.html" class="nav">Prejšnja tema</a> :: <a href="topic-720.html" class="nav">Naslednja tema</a> &nbsp;</span></td>
+	</tr>
+	
+	<tr>
+		<th class="thLeft" width="150" height="26" nowrap="nowrap">avtor</th>
+		<th class="thRight" nowrap="nowrap">Sporočilo</th>
+	</tr>
+	
+	<tr>
+		<td width="150" align="left" valign="top" class="row1"><span class="name"><a name="8521"></a><b>kosov</b></span><br /><span class="postdetails">novinec<br /><img src="images/ranks/sgd-0.gif" alt="novinec" title="novinec" border="0" /><br /><br /><br />Pridružen: 23. jul 2003 ob 06:46<br />objav: 21<br /></span><br /></td>
+		<td class="row1" width="100%" height="28" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+			<tr>
+				<td colspan="2" width="100%">
+					<table width="100%" cellpadding="0" cellspacing="0" border="0">
+						<tr>
+							<td valign="middle" align="left">
+								<a href="topic-746.html#8521"><img src="templates/SGD2/images/icon_minipost.gif" width="12" height="9" alt="objava" title="objava" border="0" /></a>
+								<span class="postdetails">Objavljeno: čet apr 15, 2004 5:44 pm<span class="gen">&nbsp;</span>&nbsp; &nbsp;Pošlji temo: Rabim nekaj nasvetov o izdelavi edtitorja</span>
+							</td>
+							<td valign="middle" align="right" nowrap="nowrap">
+							</td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+			<tr>
+				<td colspan="2"><hr /></td>
+			</tr>
+			<tr>
+				<td colspan="2"><span class="postbody">Živjo,
+
+<br />
+
+
+<br />
+Rad bi naredil simple editorček za vnašanje vrednosti (podobno kot excel samo bolj preprost)., zato moram najprej narediti razred, ki bo operiral nad podatki oz. celicami (brisanje, dodajanje, sortiranje). Za container
+
+<br />
+sem si izbral STL map, ki ima za "KEY" tip TCellCoord in za "VALUE" tip
+
+<br />
+PCellData. Določil sem tudi razred CellSortCriterion, ki mi sortira celice
+
+<br />
+v map-u in sicer naprej po kolonah(Col) in potem po vrsticah(Row).
+
+<br />
+Za probo sem napisal spodnji program in deluje vse lepo in prav.
+
+<br />
+
+
+<br />
+Bi pa prosil za nekaj komentarjev oz. nasvetov v zvezi s tem, 
+
+<br />
+kako vsa stvar funkcionira oz. kako moram napisati, da bo 
+
+<br />
+brisanje,  dodajanje , urejanje celic čimbolj hitro.
+
+<br />
+
+
+<br />
+1. problem:
+
+<br />
+Kako hitro je oz kako deluje iskanje z metodo find (v funkciji main sem napisal primer iskanja po ključu oz po koordinatah celice), ker se bom moral hitro sklicevati na določeno celico po njenih koordinatah. V deliphiju
+
+<br />
+sem imel napisano iskanje z bisekcijo in stvar je delala brez problema. Ali
+
+<br />
+bo najbolje, da sam napišem iskanje ali je find metoda dovolj hitra. 
+
+<br />
+
+
+<br />
+2. problem
+
+<br />
+ Kar se hitrosti tiče je najbolje v container filati pointerje in ne 
+
+<br />
+ celih objektov torej jaz dodam v posamezen zapis containerja
+
+<br />
+cel objekt tipa TCellCoord za KEY in pointer na tip TCellData kot
+
+<br />
+VALUE. Ali je to sprejemljivo. 
+
+<br />
+
+
+<br />
+3. problem 
+
+<br />
+Ali sem se stvari lotil na pravi način in oz. kaj predlagate vi.
+
+<br />
+
+
+<br />
+Hvala za odgovore
+
+<br />
+
+
+<br />
+</span>
+<br />
+<table width="90%" cellspacing="1" cellpadding="3" border="0" align="center">
+<br />
+<tr> 
+<br />
+	  <td><span class="genmed"><b>Koda:</b></span></td>
+<br />
+	</tr>
+<br />
+	<tr>
+<br />
+	  <td class="code">
+
+<br />
+#include &lt;map&gt;
+
+<br />
+#include &lt;iostream&gt;
+
+<br />
+
+
+<br />
+using namespace std;
+
+<br />
+
+
+<br />
+
+
+<br />
+// TCellCoord - koordinate celice
+
+<br />
+typedef struct &#123;
+
+<br />
+&nbsp; &nbsp;int Col;
+
+<br />
+&nbsp; &nbsp;int Row;
+
+<br />
+&#125; TCellCoord;
+
+<br />
+
+
+<br />
+// TCellData - vrednost celice&nbsp; &nbsp; 
+
+<br />
+typedef struct &#123;
+
+<br />
+&nbsp; &nbsp;char* Value;
+
+<br />
+&#125; TCellData;
+
+<br />
+
+
+<br />
+//PCellData
+
+<br />
+typedef TCellData* PCellData;
+
+<br />
+
+
+<br />
+
+
+<br />
+// CellSortCriterion
+
+<br />
+class CellSortCriterion &#123;
+
+<br />
+&nbsp; public&#58;&nbsp; 
+
+<br />
+&nbsp; &nbsp; // Če je &#91; &#40;Col1 manjse Col2&#41; ALI &#40; &#40;Col1 je enako Col2&#41; IN &#40;Row1 manjse Row2 &#41; &#41; &#93;
+
+<br />
+&nbsp; &nbsp; bool operator&#40;&#41; &#40;const TCellCoord&amp; CellCoord1, const TCellCoord&amp; CellCoord2&#41; const &#123; 
+
+<br />
+&nbsp; &nbsp; &nbsp; &nbsp; return &#40; &#40;CellCoord1.Col &lt; CellCoord2.Col&#41; || 
+
+<br />
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&#40; &#40;CellCoord1.Col == CellCoord2.Col&#41; &amp;&amp; &#40;CellCoord1.Row &lt; CellCoord2.Row&#41; &#41; &#41;;
+
+<br />
+&nbsp; &nbsp; &#125;
+
+<br />
+&#125;;
+
+<br />
+
+
+<br />
+// TCellsMap
+
+<br />
+typedef map&lt;TCellCoord, PCellData, CellSortCriterion&gt; TCellsMap;
+
+<br />
+
+
+<br />
+// fCellCoord
+
+<br />
+TCellCoord fCellCoord&#40;int Col, int Row&#41;
+
+<br />
+&#123;
+
+<br />
+&nbsp; &nbsp;TCellCoord cc;
+
+<br />
+&nbsp; &nbsp;cc.Col = Col;
+
+<br />
+&nbsp; &nbsp;cc.Row = Row;
+
+<br />
+&nbsp; &nbsp;return cc;
+
+<br />
+&#125;
+
+<br />
+
+
+<br />
+
+
+<br />
+// PrintMap
+
+<br />
+void PrintMap&#40;TCellsMap &amp;CellsMap&#41;
+
+<br />
+&#123;
+
+<br />
+&nbsp; &nbsp;TCellsMap&#58;&#58;iterator pos;
+
+<br />
+
+
+<br />
+&nbsp; &nbsp;for &#40;pos = CellsMap.begin&#40;&#41;; pos != CellsMap.end&#40;&#41;; pos++&#41;
+
+<br />
+&nbsp; &nbsp;&#123;
+
+<br />
+&nbsp; &nbsp;&nbsp; &nbsp;cout &lt;&lt; &quot;Col&#58; &quot; &lt;&lt; pos-&gt;first.Col &lt;&lt; &quot; Row&#58; &quot; &lt;&lt; pos-&gt;first.Row &lt;&lt; endl;
+
+<br />
+&nbsp; &nbsp;&#125;
+
+<br />
+&#125;
+
+<br />
+
+
+<br />
+
+
+<br />
+//Main
+
+<br />
+int main&#40;int argc, char* argv&#91;&#93;&#41;
+
+<br />
+&#123;
+
+<br />
+&nbsp; &nbsp;TCellsMap celice;&nbsp; &nbsp;// primerek tipa TCellsMap
+
+<br />
+
+
+<br />
+&nbsp; &nbsp;// dodam nekaj poskusnih vrednosti
+
+<br />
+&nbsp; &nbsp;celice.insert&#40; TCellsMap&#58;&#58;value_type&#40;fCellCoord&#40;1, 3&#41;, NULL&#41; &#41;;
+
+<br />
+&nbsp; &nbsp;celice.insert&#40; TCellsMap&#58;&#58;value_type&#40;fCellCoord&#40;3, 1&#41;, NULL&#41; &#41;;
+
+<br />
+&nbsp; &nbsp;celice.insert&#40; TCellsMap&#58;&#58;value_type&#40;fCellCoord&#40;5, 7&#41;, NULL&#41; &#41;;
+
+<br />
+&nbsp; &nbsp;celice.insert&#40; TCellsMap&#58;&#58;value_type&#40;fCellCoord&#40;1, 5&#41;, NULL&#41; &#41;;
+
+<br />
+&nbsp; &nbsp;celice.insert&#40; TCellsMap&#58;&#58;value_type&#40;fCellCoord&#40;12, 5&#41;, NULL&#41; &#41;;
+
+<br />
+&nbsp; &nbsp;celice.insert&#40; TCellsMap&#58;&#58;value_type&#40;fCellCoord&#40;12, 2&#41;, NULL&#41; &#41;;
+
+<br />
+&nbsp; &nbsp;celice.insert&#40; TCellsMap&#58;&#58;value_type&#40;fCellCoord&#40;14, 0&#41;, NULL&#41; &#41;;
+
+<br />
+&nbsp; &nbsp;celice.insert&#40; TCellsMap&#58;&#58;value_type&#40;fCellCoord&#40;6, 1&#41;, NULL&#41; &#41;;
+
+<br />
+&nbsp; &nbsp;celice.insert&#40; TCellsMap&#58;&#58;value_type&#40;fCellCoord&#40;12, 4&#41;, NULL&#41; &#41;;
+
+<br />
+&nbsp; &nbsp;
+
+<br />
+&nbsp; &nbsp;// Izpisem vrednosti
+
+<br />
+&nbsp; &nbsp;PrintMap&#40;celice&#41;;
+
+<br />
+
+
+<br />
+&nbsp; &nbsp;// poskus iskanja
+
+<br />
+&nbsp; &nbsp; /*TCellsMap&#58;&#58;iterator pos;
+
+<br />
+&nbsp; &nbsp;pos = celice.find&#40;fCellCoord&#40;12,5&#41;&#41;;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  
+
+<br />
+&nbsp; &nbsp; if &#40;pos != celice.end&#40;&#41;&#41; &#123;
+
+<br />
+&nbsp; &nbsp; &nbsp; &nbsp; cout &lt;&lt; &quot;yes&quot;;
+
+<br />
+&nbsp; &nbsp; &#125; else
+
+<br />
+&nbsp; &nbsp;&#123;
+
+<br />
+&nbsp; &nbsp;&nbsp; &nbsp;cout &lt;&lt; &quot;no&quot;;
+
+<br />
+&nbsp; &nbsp;&#125;*/
+
+<br />
+
+
+<br />
+&nbsp; &nbsp;// pocistim celice
+
+<br />
+&nbsp; &nbsp;celice.clear&#40;&#41;;
+
+<br />
+
+
+<br />
+&nbsp; &nbsp;return 0;
+
+<br />
+&#125;</td>
+<br />
+	</tr>
+<br />
+</table>
+<br />
+<span class="postbody"></span><span class="gensmall"></span></td>
+			</tr>
+		</table></td>
+	</tr>
+	<tr>
+		<td class="row1" width="150" align="left" valign="middle"><span class="nav"><a href="#top" class="nav">Nazaj na vrh</a></span></td>
+		<td class="row1" width="100%" height="28" valign="bottom" nowrap="nowrap"><table cellspacing="0" cellpadding="0" border="0" height="18" width="18">
+			<tr>
+				<td valign="middle" nowrap="nowrap"><a href="profile-86.html"><img src="templates/SGD2/images/lang_slovenian/icon_profile.gif" alt="Poglej uporabnikov profil" title="Poglej uporabnikov profil" border="0" /></a> </td>
+			</tr>
+		</table></td>
+	</tr>
+	<tr>
+		<td class="spaceRow" colspan="2" height="1"><img src="templates/SGD/images/spacer.gif" alt="" width="1" height="1" /></td>
+	</tr>
+	
+	<tr>
+		<td width="150" align="left" valign="top" class="row2"><span class="name"><a name="8562"></a><b>vesoljc</b></span><br /><span class="postdetails">inštruktor<br /><img src="images/ranks/sgd-4.gif" alt="inštruktor" title="inštruktor" border="0" /><br /><img src="images/avatars/c1bdb98c3fb49342927df.jpg" alt="" border="0" /><br /><br />Pridružen: 18. feb 2003 ob 22:16<br />objav: 297<br />Kraj: Brezovica, homeland of the mighty Beawer Blasters</span><br /></td>
+		<td class="row2" width="100%" height="28" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+			<tr>
+				<td colspan="2" width="100%">
+					<table width="100%" cellpadding="0" cellspacing="0" border="0">
+						<tr>
+							<td valign="middle" align="left">
+								<a href="topic-746.html#8562"><img src="templates/SGD2/images/icon_minipost.gif" width="12" height="9" alt="objava" title="objava" border="0" /></a>
+								<span class="postdetails">Objavljeno: pon apr 19, 2004 3:22 am<span class="gen">&nbsp;</span>&nbsp; &nbsp;Pošlji temo: </span>
+							</td>
+							<td valign="middle" align="right" nowrap="nowrap">
+							</td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+			<tr>
+				<td colspan="2"><hr /></td>
+			</tr>
+			<tr>
+				<td colspan="2"><span class="postbody">std::map performance
+
+<br />
+<a  target="_blank">http://www.gamedev.net/community/forums/topic.asp?topic_id=220266</a>
+
+<br />
+pravjo, da je hashmap naj naj <img src="images/smiles/icon_wink.gif" alt="icon_wink.gif" border="0" />
+
+<br />
+konc koncev ga lahko tudi sam implementiraš/optimiziraš za lastne potrebe
+
+<br />
+<a  target="_blank">http://www.brpreiss.com/books/opus4/html/page203.html#SECTION009000000000000000000</a>
+
+<br />
+al je to že res overkill? <img src="images/smiles/icon_wink.gif" alt="icon_wink.gif" border="0" />
+
+<br />
+
+
+<br />
+in ja, v mapo je najbolje dajati samo pointerje (kot value namreč)<br />_________________<br /><span style="font-style: italic">Abnormal behaviour of abnormal brain makes me normal...</span></span><span class="gensmall"></span></td>
+			</tr>
+		</table></td>
+	</tr>
+	<tr>
+		<td class="row2" width="150" align="left" valign="middle"><span class="nav"><a href="#top" class="nav">Nazaj na vrh</a></span></td>
+		<td class="row2" width="100%" height="28" valign="bottom" nowrap="nowrap"><table cellspacing="0" cellpadding="0" border="0" height="18" width="18">
+			<tr>
+				<td valign="middle" nowrap="nowrap"><a href="profile-47.html"><img src="templates/SGD2/images/lang_slovenian/icon_profile.gif" alt="Poglej uporabnikov profil" title="Poglej uporabnikov profil" border="0" /></a> <a  target="_userwww"><img src="templates/SGD2/images/lang_slovenian/icon_www.gif" alt="Obišči avtorjevo spletno stran" title="Obišči avtorjevo spletno stran" border="0" /></a></td>
+			</tr>
+		</table></td>
+	</tr>
+	<tr>
+		<td class="spaceRow" colspan="2" height="1"><img src="templates/SGD/images/spacer.gif" alt="" width="1" height="1" /></td>
+	</tr>
+	
+	<tr>
+		<td width="150" align="left" valign="top" class="row1"><span class="name"><a name="8753"></a><b>Shinobi</b></span><br /><span class="postdetails">inštruktor<br /><img src="images/ranks/sgd-4.gif" alt="inštruktor" title="inštruktor" border="0" /><br /><img src="images/avatars/d5fd66913fcf278e24a0c.gif" alt="" border="0" /><br /><br />Pridružen: 15. maj 2003 ob 18:04<br />objav: 257<br />Kraj: Maribor</span><br /></td>
+		<td class="row1" width="100%" height="28" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+			<tr>
+				<td colspan="2" width="100%">
+					<table width="100%" cellpadding="0" cellspacing="0" border="0">
+						<tr>
+							<td valign="middle" align="left">
+								<a href="topic-746.html#8753"><img src="templates/SGD2/images/icon_minipost.gif" width="12" height="9" alt="objava" title="objava" border="0" /></a>
+								<span class="postdetails">Objavljeno: sob maj 01, 2004 10:30 am<span class="gen">&nbsp;</span>&nbsp; &nbsp;Pošlji temo: </span>
+							</td>
+							<td valign="middle" align="right" nowrap="nowrap">
+							</td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+			<tr>
+				<td colspan="2"><hr /></td>
+			</tr>
+			<tr>
+				<td colspan="2"><span class="postbody">Pozdravljen mladi mož!
+
+<br />
+
+
+<br />
+Hja stvar je takšna gre pa takole:
+
+<br />
+
+
+<br />
+1.) Za vnašanje entryev v tabelo real time aplikacija ni glih pojem. Niti ni važno če vnos traja desetinko sekunde ali pa eno stotinko. Tako da je vseeno samo da dela ( okej 10 sekund je že preveč ali tega verjetno ne boš doživel ).
+
+<br />
+
+
+<br />
+2.) Moram rečt da si se dobro spomnil glede STLa, ki zna bit zelo dober, odvisno od prevajalnika. Ne loti se STL v Visual C++ 6.0 ali manjšem, ker je zanič, vzami raje STL port. Če imaš Visual Studio 2002 ali 2003 potem pa mirno posezi po STLu in seveda prevajaj aplikacijo v "RELEASE" načinu, ker je za faktor vsaj 100 hitrejša od DEBUGA.
+
+<br />
+
+
+<br />
+3.) Če se lotevaš obsežne baze - ne j**i se s Cjem. Vzami ACCESS ali Visual Basic, če pa si že res tako mahjen pa vsaj Borland C++ Builder ( isto kot Delphi samo da je C++ ).
+
+<br />
+
+
+<br />
+4.) vector&lt;nekaj&gt; ali vector&lt;nekaj*&gt; je pa tako: najbolje je da vzameš kazalce za vsak class razen za float in int. Problem je, da če dač vector&lt;COseba&gt; in vector&lt;CStudent&gt; potem ti bo v exe fajlu naredil dva velika bloka (200kb na blok) za vsak vector na novo. Če daš vector&lt;int*&gt; ali vector&lt;float*&gt; ali vector&lt;COseba*&gt; pa je vse isto, ker naredi vector za kazalce. Za clasee in svoje stvari vzami raje kazalce.
+
+<br />
+
+
+<br />
+5.) STL se uporablja v Real time - OpenGL Inventor/Preformer in Direct3D Skinned mesh in še kje se ga najde. Le dober prevajalnik more biti in se STL v RELEASE načinu obnaša dejansko kot kazalec in nič drugega, tako da ni PERFORMANENCE LAGA.
+
+<br />
+
+
+<br />
+Držim pesti in veselo programiranje.</span><span class="gensmall"></span></td>
+			</tr>
+		</table></td>
+	</tr>
+	<tr>
+		<td class="row1" width="150" align="left" valign="middle"><span class="nav"><a href="#top" class="nav">Nazaj na vrh</a></span></td>
+		<td class="row1" width="100%" height="28" valign="bottom" nowrap="nowrap"><table cellspacing="0" cellpadding="0" border="0" height="18" width="18">
+			<tr>
+				<td valign="middle" nowrap="nowrap"><a href="profile-62.html"><img src="templates/SGD2/images/lang_slovenian/icon_profile.gif" alt="Poglej uporabnikov profil" title="Poglej uporabnikov profil" border="0" /></a> </td>
+			</tr>
+		</table></td>
+	</tr>
+	<tr>
+		<td class="spaceRow" colspan="2" height="1"><img src="templates/SGD/images/spacer.gif" alt="" width="1" height="1" /></td>
+	</tr>
+	
+	<tr align="center">
+		<td class="catBottom" colspan="2" height="28">&nbsp;</td>
+	</tr>
+</table>
+
+<table width="100%" cellspacing="2" cellpadding="2" border="0" align="center">
+  <tr>
+	<td align="left" valign="middle" nowrap="nowrap">&nbsp;</td>
+	<td align="left" valign="middle" width="100%"><span class="nav">&nbsp;&nbsp;&nbsp;<a href="index.html" class="nav">SloGameDev.net seznam forumov</a>
+	  -> <a href="forum-1.html" class="nav">Splošno Programiranje</a></span></td>
+	<td align="right" valign="top" nowrap="nowrap"><span class="gensmall">Časovni pas (GMT +2:00 uri) Slovenija, poletni čas</span><br /><span class="nav"></span>
+	  </td>
+  </tr>
+  <tr>
+	<td align="left" colspan="3"><span class="nav">Stran <b>1</b> od <b>1</b></span></td>
+  </tr>
+</table>
+
+<table width="100%" cellspacing="2" border="0" align="center">
+  <tr>
+	<td width="40%" valign="top" nowrap="nowrap" align="left">&nbsp;</td>
+	<td align="right" valign="top" nowrap="nowrap">&nbsp;</td>
+  </tr>
+</table>
+
+<div align="center"><span class="copyright"><br />Arhiv stanja na dan 13. 2. 2006 &mdash; samo za branje.<br />
+<!--
+	We request you retain the full copyright notice below including the link to www.phpbb.com.
+	This not only gives respect to the large amount of time given freely by the developers
+	but also helps build interest, traffic and use of phpBB 2.0. If you cannot (for good
+	reason) retain the full copyright we request you at least leave in place the 
+	Powered by phpBB 2.0.4 line, with phpBB linked to www.phpbb.com. If you refuse
+	to include even this then support on our forums may be affected. 
+
+	The phpBB Group : 2002
+// -->
+Powered by <a  target="_phpbb" class="copyright">phpBB</a> 2.0.4 &copy; 2001, 2002 phpBB Group<br /></span></div>
+		</td>
+	</tr>
+</table>
+
+</body>
+</html>

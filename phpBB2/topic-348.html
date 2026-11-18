@@ -1,0 +1,1274 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html dir="ltr">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta http-equiv="Content-Style-Type" content="text/css">
+<style type="text/css">
+<!--
+.style1 {color: #FFFFFF}
+-->
+</style>
+
+
+
+<title>SloGameDev.net :: Kako izdelati menije?</title>
+<!-- link rel="stylesheet" href="templates/SGD/SGD2.css" type="text/css" -->
+<style type="text/css">
+<!--
+/*
+  The SGD Theme for phpBB version 2+
+  Created by Rhuantavan
+  http://www.rhuantavan.org
+
+  NOTE: These CSS definitions are stored within the main page body so that you can use the phpBB2
+  theme administration centre. When you have finalised your style you could cut the final CSS code
+  and place it in an external file, deleting this section to save bandwidth.
+*/
+
+/* General page style. The scroll bar colours only visible in IE5.5+ */
+body {
+	background-color: #DDDDDD;
+	scrollbar-face-color: #000000;
+	scrollbar-highlight-color: #000000;
+	scrollbar-3dlight-color: #EEEEEE;
+	scrollbar-darkshadow-color: #EEEEEE;
+	scrollbar-shadow-color: #000000;
+	scrollbar-arrow-color: #55FF00;
+	scrollbar-track-color: #EEEEEE;
+}
+
+/* General font families for common tags */
+font,th,td,p { font-family: Verdana, Arial, Helvetica, sans-serif }
+a:link,a:active,a:visited { color : #338800; }
+a:hover		{ text-decoration: underline; color : #338800; }
+hr	{ height: 0px; border: solid #E9E9E9 0px; border-top-width: 1px;}
+
+/* This is the border line & background colour round the entire page */
+.bodyline	{ background-color: #EEEEEE; border-left: 1px #000000 solid; border-right: 1px #000000 solid; }
+
+/* This is the outline round the main forum tables */
+.forumline	{ background-color: #EEEEEE; border: 0px #DDDDDD solid; }
+
+/* Main table cell colours and backgrounds */
+td.row1	{ background-color: #F8F8F8; }
+td.row2	{ background-color: #F0F0F0; }
+td.row3	{ background-color: #E9E9E9; }
+
+/*
+  This is for the table cell above the Topics, Post & Last posts on the index.php page
+  By default this is the fading out gradiated silver background.
+  However, you could replace this with a bitmap specific for each forum
+*/
+td.rowpic {
+		background-color: #EEEEEE;
+		background-image: url(templates/SGD/images/cellpic3.gif);
+		background-repeat: repeat-y;
+}
+
+/* Header cells - the blue and silver gradient backgrounds */
+th	{
+	color: #66CC33; font-size: 11px; font-weight : bold;
+	background-color: #338800; height: 25px;
+	background-image: url(templates/SGD/images/cellpic2.gif);
+}
+
+td.cat,td.catHead,td.catSides,td.catLeft,td.catRight,td.catBottom {
+			background-image: url(templates/SGD/images/cellpic1.gif);
+			background-color:#E9E9E9; border: #999999; border-style: solid; height: 28px;
+}
+
+/*
+  Setting additional nice inner borders for the main table cells.
+  The names indicate which sides the border will be on.
+  Don't worry if you don't understand this, just ignore it :-)
+*/
+td.cat,td.catHead,td.catBottom {
+	height: 29px;
+	border-width: 0px 0px 0px 0px;
+}
+th.thHead,th.thSides,th.thTop,th.thLeft,th.thRight,th.thBottom,th.thCornerL,th.thCornerR {
+	font-weight: bold; border: #EEEEEE; border-style: solid; height: 28px;
+}
+td.row3Right,td.spaceRow {
+	background-color: #E9E9E9; border: #999999; border-style: solid;
+}
+
+th.thHead,td.catHead { font-size: 12px; border-width: 0px 0px 0px 0px; }
+th.thSides,td.catSides,td.spaceRow	 { border-width: 0px 0px 0px 0px; }
+th.thRight,td.catRight,td.row3Right	 { border-width: 0px 0px 0px 0px; }
+th.thLeft,td.catLeft	  { border-width: 0px 0px 0px 0px; }
+th.thBottom,td.catBottom  { border-width: 0px 0px 0px 1px; }
+th.thTop	 { border-width: 0px 0px 0px 0px; }
+th.thCornerL { border-width: 0px 0px 0px 1px; }
+th.thCornerR { border-width: 0px 0px 0px 0px; }
+
+/* The largest text used in the index page title and toptic title etc. */
+.maintitle	{
+	font-weight: bold; font-size: 18px; font-family: "Trebuchet MS",Verdana, Arial, Helvetica, sans-serif;
+	text-decoration: none; line-height : 120%; color : #666666;
+}
+
+/* General text */
+.gen { font-size : 12px; }
+.genmed { font-size : 11px; }
+.gensmall { font-size : 10px; }
+.gen,.genmed,.gensmall { color : #666666; }
+a.gen,a.genmed,a.gensmall { color: #338800; text-decoration: none; }
+a.gen:hover,a.genmed:hover,a.gensmall:hover	{ color: #338800; text-decoration: underline; }
+
+/* The register, login, search etc links at the top of the page */
+.mainmenu		{ font-size : 11px; color : #666666 }
+a.mainmenu		{ text-decoration: none; color : #338800;  }
+a.mainmenu:hover{ text-decoration: underline; color : #338800; }
+
+/* SGD main menu */
+.sgdmainmenu			{ font-size : 10px; color : #99FF33 }
+a.sgdmainmenu:link		{ text-decoration: none; color : #99FF33;  }
+a.sgdmainmenu:active	{ text-decoration: none; color : #99FF33;  }
+a.sgdmainmenu:visited	{ text-decoration: none; color : #99FF33;  }
+a.sgdmainmenu:hover		{ text-decoration: underline; color : #99FF33; }
+
+/* Forum category titles */
+.cattitle		{ font-weight: bold; font-size: 12px ; letter-spacing: 1px; color : #338800}
+a.cattitle		{ text-decoration: none; color : #338800; }
+a.cattitle:hover{ text-decoration: underline; }
+
+/* Forum title: Text and link to the forums used in: index.php */
+.forumlink		{ font-weight: bold; font-size: 12px; color : #338800; }
+a.forumlink 	{ text-decoration: none; color : #338800; }
+a.forumlink:hover{ text-decoration: underline; color : #338800; }
+
+/* Used for the navigation text, (Page 1,2,3 etc) and the navigation bar when in a forum */
+.nav			{ font-weight: bold; font-size: 11px; color : #666666;}
+a.nav			{ text-decoration: none; color : #338800; }
+a.nav:hover		{ text-decoration: underline; }
+
+/* titles for the topics: could specify viewed link colour too */
+.topictitle,h1,h2	{ font-weight: bold; font-size: 11px; color : #666666; }
+a.topictitle:link   { text-decoration: none; color : #338800; }
+a.topictitle:visited { text-decoration: none; color : #338800; }
+a.topictitle:hover	{ text-decoration: underline; color : #338800; }
+
+/* Name of poster in viewmsg.php and viewtopic.php and other places */
+.name			{ font-size : 11px; color : #000000;}
+
+/* Location, number of posts, post date etc */
+.postdetails		{ font-size : 10px; color : #666666; }
+
+/* The content of the posts (body of text) */
+.postbody { font-size : 12px; line-height: 18px; color : #000000;}
+a.postlink:link	{ text-decoration: none; color : #338800 }
+a.postlink:visited { text-decoration: none; color : #338800; }
+a.postlink:hover { text-decoration: underline; color : #338800}
+
+/* Quote & Code blocks */
+.code {
+	font-family: Courier, 'Courier New', sans-serif; font-size: 11px; color: #006600;
+	background-color: #D6D6D6; border: #E9E9E9; border-style: solid;
+	border-left-width: 1px; border-top-width: 1px; border-right-width: 1px; border-bottom-width: 1px
+}
+
+.quote {
+	font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 11px; color: #444444; line-height: 125%;
+	background-color: #BBBBBB; border: #E9E9E9; border-style: solid;
+	border-left-width: 1px; border-top-width: 1px; border-right-width: 1px; border-bottom-width: 1px
+}
+
+/* Copyright and bottom info */
+.copyright		{ font-size: 10px; font-family: Verdana, Arial, Helvetica, sans-serif; color: #444444; letter-spacing: -1px;}
+a.copyright		{ color: #444444; text-decoration: none;}
+a.copyright:hover { color: #666666; text-decoration: underline;}
+
+/* Form elements */
+input,textarea, select {
+	color : #666666;
+	font: normal 11px Verdana, Arial, Helvetica, sans-serif;
+	border-color : #666666;
+}
+
+/* The text input fields background colour */
+input.post, textarea.post, select {
+	background-color : #EEEEEE;
+}
+
+input { text-indent : 2px; }
+
+/* The buttons used for bbCode styling in message post */
+input.button {
+	background-color : #F8F8F8;
+	color : #666666;
+	font-size: 11px; font-family: Verdana, Arial, Helvetica, sans-serif;
+}
+
+/* The main submit button option */
+input.mainoption {
+	background-color : #BBBBBB;
+	font-weight : bold;
+}
+
+/* None-bold submit button */
+input.liteoption {
+	background-color : #BBBBBB;
+	font-weight : normal;
+}
+
+/* This is the line in the posting page which shows the rollover
+  help line. This is actually a text box, but if set to be the same
+  colour as the background no one will know ;)
+*/
+.helpline { background-color: #F0F0F0; border-style: none; }
+
+/* Import the fancy styles for IE only (NS4.x doesn't use the @import function) */
+@import url("templates/SGD/formIE.css");
+-->
+</style>
+</head>
+<body bgcolor="#DDDDDD" text="#666666" link="#338800" vlink="#338800" topmargin="0" />
+<a name="top"></a>
+<table width="100%" cellspacing="0" cellpadding="0" border="0" align="center" nowrap>
+	<tr>
+		<td class="bodyline">
+			<table width="100%" border="0" cellpadding="0" cellspacing="0">
+				<tr>
+					<td bgcolor="#FFFFFF">
+						<img src="images/spacer.gif" width="760" height="20" alt=""></td>
+				</tr>
+			</table>
+			<table width="100%" border="0" cellpadding="0" cellspacing="0">
+				<tr>
+					<td bgcolor="#000000">
+						<a href="../index.html"><img src="images/home.gif" width="10" height="10" alt="" border="0"></a><img src="images/spacer.gif" width="5" height="5" alt=""><a href="../index.html" class="sgdmainmenu">Nazaj na domačo stran</a> <img src="images/defaulticon_green.gif" alt="" width="7" height="7" border="0"> <a href="../clanki.html" class="sgdmainmenu">Clanki</a> <img src="images/defaulticon_green.gif" alt="" width="7" height="7" border="0"> <a href="../koda.html" class="sgdmainmenu">Koda</a> <img src="images/defaulticon_green.gif" alt="" width="7" height="7" border="0"> <a href="../clani.html" class="sgdmainmenu">Clani</a> <img src="images/defaulticon_green.gif" alt="" width="7" height="7" border="0"> <a href="../skupine.html" class="sgdmainmenu">Skupine</a> <img src="images/defaulticon_green.gif" alt="" width="7" height="7" border="0"> <a href="../projekti.html" class="sgdmainmenu">Projekti</a> <img src="images/defaulticon_green.gif" alt="" width="7" height="7" border="0"> <a href="../povezave.html" class="sgdmainmenu">Povezave</a></td>
+				</tr>
+			</table>
+			<table width="100%" border="0" cellpadding="0" cellspacing="0">
+				<tr>
+					<td colspan="3" bgcolor="#000000">
+						<img src="images/spacer.gif" width="760" height="10" alt=""></td>
+				</tr>
+				<tr>
+					<td>
+						<a href="index.html"><img src="images/logo.gif" width="351" height="62" alt="" border="0"></a></td>
+					<td>
+						<img src="images/forum_03.gif" width="408" height="62" alt=""></td>
+					<td width="100%" bgcolor="#000000">
+						<img src="images/spacer.gif" width="1" height="1" alt=""></td>
+				</tr>
+				<tr>
+					<td colspan="3" bgcolor="#000000" align="center">
+						<a href="memberlist.html" class="sgdmainmenu"><img src="images/defaulticon_green.gif" alt="" width="7" height="7" border="0">&nbsp;Seznam članov</a>
+						<a href="index.html" class="sgdmainmenu"><img src="images/defaulticon_green.gif" alt="" width="7" height="7" border="0">&nbsp;Seznam</a></td>
+				</tr>
+				<tr>
+					<td colspan="3" bgcolor="#000000">
+						<img src="images/spacer.gif" width="760" height="5" alt=""></td>
+				</tr>
+			</table>
+
+<table width="100%" cellspacing="2" cellpadding="2" border="0">
+  <tr>
+	<td align="left" valign="bottom" colspan="2"><a class="maintitle" href="topic-348.html">Kako izdelati menije?</a><br />
+	  <span class="gensmall"><b></b><br />
+	  &nbsp; </span></td>
+  </tr>
+</table>
+
+<table width="100%" cellspacing="2" cellpadding="2" border="0">
+  <tr>
+	<td align="left" valign="bottom" nowrap="nowrap">&nbsp;</td>
+	<td align="left" valign="middle" width="100%"><span class="nav">&nbsp;&nbsp;&nbsp;<a href="index.html" class="nav">SloGameDev.net seznam forumov</a>
+	  -> <a href="forum-10.html" class="nav">Za Začetnike</a></span></td>
+  </tr>
+</table>
+
+<table class="forumline" width="100%" cellspacing="1" cellpadding="3" border="0">
+	<tr align="right">
+		<td class="catHead" colspan="2" height="28"><span class="nav"><a href="topic-345.html" class="nav">Prejšnja tema</a> :: <a href="topic-360.html" class="nav">Naslednja tema</a> &nbsp;</span></td>
+	</tr>
+	
+	<tr>
+		<th class="thLeft" width="150" height="26" nowrap="nowrap">avtor</th>
+		<th class="thRight" nowrap="nowrap">Sporočilo</th>
+	</tr>
+	
+	<tr>
+		<td width="150" align="left" valign="top" class="row1"><span class="name"><a name="3551"></a><b>CWIZO</b></span><br /><span class="postdetails">SGD Admin<br /><img src="images/ranks/sgd-admin.gif" alt="SGD Admin" title="SGD Admin" border="0" /><br /><img src="images/avatars/c2f9c6313f016e6cd131f.gif" alt="" border="0" /><br /><br />Pridružen: 05. maj 2003 ob 20:36<br />objav: 955<br />Kraj: WriteLine(CWIZO.Location);</span><br /></td>
+		<td class="row1" width="100%" height="28" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+			<tr>
+				<td colspan="2" width="100%">
+					<table width="100%" cellpadding="0" cellspacing="0" border="0">
+						<tr>
+							<td valign="middle" align="left">
+								<a href="topic-348.html#3551"><img src="templates/SGD2/images/icon_minipost.gif" width="12" height="9" alt="objava" title="objava" border="0" /></a>
+								<span class="postdetails">Objavljeno: tor sep 09, 2003 2:33 pm<span class="gen">&nbsp;</span>&nbsp; &nbsp;Pošlji temo: Kako izdelati menije?</span>
+							</td>
+							<td valign="middle" align="right" nowrap="nowrap">
+							</td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+			<tr>
+				<td colspan="2"><hr /></td>
+			</tr>
+			<tr>
+				<td colspan="2"><span class="postbody">Torej, kaj je najboljši način za izdelavo menijev?
+
+<br />
+Delam v .NET(C#), al nej jih izzdelam kar z enginom(AH) pa pol sam pišem funkcije za preverjanje če je miška nad določeno stvarjo.
+
+<br />
+Al bi bilo bol jih naredit preprosto z imageboxi recimo, al kako se ponavadi te zadeve delajo?<br />_________________<br /><a  target="_blank" class="postlink">CWIZO.SloGameDev.net</a>
+
+<br />
+------
+
+<br />
+Kaj reče podedovan razred v C#u svojemu staršu?
+
+<br />
+- All your base are belong to us!</span><span class="gensmall"><br /><br />Popravil je CWIZO dne, tor sep 09, 2003 6:51 pm, popravljal je 1 krat</span></td>
+			</tr>
+		</table></td>
+	</tr>
+	<tr>
+		<td class="row1" width="150" align="left" valign="middle"><span class="nav"><a href="#top" class="nav">Nazaj na vrh</a></span></td>
+		<td class="row1" width="100%" height="28" valign="bottom" nowrap="nowrap"><table cellspacing="0" cellpadding="0" border="0" height="18" width="18">
+			<tr>
+				<td valign="middle" nowrap="nowrap"><a href="profile-61.html"><img src="templates/SGD2/images/lang_slovenian/icon_profile.gif" alt="Poglej uporabnikov profil" title="Poglej uporabnikov profil" border="0" /></a> <a  target="_userwww"><img src="templates/SGD2/images/lang_slovenian/icon_www.gif" alt="Obišči avtorjevo spletno stran" title="Obišči avtorjevo spletno stran" border="0" /></a></td>
+			</tr>
+		</table></td>
+	</tr>
+	<tr>
+		<td class="spaceRow" colspan="2" height="1"><img src="templates/SGD/images/spacer.gif" alt="" width="1" height="1" /></td>
+	</tr>
+	
+	<tr>
+		<td width="150" align="left" valign="top" class="row2"><span class="name"><a name="3552"></a><b>Kavan</b></span><br /><span class="postdetails">inštruktor<br /><img src="images/ranks/sgd-4.gif" alt="inštruktor" title="inštruktor" border="0" /><br /><br /><br />Pridružen: 10. jan 2003 ob 12:57<br />objav: 363<br />Kraj: Los Angeles</span><br /></td>
+		<td class="row2" width="100%" height="28" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+			<tr>
+				<td colspan="2" width="100%">
+					<table width="100%" cellpadding="0" cellspacing="0" border="0">
+						<tr>
+							<td valign="middle" align="left">
+								<a href="topic-348.html#3552"><img src="templates/SGD2/images/icon_minipost.gif" width="12" height="9" alt="objava" title="objava" border="0" /></a>
+								<span class="postdetails">Objavljeno: tor sep 09, 2003 4:52 pm<span class="gen">&nbsp;</span>&nbsp; &nbsp;Pošlji temo: </span>
+							</td>
+							<td valign="middle" align="right" nowrap="nowrap">
+							</td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+			<tr>
+				<td colspan="2"><hr /></td>
+			</tr>
+			<tr>
+				<td colspan="2"><span class="postbody">Če prav razumem gre za in game menuje. Obstaja tudi možnost da uporabiš windows kontrole, ampak to ponavadi izpade neprofesionalno. Dosti bolje izpadejo custom made menuji ki jih sam rišeš in nadziraš njihovo funkcionalnost. Najboljši pristop je verjetno da narediš en class za izbiro v menuju recimo (vse grafične elemente lahko tudi recimo implementaš iz skupnega interfacea, da imaš lepšo kodo navzven), ki kontrolira klikanje, evente, izris. Kot da bi naredil custom kontrolo v winsih pravzaprav, le da malo več stvari nadziraš.
+
+<br />
+
+
+<br />
+Preprosto sicer je bolj z imageboxi, vendar ko bo projekt rasel boš imel na enem formu že toliko imageboxov da bo stvar postala nepregledna in neuporabna za debugiranje (govorim iz lastnih izkušenj).<br />_________________<br />
+
+<br />
+<span style="font-size: 9px; line-height: normal"><a  target="_blank" class="postlink">www.3dlevel.com</a></span></span><span class="gensmall"></span></td>
+			</tr>
+		</table></td>
+	</tr>
+	<tr>
+		<td class="row2" width="150" align="left" valign="middle"><span class="nav"><a href="#top" class="nav">Nazaj na vrh</a></span></td>
+		<td class="row2" width="100%" height="28" valign="bottom" nowrap="nowrap"><table cellspacing="0" cellpadding="0" border="0" height="18" width="18">
+			<tr>
+				<td valign="middle" nowrap="nowrap"><a href="profile-11.html"><img src="templates/SGD2/images/lang_slovenian/icon_profile.gif" alt="Poglej uporabnikov profil" title="Poglej uporabnikov profil" border="0" /></a> <a  target="_userwww"><img src="templates/SGD2/images/lang_slovenian/icon_www.gif" alt="Obišči avtorjevo spletno stran" title="Obišči avtorjevo spletno stran" border="0" /></a></td>
+			</tr>
+		</table></td>
+	</tr>
+	<tr>
+		<td class="spaceRow" colspan="2" height="1"><img src="templates/SGD/images/spacer.gif" alt="" width="1" height="1" /></td>
+	</tr>
+	
+	<tr>
+		<td width="150" align="left" valign="top" class="row1"><span class="name"><a name="3553"></a><b>CWIZO</b></span><br /><span class="postdetails">SGD Admin<br /><img src="images/ranks/sgd-admin.gif" alt="SGD Admin" title="SGD Admin" border="0" /><br /><img src="images/avatars/c2f9c6313f016e6cd131f.gif" alt="" border="0" /><br /><br />Pridružen: 05. maj 2003 ob 20:36<br />objav: 955<br />Kraj: WriteLine(CWIZO.Location);</span><br /></td>
+		<td class="row1" width="100%" height="28" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+			<tr>
+				<td colspan="2" width="100%">
+					<table width="100%" cellpadding="0" cellspacing="0" border="0">
+						<tr>
+							<td valign="middle" align="left">
+								<a href="topic-348.html#3553"><img src="templates/SGD2/images/icon_minipost.gif" width="12" height="9" alt="objava" title="objava" border="0" /></a>
+								<span class="postdetails">Objavljeno: tor sep 09, 2003 6:53 pm<span class="gen">&nbsp;</span>&nbsp; &nbsp;Pošlji temo: </span>
+							</td>
+							<td valign="middle" align="right" nowrap="nowrap">
+							</td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+			<tr>
+				<td colspan="2"><hr /></td>
+			</tr>
+			<tr>
+				<td colspan="2"><span class="postbody">najprej nej povem da nevem kaj je moj priimek delal v naslovu teme <img src="images/smiles/icon_redface.gif" alt="icon_redface.gif" border="0" />, sem šele zdele videl ...
+
+<br />
+
+
+<br />
+
+
+<br />
+Am pa imaš mogoče kak primer kako naj bi zadeva zgledala?
+
+<br />
+Ma sej tist k jest delam ni prov velik in bi šlo za par opcij ...<br />_________________<br /><a  target="_blank" class="postlink">CWIZO.SloGameDev.net</a>
+
+<br />
+------
+
+<br />
+Kaj reče podedovan razred v C#u svojemu staršu?
+
+<br />
+- All your base are belong to us!</span><span class="gensmall"></span></td>
+			</tr>
+		</table></td>
+	</tr>
+	<tr>
+		<td class="row1" width="150" align="left" valign="middle"><span class="nav"><a href="#top" class="nav">Nazaj na vrh</a></span></td>
+		<td class="row1" width="100%" height="28" valign="bottom" nowrap="nowrap"><table cellspacing="0" cellpadding="0" border="0" height="18" width="18">
+			<tr>
+				<td valign="middle" nowrap="nowrap"><a href="profile-61.html"><img src="templates/SGD2/images/lang_slovenian/icon_profile.gif" alt="Poglej uporabnikov profil" title="Poglej uporabnikov profil" border="0" /></a> <a  target="_userwww"><img src="templates/SGD2/images/lang_slovenian/icon_www.gif" alt="Obišči avtorjevo spletno stran" title="Obišči avtorjevo spletno stran" border="0" /></a></td>
+			</tr>
+		</table></td>
+	</tr>
+	<tr>
+		<td class="spaceRow" colspan="2" height="1"><img src="templates/SGD/images/spacer.gif" alt="" width="1" height="1" /></td>
+	</tr>
+	
+	<tr>
+		<td width="150" align="left" valign="top" class="row2"><span class="name"><a name="3554"></a><b>Kavan</b></span><br /><span class="postdetails">inštruktor<br /><img src="images/ranks/sgd-4.gif" alt="inštruktor" title="inštruktor" border="0" /><br /><br /><br />Pridružen: 10. jan 2003 ob 12:57<br />objav: 363<br />Kraj: Los Angeles</span><br /></td>
+		<td class="row2" width="100%" height="28" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+			<tr>
+				<td colspan="2" width="100%">
+					<table width="100%" cellpadding="0" cellspacing="0" border="0">
+						<tr>
+							<td valign="middle" align="left">
+								<a href="topic-348.html#3554"><img src="templates/SGD2/images/icon_minipost.gif" width="12" height="9" alt="objava" title="objava" border="0" /></a>
+								<span class="postdetails">Objavljeno: tor sep 09, 2003 7:32 pm<span class="gen">&nbsp;</span>&nbsp; &nbsp;Pošlji temo: </span>
+							</td>
+							<td valign="middle" align="right" nowrap="nowrap">
+							</td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+			<tr>
+				<td colspan="2"><hr /></td>
+			</tr>
+			<tr>
+				<td colspan="2"><span class="postbody">No, nekaj kode ne more škodit. Spomagaj si kot veš in znaš <img src="images/smiles/icon_twisted.gif" alt="icon_twisted.gif" border="0" /> 
+
+<br />
+
+
+<br />
+</span>
+<br />
+<table width="90%" cellspacing="1" cellpadding="3" border="0" align="center">
+<br />
+<tr> 
+<br />
+	  <td><span class="genmed"><b>Koda:</b></span></td>
+<br />
+	</tr>
+<br />
+	<tr>
+<br />
+	  <td class="code">Public Class GUIButton
+
+<br />
+&nbsp; &nbsp; Implements IGUIPositionableElement
+
+<br />
+&nbsp; &nbsp; Private mTrigger As Integer
+
+<br />
+&nbsp; &nbsp; Private mRect As Rectangle
+
+<br />
+&nbsp; &nbsp; Private mPosX, mPosY As Integer
+
+<br />
+&nbsp; &nbsp; Private mName As String
+
+<br />
+&nbsp; &nbsp; Private mText As String
+
+<br />
+&nbsp; &nbsp; Private mMouseOver As Boolean
+
+<br />
+&nbsp; &nbsp; Private mVisible As Boolean
+
+<br />
+&nbsp; &nbsp; Private mContext As Object
+
+<br />
+&nbsp; &nbsp; Private mEnabled As Boolean
+
+<br />
+&nbsp; &nbsp; Private parent As ITriggerHost
+
+<br />
+
+
+<br />
+&nbsp; &nbsp; Public Property Context&#40;&#41; As Object
+
+<br />
+&nbsp; &nbsp; &nbsp; &nbsp; Get
+
+<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Return mContext
+
+<br />
+&nbsp; &nbsp; &nbsp; &nbsp; End Get
+
+<br />
+&nbsp; &nbsp; &nbsp; &nbsp; Set&#40;ByVal Value As Object&#41;
+
+<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; mContext = Value
+
+<br />
+&nbsp; &nbsp; &nbsp; &nbsp; End Set
+
+<br />
+&nbsp; &nbsp; End Property
+
+<br />
+
+
+<br />
+&nbsp; &nbsp; Public Property Text&#40;&#41; As String
+
+<br />
+&nbsp; &nbsp; &nbsp; &nbsp; Get
+
+<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Return mText
+
+<br />
+&nbsp; &nbsp; &nbsp; &nbsp; End Get
+
+<br />
+&nbsp; &nbsp; &nbsp; &nbsp; Set&#40;ByVal Value As String&#41;
+
+<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; mText = Value
+
+<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Dim bmp As New Bitmap&#40;1, 1&#41;
+
+<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Dim g As Graphics = Graphics.FromImage&#40;bmp&#41;
+
+<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Dim layout As New SizeF&#40;wid - CInt&#40;mPosX * wid / 800&#41;, hei - CInt&#40;mPosY * hei / 600&#41;&#41;
+
+<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Dim s As SizeF = g.MeasureString&#40;mText, MeasureFont, layout, StringFormat.GenericDefault&#41;
+
+<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; mRect = New Rectangle&#40;CInt&#40;mPosX * wid / 800&#41;, CInt&#40;mPosY * hei / 600&#41;, CInt&#40;s.Width&#41;, CInt&#40;s.Height&#41;&#41;
+
+<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; g.Dispose&#40;&#41;
+
+<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; bmp.Dispose&#40;&#41;
+
+<br />
+&nbsp; &nbsp; &nbsp; &nbsp; End Set
+
+<br />
+&nbsp; &nbsp; End Property
+
+<br />
+
+
+<br />
+&nbsp; &nbsp; Public Property Enabled&#40;&#41; As Boolean Implements IGUIElement.Enabled
+
+<br />
+&nbsp; &nbsp; &nbsp; &nbsp; Get
+
+<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Return mEnabled
+
+<br />
+&nbsp; &nbsp; &nbsp; &nbsp; End Get
+
+<br />
+&nbsp; &nbsp; &nbsp; &nbsp; Set&#40;ByVal Value As Boolean&#41;
+
+<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; mEnabled = Value
+
+<br />
+&nbsp; &nbsp; &nbsp; &nbsp; End Set
+
+<br />
+&nbsp; &nbsp; End Property
+
+<br />
+
+
+<br />
+&nbsp; &nbsp; Public Sub Reposition&#40;ByVal posx As Integer, ByVal posy As Integer&#41;
+
+<br />
+&nbsp; &nbsp; &nbsp; &nbsp; mPosX = posx
+
+<br />
+&nbsp; &nbsp; &nbsp; &nbsp; mPosY = posy
+
+<br />
+&nbsp; &nbsp; &nbsp; &nbsp; mRect.X = posx
+
+<br />
+&nbsp; &nbsp; &nbsp; &nbsp; mRect.Y = posy
+
+<br />
+&nbsp; &nbsp; End Sub
+
+<br />
+
+
+<br />
+&nbsp; &nbsp; Public ReadOnly Property Rect&#40;&#41; As Rectangle Implements IGUIPositionableElement.Rect
+
+<br />
+&nbsp; &nbsp; &nbsp; &nbsp; Get
+
+<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Return mRect
+
+<br />
+&nbsp; &nbsp; &nbsp; &nbsp; End Get
+
+<br />
+&nbsp; &nbsp; End Property
+
+<br />
+
+
+<br />
+&nbsp; &nbsp; Public Sub New&#40;ByVal name As String&#41;
+
+<br />
+&nbsp; &nbsp; &nbsp; &nbsp; mName = name
+
+<br />
+&nbsp; &nbsp; &nbsp; &nbsp; mVisible = True
+
+<br />
+&nbsp; &nbsp; &nbsp; &nbsp; mEnabled = True
+
+<br />
+&nbsp; &nbsp; End Sub
+
+<br />
+
+
+<br />
+&nbsp; &nbsp; Public Sub New&#40;ByVal name As String, ByVal par As ITriggerHost, ByVal trigger As Integer, ByVal text As String, ByVal posx As Integer, ByVal posy As Integer, Optional ByVal context As Object = Nothing&#41;
+
+<br />
+&nbsp; &nbsp; &nbsp; &nbsp; Me.New&#40;name&#41;
+
+<br />
+&nbsp; &nbsp; &nbsp; &nbsp; parent = par
+
+<br />
+&nbsp; &nbsp; &nbsp; &nbsp; mTrigger = trigger
+
+<br />
+&nbsp; &nbsp; &nbsp; &nbsp; mText = text
+
+<br />
+&nbsp; &nbsp; &nbsp; &nbsp; mPosX = posx
+
+<br />
+&nbsp; &nbsp; &nbsp; &nbsp; mPosY = posy
+
+<br />
+&nbsp; &nbsp; &nbsp; &nbsp; mContext = context
+
+<br />
+&nbsp; &nbsp; &nbsp; &nbsp; Dim bmp As New Bitmap&#40;1, 1&#41;
+
+<br />
+&nbsp; &nbsp; &nbsp; &nbsp; Dim g As Graphics = Graphics.FromImage&#40;bmp&#41;
+
+<br />
+&nbsp; &nbsp; &nbsp; &nbsp; Dim layout As New SizeF&#40;wid - CInt&#40;mPosX * wid / 800&#41;, hei - CInt&#40;mPosY * hei / 600&#41;&#41;
+
+<br />
+&nbsp; &nbsp; &nbsp; &nbsp; Dim s As SizeF = g.MeasureString&#40;mText, MeasureFont, layout, StringFormat.GenericDefault&#41;
+
+<br />
+&nbsp; &nbsp; &nbsp; &nbsp; mRect = New Rectangle&#40;CInt&#40;mPosX * wid / 800&#41;, CInt&#40;mPosY * hei / 600&#41;, CInt&#40;s.Width&#41;, CInt&#40;s.Height&#41;&#41;
+
+<br />
+&nbsp; &nbsp; &nbsp; &nbsp; g.Dispose&#40;&#41;
+
+<br />
+&nbsp; &nbsp; &nbsp; &nbsp; bmp.Dispose&#40;&#41;
+
+<br />
+&nbsp; &nbsp; End Sub
+
+<br />
+
+
+<br />
+&nbsp; &nbsp; Public ReadOnly Property MouseOver&#40;&#41; As Boolean
+
+<br />
+&nbsp; &nbsp; &nbsp; &nbsp; Get
+
+<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Return mMouseOver
+
+<br />
+&nbsp; &nbsp; &nbsp; &nbsp; End Get
+
+<br />
+&nbsp; &nbsp; End Property
+
+<br />
+
+
+<br />
+&nbsp; &nbsp; Public Sub Process&#40;&#41; Implements IGUIElement.Process
+
+<br />
+&nbsp; &nbsp; &nbsp; &nbsp; If mVisible = False Then Exit Sub
+
+<br />
+&nbsp; &nbsp; &nbsp; &nbsp; If mEnabled AndAlso mouseX &gt;= mRect.Left AndAlso mouseX &lt;= mRect.Right AndAlso mouseY &gt;= mRect.Top AndAlso mouseY &lt;= mRect.Bottom Then
+
+<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; mMouseOver = True
+
+<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; If prevMouseB1 = False And mouseB1 = True Then
+
+<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; parent.Trigger&#40;Me, mTrigger, mContext&#41;
+
+<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; End If
+
+<br />
+&nbsp; &nbsp; &nbsp; &nbsp; Else
+
+<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; mMouseOver = False
+
+<br />
+&nbsp; &nbsp; &nbsp; &nbsp; End If
+
+<br />
+&nbsp; &nbsp; End Sub
+
+<br />
+
+
+<br />
+&nbsp; &nbsp; Public Sub Draw&#40;&#41; Implements IGUIElement.Draw
+
+<br />
+&nbsp; &nbsp; &nbsp; &nbsp; If mVisible = False Then Exit Sub
+
+<br />
+&nbsp; &nbsp; &nbsp; &nbsp; Dim badRect As Rectangle = mRect
+
+<br />
+&nbsp; &nbsp; &nbsp; &nbsp; badRect.Width += badRect.X
+
+<br />
+&nbsp; &nbsp; &nbsp; &nbsp; badRect.Height += badRect.Y
+
+<br />
+&nbsp; &nbsp; &nbsp; &nbsp; If mEnabled Then
+
+<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; If mMouseOver Then
+
+<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; GUIFont.DrawText&#40;mText, badRect, DrawTextFormat.WordBreak, Color.Red&#41;
+
+<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Else
+
+<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; GUIFont.DrawText&#40;mText, badRect, DrawTextFormat.WordBreak, Color.White&#41;
+
+<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; End If
+
+<br />
+&nbsp; &nbsp; &nbsp; &nbsp; Else
+
+<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; GUIFont.DrawText&#40;mText, badRect, DrawTextFormat.WordBreak, Color.Gray&#41;
+
+<br />
+&nbsp; &nbsp; &nbsp; &nbsp; End If
+
+<br />
+&nbsp; &nbsp; End Sub
+
+<br />
+
+
+<br />
+&nbsp; &nbsp; Public Sub Load&#40;ByVal sr As System.IO.StreamReader&#41; Implements IGUIElement.Load
+
+<br />
+&nbsp; &nbsp; &nbsp; &nbsp; 'trigger
+
+<br />
+&nbsp; &nbsp; &nbsp; &nbsp; 'text
+
+<br />
+&nbsp; &nbsp; &nbsp; &nbsp; 'posX800x600
+
+<br />
+&nbsp; &nbsp; &nbsp; &nbsp; 'posY800x600
+
+<br />
+&nbsp; &nbsp; &nbsp; &nbsp; Dim nf As New NumberFormatInfo&#40;&#41;
+
+<br />
+&nbsp; &nbsp; &nbsp; &nbsp; mTrigger = Integer.Parse&#40;sr.ReadLine.Trim, nf&#41;
+
+<br />
+&nbsp; &nbsp; &nbsp; &nbsp; mText = sr.ReadLine.Trim
+
+<br />
+&nbsp; &nbsp; &nbsp; &nbsp; mPosX = Integer.Parse&#40;sr.ReadLine.Trim, nf&#41;
+
+<br />
+&nbsp; &nbsp; &nbsp; &nbsp; mPosY = Integer.Parse&#40;sr.ReadLine.Trim, nf&#41;
+
+<br />
+&nbsp; &nbsp; &nbsp; &nbsp; Dim bmp As New Bitmap&#40;1, 1&#41;
+
+<br />
+&nbsp; &nbsp; &nbsp; &nbsp; Dim g As Graphics = Graphics.FromImage&#40;bmp&#41;
+
+<br />
+&nbsp; &nbsp; &nbsp; &nbsp; Dim layout As New SizeF&#40;wid - CInt&#40;mPosX * wid / 800&#41;, hei - CInt&#40;mPosY * hei / 600&#41;&#41;
+
+<br />
+&nbsp; &nbsp; &nbsp; &nbsp; Dim s As SizeF = g.MeasureString&#40;mText, MeasureFont, layout, StringFormat.GenericDefault&#41;
+
+<br />
+&nbsp; &nbsp; &nbsp; &nbsp; mRect = New Rectangle&#40;CInt&#40;mPosX * wid / 800&#41;, CInt&#40;mPosY * hei / 600&#41;, CInt&#40;s.Width&#41;, CInt&#40;s.Height&#41;&#41;
+
+<br />
+&nbsp; &nbsp; &nbsp; &nbsp; g.Dispose&#40;&#41;
+
+<br />
+&nbsp; &nbsp; &nbsp; &nbsp; bmp.Dispose&#40;&#41;
+
+<br />
+&nbsp; &nbsp; &nbsp; &nbsp; 'GUIFont.DrawText&#40;mText, mRect, DrawTextFormat.CalculateRect, Color.Red&#41;
+
+<br />
+&nbsp; &nbsp; End Sub
+
+<br />
+
+
+<br />
+&nbsp; &nbsp; Public ReadOnly Property Name&#40;&#41; As String Implements IGUIElement.Name
+
+<br />
+&nbsp; &nbsp; &nbsp; &nbsp; Get
+
+<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Return mName
+
+<br />
+&nbsp; &nbsp; &nbsp; &nbsp; End Get
+
+<br />
+&nbsp; &nbsp; End Property
+
+<br />
+
+
+<br />
+&nbsp; &nbsp; Public Property Visible&#40;&#41; As Boolean Implements IGUIElement.Visible
+
+<br />
+&nbsp; &nbsp; &nbsp; &nbsp; Get
+
+<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Return mVisible
+
+<br />
+&nbsp; &nbsp; &nbsp; &nbsp; End Get
+
+<br />
+&nbsp; &nbsp; &nbsp; &nbsp; Set&#40;ByVal Value As Boolean&#41;
+
+<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; mVisible = Value
+
+<br />
+&nbsp; &nbsp; &nbsp; &nbsp; End Set
+
+<br />
+&nbsp; &nbsp; End Property
+
+<br />
+
+
+<br />
+&nbsp; &nbsp; Public Property X&#40;&#41; As Integer Implements IGUIPositionableElement.X
+
+<br />
+&nbsp; &nbsp; &nbsp; &nbsp; Get
+
+<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Return mPosX
+
+<br />
+&nbsp; &nbsp; &nbsp; &nbsp; End Get
+
+<br />
+&nbsp; &nbsp; &nbsp; &nbsp; Set&#40;ByVal Value As Integer&#41;
+
+<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Me.Reposition&#40;Value, mPosY&#41;
+
+<br />
+&nbsp; &nbsp; &nbsp; &nbsp; End Set
+
+<br />
+&nbsp; &nbsp; End Property
+
+<br />
+
+
+<br />
+&nbsp; &nbsp; Public Property Y&#40;&#41; As Integer Implements IGUIPositionableElement.Y
+
+<br />
+&nbsp; &nbsp; &nbsp; &nbsp; Get
+
+<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Return mPosY
+
+<br />
+&nbsp; &nbsp; &nbsp; &nbsp; End Get
+
+<br />
+&nbsp; &nbsp; &nbsp; &nbsp; Set&#40;ByVal Value As Integer&#41;
+
+<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Me.Reposition&#40;mPosX, Value&#41;
+
+<br />
+&nbsp; &nbsp; &nbsp; &nbsp; End Set
+
+<br />
+&nbsp; &nbsp; End Property
+
+<br />
+End Class</td>
+<br />
+	</tr>
+<br />
+</table>
+<br />
+<span class="postbody"><br />_________________<br />
+
+<br />
+<span style="font-size: 9px; line-height: normal"><a  target="_blank" class="postlink">www.3dlevel.com</a></span></span><span class="gensmall"></span></td>
+			</tr>
+		</table></td>
+	</tr>
+	<tr>
+		<td class="row2" width="150" align="left" valign="middle"><span class="nav"><a href="#top" class="nav">Nazaj na vrh</a></span></td>
+		<td class="row2" width="100%" height="28" valign="bottom" nowrap="nowrap"><table cellspacing="0" cellpadding="0" border="0" height="18" width="18">
+			<tr>
+				<td valign="middle" nowrap="nowrap"><a href="profile-11.html"><img src="templates/SGD2/images/lang_slovenian/icon_profile.gif" alt="Poglej uporabnikov profil" title="Poglej uporabnikov profil" border="0" /></a> <a  target="_userwww"><img src="templates/SGD2/images/lang_slovenian/icon_www.gif" alt="Obišči avtorjevo spletno stran" title="Obišči avtorjevo spletno stran" border="0" /></a></td>
+			</tr>
+		</table></td>
+	</tr>
+	<tr>
+		<td class="spaceRow" colspan="2" height="1"><img src="templates/SGD/images/spacer.gif" alt="" width="1" height="1" /></td>
+	</tr>
+	
+	<tr>
+		<td width="150" align="left" valign="top" class="row1"><span class="name"><a name="3555"></a><b>Rhuantavan</b></span><br /><span class="postdetails">SGD Admin<br /><img src="images/ranks/sgd-admin.gif" alt="SGD Admin" title="SGD Admin" border="0" /><br /><img src="images/avatars/c14db2394124b99a07556.gif" alt="" border="0" /><br /><br />Pridružen: 26. okt 2002 ob 14:16<br />objav: 644<br />Kraj: Renče (NG), Slovenia</span><br /></td>
+		<td class="row1" width="100%" height="28" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+			<tr>
+				<td colspan="2" width="100%">
+					<table width="100%" cellpadding="0" cellspacing="0" border="0">
+						<tr>
+							<td valign="middle" align="left">
+								<a href="topic-348.html#3555"><img src="templates/SGD2/images/icon_minipost.gif" width="12" height="9" alt="objava" title="objava" border="0" /></a>
+								<span class="postdetails">Objavljeno: tor sep 09, 2003 7:45 pm<span class="gen">&nbsp;</span>&nbsp; &nbsp;Pošlji temo: </span>
+							</td>
+							<td valign="middle" align="right" nowrap="nowrap">
+							</td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+			<tr>
+				<td colspan="2"><hr /></td>
+			</tr>
+			<tr>
+				<td colspan="2"><span class="postbody">Kavan, take lepo napisane delčke kode jih lahko z veseljem dodaš pod rubriko koda na glavni strani  <img src="images/smiles/icon_wink.gif" alt="icon_wink.gif" border="0" /><br />_________________<br /><span style="font-size: 10px; line-height: normal">Where's the fun?</span>
+
+<br />
+<span style="font-size: 10px; line-height: normal"><a  target="_blank" class="postlink">http://dw.slogamedev.net</a></span></span><span class="gensmall"></span></td>
+			</tr>
+		</table></td>
+	</tr>
+	<tr>
+		<td class="row1" width="150" align="left" valign="middle"><span class="nav"><a href="#top" class="nav">Nazaj na vrh</a></span></td>
+		<td class="row1" width="100%" height="28" valign="bottom" nowrap="nowrap"><table cellspacing="0" cellpadding="0" border="0" height="18" width="18">
+			<tr>
+				<td valign="middle" nowrap="nowrap"><a href="profile-2.html"><img src="templates/SGD2/images/lang_slovenian/icon_profile.gif" alt="Poglej uporabnikov profil" title="Poglej uporabnikov profil" border="0" /></a> <a  target="_userwww"><img src="templates/SGD2/images/lang_slovenian/icon_www.gif" alt="Obišči avtorjevo spletno stran" title="Obišči avtorjevo spletno stran" border="0" /></a></td>
+			</tr>
+		</table></td>
+	</tr>
+	<tr>
+		<td class="spaceRow" colspan="2" height="1"><img src="templates/SGD/images/spacer.gif" alt="" width="1" height="1" /></td>
+	</tr>
+	
+	<tr>
+		<td width="150" align="left" valign="top" class="row2"><span class="name"><a name="3556"></a><b>Kavan</b></span><br /><span class="postdetails">inštruktor<br /><img src="images/ranks/sgd-4.gif" alt="inštruktor" title="inštruktor" border="0" /><br /><br /><br />Pridružen: 10. jan 2003 ob 12:57<br />objav: 363<br />Kraj: Los Angeles</span><br /></td>
+		<td class="row2" width="100%" height="28" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+			<tr>
+				<td colspan="2" width="100%">
+					<table width="100%" cellpadding="0" cellspacing="0" border="0">
+						<tr>
+							<td valign="middle" align="left">
+								<a href="topic-348.html#3556"><img src="templates/SGD2/images/icon_minipost.gif" width="12" height="9" alt="objava" title="objava" border="0" /></a>
+								<span class="postdetails">Objavljeno: tor sep 09, 2003 9:40 pm<span class="gen">&nbsp;</span>&nbsp; &nbsp;Pošlji temo: </span>
+							</td>
+							<td valign="middle" align="right" nowrap="nowrap">
+							</td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+			<tr>
+				<td colspan="2"><hr /></td>
+			</tr>
+			<tr>
+				<td colspan="2"><span class="postbody">Ne vem, sem si predstavljal da je tam mišljena koda v bolj zaključeni obliki. Tukaj se class nanaša/sklicuje na kar nekaj periferije ki bi dolžino kode izdatno povečala.<br />_________________<br />
+
+<br />
+<span style="font-size: 9px; line-height: normal"><a  target="_blank" class="postlink">www.3dlevel.com</a></span></span><span class="gensmall"></span></td>
+			</tr>
+		</table></td>
+	</tr>
+	<tr>
+		<td class="row2" width="150" align="left" valign="middle"><span class="nav"><a href="#top" class="nav">Nazaj na vrh</a></span></td>
+		<td class="row2" width="100%" height="28" valign="bottom" nowrap="nowrap"><table cellspacing="0" cellpadding="0" border="0" height="18" width="18">
+			<tr>
+				<td valign="middle" nowrap="nowrap"><a href="profile-11.html"><img src="templates/SGD2/images/lang_slovenian/icon_profile.gif" alt="Poglej uporabnikov profil" title="Poglej uporabnikov profil" border="0" /></a> <a  target="_userwww"><img src="templates/SGD2/images/lang_slovenian/icon_www.gif" alt="Obišči avtorjevo spletno stran" title="Obišči avtorjevo spletno stran" border="0" /></a></td>
+			</tr>
+		</table></td>
+	</tr>
+	<tr>
+		<td class="spaceRow" colspan="2" height="1"><img src="templates/SGD/images/spacer.gif" alt="" width="1" height="1" /></td>
+	</tr>
+	
+	<tr>
+		<td width="150" align="left" valign="top" class="row1"><span class="name"><a name="3569"></a><b>CWIZO</b></span><br /><span class="postdetails">SGD Admin<br /><img src="images/ranks/sgd-admin.gif" alt="SGD Admin" title="SGD Admin" border="0" /><br /><img src="images/avatars/c2f9c6313f016e6cd131f.gif" alt="" border="0" /><br /><br />Pridružen: 05. maj 2003 ob 20:36<br />objav: 955<br />Kraj: WriteLine(CWIZO.Location);</span><br /></td>
+		<td class="row1" width="100%" height="28" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+			<tr>
+				<td colspan="2" width="100%">
+					<table width="100%" cellpadding="0" cellspacing="0" border="0">
+						<tr>
+							<td valign="middle" align="left">
+								<a href="topic-348.html#3569"><img src="templates/SGD2/images/icon_minipost.gif" width="12" height="9" alt="objava" title="objava" border="0" /></a>
+								<span class="postdetails">Objavljeno: čet sep 11, 2003 7:26 pm<span class="gen">&nbsp;</span>&nbsp; &nbsp;Pošlji temo: </span>
+							</td>
+							<td valign="middle" align="right" nowrap="nowrap">
+							</td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+			<tr>
+				<td colspan="2"><hr /></td>
+			</tr>
+			<tr>
+				<td colspan="2"><span class="postbody">Hmnja, bom jest kr z imageboxi naredil <img src="images/smiles/icon_biggrin.gif" alt="icon_biggrin.gif" border="0" /><br />_________________<br /><a  target="_blank" class="postlink">CWIZO.SloGameDev.net</a>
+
+<br />
+------
+
+<br />
+Kaj reče podedovan razred v C#u svojemu staršu?
+
+<br />
+- All your base are belong to us!</span><span class="gensmall"></span></td>
+			</tr>
+		</table></td>
+	</tr>
+	<tr>
+		<td class="row1" width="150" align="left" valign="middle"><span class="nav"><a href="#top" class="nav">Nazaj na vrh</a></span></td>
+		<td class="row1" width="100%" height="28" valign="bottom" nowrap="nowrap"><table cellspacing="0" cellpadding="0" border="0" height="18" width="18">
+			<tr>
+				<td valign="middle" nowrap="nowrap"><a href="profile-61.html"><img src="templates/SGD2/images/lang_slovenian/icon_profile.gif" alt="Poglej uporabnikov profil" title="Poglej uporabnikov profil" border="0" /></a> <a  target="_userwww"><img src="templates/SGD2/images/lang_slovenian/icon_www.gif" alt="Obišči avtorjevo spletno stran" title="Obišči avtorjevo spletno stran" border="0" /></a></td>
+			</tr>
+		</table></td>
+	</tr>
+	<tr>
+		<td class="spaceRow" colspan="2" height="1"><img src="templates/SGD/images/spacer.gif" alt="" width="1" height="1" /></td>
+	</tr>
+	
+	<tr>
+		<td width="150" align="left" valign="top" class="row2"><span class="name"><a name="3570"></a><b>Kavan</b></span><br /><span class="postdetails">inštruktor<br /><img src="images/ranks/sgd-4.gif" alt="inštruktor" title="inštruktor" border="0" /><br /><br /><br />Pridružen: 10. jan 2003 ob 12:57<br />objav: 363<br />Kraj: Los Angeles</span><br /></td>
+		<td class="row2" width="100%" height="28" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+			<tr>
+				<td colspan="2" width="100%">
+					<table width="100%" cellpadding="0" cellspacing="0" border="0">
+						<tr>
+							<td valign="middle" align="left">
+								<a href="topic-348.html#3570"><img src="templates/SGD2/images/icon_minipost.gif" width="12" height="9" alt="objava" title="objava" border="0" /></a>
+								<span class="postdetails">Objavljeno: čet sep 11, 2003 8:04 pm<span class="gen">&nbsp;</span>&nbsp; &nbsp;Pošlji temo: </span>
+							</td>
+							<td valign="middle" align="right" nowrap="nowrap">
+							</td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+			<tr>
+				<td colspan="2"><hr /></td>
+			</tr>
+			<tr>
+				<td colspan="2"><span class="postbody">Za enostaven primer vsekako preprosteje. Za bolj kompleksne projekte pa veš v kakšni smeri je potrebno razmišljat.<br />_________________<br />
+
+<br />
+<span style="font-size: 9px; line-height: normal"><a  target="_blank" class="postlink">www.3dlevel.com</a></span></span><span class="gensmall"></span></td>
+			</tr>
+		</table></td>
+	</tr>
+	<tr>
+		<td class="row2" width="150" align="left" valign="middle"><span class="nav"><a href="#top" class="nav">Nazaj na vrh</a></span></td>
+		<td class="row2" width="100%" height="28" valign="bottom" nowrap="nowrap"><table cellspacing="0" cellpadding="0" border="0" height="18" width="18">
+			<tr>
+				<td valign="middle" nowrap="nowrap"><a href="profile-11.html"><img src="templates/SGD2/images/lang_slovenian/icon_profile.gif" alt="Poglej uporabnikov profil" title="Poglej uporabnikov profil" border="0" /></a> <a  target="_userwww"><img src="templates/SGD2/images/lang_slovenian/icon_www.gif" alt="Obišči avtorjevo spletno stran" title="Obišči avtorjevo spletno stran" border="0" /></a></td>
+			</tr>
+		</table></td>
+	</tr>
+	<tr>
+		<td class="spaceRow" colspan="2" height="1"><img src="templates/SGD/images/spacer.gif" alt="" width="1" height="1" /></td>
+	</tr>
+	
+	<tr>
+		<td width="150" align="left" valign="top" class="row1"><span class="name"><a name="3574"></a><b>CWIZO</b></span><br /><span class="postdetails">SGD Admin<br /><img src="images/ranks/sgd-admin.gif" alt="SGD Admin" title="SGD Admin" border="0" /><br /><img src="images/avatars/c2f9c6313f016e6cd131f.gif" alt="" border="0" /><br /><br />Pridružen: 05. maj 2003 ob 20:36<br />objav: 955<br />Kraj: WriteLine(CWIZO.Location);</span><br /></td>
+		<td class="row1" width="100%" height="28" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+			<tr>
+				<td colspan="2" width="100%">
+					<table width="100%" cellpadding="0" cellspacing="0" border="0">
+						<tr>
+							<td valign="middle" align="left">
+								<a href="topic-348.html#3574"><img src="templates/SGD2/images/icon_minipost.gif" width="12" height="9" alt="objava" title="objava" border="0" /></a>
+								<span class="postdetails">Objavljeno: pet sep 12, 2003 4:55 pm<span class="gen">&nbsp;</span>&nbsp; &nbsp;Pošlji temo: </span>
+							</td>
+							<td valign="middle" align="right" nowrap="nowrap">
+							</td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+			<tr>
+				<td colspan="2"><hr /></td>
+			</tr>
+			<tr>
+				<td colspan="2"><span class="postbody">To itak ...<br />_________________<br /><a  target="_blank" class="postlink">CWIZO.SloGameDev.net</a>
+
+<br />
+------
+
+<br />
+Kaj reče podedovan razred v C#u svojemu staršu?
+
+<br />
+- All your base are belong to us!</span><span class="gensmall"></span></td>
+			</tr>
+		</table></td>
+	</tr>
+	<tr>
+		<td class="row1" width="150" align="left" valign="middle"><span class="nav"><a href="#top" class="nav">Nazaj na vrh</a></span></td>
+		<td class="row1" width="100%" height="28" valign="bottom" nowrap="nowrap"><table cellspacing="0" cellpadding="0" border="0" height="18" width="18">
+			<tr>
+				<td valign="middle" nowrap="nowrap"><a href="profile-61.html"><img src="templates/SGD2/images/lang_slovenian/icon_profile.gif" alt="Poglej uporabnikov profil" title="Poglej uporabnikov profil" border="0" /></a> <a  target="_userwww"><img src="templates/SGD2/images/lang_slovenian/icon_www.gif" alt="Obišči avtorjevo spletno stran" title="Obišči avtorjevo spletno stran" border="0" /></a></td>
+			</tr>
+		</table></td>
+	</tr>
+	<tr>
+		<td class="spaceRow" colspan="2" height="1"><img src="templates/SGD/images/spacer.gif" alt="" width="1" height="1" /></td>
+	</tr>
+	
+	<tr align="center">
+		<td class="catBottom" colspan="2" height="28">&nbsp;</td>
+	</tr>
+</table>
+
+<table width="100%" cellspacing="2" cellpadding="2" border="0" align="center">
+  <tr>
+	<td align="left" valign="middle" nowrap="nowrap">&nbsp;</td>
+	<td align="left" valign="middle" width="100%"><span class="nav">&nbsp;&nbsp;&nbsp;<a href="index.html" class="nav">SloGameDev.net seznam forumov</a>
+	  -> <a href="forum-10.html" class="nav">Za Začetnike</a></span></td>
+	<td align="right" valign="top" nowrap="nowrap"><span class="gensmall">Časovni pas (GMT +2:00 uri) Slovenija, poletni čas</span><br /><span class="nav"></span>
+	  </td>
+  </tr>
+  <tr>
+	<td align="left" colspan="3"><span class="nav">Stran <b>1</b> od <b>1</b></span></td>
+  </tr>
+</table>
+
+<table width="100%" cellspacing="2" border="0" align="center">
+  <tr>
+	<td width="40%" valign="top" nowrap="nowrap" align="left">&nbsp;</td>
+	<td align="right" valign="top" nowrap="nowrap">&nbsp;</td>
+  </tr>
+</table>
+
+<div align="center"><span class="copyright"><br />Arhiv stanja na dan 13. 2. 2006 &mdash; samo za branje.<br />
+<!--
+	We request you retain the full copyright notice below including the link to www.phpbb.com.
+	This not only gives respect to the large amount of time given freely by the developers
+	but also helps build interest, traffic and use of phpBB 2.0. If you cannot (for good
+	reason) retain the full copyright we request you at least leave in place the 
+	Powered by phpBB 2.0.4 line, with phpBB linked to www.phpbb.com. If you refuse
+	to include even this then support on our forums may be affected. 
+
+	The phpBB Group : 2002
+// -->
+Powered by <a  target="_phpbb" class="copyright">phpBB</a> 2.0.4 &copy; 2001, 2002 phpBB Group<br /></span></div>
+		</td>
+	</tr>
+</table>
+
+</body>
+</html>

@@ -1,0 +1,1534 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html dir="ltr">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta http-equiv="Content-Style-Type" content="text/css">
+<style type="text/css">
+<!--
+.style1 {color: #FFFFFF}
+-->
+</style>
+
+
+
+<title>SloGameDev.net :: Projeciranje senc + transformacije = nepravilne sence</title>
+<!-- link rel="stylesheet" href="templates/SGD/SGD2.css" type="text/css" -->
+<style type="text/css">
+<!--
+/*
+  The SGD Theme for phpBB version 2+
+  Created by Rhuantavan
+  http://www.rhuantavan.org
+
+  NOTE: These CSS definitions are stored within the main page body so that you can use the phpBB2
+  theme administration centre. When you have finalised your style you could cut the final CSS code
+  and place it in an external file, deleting this section to save bandwidth.
+*/
+
+/* General page style. The scroll bar colours only visible in IE5.5+ */
+body {
+	background-color: #DDDDDD;
+	scrollbar-face-color: #000000;
+	scrollbar-highlight-color: #000000;
+	scrollbar-3dlight-color: #EEEEEE;
+	scrollbar-darkshadow-color: #EEEEEE;
+	scrollbar-shadow-color: #000000;
+	scrollbar-arrow-color: #55FF00;
+	scrollbar-track-color: #EEEEEE;
+}
+
+/* General font families for common tags */
+font,th,td,p { font-family: Verdana, Arial, Helvetica, sans-serif }
+a:link,a:active,a:visited { color : #338800; }
+a:hover		{ text-decoration: underline; color : #338800; }
+hr	{ height: 0px; border: solid #E9E9E9 0px; border-top-width: 1px;}
+
+/* This is the border line & background colour round the entire page */
+.bodyline	{ background-color: #EEEEEE; border-left: 1px #000000 solid; border-right: 1px #000000 solid; }
+
+/* This is the outline round the main forum tables */
+.forumline	{ background-color: #EEEEEE; border: 0px #DDDDDD solid; }
+
+/* Main table cell colours and backgrounds */
+td.row1	{ background-color: #F8F8F8; }
+td.row2	{ background-color: #F0F0F0; }
+td.row3	{ background-color: #E9E9E9; }
+
+/*
+  This is for the table cell above the Topics, Post & Last posts on the index.php page
+  By default this is the fading out gradiated silver background.
+  However, you could replace this with a bitmap specific for each forum
+*/
+td.rowpic {
+		background-color: #EEEEEE;
+		background-image: url(templates/SGD/images/cellpic3.gif);
+		background-repeat: repeat-y;
+}
+
+/* Header cells - the blue and silver gradient backgrounds */
+th	{
+	color: #66CC33; font-size: 11px; font-weight : bold;
+	background-color: #338800; height: 25px;
+	background-image: url(templates/SGD/images/cellpic2.gif);
+}
+
+td.cat,td.catHead,td.catSides,td.catLeft,td.catRight,td.catBottom {
+			background-image: url(templates/SGD/images/cellpic1.gif);
+			background-color:#E9E9E9; border: #999999; border-style: solid; height: 28px;
+}
+
+/*
+  Setting additional nice inner borders for the main table cells.
+  The names indicate which sides the border will be on.
+  Don't worry if you don't understand this, just ignore it :-)
+*/
+td.cat,td.catHead,td.catBottom {
+	height: 29px;
+	border-width: 0px 0px 0px 0px;
+}
+th.thHead,th.thSides,th.thTop,th.thLeft,th.thRight,th.thBottom,th.thCornerL,th.thCornerR {
+	font-weight: bold; border: #EEEEEE; border-style: solid; height: 28px;
+}
+td.row3Right,td.spaceRow {
+	background-color: #E9E9E9; border: #999999; border-style: solid;
+}
+
+th.thHead,td.catHead { font-size: 12px; border-width: 0px 0px 0px 0px; }
+th.thSides,td.catSides,td.spaceRow	 { border-width: 0px 0px 0px 0px; }
+th.thRight,td.catRight,td.row3Right	 { border-width: 0px 0px 0px 0px; }
+th.thLeft,td.catLeft	  { border-width: 0px 0px 0px 0px; }
+th.thBottom,td.catBottom  { border-width: 0px 0px 0px 1px; }
+th.thTop	 { border-width: 0px 0px 0px 0px; }
+th.thCornerL { border-width: 0px 0px 0px 1px; }
+th.thCornerR { border-width: 0px 0px 0px 0px; }
+
+/* The largest text used in the index page title and toptic title etc. */
+.maintitle	{
+	font-weight: bold; font-size: 18px; font-family: "Trebuchet MS",Verdana, Arial, Helvetica, sans-serif;
+	text-decoration: none; line-height : 120%; color : #666666;
+}
+
+/* General text */
+.gen { font-size : 12px; }
+.genmed { font-size : 11px; }
+.gensmall { font-size : 10px; }
+.gen,.genmed,.gensmall { color : #666666; }
+a.gen,a.genmed,a.gensmall { color: #338800; text-decoration: none; }
+a.gen:hover,a.genmed:hover,a.gensmall:hover	{ color: #338800; text-decoration: underline; }
+
+/* The register, login, search etc links at the top of the page */
+.mainmenu		{ font-size : 11px; color : #666666 }
+a.mainmenu		{ text-decoration: none; color : #338800;  }
+a.mainmenu:hover{ text-decoration: underline; color : #338800; }
+
+/* SGD main menu */
+.sgdmainmenu			{ font-size : 10px; color : #99FF33 }
+a.sgdmainmenu:link		{ text-decoration: none; color : #99FF33;  }
+a.sgdmainmenu:active	{ text-decoration: none; color : #99FF33;  }
+a.sgdmainmenu:visited	{ text-decoration: none; color : #99FF33;  }
+a.sgdmainmenu:hover		{ text-decoration: underline; color : #99FF33; }
+
+/* Forum category titles */
+.cattitle		{ font-weight: bold; font-size: 12px ; letter-spacing: 1px; color : #338800}
+a.cattitle		{ text-decoration: none; color : #338800; }
+a.cattitle:hover{ text-decoration: underline; }
+
+/* Forum title: Text and link to the forums used in: index.php */
+.forumlink		{ font-weight: bold; font-size: 12px; color : #338800; }
+a.forumlink 	{ text-decoration: none; color : #338800; }
+a.forumlink:hover{ text-decoration: underline; color : #338800; }
+
+/* Used for the navigation text, (Page 1,2,3 etc) and the navigation bar when in a forum */
+.nav			{ font-weight: bold; font-size: 11px; color : #666666;}
+a.nav			{ text-decoration: none; color : #338800; }
+a.nav:hover		{ text-decoration: underline; }
+
+/* titles for the topics: could specify viewed link colour too */
+.topictitle,h1,h2	{ font-weight: bold; font-size: 11px; color : #666666; }
+a.topictitle:link   { text-decoration: none; color : #338800; }
+a.topictitle:visited { text-decoration: none; color : #338800; }
+a.topictitle:hover	{ text-decoration: underline; color : #338800; }
+
+/* Name of poster in viewmsg.php and viewtopic.php and other places */
+.name			{ font-size : 11px; color : #000000;}
+
+/* Location, number of posts, post date etc */
+.postdetails		{ font-size : 10px; color : #666666; }
+
+/* The content of the posts (body of text) */
+.postbody { font-size : 12px; line-height: 18px; color : #000000;}
+a.postlink:link	{ text-decoration: none; color : #338800 }
+a.postlink:visited { text-decoration: none; color : #338800; }
+a.postlink:hover { text-decoration: underline; color : #338800}
+
+/* Quote & Code blocks */
+.code {
+	font-family: Courier, 'Courier New', sans-serif; font-size: 11px; color: #006600;
+	background-color: #D6D6D6; border: #E9E9E9; border-style: solid;
+	border-left-width: 1px; border-top-width: 1px; border-right-width: 1px; border-bottom-width: 1px
+}
+
+.quote {
+	font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 11px; color: #444444; line-height: 125%;
+	background-color: #BBBBBB; border: #E9E9E9; border-style: solid;
+	border-left-width: 1px; border-top-width: 1px; border-right-width: 1px; border-bottom-width: 1px
+}
+
+/* Copyright and bottom info */
+.copyright		{ font-size: 10px; font-family: Verdana, Arial, Helvetica, sans-serif; color: #444444; letter-spacing: -1px;}
+a.copyright		{ color: #444444; text-decoration: none;}
+a.copyright:hover { color: #666666; text-decoration: underline;}
+
+/* Form elements */
+input,textarea, select {
+	color : #666666;
+	font: normal 11px Verdana, Arial, Helvetica, sans-serif;
+	border-color : #666666;
+}
+
+/* The text input fields background colour */
+input.post, textarea.post, select {
+	background-color : #EEEEEE;
+}
+
+input { text-indent : 2px; }
+
+/* The buttons used for bbCode styling in message post */
+input.button {
+	background-color : #F8F8F8;
+	color : #666666;
+	font-size: 11px; font-family: Verdana, Arial, Helvetica, sans-serif;
+}
+
+/* The main submit button option */
+input.mainoption {
+	background-color : #BBBBBB;
+	font-weight : bold;
+}
+
+/* None-bold submit button */
+input.liteoption {
+	background-color : #BBBBBB;
+	font-weight : normal;
+}
+
+/* This is the line in the posting page which shows the rollover
+  help line. This is actually a text box, but if set to be the same
+  colour as the background no one will know ;)
+*/
+.helpline { background-color: #F0F0F0; border-style: none; }
+
+/* Import the fancy styles for IE only (NS4.x doesn't use the @import function) */
+@import url("templates/SGD/formIE.css");
+-->
+</style>
+</head>
+<body bgcolor="#DDDDDD" text="#666666" link="#338800" vlink="#338800" topmargin="0" />
+<a name="top"></a>
+<table width="100%" cellspacing="0" cellpadding="0" border="0" align="center" nowrap>
+	<tr>
+		<td class="bodyline">
+			<table width="100%" border="0" cellpadding="0" cellspacing="0">
+				<tr>
+					<td bgcolor="#FFFFFF">
+						<img src="images/spacer.gif" width="760" height="20" alt=""></td>
+				</tr>
+			</table>
+			<table width="100%" border="0" cellpadding="0" cellspacing="0">
+				<tr>
+					<td bgcolor="#000000">
+						<a href="../index.html"><img src="images/home.gif" width="10" height="10" alt="" border="0"></a><img src="images/spacer.gif" width="5" height="5" alt=""><a href="../index.html" class="sgdmainmenu">Nazaj na domačo stran</a> <img src="images/defaulticon_green.gif" alt="" width="7" height="7" border="0"> <a href="../clanki.html" class="sgdmainmenu">Clanki</a> <img src="images/defaulticon_green.gif" alt="" width="7" height="7" border="0"> <a href="../koda.html" class="sgdmainmenu">Koda</a> <img src="images/defaulticon_green.gif" alt="" width="7" height="7" border="0"> <a href="../clani.html" class="sgdmainmenu">Clani</a> <img src="images/defaulticon_green.gif" alt="" width="7" height="7" border="0"> <a href="../skupine.html" class="sgdmainmenu">Skupine</a> <img src="images/defaulticon_green.gif" alt="" width="7" height="7" border="0"> <a href="../projekti.html" class="sgdmainmenu">Projekti</a> <img src="images/defaulticon_green.gif" alt="" width="7" height="7" border="0"> <a href="../povezave.html" class="sgdmainmenu">Povezave</a></td>
+				</tr>
+			</table>
+			<table width="100%" border="0" cellpadding="0" cellspacing="0">
+				<tr>
+					<td colspan="3" bgcolor="#000000">
+						<img src="images/spacer.gif" width="760" height="10" alt=""></td>
+				</tr>
+				<tr>
+					<td>
+						<a href="index.html"><img src="images/logo.gif" width="351" height="62" alt="" border="0"></a></td>
+					<td>
+						<img src="images/forum_03.gif" width="408" height="62" alt=""></td>
+					<td width="100%" bgcolor="#000000">
+						<img src="images/spacer.gif" width="1" height="1" alt=""></td>
+				</tr>
+				<tr>
+					<td colspan="3" bgcolor="#000000" align="center">
+						<a href="memberlist.html" class="sgdmainmenu"><img src="images/defaulticon_green.gif" alt="" width="7" height="7" border="0">&nbsp;Seznam članov</a>
+						<a href="index.html" class="sgdmainmenu"><img src="images/defaulticon_green.gif" alt="" width="7" height="7" border="0">&nbsp;Seznam</a></td>
+				</tr>
+				<tr>
+					<td colspan="3" bgcolor="#000000">
+						<img src="images/spacer.gif" width="760" height="5" alt=""></td>
+				</tr>
+			</table>
+
+<table width="100%" cellspacing="2" cellpadding="2" border="0">
+  <tr>
+	<td align="left" valign="bottom" colspan="2"><a class="maintitle" href="topic-327.html">Projeciranje senc + transformacije = nepravilne sence</a><br />
+	  <span class="gensmall"><b></b><br />
+	  &nbsp; </span></td>
+  </tr>
+</table>
+
+<table width="100%" cellspacing="2" cellpadding="2" border="0">
+  <tr>
+	<td align="left" valign="bottom" nowrap="nowrap">&nbsp;</td>
+	<td align="left" valign="middle" width="100%"><span class="nav">&nbsp;&nbsp;&nbsp;<a href="index.html" class="nav">SloGameDev.net seznam forumov</a>
+	  -> <a href="forum-15.html" class="nav">Grafično Programiranje</a></span></td>
+  </tr>
+</table>
+
+<table class="forumline" width="100%" cellspacing="1" cellpadding="3" border="0">
+	<tr align="right">
+		<td class="catHead" colspan="2" height="28"><span class="nav"><a href="topic-376.html" class="nav">Prejšnja tema</a> :: <a href="topic-428.html" class="nav">Naslednja tema</a> &nbsp;</span></td>
+	</tr>
+	
+	<tr>
+		<th class="thLeft" width="150" height="26" nowrap="nowrap">avtor</th>
+		<th class="thRight" nowrap="nowrap">Sporočilo</th>
+	</tr>
+	
+	<tr>
+		<td width="150" align="left" valign="top" class="row1"><span class="name"><a name="3245"></a><b>Wingman</b></span><br /><span class="postdetails">SGD Moderator<br /><img src="images/ranks/sgd-mod.gif" alt="SGD Moderator" title="SGD Moderator" border="0" /><br /><img src="images/avatars/c14d9fca410a4a42927d3.jpg" alt="" border="0" /><br /><br />Pridružen: 08. jan 2003 ob 21:33<br />objav: 293<br />Kraj: Kranj</span><br /></td>
+		<td class="row1" width="100%" height="28" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+			<tr>
+				<td colspan="2" width="100%">
+					<table width="100%" cellpadding="0" cellspacing="0" border="0">
+						<tr>
+							<td valign="middle" align="left">
+								<a href="topic-327.html#3245"><img src="templates/SGD2/images/icon_minipost.gif" width="12" height="9" alt="objava" title="objava" border="0" /></a>
+								<span class="postdetails">Objavljeno: pet avg 08, 2003 2:13 pm<span class="gen">&nbsp;</span>&nbsp; &nbsp;Pošlji temo: Projeciranje senc + transformacije = nepravilne sence</span>
+							</td>
+							<td valign="middle" align="right" nowrap="nowrap">
+							</td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+			<tr>
+				<td colspan="2"><hr /></td>
+			</tr>
+			<tr>
+				<td colspan="2"><span class="postbody">Zadnje dni me ob živce spravlja problem s projeciranjem senc (planar projected shadows, uporabljam stencil buffer). Tega ne delam prvič, zato sem skoraj živce zgubil, ker ne vem, kako naj naredim, da bo tako banalna stvar delala, kot more. Problem je, da so sence nepravilno prikazane.
+
+<br />
+
+
+<br />
+Najprej koda, potem pa ugotovitve:
+
+<br />
+
+
+<br />
+Tole nariše površino, kamor se senca projecira:
+
+<br />
+</span>
+<br />
+<table width="90%" cellspacing="1" cellpadding="3" border="0" align="center">
+<br />
+<tr> 
+<br />
+	  <td><span class="genmed"><b>Koda:</b></span></td>
+<br />
+	</tr>
+<br />
+	<tr>
+<br />
+	  <td class="code">
+
+<br />
+///// rSurface &#40;&#41; /////
+
+<br />
+void str_Render&#58;&#58;rSurface &#40;const float pos &#91;3&#93;, const float size &#91;3&#93;, const float rot &#91;3&#93;, float deg&#41;
+
+<br />
+&#123;
+
+<br />
+&nbsp; &nbsp;glBindTexture &#40;GL_TEXTURE_2D, floor_tex-&gt;Tex&#41;;
+
+<br />
+
+
+<br />
+&nbsp; &nbsp;glPushMatrix &#40;&#41;;
+
+<br />
+
+
+<br />
+&nbsp; &nbsp;glTranslatef &#40;pos &#91;0&#93;, pos &#91;1&#93;, pos &#91;2&#93;&#41;;
+
+<br />
+&nbsp; &nbsp;glRotatef&nbsp; &nbsp; &#40;deg, rot &#91;0&#93;, rot &#91;1&#93;, rot &#91;2&#93;&#41;;
+
+<br />
+&nbsp; &nbsp;glScalef&nbsp; &nbsp; &#40;size &#91;0&#93;, size &#91;1&#93;, size &#91;2&#93;&#41;;
+
+<br />
+
+
+<br />
+&nbsp; &nbsp;... // nariše površino
+
+<br />
+&nbsp; &nbsp;
+
+<br />
+&nbsp; &nbsp;glPopMatrix &#40;&#41;;
+
+<br />
+&#125;
+
+<br />
+</td>
+<br />
+	</tr>
+<br />
+</table>
+<br />
+<span class="postbody">
+
+<br />
+
+
+<br />
+Takole izgleda koda, ki nariše predmet, ki meče senco (ta del kode je pomemben, saj lahko vpliva na pravilnost sence):
+
+<br />
+</span>
+<br />
+<table width="90%" cellspacing="1" cellpadding="3" border="0" align="center">
+<br />
+<tr> 
+<br />
+	  <td><span class="genmed"><b>Koda:</b></span></td>
+<br />
+	</tr>
+<br />
+	<tr>
+<br />
+	  <td class="code">
+
+<br />
+///// rObject &#40;&#41; /////
+
+<br />
+/* pozornost usmerite na zadnji parameter &quot;shadow&quot; - ko narišemo &quot;pravi&quot; predmet, ima vrednost false, ko pa rišemo senco, je true - s tem množimo shadow-projection matrix
+
+<br />
+*/
+
+<br />
+void str_Render&#58;&#58;rObject &#40;const float pos &#91;3&#93;, const float size &#91;3&#93;, float rot &#91;3&#93;, float deg, bool shadow&#41;
+
+<br />
+&#123;
+
+<br />
+&nbsp; &nbsp;glBindTexture &#40;GL_TEXTURE_2D, obj_tex-&gt;Tex&#41;;
+
+<br />
+
+
+<br />
+&nbsp; &nbsp; &nbsp;  // ko bomo narisali senco...
+
+<br />
+&nbsp; &nbsp;if &#40;shadow&#41;
+
+<br />
+&nbsp; &nbsp;&#123;
+
+<br />
+&nbsp; &nbsp;&nbsp; &nbsp;glPushMatrix &#40;&#41;;
+
+<br />
+&nbsp; &nbsp;&nbsp; &nbsp;glMultMatrixf &#40;shd_matrix&#41;;
+
+<br />
+&nbsp; &nbsp;&#125;
+
+<br />
+&nbsp; &nbsp;
+
+<br />
+
+
+<br />
+&nbsp; &nbsp;glPushMatrix &#40;&#41;;
+
+<br />
+
+
+<br />
+&nbsp; &nbsp;if &#40;shadow&#41;
+
+<br />
+&nbsp; &nbsp;&#123;
+
+<br />
+&nbsp; &nbsp; &nbsp; // pozor pri glScalef - 0.0f za y je zato, da je senca 2D
+
+<br />
+&nbsp; &nbsp;&nbsp; &nbsp;glTranslatef &#40;pos &#91;0&#93;, pos &#91;1&#93;, pos &#91;2&#93;&#41;;
+
+<br />
+&nbsp; &nbsp;&nbsp; &nbsp;glRotatef&nbsp; &nbsp; &#40;deg, rot &#91;0&#93;, rot &#91;1&#93;, rot &#91;2&#93;&#41;;
+
+<br />
+&nbsp; &nbsp;&nbsp; &nbsp;glScalef&nbsp; &nbsp; &#40;size &#91;0&#93;, 0.0f, size &#91;2&#93;&#41;;
+
+<br />
+&nbsp; &nbsp;&#125;
+
+<br />
+&nbsp; &nbsp;else
+
+<br />
+&nbsp; &nbsp;&#123;
+
+<br />
+&nbsp; &nbsp;&nbsp; &nbsp;glTranslatef &#40;pos &#91;0&#93;, pos &#91;1&#93;, pos &#91;2&#93;&#41;;
+
+<br />
+&nbsp; &nbsp;&nbsp; &nbsp;glRotatef&nbsp; &nbsp; &#40;deg, rot &#91;0&#93;, rot &#91;1&#93;, rot &#91;2&#93;&#41;;
+
+<br />
+&nbsp; &nbsp;&nbsp; &nbsp;glScalef&nbsp; &nbsp; &#40;size &#91;0&#93;,size &#91;1&#93;, size &#91;2&#93;&#41;;&nbsp; &nbsp;
+
+<br />
+&nbsp; &nbsp;&#125;
+
+<br />
+
+
+<br />
+&nbsp; &nbsp;... // nariše kocko
+
+<br />
+
+
+<br />
+&nbsp; &nbsp;glPopMatrix &#40;&#41;;
+
+<br />
+
+
+<br />
+&nbsp; &nbsp;if &#40;shadow&#41;
+
+<br />
+&nbsp; &nbsp;&#123;
+
+<br />
+&nbsp; &nbsp;&nbsp; &nbsp;glPopMatrix &#40;&#41;;
+
+<br />
+&nbsp; &nbsp;&#125;
+
+<br />
+&#125;
+
+<br />
+</td>
+<br />
+	</tr>
+<br />
+</table>
+<br />
+<span class="postbody">
+
+<br />
+
+
+<br />
+Transformacije vsekakor vplivajo na videz sence, saj v primeru, da ne bi klical "glScalef" s parametrom 0 za y velikost, senca sploh ne bi zgledala kot senca ampak kot razpotegnjena 3D kocka v tleh. No, sej sedaj tud ne zgleda kot senca, samo boljše je pa že. 
+
+<br />
+Upam, da je ta del pravilen.
+
+<br />
+
+
+<br />
+Naprej - koda, ki izriše vse skupaj:
+
+<br />
+</span>
+<br />
+<table width="90%" cellspacing="1" cellpadding="3" border="0" align="center">
+<br />
+<tr> 
+<br />
+	  <td><span class="genmed"><b>Koda:</b></span></td>
+<br />
+	</tr>
+<br />
+	<tr>
+<br />
+	  <td class="code">
+
+<br />
+///// Izrisovanje scene. /////
+
+<br />
+void fncRender &#40;&#41;
+
+<br />
+&#123;
+
+<br />
+&nbsp;  glClear &#40;GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT | GL_STENCIL_BUFFER_BIT&#41;;
+
+<br />
+&nbsp; &nbsp;glLoadIdentity &#40;&#41;;
+
+<br />
+
+
+<br />
+&nbsp; &nbsp;gluLookAt &#40;x_p, y_p, z_p, x_l, y_l, z_l, 0.0f, 1.0f, 0.0f&#41;;
+
+<br />
+
+
+<br />
+&nbsp; &nbsp;glEnable &#40;GL_STENCIL_TEST&#41;;
+
+<br />
+
+
+<br />
+&nbsp; &nbsp;glStencilFunc &#40;GL_ALWAYS, 1, 1&#41;;
+
+<br />
+&nbsp; &nbsp;glStencilOp &#40;GL_KEEP, GL_KEEP, GL_REPLACE&#41;;
+
+<br />
+&nbsp; &nbsp;
+
+<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  // nariše tla v stencil buffer &#40;področje izrisovanja&#41; in color buffer
+
+<br />
+&nbsp; &nbsp;Render.rSurface &#40;floor_pos, floor_size, floor_rot, 90.0f&#41;;
+
+<br />
+
+
+<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; // nastavitve za izris sence
+
+<br />
+&nbsp; &nbsp;glEnable &#40;GL_BLEND&#41;;
+
+<br />
+&nbsp; &nbsp;glBlendFunc &#40;GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA&#41;;
+
+<br />
+&nbsp; &nbsp;glDisable &#40;GL_DEPTH_TEST&#41;;
+
+<br />
+&nbsp; &nbsp;glDisable &#40;GL_TEXTURE_2D&#41;;
+
+<br />
+&nbsp; &nbsp;glColor4f &#40;0.0f, 0.0f, 0.0f, 0.5f&#41;;
+
+<br />
+&nbsp; &nbsp;
+
+<br />
+&nbsp; &nbsp;glStencilFunc &#40;GL_EQUAL, 1, 1&#41;;
+
+<br />
+&nbsp; &nbsp;glStencilOp &#40;GL_KEEP, GL_KEEP, GL_INCR&#41;;&nbsp; &nbsp;
+
+<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 
+
+<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; // izračuna projekcijsko matriko in nariše senco
+
+<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; // &#40;pozorni bodite na zadnji parameter, ki je true
+
+<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; // - glejte funkcijo rObject &#40;&#41;;
+
+<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; fncShadowMatrix &#40;shd_matrix, plane, light_pos&#41;;
+
+<br />
+&nbsp; &nbsp;Render.rObject &#40;cube_pos,&nbsp; cube_size,&nbsp; cube_rot, cube_degrot, true&#41;;
+
+<br />
+
+
+<br />
+&nbsp; &nbsp;glColor3f &#40;1.0f, 1.0f, 1.0f&#41;;
+
+<br />
+&nbsp; &nbsp;glDisable &#40;GL_BLEND&#41;;
+
+<br />
+&nbsp; &nbsp;glEnable &#40;GL_DEPTH_TEST&#41;;
+
+<br />
+&nbsp; &nbsp;glEnable &#40;GL_TEXTURE_2D&#41;;
+
+<br />
+&nbsp; &nbsp;
+
+<br />
+&nbsp; &nbsp;glDisable &#40;GL_STENCIL_TEST&#41;;
+
+<br />
+
+
+<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; // nariše pravi predmet - shadow = false
+
+<br />
+&nbsp; &nbsp;Render.rObject&nbsp; &#40;cube_pos,&nbsp; cube_size,&nbsp; cube_rot, cube_degrot, false&#41;;
+
+<br />
+&#125;
+
+<br />
+</td>
+<br />
+	</tr>
+<br />
+</table>
+<br />
+<span class="postbody">
+
+<br />
+
+
+<br />
+Kot sem omenil, senca izgleda čisto napačna. Pri prejšnjih primerih je delalo, saj nisem uporabljal glScale/Rotate/Translate, ki senco čisto razsujejo. Je mogoče tukaj kaj narobe?
+
+<br />
+
+
+<br />
+Še ena možnost je, da je treba zaradi transformacij drugače izračunat matriko ali kaj podobnega. Zaenkrat izgleda takole (torej običajna in pravilna):
+
+<br />
+
+
+<br />
+</span>
+<br />
+<table width="90%" cellspacing="1" cellpadding="3" border="0" align="center">
+<br />
+<tr> 
+<br />
+	  <td><span class="genmed"><b>Koda:</b></span></td>
+<br />
+	</tr>
+<br />
+	<tr>
+<br />
+	  <td class="code">void fncShadowMatrix &#40;float shd_matrix &#91;16&#93;, float plane &#91;4&#93;, float light_pos &#91;4&#93;&#41;
+
+<br />
+&#123;
+
+<br />
+&nbsp; &nbsp;float dot;
+
+<br />
+&nbsp; &nbsp;dot =&nbsp; &nbsp;plane &#91;0&#93; * light_pos &#91;0&#93; + plane &#91;1&#93; * light_pos &#91;1&#93; + 
+
+<br />
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;plane &#91;1&#93; * light_pos &#91;2&#93; + plane &#91;3&#93; * light_pos &#91;3&#93;;
+
+<br />
+
+
+<br />
+
+
+<br />
+&nbsp; &nbsp;shd_matrix &#91;0&#93;&nbsp; = dot&nbsp; - light_pos &#91;0&#93; * plane &#91;0&#93;;
+
+<br />
+&nbsp; &nbsp;shd_matrix &#91;4&#93;&nbsp; = 0.0f - light_pos &#91;0&#93; * plane &#91;1&#93;;
+
+<br />
+&nbsp; &nbsp;shd_matrix &#91;8&#93;&nbsp; = 0.0f - light_pos &#91;0&#93; * plane &#91;2&#93;;
+
+<br />
+&nbsp; &nbsp;shd_matrix &#91;12&#93; = 0.0f - light_pos &#91;0&#93; * plane &#91;3&#93;;
+
+<br />
+
+
+<br />
+&nbsp; &nbsp;shd_matrix &#91;1&#93;&nbsp; = 0.0f - light_pos &#91;1&#93; * plane &#91;0&#93;;
+
+<br />
+&nbsp; &nbsp;shd_matrix &#91;5&#93;&nbsp; = dot&nbsp; - light_pos &#91;1&#93; * plane &#91;1&#93;;
+
+<br />
+&nbsp; &nbsp;shd_matrix &#91;9&#93;&nbsp; = 0.0f - light_pos &#91;1&#93; * plane &#91;2&#93;;
+
+<br />
+&nbsp; &nbsp;shd_matrix &#91;13&#93; = 0.0f - light_pos &#91;1&#93; * plane &#91;3&#93;;
+
+<br />
+
+
+<br />
+&nbsp; &nbsp;shd_matrix &#91;2&#93;&nbsp; = 0.0f - light_pos &#91;2&#93; * plane &#91;0&#93;;
+
+<br />
+&nbsp; &nbsp;shd_matrix &#91;6&#93;&nbsp; = 0.0f - light_pos &#91;2&#93; * plane &#91;1&#93;;
+
+<br />
+&nbsp; &nbsp;shd_matrix &#91;10&#93; = dot&nbsp; - light_pos &#91;2&#93; * plane &#91;2&#93;;
+
+<br />
+&nbsp; &nbsp;shd_matrix &#91;14&#93; = 0.0f - light_pos &#91;2&#93; * plane &#91;3&#93;;
+
+<br />
+
+
+<br />
+&nbsp; &nbsp;shd_matrix &#91;3&#93;&nbsp; = 0.0f - light_pos &#91;3&#93; * plane &#91;0&#93;;
+
+<br />
+&nbsp; &nbsp;shd_matrix &#91;7&#93;&nbsp; = 0.0f - light_pos &#91;3&#93; * plane &#91;1&#93;;
+
+<br />
+&nbsp; &nbsp;shd_matrix &#91;11&#93; = 0.0f - light_pos &#91;3&#93; * plane &#91;2&#93;;
+
+<br />
+&nbsp; &nbsp;shd_matrix &#91;15&#93; = dot&nbsp; - light_pos &#91;3&#93; * plane &#91;3&#93;;
+
+<br />
+&#125;</td>
+<br />
+	</tr>
+<br />
+</table>
+<br />
+<span class="postbody">
+
+<br />
+
+
+<br />
+Tole pa izračuna d vrednost (iz enačbe za površino) za "plane" parameter:
+
+<br />
+</span>
+<br />
+<table width="90%" cellspacing="1" cellpadding="3" border="0" align="center">
+<br />
+<tr> 
+<br />
+	  <td><span class="genmed"><b>Koda:</b></span></td>
+<br />
+	</tr>
+<br />
+	<tr>
+<br />
+	  <td class="code">///// fncCalcDValue &#40;&#41; /////
+
+<br />
+float fncCalcDValue &#40;float floor_normal &#91;3&#93;, const float floor_pos &#91;3&#93;&#41;
+
+<br />
+&#123;
+
+<br />
+&nbsp; &nbsp;// A*x + B*y + C*z + D = 0;
+
+<br />
+
+
+<br />
+&nbsp; &nbsp;float D;
+
+<br />
+&nbsp; &nbsp;D =&nbsp; floor_normal &#91;0&#93; * floor_pos &#91;0&#93; + 
+
+<br />
+&nbsp; &nbsp;&nbsp; &nbsp; &nbsp;  floor_normal &#91;1&#93; * floor_pos &#91;1&#93; + 
+
+<br />
+&nbsp; &nbsp;&nbsp; &nbsp; &nbsp;  floor_normal &#91;2&#93; * floor_pos &#91;2&#93;;
+
+<br />
+
+
+<br />
+&nbsp; &nbsp;return -D;
+
+<br />
+&#125;</td>
+<br />
+	</tr>
+<br />
+</table>
+<br />
+<span class="postbody">
+
+<br />
+
+
+<br />
+Mazilim podplate tistemu, ki reši tole tako, da bo senca pravilna (sem že spraševal pa nihče ni vedel).</span><span class="gensmall"></span></td>
+			</tr>
+		</table></td>
+	</tr>
+	<tr>
+		<td class="row1" width="150" align="left" valign="middle"><span class="nav"><a href="#top" class="nav">Nazaj na vrh</a></span></td>
+		<td class="row1" width="100%" height="28" valign="bottom" nowrap="nowrap"><table cellspacing="0" cellpadding="0" border="0" height="18" width="18">
+			<tr>
+				<td valign="middle" nowrap="nowrap"><a href="profile-7.html"><img src="templates/SGD2/images/lang_slovenian/icon_profile.gif" alt="Poglej uporabnikov profil" title="Poglej uporabnikov profil" border="0" /></a> </td>
+			</tr>
+		</table></td>
+	</tr>
+	<tr>
+		<td class="spaceRow" colspan="2" height="1"><img src="templates/SGD/images/spacer.gif" alt="" width="1" height="1" /></td>
+	</tr>
+	
+	<tr>
+		<td width="150" align="left" valign="top" class="row2"><span class="name"><a name="3246"></a><b>Senitel</b></span><br /><span class="postdetails">wannabe<br /><img src="images/ranks/sgd-2.gif" alt="wannabe" title="wannabe" border="0" /><br /><br /><br />Pridružen: 02. jul 2003 ob 17:01<br />objav: 97<br /></span><br /></td>
+		<td class="row2" width="100%" height="28" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+			<tr>
+				<td colspan="2" width="100%">
+					<table width="100%" cellpadding="0" cellspacing="0" border="0">
+						<tr>
+							<td valign="middle" align="left">
+								<a href="topic-327.html#3246"><img src="templates/SGD2/images/icon_minipost.gif" width="12" height="9" alt="objava" title="objava" border="0" /></a>
+								<span class="postdetails">Objavljeno: pet avg 08, 2003 5:32 pm<span class="gen">&nbsp;</span>&nbsp; &nbsp;Pošlji temo: </span>
+							</td>
+							<td valign="middle" align="right" nowrap="nowrap">
+							</td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+			<tr>
+				<td colspan="2"><hr /></td>
+			</tr>
+			<tr>
+				<td colspan="2"><span class="postbody">Bi lahko dobili kakšen screen shot, ali vsaj malce natančnejši opis kaj je narobe s secno?</span><span class="gensmall"></span></td>
+			</tr>
+		</table></td>
+	</tr>
+	<tr>
+		<td class="row2" width="150" align="left" valign="middle"><span class="nav"><a href="#top" class="nav">Nazaj na vrh</a></span></td>
+		<td class="row2" width="100%" height="28" valign="bottom" nowrap="nowrap"><table cellspacing="0" cellpadding="0" border="0" height="18" width="18">
+			<tr>
+				<td valign="middle" nowrap="nowrap"><a href="profile-74.html"><img src="templates/SGD2/images/lang_slovenian/icon_profile.gif" alt="Poglej uporabnikov profil" title="Poglej uporabnikov profil" border="0" /></a> </td>
+			</tr>
+		</table></td>
+	</tr>
+	<tr>
+		<td class="spaceRow" colspan="2" height="1"><img src="templates/SGD/images/spacer.gif" alt="" width="1" height="1" /></td>
+	</tr>
+	
+	<tr>
+		<td width="150" align="left" valign="top" class="row1"><span class="name"><a name="3250"></a><b>Wingman</b></span><br /><span class="postdetails">SGD Moderator<br /><img src="images/ranks/sgd-mod.gif" alt="SGD Moderator" title="SGD Moderator" border="0" /><br /><img src="images/avatars/c14d9fca410a4a42927d3.jpg" alt="" border="0" /><br /><br />Pridružen: 08. jan 2003 ob 21:33<br />objav: 293<br />Kraj: Kranj</span><br /></td>
+		<td class="row1" width="100%" height="28" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+			<tr>
+				<td colspan="2" width="100%">
+					<table width="100%" cellpadding="0" cellspacing="0" border="0">
+						<tr>
+							<td valign="middle" align="left">
+								<a href="topic-327.html#3250"><img src="templates/SGD2/images/icon_minipost.gif" width="12" height="9" alt="objava" title="objava" border="0" /></a>
+								<span class="postdetails">Objavljeno: pet avg 08, 2003 8:02 pm<span class="gen">&nbsp;</span>&nbsp; &nbsp;Pošlji temo: </span>
+							</td>
+							<td valign="middle" align="right" nowrap="nowrap">
+							</td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+			<tr>
+				<td colspan="2"><hr /></td>
+			</tr>
+			<tr>
+				<td colspan="2"><span class="postbody">Hahaaaaaaaaaa problem rešen. <img src="images/smiles/icon_smile.gif" alt="icon_smile.gif" border="0" />
+
+<br />
+
+
+<br />
+Pozneje napišem več.</span><span class="gensmall"></span></td>
+			</tr>
+		</table></td>
+	</tr>
+	<tr>
+		<td class="row1" width="150" align="left" valign="middle"><span class="nav"><a href="#top" class="nav">Nazaj na vrh</a></span></td>
+		<td class="row1" width="100%" height="28" valign="bottom" nowrap="nowrap"><table cellspacing="0" cellpadding="0" border="0" height="18" width="18">
+			<tr>
+				<td valign="middle" nowrap="nowrap"><a href="profile-7.html"><img src="templates/SGD2/images/lang_slovenian/icon_profile.gif" alt="Poglej uporabnikov profil" title="Poglej uporabnikov profil" border="0" /></a> </td>
+			</tr>
+		</table></td>
+	</tr>
+	<tr>
+		<td class="spaceRow" colspan="2" height="1"><img src="templates/SGD/images/spacer.gif" alt="" width="1" height="1" /></td>
+	</tr>
+	
+	<tr>
+		<td width="150" align="left" valign="top" class="row2"><span class="name"><a name="3251"></a><b>GupeM</b></span><br /><span class="postdetails">wannabe<br /><img src="images/ranks/sgd-2.gif" alt="wannabe" title="wannabe" border="0" /><br /><img src="images/avatars/c14d51e34222dc2e8244d.gif" alt="" border="0" /><br /><br />Pridružen: 30. jun 2003 ob 10:13<br />objav: 136<br />Kraj: Žiri</span><br /></td>
+		<td class="row2" width="100%" height="28" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+			<tr>
+				<td colspan="2" width="100%">
+					<table width="100%" cellpadding="0" cellspacing="0" border="0">
+						<tr>
+							<td valign="middle" align="left">
+								<a href="topic-327.html#3251"><img src="templates/SGD2/images/icon_minipost.gif" width="12" height="9" alt="objava" title="objava" border="0" /></a>
+								<span class="postdetails">Objavljeno: pet avg 08, 2003 9:38 pm<span class="gen">&nbsp;</span>&nbsp; &nbsp;Pošlji temo: </span>
+							</td>
+							<td valign="middle" align="right" nowrap="nowrap">
+							</td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+			<tr>
+				<td colspan="2"><hr /></td>
+			</tr>
+			<tr>
+				<td colspan="2"><span class="postbody">Sam sebi boš podplate mazilil. <img src="images/smiles/icon_biggrin.gif" alt="icon_biggrin.gif" border="0" />  <img src="images/smiles/icon_biggrin.gif" alt="icon_biggrin.gif" border="0" /> <img src="images/smiles/icon_mrgreen.gif" alt="icon_mrgreen.gif" border="0" />  <img src="images/smiles/icon_mrgreen.gif" alt="icon_mrgreen.gif" border="0" /><br />_________________<br />Se naenkrat roke dvignejo, vrata se odpro in v zraku vidim deklico, ki na prsih nosi.
+
+<br />
+Finis Mundi/Konec je sveta.</span><span class="gensmall"></span></td>
+			</tr>
+		</table></td>
+	</tr>
+	<tr>
+		<td class="row2" width="150" align="left" valign="middle"><span class="nav"><a href="#top" class="nav">Nazaj na vrh</a></span></td>
+		<td class="row2" width="100%" height="28" valign="bottom" nowrap="nowrap"><table cellspacing="0" cellpadding="0" border="0" height="18" width="18">
+			<tr>
+				<td valign="middle" nowrap="nowrap"><a href="profile-73.html"><img src="templates/SGD2/images/lang_slovenian/icon_profile.gif" alt="Poglej uporabnikov profil" title="Poglej uporabnikov profil" border="0" /></a> <a  target="_userwww"><img src="templates/SGD2/images/lang_slovenian/icon_www.gif" alt="Obišči avtorjevo spletno stran" title="Obišči avtorjevo spletno stran" border="0" /></a></td>
+			</tr>
+		</table></td>
+	</tr>
+	<tr>
+		<td class="spaceRow" colspan="2" height="1"><img src="templates/SGD/images/spacer.gif" alt="" width="1" height="1" /></td>
+	</tr>
+	
+	<tr>
+		<td width="150" align="left" valign="top" class="row1"><span class="name"><a name="3252"></a><b>Wingman</b></span><br /><span class="postdetails">SGD Moderator<br /><img src="images/ranks/sgd-mod.gif" alt="SGD Moderator" title="SGD Moderator" border="0" /><br /><img src="images/avatars/c14d9fca410a4a42927d3.jpg" alt="" border="0" /><br /><br />Pridružen: 08. jan 2003 ob 21:33<br />objav: 293<br />Kraj: Kranj</span><br /></td>
+		<td class="row1" width="100%" height="28" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+			<tr>
+				<td colspan="2" width="100%">
+					<table width="100%" cellpadding="0" cellspacing="0" border="0">
+						<tr>
+							<td valign="middle" align="left">
+								<a href="topic-327.html#3252"><img src="templates/SGD2/images/icon_minipost.gif" width="12" height="9" alt="objava" title="objava" border="0" /></a>
+								<span class="postdetails">Objavljeno: pet avg 08, 2003 10:14 pm<span class="gen">&nbsp;</span>&nbsp; &nbsp;Pošlji temo: </span>
+							</td>
+							<td valign="middle" align="right" nowrap="nowrap">
+							</td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+			<tr>
+				<td colspan="2"><hr /></td>
+			</tr>
+			<tr>
+				<td colspan="2"><span class="postbody">Heh ja  <img src="images/smiles/icon_smile.gif" alt="icon_smile.gif" border="0" />.. v bistvu je bil edini problem v normalah. Tla so narisana najprej na XY osi in nato za 90 zavrtena, da ležijo na XZ. Normalo sem jim določil (0, 0, 1), ker sem pač pozabil, da na "false" normale (če jih lahko tako imenujem), ki se uporabijo pri sencah (niso določene z glNormal), rotacija ne deluje. 
+
+<br />
+
+
+<br />
+Normala mora biti torej (0, 1, 0) - torej glede na končno lego površine in ne na začetno.</span><span class="gensmall"></span></td>
+			</tr>
+		</table></td>
+	</tr>
+	<tr>
+		<td class="row1" width="150" align="left" valign="middle"><span class="nav"><a href="#top" class="nav">Nazaj na vrh</a></span></td>
+		<td class="row1" width="100%" height="28" valign="bottom" nowrap="nowrap"><table cellspacing="0" cellpadding="0" border="0" height="18" width="18">
+			<tr>
+				<td valign="middle" nowrap="nowrap"><a href="profile-7.html"><img src="templates/SGD2/images/lang_slovenian/icon_profile.gif" alt="Poglej uporabnikov profil" title="Poglej uporabnikov profil" border="0" /></a> </td>
+			</tr>
+		</table></td>
+	</tr>
+	<tr>
+		<td class="spaceRow" colspan="2" height="1"><img src="templates/SGD/images/spacer.gif" alt="" width="1" height="1" /></td>
+	</tr>
+	
+	<tr>
+		<td width="150" align="left" valign="top" class="row2"><span class="name"><a name="3760"></a><b>willson</b></span><br /><span class="postdetails">novinec<br /><img src="images/ranks/sgd-0.gif" alt="novinec" title="novinec" border="0" /><br /><br /><br />Pridružen: 01. okt 2003 ob 10:22<br />objav: 15<br /></span><br /></td>
+		<td class="row2" width="100%" height="28" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+			<tr>
+				<td colspan="2" width="100%">
+					<table width="100%" cellpadding="0" cellspacing="0" border="0">
+						<tr>
+							<td valign="middle" align="left">
+								<a href="topic-327.html#3760"><img src="templates/SGD2/images/icon_minipost.gif" width="12" height="9" alt="objava" title="objava" border="0" /></a>
+								<span class="postdetails">Objavljeno: sre okt 01, 2003 12:38 pm<span class="gen">&nbsp;</span>&nbsp; &nbsp;Pošlji temo: </span>
+							</td>
+							<td valign="middle" align="right" nowrap="nowrap">
+							</td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+			<tr>
+				<td colspan="2"><hr /></td>
+			</tr>
+			<tr>
+				<td colspan="2"><span class="postbody">lp!
+
+<br />
+
+
+<br />
+sm cisto nov clan doticnega foruma -  tako da vsem LP!
+
+<br />
+
+
+<br />
+Wingman: 
+
+<br />
+
+
+<br />
+vimd da si rihtu sence, pa mam eno uprasanje; tudi sam sem (ob pomoci clankov in examplov s strani nvidie) implementiral v svoj 3d engine 
+
+<br />
+podporo sencam; kokr vidm si ti uporabu planar proj. shadows, jest sem se pa lotu "Shadow Mappinga" - zadeva koncno deluje (sam ce si kej gledu example so bli tm usi narejni z nv_register_combiner-ji ext., no jest sm zadevo posplosu in zrtvoval hitrost ter dodal se en render pass in to naredu brez reg. comb. = ubistvu dela na vseh karticah k znajo v enmu ciklu nalimat 2 texture; 1pass vse v senci; 2pass izracuna kva je v senci in kva ne + izrise shadow map + ostale texture oz. materiale...)
+
+<br />
+
+
+<br />
+sam fora je pa, da glede na:
+
+<br />
+
+
+<br />
+glPolygonMode(GL_FRONT_AND_BACK, GL_FILL);
+
+<br />
+glPolygonOffset(<span style="font-weight: bold">1.1, 6</span>);
+
+<br />
+
+
+<br />
+dolocam offset narisane texture - pr nvidiji pravjo da je 1.1, 6 kul eni da ne - al si kej vec s tem experimenteru tko da bi tole zadevo bl objasnu
+
+<br />
+torej: Pri katerih vrednostih so sence najlepse?? 
+
+<br />
+
+
+<br />
+(k ta offset lohk tud za 10m nad neko povrsino prestavs in je vse "lepo"- sam kera je pa una vrednost, k so sence tako k morjo bit sam da jih mal "prestavs" da ne pride no prekrivanja oz. utripanja)</span><span class="gensmall"></span></td>
+			</tr>
+		</table></td>
+	</tr>
+	<tr>
+		<td class="row2" width="150" align="left" valign="middle"><span class="nav"><a href="#top" class="nav">Nazaj na vrh</a></span></td>
+		<td class="row2" width="100%" height="28" valign="bottom" nowrap="nowrap"><table cellspacing="0" cellpadding="0" border="0" height="18" width="18">
+			<tr>
+				<td valign="middle" nowrap="nowrap"><a href="profile-107.html"><img src="templates/SGD2/images/lang_slovenian/icon_profile.gif" alt="Poglej uporabnikov profil" title="Poglej uporabnikov profil" border="0" /></a> </td>
+			</tr>
+		</table></td>
+	</tr>
+	<tr>
+		<td class="spaceRow" colspan="2" height="1"><img src="templates/SGD/images/spacer.gif" alt="" width="1" height="1" /></td>
+	</tr>
+	
+	<tr>
+		<td width="150" align="left" valign="top" class="row1"><span class="name"><a name="3791"></a><b>Wingman</b></span><br /><span class="postdetails">SGD Moderator<br /><img src="images/ranks/sgd-mod.gif" alt="SGD Moderator" title="SGD Moderator" border="0" /><br /><img src="images/avatars/c14d9fca410a4a42927d3.jpg" alt="" border="0" /><br /><br />Pridružen: 08. jan 2003 ob 21:33<br />objav: 293<br />Kraj: Kranj</span><br /></td>
+		<td class="row1" width="100%" height="28" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+			<tr>
+				<td colspan="2" width="100%">
+					<table width="100%" cellpadding="0" cellspacing="0" border="0">
+						<tr>
+							<td valign="middle" align="left">
+								<a href="topic-327.html#3791"><img src="templates/SGD2/images/icon_minipost.gif" width="12" height="9" alt="objava" title="objava" border="0" /></a>
+								<span class="postdetails">Objavljeno: pet okt 03, 2003 4:28 pm<span class="gen">&nbsp;</span>&nbsp; &nbsp;Pošlji temo: </span>
+							</td>
+							<td valign="middle" align="right" nowrap="nowrap">
+							</td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+			<tr>
+				<td colspan="2"><hr /></td>
+			</tr>
+			<tr>
+				<td colspan="2"><span class="postbody">Malo pozen odgovor, ker me ta teden ni bilo doma..LP willson!
+
+<br />
+
+
+<br />
+Glede offseta ti na pamet težko pomagam, ker ne vem točno. Drugače je najboljša možnost, da preizkušaš - naredi npr. en app, kjer boš izrisoval sceno v wireframe (GL_LINE) in solid (GL_FILL) hkrati - torej 2 passa. Kot veš ti bo brez offseta vse utripalo, zato ga vklopi in preizkušaj vrednosti (povečuj/zmanjšuj za minimalno) - prve vrednosti (dobro, ni nujno prve), pri katerih scena izgleda lepo (oz. ne utripa) uporabi tudi za sence.
+
+<br />
+Če ti dajeta 1.1 in 6 zadovoljive vizualne rezultate, jih preprosto obdrži oz. če ti to ne zadošča, ugotovi, ZAKAJ nekateri pravijo, da je 1.1 in 6 dobro, drugi pa ne. Na podlagi tega se boš lahko odločil.
+
+<br />
+Tako nekako.
+
+<br />
+
+
+<br />
+btw, če imaš floate, to funkciji tudi povej, zato piši 1.1f namesto 1.1.</span><span class="gensmall"></span></td>
+			</tr>
+		</table></td>
+	</tr>
+	<tr>
+		<td class="row1" width="150" align="left" valign="middle"><span class="nav"><a href="#top" class="nav">Nazaj na vrh</a></span></td>
+		<td class="row1" width="100%" height="28" valign="bottom" nowrap="nowrap"><table cellspacing="0" cellpadding="0" border="0" height="18" width="18">
+			<tr>
+				<td valign="middle" nowrap="nowrap"><a href="profile-7.html"><img src="templates/SGD2/images/lang_slovenian/icon_profile.gif" alt="Poglej uporabnikov profil" title="Poglej uporabnikov profil" border="0" /></a> </td>
+			</tr>
+		</table></td>
+	</tr>
+	<tr>
+		<td class="spaceRow" colspan="2" height="1"><img src="templates/SGD/images/spacer.gif" alt="" width="1" height="1" /></td>
+	</tr>
+	
+	<tr>
+		<td width="150" align="left" valign="top" class="row2"><span class="name"><a name="3840"></a><b>willson</b></span><br /><span class="postdetails">novinec<br /><img src="images/ranks/sgd-0.gif" alt="novinec" title="novinec" border="0" /><br /><br /><br />Pridružen: 01. okt 2003 ob 10:22<br />objav: 15<br /></span><br /></td>
+		<td class="row2" width="100%" height="28" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+			<tr>
+				<td colspan="2" width="100%">
+					<table width="100%" cellpadding="0" cellspacing="0" border="0">
+						<tr>
+							<td valign="middle" align="left">
+								<a href="topic-327.html#3840"><img src="templates/SGD2/images/icon_minipost.gif" width="12" height="9" alt="objava" title="objava" border="0" /></a>
+								<span class="postdetails">Objavljeno: pon okt 06, 2003 6:57 pm<span class="gen">&nbsp;</span>&nbsp; &nbsp;Pošlji temo: </span>
+							</td>
+							<td valign="middle" align="right" nowrap="nowrap">
+							</td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+			<tr>
+				<td colspan="2"><hr /></td>
+			</tr>
+			<tr>
+				<td colspan="2"><span class="postbody">lp!
+
+<br />
+
+
+<br />
+Wingman -&gt; nikoli ni prepozno <img src="images/smiles/icon_smile.gif" alt="icon_smile.gif" border="0" />
+
+<br />
+
+
+<br />
+No sej po pravici povedano sm neki podobnga delu in ugotovu da je <span style="font-weight: bold">1.1f</span> najboljs... hvala za odgovor.
+
+<br />
+
+
+<br />
+ok pol pa se neki: a si se kej ukvarju z DOT3 BumpMapping-om???</span><span class="gensmall"></span></td>
+			</tr>
+		</table></td>
+	</tr>
+	<tr>
+		<td class="row2" width="150" align="left" valign="middle"><span class="nav"><a href="#top" class="nav">Nazaj na vrh</a></span></td>
+		<td class="row2" width="100%" height="28" valign="bottom" nowrap="nowrap"><table cellspacing="0" cellpadding="0" border="0" height="18" width="18">
+			<tr>
+				<td valign="middle" nowrap="nowrap"><a href="profile-107.html"><img src="templates/SGD2/images/lang_slovenian/icon_profile.gif" alt="Poglej uporabnikov profil" title="Poglej uporabnikov profil" border="0" /></a> </td>
+			</tr>
+		</table></td>
+	</tr>
+	<tr>
+		<td class="spaceRow" colspan="2" height="1"><img src="templates/SGD/images/spacer.gif" alt="" width="1" height="1" /></td>
+	</tr>
+	
+	<tr>
+		<td width="150" align="left" valign="top" class="row1"><span class="name"><a name="3849"></a><b>Wingman</b></span><br /><span class="postdetails">SGD Moderator<br /><img src="images/ranks/sgd-mod.gif" alt="SGD Moderator" title="SGD Moderator" border="0" /><br /><img src="images/avatars/c14d9fca410a4a42927d3.jpg" alt="" border="0" /><br /><br />Pridružen: 08. jan 2003 ob 21:33<br />objav: 293<br />Kraj: Kranj</span><br /></td>
+		<td class="row1" width="100%" height="28" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+			<tr>
+				<td colspan="2" width="100%">
+					<table width="100%" cellpadding="0" cellspacing="0" border="0">
+						<tr>
+							<td valign="middle" align="left">
+								<a href="topic-327.html#3849"><img src="templates/SGD2/images/icon_minipost.gif" width="12" height="9" alt="objava" title="objava" border="0" /></a>
+								<span class="postdetails">Objavljeno: pon okt 06, 2003 8:50 pm<span class="gen">&nbsp;</span>&nbsp; &nbsp;Pošlji temo: </span>
+							</td>
+							<td valign="middle" align="right" nowrap="nowrap">
+							</td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+			<tr>
+				<td colspan="2"><hr /></td>
+			</tr>
+			<tr>
+				<td colspan="2"><span class="postbody">Z DOT3 še ne, ampak pridejo te napredne zadeve na vrsto prej ali slej, ko se bom začel učiti shaderje oz. Cg. Trenutno imam kar nekaj stvari za raziskat - bom videl kdaj pridejo shaderji (in nekateri ARB podaljški) na vrsto.</span><span class="gensmall"></span></td>
+			</tr>
+		</table></td>
+	</tr>
+	<tr>
+		<td class="row1" width="150" align="left" valign="middle"><span class="nav"><a href="#top" class="nav">Nazaj na vrh</a></span></td>
+		<td class="row1" width="100%" height="28" valign="bottom" nowrap="nowrap"><table cellspacing="0" cellpadding="0" border="0" height="18" width="18">
+			<tr>
+				<td valign="middle" nowrap="nowrap"><a href="profile-7.html"><img src="templates/SGD2/images/lang_slovenian/icon_profile.gif" alt="Poglej uporabnikov profil" title="Poglej uporabnikov profil" border="0" /></a> </td>
+			</tr>
+		</table></td>
+	</tr>
+	<tr>
+		<td class="spaceRow" colspan="2" height="1"><img src="templates/SGD/images/spacer.gif" alt="" width="1" height="1" /></td>
+	</tr>
+	
+	<tr>
+		<td width="150" align="left" valign="top" class="row2"><span class="name"><a name="3858"></a><b>willson</b></span><br /><span class="postdetails">novinec<br /><img src="images/ranks/sgd-0.gif" alt="novinec" title="novinec" border="0" /><br /><br /><br />Pridružen: 01. okt 2003 ob 10:22<br />objav: 15<br /></span><br /></td>
+		<td class="row2" width="100%" height="28" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+			<tr>
+				<td colspan="2" width="100%">
+					<table width="100%" cellpadding="0" cellspacing="0" border="0">
+						<tr>
+							<td valign="middle" align="left">
+								<a href="topic-327.html#3858"><img src="templates/SGD2/images/icon_minipost.gif" width="12" height="9" alt="objava" title="objava" border="0" /></a>
+								<span class="postdetails">Objavljeno: tor okt 07, 2003 11:32 am<span class="gen">&nbsp;</span>&nbsp; &nbsp;Pošlji temo: </span>
+							</td>
+							<td valign="middle" align="right" nowrap="nowrap">
+							</td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+			<tr>
+				<td colspan="2"><hr /></td>
+			</tr>
+			<tr>
+				<td colspan="2"><span class="postbody">lp!
+
+<br />
+
+
+<br />
+no kar se Shader-jev tice mislm da folk ne ve v cem je tle fora... 
+
+<br />
+1.) pocak na OpenGL 2.0 oz. kup 3dlabs WildCat-a (cca. 80-100K) opengl 2.0 driverje in se ucis - k kar je trenutno na sceni je vse POMESAN... eni cudni ext in k delo le na tej kartici in svasta... se ne splaca matrat
+
+<br />
+
+
+<br />
+2.) npr. DOT3 bump mapping je ze v OpenGL 1.3 ARB_texture_env_dot3
+
+<br />
+tko, da zakaj bi se tle matru s SHADERJI ce lohk tko nardis z APIji (ok vsaj po mojem mnenju je delo z apiji hitrejse, kot da gres programirat SHADERJE) -&gt; prog. SHADERJI so namenjeni efektom, ki niso podprti s strani apijev oz. za "izdelavo" novih efektov 
+
+<br />
+
+
+<br />
+kar se pa tice dot3 bump-a pa:
+
+<br />
+
+
+<br />
+opengl 1.3:
+
+<br />
+- ARB_texture_env_dot3
+
+<br />
+- ARB_texture_env_combine
+
+<br />
+- ARB_multitexture
+
+<br />
+
+
+<br />
+pol pa:
+
+<br />
+
+
+<br />
+// find dot product of N (stored in the texture map) and L (stored
+
+<br />
+// as the PRIMARY_COLOR).
+
+<br />
+
+
+<br />
+glTexEnvf(GL_TEXTURE_ENV, GL_TEXTURE_ENV_MODE, GL_COMBINE);
+
+<br />
+glTexEnvf(GL_TEXTURE_ENV, GL_COMBINE_RGB, GL_DOT3_RGB);
+
+<br />
+glTexEnvf(GL_TEXTURE_ENV, GL_SOURCE0_RGB, GL_TEXTURE);
+
+<br />
+glTexEnvf(GL_TEXTURE_ENV, GL_OPERAND0_RGB, GL_SRC_COLOR);
+
+<br />
+glTexEnvf(GL_TEXTURE_ENV, GL_SOURCE1_RGB, GL_PRIMARY_COLOR);
+
+<br />
+glTexEnvf(GL_TEXTURE_ENV, GL_OPERAND1_RGB, GL_SRC_COLOR);
+
+<br />
+
+
+<br />
+ // modulate the base texture by N.L
+
+<br />
+
+
+<br />
+glTexEnvf(GL_TEXTURE_ENV, GL_TEXTURE_ENV_MODE, GL_COMBINE);
+
+<br />
+glTexEnvf(GL_TEXTURE_ENV, GL_COMBINE_RGB, GL_MODULATE);
+
+<br />
+glTexEnvf(GL_TEXTURE_ENV, GL_SOURCE0_RGB, GL_PREVIOUS);
+
+<br />
+glTexEnvf(GL_TEXTURE_ENV, GL_OPERAND0_RGB, GL_SRC_COLOR);
+
+<br />
+glTexEnvf(GL_TEXTURE_ENV, GL_SOURCE1_RGB, GL_TEXTURE);
+
+<br />
+glTexEnvf(GL_TEXTURE_ENV, GL_OPERAND1_RGB, GL_SRC_COLOR);
+
+<br />
+
+
+<br />
+L (stored as the PRIMARY_COLOR) -&gt; normaliziran light vector (za vsak trikotnik po 3 vektorji, torej za vsako tocko trikotnika izracunas lightvector in ga zapises v barvo trenutne tocke - potem se zadeva interpolira in dobis "Per-Pixel Lighting" in to je to - ce renderiras z texturami mas dot3 bump drugac pa Per-Pixel Lighting renderirano sceno = a pa ta zadeva dela povsod ok tm od GeForce &gt;)</span><span class="gensmall"></span></td>
+			</tr>
+		</table></td>
+	</tr>
+	<tr>
+		<td class="row2" width="150" align="left" valign="middle"><span class="nav"><a href="#top" class="nav">Nazaj na vrh</a></span></td>
+		<td class="row2" width="100%" height="28" valign="bottom" nowrap="nowrap"><table cellspacing="0" cellpadding="0" border="0" height="18" width="18">
+			<tr>
+				<td valign="middle" nowrap="nowrap"><a href="profile-107.html"><img src="templates/SGD2/images/lang_slovenian/icon_profile.gif" alt="Poglej uporabnikov profil" title="Poglej uporabnikov profil" border="0" /></a> </td>
+			</tr>
+		</table></td>
+	</tr>
+	<tr>
+		<td class="spaceRow" colspan="2" height="1"><img src="templates/SGD/images/spacer.gif" alt="" width="1" height="1" /></td>
+	</tr>
+	
+	<tr>
+		<td width="150" align="left" valign="top" class="row1"><span class="name"><a name="3919"></a><b>Wingman</b></span><br /><span class="postdetails">SGD Moderator<br /><img src="images/ranks/sgd-mod.gif" alt="SGD Moderator" title="SGD Moderator" border="0" /><br /><img src="images/avatars/c14d9fca410a4a42927d3.jpg" alt="" border="0" /><br /><br />Pridružen: 08. jan 2003 ob 21:33<br />objav: 293<br />Kraj: Kranj</span><br /></td>
+		<td class="row1" width="100%" height="28" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+			<tr>
+				<td colspan="2" width="100%">
+					<table width="100%" cellpadding="0" cellspacing="0" border="0">
+						<tr>
+							<td valign="middle" align="left">
+								<a href="topic-327.html#3919"><img src="templates/SGD2/images/icon_minipost.gif" width="12" height="9" alt="objava" title="objava" border="0" /></a>
+								<span class="postdetails">Objavljeno: sre okt 08, 2003 10:05 pm<span class="gen">&nbsp;</span>&nbsp; &nbsp;Pošlji temo: </span>
+							</td>
+							<td valign="middle" align="right" nowrap="nowrap">
+							</td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+			<tr>
+				<td colspan="2"><hr /></td>
+			</tr>
+			<tr>
+				<td colspan="2"><span class="postbody">OpenGL 2.0 čakam že precej dolgo, ARB extensioni pa itak niso vendor-specific (se pa strinjam, da je na sceni vse pomešan)..za Wildcata nimam denarja niti približno (mam nedolgo nazaj kupljeni 9600 pro).
+
+<br />
+No ja, tudi Cg, če se že bom učil, dela povsod..bomo videli, kako bo z glslangom, potem se bom dokončno odločil.
+
+<br />
+Tnx za tale dot3, si bom natančneje ogledal, ko pač bom  <img src="images/smiles/icon_smile.gif" alt="icon_smile.gif" border="0" /> ..</span><span class="gensmall"></span></td>
+			</tr>
+		</table></td>
+	</tr>
+	<tr>
+		<td class="row1" width="150" align="left" valign="middle"><span class="nav"><a href="#top" class="nav">Nazaj na vrh</a></span></td>
+		<td class="row1" width="100%" height="28" valign="bottom" nowrap="nowrap"><table cellspacing="0" cellpadding="0" border="0" height="18" width="18">
+			<tr>
+				<td valign="middle" nowrap="nowrap"><a href="profile-7.html"><img src="templates/SGD2/images/lang_slovenian/icon_profile.gif" alt="Poglej uporabnikov profil" title="Poglej uporabnikov profil" border="0" /></a> </td>
+			</tr>
+		</table></td>
+	</tr>
+	<tr>
+		<td class="spaceRow" colspan="2" height="1"><img src="templates/SGD/images/spacer.gif" alt="" width="1" height="1" /></td>
+	</tr>
+	
+	<tr align="center">
+		<td class="catBottom" colspan="2" height="28">&nbsp;</td>
+	</tr>
+</table>
+
+<table width="100%" cellspacing="2" cellpadding="2" border="0" align="center">
+  <tr>
+	<td align="left" valign="middle" nowrap="nowrap">&nbsp;</td>
+	<td align="left" valign="middle" width="100%"><span class="nav">&nbsp;&nbsp;&nbsp;<a href="index.html" class="nav">SloGameDev.net seznam forumov</a>
+	  -> <a href="forum-15.html" class="nav">Grafično Programiranje</a></span></td>
+	<td align="right" valign="top" nowrap="nowrap"><span class="gensmall">Časovni pas (GMT +2:00 uri) Slovenija, poletni čas</span><br /><span class="nav"></span>
+	  </td>
+  </tr>
+  <tr>
+	<td align="left" colspan="3"><span class="nav">Stran <b>1</b> od <b>1</b></span></td>
+  </tr>
+</table>
+
+<table width="100%" cellspacing="2" border="0" align="center">
+  <tr>
+	<td width="40%" valign="top" nowrap="nowrap" align="left">&nbsp;</td>
+	<td align="right" valign="top" nowrap="nowrap">&nbsp;</td>
+  </tr>
+</table>
+
+<div align="center"><span class="copyright"><br />Arhiv stanja na dan 13. 2. 2006 &mdash; samo za branje.<br />
+<!--
+	We request you retain the full copyright notice below including the link to www.phpbb.com.
+	This not only gives respect to the large amount of time given freely by the developers
+	but also helps build interest, traffic and use of phpBB 2.0. If you cannot (for good
+	reason) retain the full copyright we request you at least leave in place the 
+	Powered by phpBB 2.0.4 line, with phpBB linked to www.phpbb.com. If you refuse
+	to include even this then support on our forums may be affected. 
+
+	The phpBB Group : 2002
+// -->
+Powered by <a  target="_phpbb" class="copyright">phpBB</a> 2.0.4 &copy; 2001, 2002 phpBB Group<br /></span></div>
+		</td>
+	</tr>
+</table>
+
+</body>
+</html>

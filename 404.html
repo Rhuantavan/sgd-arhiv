@@ -1,0 +1,97 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"><title>SloGameDev.net</title></head><body bgcolor="#DDDDDD"><script type="text/javascript">
+(function () {
+  var path = location.pathname;
+  var m = path.match(/^(.*?\/)(phpBB2\/[^\/]*|modules\.php|index\.php)(\/.*)?$/i);
+  var root = m ? m[1] : "/";
+  var script = m ? m[2].toLowerCase() : "";
+  var q = {};
+  location.search.replace(/^\?/, "").split("&").forEach(function (kv) {
+    if (!kv) return;
+    var i = kv.indexOf("=");
+    var k = decodeURIComponent(i < 0 ? kv : kv.slice(0, i));
+    q[k] = decodeURIComponent((i < 0 ? "" : kv.slice(i + 1)).replace(/\+/g, " "));
+  });
+  var hash = location.hash;
+
+  function go(target) {
+    var list = [].concat(target);
+    function next() {
+      var t = list.shift();
+      if (!list.length) return location.replace(root + t + hash);
+      var x = new XMLHttpRequest();
+      x.open("HEAD", root + t);
+      x.onload = function () { x.status == 200 ? location.replace(root + t + hash) : next(); };
+      x.onerror = next;
+      x.send();
+    }
+    next();
+  }
+
+  function json(url, cb) {
+    var x = new XMLHttpRequest();
+    x.open("GET", root + url);
+    x.onload = function () { cb(x.status == 200 ? JSON.parse(x.responseText) : {}); };
+    x.onerror = function () { cb({}); };
+    x.send();
+  }
+
+  function n(v) { return /^\d+$/.test(v || "") ? v : null; }
+
+  function forum() {
+    var s = script.replace(/^phpbb2\/?/, "");
+    if (s == "viewtopic.php") {
+      if (n(q.p)) {
+        return json("phpBB2/post-map.json", function (map) {
+          var e = map[q.p];
+          if (!e) return go("phpBB2/noaccess.html");
+          hash = "#" + q.p;
+          go("phpBB2/topic-" + e[0] + (e[1] ? "-" + e[1] : "") + ".html");
+        });
+      }
+      if (n(q.t)) return go(["phpBB2/topic-" + q.t + (n(q.start) && q.start != "0" ? "-" + q.start : "") + ".html", "phpBB2/topic-" + q.t + ".html", "phpBB2/noaccess.html"]);
+    }
+    if (s == "viewforum.php" && n(q.f)) return go(["phpBB2/forum-" + q.f + (n(q.start) && q.start != "0" ? "-" + q.start : "") + ".html", "phpBB2/forum-" + q.f + ".html", "phpBB2/noaccess.html"]);
+    if (s == "profile.php" && n(q.u)) return go(["phpBB2/profile-" + q.u + ".html", "phpBB2/memberlist.html"]);
+    if (s == "memberlist.php") return go("phpBB2/memberlist.html");
+    go("phpBB2/index.html");
+  }
+
+  function cms() {
+    var name = q.name || "", file = q.file || "", op = q.op || "";
+    var order = (q.orderby == "title" || q.orderby == "author") ? "-" + q.orderby : "";
+    switch (name) {
+      case "SGD_News": return go(file == "comments" && n(q.newsid) ? "novica-" + q.newsid + ".html" : "index.html");
+      case "SGD_Articles":
+        if (file == "categories" && n(q.catid)) return go("clanki-kat-" + q.catid + order + ".html");
+        if ((file == "articles" || file == "print") && n(q.aid)) return go(["clanek-" + q.aid + (n(q.page) && q.page != "0" ? "-" + q.page : "") + ".html", "clanek-" + q.aid + ".html", "clanki.html"]);
+        return go("clanki.html");
+      case "SGD_Code":
+        if (file == "catlisting" && n(q.catid)) return go("koda-kat-" + q.catid + order + ".html");
+        if (file == "viewcode" && n(q.codeid)) return go("koda-" + q.codeid + ".html");
+        return go("koda.html");
+      case "SGD_Members":
+        if ((op == "PrikaziClana" || op == "UrediProfil") && q.clan) {
+          return json("members.json", function (map) {
+            var uid = map[q.clan.toLowerCase()];
+            go(uid != null ? "clan-" + uid + ".html" : "clani.html");
+          });
+        }
+        return go(q.orderby == "nickname" || q.orderby == "url" ? "clani-" + q.orderby + ".html" : "clani.html");
+      case "SGD_Projects": return go(q.func == "details" && n(q.project_id) ? "projekt-" + q.dev + "-" + q.project_id + ".html" : "projekti.html");
+      case "SGD_Links": return go(q.l_op == "viewlink" && n(q.cid) ? "povezave-" + q.cid + (n(q.min) && q.min != "0" ? "-" + q.min : "") + ".html" : "povezave.html");
+      case "SGD_Surveys": return go(op == "results" && n(q.pollID) ? "anketa-" + q.pollID + ".html" : "ankete.html");
+      case "SGD_Groups": return go("skupine.html");
+      case "SGD_Contests": return go("natecaji.html");
+      case "SGD_BookStore": return go("knjigarna.html");
+      case "SGD_SGDNet": return go("sgdnet.html");
+    }
+    go("index.html");
+  }
+
+  if (/^phpbb2/.test(script)) forum();
+  else if (script == "modules.php") cms();
+  else if (script == "index.php") go("index.html");
+  else if (!/\.html?$/i.test(path)) go("index.html");
+})();
+</script></body></html>

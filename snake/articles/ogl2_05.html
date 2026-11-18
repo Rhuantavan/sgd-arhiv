@@ -1,0 +1,163 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3c.org/TR/1999/REC-html401-19991224/loose.dtd">
+<!-- saved from url=(0041)http://localhost/wiki/index.php/Main_Page -->
+<HTML>
+<HEAD>
+<TITLE>Snake :: Article</TITLE>
+<META http-equiv=Content-Type content="text/html; charset=utf-8">
+<META content="Main Page" name=KEYWORDS>
+<META content="index,follow" name="robots">
+<LINK href="../../favicon.ico" 
+rel="shortcut icon">
+<STYLE type=text/css media="screen,projection">
+@import url( ../main.css ); @import url( codeColors.css );
+</STYLE>
+<LINK media=print  type=text/css rel=stylesheet>
+</HEAD>
+<BODY class="ns-0" style="background-image:url(../images/boxes_back.png); background-position:center;" >
+<DIV id=globalWrapper>
+  <DIV id=column-content>
+    <DIV id=content>
+      <H1 class=firstHeading>C# + OpenGL 2.: Igranje s transformaciji </H1>
+      <DIV id=bodyContent>
+        <!-- start content -->
+		<p>&nbsp;</p>
+        <p class="codetext">Po dolgem času obotavljanja in iskanja izgovorov zakaj za vraga ne napišem nadaljevanja članka sem končno uspel najti čas in spisati tole kratko nadaljevanje.</p>
+        <p class="codetext">Nekateri ste že slišali moje godrnanje čez nesposobnost mene delanja backupov... Spet godrnjam? Eh kaj vi ne bi, ko bi vam format c: pohrustal tudi 6 strani Wordov dokument z mnogo lepimi slikicami in naslovom <i>OpenGL Pipeline</i>?</p>
+        <p class="codetext">No, pustimo to. Zadovoljiti se boste morali s tem člančičem, ki vam bo prikazal nekaj različnih osnovnih elementov grafike. Črte, pike, trikotnike in poligone. To vsekakor niso vse zmožnosti OpenGLa, se da pa z le-temi pričarati čuda stvari.</p>
+        <p class="codetext">Predno začnemo s tem mini nadaljevanjem, naj vas opozorim, da je ta članek namenjen popolnim začetnikom v OpenGLu, morda še celo njim ne. Je pa vsekakor dobro ga vzeti pod drobnogled in poskusiti premakniti kakšno stvar, spremeniti kakšno številko in predvsem dodati kaj svojega.</p>
+        <p class="codetext">Za začetek že vsem znani del...</p>
+        <pre class="csharpcode">
+<span class="kwrd">private</span> <span class="kwrd">void</span> Draw()
+{
+    <span class="rem">/// Izbrise color in depth buffer.</span>
+
+    Gl.glClear(Gl.GL_COLOR_BUFFER_BIT | Gl.GL_DEPTH_BUFFER_BIT);
+    <span class="rem">/// V trenutno matriko (modelview) nalozi identity </span>
+    <span class="rem">/// matriko, kar naso sceno postavi v koordinatno izhodisce.</span>
+    Gl.glLoadIdentity();
+
+    <span class="rem">/// Premakne sceno za 10 enot v ekran.</span>
+    Gl.glTranslatef(0,0,-10);
+
+    <span class="rem">/// Zavrti sceno okrog Y osi za kot angle.</span>
+    Gl.glRotatef(angle, 0,1,0);
+    angle +=0.1f;            <span class="rem">// povecamo kot</span>
+
+    <span class="kwrd">if</span>(angle&gt;360.0f)        <span class="rem">// ce je vecji od 360°</span>
+        angle = 0.0f;        <span class="rem">// ga nastavimo na nic.</span>
+
+</pre>
+        <p class="codetext">Sedaj pa narišimo nek lepo obarvan trikotnik.</p>
+        <pre class="csharpcode">
+    <span class="rem">/// Izrišemo en trikotnik</span>
+
+    Gl.glBegin(Gl.GL_TRIANGLES);
+    Gl.glColor3f(1, 0, 0);        <span class="rem">// prvo ogljišce je pobarvano rdece...</span>
+    Gl.glVertex3f(-1, -1, 0);
+    Gl.glColor3f(0, 1, 0);        <span class="rem">// drugo zeleno...</span>
+    Gl.glVertex3f(1, -1, 0);
+    Gl.glColor3f(0, 0, 1);        <span class="rem">// tretje pa modro.</span>
+    Gl.glVertex3f(0, 1, 0);
+
+    Gl.glEnd();
+</pre>
+        <p class="codetext">Kot ste verjetno opazili, smo vsako ogljišče trikotnika pobarvali s svojo barvo. Če pa že pokukali kako to izgleda v praksi pa ste verjetno ugotovili, da se barve ena med drugo lepo prelivajo (interpolirajo med seboj).</p>
+        <p class="codetext">Sedaj pridejo na vrsto štiri nepovezane črte. Nepovezano črto loči par dveh ogljišč. Torej v našem primeru, ko smo OpenGLu poslali štiri ogljišča in delu naše grafične kartice (ta del se imenuje <i>Primitive Assembly</i> - za nas skupaj zlaga ta ogljišča v določene like) povedali, da naj jih smatra kot črte, bodo na ekranu končale štiri ravne, vrteče (zaradi zgornjega glRotatef) črte.</p>
+        <pre class="csharpcode">
+    <span class="rem">/// Narišimo še štiri nepovezane crte.</span>
+    Gl.glBegin(Gl.GL_LINES);
+    Gl.glVertex3f(3.0f, 0, 0);
+    Gl.glVertex3f(5.0f, 0, 0);
+    Gl.glVertex3f(3.0f, 1.0f, 0);
+    Gl.glVertex3f(5.0f, 1.0f, 0);
+
+    Gl.glVertex3f(-3.0f, 0, 0);
+    Gl.glVertex3f(-5.0f, 0, 0);
+    Gl.glVertex3f(-3.0f, 1.0f, 0);
+    Gl.glVertex3f(-5.0f, 1.0f, 0);
+    Gl.glEnd();
+</pre>
+        <p class="codetext">Če vas je presenetilo dejstvo, da je barva črt modra, naj vam povem, da si računalnik stvari ne izmišljuje in da vedno ko kaj ni tako kot pričakujete, ste zagotovo krivi vi ;)</p>
+        <p class="codetext">No, da ne boste mislili, kaj ste za**khm*... OpenGL je kot barvo teh črt vzel zadnjo barvo, ki ste mu jo določili. Torej zgoraj pri trikotniku je bila to modra barva.</p>
+        <p class="codetext">Predstavljajte si OpenGL kot en velik <i>State machine</i> (<i>avtomat stanj</i>)... kjer neko stvar vklopite, naredite nekaj stvari, spremenite stanje (izklopite, ali naredite kaj tretjega)... OpenGL je točno to. En hudo velik state machine. In ko ste spremenili barvo v modro, ste to barvo pustili prižgano, in tako bo OpenGL risal v tej barvi dokler spet ne spremenite barve.</p>
+        <p class="codetext">&nbsp;</p>
+        <p class="codetext">Sedaj pa narišimo še piko ali tri.</p>
+        <p class="codetext">Kot se vam je verjetno posvetilo do sedajle, služi glPointSize nastavitvi velikosti pike. Na 1, ki je običajo privzeta velikost, jo nastavimo zato, ker bomo nekaj vrstic nižje nastavili na 3 in bi nas, v primeru, da na 1 ne bi nastavili, zafrkavalo podobno dejstvo, kot zgoraj pri barvah... Velikost 3 bi ostala v naslednji sliki, in vse pike na ekranu bi končale velike 3 (mi pa tega nočemo;)).</p>
+        <pre class="csharpcode">
+    <span class="rem">/// Ter nekaj pik.</span>
+    Gl.glPointSize(1);
+    Gl.glColor3f(0.9f,0.7f,0);    <span class="rem">// oranžne barve</span>
+    Gl.glBegin(Gl.GL_POINTS);
+    Gl.glVertex3f(0,2,2);
+    Gl.glVertex3f(0,2,-2);
+    Gl.glEnd();
+
+    <span class="rem">/// Še ena malce vecja pika...</span>
+
+    Gl.glPointSize(3);
+    Gl.glBegin(Gl.GL_POINTS);
+    Gl.glVertex3f(0,2,0);
+    Gl.glEnd();
+
+
+    Gl.glFlush();     <span class="rem">// Down the drain we go.</span>
+}</pre>
+        <p class="codetext">&nbsp;</p>
+        <p class="codetext">In to bi bilo za danes to.<br>
+          <img src="images/scr_ogl2.jpg" width="320" height="240"></p>Do naslednjič pa se poigrajte s trikotniki in poizkusite skupaj spraviti kakšno zanimivo sceno. Morda pa si poglejte še Gl.GL_QUADS, ki nam pomaga pri risanju kvadratov (ogljišča morajo nastopati v skupkih po štiri.
+        </p>
+        <p class="codetext">Happy codin'.</p>
+        <p class="codetext">ps. Še izvorna koda programa <a href="downloads/TaoGL2_src.zip">[klik]</a></p>
+        <!-- end content -->
+        </p>
+        <DIV class=visualClear></DIV>
+      </DIV>
+    </DIV>
+  </DIV>
+  <DIV id=column-one>
+    <DIV class=portlet id=p-cactions>
+      <H5>Views</H5>
+      <UL>
+        <LI><A href="../index.html">Home</A></LI>
+        <LI><A href="../showcase.html">Showcase</A></LI>
+        <LI><A href="../hippo.html">Hippo</A></LI>
+        <LI class="selected"><A href="../articles.html">Articles</A></LI>
+      </UL>
+    </DIV>
+    <DIV class=portlet id=p-personal>
+      <H5>Personal tools</H5>
+      <!-- 
+	        <DIV class=pBody>
+
+	    <UL>
+          <LI id=pt-login><A >Create an account or log in</A> </LI>
+        </UL>
+
+      </DIV>
+-->
+    </DIV>
+    <DIV class=portlet id=p-logo style=" BACKGROUND-IMAGE: url(../images/boxes.png); background-repeat:no-repeat"></DIV>
+    <DIV class=portlet id=p-nav>
+      <H5>Links</H5>
+      <DIV class=pBody>
+        <UL>
+          <LI><A href="../../index.html" target="_blank">SloGamedev.net</A>
+          <LI><A  target="_blank">Gamedev.net</A>
+          <LI><A  target="_blank">Flipcode</A>
+          <LI><A  target="_blank">Gamasutra</A>
+          <LI><A  target="_blank">CodeProject</A>
+        </UL>
+      </DIV>
+    </DIV>
+  </DIV>
+  <!-- end of the left (by default at least) column -->
+  <DIV class=visualClear style="position:relative; bottom:-5px; right:0px; left:0px; width:100%; "></DIV>
+  <DIV id=footer style="position:relative; bottom:-5px; right:0px; left:0px; width:100%; ">
+    <UL>
+      <LI>&copy; 2005, <a  title="e-mail">Samo Kralj</a><br>
+      <LI><span style="font-size:xx-small;">Base of site design grabbed from monobook style from <a  title="Mediawiki" target="_blank"> Mediawiki</a>.</span>
+    </UL>
+  </DIV>
+</DIV>
+</BODY>
+</HTML>

@@ -1,0 +1,1543 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html dir="ltr">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta http-equiv="Content-Style-Type" content="text/css">
+<style type="text/css">
+<!--
+.style1 {color: #FFFFFF}
+-->
+</style>
+
+
+
+<title>SloGameDev.net :: Server &amp; Client oboje radi :) z funk. send() &amp; recv(</title>
+<!-- link rel="stylesheet" href="templates/SGD/SGD2.css" type="text/css" -->
+<style type="text/css">
+<!--
+/*
+  The SGD Theme for phpBB version 2+
+  Created by Rhuantavan
+  http://www.rhuantavan.org
+
+  NOTE: These CSS definitions are stored within the main page body so that you can use the phpBB2
+  theme administration centre. When you have finalised your style you could cut the final CSS code
+  and place it in an external file, deleting this section to save bandwidth.
+*/
+
+/* General page style. The scroll bar colours only visible in IE5.5+ */
+body {
+	background-color: #DDDDDD;
+	scrollbar-face-color: #000000;
+	scrollbar-highlight-color: #000000;
+	scrollbar-3dlight-color: #EEEEEE;
+	scrollbar-darkshadow-color: #EEEEEE;
+	scrollbar-shadow-color: #000000;
+	scrollbar-arrow-color: #55FF00;
+	scrollbar-track-color: #EEEEEE;
+}
+
+/* General font families for common tags */
+font,th,td,p { font-family: Verdana, Arial, Helvetica, sans-serif }
+a:link,a:active,a:visited { color : #338800; }
+a:hover		{ text-decoration: underline; color : #338800; }
+hr	{ height: 0px; border: solid #E9E9E9 0px; border-top-width: 1px;}
+
+/* This is the border line & background colour round the entire page */
+.bodyline	{ background-color: #EEEEEE; border-left: 1px #000000 solid; border-right: 1px #000000 solid; }
+
+/* This is the outline round the main forum tables */
+.forumline	{ background-color: #EEEEEE; border: 0px #DDDDDD solid; }
+
+/* Main table cell colours and backgrounds */
+td.row1	{ background-color: #F8F8F8; }
+td.row2	{ background-color: #F0F0F0; }
+td.row3	{ background-color: #E9E9E9; }
+
+/*
+  This is for the table cell above the Topics, Post & Last posts on the index.php page
+  By default this is the fading out gradiated silver background.
+  However, you could replace this with a bitmap specific for each forum
+*/
+td.rowpic {
+		background-color: #EEEEEE;
+		background-image: url(templates/SGD/images/cellpic3.gif);
+		background-repeat: repeat-y;
+}
+
+/* Header cells - the blue and silver gradient backgrounds */
+th	{
+	color: #66CC33; font-size: 11px; font-weight : bold;
+	background-color: #338800; height: 25px;
+	background-image: url(templates/SGD/images/cellpic2.gif);
+}
+
+td.cat,td.catHead,td.catSides,td.catLeft,td.catRight,td.catBottom {
+			background-image: url(templates/SGD/images/cellpic1.gif);
+			background-color:#E9E9E9; border: #999999; border-style: solid; height: 28px;
+}
+
+/*
+  Setting additional nice inner borders for the main table cells.
+  The names indicate which sides the border will be on.
+  Don't worry if you don't understand this, just ignore it :-)
+*/
+td.cat,td.catHead,td.catBottom {
+	height: 29px;
+	border-width: 0px 0px 0px 0px;
+}
+th.thHead,th.thSides,th.thTop,th.thLeft,th.thRight,th.thBottom,th.thCornerL,th.thCornerR {
+	font-weight: bold; border: #EEEEEE; border-style: solid; height: 28px;
+}
+td.row3Right,td.spaceRow {
+	background-color: #E9E9E9; border: #999999; border-style: solid;
+}
+
+th.thHead,td.catHead { font-size: 12px; border-width: 0px 0px 0px 0px; }
+th.thSides,td.catSides,td.spaceRow	 { border-width: 0px 0px 0px 0px; }
+th.thRight,td.catRight,td.row3Right	 { border-width: 0px 0px 0px 0px; }
+th.thLeft,td.catLeft	  { border-width: 0px 0px 0px 0px; }
+th.thBottom,td.catBottom  { border-width: 0px 0px 0px 1px; }
+th.thTop	 { border-width: 0px 0px 0px 0px; }
+th.thCornerL { border-width: 0px 0px 0px 1px; }
+th.thCornerR { border-width: 0px 0px 0px 0px; }
+
+/* The largest text used in the index page title and toptic title etc. */
+.maintitle	{
+	font-weight: bold; font-size: 18px; font-family: "Trebuchet MS",Verdana, Arial, Helvetica, sans-serif;
+	text-decoration: none; line-height : 120%; color : #666666;
+}
+
+/* General text */
+.gen { font-size : 12px; }
+.genmed { font-size : 11px; }
+.gensmall { font-size : 10px; }
+.gen,.genmed,.gensmall { color : #666666; }
+a.gen,a.genmed,a.gensmall { color: #338800; text-decoration: none; }
+a.gen:hover,a.genmed:hover,a.gensmall:hover	{ color: #338800; text-decoration: underline; }
+
+/* The register, login, search etc links at the top of the page */
+.mainmenu		{ font-size : 11px; color : #666666 }
+a.mainmenu		{ text-decoration: none; color : #338800;  }
+a.mainmenu:hover{ text-decoration: underline; color : #338800; }
+
+/* SGD main menu */
+.sgdmainmenu			{ font-size : 10px; color : #99FF33 }
+a.sgdmainmenu:link		{ text-decoration: none; color : #99FF33;  }
+a.sgdmainmenu:active	{ text-decoration: none; color : #99FF33;  }
+a.sgdmainmenu:visited	{ text-decoration: none; color : #99FF33;  }
+a.sgdmainmenu:hover		{ text-decoration: underline; color : #99FF33; }
+
+/* Forum category titles */
+.cattitle		{ font-weight: bold; font-size: 12px ; letter-spacing: 1px; color : #338800}
+a.cattitle		{ text-decoration: none; color : #338800; }
+a.cattitle:hover{ text-decoration: underline; }
+
+/* Forum title: Text and link to the forums used in: index.php */
+.forumlink		{ font-weight: bold; font-size: 12px; color : #338800; }
+a.forumlink 	{ text-decoration: none; color : #338800; }
+a.forumlink:hover{ text-decoration: underline; color : #338800; }
+
+/* Used for the navigation text, (Page 1,2,3 etc) and the navigation bar when in a forum */
+.nav			{ font-weight: bold; font-size: 11px; color : #666666;}
+a.nav			{ text-decoration: none; color : #338800; }
+a.nav:hover		{ text-decoration: underline; }
+
+/* titles for the topics: could specify viewed link colour too */
+.topictitle,h1,h2	{ font-weight: bold; font-size: 11px; color : #666666; }
+a.topictitle:link   { text-decoration: none; color : #338800; }
+a.topictitle:visited { text-decoration: none; color : #338800; }
+a.topictitle:hover	{ text-decoration: underline; color : #338800; }
+
+/* Name of poster in viewmsg.php and viewtopic.php and other places */
+.name			{ font-size : 11px; color : #000000;}
+
+/* Location, number of posts, post date etc */
+.postdetails		{ font-size : 10px; color : #666666; }
+
+/* The content of the posts (body of text) */
+.postbody { font-size : 12px; line-height: 18px; color : #000000;}
+a.postlink:link	{ text-decoration: none; color : #338800 }
+a.postlink:visited { text-decoration: none; color : #338800; }
+a.postlink:hover { text-decoration: underline; color : #338800}
+
+/* Quote & Code blocks */
+.code {
+	font-family: Courier, 'Courier New', sans-serif; font-size: 11px; color: #006600;
+	background-color: #D6D6D6; border: #E9E9E9; border-style: solid;
+	border-left-width: 1px; border-top-width: 1px; border-right-width: 1px; border-bottom-width: 1px
+}
+
+.quote {
+	font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 11px; color: #444444; line-height: 125%;
+	background-color: #BBBBBB; border: #E9E9E9; border-style: solid;
+	border-left-width: 1px; border-top-width: 1px; border-right-width: 1px; border-bottom-width: 1px
+}
+
+/* Copyright and bottom info */
+.copyright		{ font-size: 10px; font-family: Verdana, Arial, Helvetica, sans-serif; color: #444444; letter-spacing: -1px;}
+a.copyright		{ color: #444444; text-decoration: none;}
+a.copyright:hover { color: #666666; text-decoration: underline;}
+
+/* Form elements */
+input,textarea, select {
+	color : #666666;
+	font: normal 11px Verdana, Arial, Helvetica, sans-serif;
+	border-color : #666666;
+}
+
+/* The text input fields background colour */
+input.post, textarea.post, select {
+	background-color : #EEEEEE;
+}
+
+input { text-indent : 2px; }
+
+/* The buttons used for bbCode styling in message post */
+input.button {
+	background-color : #F8F8F8;
+	color : #666666;
+	font-size: 11px; font-family: Verdana, Arial, Helvetica, sans-serif;
+}
+
+/* The main submit button option */
+input.mainoption {
+	background-color : #BBBBBB;
+	font-weight : bold;
+}
+
+/* None-bold submit button */
+input.liteoption {
+	background-color : #BBBBBB;
+	font-weight : normal;
+}
+
+/* This is the line in the posting page which shows the rollover
+  help line. This is actually a text box, but if set to be the same
+  colour as the background no one will know ;)
+*/
+.helpline { background-color: #F0F0F0; border-style: none; }
+
+/* Import the fancy styles for IE only (NS4.x doesn't use the @import function) */
+@import url("templates/SGD/formIE.css");
+-->
+</style>
+</head>
+<body bgcolor="#DDDDDD" text="#666666" link="#338800" vlink="#338800" topmargin="0" />
+<a name="top"></a>
+<table width="100%" cellspacing="0" cellpadding="0" border="0" align="center" nowrap>
+	<tr>
+		<td class="bodyline">
+			<table width="100%" border="0" cellpadding="0" cellspacing="0">
+				<tr>
+					<td bgcolor="#FFFFFF">
+						<img src="images/spacer.gif" width="760" height="20" alt=""></td>
+				</tr>
+			</table>
+			<table width="100%" border="0" cellpadding="0" cellspacing="0">
+				<tr>
+					<td bgcolor="#000000">
+						<a href="../index.html"><img src="images/home.gif" width="10" height="10" alt="" border="0"></a><img src="images/spacer.gif" width="5" height="5" alt=""><a href="../index.html" class="sgdmainmenu">Nazaj na domačo stran</a> <img src="images/defaulticon_green.gif" alt="" width="7" height="7" border="0"> <a href="../clanki.html" class="sgdmainmenu">Clanki</a> <img src="images/defaulticon_green.gif" alt="" width="7" height="7" border="0"> <a href="../koda.html" class="sgdmainmenu">Koda</a> <img src="images/defaulticon_green.gif" alt="" width="7" height="7" border="0"> <a href="../clani.html" class="sgdmainmenu">Clani</a> <img src="images/defaulticon_green.gif" alt="" width="7" height="7" border="0"> <a href="../skupine.html" class="sgdmainmenu">Skupine</a> <img src="images/defaulticon_green.gif" alt="" width="7" height="7" border="0"> <a href="../projekti.html" class="sgdmainmenu">Projekti</a> <img src="images/defaulticon_green.gif" alt="" width="7" height="7" border="0"> <a href="../povezave.html" class="sgdmainmenu">Povezave</a></td>
+				</tr>
+			</table>
+			<table width="100%" border="0" cellpadding="0" cellspacing="0">
+				<tr>
+					<td colspan="3" bgcolor="#000000">
+						<img src="images/spacer.gif" width="760" height="10" alt=""></td>
+				</tr>
+				<tr>
+					<td>
+						<a href="index.html"><img src="images/logo.gif" width="351" height="62" alt="" border="0"></a></td>
+					<td>
+						<img src="images/forum_03.gif" width="408" height="62" alt=""></td>
+					<td width="100%" bgcolor="#000000">
+						<img src="images/spacer.gif" width="1" height="1" alt=""></td>
+				</tr>
+				<tr>
+					<td colspan="3" bgcolor="#000000" align="center">
+						<a href="memberlist.html" class="sgdmainmenu"><img src="images/defaulticon_green.gif" alt="" width="7" height="7" border="0">&nbsp;Seznam članov</a>
+						<a href="index.html" class="sgdmainmenu"><img src="images/defaulticon_green.gif" alt="" width="7" height="7" border="0">&nbsp;Seznam</a></td>
+				</tr>
+				<tr>
+					<td colspan="3" bgcolor="#000000">
+						<img src="images/spacer.gif" width="760" height="5" alt=""></td>
+				</tr>
+			</table>
+
+<table width="100%" cellspacing="2" cellpadding="2" border="0">
+  <tr>
+	<td align="left" valign="bottom" colspan="2"><a class="maintitle" href="topic-601.html">Server &amp; Client oboje radi :) z funk. send() &amp; recv(</a><br />
+	  <span class="gensmall"><b></b><br />
+	  &nbsp; </span></td>
+  </tr>
+</table>
+
+<table width="100%" cellspacing="2" cellpadding="2" border="0">
+  <tr>
+	<td align="left" valign="bottom" nowrap="nowrap">&nbsp;</td>
+	<td align="left" valign="middle" width="100%"><span class="nav">&nbsp;&nbsp;&nbsp;<a href="index.html" class="nav">SloGameDev.net seznam forumov</a>
+	  -> <a href="forum-1.html" class="nav">Splošno Programiranje</a></span></td>
+  </tr>
+</table>
+
+<table class="forumline" width="100%" cellspacing="1" cellpadding="3" border="0">
+	<tr align="right">
+		<td class="catHead" colspan="2" height="28"><span class="nav"><a href="topic-600.html" class="nav">Prejšnja tema</a> :: <a href="topic-603.html" class="nav">Naslednja tema</a> &nbsp;</span></td>
+	</tr>
+	
+	<tr>
+		<th class="thLeft" width="150" height="26" nowrap="nowrap">avtor</th>
+		<th class="thRight" nowrap="nowrap">Sporočilo</th>
+	</tr>
+	
+	<tr>
+		<td width="150" align="left" valign="top" class="row1"><span class="name"><a name="6841"></a><b>_t3ch_</b></span><br /><span class="postdetails">wannabe<br /><img src="images/ranks/sgd-2.gif" alt="wannabe" title="wannabe" border="0" /><br /><img src="images/avatars/c2f922b13f93ced57f936.gif" alt="" border="0" /><br /><br />Pridružen: 09. okt 2003 ob 16:04<br />objav: 75<br />Kraj: Mafia SoftWare IT</span><br /></td>
+		<td class="row1" width="100%" height="28" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+			<tr>
+				<td colspan="2" width="100%">
+					<table width="100%" cellpadding="0" cellspacing="0" border="0">
+						<tr>
+							<td valign="middle" align="left">
+								<a href="topic-601.html#6841"><img src="templates/SGD2/images/icon_minipost.gif" width="12" height="9" alt="objava" title="objava" border="0" /></a>
+								<span class="postdetails">Objavljeno: ned feb 15, 2004 3:51 pm<span class="gen">&nbsp;</span>&nbsp; &nbsp;Pošlji temo: Server &amp; Client oboje radi :) z funk. send() &amp; recv(</span>
+							</td>
+							<td valign="middle" align="right" nowrap="nowrap">
+							</td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+			<tr>
+				<td colspan="2"><hr /></td>
+			</tr>
+			<tr>
+				<td colspan="2"><span class="postbody"><span style="font-weight: bold">Server:</span>
+
+<br />
+
+
+<br />
+</span>
+<br />
+<table width="90%" cellspacing="1" cellpadding="3" border="0" align="center">
+<br />
+<tr> 
+<br />
+	  <td><span class="genmed"><b>Koda:</b></span></td>
+<br />
+	</tr>
+<br />
+	<tr>
+<br />
+	  <td class="code">
+
+<br />
+// Server z funkcijama send&#40;&#41; &amp; recv&#40;&#41;
+
+<br />
+
+
+<br />
+#include &lt;winsock2.h&gt; // uporabmo za povezavo prek neta
+
+<br />
+#include &lt;stdio.h&gt; // za I/O
+
+<br />
+
+
+<br />
+// startupServerForListning&#40;&#41; nam vrne socket ki so boundane na port ki smo ga dolocili
+
+<br />
+// ce bo kaksna napaka nam vrne -1
+
+<br />
+
+
+<br />
+int startupServerForListning&#40;unsigned short port&#41;;
+
+<br />
+
+
+<br />
+// shutdown&#40;&#41; bo izklopilo socket in izklopilo program ki smo ga prizgali
+
+<br />
+
+
+<br />
+void shutdownServer&#40;int socket&#41;;
+
+<br />
+
+
+<br />
+void main&#40;&#41;
+
+<br />
+
+
+<br />
+&#123;
+
+<br />
+&nbsp; &nbsp;printf&#40;&quot; Server V 0.1 v izdelavi &#58;&#41; mogoe bo chat prog mogoce trojan kaj te ves\n&quot;&#41;;
+
+<br />
+
+
+<br />
+&nbsp; &nbsp;// initializiramo spremenljivko serversocket
+
+<br />
+
+
+<br />
+&nbsp; &nbsp;int serverSocket;
+
+<br />
+
+
+<br />
+&nbsp; &nbsp; // zazenemo server z to funkcijo
+
+<br />
+
+
+<br />
+&nbsp; &nbsp;serverSocket = startupServerForListning&#40;7777&#41;;
+
+<br />
+
+
+<br />
+&nbsp; &nbsp;// preverimo error
+
+<br />
+
+
+<br />
+&nbsp; &nbsp;if &#40; serverSocket == -1&#41;
+
+<br />
+&nbsp; &nbsp;&#123;
+
+<br />
+&nbsp; &nbsp;&nbsp; &nbsp;printf&#40;&quot; Startup spodletel! \n Program se zakljucuje\n &quot;&#41;;
+
+<br />
+&nbsp; &nbsp;&nbsp; &nbsp;return;
+
+<br />
+&nbsp; &nbsp;&#125;
+
+<br />
+
+
+<br />
+&nbsp; &nbsp;// sprejmemo client 
+
+<br />
+
+
+<br />
+&nbsp; &nbsp;int clientSocket;
+
+<br />
+
+
+<br />
+&nbsp; &nbsp;clientSocket = accept&#40;serverSocket, 0, 0&#41;;
+
+<br />
+
+
+<br />
+&nbsp; &nbsp;// preverimo error
+
+<br />
+
+
+<br />
+&nbsp; &nbsp;if &#40;clientSocket == SOCKET_ERROR&#41;
+
+<br />
+&nbsp; &nbsp;&#123;
+
+<br />
+&nbsp; &nbsp;&nbsp; &nbsp;printf&#40;&quot; Sprejemanje spodletelo!\n&quot;&#41;;
+
+<br />
+&nbsp; &nbsp;&#125;
+
+<br />
+
+
+<br />
+&nbsp; &nbsp;// inicializiramo koliko bajtov dovolimo da se rpenese
+
+<br />
+
+
+<br />
+&nbsp; &nbsp;int nBytes;
+
+<br />
+
+
+<br />
+&nbsp; &nbsp;// sedaj rabimo nekaj bufferjev , rabimo ga za posiljat podatke in prostor kam jih bomo shranjevali
+
+<br />
+&nbsp; &nbsp; // spodaj definiramo koliko bajtov lahko sprejmemo in poslemo
+
+<br />
+
+
+<br />
+#define MESSAGE_SIZE 24
+
+<br />
+
+
+<br />
+&nbsp; &nbsp;// in se buffer
+
+<br />
+
+
+<br />
+&nbsp; &nbsp;char inMessage&#91;MESSAGE_SIZE&#93;;
+
+<br />
+&nbsp; &nbsp;char outMessage&#91;MESSAGE_SIZE&#93; = &quot; To posilja serv.&quot;;
+
+<br />
+
+
+<br />
+&nbsp; &nbsp; // ko se bo client povezal bo poslal sporocilo serveru server pa nazaj sporocilo clientu
+
+<br />
+&nbsp; &nbsp; // spodaj uporabimo funk. recv&#40;&#41; in flag 0 ki ga ne razumem neke prevec &#58;&#41;
+
+<br />
+&nbsp; &nbsp; // nato se preverimo ali je kaksen error ali ne
+
+<br />
+
+
+<br />
+&nbsp; &nbsp; nBytes = recv&#40;clientSocket, inMessage, sizeof&#40;inMessage&#41;, 0&#41;;
+
+<br />
+
+
+<br />
+&nbsp; &nbsp;// preverimo error
+
+<br />
+
+
+<br />
+&nbsp; &nbsp;if &#40;nBytes == SOCKET_ERROR&#41;
+
+<br />
+&nbsp; &nbsp;&#123;
+
+<br />
+&nbsp; &nbsp;&nbsp; &nbsp;printf&#40;&quot;Sprejemanje spodletelo!\n&quot;&#41;;
+
+<br />
+&nbsp; &nbsp;&#125;
+
+<br />
+ 
+
+<br />
+&nbsp; &nbsp;// na tej tocki smo sprejeli podatke in shranli v inMessage
+
+<br />
+&nbsp; &nbsp;// zato izpisemo buffer da vidimo kaksno je bilo sporocilo
+
+<br />
+
+
+<br />
+&nbsp; &nbsp; printf&#40;&quot;Sporocilo prispelo&#58; %s\n&quot;, inMessage&#41;;
+
+<br />
+
+
+<br />
+&nbsp; &nbsp; // sedaj smo sprejeli sporocilo zdaj pa se moremo poslati clientu nekaj nazaj z funkcijo send&#40;&#41;
+
+<br />
+&nbsp; &nbsp;// funkcija send&#40;&#41; ima 4 parametre kot funk. recv&#40;&#41;...
+
+<br />
+&nbsp; &nbsp; // posljemo sizeof&#40;outMessage&#41; k klientu
+
+<br />
+&nbsp; &nbsp;
+
+<br />
+&nbsp; &nbsp;nBytes = send&#40;clientSocket, outMessage, sizeof&#40;outMessage&#41;, 0&#41;;
+
+<br />
+
+
+<br />
+&nbsp; &nbsp; // preverimo error
+
+<br />
+
+
+<br />
+&nbsp; &nbsp;if &#40;nBytes == SOCKET_ERROR&#41;
+
+<br />
+&nbsp; &nbsp;&#123;
+
+<br />
+&nbsp; &nbsp;&nbsp; &nbsp;printf&#40;&quot; Sporocilo spodletelo!\n&quot;&#41;;
+
+<br />
+&nbsp; &nbsp;&#125;
+
+<br />
+&nbsp; &nbsp;else
+
+<br />
+&nbsp; &nbsp;&#123;
+
+<br />
+&nbsp; &nbsp;&nbsp; &nbsp;printf&#40;&quot; Sporocilo dostavljeno\n&quot;&#41;;
+
+<br />
+&nbsp; &nbsp;&#125;
+
+<br />
+
+
+<br />
+&nbsp; &nbsp;// sedaj nam je uspelo poslati in sprejeti sporocilo 
+
+<br />
+&nbsp; &nbsp; // sedaj ko nam je uspelo sprejeti in poslati moramo se za sabo pocistiti
+
+<br />
+&nbsp; &nbsp; // zato zapremo socket
+
+<br />
+
+
+<br />
+&nbsp; &nbsp;closesocket&#40;clientSocket&#41;;
+
+<br />
+
+
+<br />
+&nbsp; &nbsp;// in izklopimo povezavo
+
+<br />
+
+
+<br />
+&nbsp; &nbsp;shutdownServer&#40;serverSocket&#41;;
+
+<br />
+
+
+<br />
+&nbsp; &nbsp;printf&#40;&quot; Pritisni tipko za nadaljevanje ...\n&quot;&#41;;
+
+<br />
+&nbsp; &nbsp;getchar&#40;&#41;;
+
+<br />
+
+
+<br />
+&#125;
+
+<br />
+
+
+<br />
+//--------------------------------------------------------------------
+
+<br />
+// startupServerForListning&#40;&#41; - funkcija ki zazene winsock in odpre socket da cakajo na klic
+
+<br />
+
+
+<br />
+int startupServerForListning&#40;unsigned short port&#41;
+
+<br />
+
+
+<br />
+&#123;
+
+<br />
+&nbsp; &nbsp;// winsock podatkovna struktura
+
+<br />
+
+
+<br />
+&nbsp; &nbsp;WSAData wsaData;
+
+<br />
+
+
+<br />
+&nbsp; &nbsp;// zazenemo winsock
+
+<br />
+
+
+<br />
+&nbsp; &nbsp;if &#40;WSAStartup&#40;MAKEWORD&#40;2, 2&#41;, &amp;wsaData&#41; == SOCKET_ERROR&#41;
+
+<br />
+&nbsp; &nbsp;&#123;
+
+<br />
+&nbsp; &nbsp;&nbsp; &nbsp;printf&#40;&quot; Ne morem zagnati winsock \n&quot;&#41;;
+
+<br />
+&nbsp; &nbsp;&nbsp; &nbsp;return -1;
+
+<br />
+&nbsp; &nbsp;&#125;
+
+<br />
+
+
+<br />
+&nbsp; &nbsp;// napravimo mysocket
+
+<br />
+
+
+<br />
+&nbsp; &nbsp;int mySocket = socket&#40;AF_INET, SOCK_STREAM, 0&#41;;
+
+<br />
+
+
+<br />
+&nbsp; &nbsp;// preverimo errore
+
+<br />
+
+
+<br />
+&nbsp; &nbsp;if &#40;mySocket == SOCKET_ERROR&#41;
+
+<br />
+&nbsp; &nbsp;&#123;
+
+<br />
+&nbsp; &nbsp;&nbsp; &nbsp;printf&#40;&quot; Ne gre odpret socket!\n&quot;&#41;;
+
+<br />
+&nbsp; &nbsp;&nbsp; &nbsp;return -1;
+
+<br />
+&nbsp; &nbsp;&#125;
+
+<br />
+
+
+<br />
+&nbsp; &nbsp;// struktura o naslovu
+
+<br />
+
+
+<br />
+&nbsp; &nbsp;struct sockaddr_in server;
+
+<br />
+
+
+<br />
+&nbsp; &nbsp;// napolnimo strukturo z podatki
+
+<br />
+
+
+<br />
+&nbsp; &nbsp;server.sin_family = AF_INET;
+
+<br />
+&nbsp; &nbsp;server.sin_port = htons&#40;port&#41;;
+
+<br />
+&nbsp; &nbsp;server.sin_addr.s_addr = INADDR_ANY;
+
+<br />
+
+
+<br />
+&nbsp; &nbsp;// sedaj bindamo socket
+
+<br />
+
+
+<br />
+&nbsp; &nbsp;if &#40;bind&#40;mySocket, &#40;sockaddr*&#41;&amp;server, sizeof&#40;server&#41;&#41; == SOCKET_ERROR&#41;
+
+<br />
+&nbsp; &nbsp;&#123;
+
+<br />
+&nbsp; &nbsp;&nbsp; &nbsp;printf&#40;&quot; Bindanje ni uspelo!\n&quot;&#41;;
+
+<br />
+&nbsp; &nbsp;&nbsp; &nbsp;closesocket&#40;mySocket&#41;;
+
+<br />
+&nbsp; &nbsp;&nbsp; &nbsp;return -1;
+
+<br />
+&nbsp; &nbsp;&#125;
+
+<br />
+
+
+<br />
+&nbsp; &nbsp;// pripravimo socket da cakajo na klic
+
+<br />
+
+
+<br />
+&nbsp; &nbsp;if &#40;listen&#40;mySocket, 5&#41; == SOCKET_ERROR&#41;
+
+<br />
+&nbsp; &nbsp;&#123;
+
+<br />
+&nbsp; &nbsp;&nbsp; &nbsp;printf&#40;&quot; Cakanje spodletelo!\n&quot;&#41;;
+
+<br />
+&nbsp; &nbsp;&nbsp; &nbsp;closesocket&#40;mySocket&#41;;
+
+<br />
+&nbsp; &nbsp;&nbsp; &nbsp;return -1;
+
+<br />
+&nbsp; &nbsp;&#125;
+
+<br />
+
+
+<br />
+&nbsp; &nbsp;printf&#40;&quot; Server zagnan\n&quot;&#41;;
+
+<br />
+
+
+<br />
+&nbsp; &nbsp;return mySocket;
+
+<br />
+&#125;
+
+<br />
+
+
+<br />
+/*--------------------------------------------------------------
+
+<br />
+&nbsp; shutdownServer&#40;&#41; - funkcija za zapret socket in ugasnit povezavo*/
+
+<br />
+
+
+<br />
+void shutdownServer&#40;int socket&#41;
+
+<br />
+&nbsp; &nbsp;
+
+<br />
+&#123;
+
+<br />
+&nbsp; &nbsp;
+
+<br />
+&nbsp; &nbsp;// zapremo socket
+
+<br />
+&nbsp; &nbsp;
+
+<br />
+&nbsp; &nbsp;closesocket&#40;socket&#41;;
+
+<br />
+
+
+<br />
+&nbsp; &nbsp;// ugasnemo winsock
+
+<br />
+
+
+<br />
+&nbsp; &nbsp;WSACleanup&#40;&#41;;
+
+<br />
+
+
+<br />
+&nbsp; &nbsp;printf&#40;&quot; Server izkloplen\n&quot;&#41;;
+
+<br />
+
+
+<br />
+&#125;
+
+<br />
+</td>
+<br />
+	</tr>
+<br />
+</table>
+<br />
+<span class="postbody">
+
+<br />
+
+
+<br />
+<span style="font-weight: bold">Client:</span>
+
+<br />
+
+
+<br />
+</span>
+<br />
+<table width="90%" cellspacing="1" cellpadding="3" border="0" align="center">
+<br />
+<tr> 
+<br />
+	  <td><span class="genmed"><b>Koda:</b></span></td>
+<br />
+	</tr>
+<br />
+	<tr>
+<br />
+	  <td class="code">
+
+<br />
+// Client z funkcijama send&#40;&#41; &amp; recive&#40;&#41;
+
+<br />
+// startup funkcija se bo konektala na dolocen server in vrnila -1 ce bo kje kaksen error
+
+<br />
+
+
+<br />
+int startupClient&#40;unsigned short port, const char* serverName&#41;;
+
+<br />
+
+
+<br />
+// shutdownClient&#40;&#41; bo zaprla socket in ugasnila winsock
+
+<br />
+
+
+<br />
+void shutdownClient&#40;int clientSocket&#41;;
+
+<br />
+
+
+<br />
+
+
+<br />
+#include &lt;winsock2.h&gt; // winsock za povezavo prek interneta
+
+<br />
+#include &lt;stdio.h&gt; // za I/O
+
+<br />
+
+
+<br />
+void main&#40;&#41;
+
+<br />
+
+
+<br />
+&#123;
+
+<br />
+&nbsp; &nbsp;printf&#40;&quot; Toturial o clientu \n &quot;&#41;;
+
+<br />
+
+
+<br />
+&nbsp; &nbsp;int mySocket;
+
+<br />
+
+
+<br />
+&nbsp; &nbsp;// zazenemo client in se probamo povezat
+
+<br />
+
+
+<br />
+&nbsp; &nbsp;mySocket = startupClient&#40;7777, &quot;localhost&quot;&#41;;
+
+<br />
+
+
+<br />
+&nbsp; &nbsp;if &#40;mySocket == -1&#41;
+
+<br />
+&nbsp; &nbsp;&#123;
+
+<br />
+&nbsp; &nbsp;&nbsp; &nbsp;// naslo je error izklopimo klienta in adio &#58;&#41;
+
+<br />
+&nbsp; &nbsp;&nbsp; &nbsp;shutdownClient&#40;mySocket&#41;;
+
+<br />
+&nbsp; &nbsp;&nbsp; &nbsp;return;
+
+<br />
+&nbsp; &nbsp;&#125;
+
+<br />
+
+
+<br />
+&nbsp; &nbsp; // naredimo spremenljivko nBytes ta bo dovolila koliko bajtov bo lahko slo do serverja prek enega sporocila
+
+<br />
+
+
+<br />
+&nbsp; &nbsp;int nBytes;
+
+<br />
+
+
+<br />
+&nbsp; &nbsp;// tu definiramo koliko jih bo slo skozi
+
+<br />
+
+
+<br />
+#define MESSAGE_SIZE 24
+
+<br />
+
+
+<br />
+&nbsp; &nbsp;// in buffers
+
+<br />
+
+
+<br />
+&nbsp; &nbsp;char inMessage&#91;MESSAGE_SIZE&#93;;
+
+<br />
+&nbsp; &nbsp;char outMessage&#91;MESSAGE_SIZE&#93; = &quot; To send iz client&quot;;
+
+<br />
+
+
+<br />
+&nbsp; &nbsp;// pošljimo sporocilo serveru
+
+<br />
+
+
+<br />
+&nbsp; &nbsp;nBytes = send&#40;mySocket, outMessage, sizeof&#40;outMessage&#41;, 0&#41;;
+
+<br />
+&nbsp; &nbsp;
+
+<br />
+&nbsp; &nbsp;// preverimo error
+
+<br />
+
+
+<br />
+&nbsp; &nbsp;if &#40;nBytes == SOCKET_ERROR&#41;
+
+<br />
+&nbsp; &nbsp;&#123;
+
+<br />
+&nbsp; &nbsp;&nbsp; &nbsp;printf&#40;&quot; Posiljanje spodletelo! \n&quot;&#41;;
+
+<br />
+&nbsp; &nbsp;&#125;
+
+<br />
+&nbsp; &nbsp;else
+
+<br />
+&nbsp; &nbsp;&#123;
+
+<br />
+&nbsp; &nbsp;&nbsp; &nbsp;// sprinta sporocilo ki ga je poslalo
+
+<br />
+&nbsp; &nbsp;&nbsp; &nbsp;printf&#40;&quot;Sporocilo&#58; %s\n&quot;, outMessage&#41;;
+
+<br />
+&nbsp; &nbsp;&#125;
+
+<br />
+
+
+<br />
+&nbsp; &nbsp;// tu pricakujemo nekaj nazaj od serverja
+
+<br />
+
+
+<br />
+&nbsp; &nbsp;nBytes = recv&#40;mySocket, inMessage, sizeof&#40;inMessage&#41;, 0&#41;;
+
+<br />
+&nbsp; 
+
+<br />
+&nbsp; &nbsp;// preverimo errore
+
+<br />
+
+
+<br />
+&nbsp; &nbsp;if &#40;nBytes == SOCKET_ERROR&#41;
+
+<br />
+&nbsp; &nbsp;&#123;
+
+<br />
+&nbsp; &nbsp;&nbsp; &nbsp;printf&#40;&quot; Sprejemanje spodletelo!\n&quot;&#41;;
+
+<br />
+&nbsp; &nbsp;&#125;
+
+<br />
+&nbsp; &nbsp;else
+
+<br />
+&nbsp; &nbsp;&#123;
+
+<br />
+&nbsp; &nbsp;&nbsp; &nbsp;printf&#40;&quot;Sporocilo dostavljeno&#58; %s\n&quot;, inMessage&#41;;
+
+<br />
+&nbsp; &nbsp;&#125;
+
+<br />
+
+
+<br />
+&nbsp; &nbsp;// zaprimo clienta
+
+<br />
+&nbsp; &nbsp;shutdownClient&#40;mySocket&#41;;
+
+<br />
+
+
+<br />
+&nbsp; &nbsp;printf&#40;&quot; Stisni tipko za nadaljevanje\n&quot;&#41;;
+
+<br />
+
+
+<br />
+&nbsp; &nbsp;getchar&#40;&#41;;
+
+<br />
+&#125;
+
+<br />
+
+
+<br />
+// startupClient&#40;&#41; - funkcija za prizgat socket in conektat se na server
+
+<br />
+
+
+<br />
+int startupClient&#40;unsigned short port, const char* serverName&#41;
+
+<br />
+&#123;
+
+<br />
+&nbsp; &nbsp;// spremenljivka za informacije o errorih
+
+<br />
+
+
+<br />
+&nbsp; &nbsp;int error;
+
+<br />
+
+
+<br />
+&nbsp; &nbsp;// winsock struktura tu shranimo informacije
+
+<br />
+
+
+<br />
+&nbsp; &nbsp;WSAData wsaData;
+
+<br />
+
+
+<br />
+&nbsp; &nbsp;// zazenemo winsock
+
+<br />
+
+
+<br />
+&nbsp; &nbsp;if &#40;&#40;error = WSAStartup&#40;MAKEWORD&#40;2, 2&#41;, &amp;wsaData&#41;&#41; == SOCKET_ERROR&#41;
+
+<br />
+&nbsp; &nbsp;&#123;
+
+<br />
+&nbsp; &nbsp;&nbsp; &nbsp;printf&#40;&quot; Ne morem zagnati winsock!\n&quot;&#41;;
+
+<br />
+&nbsp; &nbsp;&nbsp; &nbsp; return -1;
+
+<br />
+&nbsp; &nbsp;&#125;
+
+<br />
+
+
+<br />
+&nbsp; &nbsp;// naredimo socket
+
+<br />
+
+
+<br />
+&nbsp; &nbsp;int mySocket = socket&#40;AF_INET, SOCK_STREAM, 0&#41;;
+
+<br />
+
+
+<br />
+&nbsp; &nbsp;// preverimo da ni kaj narobe
+
+<br />
+
+
+<br />
+&nbsp; &nbsp;if &#40;mySocket == SOCKET_ERROR&#41;
+
+<br />
+&nbsp; &nbsp;&#123;
+
+<br />
+&nbsp; &nbsp;&nbsp; &nbsp;printf&#40;&quot; Pri odpriranju socket nastal error!\n&quot;&#41;;
+
+<br />
+&nbsp; &nbsp;&nbsp; &nbsp;return -1;
+
+<br />
+&nbsp; &nbsp;&#125;
+
+<br />
+
+
+<br />
+&nbsp; &nbsp;struct hostent *host_entry;
+
+<br />
+&nbsp; &nbsp;
+
+<br />
+&nbsp; &nbsp;// struktura z hostom in preverimo ce je server zagnan ali je sploh na internetu
+
+<br />
+
+
+<br />
+&nbsp; &nbsp;if &#40;&#40;host_entry = gethostbyname&#40;serverName&#41;&#41; == NULL&#41;
+
+<br />
+&nbsp; &nbsp;&#123;
+
+<br />
+&nbsp; &nbsp;&nbsp; &nbsp;printf&#40;&quot; Ne najdem serverja ali racunalnik ni povezan na internet!\n&quot;&#41;;
+
+<br />
+&nbsp; &nbsp;&#125;
+
+<br />
+
+
+<br />
+&nbsp; &nbsp;// strukrtura server informacij
+
+<br />
+
+
+<br />
+&nbsp; &nbsp;struct sockaddr_in server;
+
+<br />
+
+
+<br />
+&nbsp; &nbsp;// napolnimo socket server informacije
+
+<br />
+
+
+<br />
+&nbsp; &nbsp;server.sin_family = AF_INET;
+
+<br />
+&nbsp; &nbsp;server.sin_port = htons&#40;port&#41;;
+
+<br />
+&nbsp; &nbsp;server.sin_addr.s_addr = *&#40;unsigned long*&#41; host_entry-&gt;h_addr;
+
+<br />
+
+
+<br />
+&nbsp; &nbsp;// se povezemo na server
+
+<br />
+
+
+<br />
+&nbsp; &nbsp;if &#40;connect&#40;mySocket, &#40;sockaddr*&#41;&amp;server, sizeof&#40;server&#41;&#41; == SOCKET_ERROR&#41;
+
+<br />
+&nbsp; &nbsp;&#123;
+
+<br />
+&nbsp; &nbsp;&nbsp; &nbsp;printf&#40;&quot; Ne da se povezati na server!\n&quot;&#41;;
+
+<br />
+&nbsp; &nbsp;&#125;
+
+<br />
+
+
+<br />
+&nbsp; &nbsp;printf&#40;&quot; Client Prizgan Uspelo se konektat\n&quot;&#41;;
+
+<br />
+
+
+<br />
+&nbsp; &nbsp;return mySocket;
+
+<br />
+&#125;
+
+<br />
+
+
+<br />
+// shutdownClient&#40;&#41; - funkcija za ugasnit socket in izklopiti winsock
+
+<br />
+
+
+<br />
+void shutdownClient&#40;int clientSocket&#41;
+
+<br />
+
+
+<br />
+&#123;
+
+<br />
+&nbsp; &nbsp;// zapremo socket
+
+<br />
+&nbsp; &nbsp;
+
+<br />
+&nbsp; &nbsp;closesocket&#40;clientSocket&#41;;
+
+<br />
+
+
+<br />
+&nbsp; &nbsp;// ugasnemo winsock
+
+<br />
+
+
+<br />
+&nbsp; &nbsp;WSACleanup&#40;&#41;;
+
+<br />
+
+
+<br />
+&nbsp; &nbsp;printf&#40;&quot; Client Ugasnjen \n&quot;&#41;;
+
+<br />
+&#125;
+
+<br />
+</td>
+<br />
+	</tr>
+<br />
+</table>
+<br />
+<span class="postbody">
+
+<br />
+
+
+<br />
+Mogoce bo komu kaj pomagalo, mogoce ne jas kuj dobre volje  <img src="images/smiles/icon_smile.gif" alt="icon_smile.gif" border="0" /></span><span class="gensmall"></span></td>
+			</tr>
+		</table></td>
+	</tr>
+	<tr>
+		<td class="row1" width="150" align="left" valign="middle"><span class="nav"><a href="#top" class="nav">Nazaj na vrh</a></span></td>
+		<td class="row1" width="100%" height="28" valign="bottom" nowrap="nowrap"><table cellspacing="0" cellpadding="0" border="0" height="18" width="18">
+			<tr>
+				<td valign="middle" nowrap="nowrap"><a href="profile-108.html"><img src="templates/SGD2/images/lang_slovenian/icon_profile.gif" alt="Poglej uporabnikov profil" title="Poglej uporabnikov profil" border="0" /></a> <a  target="_userwww"><img src="templates/SGD2/images/lang_slovenian/icon_www.gif" alt="Obišči avtorjevo spletno stran" title="Obišči avtorjevo spletno stran" border="0" /></a></td>
+			</tr>
+		</table></td>
+	</tr>
+	<tr>
+		<td class="spaceRow" colspan="2" height="1"><img src="templates/SGD/images/spacer.gif" alt="" width="1" height="1" /></td>
+	</tr>
+	
+	<tr>
+		<td width="150" align="left" valign="top" class="row2"><span class="name"><a name="6842"></a><b>Napsy</b></span><br /><span class="postdetails">inštruktor<br /><img src="images/ranks/sgd-4.gif" alt="inštruktor" title="inštruktor" border="0" /><br /><br /><br />Pridružen: 09. jan 2003 ob 22:37<br />objav: 306<br />Kraj: Letuš</span><br /></td>
+		<td class="row2" width="100%" height="28" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+			<tr>
+				<td colspan="2" width="100%">
+					<table width="100%" cellpadding="0" cellspacing="0" border="0">
+						<tr>
+							<td valign="middle" align="left">
+								<a href="topic-601.html#6842"><img src="templates/SGD2/images/icon_minipost.gif" width="12" height="9" alt="objava" title="objava" border="0" /></a>
+								<span class="postdetails">Objavljeno: ned feb 15, 2004 5:42 pm<span class="gen">&nbsp;</span>&nbsp; &nbsp;Pošlji temo: </span>
+							</td>
+							<td valign="middle" align="right" nowrap="nowrap">
+							</td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+			<tr>
+				<td colspan="2"><hr /></td>
+			</tr>
+			<tr>
+				<td colspan="2"><span class="postbody">Tale server bo lahk delal samo z eno povezavo?
+
+<br />
+
+
+<br />
+Vsaj jaz nisem nikjer opazil select()<br />_________________<br /><a  target="_blank">http://luka-napotnik.net</a></span><span class="gensmall"></span></td>
+			</tr>
+		</table></td>
+	</tr>
+	<tr>
+		<td class="row2" width="150" align="left" valign="middle"><span class="nav"><a href="#top" class="nav">Nazaj na vrh</a></span></td>
+		<td class="row2" width="100%" height="28" valign="bottom" nowrap="nowrap"><table cellspacing="0" cellpadding="0" border="0" height="18" width="18">
+			<tr>
+				<td valign="middle" nowrap="nowrap"><a href="profile-8.html"><img src="templates/SGD2/images/lang_slovenian/icon_profile.gif" alt="Poglej uporabnikov profil" title="Poglej uporabnikov profil" border="0" /></a> <a  target="_userwww"><img src="templates/SGD2/images/lang_slovenian/icon_www.gif" alt="Obišči avtorjevo spletno stran" title="Obišči avtorjevo spletno stran" border="0" /></a></td>
+			</tr>
+		</table></td>
+	</tr>
+	<tr>
+		<td class="spaceRow" colspan="2" height="1"><img src="templates/SGD/images/spacer.gif" alt="" width="1" height="1" /></td>
+	</tr>
+	
+	<tr align="center">
+		<td class="catBottom" colspan="2" height="28">&nbsp;</td>
+	</tr>
+</table>
+
+<table width="100%" cellspacing="2" cellpadding="2" border="0" align="center">
+  <tr>
+	<td align="left" valign="middle" nowrap="nowrap">&nbsp;</td>
+	<td align="left" valign="middle" width="100%"><span class="nav">&nbsp;&nbsp;&nbsp;<a href="index.html" class="nav">SloGameDev.net seznam forumov</a>
+	  -> <a href="forum-1.html" class="nav">Splošno Programiranje</a></span></td>
+	<td align="right" valign="top" nowrap="nowrap"><span class="gensmall">Časovni pas (GMT +2:00 uri) Slovenija, poletni čas</span><br /><span class="nav"></span>
+	  </td>
+  </tr>
+  <tr>
+	<td align="left" colspan="3"><span class="nav">Stran <b>1</b> od <b>1</b></span></td>
+  </tr>
+</table>
+
+<table width="100%" cellspacing="2" border="0" align="center">
+  <tr>
+	<td width="40%" valign="top" nowrap="nowrap" align="left">&nbsp;</td>
+	<td align="right" valign="top" nowrap="nowrap">&nbsp;</td>
+  </tr>
+</table>
+
+<div align="center"><span class="copyright"><br />Arhiv stanja na dan 13. 2. 2006 &mdash; samo za branje.<br />
+<!--
+	We request you retain the full copyright notice below including the link to www.phpbb.com.
+	This not only gives respect to the large amount of time given freely by the developers
+	but also helps build interest, traffic and use of phpBB 2.0. If you cannot (for good
+	reason) retain the full copyright we request you at least leave in place the 
+	Powered by phpBB 2.0.4 line, with phpBB linked to www.phpbb.com. If you refuse
+	to include even this then support on our forums may be affected. 
+
+	The phpBB Group : 2002
+// -->
+Powered by <a  target="_phpbb" class="copyright">phpBB</a> 2.0.4 &copy; 2001, 2002 phpBB Group<br /></span></div>
+		</td>
+	</tr>
+</table>
+
+</body>
+</html>
